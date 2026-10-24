@@ -89,13 +89,13 @@ http://eu.kartal38.com:8080/a1qS8T80/amSpNPx/94063?output=ts
 http://204.52.191.254:80/play/live.php?mac=00:1A:79:76:D0:D3&stream=475740&extension=ts&play_token=B5YhbAYy6D
 #EXTINF:-1 tvg-name="halk TV" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/halk-tv-tr.png?raw=true" group-title="📰 HABER",HALK
 https://halktv-live.daioncdn.net/halktv/halktv.m3u8
-#EXTINF:-1 tvg-name="KOZA TV HD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBnPqD71xCspvg3GxcvChOsWG_HhsIS-WF244ino3BQ&s=10" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KOZA
+#EXTINF:-1 tvg-name="KOZA TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBnPqD71xCspvg3GxcvChOsWG_HhsIS-WF244ino3BQ&s=10" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KOZA
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
 http://176.65.153.12:6001/play/a04m/index.m3u8
-#EXTINF:-1 tvg-name="KRT TV HD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV8tGWscBMMaSIkwrt0nsHfH2p-NPWqENSW0uJTVlhLA&s" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KRT
+#EXTINF:-1 tvg-name="KRT TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV8tGWscBMMaSIkwrt0nsHfH2p-NPWqENSW0uJTVlhLA&s" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KRT
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:2E&stream=197276&extension=ts&play_token=cqRGvvpTWt
-#EXTINF:-1 tvg-name="NTV" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8c2" group-title="📰 HABER",NTV
+#EXTINF:-1 tvg-id="ntv" tvg-name="NTV" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8c2" group-title="📰 HABER",NTV
 https://dogus.daioncdn.net/ntv/ntv_720p.m3u8
 #EXTINF:-1 tvg-name="Habertürk" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da890" group-title="📰 HABER",HABER TÜRK
 https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3u8
@@ -103,24 +103,6 @@ https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3
 https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8
 #EXTINF:-1 tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da892" group-title="📰 HABER",BLOOMBERG
 https://ciner.daioncdn.net/bloomberghads/main/now.png" group-title="📺 ULUSAL.",NOW TV
-#EXTINF:-1 tvg-logo="http://photo-tmdb.com/stalker_portal/misc/logos/320/2371.png?40538" group-title="📰 HABER",SZC TV
-http://204.52.191.254:80/play/live.php?mac=00:1A:79:76:D0:D3&stream=475740&extension=ts&play_token=B5YhbAYy6D
-#EXTINF:-1 tvg-name="halk TV" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/halk-tv-tr.png?raw=true" group-title="📰 HABER",HALK
-https://halktv-live.daioncdn.net/halktv/halktv.m3u8
-#EXTINF:-1 tvg-name="KOZA TV HD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBnPqD71xCspvg3GxcvChOsWG_HhsIS-WF244ino3BQ&s=10" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KOZA
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-http://176.65.153.12:6001/play/a04m/index.m3u8
-#EXTINF:-1 tvg-name="KRT TV HD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV8tGWscBMMaSIkwrt0nsHfH2p-NPWqENSW0uJTVlhLA&s" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KRT
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:2E&stream=197276&extension=ts&play_token=cqRGvvpTWt
-#EXTINF:-1 tvg-name="NTV" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8c2" group-title="📰 HABER",NTV
-https://dogus.daioncdn.net/ntv/ntv_720p.m3u8
-#EXTINF:-1 tvg-name="Habertürk" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da890" group-title="📰 HABER",HABER TÜRK
-https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTCv4GJ5vIcoTtxi06wSdN5I46WgcC9lzPsZJBBTrUBA&s=10" group-title="📰 HABER",HABER GLOBAL
-https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8
-#EXTINF:-1 tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da892" group-title="📰 HABER",BLOOMBERG
-https://ciner.daioncdn.net/bloomberght/bloomberght.m3u8
 #EXTINF:-1 tvg-logo="https://i.dsmart.com.tr/kanallar/cnbce_logo.png" group-title="📰 HABER",CNBC-E
 https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8
 #EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/Atv.png" group-title="📺 ULUSAL.",ATV
@@ -147,27 +129,9 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196679&exte
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196678&extension=ts&play_token=p5hwUyOLoj
 #EXTINF:-1 tvg-id="TV8.HD.tr" tvg-name="TV8" tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/Tv8.png" group-title="📺 ULUSAL.",TV 8
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196677&extension=ts&play_token=zLN7npODPH
-#EXTINF:-1 tvg-logo="http://photo-tmdb.com/stalker_portal/misc/logos/320/2371.png?40538" group-title="📰 HABER",SZC TV
-http://204.52.191.254:80/play/live.php?mac=00:1A:79:76:D0:D3&stream=475740&extension=ts&play_token=B5YhbAYy6D
-#EXTINF:-1 tvg-name="halk TV" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/halk-tv-tr.png?raw=true" group-title="📰 HABER",HALK
-https://halktv-live.daioncdn.net/halktv/halktv.m3u8
-#EXTINF:-1 tvg-name="KOZA TV HD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBnPqD71xCspvg3GxcvChOsWG_HhsIS-WF244ino3BQ&s=10" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KOZA
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-http://176.65.153.12:6001/play/a04m/index.m3u8
-#EXTINF:-1 tvg-name="KRT TV HD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV8tGWscBMMaSIkwrt0nsHfH2p-NPWqENSW0uJTVlhLA&s" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KRT
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:2E&stream=197276&extension=ts&play_token=cqRGvvpTWt
-#EXTINF:-1 tvg-name="NTV" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8c2" group-title="📰 HABER",NTV
-https://dogus.daioncdn.net/ntv/ntv_720p.m3u8
-#EXTINF:-1 tvg-name="Habertürk" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da890" group-title="📰 HABER",HABER TÜRK
-https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTCv4GJ5vIcoTtxi06wSdN5I46WgcC9lzPsZJBBTrUBA&s=10" group-title="📰 HABER",HABER GLOBAL
-https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8
-#EXTINF:-1 tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da892" group-title="📰 HABER",BLOOMBERG
-https://ciner.daioncdn.net/bloomberght/bloomberght.m3u8
 #EXTINF:-1 tvg-logo="https://i.dsmart.com.tr/kanallar/cnbce_logo.png" group-title="📰 HABER",CNBC-E
 https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8
-#EXTINF:-1 tvg-name="tvnet" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8aa" group-title="📰 HABER",TV NET
+#EXTINF:-1 tvg-id="tvnet" tvg-name="tvnet" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8aa" group-title="📰 HABER",TV NET
 https://tvnet-live.lg.mncdn.com/tvnet-live/tvnet/chunklist_w1616986448.m3u8
 #EXTINF:-1 tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da85e" group-title="📰 HABER",TRT HABER
 https://tv-trthaber.medya.trt.com.tr/master.m3u8
@@ -179,17 +143,17 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber.m3u8
 https://turkmedya-live.ercdn.net/tv24/tv24_720p.m3u8
 #EXTINF:-1 tvg-name="tv100" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2PEd4cLfnPdbX4vTadb5SXjKDHTwntW7uECRLkZttCA&s=10" group-title="📰 HABER",TV 100
 https://zeus324232.cfd/tv100/index.txt
-#EXTINF:-1 tvg-id="ülke TV.tr" tvg-name="ulketv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqYW9ZHqxwHP7WBizk9Tz4yGu6KjuUFPG6omVBDgyi_w&s" group-title="📰 HABER",ÜLKE TV
+#EXTINF:-1 tvg-id="ulke.tv" tvg-name="ulke.tv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqYW9ZHqxwHP7WBizk9Tz4yGu6KjuUFPG6omVBDgyi_w&s" group-title="📰 HABER",ÜLKE TV
 https://livetv.radyotvonline.net/kanal7live/ulketv/playlist.m3u8
 #EXTINF:-1 tvg-name="turkhaber" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6tJ6jT9Hde1rqjflbcwU_xVao2YQ6MlH76idD1NaYsA&s=10" group-title="📰 HABER",TH TURK HABER
 https://edge1.socialsmart.tv/turkhaber/bant1/chunks.m3u8
 #EXTINF:-1 tvg-id="BenguturkTV.tr" tvg-name="bengütürk" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvmb94aw6Kku3YdVTYRmRdKhZHmDsIfFZ1g8w7TjNgAg&s" group-title="📰 HABER",BENGÜTÜRK
 https://tv.ensonhaber.com/benguturk/benguturk.m3u8
-#EXTINF:-1 tvg-logo="https://finansturktv.com/images/logo.png" group-title="📰 HABER",FİNANS TÜRK
+#EXTINF:-1 tvg-id="FINANSTURK" tvg-name="FINANSTURK" tvg-logo="https://finansturktv.com/images/logo.png" group-title="📰 HABER",FİNANS TÜRK
 https://yayin30.haber100.com/live/finansturk/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv6ZtYCn2tBcfiBdvRX9UrTmmuiQcAOxqVdWsnSYMRRQ&s=10" group-title="📰 HABER",WORLD TÜRK
+#EXTINF:-1 tvg-id="worldturk" tvg-name="worldturk" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv6ZtYCn2tBcfiBdvRX9UrTmmuiQcAOxqVdWsnSYMRRQ&s=10" group-title="📰 HABER",WORLD TÜRK
 https://worldturktv.radyotelekom.com.tr:3971/live/worldturktvstreamlive.m3u8
-#EXTINF:-1 tvg-id="TBMM.tr@HD" tvg-name="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/TBMM_TV_logo.svg/500px-TBMM_TV_logo.svg.png" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ7MAU12p6kLCfByzmzi6y8fWLGoBMT2okSziHGteP0w&s" group-title="📰 HABER",TBMM
+#EXTINF:-1 tvg-id="TBMM.tv" tvg-name="TBMM.tv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ7MAU12p6kLCfByzmzi6y8fWLGoBMT2okSziHGteP0w&s" group-title="📰 HABER",TBMM
 https://meclistv-live.ercdn.net/meclistv/meclistv.m3u8
 #EXTINF:-1 tvg-name="CNN TÜRK HD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZmMgjKKZKdXL3MYJrDTM9VFN8HQGrH6oAmAwJJ67ztYiVzndpsUPiMM8&s" group-title="📰 HABER",CNN TÜRK HD
 https://trn03.tulix.tv/gt-cnnturk-tv/index.m3u8?token=686f473b86b77eaba0789cada480c6e9
@@ -197,17 +161,17 @@ https://trn03.tulix.tv/gt-cnnturk-tv/index.m3u8?token=686f473b86b77eaba0789cada4
 http://204.52.191.254:80/play/live.php?mac=00:1A:79:76:D0:D3&stream=8722&extension=ts&play_token=v8j15KCAAB
 #EXTINF:-1 tvg-name="krt tv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV8tGWscBMMaSIkwrt0nsHfH2p-NPWqENSW0uJTVlhLA&s" group-title="📰 HABER",KRT TV
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=197195&extension=ts&play_token=ALQMMnvJJp
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPs6A-7DlpHlb33AoCleu5Ndvc4ewm0p6MvvW_rH_uTA&s=10" group-title="📰 HABER",A NEWS
+#EXTINF:-1 tvg-id="anews" tvg-name="anews" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPs6A-7DlpHlb33AoCleu5Ndvc4ewm0p6MvvW_rH_uTA&s=10" group-title="📰 HABER",A NEWS
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=197271&extension=ts&play_token=Nx8VX4UaJj
 #EXTINF:-1 tvg-name="a para" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyXXsdW_EXTTgK3ciWRsPnf5YpPBNKkuGVUJUCtS3IOg&s=10" group-title="📰 HABER",A PARA
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=197272&extension=ts&play_token=YMedtQj0VQ
-#EXTINF:-1 tvg-logo="https://www.astv.com.tr/static/2026/07/06/astv-logo-1783346464-600-x80.jpeg" group-title="📰 HABER",AS
+#EXTINF:-1 tvg-id="ad.tv" tvg-name="as.tv" tvg-logo="https://www.astv.com.tr/static/2026/07/06/astv-logo-1783346464-600-x80.jpeg" group-title="📰 HABER",AS
 https://live.artidijitalmedya.com/artidijital_astv/astv/chunks.m3u8
 #EXTINF:-1 tvg-logo="http://photo-tmdb.com/stalker_portal/misc/logos/320/872.jpg?56905" group-title="📰 HABER",Medya Haber
 http://204.52.191.254:80/play/live.php?mac=00:1A:79:76:D0:D3&stream=4525&extension=ts&play_token=a6DTcfeFlg
-#EXTINF:-1 tvg-id="ext" tvg-name="TRTARABI" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/turkey/trt-arabi-tr.png" group-title="📰 HABER",TRT ARABI
+#EXTINF:-1 tvg-id="TRT arabı" tvg-name="TRT ARABI" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/turkey/trt-arabi-tr.png" group-title="📰 HABER",TRT ARABI
 https://tv-trtarabi.medya.trt.com.tr/master.m3u8
-#EXTINF:-1 tvg-id="ext" tvg-name="TRT WORLD" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/turkey/trt-world-tr.png" group-title="📰 HABER",TRT WORLD
+#EXTINF:-1 tvg-id="TRT.world" tvg-name="TRT WORLD" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/turkey/trt-world-tr.png" group-title="📰 HABER",TRT WORLD
 https://tv-trtworld.medya.trt.com.tr/master.m3u8
 #EXTINF:0 tvg-id="SÖZCÜ TV" tvg-name="TR: SZC TV HD" tvg-logo="https://i.hizliresim.com/ljzg5ez.png" group-title="📰 HABER" tvg-agent="Firefox",SZC TV
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/232355
