@@ -171,7 +171,6 @@ https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3
 https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8
 #EXTINF:-1 tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da892" group-title="📰 HABER",BLOOMBERG
 https://ciner.daioncdn.net/bloomberghads/main/now.png" group-title="📺 ULUSAL.",NOW TV
-http://line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:05:54:42&stream=196694&extension=ts
 #EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/TRT1.png" group-title="📺 ULUSAL.",TRT 1
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196699&extension=ts&play_token=vmAan78Qyz
 #EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/Atv.png" group-title="📺 ULUSAL.",ATV
