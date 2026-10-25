@@ -3,7 +3,7 @@
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
 #PLAYLIST:mırtı68
-#EXTINF:-1 tvg-id="TRT 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL.",TRT 1
+#EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL.",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-name="atv.tr" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da844" group-title="📺 ULUSAL.",ATV
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
@@ -2610,22 +2610,22 @@ https://iptv-radyo.fly.dev/cam4/playlist.m3u8
 https://iptv-radyo.fly.dev/cam2/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.radyomavi.net/logo.png" group-title="📻 RADYO 🎵 MÜZIK",İ 📻 MAVİ RADYO (copy)
 https://iptv-radyo.fly.dev/cam5/playlist.m3u8
-#EXTINF:-1 tvg-id="türkülerle Türkiye" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",TÜRKÜLERLE TÜRKİYE
+#EXTINF:-1 tvg-id="türkülerle Türkiye" tvg-name="turkulerle turkıye" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",TÜRKÜLERLE TÜRKİYE
 https://moondigitaledge.radyotvonline.net/turkulerleturkiye/playlist.m3u8
-#EXTINF:-1 tvg-id="radyo türkü" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO TÜRKÜ
+#EXTINF:-1 tvg-id="radyo turku" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO TÜRKÜ
 https://yayin.turkhosted.com/4591/stream
 #EXTINF:-1 tvg-id="TRT türkü" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",TRT TÜRKÜ
 https://rd-trtturku.medya.trt.com.tr/master_128.m3u8
 #EXTINF:-1 tvg-id="radyo 7 türkü" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 TÜRKÜ
 https://moondigitaledge2.radyotvonline.net/radyo7turku/playlist.m3u8
-#EXTINF:-1 tvg-id="radyo 7 muhteşem 4" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 MUHTEŞEM 4
+#EXTINF:-1 tvg-id="radyo 7 muhtesem 4" tvg-name="radyo 7 muhtesem 4" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 MUHTEŞEM 4
 https://moondigitaledge2.radyotvonline.net/radyo7muhtesem4lu/playlist.m3u8
-#EXTINF:-1 tvg-id="radyo 7 nostalji" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true" http-referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png" referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png",RADYO 7 NOSTALJİ
+#EXTINF:-1 tvg-id="radyo 7 nostaljı" tvg-name="RADYO 7 NOSTALJI" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true" http-referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png" referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png",RADYO 7 NOSTALJİ
 #EXTVLCOPT:http-referrer=https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png
 https://moondigitaledge2.radyotvonline.net/radyo7nostalji/playlist.m3u8
 #EXTINF:-1 tvg-id="radyo 7 Ankara" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO ANKARA
 https://moondigitaledge2.radyotvonline.net/radyo7ankara/playlist.m3u8
-#EXTINF:-1 tvg-id="radyo 7" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7
+#EXTINF:-1 tvg-id="radyo 7" tvg-name="radyo 7" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7
 https://moondigitaledge.radyotvonline.net/radyo7/playlist.m3u8
 #EXTINF:-1 tvg-id="radyo 7 arabesk" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 ARABESK
 https://moondigitaledge2.radyotvonline.net/radyo7arabesk/playlist.m3u8
