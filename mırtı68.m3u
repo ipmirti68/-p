@@ -15,7 +15,9 @@ https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-3
 https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=8u4lgnw1j88m&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
 #EXTINF:-1 tvg-id="Star tv" tvg-name="Star tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL.",STAR
 https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8l4w3lst4co5&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
-#EXTINF:-1 tvg-name="Fox hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/now.png" group-title="📺 ULUSAL.",NOW
+#EXTINF:-1 tvg-name="Fox hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/now.png" group-title="📺 ULUSAL." http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.nowtv.com.tr/" referrer="https://www.nowtv.com.tr/",NOW
+#EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36"
 https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
 #EXTINF:-1 tvg-id="kanal 7.tr" tvg-name="kanal 7.tr" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8a6" group-title="📺 ULUSAL.",KANAL 7
 https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
@@ -23,7 +25,7 @@ https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
 https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3
 #EXTINF:-1 tvg-id="beyaz tv.tr" tvg-name="Beyaz tv.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/beyaz.png" group-title="📺 ULUSAL.",BEYAZ
 https://beyaztv-live.daioncdn.net/beyaztv/beyaztv.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVE1t5H4wnurwE8E_54RRJliaEmWuFVKn1vNKPiVFbwQ&s=10" group-title="📺 ULUSAL.",MC
+#EXTINF:-1 tvg-id="mc" tvg-name="mc" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVE1t5H4wnurwE8E_54RRJliaEmWuFVKn1vNKPiVFbwQ&s=10" group-title="📺 ULUSAL.",MC
 https://n2.burst.cdn.jetstre.am/session/450f4c594b612903b7d42d421fb93c21/sz/mceutv/wowza4/live/mc2/chunklist.m3u8
 #EXTINF:-1 tvg-id="360.tr" tvg-name="360.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/360.png" group-title="📺 ULUSAL.",360
 https://turkmedya-live.ercdn.net/tv360/tv360.m3u8
@@ -398,7 +400,7 @@ https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8
 https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-name="bein sports 5.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor_max1_final.png" group-title="🖥 WEB beIN SPORTS",beIN SPORTS 5 Mırtıspor
 https://ronaldo.magnitude.workers.dev/?url=https://ladyboy.ardatvgs.cfd//bein5/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 5 Mahsun
+#EXTINF:-1 tvg-id="beinsports 5" tvg-name="beinsports 5" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 5 Mahsun
 #EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamlivebs5.m3u8
 #EXTINF:-1 tvg-id="selcukbeinsports5" tvg-name="bein sports 5.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" tvg-country="TR" group-title="🖥 WEB beIN SPORTS" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",beIN SPORTS 5 Selcuk
