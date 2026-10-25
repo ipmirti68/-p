@@ -759,7 +759,7 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=721&extensi
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=720&extension=ts&play_token=8vfTcov1O4
 #EXTINF:-1 tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR",TIVIBU SPOR 4
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=15569&extension=ts&play_token=eaX7HBfli8
-#EXTINF:-1 tvg-name="smartspor" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR",SMART SPOR 1
+#EXTINF:-1 tvg-id="Spor Smart" tvg-name="smartspor" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR",SMART SPOR 1
 https://zeus324232.cfd/smart1/index.txt
 #EXTINF:-1 tvg-name="smartspor 2" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR",SMART SPOR 2 D
 https://zeus324232.cfd/smart2/index.txt
@@ -767,9 +767,9 @@ https://zeus324232.cfd/smart2/index.txt
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/231858
 #EXTINF:0 tvg-id="Spor Smart" tvg-name="smartspor" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" tvg-agent="Firefox",SPORSMART
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/60118
-#EXTINF:0 tvg-id="SPOR SMART 2" tvg-name="smartspor 2" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" tvg-agent="Firefox",SPORSMART 2
+#EXTINF:0 tvg-id="SPOR SMART 2" tvg-name="smart spor 2" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" tvg-agent="Firefox",SPORSMART 2
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/57772
-#EXTINF:-1 tvg-name="smartspor" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" http-referrer="https://selcuksportshd1903.xyz" referrer="https://selcuksportshd1903.xyz",Smart Spor 1
+#EXTINF:-1 tvg-id="Spor Smart" tvg-name="smartspor" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" http-referrer="https://selcuksportshd1903.xyz" referrer="https://selcuksportshd1903.xyz",Smart Spor 1
 #EXTVLCOPT:http-referrer=https://selcuksportshd1903.xyz
 https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuksmartspor/playlist.m3u8
 #EXTINF:-1 tvg-name="smartspor 2" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" http-referrer="https://selcuksportshd1903.xyz" referrer="https://selcuksportshd1903.xyz",Smart Spor 2
@@ -2599,14 +2599,14 @@ https://ha.vixolity.com/vs/tt0253970/
 https://ha.vixolity.com/vs/tt0253966/
 #EXTINF:0 type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BZmZlZDEzZmItMThkYS00NTZiLTgzODEtNDI0NjVhNDIxZmUxXkEyXkFqcGc@._V1.jpg" group-title="🎬  FİLİM KEMAL SUNAL",Yedi Bela Hüsnü(1983)--Kemal Sunal-Oya Aydogan-Sevket Altug
 https://ha.vixolity.com/vs/tt0253963/
-#EXTINF:-1 tvg-name="Aksaray'ın Sesi 95.1 BİZ VARSAK YETER" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 AKSARAY NIN SESİ
+#EXTINF:-1 tvg-id="95.1" tvg-name="Aksaray'ın Sesi 95.1 BİZ VARSAK YETER" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 AKSARAY NIN SESİ
 https://iptv-radyo.fly.dev/cam1/playlist.m3u8
-#EXTINF:-1 tvg-name="Aksaray FM 99.5" tvg-logo="https://i.imgur.com/CDWMgrt.jpeg" group-title="📻 RADYO 🎵 MÜZIK" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",📻AKSARAY FM
+#EXTINF:-1 tvg-id="99.5" tvg-name="Aksaray FM 99.5" tvg-logo="https://i.imgur.com/CDWMgrt.jpeg" group-title="📻 RADYO 🎵 MÜZIK" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",📻AKSARAY FM
 #EXTVLCOPT:http-referrer=https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg
 https://iptv-radyo.fly.dev/cam3/playlist.m3u8
-#EXTINF:-1 tvg-name="Aksaray Radyo 68 101.2" tvg-logo="https://i.imgur.com/YUqfyHI.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 RADYO 68
+#EXTINF:-1 tvg-id="101.2" tvg-name="Aksaray Radyo 68 101.2" tvg-logo="https://i.imgur.com/YUqfyHI.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 RADYO 68
 https://iptv-radyo.fly.dev/cam4/playlist.m3u8
-#EXTINF:-1 tvg-name="Aksaray MAVİ Radyo 98.0" tvg-logo="https://i.imgur.com/smlZGsD.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 MAVİ RADYO
+#EXTINF:-1 tvg-id="98.0" tvg-name="Aksaray MAVİ Radyo 98.0" tvg-logo="https://i.imgur.com/smlZGsD.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 MAVİ RADYO
 https://iptv-radyo.fly.dev/cam2/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.radyomavi.net/logo.png" group-title="📻 RADYO 🎵 MÜZIK",İ 📻 MAVİ RADYO (copy)
 https://iptv-radyo.fly.dev/cam5/playlist.m3u8
