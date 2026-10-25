@@ -631,7 +631,7 @@ http://mekantv56.win/live/akifalioglu33/33akifalioglu/3626a133-b291-4177-b432-13
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988862&extension=ts
 #EXTINF:-1 tvg-name="TR:BEINSPORTS MAX 2 HD" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS MAX 2 1920x1080
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/50d1a0be-015f-4538-9206-d4f98c0d1433.ts
-#EXTINF:-1 tvg-name="tabiispor" tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR" http-referrer="https://selcuksportshd1903.xyz" referrer="https://selcuksportshd1903.xyz",Tabii Spor 1
+#EXTINF:-1 tvg-id="tabii spor 1" tvg-name="tabiispor" tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR" http-referrer="https://selcuksportshd1903.xyz" referrer="https://selcuksportshd1903.xyz",Tabii Spor 1
 #EXTVLCOPT:http-referrer=https://selcuksportshd1903.xyz
 https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktabiispor1/playlist.m3u8
 #EXTINF:-1 tvg-name="tabiispor 1" tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR" http-referrer="https://selcuksportshd1903.xyz" referrer="https://selcuksportshd1903.xyz",Tabii Spor 2
@@ -646,7 +646,7 @@ https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktabiispor4/playlist.m3u8
 #EXTINF:-1 tvg-name="tabii spor 6" tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR" http-referrer="https://selcuksportshd1903.xyz" referrer="https://selcuksportshd1903.xyz",Tabii Spor 5
 #EXTVLCOPT:http-referrer=https://selcuksportshd1903.xyz
 https://dga1op10s1u3lea.82250d06d39d38.click/live/selcuktabiispor5/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR",TABII SPOR 1
+#EXTINF:-1 tvg-id="tabii.spor" tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR",TABII SPOR 1
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=879139&extension=ts&play_token=yWPdgeW7z5
 #EXTINF:-1 tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR",TABII SPOR 2
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=879140&extension=ts&play_token=dWP8UReRDx
@@ -658,9 +658,9 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=879142&exte
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=879143&extension=ts&play_token=yyY2TJjrQ2
 #EXTINF:-1 tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR",TABII SPOR 6
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=879144&extension=ts&play_token=wumuCDaShy
-#EXTINF:-1 tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR",TABİİ SPOR
+#EXTINF:-1 tvg-id="tabi spor" tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" group-title="⚽  TABii SPOR",TABİİ SPOR
 https://kl9mr2vxw7nq5py1sh4tj3gb6.medya.trt.com.tr/master_1080p.m3u8
-#EXTINF:-1 tvg-id="TabiiSpor1" tvg-name="Tabii Spor 1" tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="⚽  TABii SPOR",Tabii Spor 1
+#EXTINF:-1 tvg-id="Tabii Spor 1" tvg-name="Tabii Spor 1" tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="⚽  TABii SPOR",Tabii Spor 1
 https://pz4qt7nw1mr9sh2vl5xk8jg3y.medya.trt.com.tr/master_1080p.m3u8
 #EXTINF:-1 tvg-id="TabiiSpor2" tvg-name="Tabii Spor 2" tvg-logo="https://i.imgur.com/ygoD3OK.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="⚽  TABii SPOR",Tabii Spor 2
 https://mr8bv4kl1nq7sh9tw2xp5zj6g.medya.trt.com.tr/master_1080p.m3u8
@@ -2599,14 +2599,14 @@ https://ha.vixolity.com/vs/tt0253970/
 https://ha.vixolity.com/vs/tt0253966/
 #EXTINF:0 type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BZmZlZDEzZmItMThkYS00NTZiLTgzODEtNDI0NjVhNDIxZmUxXkEyXkFqcGc@._V1.jpg" group-title="🎬  FİLİM KEMAL SUNAL",Yedi Bela Hüsnü(1983)--Kemal Sunal-Oya Aydogan-Sevket Altug
 https://ha.vixolity.com/vs/tt0253963/
-#EXTINF:-1 tvg-id="aksaray on sesi" tvg-name="Aksaray'ın Sesi 95.1" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 AKSARAY NIN SESİ
+#EXTINF:-1 tvg-id="aksaray nın sesi 95.1" tvg-name="Aksaray'ın Sesi 95.1" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 AKSARAY NIN SESİ
 https://iptv-radyo.fly.dev/cam1/playlist.m3u8
 #EXTINF:-1 tvg-id="99.5" tvg-name="Aksaray FM 99.5" tvg-logo="https://i.imgur.com/CDWMgrt.jpeg" group-title="📻 RADYO 🎵 MÜZIK" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",📻AKSARAY FM
 #EXTVLCOPT:http-referrer=https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg
 https://iptv-radyo.fly.dev/cam3/playlist.m3u8
-#EXTINF:-1 tvg-id="radyo 68" tvg-name="Aksaray Radyo 68 101.2" tvg-logo="https://i.imgur.com/YUqfyHI.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 RADYO 68
+#EXTINF:-1 tvg-id="Aksaray radyo 68" tvg-name="Aksaray Radyo 68" tvg-logo="https://i.imgur.com/YUqfyHI.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 RADYO 68
 https://iptv-radyo.fly.dev/cam4/playlist.m3u8
-#EXTINF:-1 tvg-id="mavi radyo" tvg-name="Aksaray MAVİ Radyo 98.0" tvg-logo="https://i.imgur.com/smlZGsD.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 MAVİ RADYO
+#EXTINF:-1 tvg-id="Aksaray mavi radyo" tvg-name="Aksaray MAVİ Radyo 98.0" tvg-logo="https://i.imgur.com/smlZGsD.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 MAVİ RADYO
 https://iptv-radyo.fly.dev/cam2/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.radyomavi.net/logo.png" group-title="📻 RADYO 🎵 MÜZIK",İ 📻 MAVİ RADYO (copy)
 https://iptv-radyo.fly.dev/cam5/playlist.m3u8
