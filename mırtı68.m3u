@@ -284,7 +284,7 @@ https://stream.ftv.az/live/ftv.m3u8
 https://tv.cemtv.net:19360/cemtv/cemtv.m3u8
 #EXTINF:-1 tvg-id="ekin TV" tvg-logo="https://raw.githubusercontent.com/46tv/mix/main/logo/EKINTV.png" group-title="🏘️ YEREL",EKIN TV
 https://ekintv.net/hls/ekintv.m3u8
-#EXTINF:-1 tvg-id="tv 5" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlLdiyVJoIQcyFA62jEobuUu0-peApqGnedt0NsxYV3g&s=10" group-title="🏘️ YEREL",TV5
+#EXTINF:-1 tvg-id="tv.5" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlLdiyVJoIQcyFA62jEobuUu0-peApqGnedt0NsxYV3g&s=10" group-title="🏘️ YEREL",TV5
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=210462&extension=ts&play_token=KSZIvDyc2v
 #EXTINF:-1 tvg-name="trtspor.tr" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da860" group-title="🏟️ SPOR",TRT SPOR
 https://tv-trtspor1.medya.trt.com.tr/master.m3u8
@@ -2599,53 +2599,49 @@ https://ha.vixolity.com/vs/tt0253970/
 https://ha.vixolity.com/vs/tt0253966/
 #EXTINF:0 type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BZmZlZDEzZmItMThkYS00NTZiLTgzODEtNDI0NjVhNDIxZmUxXkEyXkFqcGc@._V1.jpg" group-title="🎬  FİLİM KEMAL SUNAL",Yedi Bela Hüsnü(1983)--Kemal Sunal-Oya Aydogan-Sevket Altug
 https://ha.vixolity.com/vs/tt0253963/
-#EXTINF:-1 tvg-id="95.1" tvg-name="Aksaray'ın Sesi 95.1" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 AKSARAY NIN SESİ
+#EXTINF:-1 tvg-id="aksaray on sesi" tvg-name="Aksaray'ın Sesi 95.1" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 AKSARAY NIN SESİ
 https://iptv-radyo.fly.dev/cam1/playlist.m3u8
 #EXTINF:-1 tvg-id="99.5" tvg-name="Aksaray FM 99.5" tvg-logo="https://i.imgur.com/CDWMgrt.jpeg" group-title="📻 RADYO 🎵 MÜZIK" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",📻AKSARAY FM
 #EXTVLCOPT:http-referrer=https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg
 https://iptv-radyo.fly.dev/cam3/playlist.m3u8
-#EXTINF:-1 tvg-id="101.2" tvg-name="Aksaray Radyo 68 101.2" tvg-logo="https://i.imgur.com/YUqfyHI.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 RADYO 68
+#EXTINF:-1 tvg-id="radyo 68" tvg-name="Aksaray Radyo 68 101.2" tvg-logo="https://i.imgur.com/YUqfyHI.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 RADYO 68
 https://iptv-radyo.fly.dev/cam4/playlist.m3u8
-#EXTINF:-1 tvg-id="98.0" tvg-name="Aksaray MAVİ Radyo 98.0" tvg-logo="https://i.imgur.com/smlZGsD.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 MAVİ RADYO
+#EXTINF:-1 tvg-id="mavi radyo" tvg-name="Aksaray MAVİ Radyo 98.0" tvg-logo="https://i.imgur.com/smlZGsD.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 MAVİ RADYO
 https://iptv-radyo.fly.dev/cam2/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.radyomavi.net/logo.png" group-title="📻 RADYO 🎵 MÜZIK",İ 📻 MAVİ RADYO (copy)
 https://iptv-radyo.fly.dev/cam5/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",TÜRKÜLERLE TÜRKİYE
+#EXTINF:-1 tvg-id="türkülerle Türkiye" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",TÜRKÜLERLE TÜRKİYE
 https://moondigitaledge.radyotvonline.net/turkulerleturkiye/playlist.m3u8
-#EXTINF:-1 tvg-id="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0tDfKnpFxXjVuDeYpXB9TYkrzHg69fdsBn2gv4y4m9w&s=10" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO TÜRKÜ
+#EXTINF:-1 tvg-id="radyo türkü" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO TÜRKÜ
 https://yayin.turkhosted.com/4591/stream
-#EXTINF:-1 tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",TRT TÜRKÜ
+#EXTINF:-1 tvg-id="TRT türkü" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",TRT TÜRKÜ
 https://rd-trtturku.medya.trt.com.tr/master_128.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 TÜRKÜ
+#EXTINF:-1 tvg-id="radyo 7 türkü" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 TÜRKÜ
 https://moondigitaledge2.radyotvonline.net/radyo7turku/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 MUHTEŞEM 4
+#EXTINF:-1 tvg-id="radyo 7 muhteşem 4" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 MUHTEŞEM 4
 https://moondigitaledge2.radyotvonline.net/radyo7muhtesem4lu/playlist.m3u8
-#EXTINF:-1 tvg-id="radyo7" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true" http-referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png" referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png",RADYO 7 NOSTALJİ
+#EXTINF:-1 tvg-id="radyo 7 nostalji" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true" http-referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png" referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png",RADYO 7 NOSTALJİ
 #EXTVLCOPT:http-referrer=https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png
 https://moondigitaledge2.radyotvonline.net/radyo7nostalji/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO ANKARA
+#EXTINF:-1 tvg-id="radyo 7 Ankara" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO ANKARA
 https://moondigitaledge2.radyotvonline.net/radyo7ankara/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7
+#EXTINF:-1 tvg-id="radyo 7" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7
 https://moondigitaledge.radyotvonline.net/radyo7/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO ARABESK
+#EXTINF:-1 tvg-id="radyo 7 arabesk" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 ARABESK
 https://moondigitaledge2.radyotvonline.net/radyo7arabesk/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7J3YniUe1vnpLjG5OXJIRmOw8TcWcW3l3T8VdTbvS5A&s=10" group-title="📻 RADYO 🎵 MÜZIK",KRAL POP TV
-http://dygvideo.dygdigital.com/live/hls/kralpop
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7J3YniUe1vnpLjG5OXJIRmOw8TcWcW3l3T8VdTbvS5A&s=10" group-title="📻 RADYO 🎵 MÜZIK",KRAL POP
+#EXTINF:-1 tvg-id="kral pop" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7J3YniUe1vnpLjG5OXJIRmOw8TcWcW3l3T8VdTbvS5A&s=10" group-title="📻 RADYO 🎵 MÜZIK",KRAL POP
 http://dygvideo.dygdigital.com/live/hls/kralpop
 #EXTINF:-1 tvg-id="ext" tvg-name="TRTmüzik" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/turkey/trt-muzik-tr.png" group-title="📻 RADYO 🎵 MÜZIK",TRT MÜZİK
 https://tv-trtmuzik.medya.trt.com.tr/master.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7J3YniUe1vnpLjG5OXJIRmOw8TcWcW3l3T8VdTbvS5A&s=10" group-title="📻 RADYO 🎵 MÜZIK",KRAL POP
-http://dygvideo.dygdigital.com/live/hls/kralpop
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRuebCxf0mDeFlnjtzyCf36kRTd89pmfTJr1DSeojmuw&s=10" group-title="📻 RADYO 🎵 MÜZIK",DREAM TURK
+#EXTINF:-1 tvg-id="dream türk" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRuebCxf0mDeFlnjtzyCf36kRTd89pmfTJr1DSeojmuw&s=10" group-title="📻 RADYO 🎵 MÜZIK",DREAM TURK
 https://live.duhnet.tv/S2/HLS_LIVE/dreamturknp/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://cdn.powergroup.com.tr/image/500x500/powerapp/channels/v3/logo_2559.png?v=4" group-title="📻 RADYO 🎵 MÜZIK",POWER LOVE
+#EXTINF:-1 tvg-id="power love" tvg-logo="https://cdn.powergroup.com.tr/image/500x500/powerapp/channels/v3/logo_2559.png?v=4" group-title="📻 RADYO 🎵 MÜZIK",POWER LOVE
 https://listen.powerapp.com.tr/plove/love.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRhjldOsOpz_NetFU92DpvbiB1iqt7vjsmR9jwxKTcqw&s=10" group-title="📻 RADYO 🎵 MÜZIK",POWER TURK SLOW
+#EXTINF:-1 tvg-id="power türk slow" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRhjldOsOpz_NetFU92DpvbiB1iqt7vjsmR9jwxKTcqw&s=10" group-title="📻 RADYO 🎵 MÜZIK",POWER TURK SLOW
 https://listen.powerapp.com.tr/pturkslow/slow.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIMBTjtI_PnPkSYuJB2Q-ZOu8c_atrSvvcTmqPzPiySQ&s=10" group-title="📻 RADYO 🎵 MÜZIK",POWER TV AKUSTiK
+#EXTINF:-1 tvg-id="power TV akustik" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIMBTjtI_PnPkSYuJB2Q-ZOu8c_atrSvvcTmqPzPiySQ&s=10" group-title="📻 RADYO 🎵 MÜZIK",POWER TV AKUSTiK
 https://listen.powerapp.com.tr/pturkakustik/akustik.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtcyihZBLVwDigUAj85r76yDlEIRtnAFMi3F71EosjLA&s=10" group-title="📻 RADYO 🎵 MÜZIK",POWER DANCE
+#EXTINF:-1 tvg-id="power dance" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtcyihZBLVwDigUAj85r76yDlEIRtnAFMi3F71EosjLA&s=10" group-title="📻 RADYO 🎵 MÜZIK",POWER DANCE
 https://listen.powerapp.com.tr/dance/dance.smil/playlist.m3u8
 #EXTINF:-1 tvg-name="Ankara Pavyon Dans" tvg-logo="http://gono.plusmain01.com:80/images/YWhIZ6zHrDukArAO5wAvgGN0KE_xy7Z818odrIZCW0On9S3FrmdKraoBRregVZSwub3rm5gRpanZEHbN1yiefjPMhdzx-GmCGy1K23MKxKnFmkhvt3egs00uwIY-WO9N.jpeg" group-title="📻 RADYO 🎵 MÜZIK",ANKARA
 http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/446283.ts
