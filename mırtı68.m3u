@@ -324,7 +324,7 @@ https://trn03.tulix.tv/gt-beinsportshaber/index.m3u8?token=ae8ebfde63142e4716ab7
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/65
 #EXTINF:-1 tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🖥 WEB beIN SPORTS",beIN SPORTS 1 Mırtıspor
 https://mirti-spor-2026.fly.dev/cam0/index.m3u8
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 1Mahsun
+#EXTINF:-1 tvg-name="bein sports.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 1Mahsun
 #EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamlivebs1.m3u8
 #EXTINF:-1 tvg-id="selcukbeinsports1" tvg-name="beinsports" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" tvg-country="TR" group-title="🖥 WEB beIN SPORTS" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",beIN SPORTS 1 Selçuk
@@ -2599,14 +2599,14 @@ https://ha.vixolity.com/vs/tt0253970/
 https://ha.vixolity.com/vs/tt0253966/
 #EXTINF:0 type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BZmZlZDEzZmItMThkYS00NTZiLTgzODEtNDI0NjVhNDIxZmUxXkEyXkFqcGc@._V1.jpg" group-title="🎬  FİLİM KEMAL SUNAL",Yedi Bela Hüsnü(1983)--Kemal Sunal-Oya Aydogan-Sevket Altug
 https://ha.vixolity.com/vs/tt0253963/
-#EXTINF:-1 tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 AKSARAY NIN SESİ
+#EXTINF:-1 tvg-name="Aksaray'ın Sesi 95.1 BİZ VARSAK YETER" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 AKSARAY NIN SESİ
 https://iptv-radyo.fly.dev/cam1/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/CDWMgrt.jpeg" group-title="📻 RADYO 🎵 MÜZIK" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",📻AKSARAY FM
+#EXTINF:-1 tvg-name="Aksaray FM 99.5" tvg-logo="https://i.imgur.com/CDWMgrt.jpeg" group-title="📻 RADYO 🎵 MÜZIK" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",📻AKSARAY FM
 #EXTVLCOPT:http-referrer=https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg
 https://iptv-radyo.fly.dev/cam3/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/YUqfyHI.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 RADYO 68
+#EXTINF:-1 tvg-name="Aksaray Radyo 68 101.2" tvg-logo="https://i.imgur.com/YUqfyHI.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 RADYO 68
 https://iptv-radyo.fly.dev/cam4/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/smlZGsD.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 MAVİ RADYO
+#EXTINF:-1 tvg-name="Aksaray MAVİ Radyo 98.0" tvg-logo="https://i.imgur.com/smlZGsD.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 MAVİ RADYO
 https://iptv-radyo.fly.dev/cam2/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.radyomavi.net/logo.png" group-title="📻 RADYO 🎵 MÜZIK",İ 📻 MAVİ RADYO (copy)
 https://iptv-radyo.fly.dev/cam5/playlist.m3u8
