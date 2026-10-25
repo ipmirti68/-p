@@ -9,7 +9,7 @@ https://tv-trt1.medya.trt.com.tr/master.m3u8
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
 #EXTINF:-1 tvg-name="show tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="📺 ULUSAL.",SHOW
 https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558
-#EXTINF:-1 tvg-id="kanal d.tr" tvg-name="KANAL D" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/d%20(1).png" group-title="📺 ULUSAL." http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.kanald.com.tr/" referrer="https://www.kanald.com.tr/",KANAL D
+#EXTINF:-1 tvg-id="kanal d HD.tr" tvg-name="KANAL D" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/d%20(1).png" group-title="📺 ULUSAL." http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.kanald.com.tr/" referrer="https://www.kanald.com.tr/",KANAL D
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36"
 #EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
 https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=8u4lgnw1j88m&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
