@@ -2,7 +2,7 @@
 #EXTM3U x-tvg-url="https://raw.githubusercontent.com/serhatyilmaz55/epg/main/tr.xml"
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
-#PLAYLIST:mirti68
+#PLAYLIST:mırtı68
 #EXTINF:-1 tvg-id="TRT 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL.",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-name="atv.tr" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da844" group-title="📺 ULUSAL.",ATV
@@ -710,16 +710,16 @@ https://andro.evrenesoglu141.click/checklist/androstreamlivess2.m3u8
 https://ronaldo.magnitude.workers.dev/?url=https://ladyboy.ardatvgs.cfd//s-sport/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-name="SSport 2" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT",S Sport 2 Mırtıspor
 https://ronaldo.magnitude.workers.dev/?url=https://ladyboy.ardatvgs.cfd//s-sport2/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="selcuktivibuspor1" tvg-name="tivibu.spor.1" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" tvg-country="TR" group-title="⚽  TiViBU SPOR" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",Tivibu Spor 1-SS
+#EXTINF:-1 tvg-id="TİVİBU.spor.1" tvg-name="tivibu.spor.1" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" tvg-country="TR" group-title="⚽  TiViBU SPOR" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",Tivibu Spor 1-SS
 #EXTVLCOPT:http-referrer=https://www.selcuksportshd1900.xyz/
 https://dga1op10s1u3leo.33a6243d11525c.click/live/selcuktivibuspor1/playlist.m3u8
-#EXTINF:-1 tvg-id="selcuktivibuspor2" tvg-name="tivibu.spor.2" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" tvg-country="TR" group-title="⚽  TiViBU SPOR" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",Tivibu Spor 2-SS
+#EXTINF:-1 tvg-id="Tivibu.spor.2" tvg-name="tivibu.spor.2" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" tvg-country="TR" group-title="⚽  TiViBU SPOR" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",Tivibu Spor 2-SS
 #EXTVLCOPT:http-referrer=https://www.selcuksportshd1900.xyz/
 https://dga1op10s1u3leo.33a6243d11525c.click/live/selcuktivibuspor2/playlist.m3u8
-#EXTINF:-1 tvg-id="selcuktivibuspor3" tvg-name="tivibu.spor.3" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" tvg-country="TR" group-title="⚽  TiViBU SPOR" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",Tivibu Spor 3-SS
+#EXTINF:-1 tvg-id="Tivibu.spor.3" tvg-name="tivibu.spor.3" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" tvg-country="TR" group-title="⚽  TiViBU SPOR" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",Tivibu Spor 3-SS
 #EXTVLCOPT:http-referrer=https://www.selcuksportshd1900.xyz/
 https://dga1op10s1u3leo.33a6243d11525c.click/live/selcuktivibuspor3/playlist.m3u8
-#EXTINF:-1 tvg-id="selcuktivibuspor4" tvg-name="tivibu.spor.4" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" tvg-country="TR" group-title="⚽  TiViBU SPOR" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",Tivibu Spor 4-SS
+#EXTINF:-1 tvg-id="Tivibu.spor.4" tvg-name="tivibu.spor.4" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" tvg-country="TR" group-title="⚽  TiViBU SPOR" http-referrer="https://www.selcuksportshd1900.xyz/" referrer="https://www.selcuksportshd1900.xyz/",Tivibu Spor 4-SS
 #EXTVLCOPT:http-referrer=https://www.selcuksportshd1900.xyz/
 https://dga1op10s1u3leo.33a6243d11525c.click/live/selcuktivibuspor4/playlist.m3u8
 #EXTINF:-1 tvg-id="Tivibu.spor.1" tvg-name="Tivibu.spor.1" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR" http-referrer="https://selcuksportshd1903.xyz" referrer="https://selcuksportshd1903.xyz",Tivibu Spor 1
