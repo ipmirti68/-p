@@ -2,40 +2,46 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mırtı Selçuk v106 - Kesin Açan</title>
+<title>Mırtı v107 Bypass</title>
 <style>
 body{margin:0;background:#000;color:#fff;font-family:system-ui}
-#top{display:flex;gap:5px;padding:8px;background:#0f1a33;overflow:auto}
-button{background:#d4b78f;color:#000;border:none;padding:10px 12px;border-radius:8px;font-weight:900;white-space:nowrap;font-size:12px}
+#top{display:flex;gap:5px;padding:8px;background:#0f1a33;flex-wrap:wrap}
+button{background:#d4b78f;color:#000;border:none;padding:10px 12px;border-radius:8px;font-weight:900;font-size:12px}
 button.active{background:#fff}
-input{flex:1;min-width:180px;background:#070b14;border:1px solid #2a3d6b;color:#fff;padding:10px;border-radius:8px;font-size:12px}
-#frameWrap{position:relative;width:100%;height: calc(100vh - 60px);background:#000}
+#frameWrap{width:100%;height:calc(100vh - 90px);background:#000;position:relative}
 iframe{width:100%;height:100%;border:none;background:#000}
-#note{padding:8px;font-size:11px;color:#8fb0ff;background:#070b14}
+#log{padding:8px;font-size:11px;color:#8fb0ff;background:#070b14;min-height:30px}
 </style>
 </head>
 <body>
 <div id="top">
-<button onclick="load('https://www.selcuksportshd14e17ba2ad.xyz/')">ANA SAYFA</button>
-<button onclick="load('https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports1')" class="active">BEIN 1</button>
-<button onclick="load('https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports2')">BEIN 2</button>
-<button onclick="load('https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport')">S SPORT</button>
-<input id="custom" placeholder="kendi linkini yapıştır ve ENTER"><button onclick="load(document.getElementById('custom').value)">GİT</button>
+<button onclick="go('selcukbeinsports1')" class="active">BEIN 1</button>
+<button onclick="go('selcukbeinsports2')">BEIN 2</button>
+<button onclick="go('selcukbeinsports3')">BEIN 3</button>
+<button onclick="go('selcukssport')">S SPORT</button>
+<button onclick="go('selcukssport2')">S SPORT 2</button>
 </div>
-<div id="frameWrap">
-<iframe id="player" src="https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports1" allowfullscreen allow="autoplay; fullscreen"></iframe>
-</div>
-<div id="note">✅ v106 - Bu iframe modudur, Cloudflare engellemez. Siyah ekran olmaz. Açmıyorsa üstte BEIN 1 / BEIN 2 / S SPORT butonlarına bas. Tam ekran için player içindeki fullscreen ikonuna bas. Bu linkler VLC'de ASLA açmaz, sadece burada açar.</div>
+<div id="frameWrap"><iframe id="f" allowfullscreen allow="autoplay; fullscreen; encrypted-media"></iframe></div>
+<div id="log">v107 yükleniyor...</div>
 <script>
-function load(url){
- if(!url) return;
- document.getElementById('player').src=url;
- document.querySelectorAll('#top button').forEach(b=>b.classList.remove('active'));
- event.target.classList.add('active');
-}
-document.getElementById('custom').addEventListener('keydown',e=>{
- if(e.key==='Enter') load(e.target.value);
-});
-</script>
-</body>
-</html>
+const log = m => document.getElementById('log').textContent = m;
+const frame = document.getElementById('f');
+
+async function go(id){
+  log(`⏳ ${id} çekiliyor... proxy ile X-Frame yasağı kaldırılıyor...`);
+  let target = `https://main.uxsyplayer6859599e6c.click/index.php?id=${id}`;
+  // 3 proxy dene
+  let proxies = [
+    `https://corsproxy.io/?${encodeURIComponent(target)}`,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
+    `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(target)}`
+  ];
+  for(let i=0;i<proxies.length;i++){
+    try{
+      log(`🔄 Proxy ${i+1} deneniyor...`);
+      let r = await fetch(proxies[i]);
+      if(!r.ok) throw new Error(r.status);
+      let html = await r.text();
+      // HTML'i srcdoc olarak bas - X-Frame bypass
+      frame.srcdoc = html;
+      log(`✅ ${id} yüklendi - Proxy ${i+1} ile açtı. Oynat but
