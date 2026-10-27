@@ -1,51 +1,60 @@
 <!DOCTYPE html>
-<html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Selcuk BeIN 1 - Mırtı v104</title>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<style>body{margin:0;background:#000;color:#fff;font-family:Arial}video{width:100%;height:100vh;background:#000}#bar{position:fixed;top:0;left:0;right:0;background:#0a1222;padding:8px;font-size:11px;display:flex;gap:6px}input{flex:1;background:#070b14;border:1px solid #33486f;color:#fff;padding:6px;border-radius:6px}button{background:#d4b78f;border:none;padding:6px 10px;border-radius:6px;font-weight:800}</style>
-</head><body>
-<div id="bar">
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mırtı Selçuk v105 FIX</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.7/dist/hls.min.js"></script>
+<style>
+body{margin:0;background:#0a0f1e;color:#fff;font-family:system-ui}
+#top{display:flex;gap:6px;padding:8px;background:#111a33;position:sticky;top:0;z-index:10}
+input{flex:1;background:#070b14;border:1px solid #2a3d6b;color:#fff;padding:10px;border-radius:8px;font-size:12px}
+button{background:#d4b78f;color:#000;border:none;padding:10px 14px;border-radius:8px;font-weight:900;font-size:12px}
+#videoWrap{position:relative;background:#000}
+video{width:100%;height:62vh;background:#000}
+#log{background:#070b14;padding:8px;font-size:11px;color:#8fb0ff;border-top:1px solid #1a2a50;white-space:pre-wrap;min-height:60px}
+#channels{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px}
+.ch{background:#162040;border:1px solid #253a6d;padding:10px;border-radius:8px;font-size:12px}
+</style>
+</head>
+<body>
+<div id="top">
 <input id="url" value="https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports1/playlist.m3u8">
-<button id="play">OYNAT</button>
-<button id="copy">M3U KOPYALA</button>
+<button id="btnPlay">OYNAT</button>
+<button id="btnM3U">M3U KOPYALA</button>
 </div>
-<video id="video" controls autoplay style="margin-top:40px"></video>
-<div id="log" style="font-size:10px;padding:6px;color:#8fb0ff">Hazır - OYNAT'a bas</div>
+<div id="videoWrap"><video id="video" controls autoplay playsinline></video></div>
+<div id="log">v105 FIX hazır... OYNAT'a bas. Eğer token ölmüşse alttan taze domaini çekeceğim.</div>
+<div id="channels"></div>
+
 <script>
-let video=document.getElementById("video");
-let log=(m)=>document.getElementById("log").textContent=m;
+const video=document.getElementById('video');
+const logEl=document.getElementById('log');
+const log=(m)=>{logEl.textContent=m; console.log(m);};
 
-function playM3U8(src){
-  log("Yükleniyor: "+src.slice(0,80));
-  if(Hls.isSupported()){
-    let hls=new Hls({
-      xhrSetup:(xhr,url)=>{
-        // Referer ekle - Cloudflare bypass için
-        xhr.setRequestHeader('Referer','https://main.uxsyplayer6859599e6c.click/');
-        xhr.setRequestHeader('Origin','https://main.uxsyplayer6859599e6c.click');
-      }
-    });
-    hls.loadSource(src);
-    hls.attachToMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED,()=>{ video.play(); log("Oynatılıyor - Mırtı v104"); });
-    hls.on(Hls.Events.ERROR,(e,d)=>{ log("Hata: "+d.type+" - "+d.details+" - Token ölmüş olabilir, sayfayı yenile"); });
-  }else if(video.canPlayType('application/vnd.apple.mpegurl')){
-    video.src=src; video.play();
-  }
-}
+// Proxy listesi - biri mutlaka çalışır
+const proxies=[
+  url=>`https://corsproxy.io/?${encodeURIComponent(url)}`,
+  url=>`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+  url=>`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
+];
 
-document.getElementById("play").onclick=()=>playM3U8(document.getElementById("url").value.trim());
-document.getElementById("copy").onclick=()=>{
-  let m3u=`#EXTM3U\n#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/BeIN_Sports_logo.svg/500px-BeIN_Sports_logo.svg.png" group-title="Spor",BeIN Sports 1 Selçuk\n${document.getElementById("url").value.trim()}`;
-  navigator.clipboard.writeText(m3u);
-  log("M3U kopyalandı - Mırtı TV > AYAR > M3U içeriğini yapıştır");
-};
-
-// Otomatik oynat
-playM3U8(document.getElementById("url").value);
-
-setTimeout(()=>{
-  if(video.paused) log("VLC'de açmama sebebi: Cloudflare koruması - Mırtı player'da Referer ile denedim, olmazsa linkin domaini değişmiş. Ana sayfa https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports1 'den taze m3u8 bul");
-},3000);
-</script>
-</body></html>
+function playWithProxy(originalUrl){
+  let tried=0;
+  function tryNext(){
+    if(tried>=proxies.length){
+      log("❌ Tüm proxyler engellendi. Sebep: Token ölmüş.\nÇözüm: https://www.selcuksportshd14e17ba2ad.xyz/ sitesine git, BeIN 1'e tıkla, F12 > Network > m3u8 bul > yeni playlist.m3u8'i buraya yapıştır.");
+      return;
+    }
+    let proxied=proxies[tried](originalUrl);
+    tried++;
+    log(`🔄 Proxy ${tried} deneniyor...\n${proxied.slice(0,90)}...`);
+    
+    if(Hls.isSupported()){
+      if(window.hls){window.hls.destroy();}
+      window.hls=new Hls({xhrSetup:(xhr,url)=>{
+        // Referer ekle
+        try{xhr.setRequestHeader('Referer','https://main.uxsyplayer6859599e6c.click/');}catch(e){}
+      }});
+      window.hls.loadSource(tried===1?originalUrl:proxied); // ilk deneme direk, sonrası proxy
+      window.hls.attachToMedia(video);
+      window.hls.on(Hls.Events.MANIFEST_PARSED
