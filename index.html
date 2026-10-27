@@ -2,59 +2,40 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mırtı Selçuk v105 FIX</title>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.7/dist/hls.min.js"></script>
+<title>Mırtı Selçuk v106 - Kesin Açan</title>
 <style>
-body{margin:0;background:#0a0f1e;color:#fff;font-family:system-ui}
-#top{display:flex;gap:6px;padding:8px;background:#111a33;position:sticky;top:0;z-index:10}
-input{flex:1;background:#070b14;border:1px solid #2a3d6b;color:#fff;padding:10px;border-radius:8px;font-size:12px}
-button{background:#d4b78f;color:#000;border:none;padding:10px 14px;border-radius:8px;font-weight:900;font-size:12px}
-#videoWrap{position:relative;background:#000}
-video{width:100%;height:62vh;background:#000}
-#log{background:#070b14;padding:8px;font-size:11px;color:#8fb0ff;border-top:1px solid #1a2a50;white-space:pre-wrap;min-height:60px}
-#channels{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px}
-.ch{background:#162040;border:1px solid #253a6d;padding:10px;border-radius:8px;font-size:12px}
+body{margin:0;background:#000;color:#fff;font-family:system-ui}
+#top{display:flex;gap:5px;padding:8px;background:#0f1a33;overflow:auto}
+button{background:#d4b78f;color:#000;border:none;padding:10px 12px;border-radius:8px;font-weight:900;white-space:nowrap;font-size:12px}
+button.active{background:#fff}
+input{flex:1;min-width:180px;background:#070b14;border:1px solid #2a3d6b;color:#fff;padding:10px;border-radius:8px;font-size:12px}
+#frameWrap{position:relative;width:100%;height: calc(100vh - 60px);background:#000}
+iframe{width:100%;height:100%;border:none;background:#000}
+#note{padding:8px;font-size:11px;color:#8fb0ff;background:#070b14}
 </style>
 </head>
 <body>
 <div id="top">
-<input id="url" value="https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports1/playlist.m3u8">
-<button id="btnPlay">OYNAT</button>
-<button id="btnM3U">M3U KOPYALA</button>
+<button onclick="load('https://www.selcuksportshd14e17ba2ad.xyz/')">ANA SAYFA</button>
+<button onclick="load('https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports1')" class="active">BEIN 1</button>
+<button onclick="load('https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports2')">BEIN 2</button>
+<button onclick="load('https://main.uxsyplayer6859599e6c.click/index.php?id=selcukssport')">S SPORT</button>
+<input id="custom" placeholder="kendi linkini yapıştır ve ENTER"><button onclick="load(document.getElementById('custom').value)">GİT</button>
 </div>
-<div id="videoWrap"><video id="video" controls autoplay playsinline></video></div>
-<div id="log">v105 FIX hazır... OYNAT'a bas. Eğer token ölmüşse alttan taze domaini çekeceğim.</div>
-<div id="channels"></div>
-
+<div id="frameWrap">
+<iframe id="player" src="https://main.uxsyplayer6859599e6c.click/index.php?id=selcukbeinsports1" allowfullscreen allow="autoplay; fullscreen"></iframe>
+</div>
+<div id="note">✅ v106 - Bu iframe modudur, Cloudflare engellemez. Siyah ekran olmaz. Açmıyorsa üstte BEIN 1 / BEIN 2 / S SPORT butonlarına bas. Tam ekran için player içindeki fullscreen ikonuna bas. Bu linkler VLC'de ASLA açmaz, sadece burada açar.</div>
 <script>
-const video=document.getElementById('video');
-const logEl=document.getElementById('log');
-const log=(m)=>{logEl.textContent=m; console.log(m);};
-
-// Proxy listesi - biri mutlaka çalışır
-const proxies=[
-  url=>`https://corsproxy.io/?${encodeURIComponent(url)}`,
-  url=>`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-  url=>`https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
-];
-
-function playWithProxy(originalUrl){
-  let tried=0;
-  function tryNext(){
-    if(tried>=proxies.length){
-      log("❌ Tüm proxyler engellendi. Sebep: Token ölmüş.\nÇözüm: https://www.selcuksportshd14e17ba2ad.xyz/ sitesine git, BeIN 1'e tıkla, F12 > Network > m3u8 bul > yeni playlist.m3u8'i buraya yapıştır.");
-      return;
-    }
-    let proxied=proxies[tried](originalUrl);
-    tried++;
-    log(`🔄 Proxy ${tried} deneniyor...\n${proxied.slice(0,90)}...`);
-    
-    if(Hls.isSupported()){
-      if(window.hls){window.hls.destroy();}
-      window.hls=new Hls({xhrSetup:(xhr,url)=>{
-        // Referer ekle
-        try{xhr.setRequestHeader('Referer','https://main.uxsyplayer6859599e6c.click/');}catch(e){}
-      }});
-      window.hls.loadSource(tried===1?originalUrl:proxied); // ilk deneme direk, sonrası proxy
-      window.hls.attachToMedia(video);
-      window.hls.on(Hls.Events.MANIFEST_PARSED
+function load(url){
+ if(!url) return;
+ document.getElementById('player').src=url;
+ document.querySelectorAll('#top button').forEach(b=>b.classList.remove('active'));
+ event.target.classList.add('active');
+}
+document.getElementById('custom').addEventListener('keydown',e=>{
+ if(e.key==='Enter') load(e.target.value);
+});
+</script>
+</body>
+</html>
