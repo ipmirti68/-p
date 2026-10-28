@@ -3,27 +3,27 @@
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
 #PLAYLIST:mırtı68
-#EXTINF:-1 tvg-id="TRT1.tr" tvg-name="TR | TRT 1 4K" tvg-logo="https://pkchtv1.xyz/logo/Trt4k.png" group-title="📺 ULUSAL.",TR | TRT 1 4K
+#EXTINF:-1 tvg-id="TRT1.tr" tvg-name="TRT 1.tr" tvg-logo="https://pkchtv1.xyz/logo/Trt4k.png" group-title="📺 ULUSAL.",TRT 1 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315272
-#EXTINF:-1 tvg-id="ATV.tr" tvg-name="atv hd.tr" tvg-logo="https://pkchtv1.xyz/logo/Atv.png" group-title="📺 ULUSAL.",TR | ATV 4K
+#EXTINF:-1 tvg-id="ATV.tr" tvg-name="atv hd.tr" tvg-logo="https://pkchtv1.xyz/logo/Atv.png" group-title="📺 ULUSAL.",ATV 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315274
-#EXTINF:-1 tvg-id="ShowTV.tr" tvg-name="show TV.tr" tvg-logo="http://pkchtv1.xyz/logo/Showtv.png" group-title="📺 ULUSAL.",TR | SHOW TV 4K
+#EXTINF:-1 tvg-id="ShowTV.tr" tvg-name="show TV" tvg-logo="http://pkchtv1.xyz/logo/Showtv.png" group-title="📺 ULUSAL.",SHOW TV 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315276
-#EXTINF:-1 tvg-id="StarTV.tr" tvg-name="star TV.tr" tvg-logo="http://pkchtv1.xyz/logo/Startv.png" group-title="📺 ULUSAL.",TR | STAR TV 4K
+#EXTINF:-1 tvg-id="StarTV.tr" tvg-name="star TV.tr" tvg-logo="http://pkchtv1.xyz/logo/Startv.png" group-title="📺 ULUSAL.",STAR TV 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315278
-#EXTINF:-1 tvg-id="KanalD.tr" tvg-name="kanal d.tr" tvg-logo="http://pkchtv1.xyz/logo/Kanald.png" group-title="📺 ULUSAL.",TR | KANALD 4K
+#EXTINF:-1 tvg-id="KanalD.tr" tvg-name="kanal d.tr" tvg-logo="http://pkchtv1.xyz/logo/Kanald.png" group-title="📺 ULUSAL.",KANALD 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315280
-#EXTINF:-1 tvg-id="NOWTV.tr" tvg-name="fox" tvg-logo="http://pkchtv1.xyz/logo/nowtv.png" group-title="📺 ULUSAL.",TR | NOW 4K
+#EXTINF:-1 tvg-id="NOWTV.tr" tvg-name="fox" tvg-logo="http://pkchtv1.xyz/logo/nowtv.png" group-title="📺 ULUSAL.",NOW 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315282
-#EXTINF:-1 tvg-id="KANAL7.tr" tvg-name="kanal 7.tr" tvg-logo="https://pkchtv1.xyz/logo/Kanal7.png" group-title="📺 ULUSAL.",TR | KANAL 7 4K
+#EXTINF:-1 tvg-id="KANAL7.tr" tvg-name="kanal 7.tr" tvg-logo="https://pkchtv1.xyz/logo/Kanal7.png" group-title="📺 ULUSAL.",KANAL 7 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315294
-#EXTINF:-1 tvg-id="TV8.tr" tvg-name="tv 8.tr" tvg-logo="https://pkchtv1.xyz/logo/Tv8.png" group-title="📺 ULUSAL.",TR | TV8 4K
+#EXTINF:-1 tvg-id="TV8.tr" tvg-name="tv8" tvg-logo="https://pkchtv1.xyz/logo/Tv8.png" group-title="📺 ULUSAL.",TV8 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315284
-#EXTINF:-1 tvg-id="TV8,5.tr" tvg-name="TR | TV 8.5 4K" tvg-logo="http://pkchtv1.xyz/logo/Tv8.5.png" group-title="📺 ULUSAL.",TR | TV 8.5 4K
+#EXTINF:-1 tvg-id="TV8,5.tr" tvg-name="TR | TV 8.5 4K" tvg-logo="http://pkchtv1.xyz/logo/Tv8.5.png" group-title="📺 ULUSAL.",TV 8.5 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315286
-#EXTINF:-1 tvg-id="BEYAZTV.tr" tvg-name="TR | BEYAZ TV 4K" tvg-logo="https://pkchtv1.xyz/logo/Beyaztv.png" group-title="📺 ULUSAL.",TR | BEYAZ TV 4K
+#EXTINF:-1 tvg-id="BEYAZTV.tr" tvg-name="BEYAZ TV.tr" tvg-logo="https://pkchtv1.xyz/logo/Beyaztv.png" group-title="📺 ULUSAL.",BEYAZ TV 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315288
-#EXTINF:-1 tvg-id="360.tr" tvg-name="TR | 360 4K" tvg-logo="https://pkchtv1.xyz/logo/360.png" group-title="📺 ULUSAL.",TR | 360 4K
+#EXTINF:-1 tvg-id="360.tr" tvg-name="360.tr" tvg-logo="https://pkchtv1.xyz/logo/360.png" group-title="📺 ULUSAL.",360 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315307
 #EXTINF:-1 tvg-id="mc" tvg-name="mc" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVE1t5H4wnurwE8E_54RRJliaEmWuFVKn1vNKPiVFbwQ&s=10" group-title="📺 ULUSAL.",MC
 https://n2.burst.cdn.jetstre.am/session/450f4c594b612903b7d42d421fb93c21/sz/mceutv/wowza4/live/mc2/chunklist.m3u8
