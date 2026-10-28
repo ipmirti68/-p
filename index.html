@@ -1,103 +1,19 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MIRTI| Canlı Spor Merkezi</title>
-    <meta name="description" content="Canlı skorlar, günün maç programı ve yayın merkezi. Trendyol Süper Lig dâhil tüm maçları takip edin." />
-    <meta name="updated-at" content="2026-10-13 21:37" />
-    <meta name="fixbet-source" content="https://ipmirti68.github.io/-p" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <meta name="theme-color" content="#07111b" />
-    <script>
-        try {
-            const savedTheme = localStorage.getItem("macweb.theme");
-            if (savedTheme === "dark" || savedTheme === "light") {
-                document.documentElement.dataset.theme = savedTheme;
-                const themeColor = document.querySelector('meta[name="theme-color"]');
-                if (themeColor) themeColor.content = savedTheme === "dark" ? "#07111b" : "#eff4f1";
-            }
-        } catch (e) { /* tema tercihi okunamazsa koyu tema kullanılır */ }
-    </script>
-    <style>
-        /* =====================================================================
-           MACWEB SPORTS — koyu saha teması + aydınlık tema seçeneği.
-           Değişkenler sayesinde iki görünüm tüm bileşenlerde tutarlı kalır.
-           ===================================================================== */
-        :root {
-            color-scheme: dark;
-            --paper: #07111b;
-            --surface: #0e1a26;
-            --surface-2: #142433;
-            --surface-3: #1c3040;
-            --ink: #f4f8fb;
-            --ink-2: #c5d2dc;
-            --muted: #8da0ae;
-            --line: #213442;
-            --line-2: #385062;
-            --accent: #a8f06b;
-            --accent-hover: #8ed953;
-            --accent-contrast: #102016;
-            --accent-soft: rgba(168,240,107,0.13);
-            --live: #ff6471;
-            --live-soft: rgba(255,100,113,0.14);
-            --gold: #f3c969;
-            --gold-soft: rgba(243,201,105,0.14);
-            --blue: #73baff;
-            --blue-soft: rgba(115,186,255,0.14);
-            --ambient-glow: rgba(50,177,132,0.12);
-            --radius-lg: 20px;
-            --radius-md: 15px;
-            --radius-sm: 10px;
-            --shadow-sm: 0 8px 24px rgba(0,0,0,0.16);
-            --shadow-md: 0 16px 38px rgba(0,0,0,0.24);
-            --shadow-lg: 0 28px 80px rgba(0,0,0,0.42);
-        }
-        :root[data-theme="light"] {
-            color-scheme: light;
-            --paper: #eff4f1;
-            --surface: #ffffff;
-            --surface-2: #f5f8f6;
-            --surface-3: #e9efeb;
-            --ink: #12221b;
-            --ink-2: #40564b;
-            --muted: #718279;
-            --line: #dce6df;
-            --line-2: #c2d1c8;
-            --accent: #197c50;
-            --accent-hover: #126642;
-            --accent-contrast: #ffffff;
-            --accent-soft: #e4f4ea;
-            --live: #d83e4d;
-            --live-soft: #fff0f0;
-            --gold: #a77813;
-            --gold-soft: #fbf1d8;
-            --blue: #2368c8;
-            --blue-soft: #eaf2ff;
-            --ambient-glow: rgba(75,160,113,0.10);
-            --shadow-sm: 0 8px 24px rgba(27,58,42,0.06);
-            --shadow-md: 0 16px 38px rgba(27,58,42,0.10);
-            --shadow-lg: 0 28px 80px rgba(25,51,37,0.20);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        [hidden] { display: none !important; }
-
-        body {
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-            font-size: 14px;
-            line-height: 1.45;
-            color: var(--ink);
-            background: radial-gradient(ellipse at 82% 0%, var(--ambient-glow), transparent 40%), var(--paper);
-            min-height: 100vh;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-        button, input { font-family: inherit; }
-        a { color: inherit; }
-
-        .wrapper { width: min(1480px, calc(100% - 40px)); margin: 0 auto; padding: 18px 0 42px; position: relative; }
+<body>
+<div class="wrapper">
+<header class="site-header">
+  <div class="brand-area">
+    <div class="logo-main" style="gap:10px;">
+      <img src="https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/IMG-20261025-WA5328.jpg" 
+           alt="MIRTI TV Logo" 
+           style="height:36px; width:36px; object-fit:cover; border-radius:8px; border:1px solid var(--line);">
+      <span style="font-weight:800; letter-spacing:-0.02em;">MIRTI <span style="color:var(--accent);">TV</span></span>
+      <span class="live-badge"><span class="live-dot"></span> CANLI</span>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div class="clock-chip" id="clock">--:--</div>
+  </div>
+</header>
 
         /* ---------- Üst bar ---------- */
         .site-header {
