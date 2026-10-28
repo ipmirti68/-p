@@ -333,6 +333,9 @@ https://trn03.tulix.tv/gt-beinsportshaber/index.m3u8?token=ae8ebfde63142e4716ab7
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/65
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🖥 WEB beIN SPORTS",beIN SPORTS 1 Mırtıspor
 https://mirti-spor-2026.fly.dev/cam0/index.m3u8
+#EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://fixbettv84.com" referrer="https://fixbettv84.com",beIN SPORTS 1 Mırtıspor (copy)
+#EXTVLCOPT:http-referrer=https://fixbettv84.com
+f2q.zirvedesin247.cfd/zirve/mono.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 1Mahsun
 #EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamlivebs1.m3u8
@@ -2967,3 +2970,149 @@ http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/74
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/73
 #EXTINF:-1 tvg-id="Tivibu Spor 4" tvg-name="TIVIBUSPOR 4 HD" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR",TIVIBUSPOR 4 HD
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/96999
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/beinsports1.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",BEIN SPORTS 1
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
+#EXTINF:-1 http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patrontv60.cfd/", like Gecko) Chrome/154.0.0.0 Safari/537.36 OPR/138.0.0.0"https://patrontv60.cfd/" referrer="https://patrontv60.cfd/", like Gecko) Chrome/154.0.0.0 Safari/537.36 OPR/138.0.0.0",Patron TV (PC)
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 OPR/138.0.0.0"
+#EXTVLCOPT:http-referrer=https://patrontv60.cfd/
+https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
+#EXTINF:-1,Patron TV (Canlı)
+https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 OPR/138.0.0.0&Origin=https://patrontv60.cfd&Referer=https://patrontv60.cfd/
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/beinsports2.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",BEIN SPORTS 2
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/b2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/beinsports3.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",BEIN SPORTS 3
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/b3/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/beinsports4.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",BEIN SPORTS 4
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/b4/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/beinsports5.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",BEIN SPORTS 5
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/beinsportsmax1.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",BEIN SPORTS MAX 1
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/bm1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/beinsportsmax2.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",BEIN SPORTS MAX 2
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/bm2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/ssport1.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",S SPORT
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/ssport2.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",S SPORT 2
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ss2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/smartspor.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",SMART SPOR
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/smartspor2.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",SMART SPOR 2
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/smarts2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tivibu1.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TİVİBU SPOR 1
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/t1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tivibu2.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TİVİBU SPOR 2
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/t2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tivibu3.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TİVİBU SPOR 3
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/t3/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tivibu4.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TİVİBU SPOR 4
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/t4/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/trtspornew.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TRT SPOR
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/trtspor/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/trtspor2.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TRT SPOR YILDIZ
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/trtyildiz/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/trt1.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TRT 1
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/trt1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/aspornew.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",A SPOR
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/as/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/atv.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",ATV
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/atv/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tv8.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TV 8
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/tv8/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tv85.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TV 8,5
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/tv85/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/sifirtv.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",Sıfır Tv
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex6/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/skysportsf1.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",SKY SPORTS F1
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/skyf1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/eurosport1.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",EURO SPORT 1
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/eu1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/eurosport2.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",EURO SPORT 2
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/eu2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tabii.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TABİİ SPOR
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex7/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tabii (1).png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TABİİ SPOR 1
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tabii.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TABİİ SPOR 2
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tabii.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TABİİ SPOR 3
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex3/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tabii.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TABİİ SPOR 4
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex4/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tabii.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TABİİ SPOR 5
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex5/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/tabii.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",TABİİ SPOR 6
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex6/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/exxen.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",EXXEN
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://patronsports1.cfd/img/exxen.png" group-title="7/24 KANALLAR" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36"https://patronsports2.cfd/" referrer="https://patronsports2.cfd/", like Gecko) Chrome/122.0.0.0 Safari/537.36",EXXEN 1
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+#EXTVLCOPT:http-referrer=https://patronsports2.cfd/
+https://g1b.d72577a9dd0ec74.cfd/ex1/mono.m3u8
