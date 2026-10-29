@@ -16,17 +16,19 @@ jobs:
         with:
           python-version: '3.11'
       - name: Kutuphaneler
-        run: pip install requests tqdm beautifulsoup4
-      - name: 1 - ULUSAL TV
+        run: pip install requests tqdm beautifulsoup4 cloudscraper
+      - name: 1 - ULUSAL
         run: python iptv.py
-      - name: 2 - STAR Dizileri
+      - name: 2 - STAR
         run: python star.py
-      - name: 3 - SHOW Dizileri
+      - name: 3 - SHOW
         run: python show.py
+      - name: 4 - KANALD
+        run: python kanald.py
       - name: Commit
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
           git add mirti68.m3u
-          git commit -m "auto update ULUSAL + STAR + SHOW" || exit 0
+          git commit -m "auto update ULUSAL + STAR + SHOW + KANALD" || exit 0
           git push
