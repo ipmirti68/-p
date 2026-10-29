@@ -26,17 +26,16 @@ jobs:
       - name: 2 - STAR
         run: python star.py
       - name: 3 - SHOW
-        run: python show.py || echo "SHOW skip"
+        run: python show.py
       - name: 4 - KANALD
-        run: python kanald.py || echo "KANALD skip"
+        run: python kanald.py
       - name: 5 - ATV
-        run: python atv.py || echo "ATV skip"
+        run: python atv.py
       - name: Commit
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
-          # branch'e gec - detached HEAD fix
-          git checkout main || git checkout -B main
+          git checkout main
           git add mirti68.m3u
-          git commit -m "auto update ULUSAL + DIZILER" || echo "commit yok"
+          git commit -m "auto update" || echo "no changes"
           git push origin main
