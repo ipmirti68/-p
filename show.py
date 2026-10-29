@@ -4,70 +4,52 @@ from tqdm import tqdm
 m3u_file = "showtv.m3u"
 mirti_file = "mirti68.m3u"
 site_url = "https://www.showtv.com.tr"
-WORKER = "https://mak.sadecenjoy.workers.dev"
 
 scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'windows', 'desktop': True})
 
 def fetch(url):
-    # 1. normal dene
     try:
-        r = scraper.get(url, timeout=15)
-        if len(r.text) > 1000 and "bolum" in r.text.lower():
+        r = scraper.get(url, timeout=20)
+        if len(r.text) > 800:
             return r.text
     except: pass
-    # 2. worker proxy ile dene - bu kesin aliyor
-    try:
-        r = scraper.get(f"{WORKER}/?url={url}", timeout=20)
-        return r.text
-    except:
-        return ""
-
-def get_diziler():
-    series=[]
-    for slug in ["kizilcik-serbeti","bahar","sandik-kokusu","siyah-kalp","deha","kalpazan","sevdan-bir-ates"]:
-        series.append({"name":slug.replace("-"," ").title(),"url":f"{site_url}/dizi/{slug}","id":slug})
-    print(f"Toplam {len(series)} dizi")
-    return series
+    return ""
 
 def get_episodes(serie):
     eps=[]
-    # pagination API'yi worker ile dene
-    for page in range(0,5):
-        try:
-            api = f"{site_url}/dizi/pagination/{serie['id']}/2/{page}"
-            txt = fetch(api)
-            data = json.loads(txt) if txt.strip().startswith("{") else {}
-            episodes = data.get("episodes",[])
-            if not episodes:
-                break
-            for it in episodes:
-                eps.insert(0, {"name": it["title"], "url": site_url + it["link"], "img": it.get("image","")})
-        except:
-            break
-    print(f"  {serie['name']} API -> {len(eps)} bolum")
-    # API bos ise HTML'den dene
-    if not eps:
-        html = fetch(serie["url"])
-        links = re.findall(r'href=["\']([^"\']*'+re.escape(serie["id"])+r'[^"\']*bolum[^"\']*)["\']', html)
-        links += re.findall(r'"link"\s*:\s*"(/dizi/'+re.escape(serie["id"])+r'/[^"]+)"', html)
-        for l in list(dict.fromkeys(links))[:20]:
-            full = l if l.startswith("http") else site_url + l
-            m=re.search(r'(\d+)-bolum', l)
-            name = f"{m.group(1)}. Bolum" if m else "Bolum"
-            eps.append({"name":name,"url":full,"img":""})
-        print(f"  {serie['name']} HTML -> {len(eps)} bolum")
+    html = fetch(serie["url"])
+    if not html: return []
+    # tum bolum linkleri - duplicate engelle
+    links = re.findall(r'href=["\'](/dizi/'+re.escape(serie["id"])+r'/[^"\']*bolum[^"\']*)["\']', html)
+    links += re.findall(r'/dizi/'+re.escape(serie["id"])+r'/(\d+[^"\']*bolum[^"\']*)', html)
+    # uniq yap
+    uniq = []
+    seen = set()
+    for l in links:
+        full = l if l.startswith("http") else site_url + (l if l.startswith("/") else "/" + l)
+        full = full.split("?")[0].split("#")[0]
+        if full not in seen and "bolum" in full.lower():
+            seen.add(full)
+            uniq.append(full)
+    print(f"  {serie['name']} HTML -> {len(uniq)} bolum")
+    for u in uniq[:20]:
+        m=re.search(r'(\d+)[\.-_]?bolum', u, re.I)
+        name = f"{m.group(1)}. Bolum" if m else u.split("/")[-1].replace("-"," ")[:40]
+        eps.append({"name":name,"url":u,"img":""})
     return eps
 
 def get_stream(url):
     html = fetch(url)
     if not html: return None
+    # 1. tum m3u8
     found = re.findall(r'https?://[^"\'\s\\]+\.m3u8[^"\'\s\\]*', html)
-    if found:
-        for u in found:
-            if "master" in u or "720" in u:
-                return u.replace("\\/","/")
-        return found[0].replace("\\/","/")
-    m = re.search(r"data-hope-video='(.*?)'", html)
+    found = [f.replace("\\/","/").replace("\\u002F","/") for f in found]
+    # en iyi sec
+    for u in found:
+        if "master" in u: return u
+    if found: return found[0]
+    # 2. data-hope
+    m=re.search(r"data-hope-video='(.*?)'", html)
     if m:
         try:
             data=json.loads(m.group(1).replace('&quot;','"'))
@@ -77,18 +59,23 @@ def get_stream(url):
     return None
 
 def main():
-    series=get_diziler()
+    diziler = []
+    for slug in ["kizilcik-serbeti","bahar","sandik-kokusu","siyah-kalp","deha","kalpazan","sevdan-bir-ates","guldur-guldur-show"]:
+        diziler.append({"name":slug.replace("-"," ").title(),"id":slug,"url":f"{site_url}/dizi/{slug}"})
+    print(f"Toplam {len(diziler)} dizi")
     all_data=[]
-    for s in tqdm(series):
+    for s in diziler:
         eps=get_episodes(s)
         ok=[]
-        for ep in eps[:10]:
+        seen_stream=set()
+        for ep in eps[:12]:
             stream=get_stream(ep["url"])
-            if stream:
+            if stream and stream not in seen_stream:
+                seen_stream.add(stream)
                 ep["stream_url"]=stream
                 ok.append(ep)
                 print(f"    OK {ep['name']}")
-            time.sleep(0.5)
+            time.sleep(0.6)
         if ok:
             s["episodes"]=ok
             all_data.append(s)
@@ -97,7 +84,7 @@ def main():
         f.write("#EXTM3U\n")
         for serie in all_data:
             for ep in serie["episodes"]:
-                f.write(f'#EXTINF:-1 tvg-logo="{ep["img"]}" group-title="SHOWTV Dizileri",TR: {ep["name"]} - {serie["name"]}\n{ep["stream_url"]}\n')
+                f.write(f'#EXTINF:-1 group-title="SHOWTV Dizileri",TR: {ep["name"]} - {serie["name"]}\n{ep["stream_url"]}\n')
 
     print(f"{m3u_file} -> {sum(len(s['episodes']) for s in all_data)} bolum")
     if os.path.exists(mirti_file):
