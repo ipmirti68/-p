@@ -1,4 +1,4 @@
-#EXTM3U x-tvg-url="https://raw.githubusercontent.com/ipmirti68/epg/main/epg.xml"
+#EXTM3U
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL 🔗",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 
@@ -50,25 +50,11 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315284
 #EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 
-#EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="atv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04n55YCvUX9Dgc8zHyEIQdd7ZUdbvNL5m6HjT-sbC4g&s=10" group-title="📺 ULUSAL" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV
-#EXTVLCOPT:http-referrer=https://www.atv.com.tr/
-https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_720p.m3u8
-
 #EXTINF:-1 tvg-id="Show TV" tvg-name="Show TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="📺 ULUSAL",Show TV
 https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1
 
-#EXTINF:-1 tvg-id="kanal d HD.tr" tvg-name="KANAL D" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/d%20(1).png" group-title="📺 ULUSAL" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.kanald.com.tr/" referrer="https://www.kanald.com.tr/",KANAL D
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36"
-#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
-https://kdlive.duhnet.tv/S2/HLS_LIVE/kanalddainp/track_4_1250/playlist.m3u8
-
 #EXTINF:-1 tvg-id="Star tv" tvg-name="Star tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR
 https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8l4w3lst4co5&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
-
-#EXTINF:-1 tvg-name="Fox hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/now.png" group-title="📺 ULUSAL" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.nowtv.com.tr/" referrer="https://www.nowtv.com.tr/",NOW
-#EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36"
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=wgIFo1yhduSsQCoDzanCEg&e=1793220878
 
 #EXTINF:-1 tvg-id="kanal 7.tr" tvg-name="kanal 7.tr" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8a6" group-title="📺 ULUSAL",KANAL 7
 https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
@@ -206,13 +192,13 @@ http://eu.kartal38.com:8080/a1qS8T80/amSpNPx/163662?output=ts
 http://eu.kartal38.com:8080/a1qS8T80/amSpNPx/94063?output=ts
 
 #EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/Atv.png" group-title="📺 ULUSAL",ATV
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196698&extension=ts&play_token=6k77AngOgl
+http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196682&extension=ts&play_token=bdFA2u0of1
 
 #EXTINF:-1 tvg-name="show tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="📺 ULUSAL",SHOW TV
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196697&extension=ts&play_token=S05dySmbjf
 
 #EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/KanalD.png" group-title="📺 ULUSAL",KANAL D
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196696&extension=ts&play_token=DYgtNp28Es
+http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196680&extension=ts&play_token=RfWrMzD0aA
 
 #EXTINF:-1 tvg-name="star TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR TV
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196695&extension=ts&play_token=9rZyNWfIPX
@@ -231,9 +217,6 @@ https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8
 
 #EXTINF:-1 tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da892" group-title="📰 HABER",BLOOMBERG
 https://ciner.daioncdn.net/bloomberghads/main/now.png" group-title="📺 ULUSAL.",NOW TV
-
-#EXTINF:-1 tvg-logo="https://i.dsmart.com.tr/kanallar/cnbce_logo.png" group-title="📰 HABER",CNBC-E
-https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.dsmart.com.tr/kanallar/cnbce_logo.png" group-title="📰 HABER",CNBC-E
 https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8
@@ -288,10 +271,6 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=197271&ex
 
 #EXTINF:-1 tvg-name="kontv" tvg-logo="https://kontv.tr/wp-content/uploads/2025/10/kontv.png" group-title="🏘️ YEREL",KON TV
 https://canli.kontv.com.tr/live/kontv.m3u8?hls_ctx=32fka05z
-
-#EXTINF:-1 tvg-name="tmb tv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh1hu2hujd9r8eWZousNlODPbAQ7zvql_whwEXYBQ-jg&s=10" group-title="🏘️ YEREL" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",TBM
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-http://176.65.153.12:6004/play/a027/index.m3u8
 
 #EXTINF:-1 tvg-id="kanal 3" tvg-name="kanal3" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs1yqu4SXDIVmj4m2H_7XQ4AUb7yGVEKG7n-iY6Rcf1Q&s" group-title="🏘️ YEREL",KANAL 3
 https://live.artidijitalmedya.com/artidijital_kanal3/kanal3/playlist.m3u8
@@ -506,125 +485,29 @@ http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/65
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🖥 WEB beIN SPORTS",beIN SPORTS 1 Mırtıspor
 https://mirti-spor-2026.fly.dev/cam0/index.m3u8
 
-#EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 1Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs1.m3u8
-
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥 WEB beIN SPORTS",beIN SPORTS 1 Zeus
 https://zeus645423.cfd/b1/index.txt
-
-#EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://i.imgur.com/FZyAWkI.jpeg" group-title="🖥 WEB beIN SPORTS" http-referrer="https://ardaspor31.top" referrer="https://ardaspor31.top",beIN SPORTS 1 Arda
-#EXTVLCOPT:http-referrer=https://ardaspor31.top
-https://ladyboy.ardastream2.cfd//hls/bein1.m3u8
-
-#EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥 WEB beIN SPORTS" http-referrer="https://atomsportv517.top" referrer="https://atomsportv517.top",beIN SPORTS 1Atom
-#EXTVLCOPT:http-referrer=https://atomsportv517.top
-https://ladyboy.ardastream2.cfd//beintv/tracks-v1a1/mono.m3u8
-
-#EXTINF:-1 tvg-id="bein sports 2.tr" tvg-name="bein sports 2.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 2 Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs2.m3u8
 
 #EXTINF:-1 tvg-id="bein_sport" tvg-name="bein sports 2.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥 WEB beIN SPORTS",BeIN SPORTS 2 Zeus
 https://zeus645423.cfd/b2/index.txt
 
-#EXTINF:-1 tvg-id="bein sports 2.tr" tvg-name="bein sports 2.tr" tvg-logo="https://i.imgur.com/FZyAWkI.jpeg" group-title="🖥 WEB beIN SPORTS" http-referrer="https://ardaspor31.top" referrer="https://ardaspor31.top",beIN SPORTS 2 Arda
-#EXTVLCOPT:http-referrer=https://ardaspor31.top
-https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8
-
-#EXTINF:-1 tvg-id="bein sports 2.tr" tvg-name="bein sports 2.tr" tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥 WEB beIN SPORTS" http-referrer="https://atomsportv517.top" referrer="https://atomsportv517.top",beIN SPORTS 2Atom
-#EXTVLCOPT:http-referrer=https://atomsportv517.top
-https://ladyboy.ardastream2.cfd//bein2/tracks-v1a1/mono.m3u8
-
-#EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 3 Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs3.m3u8
-
 #EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥 WEB beIN SPORTS",beIN SPORTS 3 Zeus
 https://zeus645423.cfd/b3/index.txt
-
-#EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://i.imgur.com/FZyAWkI.jpeg" group-title="🖥 WEB beIN SPORTS" http-referrer="https://ardaspor31.top" referrer="https://ardaspor31.top",beIN SPORTS 3 Arda
-#EXTVLCOPT:http-referrer=https://ardaspor31.top
-https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8
-
-#EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥 WEB beIN SPORTS" http-referrer="https://atomsportv517.top" referrer="https://atomsportv517.top",beIN SPORTS 3Atom
-#EXTVLCOPT:http-referrer=https://atomsportv517.top
-https://ladyboy.ardastream2.cfd//bein3/tracks-v1a1/mono.m3u8
-
-#EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 4 Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs4.m3u8
 
 #EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥 WEB beIN SPORTS",beIN SPORTS 4 Zeus
 https://zeus645423.cfd/b4/index.txt
 
-#EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://i.imgur.com/FZyAWkI.jpeg" group-title="🖥 WEB beIN SPORTS" http-referrer="https://ardaspor31.top" referrer="https://ardaspor31.top",beIN SPORTS 4 Arda
-#EXTVLCOPT:http-referrer=https://ardaspor31.top
-https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8
-
-#EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥 WEB beIN SPORTS" http-referrer="https://atomsportv517.top" referrer="https://atomsportv517.top",beIN SPORTS 4 Atom
-#EXTVLCOPT:http-referrer=https://atomsportv517.top
-https://ladyboy.ardastream2.cfd//bein4/tracks-v1a1/mono.m3u8
-
-#EXTINF:-1 tvg-id="beinsports 5" tvg-name="beinsports 5" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 5 Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs5.m3u8
-
 #EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥 WEB beIN SPORTS",beIN SPORTS 5 Zeus
 https://zeus645423.cfd/b4/index.txt
 
-#EXTINF:-1 tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/FZyAWkI.jpeg" group-title="🖥 WEB beIN SPORTS" http-referrer="https://ardaspor31.top" referrer="https://ardaspor31.top",beIN SPORTS 5 Arda
-#EXTVLCOPT:http-referrer=https://ardaspor31.top
-https://ladyboy.ardastream2.cfd//bein5/tracks-v1a1/mono.m3u8
-
 #EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥 WEB beIN SPORTS",beIN SPORTS 5 Atom
 https://tv.atomspor.workers.dev/?ID=bein-sports-5
-
-#EXTINF:-1 tvg-id="beIN SPORTS MAX 1.tr" tvg-name="beIN SPORTS MAX.1.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 1 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebsm1.m3u8
-
-#EXTINF:-1 tvg-id="beIN SPORTS MAX 2.tr" tvg-name="beIN SPORTS MAX 2.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 2 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebsm2.m3u8
-
-#EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMh_qdu5JfKO58tV95jASwJyGP46Vw3yyDsRYxVsNEyBTxLQu7IJKA6wQ&s=10" group-title="🖥 WEB beIN SPORTS" http-referrer="https://sportsbite.org//" referrer="https://sportsbite.org//",beIN SPORTS 1 Bite
-#EXTVLCOPT:http-referrer=https://sportsbite.org//
-https://sportsbite.org/247/beinsports1tr
-
-#EXTINF:-1 tvg-id="bein sports 2.tr" tvg-name="bein sports 2.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMh_qdu5JfKO58tV95jASwJyGP46Vw3yyDsRYxVsNEyBTxLQu7IJKA6wQ&s=10" group-title="🖥 WEB beIN SPORTS" http-referrer="https://sportsbite.org//" referrer="https://sportsbite.org//",beIN SPORTS 2 Bite
-#EXTVLCOPT:http-referrer=https://sportsbite.org//
-https://sportsbite.org/247/beinsports2tr
-
-#EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMh_qdu5JfKO58tV95jASwJyGP46Vw3yyDsRYxVsNEyBTxLQu7IJKA6wQ&s=10" group-title="🖥 WEB beIN SPORTS" http-referrer="https://sportsbite.org//" referrer="https://sportsbite.org//",beIN SPORTS 3 Bite
-#EXTVLCOPT:http-referrer=https://sportsbite.org//
-https://sportsbite.org/247/beinsports3tr
-
-#EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMh_qdu5JfKO58tV95jASwJyGP46Vw3yyDsRYxVsNEyBTxLQu7IJKA6wQ&s=10" group-title="🖥 WEB beIN SPORTS" http-referrer="https://sportsbite.org//" referrer="https://sportsbite.org//",beIN SPORTS 4 Bite
-#EXTVLCOPT:http-referrer=https://sportsbite.org//
-https://sportsbite.org/247/beinsport4tr
-
-#EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMh_qdu5JfKO58tV95jASwJyGP46Vw3yyDsRYxVsNEyBTxLQu7IJKA6wQ&s=10" group-title="🖥 WEB beIN SPORTS" http-referrer="https://sportsbite.org//" referrer="https://sportsbite.org//",beIN SPORTS 5 Bite
-#EXTVLCOPT:http-referrer=https://sportsbite.org//
-https://sportsbite.org/247/beinsport5tr
-
-#EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEİN SPORTS 1
-http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
-
-#EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEİN SPORTS 1
-http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988867&extension=ts&play_token=a34h1OJXxe
 
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988881&extension=ts&play_token=oLqDJ5qOzw
 
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEİN SPORTS 1 (copy)
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988882&extension=ts&play_token=oLqDJ5qOzw
-
-#EXTINF:-1 tvg-id="NULL" tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/84
-
-#EXTINF:-1 tvg-id="NULL" tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/89
 
 #EXTINF:-1 tvg-id="NULL" tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/77238
@@ -681,25 +564,19 @@ http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/172690
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/223135
 
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 1.tr" tvg-name="beIN SPORTS MAX 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS MAX 1
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/79
-
-#EXTINF:-1 tvg-id="beIN SPORTS MAX 1.tr" tvg-name="beIN SPORTS MAX 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS MAX 1
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/80
-
-#EXTINF:-1 tvg-id="beIN SPORTS MAX 2.tr" tvg-name="beIN SPORTS MAX 2.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS MAX 2
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/77
 
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 2.tr" tvg-name="beIN SPORTS MAX 2.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS MAX 2
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/78
 
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 1 1920x1080
-http://line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:05:54:42&stream=988849&extension=ts
+http://line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:05:54:42&stream=988850&extension=ts
 
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1280x720
-http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988852&extension=ts
+http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/418443?output=ts
 
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
-http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988850&extension=ts
+http://ruzgarplayer.site:8080/25w8Fv8m2S9L/5zch9RjU4SVB/418442
 
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 Galabet 1920x1080
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988849&extension=ts
@@ -707,14 +584,8 @@ http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988849
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 Hit 1280x720
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988851&extension=ts
 
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1280x720
-http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988881&extension=ts
-
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 960x540
-http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988853&extension=ts
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 1 1280x720
-http://line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:05:54:42&stream=988851&extension=ts
+http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/418444?output=ts
 
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 1 1280x720
 http://line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:05:54:42&stream=988852&extension=ts
@@ -728,20 +599,8 @@ https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1  3840x2160
 http://ekmek82.shop/live/adnan678/uBjabktvQP/1505748.m3u
 
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
-http://190502.tomtv.eu:80/BahriY944/2xx143ukf9/237081
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
-http://ruzgarplayer.site:8080/25w8Fv8m2S9L/5zch9RjU4SVB/418441
-
-#EXTINF:-1 tvg-id="beinsports1.tr" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
-http://eu.kartal38.com:8080/a1qS8T80/amSpNPx/656423?output=ts
-
 #EXTINF:-1 tvg-id="beinsports1.tr" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
 http://clubxc.com:8080/Neck55828/kaFX8NQcHgfU/1106422
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1280x720
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/053f89e1-3cc8-49e3-909a-e2b22d76edda.ts
 
 #EXTINF:0 tvg-id="NULL" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS" tvg-agent="Firefox",BEIN SPORTS 1 1920x1080
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/77238
@@ -750,7 +609,7 @@ http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/77238
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/84
 
 #EXTINF:0 tvg-id="NULL" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS" tvg-agent="Firefox",beIN SPORTS 1 1280x720
-http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/89
+http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/337959
 
 #EXTINF:-1 tvg-id="BeinSports1.tr" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 1920x1080
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/267105889a25a483e5e80
@@ -758,44 +617,17 @@ https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv
 #EXTINF:0 tvg-id="beIN SPORTS" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS" tvg-agent="Firefox",beIN SPORTS 1 1920x1080
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/237081
 
-#EXTINF:0 tvg-id="NULL" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS" tvg-agent="Firefox",beIN SPORTS 1 1280x720
-http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/337959
-
 #EXTINF:0 tvg-id="NULL" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS" tvg-agent="Firefox",beIN SPORTS 1 1280x720 (copy)
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/91
 
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beİN SPORTS 1 1280x720
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
-http://ekmek82.shop/live/adnan678/uBjabktvQP/1536245.m3u
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
-http://ekmek82.shop/live/adnan678/uBjabktvQP/1536246.m3u
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
-http://190502.tomtv.eu:80/BahriY944/2xx143ukf9/77238
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
-http://190502.tomtv.eu:80/BahriY944/2xx143ukf9/337958
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1920x1080
-http://ruzgarplayer.site:8080/25w8Fv8m2S9L/5zch9RjU4SVB/418442
-
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORT1 576
 http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/485771?output=ts
 
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORT1 720
 http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/485772?output=ts
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1
-http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/435783?output=ts
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1
-http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/435784?output=ts
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1
-http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/418444?output=ts
 
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1
 http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/418443?output=ts
@@ -806,14 +638,8 @@ http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/485771?output=ts
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORT1 1280x720
 http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/485772?output=ts
 
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1280x720
-http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/435783?output=ts
-
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 720x576
 http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/435784?output=ts
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 960x540
-http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/418444?output=ts
 
 #EXTINF:-1 tvg-id="BeinSports1.tr" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN 1 FEED 1920x1080
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/1363827223a1c98515d612
@@ -824,12 +650,6 @@ https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv
 #EXTINF:-1 tvg-id="BeinSports1.tr" tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 1 HD 2920x1080
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/5934938605e361d7e0ff0
 
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 1 1920x1080
-http://line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:05:54:42&stream=988850&extension=ts
-
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 1 1280x720
-http://ruzgarplayer.site:8080/KH6Rn39q4WpL/bnzSVts6Lner/418443?output=ts
-
 #EXTINF:-1 tvg-id="beinsports2.tr" tvg-name="beinsports 2" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 2 HD 1280x720
 http://clubxc.com:8080/Neck55828/kaFX8NQcHgfU/94924
 
@@ -837,10 +657,7 @@ http://clubxc.com:8080/Neck55828/kaFX8NQcHgfU/94924
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/116675
 
 #EXTINF:-1 tvg-name="beinsports 2" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 2 1920x1080
-http://190502.tomtv.eu:80/BahriY944/2xx143ukf9/87
-
-#EXTINF:-1 tvg-name="beinsports 2" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 2 1920x1080
-http://ruzgarplayer.site:8080/25w8Fv8m2S9L/5zch9RjU4SVB/418445
+http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988854&extension=ts
 
 #EXTINF:-1 tvg-id="BeinSports2.tr" tvg-name="beinsports 2" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 2 HD
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/28515391437e928cafd5dd
@@ -897,9 +714,6 @@ https://zeus324232.cfd/s1/index.txt
 https://zeus324232.cfd/s2/index.txt
 
 #EXTINF:0 tvg-name="ssport" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT" tvg-agent="Firefox",S SPORT
-http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/32058
-
-#EXTINF:0 tvg-name="ssport" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT" tvg-agent="Firefox",S SPORT
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/68
 
 #EXTINF:0 tvg-name="ssport 2" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT" tvg-agent="Firefox",S SPORT 2
@@ -907,34 +721,6 @@ http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/15169
 
 #EXTINF:0 tvg-name="ssport 3" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT" tvg-agent="Firefox",S SPORT 2
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/232183
-
-#EXTINF:-1 tvg-name="ssport" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",S Sport 1 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivess1.m3u8
-
-#EXTINF:-1 tvg-name="ssport 2" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",S Sport 2 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivess2.m3u8
-
-#EXTINF:-1 tvg-id="TİVİBU.spor" tvg-name="tivibu.spor" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",Tivibu Sport HD
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivets.m3u8
-
-#EXTINF:-1 tvg-id="TİVİBU.spor.1" tvg-name="tivibu.spor.1" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",Tivibu Sport 1 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivets1.m3u8
-
-#EXTINF:-1 tvg-id="TİVİBU.spor.2" tvg-name="tivibu.spor.2" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",Tivibu Sport 2 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivets2.m3u8
-
-#EXTINF:-1 tvg-id="TİVİBU.spor.3" tvg-name="tivibu.spor.3" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",Tivibu Sport 3 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivets3.m3u8
-
-#EXTINF:-1 tvg-id="TİVİBU.spor.4" tvg-name="tivibu.spor.4" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",Tivibu Sport 4 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivets4.m3u8
 
 #EXTINF:-1 tvg-id="TİVİBU.spor" tvg-name="tivibu.spor" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR",TiViBU SPOR
 https://zeus324232.cfd/tivibu/index.txt
@@ -958,21 +744,10 @@ https://zeus324232.cfd/smart1/index.txt
 https://zeus324232.cfd/smart2/index.txt
 
 #EXTINF:0 tvg-id="Spor Smart" tvg-name="smartspor" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" tvg-agent="Firefox",SPORSMART
-http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/231858
-
-#EXTINF:0 tvg-id="Spor Smart" tvg-name="smartspor" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" tvg-agent="Firefox",SPORSMART
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/60118
 
 #EXTINF:0 tvg-id="SPOR SMART 2" tvg-name="smart spor 2" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" tvg-agent="Firefox",SPORSMART 2
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/57772
-
-#EXTINF:-1 tvg-id="Spor Smart" tvg-name="smartspor" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",Smart Sport 1 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivesm1.m3u8
-
-#EXTINF:-1 tvg-id="Spor Smart 2" tvg-name="smartspor 2" tvg-logo="https://i.imgur.com/65ce7rv.jpeg" group-title="⚽  SMART SPOR" http-referrer="https://mahsunsports54.xyz/" referrer="https://mahsunsports54.xyz/",Smart Sport 2 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports54.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivesm2.m3u8
 
 #EXTINF:-1 tvg-name="trtbelgesel" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da862" group-title="🏔️ BELGESEL",TRT BELGESEL
 https://tv-trtbelgesel.medya.trt.com.tr/master.m3u8
@@ -1010,7 +785,7 @@ https://tv-trtcocuk.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-name="diyanet çocuk" tvg-logo="https://i.dsmart.com.tr/kanallar/TRT-Diyanet-Cocuk.png" group-title="🧒 ÇOCUK",DİYANET ÇOCUK
 https://tv-trtdiyanetcocuk.medya.trt.com.tr/master_720.m3u8
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP 
+#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP
 https://narrative-popkids-rakuten.amagi.tv/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/zCTf71x.png" group-title="🧒 ÇOCUK",TİNY P
@@ -1027,9 +802,6 @@ http://176.65.153.12:6001/play/a04q/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://www.showturk.com.tr/scripts/assets/dist/images/logo.svg" group-title="🇪🇺 AVRUPA",SHOW TÜRK
 https://ciner-live.ercdn.net/showturk/showturk_1080p.m3u8?e=1791725698&st=UBwMrHJ2dH-_O_Ka5SUSHQ&tv
-
-#EXTINF:-1 tvg-logo="https://www.showturk.com.tr/scripts/assets/dist/images/logo.svg" group-title="🇪🇺 AVRUPA",SHOW TÜRK (copy)
-https://ciner.daioncdn.net/showturk/showturk_720p.m3u8?ex=0&sid=8vez4pyc59qb&app=3a516c79-a14a-4585-9204-9080fb8ecb61&ce=2
 
 #EXTINF:-1 tvg-logo="https://www.showturk.com.tr/scripts/assets/dist/images/logo.svg" group-title="🇪🇺 AVRUPA",SHOW TÜRK (copy)
 https://ciner.daioncdn.net/showturk/showturk_720p.m3u8?ex=0&sid=8vez4pyc59qb&app=3a516c79-a14a-4585-9204-9080fb8ecb61&ce=2
@@ -1055,19 +827,19 @@ https://cdn-kanalavrupa.yayin.com.tr/kanalavrupa/tracks-v2a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8aWrU4ygr14meW5J-GlkerG5L3rCR64bZTD5oZE9Nw&s" group-title="🇪🇺 AVRUPA",KANAL AVRUPA
 https://api-tv27.yayin.com.tr/kanalavrupa/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24
 http://cdn-gurbet24.yayin.com.tr/gurbet24/gurbet24/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ
 https://135962.global.ssl.fastly.net/5ff366a512987e2c0a3dabfe/live_14378e1002eb11ef9cb025207067897a/index.fmp4.m3u8
 
-#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE 
+#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE
 https://i41.ozelip.com:3269/hybrid/play.m3u8
 
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ
 https://yayin30.haber100.com/live/kardestv/chunklist_w403767422.m3u8
 
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA
 https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/euro-d-buyuk.png?rkt=DfS6Tgv6Hjr93k3" group-title="🇪🇺 AVRUPA",EURO D
@@ -1471,18 +1243,6 @@ http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/410065.ts
 
 #EXTINF:-1 tvg-id="https://ahmetdogan68.github.io/tv/logo.png" tvg-name="Sinema ✦ KOVBOY ve WESTERN FİLMLER" tvg-logo="https://ahmetdogan68.github.io/tv/logo.png" group-title="🎬 SİNEMA",BLUE TV
 http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/410068.ts
-
-#EXTINF:-1 tvg-name="Sinema ✦ KOVBOY ve WESTERN FİLMLER" tvg-logo="https://ahmetdogan68.github.io/tv/logo.png" group-title="🎬 SİNEMA",BLUE TV (copy)
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/410069.ts
-
-#EXTINF:-1 tvg-name="Sinema ✦ KOVBOY ve WESTERN FİLMLER" tvg-logo="https://ahmetdogan68.github.io/tv/logo.png" group-title="🎬 SİNEMA",BLUE TV (copy)
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/410070.ts
-
-#EXTINF:-1 tvg-name="Sinema ✦ KOVBOY ve WESTERN FİLMLER" tvg-logo="https://ahmetdogan68.github.io/tv/logo.png" group-title="🎬 SİNEMA",BLUE TV (copy)
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/410071.ts
-
-#EXTINF:-1 tvg-name="Sinema ✦ KOVBOY ve WESTERN FİLMLER" tvg-logo="https://ahmetdogan68.github.io/tv/logo.png" group-title="🎬 SİNEMA",BLUE TV (copy)
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/410027.ts
 
 #EXTINF:-1 tvg-name="Sinema ✦ KOVBOY ve WESTERN FİLMLER" tvg-logo="https://ahmetdogan68.github.io/tv/logo.png" group-title="🎬 SİNEMA",BLUE TV (copy)
 http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/410057.ts
@@ -2120,66 +1880,6 @@ http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396408.ts
 #EXTINF:-1  tvg-name="4K✦ Sinema 1" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Sinema 1
 http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/354570.ts
 
-#EXTINF:-1  tvg-name="4K✦ Karayip Korsanları BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Karayip Korsanları BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/355233.ts
-
-#EXTINF:-1  tvg-name="4K✦ Indiana Jones BoxSet " tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Indiana Jones BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/355234.ts
-
-#EXTINF:-1  tvg-name="4K✦ Recep İvedik Boxset" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Recep İvedik Boxset
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/356360.ts
-
-#EXTINF:-1  tvg-name="4K✦ Yerli Sinema" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Yerli Sinema
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/356361.ts
-
-#EXTINF:-1  tvg-name="4K✦ Animasyon" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Animasyon
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/355525.ts
-
-#EXTINF:-1  tvg-name="4K✦ Yesilcam-1" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Yesilcam-1
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/355526.ts
-
-#EXTINF:-1  tvg-name="4K✦ Music live" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Music live
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/355541.ts
-
-#EXTINF:-1  tvg-name="4K✦ Yerli Pop" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Yerli Pop
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/355546.ts
-
-#EXTINF:-1  tvg-name="4K✦ Belgesel" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Belgesel
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/355826.ts
-
-#EXTINF:-1  tvg-name="4K✦ John Wick BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ John Wick BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396356.ts
-
-#EXTINF:-1  tvg-name="4K✦ Rambo BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Rambo BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396357.ts
-
-#EXTINF:-1  tvg-name="4K✦ Rocky BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Rocky BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396358.ts
-
-#EXTINF:-1  tvg-name="4K✦ Aquaman BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Aquaman BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396402.ts
-
-#EXTINF:-1  tvg-name="4K✦ Cehennem Melekleri BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Cehennem Melekleri BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396403.ts
-
-#EXTINF:-1  tvg-name="4K✦ Dan Brown BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Dan Brown BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396404.ts
-
-#EXTINF:-1  tvg-name="4K✦ Doctor Strange BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Doctor Strange BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396405.ts
-
-#EXTINF:-1  tvg-name="4K✦ Dune Çöl Gezegeni BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Dune Çöl Gezegeni BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396406.ts
-
-#EXTINF:-1  tvg-name="4K✦ Gladyatör BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Gladyatör BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396407.ts
-
-#EXTINF:-1  tvg-name="4K✦ Avatar BoxSet" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Avatar BoxSet
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396408.ts
-
-#EXTINF:-1  tvg-name="4K✦ Sinema 1" tvg-logo="http://logo1010.com/cdn/netfilix-sinema/4k.png" group-title="🍿FİLİM 4K",4K✦ Sinema 1
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/354570.ts
-
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuIELtkcmpnMPwxXhf1jZeseukRgMvpFz5TmZsT7kS8A&s=10" group-title="🎬  FİLİM SİNETÜRK",Çatlı (2026)
 https://p.playturka.space/videos/eLn003s/playlist_min.m3u8
 
@@ -2193,7 +1893,7 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226044.mkv
 https://vs18.photoflick.org/v/Recep.Ivedik.7.2022.WEB-DL.1080p.x264-HDM/1080.m3u8
 
 #EXTINF:-1  tvg-name="Şampiyonlar - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ntfIVBxdQ3nCHddMd5egzft5CX6.jpg" group-title="🎬  FİLİM SİNETÜRK",Şampiyonlar - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226043.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225493.mkv
 
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShDhhMjKheAgVMKCL-j2Z0irBY8OrzJ6KBOUStOeoMBQ&s=10" group-title="🎬  FİLİM SİNETÜRK",Şeytan Çocuk
 https://p.playturka.space/videos/eaqy3D2/playlist_min.m3u8?v=1790275189
@@ -2235,7 +1935,7 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226033.mkv
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226032.mkv
 
 #EXTINF:-1  tvg-name="Rüzgara Bırak - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/pg6sFi0pv8cPelkJGLZqmUxh24F.jpg" group-title="🎬  FİLİM SİNETÜRK",Rüzgara Bırak - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226031.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225472.mkv
 
 #EXTINF:-1  tvg-name="Parçalı Yıllar - 2026" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uA6WXb0QVeNdnEbWLb4ZVvNyk1.jpg" group-title="🎬  FİLİM SİNETÜRK",Parçalı Yıllar - 2026
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226030.mkv
@@ -2289,7 +1989,7 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226015.mkv
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226014.mkv
 
 #EXTINF:-1  tvg-name="Her Şey Yolunda - 2026" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fJQD5fxOuWxCwsMBVB5SvDA0iHe.jpg" group-title="🎬  FİLİM SİNETÜRK",Her Şey Yolunda - 2026
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226013.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225463.mkv
 
 #EXTINF:-1  tvg-name="Güneşin Karanlığında Kosova - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ipg8wNaAoMz3MRxjsnncdUCovXm.jpg" group-title="🎬  FİLİM SİNETÜRK",Güneşin Karanlığında Kosova - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226012.mkv
@@ -2304,9 +2004,6 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226010.mkv
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226009.mkv
 
 #EXTINF:-1  tvg-name="Fidan - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/b1qSKOISJePVHPGQ5T8wB040YU5.jpg" group-title="🎬  FİLİM SİNETÜRK",Fidan - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226008.mkv
-
-#EXTINF:-1  tvg-name="Fidan - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/b1qSKOISJePVHPGQ5T8wB040YU5.jpg" group-title="🎬  FİLİM SİNETÜRK",Fidan - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226007.mkv
 
 #EXTINF:-1  tvg-name="Exodus - 2023" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ieKq3I9mWsCogHT30H65329MjRz.jpg" group-title="🎬  FİLİM SİNETÜRK",Exodus - 2023
@@ -2316,7 +2013,7 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226006.mkv
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226005.mkv
 
 #EXTINF:-1  tvg-name="Efes'in Sırrı - 2026" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bwzWzfAA5UcKQTsSGAxdIyo4sKh.jpg" group-title="🎬  FİLİM SİNETÜRK",Efes'in Sırrı - 2026
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226004.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225456.mkv
 
 #EXTINF:-1  tvg-name="Denize Doğru - 2026" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/hY8xbeUdU2LW9pe4wke4oCecsAa.jpg" group-title="🎬  FİLİM SİNETÜRK",Denize Doğru - 2026
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226003.mkv
@@ -2325,10 +2022,7 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226003.mkv
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226002.mkv
 
 #EXTINF:-1  tvg-name="Bir Ömrün Sonbaharı - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/iT6yCdZ88cf5mOKzUxnkT1pwF6p.jpg" group-title="🎬  FİLİM SİNETÜRK",Bir Ömrün Sonbaharı - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226001.mkv
-
-#EXTINF:-1  tvg-name="Bir Ömrün Sonbaharı - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/iT6yCdZ88cf5mOKzUxnkT1pwF6p.jpg" group-title="🎬  FİLİM SİNETÜRK",Bir Ömrün Sonbaharı - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/226000.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225443.mkv
 
 #EXTINF:-1  tvg-name="Başıbozuklar - 2026" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/o8Ym18hbONvPvsF6XGFtxuNfYwc.jpg" group-title="🎬  FİLİM SİNETÜRK",Başıbozuklar - 2026
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225999.mkv
@@ -2337,7 +2031,7 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225999.mkv
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225998.mkv
 
 #EXTINF:-1  tvg-name="Başka Bir Sen - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/s2f1VLaVuWSq6nYELqQhnqiKHKh.jpg" group-title="🎬  FİLİM SİNETÜRK",Başka Bir Sen - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225997.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225442.mkv
 
 #EXTINF:-1  tvg-name="Aşk ve Yemek - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qfYjqITKDeZhZT1uBe4y6EtC4aQ.jpg" group-title="🎬  FİLİM SİNETÜRK",Aşk ve Yemek - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225996.mkv
@@ -2347,9 +2041,6 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225995.mkv
 
 #EXTINF:-1  tvg-name="Şişman - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wJZzjVci9RjWDFw4Zb9IpsTHFi7.jpg" group-title="🎬  FİLİM SİNETÜRK",Şişman - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225494.mkv
-
-#EXTINF:-1  tvg-name="Şampiyonlar - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ntfIVBxdQ3nCHddMd5egzft5CX6.jpg" group-title="🎬  FİLİM SİNETÜRK",Şampiyonlar - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225493.mkv
 
 #EXTINF:-1  tvg-name="İki Dünya Bir Dilek - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/98JYjLElGk8cHYd2FT0DLK11CcJ.jpg" group-title="🎬  FİLİM SİNETÜRK",İki Dünya Bir Dilek - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225492.mkv
@@ -2408,9 +2099,6 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225474.mkv
 #EXTINF:-1  tvg-name="Sahibinden Rahmet - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kx8sJ8B4LRadw4rVhpZoNFTLf72.jpg" group-title="🎬  FİLİM SİNETÜRK",Sahibinden Rahmet - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225473.mkv
 
-#EXTINF:-1  tvg-name="Rüzgara Bırak - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/pg6sFi0pv8cPelkJGLZqmUxh24F.jpg" group-title="🎬  FİLİM SİNETÜRK",Rüzgara Bırak - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225472.mkv
-
 #EXTINF:-1  tvg-name="Ona Niyet Sana Kısmet - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tmNPNSTNzjOhrPih8Ay7Wd6fIsU.jpg" group-title="🎬  FİLİM SİNETÜRK",Ona Niyet Sana Kısmet - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225471.mkv
 
@@ -2435,9 +2123,6 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225465.mkv
 #EXTINF:-1  tvg-name="Karantina (2025)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/2BvjlOVoYqkJQD49mkD0MHGpxy.jpg" group-title="🎬  FİLİM SİNETÜRK",Karantina (2025)
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225464.mkv
 
-#EXTINF:-1  tvg-name="Her Şey Yolunda - 2026" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fJQD5fxOuWxCwsMBVB5SvDA0iHe.jpg" group-title="🎬  FİLİM SİNETÜRK",Her Şey Yolunda - 2026
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225463.mkv
-
 #EXTINF:-1  tvg-name="Hep Yek: Loto - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ogoc6bWdkeXRn25MOHm34V9yez7.jpg" group-title="🎬  FİLİM SİNETÜRK",Hep Yek: Loto - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225462.mkv
 
@@ -2456,9 +2141,6 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225458.mkv
 #EXTINF:-1  tvg-name="Erken Kış - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qVJ6BlqCMuA8UqWxyla3HxpGroD.jpg" group-title="🎬  FİLİM SİNETÜRK",Erken Kış - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225457.mkv
 
-#EXTINF:-1  tvg-name="Efes'in Sırrı - 2026" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bwzWzfAA5UcKQTsSGAxdIyo4sKh.jpg" group-title="🎬  FİLİM SİNETÜRK",Efes'in Sırrı - 2026
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225456.mkv
-
 #EXTINF:-1  tvg-name="Doğulu (2025)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jfCW2V8bOlBxhrOA59gxXjp30qT.jpg" group-title="🎬  FİLİM SİNETÜRK",Doğulu (2025)
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225455.mkv
 
@@ -2475,16 +2157,13 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225452.mkv
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225451.mkv
 
 #EXTINF:-1  tvg-name="D.I.S.C.O. (2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zNjm76IFBxiXMZ7ldWrVSudWeqo.jpg" group-title="🎬  FİLİM SİNETÜRK",D.I.S.C.O. (2026)
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225450.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/236688.mkv
 
 #EXTINF:-1  tvg-name="C Takımı 2 - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/1HBhTscXr0HKrBJmweS6OUlAvVs.jpg" group-title="🎬  FİLİM SİNETÜRK",C Takımı 2 - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225449.mkv
 
 #EXTINF:-1  tvg-name="CMXXIV - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zN25h6zhlYLEnrCv1Zv3MWjtLoy.jpg" group-title="🎬  FİLİM SİNETÜRK",CMXXIV - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225448.mkv
-
-#EXTINF:-1  tvg-name="Cam Sehpa (2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p3iMK5XL0GURREEAxXjBlYWveXn.jpg" group-title="🎬  FİLİM SİNETÜRK",Cam Sehpa (2026)
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225447.mkv
 
 #EXTINF:-1  tvg-name="Cam Sehpa (2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p3iMK5XL0GURREEAxXjBlYWveXn.jpg" group-title="🎬  FİLİM SİNETÜRK",Cam Sehpa (2026)
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225446.mkv
@@ -2494,12 +2173,6 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225445.mkv
 
 #EXTINF:-1  tvg-name="Bugün Güzel - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fNcuqMV7v72T0LhHdL4cI1jGyDl.jpg" group-title="🎬  FİLİM SİNETÜRK",Bugün Güzel - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225444.mkv
-
-#EXTINF:-1  tvg-name="Bir Ömrün Sonbaharı - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/iT6yCdZ88cf5mOKzUxnkT1pwF6p.jpg" group-title="🎬  FİLİM SİNETÜRK",Bir Ömrün Sonbaharı - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225443.mkv
-
-#EXTINF:-1  tvg-name="Başka Bir Sen - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/s2f1VLaVuWSq6nYELqQhnqiKHKh.jpg" group-title="🎬  FİLİM SİNETÜRK",Başka Bir Sen - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225442.mkv
 
 #EXTINF:-1  tvg-name="Baldız - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/hEzTNpdUSQNoWbMDIk3P7sqSvg.jpg" group-title="🎬  FİLİM SİNETÜRK",Baldız - 2025
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225441.mkv
@@ -2532,19 +2205,19 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225433.mkv
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225432.mkv
 
 #EXTINF:-1  tvg-name="Şımarık - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/CF9or2174WFbBbXb5SvREau02H.jpg" group-title="🎬  FİLİM SİNETÜRK",Şımarık - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225431.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231264.mkv
 
 #EXTINF:-1  tvg-name="İllegal Hayatlar: Meclis - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dAvnOVYUNm5GmD0JJgozsrrTxN6.jpg" group-title="🎬  FİLİM SİNETÜRK",İllegal Hayatlar: Meclis - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225430.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231263.mkv
 
 #EXTINF:-1  tvg-name="Öldüm Bittim - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dUhLlGlXMv5vjNH60Eagj2EkBmK.jpg" group-title="🎬  FİLİM SİNETÜRK",Öldüm Bittim - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225429.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231262.mkv
 
 #EXTINF:-1  tvg-name="Çiftliğimin Hanımı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aVjZEeZHcU99fPsF8Tqna8vs7CI.jpg" group-title="🎬  FİLİM SİNETÜRK",Çiftliğimin Hanımı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225428.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231261.mkv
 
 #EXTINF:-1  tvg-name="Çakallarla Dans 7 - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/yFV8E1wTVjuhFt3FjHhxCiAtbn1.jpg" group-title="🎬  FİLİM SİNETÜRK",Çakallarla Dans 7 - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225427.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231260.mkv
 
 #EXTINF:-1  tvg-name="Şahmeran Efsanesi - Tulhan (2024)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/oXOGedwYqONP6BZHqyTLQFRe3Kb.jpg" group-title="🎬  FİLİM SİNETÜRK",Şahmeran Efsanesi - Tulhan (2024)
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225426.mkv
@@ -2673,187 +2346,187 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225383.mkv
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225382.mkv
 
 #EXTINF:-1  tvg-name="Yeniden Başlamak - 2014" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qx4HXHXt528hS4rwePZbZo20xqZ.jpg" group-title="🎬  FİLİM SİNETÜRK",Yeniden Başlamak - 2014
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225381.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231214.mkv
 
 #EXTINF:-1  tvg-name="Yasemin Sakallıoğlu - Doğru Koca Nasıl Seçilir? - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tXb3BAVeH8m3bbuRFi9ObYR2oxr.jpg" group-title="🎬  FİLİM SİNETÜRK",Yasemin Sakallıoğlu - Doğru Koca Nasıl Seçilir? - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225380.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231213.mkv
 
 #EXTINF:-1  tvg-name="Torun Davası - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bF8WiE1natWIemswtEqWRWIv4pb.jpg" group-title="🎬  FİLİM SİNETÜRK",Torun Davası - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225379.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231212.mkv
 
 #EXTINF:-1  tvg-name="Tezgah - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zOwERSSssBydVjLT0lcrM1SEFnL.jpg" group-title="🎬  FİLİM SİNETÜRK",Tezgah - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225378.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231211.mkv
 
 #EXTINF:-1  tvg-name="Tereddüt Çizgisi - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/m7zB3hLM3R8hhqWEFIf6DWkmhVb.jpg" group-title="🎬  FİLİM SİNETÜRK",Tereddüt Çizgisi - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225377.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231210.mkv
 
 #EXTINF:-1  tvg-name="Tam Bir Centilmen - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aflunoxPDO0dqpcz7Hr7nTEp1wJ.jpg" group-title="🎬  FİLİM SİNETÜRK",Tam Bir Centilmen - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225376.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231209.mkv
 
 #EXTINF:-1  tvg-name="Su Yüzü - 2023" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/rJYULcelclGqx3VWd7dSh4DrZpI.jpg" group-title="🎬  FİLİM SİNETÜRK",Su Yüzü - 2023
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225375.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231208.mkv
 
 #EXTINF:-1  tvg-name="Siccîn 7 - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/be0WZZquz3cxlzebOV5ryd7J82T.jpg" group-title="🎬  FİLİM SİNETÜRK",Siccîn 7 - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225374.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231207.mkv
 
 #EXTINF:-1  tvg-name="Sevmek Yüzünden - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/cPr35141Gu4IPLOfRnj4Ue0TiIc.jpg" group-title="🎬  FİLİM SİNETÜRK",Sevmek Yüzünden - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225373.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231206.mkv
 
 #EXTINF:-1  tvg-name="Sen Büyümeye Bak - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/octokBbs3r3N3SyDGwzLX6qkdor.jpg" group-title="🎬  FİLİM SİNETÜRK",Sen Büyümeye Bak - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225372.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231205.mkv
 
 #EXTINF:-1  tvg-name="Romantik Hırsız - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/hjYb3zdvuedWmTH4tSD9UU3VjkZ.jpg" group-title="🎬  FİLİM SİNETÜRK",Romantik Hırsız - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225371.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231204.mkv
 
 #EXTINF:-1  tvg-name="Rafadan Tayfa: Kapadokya - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3GbIkE2xetujNEK1XI86olhkJh4.jpg" group-title="🎬  FİLİM SİNETÜRK",Rafadan Tayfa: Kapadokya - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225370.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231203.mkv
 
 #EXTINF:-1  tvg-name="Paranormal Cuma - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/lLBSawuGkVwCSF5dDVXqqfkCNXq.jpg" group-title="🎬  FİLİM SİNETÜRK",Paranormal Cuma - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225369.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231201.mkv
 
 #EXTINF:-1  tvg-name="On Saniye - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/60Onr8tiT0jjrDS2FyiGfaM4QNC.jpg" group-title="🎬  FİLİM SİNETÜRK",On Saniye - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225368.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231200.mkv
 
 #EXTINF:-1  tvg-name="Nemlizade - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zD5bZUxh1jXTPnH7SkLStaBEC9b.jpg" group-title="🎬  FİLİM SİNETÜRK",Nemlizade - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225367.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231199.mkv
 
 #EXTINF:-1  tvg-name="Mukadderat - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dPlnF64VykR53Zk0O0JgwXfdYNy.jpg" group-title="🎬  FİLİM SİNETÜRK",Mukadderat - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225366.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231198.mkv
 
 #EXTINF:-1  tvg-name="Mucize Aynalar - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/smW2dDoB1J0LjP6bIYJZBJipqtZ.jpg" group-title="🎬  FİLİM SİNETÜRK",Mucize Aynalar - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225365.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231197.mkv
 
 #EXTINF:-1  tvg-name="Mavi Mağara - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kFPWlHk3qHCEZKKfb3qaXU5DErn.jpg" group-title="🎬  FİLİM SİNETÜRK",Mavi Mağara - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225364.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231196.mkv
 
 #EXTINF:-1  tvg-name="Lohusa - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/5XOLpO3Ugp6c5cklMe71d7hsO1X.jpg" group-title="🎬  FİLİM SİNETÜRK",Lohusa - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225363.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231195.mkv
 
 #EXTINF:-1  tvg-name="Lavinya - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bZCxg47D3gfxPDqDBRefX75Oa7F.jpg" group-title="🎬  FİLİM SİNETÜRK",Lavinya - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225362.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231194.mkv
 
 #EXTINF:-1  tvg-name="Kızı Kazan Aşk - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7qXbYre8DzT7bSrgfSwUIsnp4Tq.jpg" group-title="🎬  FİLİM SİNETÜRK",Kızı Kazan Aşk - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225361.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231193.mkv
 
 #EXTINF:-1  tvg-name="Kıyma: Orman Kanunları - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/nEnulDyNyiEyov1iu0PtCzCnymn.jpg" group-title="🎬  FİLİM SİNETÜRK",Kıyma: Orman Kanunları - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225360.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231192.mkv
 
 #EXTINF:-1  tvg-name="Kül - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/os3YzJC18qjb96531jZ9U32Ju2I.jpg" group-title="🎬  FİLİM SİNETÜRK",Kül - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225359.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231191.mkv
 
 #EXTINF:-1  tvg-name="Kolpaçino 4 4'lük - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9N4Dc8ywOjOj4ZPhsXr2aAAsRxr.jpg" group-title="🎬  FİLİM SİNETÜRK",Kolpaçino 4 4'lük - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225358.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231190.mkv
 
 #EXTINF:-1  tvg-name="Kasada Parti - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tOl66wePKBH53i4n8UjOdq48joo.jpg" group-title="🎬  FİLİM SİNETÜRK",Kasada Parti - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225357.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231189.mkv
 
 #EXTINF:-1  tvg-name="Kardeş Takımı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/KK0WQ0UtkxqTBFeTT09wh5gZws.jpg" group-title="🎬  FİLİM SİNETÜRK",Kardeş Takımı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225356.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231188.mkv
 
 #EXTINF:-1  tvg-name="Her Şeyin Başı Merkür - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/rKctr12TU9GaUhtXFn1RB8OWz2f.jpg" group-title="🎬  FİLİM SİNETÜRK",Her Şeyin Başı Merkür - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225355.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231187.mkv
 
 #EXTINF:-1  tvg-name="Hemme’nin Öldüğü Günlerden Biri - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/91aCzYUPoy8HEpeSD0erw6whgLm.jpg" group-title="🎬  FİLİM SİNETÜRK",Hemme’nin Öldüğü Günlerden Biri - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225354.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231185.mkv
 
 #EXTINF:-1  tvg-name="Hakkı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/goEXIZLy0yhobq3Ufz78ZUDU3c.jpg" group-title="🎬  FİLİM SİNETÜRK",Hakkı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225353.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231184.mkv
 
 #EXTINF:-1  tvg-name="Güneşi Söndürmem Gerek - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/xIFD4e7FKoW5DC1V8PQKaRX2cAU.jpg" group-title="🎬  FİLİM SİNETÜRK",Güneşi Söndürmem Gerek - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225352.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231183.mkv
 
 #EXTINF:-1  tvg-name="Giderayak - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3qiNVU3IVceyAzGUo6yE2sQwWRl.jpg" group-title="🎬  FİLİM SİNETÜRK",Giderayak - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225351.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231182.mkv
 
 #EXTINF:-1  tvg-name="Geçiş - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/iknUFPigx4olpNdGGrvnGUNB5qs.jpg" group-title="🎬  FİLİM SİNETÜRK",Geçiş - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225350.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231181.mkv
 
 #EXTINF:-1  tvg-name="Evcilik - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/rGBiezUJEaHG7CHMa3QVMpC2dGE.jpg" group-title="🎬  FİLİM SİNETÜRK",Evcilik - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225349.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231180.mkv
 
 #EXTINF:-1  tvg-name="Erdal ile Ece 2 - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/vhfIMnKF4thwwjqX6fXtWULtU4J.jpg" group-title="🎬  FİLİM SİNETÜRK",Erdal ile Ece 2 - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225348.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231179.mkv
 
 #EXTINF:-1  tvg-name="Efendiler - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/A3Fuj4tcfDIi2yi9hASLi6LgJaA.jpg" group-title="🎬  FİLİM SİNETÜRK",Efendiler - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225347.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231178.mkv
 
 #EXTINF:-1  tvg-name="Döngü - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tm8Ezc9cAcXcxq6RfWzAzdQpkOz.jpg" group-title="🎬  FİLİM SİNETÜRK",Döngü - 2024
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225346.mkv
 
 #EXTINF:-1  tvg-name="Dilemma - 2022" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qDCDu6CoJg4gGTTWgitfuJv46o2.jpg" group-title="🎬  FİLİM SİNETÜRK",Dilemma - 2022
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225345.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231176.mkv
 
 #EXTINF:-1  tvg-name="Daha İyi Bir Yarın - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jh8JKeO9VgeeEAfzuUUVi6xpBO4.jpg" group-title="🎬  FİLİM SİNETÜRK",Daha İyi Bir Yarın - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225344.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231175.mkv
 
 #EXTINF:-1  tvg-name="C Takımı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/vejsc3oErCmFPBTOK3366XXoxMX.jpg" group-title="🎬  FİLİM SİNETÜRK",C Takımı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225343.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231171.mkv
 
 #EXTINF:-1  tvg-name="Cici Anne - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/hgDFul3OdzAJAMk2tOobvUeQlmY.jpg" group-title="🎬  FİLİM SİNETÜRK",Cici Anne - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225342.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231174.mkv
 
 #EXTINF:-1  tvg-name="Cenaze - 2023" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/b35GarvGeybC6HraxanTYvkq8V4.jpg" group-title="🎬  FİLİM SİNETÜRK",Cenaze - 2023
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225341.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231173.mkv
 
 #EXTINF:-1  tvg-name="Cem Karaca'nın Gözyaşları - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/yOdlIrWIeRX0eLQTxVGSGYyyhMn.jpg" group-title="🎬  FİLİM SİNETÜRK",Cem Karaca'nın Gözyaşları - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225340.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231172.mkv
 
 #EXTINF:-1  tvg-name="Büyük Kuşatma - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ufyI4yD6Jv1AeUjV9TWWEGLA2DF.jpg" group-title="🎬  FİLİM SİNETÜRK",Büyük Kuşatma - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225339.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231170.mkv
 
 #EXTINF:-1  tvg-name="Bu İşin Şakası Yok - 2026" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3SZuy7WyxKZJj25YvSBSG8rbkKM.jpg" group-title="🎬  FİLİM SİNETÜRK",Bu İşin Şakası Yok - 2026
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225338.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231169.mkv
 
 #EXTINF:-1  tvg-name="Bodrum Seferi - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/e9w54Le5zqKAYKSPhPYFTtE1vXG.jpg" group-title="🎬  FİLİM SİNETÜRK",Bodrum Seferi - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225337.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231168.mkv
 
 #EXTINF:-1  tvg-name="Bizim Köylü (1970)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bTd4vgpe7CbEc0FPgazfIhlNhZN.jpg" group-title="🎬  FİLİM SİNETÜRK",Bizim Köylü (1970)
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225336.mkv
 
 #EXTINF:-1  tvg-name="Bir Cumhuriyet Şarkısı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/vY928WNocPnPOUzRtPx0fVmGIC2.jpg" group-title="🎬  FİLİM SİNETÜRK",Bir Cumhuriyet Şarkısı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225335.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231166.mkv
 
 #EXTINF:-1  tvg-name="Ben ve Babam: Vatan - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/sjsvVq6463HMRKKKf2SzcncFT1u.jpg" group-title="🎬  FİLİM SİNETÜRK",Ben ve Babam: Vatan - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225334.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231165.mkv
 
 #EXTINF:-1  tvg-name="Bana Beni Anlat - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/i5ktTui6qv7SFUpQ9wwWV6UejjG.jpg" group-title="🎬  FİLİM SİNETÜRK",Bana Beni Anlat - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225333.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231164.mkv
 
 #EXTINF:-1  tvg-name="Baba Beni Güldürsene - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/guiGYGiUQFh6QWbpqtiLjGQR6ia.jpg" group-title="🎬  FİLİM SİNETÜRK",Baba Beni Güldürsene - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225332.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231163.mkv
 
 #EXTINF:-1  tvg-name="Aşk Mevsimi - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mYus8GNVi8BYIubE5bsPkrz6u13.jpg" group-title="🎬  FİLİM SİNETÜRK",Aşk Mevsimi - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225331.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231162.mkv
 
 #EXTINF:-1  tvg-name="Aybüke: Öğretmen Oldum Ben - 2023" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/MnHDBEiS6rneY2s2Cz19wlR1jH.jpg" group-title="🎬  FİLİM SİNETÜRK",Aybüke: Öğretmen Oldum Ben - 2023
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225330.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231161.mkv
 
 #EXTINF:-1  tvg-name="Atatürk II 1881 – 1919 - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/t46svTyY0hfnHxqbSMZPEiPNDu7.jpg" group-title="🎬  FİLİM SİNETÜRK",Atatürk II 1881 – 1919 - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225329.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231160.mkv
 
 #EXTINF:-1  tvg-name="Arda Turan: Yüzleşme - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dLn3DpqfXYQwjJAk2naLfuHFL99.jpg" group-title="🎬  FİLİM SİNETÜRK",Arda Turan: Yüzleşme - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225328.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231159.mkv
 
 #EXTINF:-1  tvg-name="Arap Kadri - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/pnC5aHruRapM86MX9UUWLVgRPnn.jpg" group-title="🎬  FİLİM SİNETÜRK",Arap Kadri - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225327.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231158.mkv
 
 #EXTINF:-1  tvg-name="Anunnakiler - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/k9GKgN5KYgoMhVjZXFmuG7hpuNW.jpg" group-title="🎬  FİLİM SİNETÜRK",Anunnakiler - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225326.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231157.mkv
 
 #EXTINF:-1  tvg-name="Acı Kahve - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wcBhOCF3KEvZLAqI90hiRuMGnY5.jpg" group-title="🎬  FİLİM SİNETÜRK",Acı Kahve - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225325.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231156.mkv
 
 #EXTINF:-1  tvg-name="100 Yıllık Armağan - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/xyePIAtZ6bZ5SQ3GxRZhhGBVz85.jpg" group-title="🎬  FİLİM SİNETÜRK",100 Yıllık Armağan - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225324.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231152.mkv
 
 #EXTINF:-1  tvg-name="39 Derecede Aşk - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/59xWH8T7yVLbavfrwUwTVsLJE0r.jpg" group-title="🎬  FİLİM SİNETÜRK",39 Derecede Aşk - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225323.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231154.mkv
 
 #EXTINF:-1  tvg-name="8x8 (2023)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/d0dd9uJTDJTN3GV7FK2MjfcP17M.jpg" group-title="🎬  FİLİM SİNETÜRK",8x8 (2023)
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225322.mkv
 
 #EXTINF:-1  tvg-name="3. Gün - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mGTD4l4AMtHxsAXRzJgW8Y77wsj.jpg" group-title="🎬  FİLİM SİNETÜRK",3. Gün - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225321.mkv
+http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231153.mkv
 
 #EXTINF:-1  tvg-name="0000 Kilometre (2024)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zkLWDlYrO4IFwmExpLNIqyE6soc.jpg" group-title="🎬  FİLİM SİNETÜRK",0000 Kilometre (2024)
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/225320.mkv
@@ -2887,9 +2560,6 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/142324.mkv
 
 #EXTINF:-1  tvg-name="Meksika Acmazi (2023)" tvg-logo="https://image.tmdb.org/t/p/w400/uMLIkpQdybG5TGlJMCfLyNNKJCf.jpg" group-title="🎬  FİLİM SİNETÜRK",Meksika Acmazi (2023)
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/14223.mkv
-
-#EXTINF:-1  tvg-name="D.I.S.C.O. (2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zNjm76IFBxiXMZ7ldWrVSudWeqo.jpg" group-title="🎬  FİLİM SİNETÜRK",D.I.S.C.O. (2026)
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/236688.mkv
 
 #EXTINF:-1  tvg-name="ZOR OYUN: Kapanmayan Hesap - 2019" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/eCyrP6RvY7EYiy5TrTu3H4iXhBz.jpg" group-title="🎬  FİLİM SİNETÜRK",ZOR OYUN: Kapanmayan Hesap - 2019
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/234152.mkv
@@ -2989,21 +2659,6 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/234121.mkv
 
 #EXTINF:-1  tvg-name="49 - 2023" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/nJNbyUFUt3c14CoIjLSn8ZxPw.jpg" group-title="🎬  FİLİM SİNETÜRK",49 - 2023
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/234120.mkv
-
-#EXTINF:-1  tvg-name="Şımarık - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/CF9or2174WFbBbXb5SvREau02H.jpg" group-title="🎬  FİLİM SİNETÜRK",Şımarık - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231264.mkv
-
-#EXTINF:-1  tvg-name="İllegal Hayatlar: Meclis - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dAvnOVYUNm5GmD0JJgozsrrTxN6.jpg" group-title="🎬  FİLİM SİNETÜRK",İllegal Hayatlar: Meclis - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231263.mkv
-
-#EXTINF:-1  tvg-name="Öldüm Bittim - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dUhLlGlXMv5vjNH60Eagj2EkBmK.jpg" group-title="🎬  FİLİM SİNETÜRK",Öldüm Bittim - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231262.mkv
-
-#EXTINF:-1  tvg-name="Çiftliğimin Hanımı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aVjZEeZHcU99fPsF8Tqna8vs7CI.jpg" group-title="🎬  FİLİM SİNETÜRK",Çiftliğimin Hanımı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231261.mkv
-
-#EXTINF:-1  tvg-name="Çakallarla Dans 7 - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/yFV8E1wTVjuhFt3FjHhxCiAtbn1.jpg" group-title="🎬  FİLİM SİNETÜRK",Çakallarla Dans 7 - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231260.mkv
 
 #EXTINF:-1  tvg-name="Yerli Şahmeran Efsanesi - Tulhan 2024 8.5 [102389]"  group-title="🎬  FİLİM SİNETÜRK",Yerli Şahmeran Efsanesi - Tulhan 2024 8.5 [102389]
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231259.mkv
@@ -3137,191 +2792,17 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231216.mkv
 #EXTINF:-1  tvg-name="Yerli 3391 Kilometre 2024 4.0 [102368]"  group-title="🎬  FİLİM SİNETÜRK",Yerli 3391 Kilometre 2024 4.0 [102368]
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231215.mkv
 
-#EXTINF:-1  tvg-name="Yeniden Başlamak - 2014" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qx4HXHXt528hS4rwePZbZo20xqZ.jpg" group-title="🎬  FİLİM SİNETÜRK",Yeniden Başlamak - 2014
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231214.mkv
-
-#EXTINF:-1  tvg-name="Yasemin Sakallıoğlu - Doğru Koca Nasıl Seçilir? - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tXb3BAVeH8m3bbuRFi9ObYR2oxr.jpg" group-title="🎬  FİLİM SİNETÜRK",Yasemin Sakallıoğlu - Doğru Koca Nasıl Seçilir? - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231213.mkv
-
-#EXTINF:-1  tvg-name="Torun Davası - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bF8WiE1natWIemswtEqWRWIv4pb.jpg" group-title="🎬  FİLİM SİNETÜRK",Torun Davası - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231212.mkv
-
-#EXTINF:-1  tvg-name="Tezgah - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zOwERSSssBydVjLT0lcrM1SEFnL.jpg" group-title="🎬  FİLİM SİNETÜRK",Tezgah - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231211.mkv
-
-#EXTINF:-1  tvg-name="Tereddüt Çizgisi - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/m7zB3hLM3R8hhqWEFIf6DWkmhVb.jpg" group-title="🎬  FİLİM SİNETÜRK",Tereddüt Çizgisi - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231210.mkv
-
-#EXTINF:-1  tvg-name="Tam Bir Centilmen - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aflunoxPDO0dqpcz7Hr7nTEp1wJ.jpg" group-title="🎬  FİLİM SİNETÜRK",Tam Bir Centilmen - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231209.mkv
-
-#EXTINF:-1  tvg-name="Su Yüzü - 2023" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/rJYULcelclGqx3VWd7dSh4DrZpI.jpg" group-title="🎬  FİLİM SİNETÜRK",Su Yüzü - 2023
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231208.mkv
-
-#EXTINF:-1  tvg-name="Siccîn 7 - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/be0WZZquz3cxlzebOV5ryd7J82T.jpg" group-title="🎬  FİLİM SİNETÜRK",Siccîn 7 - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231207.mkv
-
-#EXTINF:-1  tvg-name="Sevmek Yüzünden - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/cPr35141Gu4IPLOfRnj4Ue0TiIc.jpg" group-title="🎬  FİLİM SİNETÜRK",Sevmek Yüzünden - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231206.mkv
-
-#EXTINF:-1  tvg-name="Sen Büyümeye Bak - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/octokBbs3r3N3SyDGwzLX6qkdor.jpg" group-title="🎬  FİLİM SİNETÜRK",Sen Büyümeye Bak - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231205.mkv
-
-#EXTINF:-1  tvg-name="Romantik Hırsız - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/hjYb3zdvuedWmTH4tSD9UU3VjkZ.jpg" group-title="🎬  FİLİM SİNETÜRK",Romantik Hırsız - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231204.mkv
-
-#EXTINF:-1  tvg-name="Rafadan Tayfa: Kapadokya - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3GbIkE2xetujNEK1XI86olhkJh4.jpg" group-title="🎬  FİLİM SİNETÜRK",Rafadan Tayfa: Kapadokya - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231203.mkv
-
 #EXTINF:-1  tvg-name="Paranoya - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qIY2VUeqTpE7vy1o5mQonjkA46L.jpg" group-title="🎬  FİLİM SİNETÜRK",Paranoya - 2024
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231202.mkv
-
-#EXTINF:-1  tvg-name="Paranormal Cuma - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/lLBSawuGkVwCSF5dDVXqqfkCNXq.jpg" group-title="🎬  FİLİM SİNETÜRK",Paranormal Cuma - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231201.mkv
-
-#EXTINF:-1  tvg-name="On Saniye - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/60Onr8tiT0jjrDS2FyiGfaM4QNC.jpg" group-title="🎬  FİLİM SİNETÜRK",On Saniye - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231200.mkv
-
-#EXTINF:-1  tvg-name="Nemlizade - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zD5bZUxh1jXTPnH7SkLStaBEC9b.jpg" group-title="🎬  FİLİM SİNETÜRK",Nemlizade - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231199.mkv
-
-#EXTINF:-1  tvg-name="Mukadderat - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dPlnF64VykR53Zk0O0JgwXfdYNy.jpg" group-title="🎬  FİLİM SİNETÜRK",Mukadderat - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231198.mkv
-
-#EXTINF:-1  tvg-name="Mucize Aynalar - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/smW2dDoB1J0LjP6bIYJZBJipqtZ.jpg" group-title="🎬  FİLİM SİNETÜRK",Mucize Aynalar - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231197.mkv
-
-#EXTINF:-1  tvg-name="Mavi Mağara - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kFPWlHk3qHCEZKKfb3qaXU5DErn.jpg" group-title="🎬  FİLİM SİNETÜRK",Mavi Mağara - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231196.mkv
-
-#EXTINF:-1  tvg-name="Lohusa - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/5XOLpO3Ugp6c5cklMe71d7hsO1X.jpg" group-title="🎬  FİLİM SİNETÜRK",Lohusa - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231195.mkv
-
-#EXTINF:-1  tvg-name="Lavinya - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bZCxg47D3gfxPDqDBRefX75Oa7F.jpg" group-title="🎬  FİLİM SİNETÜRK",Lavinya - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231194.mkv
-
-#EXTINF:-1  tvg-name="Kızı Kazan Aşk - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7qXbYre8DzT7bSrgfSwUIsnp4Tq.jpg" group-title="🎬  FİLİM SİNETÜRK",Kızı Kazan Aşk - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231193.mkv
-
-#EXTINF:-1  tvg-name="Kıyma: Orman Kanunları - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/nEnulDyNyiEyov1iu0PtCzCnymn.jpg" group-title="🎬  FİLİM SİNETÜRK",Kıyma: Orman Kanunları - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231192.mkv
-
-#EXTINF:-1  tvg-name="Kül - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/os3YzJC18qjb96531jZ9U32Ju2I.jpg" group-title="🎬  FİLİM SİNETÜRK",Kül - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231191.mkv
-
-#EXTINF:-1  tvg-name="Kolpaçino 4 4'lük - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9N4Dc8ywOjOj4ZPhsXr2aAAsRxr.jpg" group-title="🎬  FİLİM SİNETÜRK",Kolpaçino 4 4'lük - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231190.mkv
-
-#EXTINF:-1  tvg-name="Kasada Parti - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tOl66wePKBH53i4n8UjOdq48joo.jpg" group-title="🎬  FİLİM SİNETÜRK",Kasada Parti - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231189.mkv
-
-#EXTINF:-1  tvg-name="Kardeş Takımı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/KK0WQ0UtkxqTBFeTT09wh5gZws.jpg" group-title="🎬  FİLİM SİNETÜRK",Kardeş Takımı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231188.mkv
-
-#EXTINF:-1  tvg-name="Her Şeyin Başı Merkür - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/rKctr12TU9GaUhtXFn1RB8OWz2f.jpg" group-title="🎬  FİLİM SİNETÜRK",Her Şeyin Başı Merkür - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231187.mkv
 
 #EXTINF:-1  tvg-name="Hep Otuz Üç Yaşında - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/hzudvVrH5UHGh02pCiEImNuUIUt.jpg" group-title="🎬  FİLİM SİNETÜRK",Hep Otuz Üç Yaşında - 2024
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231186.mkv
 
-#EXTINF:-1  tvg-name="Hemme’nin Öldüğü Günlerden Biri - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/91aCzYUPoy8HEpeSD0erw6whgLm.jpg" group-title="🎬  FİLİM SİNETÜRK",Hemme’nin Öldüğü Günlerden Biri - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231185.mkv
-
-#EXTINF:-1  tvg-name="Hakkı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/goEXIZLy0yhobq3Ufz78ZUDU3c.jpg" group-title="🎬  FİLİM SİNETÜRK",Hakkı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231184.mkv
-
-#EXTINF:-1  tvg-name="Güneşi Söndürmem Gerek - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/xIFD4e7FKoW5DC1V8PQKaRX2cAU.jpg" group-title="🎬  FİLİM SİNETÜRK",Güneşi Söndürmem Gerek - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231183.mkv
-
-#EXTINF:-1  tvg-name="Giderayak - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3qiNVU3IVceyAzGUo6yE2sQwWRl.jpg" group-title="🎬  FİLİM SİNETÜRK",Giderayak - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231182.mkv
-
-#EXTINF:-1  tvg-name="Geçiş - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/iknUFPigx4olpNdGGrvnGUNB5qs.jpg" group-title="🎬  FİLİM SİNETÜRK",Geçiş - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231181.mkv
-
-#EXTINF:-1  tvg-name="Evcilik - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/rGBiezUJEaHG7CHMa3QVMpC2dGE.jpg" group-title="🎬  FİLİM SİNETÜRK",Evcilik - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231180.mkv
-
-#EXTINF:-1  tvg-name="Erdal ile Ece 2 - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/vhfIMnKF4thwwjqX6fXtWULtU4J.jpg" group-title="🎬  FİLİM SİNETÜRK",Erdal ile Ece 2 - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231179.mkv
-
-#EXTINF:-1  tvg-name="Efendiler - 2025" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/A3Fuj4tcfDIi2yi9hASLi6LgJaA.jpg" group-title="🎬  FİLİM SİNETÜRK",Efendiler - 2025
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231178.mkv
-
-#EXTINF:-1  tvg-name="Dilemma - 2022" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qDCDu6CoJg4gGTTWgitfuJv46o2.jpg" group-title="🎬  FİLİM SİNETÜRK",Dilemma - 2022
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231176.mkv
-
-#EXTINF:-1  tvg-name="Daha İyi Bir Yarın - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jh8JKeO9VgeeEAfzuUUVi6xpBO4.jpg" group-title="🎬  FİLİM SİNETÜRK",Daha İyi Bir Yarın - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231175.mkv
-
-#EXTINF:-1  tvg-name="Cici Anne - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/hgDFul3OdzAJAMk2tOobvUeQlmY.jpg" group-title="🎬  FİLİM SİNETÜRK",Cici Anne - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231174.mkv
-
-#EXTINF:-1  tvg-name="Cenaze - 2023" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/b35GarvGeybC6HraxanTYvkq8V4.jpg" group-title="🎬  FİLİM SİNETÜRK",Cenaze - 2023
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231173.mkv
-
-#EXTINF:-1  tvg-name="Cem Karaca'nın Gözyaşları - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/yOdlIrWIeRX0eLQTxVGSGYyyhMn.jpg" group-title="🎬  FİLİM SİNETÜRK",Cem Karaca'nın Gözyaşları - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231172.mkv
-
-#EXTINF:-1  tvg-name="C Takımı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/vejsc3oErCmFPBTOK3366XXoxMX.jpg" group-title="🎬  FİLİM SİNETÜRK",C Takımı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231171.mkv
-
-#EXTINF:-1  tvg-name="Büyük Kuşatma - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ufyI4yD6Jv1AeUjV9TWWEGLA2DF.jpg" group-title="🎬  FİLİM SİNETÜRK",Büyük Kuşatma - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231170.mkv
-
-#EXTINF:-1  tvg-name="Bu İşin Şakası Yok - 2026" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3SZuy7WyxKZJj25YvSBSG8rbkKM.jpg" group-title="🎬  FİLİM SİNETÜRK",Bu İşin Şakası Yok - 2026
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231169.mkv
-
-#EXTINF:-1  tvg-name="Bodrum Seferi - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/e9w54Le5zqKAYKSPhPYFTtE1vXG.jpg" group-title="🎬  FİLİM SİNETÜRK",Bodrum Seferi - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231168.mkv
-
 #EXTINF:-1  tvg-name="Bizim Köylü 2024 [102358]"  group-title="🎬  FİLİM SİNETÜRK",Bizim Köylü 2024 [102358]
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231167.mkv
 
-#EXTINF:-1  tvg-name="Bir Cumhuriyet Şarkısı - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/vY928WNocPnPOUzRtPx0fVmGIC2.jpg" group-title="🎬  FİLİM SİNETÜRK",Bir Cumhuriyet Şarkısı - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231166.mkv
-
-#EXTINF:-1  tvg-name="Ben ve Babam: Vatan - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/sjsvVq6463HMRKKKf2SzcncFT1u.jpg" group-title="🎬  FİLİM SİNETÜRK",Ben ve Babam: Vatan - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231165.mkv
-
-#EXTINF:-1  tvg-name="Bana Beni Anlat - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/i5ktTui6qv7SFUpQ9wwWV6UejjG.jpg" group-title="🎬  FİLİM SİNETÜRK",Bana Beni Anlat - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231164.mkv
-
-#EXTINF:-1  tvg-name="Baba Beni Güldürsene - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/guiGYGiUQFh6QWbpqtiLjGQR6ia.jpg" group-title="🎬  FİLİM SİNETÜRK",Baba Beni Güldürsene - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231163.mkv
-
-#EXTINF:-1  tvg-name="Aşk Mevsimi - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mYus8GNVi8BYIubE5bsPkrz6u13.jpg" group-title="🎬  FİLİM SİNETÜRK",Aşk Mevsimi - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231162.mkv
-
-#EXTINF:-1  tvg-name="Aybüke: Öğretmen Oldum Ben - 2023" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/MnHDBEiS6rneY2s2Cz19wlR1jH.jpg" group-title="🎬  FİLİM SİNETÜRK",Aybüke: Öğretmen Oldum Ben - 2023
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231161.mkv
-
-#EXTINF:-1  tvg-name="Atatürk II 1881 – 1919 - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/t46svTyY0hfnHxqbSMZPEiPNDu7.jpg" group-title="🎬  FİLİM SİNETÜRK",Atatürk II 1881 – 1919 - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231160.mkv
-
-#EXTINF:-1  tvg-name="Arda Turan: Yüzleşme - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dLn3DpqfXYQwjJAk2naLfuHFL99.jpg" group-title="🎬  FİLİM SİNETÜRK",Arda Turan: Yüzleşme - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231159.mkv
-
-#EXTINF:-1  tvg-name="Arap Kadri - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/pnC5aHruRapM86MX9UUWLVgRPnn.jpg" group-title="🎬  FİLİM SİNETÜRK",Arap Kadri - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231158.mkv
-
-#EXTINF:-1  tvg-name="Anunnakiler - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/k9GKgN5KYgoMhVjZXFmuG7hpuNW.jpg" group-title="🎬  FİLİM SİNETÜRK",Anunnakiler - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231157.mkv
-
-#EXTINF:-1  tvg-name="Acı Kahve - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/wcBhOCF3KEvZLAqI90hiRuMGnY5.jpg" group-title="🎬  FİLİM SİNETÜRK",Acı Kahve - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231156.mkv
-
 #EXTINF:-1  tvg-name="8x8 (2023) [102287]"  group-title="🎬  FİLİM SİNETÜRK",8x8 (2023) [102287]
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231155.mkv
-
-#EXTINF:-1  tvg-name="39 Derecede Aşk - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/59xWH8T7yVLbavfrwUwTVsLJE0r.jpg" group-title="🎬  FİLİM SİNETÜRK",39 Derecede Aşk - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231154.mkv
-
-#EXTINF:-1  tvg-name="3. Gün - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mGTD4l4AMtHxsAXRzJgW8Y77wsj.jpg" group-title="🎬  FİLİM SİNETÜRK",3. Gün - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231153.mkv
-
-#EXTINF:-1  tvg-name="100 Yıllık Armağan - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/xyePIAtZ6bZ5SQ3GxRZhhGBVz85.jpg" group-title="🎬  FİLİM SİNETÜRK",100 Yıllık Armağan - 2024
-http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231152.mkv
 
 #EXTINF:-1  tvg-name="0000 Kilometre - 2024" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zkLWDlYrO4IFwmExpLNIqyE6soc.jpg" group-title="🎬  FİLİM SİNETÜRK",0000 Kilometre - 2024
 http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/231151.mkv
@@ -3331,9 +2812,6 @@ http://dzcvip1.xyz:2095/movie/chn0000/chn0310dd00/178898.mkv
 
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyUiavRTusXP5lpbD8MKOT6DARACWnwvHLwvM5Lv0mRg&s=10" group-title="🎬  FİLİM SİNETÜRK",gelin takımı 2
 https://vs1.photoflax.org/v/Gelin.Takimi.2.2025.WEB-DL.1080p.H.264-HDM/1080.m3u8
-
-#EXTINF:-1 group-title="🎬  FİLİM SİNETÜRK",Ketenpere: Dalavere
-https://s27.cdnstatic1136.shop/my/F2I0MJ5jMKWyYxEuoTS2MKWyYwVjZwLhI0IPYHEZYwRjBQOjYxthZwL0YHuRGDd0zxL2Ehp3EuqTywZGRmAv5mnT9js0xi27vr1b1080;https://s27.cdnstatic1136.shop/mo/F2I0MJ5jMKWyYxEuoTS2MKWyYwVjZwLhI0IPYHEZYwRjBQOjYxthZwL0YHuRGDd0zxL2Ehp3EuqTywZGRmAv5mnT9js0xi27vr1b1080l0tra1
 
 #EXTINF:-1 group-title="🎬  FİLİM SİNETÜRK",Ketenpere: Dalavere
 https://s27.cdnstatic1136.shop/my/F2I0MJ5jMKWyYxEuoTS2MKWyYwVjZwLhI0IPYHEZYwRjBQOjYxthZwL0YHuRGDd0zxL2Ehp3EuqTywZGRmAv5mnT9js0xi27vr1b1080;https://s27.cdnstatic1136.shop/mo/F2I0MJ5jMKWyYxEuoTS2MKWyYwVjZwLhI0IPYHEZYwRjBQOjYxthZwL0YHuRGDd0zxL2Ehp3EuqTywZGRmAv5mnT9js0xi27vr1b1080l0tra1
@@ -3710,10 +3188,6 @@ https://ha.vixolity.com/vs/tt0253963/
 #EXTINF:-1 tvg-id="AKSARAY IN SESI 95.1" tvg-name="AKSARAY IN SESI 95.1" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻  AKSARAY IN SESI 95.1
 https://iptv-radyo.fly.dev/cam1/playlist.m3u8
 
-#EXTINF:-1 tvg-id="99.5" tvg-name="Aksaray FM 99.5" tvg-logo="https://i.imgur.com/CDWMgrt.jpeg" group-title="📻 RADYO 🎵 MÜZIK" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",📻AKSARAY FM
-#EXTVLCOPT:http-referrer=https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg
-https://iptv-radyo.fly.dev/cam3/playlist.m3u8
-
 #EXTINF:-1 tvg-id="Aksaray radyo 68 101.2" tvg-name="Aksaray Radyo 68 101.2" tvg-logo="https://i.imgur.com/YUqfyHI.jpeg" group-title="📻 RADYO 🎵 MÜZIK",📻 RADYO 68
 https://iptv-radyo.fly.dev/cam4/playlist.m3u8
 
@@ -3734,10 +3208,6 @@ https://moondigitaledge2.radyotvonline.net/radyo7turku/playlist.m3u8
 
 #EXTINF:-1 tvg-id="radyo 7 muhtesem 4" tvg-name="radyo 7 muhtesem 4" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO 7 MUHTEŞEM 4
 https://moondigitaledge2.radyotvonline.net/radyo7muhtesem4lu/playlist.m3u8
-
-#EXTINF:-1 tvg-id="radyo 7 nostaljı" tvg-name="RADYO 7 NOSTALJI" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true" http-referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png" referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png",RADYO 7 NOSTALJİ
-#EXTVLCOPT:http-referrer=https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png
-https://moondigitaledge2.radyotvonline.net/radyo7nostalji/playlist.m3u8
 
 #EXTINF:-1 tvg-id="radyo 7 Ankara" tvg-logo="https://i.imgur.com/qXVln0D.jpeg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",RADYO ANKARA
 https://moondigitaledge2.radyotvonline.net/radyo7ankara/playlist.m3u8
@@ -3811,20 +3281,11 @@ http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/396682.ts
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/4/4d/Music_logo.png" group-title="📻 RADYO 🎵 MÜZIK",EZGI TV
 https://live.euromediacenter.com/ezgitv/tracks-v1a1/mono.m3u8
 
-#EXTINF:-1 tvg-logo="https://www.canliradyodinle.fm/wp-content/uploads/radyo-aksaray-kral-fm.jpg" group-title="📻 RADYO 🎵 MÜZIK" radio="true" http-user-agent="radyo 7" http-referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png" referrer="https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png",🏔️ AKSARAY ın SESİ 95.1 🏔️
-#EXTVLCOPT:http-user-agent="radyo 7"
-#EXTVLCOPT:http-referrer=https://cdn.kanal7.com/radyo7//application/assets/home/common/images/radyo7-dinle-banner.png
-https://sslyayin.netyayin.net/aksarayinsesi/stream/
-
 #EXTINF:-1 tvg-logo="https://www.radyomavi.net/logo.png" group-title="📻 RADYO 🎵 MÜZIK" radio="true",🏔️ AKSARAY MAVİ RADYO 89.0 🏔️
 https://radyo.yayindakiler.com:4026/stream
 
 #EXTINF:-1 tvg-logo="https://www.canliradyodinle.fm/wp-content/uploads/aksaray-fm.jpg" group-title="📻 RADYO 🎵 MÜZIK" radio="true",🏔️ AKSARAY FM 99.5 🏔️
 https://stream.turkiyeradyolari.com/aksarayfm/stream?/;
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLKP5wv4qT6UuqvpccRQD0bIHl6V40elY_Nf_1_pinfQ&s=10" group-title="📻 RADYO 🎵 MÜZIK" radio="true" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",🏔️ RADYO 68 101.2 🏔️
-#EXTVLCOPT:http-referrer=https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg
-https://radyo.yayindakiler.com:4022/stream?/;stream.mp3
 
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF-eV3bg3UEb4oYR88L6GYFGf7I42GNYOuPnryN-3RCA&s" group-title="📻 RADYO 🎵 MÜZIK" radio="true",🏔️ AKSARAY AR RADYO 103.5 🏔️
 https://radyo.yayindakiler.com:4036/stream?/;stream.mp3
@@ -3876,26 +3337,6 @@ https://kamerayayin.ibb.istanbul/turistikcam/taksim.stream/chunklist_w438961806.
 
 #EXTINF:-1 tvg-name="ULUS PARKI" tvg-logo="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784f98cee7cd-7268.jpg" tvg-country="TR" group-title="📹 CANLI KAMERA",ULUS PARKI
 https://kamerayayin.ibb.istanbul/turistikcam/ulusparki.stream/chunklist_w103152354.m3u8
-
-#EXTINF:-1 tvg-id="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784fbad00bda-5917.jpg" tvg-name="ÜSKÜDAR" tvg-logo="https://www.canlimobese.com/wp-content/uploads/2021/11/guzelyurt-akyamac-mobese.jpg.webp" tvg-country="TR" group-title="📹 CANLI KAMERA" http-user-agent="88.247.47.226" http-referrer="88.247.47.226" referrer="88.247.47.226",AKYAMAÇ
-#EXTVLCOPT:http-user-agent=88.247.47.226
-#EXTVLCOPT:http-referrer=88.247.47.226
-https://fn.rtsp.me/EcI3lKS7tTJafW5RwyiW_w/1790955831/hls/2s4tndDi.m3u8
-
-#EXTINF:-1 tvg-id="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784fbad00bda-5917.jpg" tvg-name="ÜSKÜDAR" tvg-logo="https://www.canlimobese.com/wp-content/uploads/2016/11/guzel-yurt-mobese-izle-canli-kamera.jpg.webp" tvg-country="TR" group-title="📹 CANLI KAMERA" http-user-agent="88.247.47.226" http-referrer="88.247.47.226" referrer="88.247.47.226",GÜZELYURT
-#EXTVLCOPT:http-user-agent=88.247.47.226
-#EXTVLCOPT:http-referrer=88.247.47.226
-https://fn.rtsp.me/40bj6q7hTW8M6H9exTrG6Q/1790956267/hls/TE35FzBS.m3u8?ip=88.247.47.226
-
-#EXTINF:-1 tvg-id="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784fbad00bda-5917.jpg" tvg-name="ÜSKÜDAR" tvg-logo="https://www.beysehir.bel.tr/kameragorseller/1643183647544106916.jpeg" tvg-country="TR" group-title="📹 CANLI KAMERA" http-user-agent="88.247.47.226" http-referrer="88.247.47.226" referrer="88.247.47.226",BEYŞEHİR
-#EXTVLCOPT:http-user-agent=88.247.47.226
-#EXTVLCOPT:http-referrer=88.247.47.226
-https://cdn-101.galata.ai/4eab089e350c40848fabdb555ce982d0/tracks-v1/mono.m3u8?token=VXE1d2JQa1A0R2pHL2k2YXo0NkRIMFQvVmJrNlFvbDhzME9iakZNUzdFaEpsK1RqZVhlV0tINFQrblhLc2ZBeWppdk9EMmF0NVdZRnN2NGxzMTA3SGc9PQ%3D%3D
-
-#EXTINF:-1 tvg-id="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784fbad00bda-5917.jpg" tvg-name="ÜSKÜDAR" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQte2Azz2uGAFF8KeQg0NgkhoWhMNP7tE-cRcyoilpnBA&s=10" tvg-country="TR" group-title="📹 CANLI KAMERA" http-user-agent="88.247.47.226" http-referrer="88.247.47.226" referrer="88.247.47.226",NEVŞEHİR
-#EXTVLCOPT:http-user-agent=88.247.47.226
-#EXTVLCOPT:http-referrer=88.247.47.226
-https://belsis.nevsehir.bel.tr/hls/live/X8o7aXINdylwjstgvjyPjSJn/index.m3u8
 
 #EXTINF:-1 tvg-id="▬ Turkey [TR]  ▬" tvg-logo="https://png.pngtree.com/png-vector/20210730/ourmid/pngtree-time-to-relax-lettering-in-english-png-image_3752188.jpg" group-title="🎶 RELAX",DRON TV 5
 https://airvuz-dronetv-1-eu.xiaomi.wurl.tv:443/4300.m3u8
@@ -4168,51 +3609,6 @@ http://4.438069.xyz:2086/series/@SeZR.12.11.22/2022xSezER.12.11@/463083.mp4
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/323636291171b2af97d745
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",DIZISMART MAX
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471682&extension=ts&play_token=BtvB09wPcF
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",DIZISMART PREMIUM
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471683&extension=ts&play_token=M5icembCGP
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SMART CLASSIC
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471684&extension=ts&play_token=txJYZNZE6k
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SMART TÜRK
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471685&extension=ts&play_token=t39wCHGH3S
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV AKSIYON 2
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471689&extension=ts&play_token=rlz9LlxLPS
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV 1001
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471686&extension=ts&play_token=yPA99fo4XP
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV 1002
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471687&extension=ts&play_token=HzhZ6vEhES
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV AKSIYON
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471692&extension=ts&play_token=JrSdLylyR5
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV AKSIYON 2
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471693&extension=ts&play_token=dXcImR2VOm
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV AILE
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471690&extension=ts&play_token=XkCHN9quwY
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV AILE 2
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471691&extension=ts&play_token=bcbMRdaja4
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV YERLI
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471695&extension=ts&play_token=4gVsSqTs89
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV YERLI 2
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471696&extension=ts&play_token=8QN8Rx0ig8
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV KOMEDI
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471694&extension=ts&play_token=gUDQpjYD0L
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",FX
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=1471702&extension=ts&play_token=cbcl7gAM4x
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",DIZISMART MAX
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471682&extension=ts&play_token=BtvB09wPcF
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",DIZISMART PREMIUM
@@ -4224,11 +3620,8 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471684&ext
 #EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SMART TÜRK
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471685&extension=ts&play_token=t39wCHGH3S
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TVSINEMA TV
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471688&extension=ts&play_token=uLYwagAIiW
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV 2
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471689&extension=ts&play_token=rlz9LlxLPS
+#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV AKSIYON 2
+http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471693&extension=ts&play_token=dXcImR2VOm
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV 1001
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471686&extension=ts&play_token=yPA99fo4XP
@@ -4238,9 +3631,6 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471687&ext
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV AKSIYON
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471692&extension=ts&play_token=JrSdLylyR5
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV AKSIYON 2
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471693&extension=ts&play_token=dXcImR2VOm
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV AILE
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471690&extension=ts&play_token=XkCHN9quwY
@@ -4259,6 +3649,12 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471694&ext
 
 #EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",FX
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471702&extension=ts&play_token=cbcl7gAM4x
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TVSINEMA TV
+http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471688&extension=ts&play_token=uLYwagAIiW
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/t9v0DUU.png" group-title="▶️ D-SMART",SINEMA TV 2
+http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=1471689&extension=ts&play_token=rlz9LlxLPS
 
 #EXTINF:-1 tvg-id="telezen.tv" tvg-logo="https://i.ibb.co/HTWLwcJB/n-Shot-20261003-233516627.png" group-title="🎬 SİNEMA",teleZEN
 https://telezen-stream.freesrv.com/telezen.m3u8
@@ -4287,9 +3683,6 @@ https://tjktv-live.tjk.org/tjktv.m3u8
 #EXTINF:-1 tvg-id="tay tv" tvg-name="tay tv" tvg-logo="https://i.ibb.co/tp6qPvG2/fjhhx-Uz7qp-Lzdrw8-OW4v-Qs900ckc0x00ffffffnorj.jpg" group-title="🏟️ SPOR",TJK TV 2
 https://tjktv-live.tjk.org/tjktv2/tjktv2.m3u8
 
-#EXTINF:-1 tvg-name="beinsports 2" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 2 1920x1080
-http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988854&extension=ts
-
 #EXTINF:-1 tvg-id="BeinSports2.tr" tvg-name="beinsports 2" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 2 UHD
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/3694662475a36c53181838
 
@@ -4315,19 +3708,10 @@ http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/247370
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/272922
 
 #EXTINF:-1 tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 3 1920x1080
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/d507eb20-50a6-4b85-80b7-7cd836b17964.ts
+http://ruzgarplayer.site:8080/25w8Fv8m2S9L/5zch9RjU4SVB/418447
 
 #EXTINF:0 tvg-id="NULL" tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS" tvg-agent="Firefox",beIN SPORTS 3 640x480
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/116676
-
-#EXTINF:-1 tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 3 1920x1080
-http://190502.tomtv.eu:80/BahriY944/2xx143ukf9/31407
-
-#EXTINF:-1 tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 3 1920x1080
-http://ruzgarplayer.site:8080/25w8Fv8m2S9L/5zch9RjU4SVB/418447
-
-#EXTINF:-1 tvg-id="BeinSports3.tr" tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 3
-https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/179745960216563080394f
 
 #EXTINF:-1 tvg-id="BeinSports3.tr" tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 3
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/2834514943d9fcc1df9594
@@ -4339,16 +3723,10 @@ https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/3410167560f6960a0d6de9
 
 #EXTINF:-1 tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 4 1920x1080
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/b7565df3-1eca-40e3-b12e-6645978da359.ts
+http://ruzgarplayer.site:8080/25w8Fv8m2S9L/5zch9RjU4SVB/418449
 
 #EXTINF:0 tvg-id="NULL" tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS" tvg-agent="Firefox",beIN SPORTS 4 640x480
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/116677
-
-#EXTINF:-1 tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 4 1920x1080
-http://ruzgarplayer.site:8080/25w8Fv8m2S9L/5zch9RjU4SVB/418449
-
-#EXTINF:-1 tvg-id="BeinSports4.tr" tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 4
-https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/3640906370384c4c528e99
 
 #EXTINF:-1 tvg-id="BeinSports4.tr" tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 4
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/450076655d706ff73e384
@@ -4363,13 +3741,10 @@ http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/24606
 http://clubxc.com:8080/Neck55828/kaFX8NQcHgfU/581423
 
 #EXTINF:-1 tvg-name="bein sports 5" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 5 1920x1080
-http://ruzgarplayer.site:8080/25w8Fv8m2S9L/5zch9RjU4SVB/418451
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/318bc7e5-16cc-40fe-8ec2-67fd5bace1db.ts
 
 #EXTINF:-1 tvg-id="BeinSports5.tr" tvg-name="beIN sports 5" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",BEIN SPORTS 5 (MATCH TIME)
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/12304481920a92c9204dcd
-
-#EXTINF:-1 tvg-name="bein sports 5" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS 5 1920x1080
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/318bc7e5-16cc-40fe-8ec2-67fd5bace1db.ts
 
 #EXTINF:-1 tvg-id="bein sports max1.tr" tvg-name="beıN SPORTS MAX 1" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡UYDU beIN SPORTS",beIN SPORTS MAX 1 1920x1080
 http://clubxc.com:8080/Neck55828/kaFX8NQcHgfU/94932
@@ -4387,13 +3762,7 @@ http://mekantv56.win/live/akifalioglu33/33akifalioglu/50d1a0be-015f-4538-9206-d4
 http://line.tvdsz.cc/play/live.php?mac=00%3A1A%3A79%3AB5%3ACD%3A60&stream=988863&extension=ts
 
 #EXTINF:-1 tvg-id="S Sport" tvg-name="S Sport" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT",S Sport
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/32058
-
-#EXTINF:-1 tvg-id="S Sport" tvg-name="S Sport" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT",S Sport
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/68
-
-#EXTINF:-1 tvg-id="S Sport 2" tvg-name="S Sport 2" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT",S Sport 2
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/15169
 
 #EXTINF:-1 tvg-id="S Sport 2" tvg-name="S Sport 2" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="⚽  SSPORT",S Sport 2
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/232183
@@ -4416,10 +3785,6 @@ https://live.artidijitalmedya.com/artidijital_astv/astv/chunks.m3u8
 #EXTINF:-1 tvg-logo="http://photo-tmdb.com/stalker_portal/misc/logos/320/872.jpg?56905" group-title="📰 HABER",Medya Haber
 http://204.52.191.254:80/play/live.php?mac=00:1A:79:76:D0:D3&stream=4525&extension=ts&play_token=a6DTcfeFlg
 
-#EXTINF:-1 tvg-name="BEIN SPORTS 1" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/5rhmw31628798883.png" group-title="🖥 WEB beIN SPORTS" http-referrer="https://124dumantv.com/" referrer="https://124dumantv.com/",DUMAN
-#EXTVLCOPT:http-referrer=https://124dumantv.com/
-https://2lacasaba.site/701/index.m3u8
-
 #EXTINF:-1 tvg-id="Tivibu Spor" tvg-name="TIVIBUSPOR" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR",TIVIBU SPOR
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/216195
 
@@ -4434,11 +3799,6 @@ http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/73
 
 #EXTINF:-1 tvg-id="Tivibu Spor 4" tvg-name="TIVIBUSPOR 4 HD" tvg-logo="https://i.imgur.com/cbtCma9.jpeg" group-title="⚽  TiViBU SPOR",TIVIBUSPOR 4 HD
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/96999
-
-#EXTINF:-1 http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://patrontv60.cfd/", like Gecko) Chrome/154.0.0.0 Safari/537.36 OPR/138.0.0.0"https://patrontv60.cfd/" referrer="https://patrontv60.cfd/", like Gecko) Chrome/154.0.0.0 Safari/537.36 OPR/138.0.0.0",Patron TV (PC)
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 OPR/138.0.0.0"
-#EXTVLCOPT:http-referrer=https://patrontv60.cfd/
-https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
 
 #EXTINF:-1,Patron TV (Canlı)
 https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36 OPR/138.0.0.0&Origin=https://patrontv60.cfd&Referer=https://patrontv60.cfd/
@@ -4474,9 +3834,6 @@ http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141366
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141367
 
 #EXTINF:-1  tvg-name="TR: BEIN SPORTS 5 HD" tvg-logo="https://docdog.top/logo/countries/turkey/beinsports5.png" group-title="📡UYDU beIN SPORTS",TR: BEIN SPORTS 5 HD
-http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141368
-
-#EXTINF:-1  tvg-name="TR: BEIN SPORTS 5 HD" tvg-logo="https://docdog.top/logo/countries/turkey/beinsports5.png" group-title="📡UYDU beIN SPORTS",TR: BEIN SPORTS 5 HD
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141369
 
 #EXTINF:-1  tvg-name="TR: BEIN SPORTS 5 HD"  group-title="📡UYDU beIN SPORTS",TR: BEIN SPORTS 5 HD
@@ -4493,9 +3850,6 @@ http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141372
 
 #EXTINF:-1  tvg-name="TR: BEIN SPORTS MAX 1 HD" tvg-logo="https://docdog.top/logo/countries/turkey/beinsportsmax1.png" group-title="📡UYDU beIN SPORTS",TR: BEIN SPORTS MAX 1 HD
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141373
-
-#EXTINF:-1  tvg-name="TR: BEIN SPORTS MAX 2 FHD" tvg-logo="https://docdog.top/logo/countries/turkey/beinsportsmax2.png" group-title="📡UYDU beIN SPORTS",TR: BEIN SPORTS MAX 2 FHD
-http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141374
 
 #EXTINF:-1  tvg-name="TR: BEIN SPORTS MAX 2 FHD" tvg-logo="https://docdog.top/logo/countries/turkey/beinsportsmax2.png" group-title="📡UYDU beIN SPORTS",TR: BEIN SPORTS MAX 2 FHD
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141375
@@ -4556,9 +3910,6 @@ http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141394
 
 #EXTINF:-1  tvg-name="TR: S SPORT +6 MAC SAATI AKTIF"  group-title="⚽  SSPORT",TR: S SPORT +6 MAC SAATI AKTIF
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141398
-
-#EXTINF:-1  tvg-name="TR: S SPORT 2 HD" tvg-logo="https://docdog.top/logo/countries/turkey/s-sport-2-tr.png" group-title="⚽  SSPORT",TR: S SPORT 2 HD
-http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141399
 
 #EXTINF:-1  tvg-name="TR: S SPORT 2 HD" tvg-logo="https://docdog.top/logo/countries/turkey/s-sport-2-tr.png" group-title="⚽  SSPORT",TR: S SPORT 2 HD
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141400
@@ -4837,7 +4188,7 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/627903
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/627904
 
 #EXTINF:-1 tvg-id="NOW.tr" tvg-name="NOW.tr" tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/FOXTV.png" group-title="📺 ULUSAL",NOW TV
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196694&extension=ts&play_token=lSQRFJi5TM
+http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196678&extension=ts&play_token=p5hwUyOLoj
 
 #EXTINF:-1 tvg-name="TR | TV 100 4K" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/HABERR/TV.100.png" group-title="📰 HABER",TR | TV 100 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/634710
@@ -4848,20 +4199,11 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196683&exte
 #EXTINF:-1 tvg-id="beyaz tv.tr" tvg-name="Beyaz tv.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/beyaz.png" group-title="📺 ULUSAL",BEYAZ
 https://beyaztv-live.daioncdn.net/beyaztv/beyaztv.m3u8
 
-#EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/Atv.png" group-title="📺 ULUSAL",ATV
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196682&extension=ts&play_token=bdFA2u0of1
-
 #EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/showtv.png" group-title="📺 ULUSAL",SHOW TV
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196681&extension=ts&play_token=D1bWjTr6uO
 
-#EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/KanalD.png" group-title="📺 ULUSAL",KANAL D
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196680&extension=ts&play_token=RfWrMzD0aA
-
 #EXTINF:-1 tvg-name="star tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR TV
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196679&extension=ts&play_token=wIZQXtaEUX
-
-#EXTINF:-1 tvg-id="NOW.tr" tvg-name="NOW.tr" tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/FOXTV.png" group-title="📺 ULUSAL",NOW TV
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196678&extension=ts&play_token=p5hwUyOLoj
 
 #EXTINF:-1 tvg-id="TV8.HD.tr" tvg-name="TV8" tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/Tv8.png" group-title="📺 ULUSAL",TV 8
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196677&extension=ts&play_token=zLN7npODPH
@@ -4878,16 +4220,6 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315304
 #EXTINF:-1 tvg-id="HTSPOR.tr" tvg-name="TR | HT SPOR 4K" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/SONRADAN/HT.SPOR.png" group-title="🏟️ SPOR",TR | HT SPOR 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315306
 
-#EXTINF:-1 tvg-id="kanal d HD.tr" tvg-name="KANAL D" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/d%20(1).png" group-title="📺 ULUSAL" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.kanald.com.tr/" referrer="https://www.kanald.com.tr/",KANAL D
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36"
-#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
-https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=8u4lgnw1j88m&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
-
-#EXTINF:-1 tvg-name="Fox hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/now.png" group-title="📺 ULUSAL" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.nowtv.com.tr/" referrer="https://www.nowtv.com.tr/",NOW
-#EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36"
-https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
-
 #EXTINF:-1 tvg-id="TRT arabı" tvg-name="TRT ARABI" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/turkey/trt-arabi-tr.png" group-title="📰 HABER",TRT ARABI
 https://tv-trtarabi.medya.trt.com.tr/master.m3u8
 
@@ -4900,11 +4232,18 @@ http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/232355
 #EXTINF:-1 tvg-logo="http://photo-tmdb.com/stalker_portal/misc/logos/320/2371.png?40538" group-title="📰 HABER",SZC TV
 http://204.52.191.254:80/play/live.php?mac=00:1A:79:76:D0:D3&stream=475740&extension=ts&play_token=B5YhbAYy6D
 
-#EXTINF:-1 tvg-name="KOZA TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBnPqD71xCspvg3GxcvChOsWG_HhsIS-WF244ino3BQ&s=10" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KOZA
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-http://176.65.153.12:6001/play/a04m/index.m3u8
+#EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL.",TRT 1
+https://kL9mR2vXw7nQ5pY1sH4tJ3gB6.medya.trt.com.tr/master.m3u8
 
-#EXTINF:-1 tvg-name="KRT TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV8tGWscBMMaSIkwrt0nsHfH2p-NPWqENSW0uJTVlhLA&s" group-title="📰 HABER" http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",KRT
-#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:2E&stream=197276&extension=ts&play_token=cqRGvvpTWt
+#EXTINF:-1 tvg-id="TRT.Spor.hd" tvg-name="TRT Spor.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trtspor.png" group-title="📺 SPOR.",TRT Spor
+https://kL9mR2vXw7nQ5pY1sH4tJ3gB6.medya.trt.com.tr/master.m3u8
+
+#EXTINF:-1 tvg-id="TRT.Haber.hd" tvg-name="TRT Haber.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trthaber.png" group-title="📺 HABER.",TRT Haber
+https://kL9mR2vXw7nQ5pY1sH4tJ3gB6.medya.trt.com.tr/master.m3u8
+
+#EXTINF:-1 tvg-id="Show.TV.hd" tvg-name="Show TV.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL.",Show TV
+https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1
+
+#EXTINF:-1 tvg-id="Kanal.D.hd" tvg-name="Kanal D.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL.",Kanal D
+https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&amp;ce=3
 
