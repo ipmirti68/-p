@@ -2,15 +2,17 @@ import os
 import requests
 import re
 
+YENI_GRUP = "📺 ULUSAL 🔗"
+
 channel_info = {
-    "atv": ["ATV.hd", "ATV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "📺 ULUSAL 🔗", "ATV"],
-    "kanald": ["Kanal.D.hd", "Kanal D.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "📺 ULUSAL 🔗", "Kanal D"],
-    "showtv": ["Show.TV.hd", "Show TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", "📺 ULUSAL 🔗", "Show TV"],
-    "startv": ["Star.TV.hd", "Star TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "📺 ULUSAL 🔗", "Star TV"],
-    "nowtv": ["NOW.TV.hd", "NOW TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "📺 ULUSAL 🔗", "NOW TV"],
-    "kanal7": ["Kanal.7.hd", "Kanal 7.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "📺 ULUSAL 🔗", "Kanal 7"],
-    "tv8": ["TV8.hd", "TV8.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "📺 ULUSAL 🔗", "TV8"],
-    "trt1": ["TRT.1.hd", "TRT 1.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "📺 ULUSAL 🔗", "TRT 1"],
+    "atv": ["ATV.hd", "ATV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", YENI_GRUP, "ATV"],
+    "kanald": ["Kanal.D.hd", "Kanal D.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", YENI_GRUP, "Kanal D"],
+    "showtv": ["Show.TV.hd", "Show TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", YENI_GRUP, "Show TV"],
+    "startv": ["Star.TV.hd", "Star TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", YENI_GRUP, "Star TV"],
+    "nowtv": ["NOW.TV.hd", "NOW TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", YENI_GRUP, "NOW TV"],
+    "kanal7": ["Kanal.7.hd", "Kanal 7.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", YENI_GRUP, "Kanal 7"],
+    "tv8": ["TV8.hd", "TV8.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", YENI_GRUP, "TV8"],
+    "trt1": ["TRT.1.hd", "TRT 1.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", YENI_GRUP, "TRT 1"],
 }
 
 source_urls = {
@@ -21,29 +23,50 @@ source_urls = {
     "nowtv": "https://www.nowtv.com.tr/canli-yayin",
     "kanal7": "https://www.kanal7.com/canli-izle",
     "tv8": "https://www.tv8.com.tr/canli-yayin",
-    # trt1'i cekmeyecegiz, sabit kullanacagiz
+}
+
+# YEDEK LINKLER - cekemezse bunu koyacak, TV8 icin ozel
+backup_links = {
+    "atv": "https://atv-live.cdnvideo.com.tr/atv/atv.m3u8",
+    "kanald": "https://ciner-live.ercdn.net/kanald/kanald.m3u8",
+    "showtv": "https://ciner-live.ercdn.net/showtv/showtv.m3u8",
+    "startv": "https://dogus-live.ercdn.net/startv/startv.m3u8",
+    "nowtv": "https://nowtv-live.ercdn.net/nowtv/nowtv.m3u8",
+    "kanal7": "https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8",
+    "tv8": "https://tv8-live.ercdn.net/tv8/tv8.m3u8",
+    "trt1": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
 }
 
 def extract_m3u8(url):
     try:
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
-            "Referer": url
+            "Referer": url,
+            "Accept": "text/html,application/xhtml+xml"
         }
         r = requests.get(url, timeout=20, headers=headers)
-        # hem duz m3u8 hem de json icindeki m3u8 leri bul
-        m = re.findall(r'https?:\\/\\/[^\s\'"]+\.m3u8[^\s\'"]*|https?://[^\s\'"]+\.m3u8[^\s\'"]*', r.text)
-        # unescape
-        cleaned = []
-        for link in m:
-            link = link.replace("\\/", "/").replace("\\u002F", "/")
-            link = link.split('"')[0].split("'")[0].split("\\")[0]
-            if ".m3u8" in link and "http" in link:
-                cleaned.append(link)
-        if cleaned:
-            # en uzun olan genelde master link
-            cleaned.sort(key=len, reverse=True)
-            return cleaned[0]
+        text = r.text
+
+        # 1. Direk m3u8
+        m = re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', text)
+        if m:
+            # tv8 icin en guzel linki sec
+            for link in m:
+                if "tv8" in link.lower() and "master" in link.lower():
+                    return link
+            m.sort(key=len, reverse=True)
+            return m[0].replace("\\/", "/")
+
+        # 2. JSON icinde escaped m3u8 (tv8 bunu kullaniyor)
+        m2 = re.findall(r'https?:\\\\/\\\\/[^\s\'"]+\.m3u8[^\s\'"]*', text)
+        if m2:
+            return m2[0].replace("\\/", "/").replace("\\u002F", "/")
+
+        # 3. NEXT_DATA icinde ara (kanald, showtv)
+        m3 = re.search(r'"(?:hls|src|source|file)"\s*:\s*"(https:[^"]+\.m3u8[^"]*)"', text)
+        if m3:
+            return m3.group(1).replace("\\/", "/")
+
     except Exception as e:
         print(f"Hata {url}: {e}")
     return None
@@ -59,34 +82,19 @@ if os.path.exists(output_file):
                 if i+1 < len(lines):
                     link = lines[i+1].strip()
                     if link.startswith("http"):
-                        old_channels[lines[i].strip()] = link
+                        # Eski ULUSAL'lari alma, biz yenilecegiz
+                        if YENI_GRUP not in lines[i] and "ULUSAL" not in lines[i].upper():
+                            old_channels[lines[i].strip()] = link
+                        elif "TRT" not in lines[i] and "ATV" not in lines[i] and "KANAL" not in lines[i] and "SHOW" not in lines[i] and "STAR" not in lines[i] and "NOW" not in lines[i] and "TV8" not in lines[i]:
+                            old_channels[lines[i].strip()] = link
 
 updated = {}
 
-# TRT1 SABIT - BIR ONCEKI GIBI KALSIN
+# TRT1 SABIT
 info = channel_info["trt1"]
 extinf = f'#EXTINF:-1 tvg-id="{info[0]}" tvg-name="{info[1]}" tvg-logo="{info[2]}" group-title="{info[3]}",{info[4]}'
-updated[extinf] = "https://tv-trt1.medya.trt.com.tr/master.m3u8"
+updated[extinf] = backup_links["trt1"]
 print("Sabit: TRT 1")
 
 for name, page_url in source_urls.items():
     print(f"Kontrol: {name}")
-    m3u8_link = extract_m3u8(page_url)
-    if m3u8_link:
-        info = channel_info[name]
-        extinf = f'#EXTINF:-1 tvg-id="{info[0]}" tvg-name="{info[1]}" tvg-logo="{info[2]}" group-title="{info[3]}",{info[4]}'
-        updated[extinf] = m3u8_link
-        print(f"OK: {info[4]} -> {m3u8_link[:80]}")
-    else:
-        print(f"Bulunamadi: {name}")
-
-final_list = old_channels.copy()
-final_list.update(updated)
-
-with open(output_file, "w", encoding="utf-8") as out:
-    out.write("#EXTM3U\n")
-    for extinf, link in final_list.items():
-        out.write(extinf + "\n")
-        out.write(link + "\n\n")
-
-print(f"Bitti! Toplam kanal: {len(final_list)} - Yeni guncellenen: {len(updated)}")
