@@ -31,6 +31,7 @@ jobs:
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
+          git pull --rebase origin main
           git add mirti68.m3u
           git commit -m "auto update ULUSAL + DIZILER" || exit 0
           git push
