@@ -2,99 +2,68 @@ import os
 import requests
 import re
 
+output_file = "mirti68.m3u"
 YENI_GRUP = "📺 ULUSAL 🔗"
 
-channel_info = {
-    "atv": ["ATV.hd", "ATV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", YENI_GRUP, "ATV"],
-    "kanald": ["Kanal.D.hd", "Kanal D.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", YENI_GRUP, "Kanal D"],
-    "showtv": ["Show.TV.hd", "Show TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", YENI_GRUP, "Show TV"],
-    "startv": ["Star.TV.hd", "Star TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", YENI_GRUP, "Star TV"],
-    "nowtv": ["NOW.TV.hd", "NOW TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", YENI_GRUP, "NOW TV"],
-    "kanal7": ["Kanal.7.hd", "Kanal 7.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", YENI_GRUP, "Kanal 7"],
-    "tv8": ["TV8.hd", "TV8.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", YENI_GRUP, "TV8"],
-    "trt1": ["TRT.1.hd", "TRT 1.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", YENI_GRUP, "TRT 1"],
+# Sabit yedekler - hicbiri bos kalmasin diye
+links = {
+    "TRT 1": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
+    "ATV": "https://atv-live.cdnvideo.com.tr/atv/atv.m3u8",
+    "KANAL D": "https://ciner-live.ercdn.net/kanald/kanald.m3u8",
+    "SHOW TV": "https://ciner-live.ercdn.net/showtv/showtv.m3u8",
+    "STAR TV": "https://dogus-live.ercdn.net/startv/startv.m3u8",
+    "NOW TV": "https://nowtv-live.ercdn.net/nowtv/nowtv.m3u8",
+    "KANAL 7": "https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8",
+    "TV8": "https://tv8-live.ercdn.net/tv8/tv8.m3u8",
 }
 
-source_urls = {
-    "atv": "https://www.atv.com.tr/canli-yayin",
-    "kanald": "https://www.kanald.com.tr/canli-yayin",
-    "showtv": "https://www.showtv.com.tr/canli-yayin",
-    "startv": "https://www.startv.com.tr/canli-yayin",
-    "nowtv": "https://www.nowtv.com.tr/canli-yayin",
-    "kanal7": "https://www.kanal7.com/canli-izle",
-    "tv8": "https://www.tv8.com.tr/canli-yayin",
+logos = {
+    "TRT 1": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png",
+    "ATV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png",
+    "KANAL D": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png",
+    "SHOW TV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png",
+    "STAR TV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png",
+    "NOW TV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png",
+    "KANAL 7": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png",
+    "TV8": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png",
 }
 
-# YEDEK LINKLER - cekemezse bunu koyacak, TV8 icin ozel
-backup_links = {
-    "atv": "https://atv-live.cdnvideo.com.tr/atv/atv.m3u8",
-    "kanald": "https://ciner-live.ercdn.net/kanald/kanald.m3u8",
-    "showtv": "https://ciner-live.ercdn.net/showtv/showtv.m3u8",
-    "startv": "https://dogus-live.ercdn.net/startv/startv.m3u8",
-    "nowtv": "https://nowtv-live.ercdn.net/nowtv/nowtv.m3u8",
-    "kanal7": "https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8",
-    "tv8": "https://tv8-live.ercdn.net/tv8/tv8.m3u8",
-    "trt1": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
-}
-
-def extract_m3u8(url):
-    try:
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
-            "Referer": url,
-            "Accept": "text/html,application/xhtml+xml"
-        }
-        r = requests.get(url, timeout=20, headers=headers)
-        text = r.text
-
-        # 1. Direk m3u8
-        m = re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', text)
-        if m:
-            # tv8 icin en guzel linki sec
-            for link in m:
-                if "tv8" in link.lower() and "master" in link.lower():
-                    return link
-            m.sort(key=len, reverse=True)
-            return m[0].replace("\\/", "/")
-
-        # 2. JSON icinde escaped m3u8 (tv8 bunu kullaniyor)
-        m2 = re.findall(r'https?:\\\\/\\\\/[^\s\'"]+\.m3u8[^\s\'"]*', text)
-        if m2:
-            return m2[0].replace("\\/", "/").replace("\\u002F", "/")
-
-        # 3. NEXT_DATA icinde ara (kanald, showtv)
-        m3 = re.search(r'"(?:hls|src|source|file)"\s*:\s*"(https:[^"]+\.m3u8[^"]*)"', text)
-        if m3:
-            return m3.group(1).replace("\\/", "/")
-
-    except Exception as e:
-        print(f"Hata {url}: {e}")
-    return None
-
-output_file = "mirti68.m3u"
-
-old_channels = {}
+# Eski listeyi koru
+old_list = []
 if os.path.exists(output_file):
-    with open(output_file, "r", encoding="utf-8", errors="ignore") as f:
-        lines = f.readlines()
-        for i in range(len(lines)):
-            if lines[i].startswith("#EXTINF"):
-                if i+1 < len(lines):
-                    link = lines[i+1].strip()
-                    if link.startswith("http"):
-                        # Eski ULUSAL'lari alma, biz yenilecegiz
-                        if YENI_GRUP not in lines[i] and "ULUSAL" not in lines[i].upper():
-                            old_channels[lines[i].strip()] = link
-                        elif "TRT" not in lines[i] and "ATV" not in lines[i] and "KANAL" not in lines[i] and "SHOW" not in lines[i] and "STAR" not in lines[i] and "NOW" not in lines[i] and "TV8" not in lines[i]:
-                            old_channels[lines[i].strip()] = link
+    try:
+        with open(output_file, "r", encoding="utf-8", errors="ignore") as f:
+            content = f.read()
+            # Eski ULUSAL olmayan kanallari al
+            blocks = content.split("#EXTINF")
+            for b in blocks[1:]:
+                if YENI_GRUP not in b and 'group-title="ULUSAL"' not in b:
+                    if "http" in b:
+                        old_list.append("#EXTINF" + b.strip())
+    except:
+        pass
 
-updated = {}
+print(f"Eski kanallar korundu: {len(old_list)} blok")
 
-# TRT1 SABIT
-info = channel_info["trt1"]
-extinf = f'#EXTINF:-1 tvg-id="{info[0]}" tvg-name="{info[1]}" tvg-logo="{info[2]}" group-title="{info[3]}",{info[4]}'
-updated[extinf] = backup_links["trt1"]
-print("Sabit: TRT 1")
+# Yeni dosyayi yaz - HER ZAMAN OLUSUR
+with open(output_file, "w", encoding="utf-8") as out:
+    out.write("#EXTM3U\n")
+    # 8 ULUSAL
+    for name, url in links.items():
+        logo = logos.get(name, "")
+        tvg_id = name.replace(" ", ".") + ".hd"
+        out.write(f'#EXTINF:-1 tvg-id="{tvg_id}" tvg-logo="{logo}" group-title="{YENI_GRUP}",{name}\n')
+        out.write(f'#EXTVLCOPT:http-referrer=https://www.google.com/\n')
+        out.write(f'{url}\n\n')
+    
+    # Eski diger kategoriler
+    for block in old_list:
+        if not block.endswith("\n"):
+            block += "\n"
+        out.write(block + "\n\n")
 
-for name, page_url in source_urls.items():
-    print(f"Kontrol: {name}")
+print(f"Bitti! mirti68.m3u olustu, toplam yeni: {len(links)} + eski: {len(old_list)}")
+
+# Kontrol
+size = os.path.getsize(output_file)
+print(f"Dosya boyutu: {size} byte")
