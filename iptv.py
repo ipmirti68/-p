@@ -1,109 +1,78 @@
 import os
 import requests
+import re
+
+# Senin istediğin formatın bilgileri - YENİLERİ BURAYA EKLİYOR
+channel_info = {
+    "trt1": {"tvg_id": "TRT.1.hd", "tvg_name": "TRT 1.tr", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "group": "📺 ULUSAL.", "name": "TRT 1"},
+    "trtspor": {"tvg_id": "TRT.Spor.hd", "tvg_name": "TRT Spor.tr", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trtspor.png", "group": "📺 SPOR.", "name": "TRT Spor"},
+    "trthaber": {"tvg_id": "TRT.Haber.hd", "tvg_name": "TRT Haber.tr", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trthaber.png", "group": "📺 HABER.", "name": "TRT Haber"},
+    "atv": {"tvg_id": "ATV.hd", "tvg_name": "ATV.tr", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "group": "📺 ULUSAL.", "name": "ATV"},
+    "showtv": {"tvg_id": "Show.TV.hd", "tvg_name": "Show TV.tr", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", "group": "📺 ULUSAL.", "name": "Show TV"},
+    "kanald": {"tvg_id": "Kanal.D.hd", "tvg_name": "Kanal D.tr", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "group": "📺 ULUSAL.", "name": "Kanal D"},
+}
+
+source_urls = {
+    "trt1": "https://www.tabii.com/tr/watch/live/trt1?trackId=150002",
+    "trtspor": "https://www.tabii.com/watch/live/trtspor?trackId=150022",
+    "trthaber": "https://www.tabii.com/watch/live/trthaber?trackId=150017",
+    "atv": "https://www.atv.com.tr/canli-yayin",
+    "showtv": "https://www.showtv.com.tr/canli-yayin",
+    "kanald": "https://www.kanald.com.tr/canli-yayin",
+}
+
+def extract_m3u8(url):
+    try:
+        headers = {"User-Agent": "Mozilla/5.0"}
+        r = requests.get(url, timeout=10, headers=headers)
+        m = re.findall(r'https?://[^\s\'"]+\.m3u8[^\s\'"]*', r.text)
+        if m:
+            return m[0]
+    except:
+        pass
+    return None
 
 output_file = "mirti68.m3u"
-YENI_GRUP = "📺 ULUSAL 🔗"
 
-logos = {
-    "TRT 1": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png",
-    "ATV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png",
-    "KANAL D": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png",
-    "SHOW TV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png",
-    "STAR TV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png",
-    "NOW TV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png",
-    "KANAL 7": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png",
-    "TV8": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png",
-}
-
-# HER KANAL ICIN 3 YEDEK - biri olmezse digeri
-kaynaklar = {
-    "TRT 1": [
-        "https://tv-trt1.medya.trt.com.tr/master.m3u8",
-        "https://trt.daioncdn.net/trt-1/master.m3u8"
-    ],
-    "ATV": [
-        "https://atv-live.cdnvideo.com.tr/atv/atv.m3u8",
-        "https://ciner-live.ercdn.net/atv/atv.m3u8",
-        "https://trn03.tulpar.uk/atv.m3u8"
-    ],
-    "KANAL D": [
-        "https://ciner-live.ercdn.net/kanald/kanald.m3u8",
-        "https://kanal-d.daioncdn.net/kanal-d/master.m3u8",
-        "https://trn03.tulpar.uk/kanald.m3u8"
-    ],
-    "SHOW TV": [
-        "https://ciner-live.ercdn.net/showtv/showtv.m3u8",
-        "https://show-tv.daioncdn.net/show-tv/master.m3u8",
-        "https://trn03.tulpar.uk/showtv.m3u8"
-    ],
-    "STAR TV": [
-        "https://dogus-live.daioncdn.net/startv/startv.m3u8",
-        "https://dogus-live.ercdn.net/startv/startv.m3u8",
-        "https://trn03.tulpar.uk/startv.m3u8"
-    ],
-    "NOW TV": [
-        "https://nowtv-live.ercdn.net/nowtv/nowtv.m3u8",
-        "https://now-tv.daioncdn.net/now-tv/master.m3u8",
-        "https://trn03.tulpar.uk/nowtv.m3u8"
-    ],
-    "KANAL 7": [
-        "https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8",
-        "https://kanal7.daioncdn.net/kanal7/master.m3u8"
-    ],
-    "TV8": [
-        "https://tv8-live.ercdn.net/tv8/tv8.m3u8",
-        "https://tv8-live.daioncdn.net/tv8/tv8.m3u8",
-        "https://trn03.tulpar.uk/tv8.m3u8"
-    ]
-}
-
-def en_iyi_link(bul_list):
-    for url in bul_list:
-        try:
-            r = requests.head(url, timeout=6, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"})
-            if r.status_code == 200:
-                return url
-        except:
-            pass
-        try:
-            r = requests.get(url, timeout=6, headers={"User-Agent":"Mozilla/5.0"}, stream=True)
-            if r.status_code == 200:
-                return url
-        except:
-            pass
-    return bul_list[0]
-
-# EPG ve eski liste
-epg_header = "#EXTM3U"
-old_blocks = []
+# 1. MEVCUT LİSTEYİ OKU VE KORU
+old_channels = {}
 if os.path.exists(output_file):
+    print(f"[>] Mevcut {output_file} okunuyor, korunacak...")
     with open(output_file, "r", encoding="utf-8", errors="ignore") as f:
-        content = f.read()
-        first = content.splitlines()[0] if content else "#EXTM3U"
-        if "#EXTM3U" in first:
-            epg_header = first.strip()
-        parts = content.split("#EXTINF")
-        for p in parts[1:]:
-            block = "#EXTINF" + p.strip()
-            if YENI_GRUP in block:
-                continue
-            if "http" in block:
-                old_blocks.append(block)
+        lines = f.readlines()
+        for i in range(len(lines)):
+            if lines[i].startswith("#EXTINF"):
+                # Bir sonraki satır link
+                if i+1 < len(lines):
+                    link = lines[i+1].strip()
+                    if link and not link.startswith("#"):
+                        old_channels[lines[i].strip()] = link
+    print(f"[>] {len(old_channels)} eski kanal korundu")
 
-final_links = {}
-for isim, liste in kaynaklar.items():
-    link = en_iyi_link(liste)
-    final_links[isim] = link
-    print(isim + " -> " + link)
+# 2. YENİ LİNKLERİ ÇEK VE GÜNCELLE
+updated = {}
+for name, page_url in source_urls.items():
+    print(f"[+] {name} kontrol...")
+    m3u8_link = extract_m3u8(page_url)
+    if name == "trt1" and not m3u8_link:
+        m3u8_link = "https://tv-trt1.medya.trt.com.tr/master.m3u8"
+    
+    if m3u8_link:
+        info = channel_info.get(name)
+        if info:
+            extinf = f'#EXTINF:-1 tvg-id="{info["tvg_id"]}" tvg-name="{info["tvg_name"]}" tvg-logo="{info["logo"]}" group-title="{info["group"]}",{info["name"]}'
+            updated[extinf] = m3u8_link
+            print(f"[✓] {info['name']} guncellendi")
 
+# 3. ESKİ + YENİYİ BİRLEŞTİR - ESKİLERİ SİLME
+# Yeniler eskilerin üzerine yazsın, geri kalan eskiler kalsın
+final_list = {**old_channels, **updated}
+
+# 4. DOSYAYI YAZ
 with open(output_file, "w", encoding="utf-8") as out:
-    out.write(epg_header + "\n")
-    for isim in ["TRT 1","ATV","KANAL D","SHOW TV","STAR TV","NOW TV","KANAL 7","TV8"]:
-        url = final_links.get(isim)
-        logo = logos.get(isim,"")
-        out.write('#EXTINF:-1 tvg-logo="' + logo + '" group-title="' + YENI_GRUP + '",' + isim + '\n')
-        out.write(url + '\n\n')
-    for b in old_blocks:
-        out.write(b + '\n\n')
+    out.write("#EXTM3U\n")
+    for extinf, link in final_list.items():
+        out.write(extinf + "\n")
+        out.write(link + "\n\n")
 
-print("Bitti - 8 kanal denendi")
+print(f"\nHAZIR! {len(final_list)} kanal ile {output_file} korundu ve guncellendi.")
