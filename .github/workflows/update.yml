@@ -13,7 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -33,9 +35,8 @@ jobs:
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
+          # branch'e gec - detached HEAD fix
+          git checkout main || git checkout -B main
           git add mirti68.m3u
           git commit -m "auto update ULUSAL + DIZILER" || echo "commit yok"
-          git stash push -m "temp" --keep-index || true
-          git pull --rebase origin main || true
-          git stash pop || true
-          git push || git push --force-with-lease
+          git push origin main
