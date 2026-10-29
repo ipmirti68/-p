@@ -147,7 +147,7 @@ def main(start=0, end=0):
         f.write("#EXTM3U\n")
         for serie in data:
             for ep in serie["episodes"]:
-                line = f'#EXTINF:-1 tvg-id="vod.tr" tvg-name="TR: {ep["name"]}" tvg-logo="{ep["img"]}" group-title="STAR Dizileri",TR: {ep["name"]}\n{ep["stream_url"]}\n'
+                line = f'#EXTINF:-1 tvg-id="vod.tr" tvg-name=" {ep["name"]}" tvg-logo="{ep["img"]}" group-title="STAR Dizileri",TR: {ep["name"]}\n{ep["stream_url"]}\n'
                 f.write(line)
 
     print(f"{m3u_file} başarıyla oluşturuldu!")
