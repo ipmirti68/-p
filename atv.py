@@ -1,56 +1,53 @@
-import cloudscraper, re, json, os, time
+import cloudscraper, re, os, time
 
 OUTPUT_FILE = "atv_playlist.m3u"
 MIRTI_FILE = "mirti68.m3u"
 BASE_URL = "https://www.atv.com.tr"
-WORKER = "https://mak.sadecenjoy.workers.dev"
 
 scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'windows', 'desktop': True})
 
 def fetch(url):
     try:
-        r = scraper.get(url, timeout=10)
-        if len(r.text)>1000:
-            return r.text
-    except: pass
-    try:
-        r = scraper.get(f"{WORKER}/?url={url}", timeout=20)
+        r = scraper.get(url, timeout=20)
         return r.text
     except:
         return ""
 
 def run():
-    series=[]
-    for slug in ["kurulus-osman","bir-gece-masali","sahipsizler","zoraki-misafir","can-borcu","karadut","kor-nokta","kardeslerim"]:
-        series.append({"name":slug.replace("-"," ").title(),"url":f"{BASE_URL}/diziler/{slug}","slug":slug})
-    print(f"ATV {len(series)} dizi")
-
+    slugs = ["kurulus-osman","bir-gece-masali","sahipsizler","can-borcu","karadut","kor-nokta","kardeslerim"]
     entries=[]
-    for s in series:
-        print(f"\n{s['name']} bolumleri aliniyor...")
-        html = fetch(s["url"] + "/bolumler")
-        if not html or "bolum" not in html.lower():
-            html = fetch(s["url"])
-        links = re.findall(r'href=["\']([^"\']*'+re.escape(s["slug"])+r'[^"\']*bolum[^"\']*)["\']', html)
-        links += re.findall(r'"url"\s*:\s*"([^"]*bolum[^"]*)"', html)
-        uniq=[]
-        for l in links:
-            full = l if l.startswith("http") else BASE_URL + l if l.startswith("/") else BASE_URL + "/" + l.lstrip("/")
-            if full not in uniq and "bolum" in full:
-                uniq.append(full)
+    for slug in slugs:
+        print(f"\n{slug} bolumleri aliniyor...")
+        html = fetch(f"{BASE_URL}/diziler/{slug}/bolumler")
+        if len(html) < 1000:
+            html = fetch(f"{BASE_URL}/diziler/{slug}")
+        links = re.findall(r'/diziler/'+re.escape(slug)+r'/bolum/[^"\']+', html)
+        uniq = list(dict.fromkeys(links))[:12]
         print(f"  {len(uniq)} bolum linki")
-        for link in uniq[:10]:
-            bhtml = fetch(link)
-            m = re.findall(r'https?://[^"\'\s]+\.m3u8[^"\'\s]*', bhtml)
-            if m:
-                url=m[0].replace("\\/","/")
-                bm=re.search(r'(\d+)[\.-]bolum', link)
-                bname=f"{bm.group(1)}. Bolum" if bm else "Bolum"
-                entries.append({"dizi":s["name"],"bolum":bname,"url":url})
+        for link in uniq:
+            full = BASE_URL + link if link.startswith("/") else link
+            bhtml = fetch(full)
+            # ATV m3u8 - en garanti 3 pattern
+            m3u8 = None
+            pats = [
+                r'"videoUrl"\s*:\s*"([^"]+m3u8[^"]*)"',
+                r'"src"\s*:\s*"([^"]+m3u8[^"]*)"',
+                r'(https?://[^"\']+atv[^"\']*\.m3u8[^"\']*)',
+                r'(https?://[^"\']+\.m3u8[^"\']*)'
+            ]
+            for pat in pats:
+                m = re.search(pat, bhtml)
+                if m:
+                    m3u8 = m.group(1).replace("\\/","/").replace("\\u002F","/")
+                    break
+            if m3u8 and ".m3u8" in m3u8:
+                bm=re.search(r'(\d+)[-_]?bolum', link, re.I)
+                bname = f"{bm.group(1)}. Bolum" if bm else "Bolum"
+                entries.append({"dizi":slug.replace("-"," ").title(),"bolum":bname,"url":m3u8})
                 print(f"    OK {bname}")
-            time.sleep(0.6)
+            time.sleep(0.7)
 
-    print(f"{OUTPUT_FILE} - {len(entries)} bolum")
+    print(f"\n{OUTPUT_FILE} - {len(entries)} bolum")
     with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for e in entries:
