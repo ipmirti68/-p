@@ -12,12 +12,12 @@ https://trkvz.daioncdn.net/atv/atv.m3u8?ce=3&app=d5eb593f-39d9-4b01-9cfd-4748e83
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL 🔗",KANAL D
 #EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://ciner-live.ercdn.net/kanald/kanald.m3u8
+https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=f9fbf59814ca71a045d91069567bc196&dfp_paln=AQzzBGQEKN2iBR47hnFWuLC4M0UrY08ad_uf-pP9B7HDvZOf1iwiKzv_lgibiP0PB-1z87FDw8aAiWAgzsqFSVHlkXdgqzuEZybfRW24KsRKAJZUZoZllGzjHJpeEI6QXaCxzQDXWoGvetBrgjROHM7Wn7PXW1tW5tzdNTEsalRWr8ssVgoACDboUHmln3GaClBSVjBi_sSUi4xQ4EEVFL_ioTPgGIpoLBbbMGJZx-qjD0m6oyocgy4rlMew_swLAg8I-WgGgw0QZ45FpcmYVgZf4uzciSUSZStZa5jL-joa1_6MffR1EbPzzf1Xa0aZHcQlpNUKtxKQFx2b0goUKmYRqfurmqZbI9nvEXySk9iQaeq0eNlbn8FbdQCqJUUDK3sq6dmguxhs5WPQemUkKo2u9FoFvooRR8gZSOSDmvsH04j-5NPazs2zYZygvne5O4UcIXRkEJQ01NjTJ-SAaBWxmj0pP0jIsnf4MFUa0ilkiicUzHrfz6kmfGsRGtZFrCQPU5dVDBvwYxeAU_3QNUkC_bdzLieZVwrQz-qk0ajyX3F0FwLu_E5ejs8z2b7qxTYjbGd1R2G3_7lCXr9aMFboQOLiDUcmnZ0glPXSzP2aTToUIqrtfnbXM3PBYNJ2Zx4rK_IGa96zz7UdEH-9l8T6yGW9uTrp99wER1UrVjIFM4oc3Pi0mY5UgKQTTR3tgeDA332r58zQJoQEvCcP2IX8zP5uuedATQdc9S8JsIkVSbd1wGIB5d4HbiIkatiEWXRzGlpFhl6Zuh9kJd1I8PweTwjJO6IomQINa0OyooZ8o2WDPmj37Jaq6yptPtiDri-rvl9l0XG_MLI9td38CZqjCmCyRPqM1gUIbDcnDXgCrzK2vmMhvOPepcyRdG2dWbv3jxKIlM_sxaZ21NLFKz7xr-4O96-8Wd6d4YrRME9wTqmj0ZZ5Qf5zvHwHXztWyGLvTSH0ax8CmIIxACtroYBN-0idGa_q46xCxtDkfM_DHT8daS2jwOINvqlk0MwWl5Yx0zI3MuLMdVD-bjvH4JksKFnuC98hxiILCqGFZHt74rxy1ZhuScJ3zWjsZtZJG26lJrbzsyRVFw
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL 🔗",SHOW TV
 #EXTVLCOPT:http-referrer=https://www.showtv.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://ciner-live.ercdn.net/showtv/showtv.m3u8
+https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1nov
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL 🔗",STAR TV
 #EXTVLCOPT:http-referrer=https://www.startv.com.tr/
@@ -27,7 +27,7 @@ https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-2
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL 🔗",NOW TV
 #EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://nowtv-live.ercdn.net/nowtv/nowtv.m3u8
+https://nowtv-live-ad.ercdn.net/nowtv/playlist.m3u8?st=70w5DbQKtpXA39iFdH8w-g&e=1793292773
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL 🔗",KANAL 7
 #EXTVLCOPT:http-referrer=https://www.kanal7.com/
