@@ -9,57 +9,75 @@ diziler_url = "https://www.showtv.com.tr/diziler"
 
 scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'windows', 'desktop': True})
 
+BLACKLIST = ["tanitim","tum_bolumler","tum-bolumler","sahne","sahneler","fragman","fragmanlar","bolum","bolumler","oyuncular","sezon","ozet","haber","galeri"]
+
 def get_arsiv_list():
     print("Diziler sayfasi cekiliyor...")
+    series = []
     try:
+        # 1. SITEMAP dene - en garanti
+        try:
+            r = scraper.get("https://www.showtv.com.tr/sitemap.xml", timeout=15)
+            slugs = re.findall(r"/dizi/([a-z0-9-]+)/", r.text)
+            for slug in set(slugs):
+                if slug.lower() in BLACKLIST or "_" in slug or len(slug) < 3:
+                    continue
+                if slug not in [s["id"] for s in series]:
+                    series.append({"name": slug.replace("-"," ").title(), "url": f"{site_url}/dizi/{slug}", "id": slug, "img": ""})
+            print(f"Sitemapten {len(series)} bulundu")
+        except:
+            pass
+
+        # 2. Ana sayfadan
         r = scraper.get(diziler_url, timeout=20)
         html = r.text
         soup = BeautifulSoup(html, 'html.parser')
-        series = []
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if "/dizi/" not in href:
+                continue
+            slug = href.split("/dizi/")[-1].split("/")[0].split("?")[0].strip().lower()
+            if not slug or slug in BLACKLIST or len(slug) < 3 or "_" in slug:
+                continue
+            if slug not in [s["id"] for s in series]:
+                img = a.find("img")
+                series.append({"name": slug.replace("-"," ").title(), "url": f"{site_url}/dizi/{slug}", "id": slug, "img": img.get("src","") if img else ""})
 
-        # YENI YONTEM 1: __NEXT_DATA__ json
-        m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.DOTALL)
-        if m:
-            try:
-                data = json.loads(m.group(1))
-                txt = json.dumps(data)
-                links = re.findall(r'"/dizi/([^"/]+)"', txt)
-                for slug in set(links):
-                    series.append({"name": slug.replace("-"," ").title(), "url": f"{site_url}/dizi/{slug}", "id": slug, "img": ""})
-            except:
-                pass
-
-        # YENI YONTEM 2: tum a[href=/dizi/...]
-        if not series:
-            for a in soup.find_all("a", href=True):
-                href = a["href"]
-                if "/dizi/" in href and "/bolum" not in href and "/fragman" not in href:
-                    slug = href.split("/dizi/")[-1].split("/")[0].split("?")[0]
-                    if slug and len(slug) > 2 and slug not in [s["id"] for s in series]:
-                        img = a.find("img")
-                        series.append({"name": slug.replace("-"," ").title(), "url": f"{site_url}/dizi/{slug}", "id": slug, "img": img.get("src","") if img else ""})
-
-        # YENI YONTEM 3: fallback - en populer diziler elle (site json vermezse)
-        if len(series) < 3:
-            print("Fallback liste kullaniliyor...")
-            fallback = ["kizilcik-serbeti","bahar","sandik-kokusu","siyah-kalp","deha","kalpazan","guzel-gunler","aile","kizilcik-serbeti","sevdan-bir-ates"]
-            for slug in fallback:
+        # 3. Fallback gercek diziler
+        if len(series) < 5:
+            print("Fallback gercek diziler ekleniyor...")
+            real = ["kizilcik-serbeti","bahar","sandik-kokusu","siyah-kalp","deha","kalpazan","sevdan-bir-ates","guldur-guldur-show","kizilcik-serbeti","bahar","deha","siyah-kalp","sandik-kokusu"]
+            for slug in real:
+                if slug in BLACKLIST:
+                    continue
                 if slug not in [s["id"] for s in series]:
                     series.append({"name": slug.replace("-"," ").title(), "url": f"{site_url}/dizi/{slug}", "id": slug, "img": ""})
 
-        uniq = []
-        seen = set()
+        # Temizle ve dogrula - pagination var mi kontrol et
+        final = []
         for s in series:
-            if s["id"] not in seen:
-                seen.add(s["id"])
-                uniq.append(s)
-        print(f"Toplam {len(uniq)} dizi bulundu")
-        for u in uniq[:10]:
+            if s["id"] in BLACKLIST:
+                continue
+            # hizli dogrulama
+            try:
+                test_url = f"https://www.showtv.com.tr/dizi/pagination/{s['id']}/2/0"
+                tr = scraper.get(test_url, timeout=5)
+                if '"episodes"' in tr.text or '"title"' in tr.text:
+                    final.append(s)
+                else:
+                    # yine de ekle eger bilinen gercek diziyse
+                    if s["id"] in ["kizilcik-serbeti","bahar","sandik-kokusu","siyah-kalp","deha","kalpazan","sevdan-bir-ates"]:
+                        final.append(s)
+            except:
+                final.append(s)
+
+        print(f"Toplam {len(final)} dizi bulundu")
+        for u in final:
             print(" -", u["name"])
-        return uniq
+        return final
     except Exception as e:
         print(f"Hata: {e}")
-        return []
+        return series
 
 def parse_episodes_page(serie_id, page_no):
     try:
@@ -94,7 +112,6 @@ def get_stream(url):
             for item in data.get("media",{}).get("m3u8",[]):
                 if "src" in item and ".m3u8" in item["src"]:
                     return item["src"]
-        # yedek
         m2 = re.search(r'(https://[^"\']+\.m3u8[^"\']*)', r.text)
         if m2:
             return m2.group(1)
@@ -120,7 +137,6 @@ def main():
             s["episodes"] = temp
             data.append(s)
     
-    # showtv.m3u yaz
     with open(m3u_file, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for serie in data:
@@ -129,7 +145,6 @@ def main():
 
     print(f"{m3u_file} olusturuldu! {sum(len(s['episodes']) for s in data)} bolum")
 
-    # mirti68 e ekle
     if os.path.exists(m3u_file) and os.path.exists(mirti_file):
         with open(m3u_file, "r", encoding="utf-8", errors="ignore") as ff:
             show_blocks = ["#EXTINF" + p.strip() for p in ff.read().split("#EXTINF")[1:] if "http" in p]
