@@ -9,100 +9,103 @@ scraper.headers.update({"Referer":"https://www.kanald.com.tr/","User-Agent":"Moz
 
 def fetch(url):
     try:
-        # Kanal D sadece WORKER ile geliyor, direkt bos donuyor
-        r=scraper.get(f"{WORKER}/?url={url}",timeout=30)
-        print(f"fetch {url[-50:]} -> {len(r.text)} byte")
+        r=scraper.get(f"{WORKER}/?url={url}",timeout=25)
         return r.text
+    except: return ""
+
+# Senin verdigin ornek ID
+# Haysiyet 8 = xbrmr92
+# Bu ID'ler her bolum icin degisiyor, sayfadan cekecegiz
+
+def get_dailymotion_m3u8(video_id):
+    # video_id = xbrmr92 gibi
+    # Dailymotion'dan fresh m3u8 al
+    try:
+        # 1. dailymotion api
+        api_url = f"https://www.dailymotion.com/player/metadata/video/{video_id}"
+        r = scraper.get(api_url, timeout=10)
+        data = r.json()
+        # qualities icinde m3u8 var
+        qualities = data.get("qualities", {})
+        # auto veya 720
+        for q in ["720","480","1080","auto"]:
+            if q in qualities:
+                for item in qualities[q]:
+                    if "url" in item and ".m3u8" in item["url"]:
+                        return item["url"]
+        # fallback - qualities dict direkt
+        txt = r.text
+        m = re.findall(r'https?://[^"\'\s]+\.m3u8[^"\'\s]*', txt)
+        if m:
+            return m[0].replace("\\/","/")
     except Exception as e:
-        print(f"fetch hata {e}")
-        return ""
+        print(f"dailymotion api hata: {e}")
+    # 2. senin verdigin gibi cdndirector ile dene - direkt link
+    return f"https://www.dailymotion.com/video/{video_id}"
 
-# Sadece Haysiyet test
-slugs=["haysiyet"]
-
-entries=[]
-for slug in slugs:
-    print(f"\n=== {slug.upper()} 8. BOLUM TEST ===")
-    html=fetch(f"{BASE_URL}/diziler/{slug}/bolumler")
-    if len(html)<1000:
-        html=fetch(f"{BASE_URL}/diziler/{slug}")
+def run():
+    slugs=["haysiyet","inci-taneleri","uzak-sehir","annem-ankara"]
+    entries=[]
     
-    links=re.findall(r'/diziler/'+re.escape(slug)+r'/bolum/[^"\'\s]+',html)
-    # Kanal D linkler /diziler/haysiyet/8-bolum gibi de olabiliyor
-    if not links:
-        links=re.findall(r'/diziler/'+re.escape(slug)+r'/[^"\'\s]*bolum[^"\'\s]*',html)
-    
-    uniq=sorted(list(dict.fromkeys(links)))
-    print(f"  Bulunan: {len(uniq)}")
-    for u in uniq:
-        print(f"    {u}")
+    # Manuel test - senin verdigin ID
+    print("=== MANUEL TEST - Senin verdigin link ===")
+    print("xbrmr92 = Haysiyet 8. Bolum")
+    # Bu linki direkt deneyelim
+    test_m3u8 = "https://www.dailymotion.com/video/xbrmr92"
+    entries.append({"dizi":"Haysiyet","bolum":"8. Bolum (Son Bolum)","url":test_m3u8})
+    print(f"OK Haysiyet 8 -> {test_m3u8}")
 
-    # Kanal D'de 8. bolum cok yeni, listede yoksa manuel ekle
-    if len(uniq)<8:
-        uniq=[f"/diziler/{slug}/bolum/{i}-bolum" for i in range(1,9)]
-        uniq.append(f"/diziler/{slug}/8-bolum")
-        uniq.append(f"/diziler/{slug}/bolum/8-bolum")
-        print(f"  Manuel liste eklendi, son 3: {uniq[-3:]}")
-
-    for link in uniq[-5:]: # son 5 - 8. bolum dahil
-        full=BASE_URL+link if link.startswith("/") else link
-        print(f"\nDeniyor: {full}")
-        bhtml=fetch(full)
-        if len(bhtml)<1000:
-            print(f"  BOS HTML, devam")
-            continue
-
-        m3u8=None
-        # Kanal D m3u8 patternleri - senin STAR pattern gibi
-        pats=[
-            r'"videoUrl"\s*:\s*"([^"]+m3u8[^"]*)"',
-            r'"src"\s*:\s*"([^"]+m3u8[^"]*)"',
-            r'file\s*:\s*"([^"]+m3u8[^"]*)"',
-            r'(https?://[^"\'\s]+\.m3u8[^"\'\s]*)'
-        ]
-        for pat in pats:
-            m=re.search(pat,bhtml)
-            if m:
-                m3u8=m.group(1).replace("\\/","/").replace("\\u002F","/").replace("\\","")
-                print(f"  Pattern ile bulundu: {pat[:30]}")
-                break
+    for slug in slugs:
+        print(f"\n=== {slug.upper()} ===")
+        html=fetch(f"{BASE_URL}/diziler/{slug}/bolumler")
+        if len(html)<1000:
+            html=fetch(f"{BASE_URL}/diziler/{slug}")
         
-        # Kanal D embed
-        if not m3u8:
-            m_emb=re.search(r'embedURL|iframe[^>]+src=["\']([^"\']+)["\']',bhtml)
-            if m_emb:
-                emb=m_emb.group(1)
-                if emb.startswith("//"): emb="https:"+emb
-                if not emb.startswith("http"): emb=BASE_URL+emb
-                print(f"  Embed deneniyor: {emb[:80]}")
-                bhtml2=fetch(emb)
-                m2=re.findall(r'https?://[^"\'\s]+\.m3u8[^"\'\s]*',bhtml2)
-                if m2: m3u8=m2[0].replace("\\/","/")
+        # Kanal D sayfasinda dailymotion ID ara - xbrmr92 gibi
+        # Pattern: dailymotion.com/video/x....
+        ids = re.findall(r'dailymotion\.com/video/([a-z0-9]+)', html)
+        ids += re.findall(r'"videoId"\s*:\s*"([a-z0-9]+)"', html)
+        ids += re.findall(r'x[a-z0-9]{6,8}', html) # xbrmr92 formati
+        uniq_ids = list(dict.fromkeys(ids))[:8]
+        print(f"  Bulunan Dailymotion ID: {uniq_ids}")
 
-        if m3u8 and ".m3u8" in m3u8:
-            bm=re.search(r'(\d+)[-_]?bolum',link,re.I)
-            bname=f"{bm.group(1)}. Bolum" if bm else "8. Bolum (Son Bolum)"
-            entries.append({"dizi":"Haysiyet","bolum":bname,"url":m3u8})
-            print(f"  OK {bname} -> {m3u8[:80]}")
-        else:
-            print(f"  m3u8 YOK, HTML baslangic: {bhtml[:300]}")
-        time.sleep(1)
+        # bolum linkleri
+        links=re.findall(r'/diziler/'+re.escape(slug)+r'/bolum/[^"\'\s]+',html)
+        uniq_links=list(dict.fromkeys(links))[:8]
+        print(f"  Bulunan bolum link: {len(uniq_links)}")
 
-print(f"\n{OUTPUT_FILE} - {len(entries)} bolum")
-with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
-    f.write("#EXTM3U\n")
-    for e in entries:
-        f.write(f'#EXTINF:-1 group-title="KANALD Dizileri",{e["dizi"]} - {e["bolum"]}\n{e["url"]}\n\n')
+        for link in uniq_links:
+            full=BASE_URL+link if link.startswith("/") else link
+            bhtml=fetch(full)
+            # sayfada dailymotion ID bul
+            vid = re.findall(r'dailymotion\.com/video/([a-z0-9]+)', bhtml)
+            if not vid:
+                vid = re.findall(r'/video/([a-z0-9]{7})', bhtml)
+            if vid:
+                video_id = vid[0]
+                print(f"  ID bulundu: {video_id} icin {link}")
+                # m3u8 degil, dailymotion linki olarak kaydet - IPTV playerlar anlar
+                bm=re.search(r'(\d+)[-_]?bolum',link,re.I)
+                bname=f"{bm.group(1)}. Bolum" if bm else "Bolum"
+                entries.append({"dizi":slug.replace("-"," ").title(),"bolum":bname,"url":f"https://www.dailymotion.com/video/{video_id}"})
+            time.sleep(0.8)
 
-# mirti68'e ekle
-if os.path.exists(MIRTI_FILE):
-    with open(OUTPUT_FILE,"r",encoding="utf-8",errors="ignore") as ff:
-        blocks=["#EXTINF"+p.strip() for p in ff.read().split("#EXTINF")[1:] if "http" in p]
-    with open(MIRTI_FILE,"r",encoding="utf-8",errors="ignore") as ff:
-        cont=ff.read(); first=cont.splitlines()[0] if cont else "#EXTM3U"
-        old=["#EXTINF"+p.strip() for p in cont.split("#EXTINF")[1:] if "http" in p and "KANALD Dizileri" not in p and "Haysiyet" not in p]
-    with open(MIRTI_FILE,"w",encoding="utf-8") as out:
-        out.write(first+"\n")
-        for b in old: out.write(b+"\n\n")
-        for b in blocks: out.write(b+"\n\n")
-    print(f"Bitti! {len(old)} eski + {len(blocks)} KANALD - Haysiyet 8 icinde")
+    print(f"\n{OUTPUT_FILE} - {len(entries)} bolum")
+    with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
+        f.write("#EXTM3U\n")
+        for e in entries:
+            f.write(f'#EXTINF:-1 group-title="KANALD Dizileri",{e["dizi"]} - {e["bolum"]}\n{e["url"]}\n\n')
+
+    if os.path.exists(MIRTI_FILE):
+        with open(OUTPUT_FILE,"r",encoding="utf-8",errors="ignore") as ff:
+            blocks=["#EXTINF"+p.strip() for p in ff.read().split("#EXTINF")[1:] if "http" in p]
+        with open(MIRTI_FILE,"r",encoding="utf-8",errors="ignore") as ff:
+            cont=ff.read(); first=cont.splitlines()[0] if cont else "#EXTM3U"
+            old=["#EXTINF"+p.strip() for p in cont.split("#EXTINF")[1:] if "http" in p and "KANALD Dizileri" not in p]
+        with open(MIRTI_FILE,"w",encoding="utf-8") as out:
+            out.write(first+"\n")
+            for b in old: out.write(b+"\n\n")
+            for b in blocks: out.write(b+"\n\n")
+        print(f"Bitti! {len(old)} eski + {len(blocks)} KANALD")
+
+if __name__=="__main__": run()
