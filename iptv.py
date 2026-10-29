@@ -1,89 +1,92 @@
-import os, subprocess
+import os
+import requests
+import re
 
-output_file = "mirti68.m3u"
-YENI_GRUP = "📺 ULUSAL 🔗"
-
-# YouTube 7/24 canli - token istemez, hep acik
-yt_sources = {
-    "ATV": "https://www.youtube.com/@atvturkiye/live",
-    "KANAL D": "https://www.youtube.com/@kanald/live",
-    "SHOW TV": "https://www.youtube.com/@ShowTV/live",
-    "STAR TV": "https://www.youtube.com/@startv/live",
-    "NOW TV": "https://www.youtube.com/@nowtvturkiye/live",
-    "TV8": "https://www.youtube.com/@tv8/live",
-    # Bunlar zaten saglam
-    "TRT 1": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
-    "KANAL 7": "https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8",
+channel_info = {
+    "atv": ["ATV.hd", "ATV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "📺 ULUSAL 🔗", "ATV"],
+    "kanald": ["Kanal.D.hd", "Kanal D.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "📺 ULUSAL 🔗", "Kanal D"],
+    "showtv": ["Show.TV.hd", "Show TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", "📺 ULUSAL 🔗", "Show TV"],
+    "startv": ["Star.TV.hd", "Star TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "📺 ULUSAL 🔗", "Star TV"],
+    "nowtv": ["NOW.TV.hd", "NOW TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "📺 ULUSAL 🔗", "NOW TV"],
+    "kanal7": ["Kanal.7.hd", "Kanal 7.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "📺 ULUSAL 🔗", "Kanal 7"],
+    "tv8": ["TV8.hd", "TV8.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "📺 ULUSAL 🔗", "TV8"],
+    "trt1": ["TRT.1.hd", "TRT 1.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "📺 ULUSAL 🔗", "TRT 1"],
 }
 
-logos = {
-    "TRT 1": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png",
-    "ATV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png",
-    "KANAL D": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png",
-    "SHOW TV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png",
-    "STAR TV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png",
-    "NOW TV": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png",
-    "KANAL 7": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png",
-    "TV8": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png",
+source_urls = {
+    "atv": "https://www.atv.com.tr/canli-yayin",
+    "kanald": "https://www.kanald.com.tr/canli-yayin",
+    "showtv": "https://www.showtv.com.tr/canli-yayin",
+    "startv": "https://www.startv.com.tr/canli-yayin",
+    "nowtv": "https://www.nowtv.com.tr/canli-yayin",
+    "kanal7": "https://www.kanal7.com/canli-izle",
+    "tv8": "https://www.tv8.com.tr/canli-yayin",
+    # trt1'i cekmeyecegiz, sabit kullanacagiz
 }
 
-def get_m3u8(url):
+def extract_m3u8(url):
     try:
-        r = subprocess.run(
-            ["yt-dlp", "--get-url", "-f", "best", "--no-warnings", url],
-            capture_output=True, text=True, timeout=30
-        )
-        out = r.stdout.strip().split("\n")[0]
-        if "m3u8" in out or "googlevideo" in out:
-            return out
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
+            "Referer": url
+        }
+        r = requests.get(url, timeout=20, headers=headers)
+        # hem duz m3u8 hem de json icindeki m3u8 leri bul
+        m = re.findall(r'https?:\\/\\/[^\s\'"]+\.m3u8[^\s\'"]*|https?://[^\s\'"]+\.m3u8[^\s\'"]*', r.text)
+        # unescape
+        cleaned = []
+        for link in m:
+            link = link.replace("\\/", "/").replace("\\u002F", "/")
+            link = link.split('"')[0].split("'")[0].split("\\")[0]
+            if ".m3u8" in link and "http" in link:
+                cleaned.append(link)
+        if cleaned:
+            # en uzun olan genelde master link
+            cleaned.sort(key=len, reverse=True)
+            return cleaned[0]
     except Exception as e:
         print(f"Hata {url}: {e}")
     return None
 
-yeni_linkler = {}
-for name, src in yt_sources.items():
-    if src.endswith(".m3u8"):
-        yeni_linkler[name] = src
-        print(f"Sabit: {name}")
-    else:
-        print(f"YouTube'dan cekiliyor: {name}")
-        link = get_m3u8(src)
-        if link:
-            yeni_linkler[name] = link
-            print(f"OK {name}")
-        else:
-            # YouTube canli bulamazsa direk youtube linkini birak, TiviMate yt-dlp ile acar
-            yeni_linkler[name] = src
-            print(f"YouTube linki direk birakildi {name}")
+output_file = "mirti68.m3u"
 
-# Eski listeyi koru
-lines=[]
+old_channels = {}
 if os.path.exists(output_file):
-    with open(output_file,"r",encoding="utf-8",errors="ignore") as f:
-        lines=f.readlines()
-old={}
-i=0
-while i < len(lines):
-    if lines[i].startswith("#EXTINF"):
-        ext=lines[i].strip()
-        j=i+1
-        while j < len(lines) and lines[j].startswith("#EXTVLCOPT"):
-            j+=1
-        url = lines[j].strip() if j < len(lines) else ""
-        name = ext.split(",")[-1].strip().upper()
-        if name not in [k.upper() for k in yeni_linkler.keys()]:
-            old[name]=[ext,url]
-        i=j+1
+    with open(output_file, "r", encoding="utf-8", errors="ignore") as f:
+        lines = f.readlines()
+        for i in range(len(lines)):
+            if lines[i].startswith("#EXTINF"):
+                if i+1 < len(lines):
+                    link = lines[i+1].strip()
+                    if link.startswith("http"):
+                        old_channels[lines[i].strip()] = link
+
+updated = {}
+
+# TRT1 SABIT - BIR ONCEKI GIBI KALSIN
+info = channel_info["trt1"]
+extinf = f'#EXTINF:-1 tvg-id="{info[0]}" tvg-name="{info[1]}" tvg-logo="{info[2]}" group-title="{info[3]}",{info[4]}'
+updated[extinf] = "https://tv-trt1.medya.trt.com.tr/master.m3u8"
+print("Sabit: TRT 1")
+
+for name, page_url in source_urls.items():
+    print(f"Kontrol: {name}")
+    m3u8_link = extract_m3u8(page_url)
+    if m3u8_link:
+        info = channel_info[name]
+        extinf = f'#EXTINF:-1 tvg-id="{info[0]}" tvg-name="{info[1]}" tvg-logo="{info[2]}" group-title="{info[3]}",{info[4]}'
+        updated[extinf] = m3u8_link
+        print(f"OK: {info[4]} -> {m3u8_link[:80]}")
     else:
-        i+=1
+        print(f"Bulunamadi: {name}")
 
-with open(output_file,"w",encoding="utf-8") as out:
+final_list = old_channels.copy()
+final_list.update(updated)
+
+with open(output_file, "w", encoding="utf-8") as out:
     out.write("#EXTM3U\n")
-    for name, url in yeni_linkler.items():
-        logo = logos.get(name,"")
-        out.write(f'#EXTINF:-1 tvg-logo="{logo}" group-title="{YENI_GRUP}",{name}\n')
-        out.write(f'{url}\n\n')
-    for ext,url in old.values():
-        out.write(ext+"\n"+url+"\n\n")
+    for extinf, link in final_list.items():
+        out.write(extinf + "\n")
+        out.write(link + "\n\n")
 
-print(f"Bitti toplam {len(old)+len(yeni_linkler)} kanal")
+print(f"Bitti! Toplam kanal: {len(final_list)} - Yeni guncellenen: {len(updated)}")
