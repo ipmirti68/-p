@@ -1,0 +1,23 @@
+name: IPTV Guncelle
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # 6 saatte bir yeniler
+  workflow_dispatch:  # elle de başlatabilirsin
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: pip install requests
+      - run: python iptv.py
+      - run: |
+          git config --global user.name "bot"
+          git config --global user.email "bot@bot.com"
+          git add mirti68.m3u
+          git commit -m "linkler guncellendi" || exit 0
+          git push
