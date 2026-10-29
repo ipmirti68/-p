@@ -15,11 +15,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install requests
-      - run: python iptv.py
-      - run: |
+      - name: Kutüphaneler
+        run: pip install requests tqdm beautifulsoup4
+      - name: 1 - ULUSAL
+        run: python iptv.py
+      - name: 2 - STAR dizileri ekle
+        run: python star.py
+      - name: Commit
+        run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
           git add mirti68.m3u
-          git commit -m "auto update" || exit 0
+          git commit -m "auto update ULUSAL + STAR" || exit 0
           git push
