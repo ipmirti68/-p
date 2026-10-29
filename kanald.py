@@ -3,62 +3,61 @@ import cloudscraper, re, json, os, time
 OUTPUT_FILE = "kanald_playlist.m3u"
 MIRTI_FILE = "mirti68.m3u"
 BASE_URL = "https://www.kanald.com.tr"
-WORKER = "https://mak.sadecenjoy.workers.dev"
 
 scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'windows', 'desktop': True})
+scraper.headers.update({"Referer": BASE_URL + "/", "User-Agent": "Mozilla/5.0"})
 
 def fetch(url):
     try:
-        r = scraper.get(url, timeout=10)
-        if len(r.text)>1000:
-            return r.text
-    except: pass
-    try:
-        r = scraper.get(f"{WORKER}/?url={url}", timeout=20)
+        r = scraper.get(url, timeout=20)
         return r.text
     except:
         return ""
 
 def run():
-    series=[]
-    for slug in ["inci-taneleri","uzak-sehir","annem-ankara","esref-ruya","piyasa","guller-ve-gunahlar","balon"]:
-        series.append({"name":slug.replace("-"," ").title(),"url":f"{BASE_URL}/diziler/{slug}","slug":slug})
-    print(f"KANALD {len(series)} dizi")
-
+    slugs = ["inci-taneleri","uzak-sehir","annem-ankara","esref-ruya","piyasa","guller-ve-gunahlar","balon"]
     entries=[]
-    for s in series[:6]:
-        print(f"\n{s['name']}")
-        html = fetch(s["url"].rstrip("/")+"/bolumler")
-        if not html:
-            html = fetch(s["url"])
-        # tum bolum linkleri
-        links = re.findall(r'href=["\']([^"\']*/bolum/[^"\']+)["\']', html)
-        links += re.findall(r'"/diziler/'+re.escape(s["slug"])+r'/([^"]*bolum[^"]*)"', html)
-        uniq=[]
-        for l in links:
-            full = l if l.startswith("http") else BASE_URL + l if l.startswith("/") else BASE_URL + "/diziler/"+s["slug"]+"/"+l
-            if full not in uniq:
-                uniq.append(full)
+    for slug in slugs:
+        print(f"\n{slug.replace('-',' ').title()}")
+        html = fetch(f"{BASE_URL}/diziler/{slug}/bolumler")
+        if not html or "bolum" not in html.lower():
+            html = fetch(f"{BASE_URL}/diziler/{slug}")
+        # KANALD - __NEXT_DATA__ icinden link bul
+        links = re.findall(r'/diziler/'+re.escape(slug)+r'/bolum/[^"\']+', html)
+        # uniq
+        uniq = list(dict.fromkeys(links))[:12]
         print(f"  -> {len(uniq)} link")
-        for link in uniq[:12]:
-            try:
-                bhtml = fetch(link)
-                m = re.findall(r'https?://[^"\'\s]+\.m3u8[^"\'\s]*', bhtml)
-                if not m:
-                    m2=re.search(r'embedURL[^>]+href="([^"]+)"', bhtml)
-                    if m2:
-                        bhtml2=fetch(f"{WORKER}/?url={m2.group(1)}")
-                        m=re.findall(r'https?://[^"\'\s]+\.m3u8[^"\'\s]*', bhtml2)
-                if m:
-                    url=m[0].replace("\\/","/")
-                    bm=re.search(r'(\d+)-bolum', link)
-                    bname=f"{bm.group(1)}. Bolum" if bm else "Bolum"
-                    entries.append({"dizi":s["name"],"bolum":bname,"url":url})
-                    print(f"    OK {bname}")
-                time.sleep(0.5)
-            except: continue
+        for link in uniq:
+            full = BASE_URL + link if link.startswith("/") else link
+            bhtml = fetch(full)
+            # KANALD m3u8 patternleri - 5 yontem
+            m3u8 = None
+            # 1. direkt m3u8
+            m = re.findall(r'https?://[^"\'\s]+\.m3u8[^"\'\s]*', bhtml)
+            if m:
+                m3u8 = m[0].replace("\\/","/")
+            # 2. videoUrl
+            if not m3u8:
+                m2 = re.search(r'"videoUrl"\s*:\s*"([^"]+m3u8[^"]*)"', bhtml)
+                if m2: m3u8 = m2.group(1).replace("\\/","/")
+            # 3. embed
+            if not m3u8:
+                m3 = re.search(r'embedURL[^>]+href="([^"]+)"', bhtml)
+                if m3:
+                    emb = m3.group(1)
+                    bhtml2 = fetch(emb)
+                    m4 = re.findall(r'https?://[^"\'\s]+\.m3u8[^"\'\s]*', bhtml2)
+                    if m4: m3u8 = m4[0]
+                    else: m3u8 = emb
+            
+            if m3u8 and ".m3u8" in m3u8:
+                bm=re.search(r'(\d+)-bolum', link)
+                bname = f"{bm.group(1)}. Bolum" if bm else "Bolum"
+                entries.append({"dizi":slug.replace("-"," ").title(),"bolum":bname,"url":m3u8})
+                print(f"    OK {bname} -> {m3u8[:60]}")
+            time.sleep(0.8)
 
-    print(f"Bitti {len(entries)} bolum")
+    print(f"\nBitti {len(entries)} bolum")
     with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for e in entries:
@@ -74,5 +73,6 @@ def run():
             out.write(first+"\n")
             for b in old: out.write(b+"\n\n")
             for b in k_blocks: out.write(b+"\n\n")
+        print(f"Mirti: {len(old)} eski + {len(k_blocks)} KANALD")
 
 if __name__=="__main__": run()
