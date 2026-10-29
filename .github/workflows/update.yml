@@ -1,41 +1,24 @@
-name: IPTV Guncelle
+name: update
 on:
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Bagimliliklari kur
-        run: |
-          pip install requests yt-dlp
-      - name: Eski listeyi kurtar (50 satirdan kucukse)
-        run: |
-          LINES=$(wc -l < mirti68.m3u || echo 0)
-          if [ "$LINES" -lt 100 ]; then
-            for commit in $(git log --pretty=format:%H -- mirti68.m3u); do
-              COUNT=$(git show $commit:mirti68.m3u 2>/dev/null | wc -l)
-              if [ "$COUNT" -gt 1000 ]; then
-                git show $commit:mirti68.m3u > mirti68.m3u
-                break
-              fi
-            done
-          fi
+        run: pip install requests
       - name: Linkleri guncelle
-        run: |
-          PY_FILE=$(find . -iname "*iptv.py" | head -n 1)
-          python "$PY_FILE"
+        run: python iptv.py
       - name: Push
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
           git add mirti68.m3u
-          git commit -m "ulusal linkler yt-dlp ile guncellendi" || exit 0
+          git commit -m "fix" || exit 0
           git push
