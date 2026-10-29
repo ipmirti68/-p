@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="Kanal.D.hd" tvg-name="Kanal D.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="ULUSAL",Kanal D
+https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&amp;ce=3
+
+#EXTINF:-1 tvg-id="Show.TV.hd" tvg-name="Show TV.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="ULUSAL",Show TV
+https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1
+
+#EXTINF:-1 tvg-id="NOW.TV.hd" tvg-name="NOW TV.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="ULUSAL",NOW TV
+https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=k-w1jMJ3jH-X_Gl0UB_m9Q&e=1793268741
+
+#EXTINF:-1 tvg-id="TV8.hd" tvg-name="TV8.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="ULUSAL",TV8
+https://tv8-tb-live.ercdn.net/tv8-geo/playlist.m3u8?st=BzpvJLJ9hDX-H3W1sQWquA&e=1639061641
+
+#EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="ULUSAL",TRT 1
+https://rfw2clwss2go9glm.medya.trt.com.tr/out/v1/trt-tabiispor/tabii-spor1/trt-tabii-spor1-hls-drm/trt-tabii-spor1.m3u8
+
