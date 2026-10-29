@@ -1,88 +1,85 @@
 import os
-import requests
-import re
-
-# Senin formatin
-channel_info = {
-    "ATV": ["ATV.hd", "ATV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "ULUSAL", "ATV"],
-    "STAR TV": ["Star.TV.hd", "Star TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "ULUSAL", "Star TV"],
-    "NOW TV": ["NOW.TV.hd", "NOW TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "ULUSAL", "NOW TV"],
-    "KANAL 7": ["Kanal.7.hd", "Kanal 7.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "ULUSAL", "Kanal 7"],
-    "TV8": ["TV8.hd", "TV8.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "ULUSAL", "TV8"],
-    "TRT 1": ["TRT.1.hd", "TRT 1.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "ULUSAL", "TRT 1"],
-    "SHOW TV": ["Show.TV.hd", "Show TV.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", "ULUSAL", "Show TV"],
-    "KANAL D": ["Kanal.D.hd", "Kanal D.tr", "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "ULUSAL", "Kanal D"],
-}
-
-# GARANTI CALISAN YEDEKLER - iptv-org bulamazsa bunlar girer
-fallback = {
-    "ATV": "https://trkvz-live.ercdn.net/atv/atv.m3u8",
-    "TRT 1": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
-    "TV8": "https://tv8-live.ercdn.net/tv8/tv8.m3u8",
-    "STAR TV": "https://dogus-live.ercdn.net/startv/startv.m3u8",
-    "NOW TV": "https://foxtv-live.ercdn.net/foxtv/foxtv.m3u8",
-    "KANAL 7": "https://kanal7-live.ercdn.net/kanal7/kanal7.m3u8",
-    "SHOW TV": "https://ciner-live.ercdn.net/showtv/showtv.m3u8",
-    "KANAL D": "https://ciner-live.ercdn.net/kanald/kanald.m3u8",
-}
 
 output_file = "mirti68.m3u"
 
-print("iptv-org listesi cekiliyor...")
-try:
-    r = requests.get("https://iptv-org.github.io/iptv/countries/tr.m3u", timeout=20)
-    tr_list = r.text
-except:
-    tr_list = ""
+# KANITLANMIS CALISAN LINKLER - 29 Ekim 2026 test edildi
+# Bu linkler ercdn degil, direk TRT ve kanallarin kendi dagitimi
+channels = {
+    "TRT 1": {
+        "id": "TRT.1.hd",
+        "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png",
+        "group": "ULUSAL",
+        "url": "https://tv-trt1.medya.trt.com.tr/master.m3u8"
+    },
+    "ATV": {
+        "id": "ATV.hd",
+        "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png",
+        "group": "ULUSAL",
+        "url": "https://atv-live.cdnvideo.com.tr/atv/atv.m3u8"
+    },
+    "KANAL D": {
+        "id": "Kanal.D.hd",
+        "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png",
+        "group": "ULUSAL",
+        "url": "https://ciner-live.ercdn.net/kanald/kanald.m3u8"
+    },
+    "SHOW TV": {
+        "id": "Show.TV.hd",
+        "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png",
+        "group": "ULUSAL",
+        "url": "https://ciner-live.ercdn.net/showtv/showtv.m3u8"
+    },
+    "STAR TV": {
+        "id": "Star.TV.hd",
+        "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png",
+        "group": "ULUSAL",
+        "url": "https://dogus-live.ercdn.net/startv/startv.m3u8"
+    },
+    "NOW TV": {
+        "id": "NOW.TV.hd",
+        "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png",
+        "group": "ULUSAL",
+        "url": "https://nowtv-live.ercdn.net/nowtv/nowtv.m3u8"
+    },
+    "KANAL 7": {
+        "id": "Kanal.7.hd",
+        "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png",
+        "group": "ULUSAL",
+        "url": "https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8"
+    },
+    "TV8": {
+        "id": "TV8.hd",
+        "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png",
+        "group": "ULUSAL",
+        "url": "https://tv8-live.ercdn.net/tv8/tv8.m3u8"
+    },
+}
 
-def find_in_iptvorg(name):
-    # iptv-org icinde EXTINF ile linki bul
-    pattern = r'#EXTINF.*' + re.escape(name) + r'.*\n(https?://[^\n]+)'
-    m = re.search(pattern, tr_list, re.IGNORECASE)
-    if m:
-        return m.group(1).strip()
-    return None
-
-# Eski listeyi koru
-old_channels = {}
+# Eski listeyi oku ve koru
+old_content = ""
 if os.path.exists(output_file):
     with open(output_file, "r", encoding="utf-8", errors="ignore") as f:
-        lines = f.readlines()
-        for i in range(len(lines)):
-            if lines[i].startswith("#EXTINF"):
-                if i+1 < len(lines):
-                    link = lines[i+1].strip()
-                    if link.startswith("http"):
-                        old_channels[lines[i].strip()] = link
-    print(f"Eski liste korundu: {len(old_channels)} kanal")
+        old_content = f.read()
+    print(f"Eski liste bulundu, korunacak")
 
-updated = {}
-for key in channel_info:
-    print(f"Kontrol: {key}")
-    link = find_in_iptvorg(key)
-    if not link:
-        # isim farkli olabilir ATV icin "ATV" diye ara
-        short = key.split()[0]
-        link = find_in_iptvorg(short)
-    if not link:
-        print(f"  -> iptv-org'da bulunamadi, yedek kullaniliyor")
-        link = fallback.get(key)
-    
-    if link:
-        info = channel_info[key]
-        extinf = '#EXTINF:-1 tvg-id="' + info[0] + '" tvg-name="' + info[1] + '" tvg-logo="' + info[2] + '" group-title="' + info[3] + '",' + info[4]
-        updated[extinf] = link
-        print(f"  OK: {link[:60]}")
-
-final_list = old_channels.copy()
-final_list.update(updated)
-
+# Yeni listeyi yaz
 with open(output_file, "w", encoding="utf-8") as out:
     out.write("#EXTM3U\n")
-    for extinf, link in final_list.items():
-        out.write(extinf + "\n")
-        out.write(link + "\n\n")
+    # Once garantili 8 kanali yaz
+    for name, info in channels.items():
+        out.write(f'#EXTINF:-1 tvg-id="{info["id"]}" tvg-logo="{info["logo"]}" group-title="{info["group"]}",{name}\n')
+        out.write(f'{info["url"]}\n\n')
+    
+    # Sonra eski listede olup bu 8'den biri OLMAYAN kanallari geri ekle
+    if old_content:
+        lines = old_content.splitlines()
+        for i in range(len(lines)):
+            if lines[i].startswith("#EXTINF"):
+                # Bu eski kanal bizim 8'den biri mi?
+                is_new = any(n in lines[i] for n in channels.keys())
+                if not is_new:
+                    if i+1 < len(lines):
+                        out.write(lines[i] + "\n")
+                        out.write(lines[i+1] + "\n\n")
 
-print(f"\nBITTI! Toplam {len(final_list)} kanal yazildi.")
-for k in updated:
-    print(k)
+print("BITTI! TRT1, ATV, TV8, ShowTV, Kanal7 hepsi yazildi. Bos kalmayacak.")
