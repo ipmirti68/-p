@@ -1,4 +1,4 @@
-import cloudscraper, re, os, time, json
+import cloudscraper, re, os, time
 OUTPUT_FILE="atv_playlist.m3u"
 MIRTI_FILE="mirti68.m3u"
 BASE_URL="https://www.atv.com.tr"
@@ -8,55 +8,66 @@ scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'wind
 scraper.headers.update({"Referer":"https://www.atv.com.tr/","User-Agent":"Mozilla/5.0"})
 
 def fetch(url):
+    # once WORKER, olmazsa direkt
     try:
-        r=scraper.get(f"{WORKER}/?url={url}",timeout=25)
-        print(f"fetch {url[-50:]} -> {len(r.text)} byte")
+        r=scraper.get(f"{WORKER}/?url={url}",timeout=20)
+        if len(r.text)>1000:
+            return r.text
+    except: pass
+    try:
+        r=scraper.get(url,timeout=15)
         return r.text
-    except Exception as e:
-        print(f"fetch hata: {e}")
+    except:
         return ""
 
-# Sadece Alti Ustu Istanbul test
-slugs=["alti-ustu-istanbul"]
+# Senin testlerin
+slugs=["haysiyet","alti-ustu-istanbul","kurulus-osman","can-borcu"]
 
 entries=[]
 for slug in slugs:
-    print(f"\n{slug} bolumleri aliniyor...")
-    # 1. bolumler sayfasi
+    print(f"\n=== {slug.upper()} ===")
     html=fetch(f"{BASE_URL}/diziler/{slug}/bolumler")
-    if len(html)<1000:
+    if len(html)<500:
         html=fetch(f"{BASE_URL}/diziler/{slug}")
-    
     links=re.findall(r'/diziler/'+re.escape(slug)+r'/bolum/[^"\'\s]+',html)
-    uniq=sorted(list(dict.fromkeys(links)))
-    print(f"  {len(uniq)} bolum linki bulundu")
-    for u in uniq[-5:]:
-        print(f"    link: {u}")
-
-    # 0 ise manuel ekle - 18 dahil
+    uniq=list(dict.fromkeys(links))[:8]
+    print(f"  Bulunan bolum link: {len(uniq)}")
     if len(uniq)==0:
-        uniq=[f"/diziler/{slug}/bolum/{i}-bolum" for i in range(1,19)]
-        print(f"  Manuel liste: {uniq[-3:]}")
-
-    for link in uniq[-10:]: # son 10, 18 dahil
-        full=BASE_URL+link if link.startswith("/") else link
-        print(f"\nDeniyor: {full}")
+        uniq=[f"/diziler/{slug}/bolum/{i}-bolum" for i in range(1,9)]
+        print(f"  Manuel liste kullaniliyor")
+    for link in uniq[-5:]:
+        full=BASE_URL+link
         bhtml=fetch(full)
-        
         m3u8=None
-        # ATV patternleri - 4 yontem
-        pats=[
-            r'"videoUrl"\s*:\s*"([^"]+m3u8[^"]*)"',
-            r'"src"\s*:\s*"([^"]+m3u8[^"]*)"',
-            r'source\s*:\s*"([^"]+m3u8[^"]*)"',
-            r'(https?://[^"\'\s]+\.m3u8[^"\'\s]*)'
-        ]
-        for pat in pats:
-            m=re.search(pat,bhtml)
-            if m:
-                m3u8=m.group(1).replace("\\/","/").replace("\\u002F","/").replace("\\","")
-                print(f"  Pattern {pat[:20]} ile bulundu")
-                break
-        
-        # iframe webtv fallback
-        if not m3
+        # duzeltildi - line 62 hatasi buradaydi
+        m=re.findall(r'https?://[^"\'\s]+\.m3u8[^"\'\s]*',bhtml)
+        if m:
+            m3u8=m[0].replace("\\/","/")
+        if not m3u8:
+            m2=re.search(r'"videoUrl"\s*:\s*"([^"]+)"',bhtml)
+            if m2 and "m3u8" in m2.group(1):
+                m3u8=m2.group(1).replace("\\/","/")
+        if m3u8 and ".m3u8" in m3u8:
+            bm=re.search(r'(\d+)',link)
+            bname=f"{bm.group(1)}. Bolum" if bm else "Bolum"
+            entries.append({"dizi":slug.replace("-"," ").title(),"bolum":bname,"url":m3u8})
+            print(f"  OK {bname}")
+        time.sleep(0.5)
+
+print(f"\n{OUTPUT_FILE} - {len(entries)} bolum")
+with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
+    f.write("#EXTM3U\n")
+    for e in entries:
+        f.write(f'#EXTINF:-1 group-title="ATV Dizileri",{e["dizi"]} - {e["bolum"]}\n{e["url"]}\n\n')
+
+if os.path.exists(MIRTI_FILE):
+    with open(OUTPUT_FILE,"r",encoding="utf-8",errors="ignore") as ff:
+        blocks=["#EXTINF"+p.strip() for p in ff.read().split("#EXTINF")[1:] if "http" in p]
+    with open(MIRTI_FILE,"r",encoding="utf-8",errors="ignore") as ff:
+        cont=ff.read()
+        first=cont.splitlines()[0] if cont else "#EXTM3U"
+        old=["#EXTINF"+p.strip() for p in cont.split("#EXTINF")[1:] if "http" in p and "ATV Dizileri" not in p]
+    with open(MIRTI_FILE,"w",encoding="utf-8") as out:
+        out.write(first+"\n")
+        for b in old: out.write(b+"\n\n")
+        for b in blocks: out.write(b+"\n\n")
