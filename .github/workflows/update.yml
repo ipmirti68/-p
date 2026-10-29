@@ -1,6 +1,10 @@
-name: liste guncelle
+name: update
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+  push:
+    branches: [main]
 permissions:
   contents: write
 jobs:
@@ -11,14 +15,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Bagimliliklari kur
-        run: pip install requests
-      - name: Linkleri guncelle
-        run: python iptv.py
-      - name: Push
-        run: |
+      - run: pip install requests
+      - run: python iptv.py
+      - run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
           git add mirti68.m3u
-          git commit -m "fix" || exit 0
+          git commit -m "auto update" || exit 0
           git push
