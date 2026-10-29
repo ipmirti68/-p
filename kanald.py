@@ -1,6 +1,5 @@
-import cloudscraper
+import cloudscraper, re, json, os, time
 from bs4 import BeautifulSoup
-import json, time, re, os
 from datetime import datetime
 
 OUTPUT_FILE = "kanald_playlist.m3u"
@@ -15,100 +14,118 @@ def load_cache():
         try:
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
                 return json.load(f)
-        except:
-            pass
+        except: pass
     return {"episodes": {}}
 
-def save_cache(cache):
+def save_cache(c):
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(cache, f, ensure_ascii=False, indent=2)
+        json.dump(c, f, ensure_ascii=False, indent=2)
 
-def get_m3u8(scraper, bolum_url, cache):
+scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'windows', 'desktop': True})
+
+def get_m3u8(bolum_url, cache):
     if bolum_url in cache.get("episodes", {}):
         return cache["episodes"][bolum_url]
     try:
         r1 = scraper.get(bolum_url, timeout=10)
-        m = re.search(r'<link[^>]+itemprop=["\']embedURL["\'][^>]+href=["\']([^"\']+)["\']', r1.text)
-        if m:
-            embed = m.group(1)
-            r2 = scraper.get(f"{WORKER_URL}/?url={embed}", timeout=15)
-            f = re.search(r'https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*', r2.text)
-            if f:
-                url = f.group(0).replace('\\/', '/')
-                cache["episodes"][bolum_url] = url
+        # embed linki bul
+        m = re.search(r'itemprop=["\']embedURL["\'][^>]+href=["\']([^"\']+)["\']', r1.text)
+        if not m:
+            m = re.search(r'(https?://[^"\']+\.m3u8[^"\']*)', r1.text)
+            if m:
+                url = m.group(1).replace('\\/','/')
+                cache["episodes"][bolum_url]=url
                 return url
-        cache["episodes"][bolum_url] = bolum_url
-        return bolum_url
+            cache["episodes"][bolum_url]=bolum_url
+            return bolum_url
+        embed = m.group(1)
+        r2 = scraper.get(f"{WORKER_URL}/?url={embed}", timeout=15)
+        m2 = re.search(r'https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*', r2.text)
+        if m2:
+            url = m2.group(0).replace('\\/','/')
+            cache["episodes"][bolum_url]=url
+            return url
+        cache["episodes"][bolum_url]=embed
+        return embed
     except:
-        cache["episodes"][bolum_url] = bolum_url
+        cache["episodes"][bolum_url]=bolum_url
         return bolum_url
 
-def run_scraper():
+def run():
     cache = load_cache()
-    scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'windows', 'desktop': True})
     entries = []
-    for page in range(1, 3):  # 10 yerine 2 yaptim, hizli bitsin
+    print("KANALD taraniyor...")
+    for page in range(1, 4): # 3 sayfa yeter, hizli
         print(f"Sayfa {page}")
         try:
             resp = scraper.get(f"{ARCHIVE_URL}{page}", timeout=15)
             soup = BeautifulSoup(resp.text, 'html.parser')
+            # YENI selector - 2 yontem
             cards = soup.select('a.poster-card')
+            if not cards:
+                cards = soup.find_all("a", href=re.compile(r"/diziler/"))
             if not cards:
                 break
             for card in cards:
-                title = card.get('title') or 'Dizi'
-                href = card.get('href')
-                if not href:
+                href = card.get("href","")
+                if "/diziler/" not in href or "/bolum" in href:
                     continue
-                full = BASE_URL + href if href.startswith('/') else href
-                img = card.find('img')
-                poster = (img.get('data-src') or img.get('src','')) if img else ''
-                # bolumler sayfasi
+                if href.count("/") > 4:
+                    continue
+                title = card.get("title") or card.get_text(strip=True) or href.split("/")[-2]
+                title = title.replace("\n","").strip()[:60]
+                if len(title) < 2 or "Bölüm" in title:
+                    continue
+                full = BASE_URL + href if href.startswith("/") else href
+                poster = ""
+                img = card.find("img")
+                if img:
+                    poster = img.get("data-src") or img.get("src","")
+
+                # bolumler sayfasini al
                 try:
-                    r = scraper.get(full.rstrip('/') + "/bolumler", timeout=10)
-                    s = BeautifulSoup(r.text, 'html.parser')
-                    sel = s.find('select', id='video-finder-changer')
-                    if sel:
-                        for opt in sel.find_all('option', {'data-target': True}):
-                            b_url = opt['data-target']
-                            b_name = opt.get_text(strip=True)
-                            m3u8 = get_m3u8(scraper, b_url, cache)
-                            entries.append({'dizi': title, 'bolum': b_name, 'url': m3u8, 'poster': poster})
-                except:
+                    r = scraper.get(full.rstrip("/") + "/bolumler", timeout=10)
+                    # YENI - regex ile tum bolum linklerini bul
+                    links = re.findall(r'href=["\']([^"\']+/bolum/[^"\']+)["\']', r.text)
+                    # dropdown
+                    opts = re.findall(r'data-target=["\']([^"\']+/bolum/[^"\']+)["\']', r.text)
+                    links = list(set(links + opts))
+                    
+                    for b_link in links[:30]: # her diziden max 30 bolum, cok olmasin
+                        b_full = BASE_URL + b_link if b_link.startswith("/") else b_link
+                        b_name_match = re.search(r'/(\d+)-bolum', b_link)
+                        b_name = f"{b_name_match.group(1)}. Bölüm" if b_name_match else "Bölüm"
+                        m3u8 = get_m3u8(b_full, cache)
+                        if m3u8:
+                            entries.append({"dizi": title, "bolum": b_name, "url": m3u8, "poster": poster})
+                    time.sleep(0.3)
+                except Exception as e:
+                    print(f"  hata {title}: {e}")
                     continue
-        except:
+        except Exception as e:
+            print(f"Sayfa hata: {e}")
             continue
-    
+
     save_cache(cache)
-    # m3u yaz
+    print(f"Bitti {len(entries)} bolum")
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for e in entries:
             f.write(f'#EXTINF:-1 tvg-logo="{e["poster"]}" group-title="KANALD Dizileri",{e["dizi"]} - {e["bolum"]}\n{e["url"]}\n\n')
-    
-    # mirti68 e ekle - BOZMAYAN
+
     if os.path.exists(MIRTI_FILE) and os.path.exists(OUTPUT_FILE):
         with open(OUTPUT_FILE, "r", encoding="utf-8", errors="ignore") as ff:
-            k_blocks = []
-            for p in ff.read().split("#EXTINF")[1:]:
-                if "http" in p:
-                    k_blocks.append("#EXTINF" + p.strip())
+            k_blocks = ["#EXTINF" + p.strip() for p in ff.read().split("#EXTINF")[1:] if "http" in p]
         with open(MIRTI_FILE, "r", encoding="utf-8", errors="ignore") as ff:
             cont = ff.read()
             first = cont.splitlines()[0] if cont else "#EXTM3U"
-            old = []
-            for p in cont.split("#EXTINF")[1:]:
-                if "KANALD Dizileri" in p or 'group-title="Kanal D"' in p:
-                    continue
-                if "http" in p:
-                    old.append("#EXTINF" + p.strip())
+            old = ["#EXTINF" + p.strip() for p in cont.split("#EXTINF")[1:] if "http" in p and "KANALD Dizileri" not in p and 'group-title="Kanal D"' not in p]
         with open(MIRTI_FILE, "w", encoding="utf-8") as out:
             out.write(first + "\n")
-            for b in old:
-                out.write(b + "\n\n")
-            for b in k_blocks:
-                out.write(b + "\n\n")
-    print(f"Bitti {len(entries)} bolum")
+            for b in old: out.write(b + "\n\n")
+            for b in k_blocks: out.write(b + "\n\n")
+        print(f"Mirti guncellendi: {len(old)} eski + {len(k_blocks)} KANALD")
 
 if __name__ == "__main__":
-    run_scraper()
+    run()
