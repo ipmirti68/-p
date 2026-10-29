@@ -1,43 +1,43 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="TRT.1.hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL 🔗",TRT 1
-#EXTVLCOPT:http-referrer=https://www.trt1.com.tr/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://tv-trt1.medya.trt.com.tr/master.m3u8
-
-#EXTINF:-1 tvg-id="ATV.hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="📺 ULUSAL 🔗",ATV
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="📺 ULUSAL 🔗",ATV
 #EXTVLCOPT:http-referrer=https://www.atv.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://atv-live.cdnvideo.com.tr/atv/atv.m3u8
+https://ciner-live.ercdn.net/atv/atv.m3u8
 
-#EXTINF:-1 tvg-id="Kanal.D.hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL 🔗",KANAL D
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL 🔗",KANAL D
 #EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 https://ciner-live.ercdn.net/kanald/kanald.m3u8
 
-#EXTINF:-1 tvg-id="Show.TV.hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL 🔗",SHOW TV
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL 🔗",SHOW TV
 #EXTVLCOPT:http-referrer=https://www.showtv.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 https://ciner-live.ercdn.net/showtv/showtv.m3u8
 
-#EXTINF:-1 tvg-id="Star.TV.hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL 🔗",STAR TV
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL 🔗",STAR TV
 #EXTVLCOPT:http-referrer=https://www.startv.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://dogus-live.ercdn.net/startv/startv.m3u8
+https://ciner-live.ercdn.net/startv/startv.m3u8
 
-#EXTINF:-1 tvg-id="NOW.TV.hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL 🔗",NOW TV
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL 🔗",NOW TV
 #EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://nowtv-live.ercdn.net/nowtv/nowtv.m3u8
+https://ciner-live.ercdn.net/nowtv/nowtv.m3u8
 
-#EXTINF:-1 tvg-id="Kanal.7.hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL 🔗",KANAL 7
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="📺 ULUSAL 🔗",TV8
+#EXTVLCOPT:http-referrer=https://www.tv8.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://ciner-live.ercdn.net/tv8/tv8.m3u8
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL 🔗",TRT 1
+#EXTVLCOPT:http-referrer=https://www.trt1.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://tv-trt1.medya.trt.com.tr/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL 🔗",KANAL 7
 #EXTVLCOPT:http-referrer=https://www.kanal7.com/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
-
-#EXTINF:-1 tvg-id="TV8.hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="📺 ULUSAL 🔗",TV8
-#EXTVLCOPT:http-referrer=https://www.tv8.com.tr/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://tv8-live.ercdn.net/tv8/tv8.m3u8
 
 #EXTINF:-1 tvg-id="TRT1.tr" tvg-name="TRT 1.tr" tvg-logo="https://pkchtv1.xyz/logo/Trt4k.png" group-title="📺 ULUSAL 4K",TRT 1 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315272
