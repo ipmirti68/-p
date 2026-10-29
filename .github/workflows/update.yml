@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -31,7 +33,9 @@ jobs:
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
-          git pull --rebase origin main
           git add mirti68.m3u
-          git commit -m "auto update ULUSAL + DIZILER" || exit 0
+          git commit -m "auto update ULUSAL + DIZILER" || echo "commit yok"
+          git stash push -m "temp" --keep-index
+          git pull --rebase origin main
+          git stash pop || true
           git push
