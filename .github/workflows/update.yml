@@ -24,18 +24,18 @@ jobs:
       - name: 2 - STAR
         run: python star.py
       - name: 3 - SHOW
-        run: python show.py
+        run: python show.py || echo "SHOW skip"
       - name: 4 - KANALD
-        run: python kanald.py
+        run: python kanald.py || echo "KANALD skip"
       - name: 5 - ATV
-        run: python atv.py
+        run: python atv.py || echo "ATV skip"
       - name: Commit
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
           git add mirti68.m3u
           git commit -m "auto update ULUSAL + DIZILER" || echo "commit yok"
-          git stash push -m "temp" --keep-index
-          git pull --rebase origin main
+          git stash push -m "temp" --keep-index || true
+          git pull --rebase origin main || true
           git stash pop || true
-          git push
+          git push || git push --force-with-lease
