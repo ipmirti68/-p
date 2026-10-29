@@ -14,10 +14,14 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests
-      - run: python iptv.py
+      - run: |
+          ls -la
+          PY_FILE=$(find . -name "iptv.py" | head -n 1)
+          echo "Bulunan dosya: $PY_FILE"
+          python "$PY_FILE"
       - run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
-          git add mirti68.m3u
+          git add mirti68.m3u || git add .
           git commit -m "linkler guncellendi" || exit 0
           git push
