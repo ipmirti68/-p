@@ -1,5 +1,9 @@
 import os
 output_file = "mirti68.m3u"
+
+# YENI GRUP ADI
+YENI_GRUP = "📺 ULUSAL 🔗"
+
 guncellenecek = {
     "TRT 1": ("https://tv-trt1.medya.trt.com.tr/master.m3u8","https://www.trt1.com.tr/","TRT.1.hd","https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png"),
     "ATV": ("https://atv-live.cdnvideo.com.tr/atv/atv.m3u8","https://www.atv.com.tr/","ATV.hd","https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png"),
@@ -10,11 +14,12 @@ guncellenecek = {
     "KANAL 7": ("https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8","https://www.kanal7.com/","Kanal.7.hd","https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png"),
     "TV8": ("https://tv8-live.ercdn.net/tv8/tv8.m3u8","https://www.tv8.com.tr/","TV8.hd","https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png"),
 }
-# eskiyi oku ama ULUSAL'lari alma, biz yenilecegiz
+
 lines=[]
 if os.path.exists(output_file):
     with open(output_file,"r",encoding="utf-8",errors="ignore") as f:
         lines=f.readlines()
+
 old={}
 i=0
 while i < len(lines):
@@ -33,11 +38,14 @@ while i < len(lines):
 
 with open(output_file,"w",encoding="utf-8") as out:
     out.write("#EXTM3U\n")
+    # YENI KANALLAR - ISTEDIGIN GRUP ADIYLA
     for name,(url,ref,tvgid,logo) in guncellenecek.items():
-        out.write(f'#EXTINF:-1 tvg-id="{tvgid}" tvg-logo="{logo}" group-title="ULUSAL",{name}\n')
+        out.write(f'#EXTINF:-1 tvg-id="{tvgid}" tvg-logo="{logo}" group-title="{YENI_GRUP}",{name}\n')
         out.write(f'#EXTVLCOPT:http-referrer={ref}\n')
         out.write(f'#EXTVLCOPT:http-user-agent=Mozilla/5.0\n')
         out.write(f'{url}\n\n')
+    # ESKI LISTE
     for ext,url in old.values():
         out.write(ext+"\n"+url+"\n\n")
-print(f"Bitti toplam {len(old)+len(guncellenecek)} kanal")
+
+print(f"Bitti. Yeni grup: {YENI_GRUP} - Toplam {len(old)+len(guncellenecek)} kanal")
