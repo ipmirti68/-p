@@ -1,141 +1,43 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="TRT1.tr" tvg-name="TRT 1.tr" tvg-logo="https://pkchtv1.xyz/logo/Trt4k.png" group-title="📺 ULUSAL 4K",TRT 1 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315272
-
-#EXTINF:-1 tvg-id="ATV.tr" tvg-name="atv hd.tr" tvg-logo="https://pkchtv1.xyz/logo/Atv.png" group-title="📺 ULUSAL 4K",ATV 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315274
-
-#EXTINF:-1 tvg-id="ShowTV.tr" tvg-name="show TV" tvg-logo="http://pkchtv1.xyz/logo/Showtv.png" group-title="📺 ULUSAL 4K",SHOW TV 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315276
-
-#EXTINF:-1 tvg-id="StarTV.tr" tvg-name="star TV.tr" tvg-logo="http://pkchtv1.xyz/logo/Startv.png" group-title="📺 ULUSAL 4K",STAR TV 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315278
-
-#EXTINF:-1 tvg-id="KanalD.tr" tvg-name="kanal d.tr" tvg-logo="http://pkchtv1.xyz/logo/Kanald.png" group-title="📺 ULUSAL 4K",KANALD 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315280
-
-#EXTINF:-1 tvg-id="NOWTV.tr" tvg-name="fox" tvg-logo="http://pkchtv1.xyz/logo/nowtv.png" group-title="📺 ULUSAL 4K",NOW 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315282
-
-#EXTINF:-1 tvg-id="KANAL7.tr" tvg-name="kanal 7.tr" tvg-logo="https://pkchtv1.xyz/logo/Kanal7.png" group-title="📺 ULUSAL 4K",KANAL 7 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315294
-
-#EXTINF:-1 tvg-id="TV8.tr" tvg-name="tv8" tvg-logo="https://pkchtv1.xyz/logo/Tv8.png" group-title="📺 ULUSAL 4K",TV8 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315284
-
-#EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1
+#EXTINF:-1 tvg-id="TRT 1" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL 🔗",TRT 1
+#EXTVLCOPT:http-referrer=https://www.trt1.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 
-#EXTINF:-1 tvg-id="Show TV" tvg-name="Show TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="📺 ULUSAL",Show TV
+#EXTINF:-1 tvg-id="ATV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="📺 ULUSAL 🔗",ATV
+#EXTVLCOPT:http-referrer=https://www.atv.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://atv-live.cdnvideo.com.tr/atv/atv.m3u8
+
+#EXTINF:-1 tvg-id="KANAL D" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL 🔗",KANAL D
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&amp;ce=3
+
+#EXTINF:-1 tvg-id="SHOW TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL 🔗",SHOW TV
+#EXTVLCOPT:http-referrer=https://www.showtv.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1
 
-#EXTINF:-1 tvg-id="Star tv" tvg-name="Star tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR
-https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8l4w3lst4co5&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
+#EXTINF:-1 tvg-id="STAR TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL 🔗",STAR TV
+#EXTVLCOPT:http-referrer=https://www.startv.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dogus-live.ercdn.net/startv/startv.m3u8
 
-#EXTINF:-1 tvg-id="Fox.tr" tvg-name="Fox hd" tvg-logo="https://raw.githubusercontent.com/46tv/mix/main/logo/NOW.png" group-title="📺 ULUSAL",NOW
-https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
+#EXTINF:-1 tvg-id="NOW TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL 🔗",NOW TV
+#EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=_N-rSZPrBLcP4AtfWzBXOg&e=1793291020
 
-#EXTINF:-1 tvg-id="kanal 7.tr" tvg-name="kanal 7.tr" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8a6" group-title="📺 ULUSAL",KANAL 7
+#EXTINF:-1 tvg-id="KANAL 7" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL 🔗",KANAL 7
+#EXTVLCOPT:http-referrer=https://www.kanal7.com/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
 https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
 
-#EXTINF:-1 tvg-name="TV8" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/tv8-tr.png?raw=true" group-title="📺 ULUSAL",TV 8
-https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3
-
-#EXTINF:-1 tvg-id="TV8,5.tr" tvg-name="TR | TV 8.5 4K" tvg-logo="http://pkchtv1.xyz/logo/Tv8.5.png" group-title="📺 ULUSAL 4K",TV 8.5 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315286
-
-#EXTINF:-1 tvg-id="BEYAZTV.tr" tvg-name="BEYAZ TV.tr" tvg-logo="https://pkchtv1.xyz/logo/Beyaztv.png" group-title="📺 ULUSAL 4K",BEYAZ TV 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315288
-
-#EXTINF:-1 tvg-id="360.tr" tvg-name="360.tr" tvg-logo="https://pkchtv1.xyz/logo/360.png" group-title="📺 ULUSAL 4K",360 4K
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315307
-
-#EXTINF:-1 tvg-id="mc" tvg-name="mc" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVE1t5H4wnurwE8E_54RRJliaEmWuFVKn1vNKPiVFbwQ&s=10" group-title="📺 ULUSAL",MC
-https://n2.burst.cdn.jetstre.am/session/450f4c594b612903b7d42d421fb93c21/sz/mceutv/wowza4/live/mc2/chunklist.m3u8
-
-#EXTINF:-1 tvg-id="360.tr" tvg-name="360.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/360.png" group-title="📺 ULUSAL",360
-https://turkmedya-live.ercdn.net/tv360/tv360.m3u8
-
-#EXTINF:-1 tvg-name="tabii TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu9RBXYxEBrOfBTHTYJCj9Q1cqBRitOy_XAL7VqfT0ig&s=10" group-title="📺 ULUSAL",TABİİ
-https://ceokzokgtd.erbvr.com/tabiitv/tabiitv.m3u8
-
-#EXTINF:-1 tvg-name="a2" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/a2.png" group-title="📺 ULUSAL",A2
-https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/a2tv/a2tv.m3u8
-
-#EXTINF:-1 tvg-id="TV 8,5.tr" tvg-name="TV 8,5.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhsrociRELCs8qvFhNbt1QCg2aB_xc9ReRa7HE90AAerJ_h6BJ8-1TpJ4&s" group-title="📺 ULUSAL",TV8.5
-https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8bucuk/tv8bucuk_1080p.m3u8
-
-#EXTINF:-1 tvg-id="tv4.tr" tvg-name="tv.4.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwo-xt3uznDM82UzS5sm_TyWTHeNJ3cvNL1J-ClN0MeQ&s=10" group-title="📺 ULUSAL",TV4
-https://turkmedya-live.ercdn.net/tv4/tv4_720p.m3u8
-
-#EXTINF:-1 tvg-id="TV2.tr" tvg-name="TV2.tr" tvg-logo="https://i.dsmart.com.tr/kanallar/tv2-logo-1.png" group-title="📺 ULUSAL",TV2
-https://ackaxsqacw.turknet.ercdn.net/ozfkfbbjba/teve2/teve2_1080p.m3u8
-
-#EXTINF:-1 tvg-id="dmax.tr" tvg-name="DMAX.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/dmax.png" group-title="📺 ULUSAL",DMAX
-https://dygvideo.dygdigital.com/live/hls/dmaxdai?m3u8
-
-#EXTINF:-1 tvg-id="tlc.tr" tvg-name="TLC.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tlc.png" group-title="📺 ULUSAL",TLC
-https://dygvideo.dygdigital.com/live/hls/tlctvdai?m3u8
-
-#EXTINF:-1 tvg-id="Bi Kanal" tvg-name="Bi.Kanal.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBYIITzwTSo2mIVsUeEMfYRnZdV2JPe0HJXZKgMBEZ6A&s" group-title="📺 ULUSAL",Bİ KANAL
-https://bikanal-live.ercdn.net/bikanal/bikanal.m3u8
-
-#EXTINF:-1 tvg-id="tyt.türk..tr" tvg-name="TYT.TÃœRK.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK3Py6LppOTpxNxrBbxlXgl7zHJdwi0NkP2OR3hw9adw&s=10" group-title="📺 ULUSAL",TYT TÜRK
-https://tytturk-live.ercdn.net/tytturk/tytturk_1080p.m3u8
-
-#EXTINF:-1 tvg-id="showmax" tvg-name="showmax" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzU2Z1dcBIaKOnBBTgThVPOMdcBV60Iz8DqBZpfvR1mg&s" group-title="📺 ULUSAL",SHOW MAX
-https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showmax/showmax.m3u8
-
-#EXTINF:-1 tvg-id="GZT tv" tvg-name="GZT tv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyvbcqb6qnbFkxrHKHtrtTt7zCrbUkNiTv8EZXIs5EIg&s=10" group-title="📺 ULUSAL",GZT
-https://gzttv-live.lg.mncdn.com/gzttv-live/gzttv/chunklist_w1287509379.m3u8
-
-#EXTINF:-1 tvg-id="FLASH haber.tr" tvg-name="FLASH haber.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs9tnIk5LjdUyeHB15zaFgYj6l_VhRxuTHK85qLEdh6A&s=10" group-title="📺 ULUSAL",FLASH
-https://b01c02nl.mediatriple.net/videoonlylive/mtyycglqauzjhlive/broadcast_67c053c48829f.smil/playlist.m3u8
-
-#EXTINF:-1 tvg-id="TRT.GENÃ‡.tr" tvg-name="TRT.GENÃ‡.tr" tvg-logo="https://izmottvsc22.tvplus.com.tr:33207/CPS/images/universal/film/logo/202601/20260115/35/1205459746305eb9b42e_op_0_XL.png" group-title="📺 ULUSAL",TRT GENÇ
-https://tv-trtgenc.medya.trt.com.tr/master_1080.m3u8
-
-#EXTINF:-1 tvg-id="TRT Kurdi.tr" tvg-name="TRT KURDÎ.TR" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/turkey/trt-kurdi-tr.png" group-title="📺 ULUSAL",TRT KÜRDİ
-https://tv-trtkurdi.medya.trt.com.tr/master.m3u8
-
-#EXTINF:-1 tvg-id="TRT.AVAZ.tr" tvg-name="TRT.AVAZ.tr" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/turkey/trt-avaz-tr.png" group-title="📺 ULUSAL",TRT AVAZ
-https://tv-trtavaz.medya.trt.com.tr/master.m3u8
-
-#EXTINF:-1 tvg-id="TRT.2.HD.tr" tvg-name="TRT.2.HD.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT87MQBnV_QZqdXqTPwMNsvtECICY_SC5Oqp2yiaB6cjQ&s=10" group-title="📺 ULUSAL",TRT 2
-https://tv-trt2.medya.trt.com.tr/master_720.m3u8
-
-#EXTINF:-1 tvg-id="TRT.TÃœRK.tr" tvg-name="TRT türk" tvg-logo="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/turkey/trt-turk-tr.png" group-title="📺 ULUSAL",TRT TÜRK
-https://tv-trtturk.medya.trt.com.tr/master_720.m3u8
-
-#EXTINF:-1 tvg-id="kanal1" tvg-name="KANAL1" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY8L-rHcEbZS_eCBOA4cy_lD-eLyOUi8xBSArPZBwlkw&s=10" group-title="📺 ULUSAL",KANAL 1 HD
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/449093.ts
-
-#EXTINF:-1 tvg-id="StarTV.tr" tvg-name="star tv" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/star-tv-tr.png?raw=true" group-title="📺 ULUSAL",STAR
-http://dygvideo.dygdigital.com/live/hls/startv4puhu?m3u8
-
-#EXTINF:-1 tvg-id="KanalD.tr" tvg-name="kanald" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da806" group-title="📺 ULUSAL",KANAL D
-http://live.duhnet.tv/S2/HLS_LIVE/kanalddainp/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da806" group-title="📺 ULUSAL",Kanal D
-https://ackaxsqacw.turknet.ercdn.net/ozfkfbbjba/kanald/kanald_1080p.m3u8
-
-#EXTINF:-1 tvg-id="kanal d.tr" tvg-name="kanal d" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da806" group-title="📺 ULUSAL",KANAL D
-https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3
-
-#EXTINF:-1 tvg-id="show tv" tvg-name="show TV" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da88e" group-title="📺 ULUSAL",SHOW
-https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_1080p.m3u8
-
-#EXTINF:-1 tvg-name="atv" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da844" group-title="📺 ULUSAL",ATV
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196698&extension=ts&play_token=6k77AngOgl
-
-#EXTINF:-1 tvg-name="atv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.jpg" group-title="📺 ULUSAL",ATV
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196698&extension=ts&play_token=6k77AngOgl
-
-#EXTINF:-1 tvg-id="TRT1.HD.tr" tvg-name="TRT 1.tr" tvg-logo="https://r.resimlink.com/-Rox1.webp" group-title="📺 ULUSAL",TRT1
-https://trt.daioncdn.net/trt-1/master_1440p.m3u8?&sid=8aa3uppo48h8&app=ed3904e8-737b-4a5e-856a-1b0d7a0a94e2&ce=2
-
-#EXTINF:-1 tvg-id="trt4k.tr" tvg-name="TRT 4K HD+" tvg-logo="https://www.logolarimiz.com/europa/turkey/trt4k.png" group-title="📺 ULUSAL",TRT
-http://eu.kartal38.com:8080/a1qS8T80/amSpNPx/163662?output=ts
+#EXTINF:-1 tvg-id="TV8" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="📺 ULUSAL 🔗",TV8
+#EXTVLCOPT:http-referrer=https://www.tv8.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://tv8-tb-live.ercdn.net/tv8-geo/playlist.m3u8?st=BzpvJLJ9hDX-H3W1sQWquA&e=1639061641
 
 #EXTINF:-1  tvg-name="TR | CNN TURK 4K" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/HABERR/CNN.TURK.png" group-title="📰 HABER",TR | CNN TURK 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/634711
@@ -164,24 +66,6 @@ http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/594734
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" tvg-logo="https://i.hizliresim.com/ljzg5ez.png" group-title="📰 HABER",SZC
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/144
 
-#EXTINF:-1 tvg-id="trt4k.tr" tvg-name="TRT 4K UHD 2160p" tvg-logo="https://www.logolarimiz.com/europa/turkey/trt4k.png" group-title="📺 ULUSAL",TRT 2160P
-http://eu.kartal38.com:8080/a1qS8T80/amSpNPx/94063?output=ts
-
-#EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/Atv.png" group-title="📺 ULUSAL",ATV
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196682&extension=ts&play_token=bdFA2u0of1
-
-#EXTINF:-1 tvg-name="show tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="📺 ULUSAL",SHOW TV
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196697&extension=ts&play_token=S05dySmbjf
-
-#EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/KanalD.png" group-title="📺 ULUSAL",KANAL D
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196680&extension=ts&play_token=RfWrMzD0aA
-
-#EXTINF:-1 tvg-name="star TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR TV
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196695&extension=ts&play_token=9rZyNWfIPX
-
-#EXTINF:-1 tvg-name="TR | TABii TV" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/TABII/0.png" group-title="📺 ULUSAL",TR | TABii TV
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/627910
-
 #EXTINF:-1 tvg-name="halk TV" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/halk-tv-tr.png?raw=true" group-title="📰 HABER",HALK
 https://halktv-live.daioncdn.net/halktv/halktv.m3u8
 
@@ -193,9 +77,6 @@ https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3
 
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTCv4GJ5vIcoTtxi06wSdN5I46WgcC9lzPsZJBBTrUBA&s=10" group-title="📰 HABER",HABER GLOBAL
 https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8
-
-#EXTINF:-1 tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da892" group-title="📰 HABER",BLOOMBERG
-https://ciner.daioncdn.net/bloomberghads/main/now.png" group-title="📺 ULUSAL.",NOW TV
 
 #EXTINF:-1 tvg-logo="https://i.dsmart.com.tr/kanallar/cnbce_logo.png" group-title="📰 HABER",CNBC-E
 https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8
@@ -238,9 +119,6 @@ https://meclistv-live.ercdn.net/meclistv/meclistv.m3u8
 
 #EXTINF:-1 tvg-name="CNN TÜRK HD" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZmMgjKKZKdXL3MYJrDTM9VFN8HQGrH6oAmAwJJ67ztYiVzndpsUPiMM8&s" group-title="📰 HABER",CNN TÜRK HD
 https://trn03.tulix.tv/gt-cnnturk-tv/index.m3u8?token=686f473b86b77eaba0789cada480c6e9
-
-#EXTINF:-1 tvg-name="ulusal kanal" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV7P45EGHVrfARIF1-mS7sg7RFfLwIutppEaCkIUbv2A&s=10" group-title="📰 HABER",ULUSAL KANAL
-http://204.52.191.254:80/play/live.php?mac=00:1A:79:76:D0:D3&stream=8722&extension=ts&play_token=v8j15KCAAB
 
 #EXTINF:-1 tvg-name="krt tv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV8tGWscBMMaSIkwrt0nsHfH2p-NPWqENSW0uJTVlhLA&s" group-title="📰 HABER",KRT TV
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=197195&extension=ts&play_token=ALQMMnvJJp
@@ -1429,306 +1307,6 @@ http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/450256.ts
 
 #EXTINF:-1 tvg-name="Yeşilçam ✦ Şener Şen" tvg-logo="https://ahmetdogan68.github.io/tv/logo.png" group-title="🍿 SİNEMA YEŞİLÇAM",Yeşilçam ✦ Şener Şen
 http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/450257.ts
-
-#EXTINF:-1 tvg-name="Dizi | Altı Üstü İstanbul" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/qnImGr6hA1GJb0IBxulxoOswF6D.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Altı Üstü İstanbul PAZARTESİ
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/304435.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Evlilik Güzeldir" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/kMEUr1CH5fGmeae3rVP4xDfD9t3.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Evlilik Güzeldir PAZARTESİ
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/312455.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Uzak Şehir" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/E8tR39iX2XNZdqeDA5REFDquU6.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Uzak Şehir PAZARTESİ
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390397.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Tuzlu Kahve" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/iXgalcTI4nBc4Dw0Ef4LevCz1Qp.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Tuzlu Kahve SALI
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390664.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Anne Yarısı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/kSTdVwURCDjqIQmYrVeTZIFXxzE.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Anne Yarısı SALI
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392762.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Haysiyet" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/1N3EctW7cweMUbq3aQZyV0GEEZH.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Haysiyet SALI
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392708.mp4
-
-#EXTINF:-1 tvg-name="Dizi | A.B.İ." tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/mGnrjWWi6ZeXlt0U3Ky8gzpOhO3.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | A.B.İ. SALI
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390935.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Mehmed: Fetihler Sultanı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/gLGXHS3o0BuJhd3wDTTYddrRsxZ.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Mehmed: Fetihler Sultanı SALI
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390665.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Sevdan Bir Ateş" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/pmHRDFAZukHw089H58c6b6EUilQ.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Sevdan Bir Ateş ÇARŞAMBA
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/402292.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Yeraltı SEZON FINALI" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/bu8ks983hBPEzyAH8gSATW5aPJ7.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Yeraltı ÇARŞAMBA
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/401936.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Aşk ve Taht" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/7ffVYsJZKXTRE3CSdu53PnHOhat.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Aşk ve Taht ÇARŞAMBA
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/357694.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Halef: Köklerin Çağrısı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/sQTx2hiwi9CmRYyt6CAV5sf8C1T.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Halef: Köklerin Çağrısı PERŞEMBE
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390913.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Güneşin Doğduğu Yer" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/9SBRjlJd6ntwY4fe0yVhLHzvztR.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Güneşin Doğduğu Yer PERŞEMBE
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/410099.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Muhtemel Aşk" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/9dWX56kVLJ47MG6axiTAFdf035k.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Muhtemel Aşk PERŞEMBE
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/319366.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Sevdiğim Sensin" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/eVMb930nCNRYGhPlAVRI5hsMdAz.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Sevdiğim Sensin PERŞEMBE
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/410378.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Kızılcık Şerbeti" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/fXATVTtJDNizWjKpHgJEZegr6R2.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Kızılcık Şerbeti CUMA
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390213.mp4
-
-#EXTINF:-1 tvg-name="Başkalarının Hayatı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/hjeB5dW5QKdBtlzS3FZrqqDHXNi.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Başkalarının Hayatı  CUMARTESİ
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/450972.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Güller ve Günahlar" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/3Qwhs7xxf9LILllWLnxbSaCBNDf.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Güller ve Günahlar CUMARTESİ
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392022.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Mercan Köşk" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/AlrYhbKaN2QeETRpN6LavXIr9FE.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Mercan Köşk CUMARTESİ
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/224899.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Gönül Dağı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/lZL5RSSgLSewP0pi8rK4znb9FYZ.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Gönül Dağı CUMARTESİ
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/211258.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Daha 17" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/erd75Gon5bXL38kngnH6DCrOUj2.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi | Daha 17 PAZAR
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392075.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Teşkilat" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9fV7UwkvyxpNFeFe9HQqjY7Idzj.jpg" group-title="📺 GÜNCEL DİZİLER",Dizi |TEŞKİLAT PAZAR
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/226996.mp4
-
-#EXTINF:-1 tvg-name="Dizi | Çirkin" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTsRH1RDC-ZUcgTjRdnrrcdIAOO5fWfVlgnQYUDFI7Fg&s=10" group-title="📺 GÜNCEL DİZİLER",Dizi | Sevdam Karadeniz PAZARTESİ
-http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/234103.mp4
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrj752FN9waNjtXjQF45wGR02xadfgydVppeSscs0gHw&s=10" group-title="📺 YERLİ DİZİLER",DİZİ TV
-https://nosignal1.antenaplay.ro/hls/dzi-int-hd/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH_Gm2RnmDZDttVTNCYL4piKumpXTYqvtsh17LohzQzQ&s=10" group-title="📺 YERLİ DİZİLER",DİZİ ZALIM ISTANBUL
-https://demiroren.daioncdn.net/wdaa1icvrx6m7uadvqs0dw/zalim_istanbul_dizi/playlist.m3u8?app=kanald_web&ce=3?=.m3u8
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyc0-izXSHV1cijz_UE_YQw9V8anhnLzH_BnLWoxsMVA&s=10" group-title="📺 YERLİ DİZİLER",DIZI TATLI INTIKAM
-https://demiroren.daioncdn.net/wdaa1icvrx6m7uadvqs0dw/tatli_intikam_dizi/playlist.m3u8?app=kanald_web&ce=3?=.m3u8
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAIF53r2c5nBFrjU1PrmZzgQghEZDHZjPz9QniolpOlg&s=10" group-title="📺 YERLİ DİZİLER",DİZİ SIYAH BEYAZ ASK
-https://demiroren.daioncdn.net/wdaa1icvrx6m7uadvqs0dw/Siyah_beyaz_ask_dizi/playlist.m3u8?app=kanald_web&ce=3?=.m3u8
-
-#EXTINF:-1 tvg-name="Dizi✦ Deli Yürek" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-vxNh0M3mEhTmIGD6btby3EPO8jISa_vgj1dUedbvyw&s=10" group-title="📺 YERLİ DİZİLER",DELİ YÜREK
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401681.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Diriliş: Ertuğrul" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOmi3YrKyR7MFDWdT4VfjRnb3tsqZLHfo7z_FZJHoaWA&s=10" group-title="📺 YERLİ DİZİLER",DİRİLİŞ ERTUĞRUL
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401682.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Doktorlar" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxnaLjTlq8Oz-yjRs5fXz1j6dbg1140qgZBPh9rBbDsQ&s=10" group-title="📺 YERLİ DİZİLER",DOKTORLAR
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401683.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Ekmek Teknesi" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlJ_x_B0v8W-v2UvNWOqyipF4G3r7Gludi_NvDUlTHxQx7-fchfNVkHOFL&s=10" group-title="📺 YERLİ DİZİLER",EKMEK TEKNESİ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401684.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Emret Komutanım" tvg-logo="https://cdn.sinemalar.com/images/movie/4356/poster/emret-komutanim-1660915258.jpg" group-title="📺 YERLİ DİZİLER",EMRET KOMUTANIM
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401685.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Erkenci Kuş" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1uo33UePnQweLr5BAz1_VW4JQK1xe9dV0C3N_UCe6qQ&s=10" group-title="📺 YERLİ DİZİLER",ERKENCİ KUŞ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401686.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Eşkıya Dünyaya Hükümdar Olmaz" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyUP_ZgAe6D7UXgZGdaqjnIcQ5xpidyLBYDeiFM12ZOA&s" group-title="📺 YERLİ DİZİLER",EDHO
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401687.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Galip Derviş" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-1YJg06-PSoLpCF9ylrR8zJ9FOqbiDJBJVi1uKkw9Qw&s=10" group-title="📺 YERLİ DİZİLER",GALİP DERVİŞ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401688.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Gelsin Hayat Bildiği Gibi" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhtZZmqg8PlM_-7gTGOSOXLyBxkqVieYDFLo65xT4_Rw&s=10" group-title="📺 YERLİ DİZİLER",GELSİN HAYAT BİLDİĞİ GİBİ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401689.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Geniş Aile" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZWaA2nICsl3BgBYwnA1UV06JqAumVzEztDzfJCpHnw&s=10" group-title="📺 YERLİ DİZİLER",GENİŞ AİLE
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401690.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Hayat Bilgisi" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKmVa_B7zfycaxzPseetVAREI46XIPQ4XoJIExkfuvVQ&s=10" group-title="📺 YERLİ DİZİLER",HAYAT BİLGİSİ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401691.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ İşler Güçler" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCJs1PZeagq0RU2QIjWRiqii-KVteNMgNYD94QJtbDFA&s=10" group-title="📺 YERLİ DİZİLER",İŞLER GÜÇLER
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401694.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Karadayı" tvg-logo="https://cdn.sinemalar.com/images/movie/216532/poster/karadayi-1sezon-1350418230.jpg" group-title="📺 YERLİ DİZİLER",KARADAYI
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401695.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Kardeş Payı" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdbRb3QekoIw6EBrbQh8_TiNY-SUCEObe0hRVX7_gsDw&s=10" group-title="📺 YERLİ DİZİLER",KARDEŞ PAYI
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401696.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Kaygısızlar" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVkOxxAYN499Q9TWlXL4LID12iAChdCV2ROWh2pIxYHQ&s=10" group-title="📺 YERLİ DİZİLER",KAYGISIZLAR
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401697.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Kırmızı Oda" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFguXYGGs595PWWmS849cWGwLlnG_V8saEr6ztLvnE4g&s=10" group-title="📺 YERLİ DİZİLER",KIRMIZI ODA
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401698.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Kizil Goncalar" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc28rg5AUrBm-N7-BbU5Z4pTDvey8UlvcZJyplFmcR4w&s=10" group-title="📺 YERLİ DİZİLER",KIZIL GONCALAR
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401699.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Ramo" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvADw0OjW5SeBuOJsiWLbrBKKMJhovWHBmKnafiSsz_g&s" group-title="📺 YERLİ DİZİLER",RAMO
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401710.ts
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa-8A15XM2CidgyfxXFrrAHndDBj2xsAO-rfuojrFUMw&s=10" group-title="📺 YERLİ DİZİLER",EZEL HD
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/101342
-
-#EXTINF:-1 tvg-name="Dizi✦ Ezel" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa-8A15XM2CidgyfxXFrrAHndDBj2xsAO-rfuojrFUMw&s=10" group-title="📺 YERLİ DİZİLER",EZEL
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401665.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-pLq_DfwM2qP6_1zmtVPDclJ1lJlebuFBkliDRz_EVQ&s=10" group-title="📺 YERLİ DİZİLER",ZENGİN KIZ FAKİR OĞLAN
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401722.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD-YBedG_wybeMvXL5amtT2QBtMLcLd_d5vN5mijwap31UO_pWjvNmo2I&s=10" group-title="📺 YERLİ DİZİLER",KURTLAR VADİSİ PUSU
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401703.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHYVjDOo8k5KCEd3wQSbLUG8rVgRk0XNrdbNSzMEsxLQ&s" group-title="📺 YERLİ DİZİLER",KURTLAR VADİSİ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401702.ts
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD-YBedG_wybeMvXL5amtT2QBtMLcLd_d5vN5mijwap31UO_pWjvNmo2I&s=10" group-title="📺 YERLİ DİZİLER",KURTLAR VADİSİ PUSU ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/85735
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHYVjDOo8k5KCEd3wQSbLUG8rVgRk0XNrdbNSzMEsxLQ&s" group-title="📺 YERLİ DİZİLER",KURTLAR VADİSİ ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/22167
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAEe_uV3D6uJDdj-LCpGpasZGqJOEZXmZBU1fsU0b3Hw&s=10" group-title="📺 YERLİ DİZİLER",MUCİZE DOKTOR
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401707.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2bf2hBeXrbt09RSkXnTgOI-XpsXV_IuKqiAmNqAgVUw&s=10" group-title="📺 YERLİ DİZİLER",KURULUŞ OSMAN
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401704.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyXFKvQ2aGb3I2xlFgNeG20tYYIQaKKS-ljywNJheb9g&s=10" group-title="📺 YERLİ DİZİLER",KUDÜS FATİH SELAHATTİN EYYUBİ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401701.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShIGfuai1yW9QcNJbBW9nTlxf67hcSqcbdSf5mh5ncpg&s=10" group-title="📺 YERLİ DİZİLER",KRAL KAYBEDERSE
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401700.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg69PGtG-t6WlBWRcv8Dxas1Nsp9ESDsXS2P1FDDshGQ&s=10" group-title="📺 YERLİ DİZİLER",KUZEY GÜNEY
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401705.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBt3JMdTz72r10Ifm_GLsksIZR7kdOI_MtAJXIpeIjXA&s=10" group-title="📺 YERLİ DİZİLER",KUZEY YILDIZI İLK AŞK
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401706.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqHRpL0tSW1k-wEXYQL_SxTn3riY-1c4UvGL3xTUegeA&s=10" group-title="📺 YERLİ DİZİLER",MUHTEŞEM YÜZYIL
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401708.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnL7JkUc97l01u6da6W_225mamlkGGvh0JxF1G6fyd7w&s=10" group-title="📺 YERLİ DİZİLER",POYRAZ KARAYEL
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401709.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZrcQbzobdVVnK7eHExJ63rR5ZT4TcD891bY40lcTq5A&s=10" group-title="📺 YERLİ DİZİLER",RUHSAR
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401711.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMzVGEPd-gS3Fi4oRvg0aunTKZtwYRiYT7J3O8BugVeA&s=10" group-title="📺 YERLİ DİZİLER",SEKSENLER
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401712.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBcKCgnhW16Af42RyMwTEm4mQgzqEXv3G7dM9J4fajtw&s" group-title="📺 YERLİ DİZİLER",SIRLAR DÜNYASI
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401713.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNy2TndU4FIER45WCXY1zk67qEcrS0Rt92acUh8zitPg&s=10" group-title="📺 YERLİ DİZİLER",SUSKUNLAR
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401714.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIyw7YJ77niuB3gdzczFcCe1QgiwJBbCnOECIbYTjizg&s=10" group-title="📺 YERLİ DİZİLER",TATAR RAMAZAN
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401715.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg8ZKx3z0AEni-6eknio-EHrE2w-S2RiRpoq60ozF8dQ&s=10" group-title="📺 YERLİ DİZİLER",ÜÇ KURUŞ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401716.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWd5IJkfxsDyjL-1f0jGIR7GqCIpb5-TUoRwrwnQMR-A&s=10" group-title="📺 YERLİ DİZİLER",VATANIM SENSİN
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401717.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5mKja1XAwdQkPZZGmcDaJfDdC5PFjvJXuydQF9VO_rw&s=10" group-title="📺 YERLİ DİZİLER",YAHŞİ CAZİBE
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401718.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjW4S7yc1SsZdmxPgMMGM9RwaI2yQDF2CBh7wxiGX5WQ&s" group-title="📺 YERLİ DİZİLER",YALAN DÜNYA
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401719.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJISvnRS3bknwMujMPL2Hy1e6kDwbgvyyfA3t97h1zg&s=10" group-title="📺 YERLİ DİZİLER",YALI CAPKINI
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401720.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-zvmyMwomf1bKVsBIeoqdj7pKryn6zSIKhd7xhnT45t13PcVakJHUT4o-&s=10" group-title="📺 YERLİ DİZİLER",YASAK ELMA
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401721.ts
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIXToIPQiXtNKYirCF25Pr8Hpjg8yOX2kRmA2oDUXydA&s=10" group-title="📺 YERLİ DİZİLER",GADDAR
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/118197
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrE05pWJCiGFfTkWZSFzc3lxxYhUK4WRASmgnmLPF6kg&s=10" group-title="📺 YERLİ DİZİLER",ÇUKUR ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/71883
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb4QfU_HYk0-IxiLGREJMQiNuJYBfVWh197qfAijCV3Q&s=10" group-title="📺 YERLİ DİZİLER",İÇERDE ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/157782
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_YwvLcTW_hr4yxWzYoltJUKciNL_-_Qna7SbRUGlgvg&s=10" group-title="📺 YERLİ DİZİLER",AŞK-I MEMNU ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/67608
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK2FvQ42g4v0slFP4mq5iyIpNkYcDMBUGzx53TfoHSdA&s=10" group-title="📺 YERLİ DİZİLER",KUZEY & GÜNEY ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/162655
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1h5hg4glk2hP8KrG6vyHFvJXrdoU9Wu6fCm4i96LYqA&s=10" group-title="📺 YERLİ DİZİLER",LEYLA ile MECNUN ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/162927
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwSWNLqamaoh_ndy-pG_Ob1oxA3rS-2cwNNs42ogl_Bg&s=10" group-title="📺 YERLİ DİZİLER",AKASYA DURAĞI HD
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/19614
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4q0OixYnRLiG_0PZfDVD5AEycW03zZTnBiW-DP-lZ_w&s=10" group-title="📺 YERLİ DİZİLER",GÜLDÜR GÜLDÜR  ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/16026
-
-#EXTINF:-1 tvg-logo="https://b6s54eznn8xq.merlincdn.net/Uploads/Films/cok-guzel-hareketler-2-202511214138177fabe52644475d81f489545ba718eb.png" group-title="📺 YERLİ DİZİLER",ÇOK GÜZEL HAREKET BUNLAR 2 ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/80576
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSN1hUhkUea4tBbFo4GUzJIKq-YyKFYTtoUWLqNkWiXw&s" group-title="📺 YERLİ DİZİLER",KARDEŞ PAYI
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/125836
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKZy4sHOCLMeEaHEPQNBb93rslLpP7yHfRSOcMbfiXjw&s=10" group-title="📺 YERLİ DİZİLER",EDHO ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/75079
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQjdT5FYp-thjtqgt9oAr4Edhg-GJHYwhPujmIT-x-dQS-6rxBgUY8AZbO&s=10" group-title="📺 YERLİ DİZİLER",CENNET MAHALLESİ ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/19108
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-ksPUNH5UpiRKd1KtgfHvR2vwb1aqgYvuVEmFCNYfw&s=10" group-title="📺 YERLİ DİZİLER",BİZİMKİLER HD
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/137561
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgB44FInziU4lbNCtCGq0PXrenhOnsuuJNCHJuUxTjXw&s=10" group-title="📺 YERLİ DİZİLER",7 NUMARA HD
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/69784
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFKDuJVAgQL-SvS0Dx2atexX6xMBGVnODaFOTkb3HQ-A&s=10" group-title="📺 YERLİ DİZİLER",SIFIR 1 ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/113875
-
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZ1w1K2opW5-KtDj5uNquQE20sQJtDfQX2tsSX3OSpQ&s=10" group-title="📺 YERLİ DİZİLER",SOKAĞIN COCUKLARI ʜᴅ
-http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/58949
-
-#EXTINF:-1 tvg-name="Dizi✦ Aci hayat" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrknVjsQ4i6cNkc2PmiONCs8US0NC4mgK_bObHmKm54A&s=10" group-title="📺 YERLİ DİZİLER",ACI HAYAT
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401666.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Aşk-ı Memnu" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_YwvLcTW_hr4yxWzYoltJUKciNL_-_Qna7SbRUGlgvg&s=10" group-title="📺 YERLİ DİZİLER",AŞKI MEMNUN
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401667.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Avlu" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTcefxjJevUA-VRZzUWay7niW466lih8aB9Rd5VSrMfA&s=10" group-title="📺 YERLİ DİZİLER",AVLU
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401668.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Avrupa Yakası" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxAC1liQH60ivuqQYYxhysfotW6KMUThA-OE-opEUasg&s=10" group-title="📺 YERLİ DİZİLER",AVRUPA YAKASI
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401669.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Bahar" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlinQQ1uaqvLdtvi6ZvA_URxzjNzUx422Dx4F6ZzekOw&s=10" group-title="📺 YERLİ DİZİLER",BAHAR
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401670.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Behzat Ç" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuCNF2J8AxKqaVbNCjeLd0gXRSs5t74U_yhl-sHIf2mg&s=10" group-title="📺 YERLİ DİZİLER",BEHZAT Ç
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401671.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Ben Bu Cihana Sığmazam" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgvKrRzYmvjB_gzwvlkW8soU_MzMpAd5e9_pvQVqg1qg&s=10" group-title="📺 YERLİ DİZİLER",BEN BU CİHANA SIGMASİZAM
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401672.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Binbir Gece" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2y7edpn_o66axFz47zZ-0Wsxrf3F52Tf8hQ9vBmSXBQ&s=10" group-title="📺 YERLİ DİZİLER",BİNBİR GECE
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401673.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Bir Zamanlar Çukurova" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRmcbx04agFX-85EC52oH99QSGFtDITO2akPt2yPeR_A&s" group-title="📺 YERLİ DİZİLER",BİR ZAMANLAR ÇUKUROVA
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401674.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Bir Zamanlar İstanbul" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe94DcERp00k5vhGh3lZVZtLxP6g4CeEIPJJtWx1SlMA&s=10" group-title="📺 YERLİ DİZİLER",BİR ZAMANLAR İSTANBUL
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401675.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Börü" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjJs12q6Dna0THyAmGeMXBvE1LleWanOGeQLhVShSZHw&s=10" group-title="📺 YERLİ DİZİLER",BÖRÜ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401676.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Çiçek Taksi" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLPdEotoCtfd0MNaW9FNXkqGIX4Yj0Viuf-DmgCOqurw&s=10" group-title="📺 YERLİ DİZİLER",ÇİÇEK TAKSİ
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401678.ts
-
-#EXTINF:-1 tvg-name="Dizi✦ Çocuklar Duymasın" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfcfcVq6c0BwyqtjPonl-dIQ-gKzpPLhPCwd9mkNy73A&s=10" group-title="📺 YERLİ DİZİLER",ÇOCUKLAR DUYMASIN
-http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401679.ts
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein_sade_kare_final.png" group-title="▶️ beIN PLATFORM",BEIN SERIES 1 HD
 http://line.watchtivo-8k.com:80/play/live.php?mac=00:1A:79:05:54:42&stream=1471673&extension=ts
@@ -4115,9 +3693,6 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/628137
 #EXTINF:-1  tvg-name="TR | BEINCONNET CANLI MAC 5" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/BEIN.Y/CONNECT.5.png" group-title="📡UYDU beIN SPORTS",TR | BEINCONNET CANLI MAC 5
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/628138
 
-#EXTINF:-1 tvg-id="NOW.tr" tvg-name="NOW.tr" tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/FOXTV.png" group-title="📺 ULUSAL",NOW TV
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196678&extension=ts&play_token=p5hwUyOLoj
-
 #EXTINF:-1  tvg-name="TR | Tabii Spor HD" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/TABII/0.png" group-title="⚽  TABii SPOR",TR | Tabii Spor HD
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/178242
 
@@ -4166,26 +3741,8 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/627903
 #EXTINF:-1  tvg-name="TR | TABii SPOR 7 HD" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/TABII/7.png" group-title="⚽  TABii SPOR",TR | TABii SPOR 7 HD
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/627904
 
-#EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/TRT1.png" group-title="📺 ULUSAL",TRT 1
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196683&extension=ts&play_token=YUIm1DgYqE
-
 #EXTINF:-1 tvg-name="TR | TV 100 4K" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/HABERR/TV.100.png" group-title="📰 HABER",TR | TV 100 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/634710
-
-#EXTINF:-1 tvg-id="beyaz tv.tr" tvg-name="Beyaz tv.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/beyaz.png" group-title="📺 ULUSAL",BEYAZ
-https://beyaztv-live.daioncdn.net/beyaztv/beyaztv.m3u8
-
-#EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/showtv.png" group-title="📺 ULUSAL",SHOW TV
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196681&extension=ts&play_token=D1bWjTr6uO
-
-#EXTINF:-1 tvg-name="star tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR TV
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196679&extension=ts&play_token=wIZQXtaEUX
-
-#EXTINF:-1 tvg-id="TV8.HD.tr" tvg-name="TV8" tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/Tv8.png" group-title="📺 ULUSAL",TV 8
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196677&extension=ts&play_token=zLN7npODPH
-
-#EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="📺 ULUSAL",ŞÖMİNE
-http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315270
 
 #EXTINF:-1 tvg-id="TRTSPOR.tr" tvg-name="TR | TRT SPOR 4K" tvg-logo="http://pkchtv1.xyz/logo/TRT.SPOR.png" group-title="🏟️ SPOR",TR | TRT SPOR 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315290
@@ -4207,19 +3764,4 @@ http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/232355
 
 #EXTINF:-1 tvg-logo="http://photo-tmdb.com/stalker_portal/misc/logos/320/2371.png?40538" group-title="📰 HABER",SZC TV
 http://204.52.191.254:80/play/live.php?mac=00:1A:79:76:D0:D3&stream=475740&extension=ts&play_token=B5YhbAYy6D
-
-#EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL.",TRT 1
-https://kL9mR2vXw7nQ5pY1sH4tJ3gB6.medya.trt.com.tr/master.m3u8
-
-#EXTINF:-1 tvg-id="TRT.Spor.hd" tvg-name="TRT Spor.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trtspor.png" group-title="📺 SPOR.",TRT Spor
-https://kL9mR2vXw7nQ5pY1sH4tJ3gB6.medya.trt.com.tr/master.m3u8
-
-#EXTINF:-1 tvg-id="TRT.Haber.hd" tvg-name="TRT Haber.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trthaber.png" group-title="📺 HABER.",TRT Haber
-https://kL9mR2vXw7nQ5pY1sH4tJ3gB6.medya.trt.com.tr/master.m3u8
-
-#EXTINF:-1 tvg-id="Show.TV.hd" tvg-name="Show TV.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL.",Show TV
-https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1
-
-#EXTINF:-1 tvg-id="Kanal.D.hd" tvg-name="Kanal D.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL.",Kanal D
-https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&amp;ce=3
 
