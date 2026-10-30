@@ -32,6 +32,7 @@ STREAM_DOMAINS = [
 
 STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
 
+# TRT, A Spor, HT Spor YOK - sadece bunlar
 PRETTY_NAMES = {
     "selcukbeinsports1": "beIN Sports 1",
     "selcukbeinsports2": "beIN Sports 2",
@@ -84,7 +85,7 @@ def parse_channel_ids(html):
     ids = re.findall(r"index\.php\?id=([A-Za-z0-9_\-]+)", html)
     out, seen = [], set()
     for cid in ids:
-        if not cid.lower().startswith("selcuk"):
+        if cid.lower() not in PRETTY_NAMES:
             continue
         if cid in seen:
             continue
@@ -134,9 +135,7 @@ def resolve(cid):
     return cid, None
 
 def append_to_mirti68(new_entries):
-    """Mevcut mirti68.m3u'yu bozmayacak, sadece Selçukları yenileyecek"""
     if not os.path.exists(OUTPUT_FILENAME):
-        # Dosya yoksa yeni oluştur
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
             for name, url in new_entries:
@@ -155,13 +154,11 @@ def append_to_mirti68(new_entries):
     old_blocks = []
     parts = content.split("#EXTINF")
     for p in parts[1:]:
-        # Sadece eski Selçuk grubunu sil
         if f'group-title="{GROUP}"' in p:
             continue
         if "http" in p:
             old_blocks.append("#EXTINF" + p.strip())
 
-    # Geri yaz
     with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
         out.write(epg_header + "\n")
         for b in old_blocks:
