@@ -27,7 +27,7 @@ https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-2
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL 🔗",NOW TV
 #EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=Cp_kEovBwmFiRT5-vk1tnw&e=1793400820
+https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=5EO2qTkgXCkB6pJx1tiLyQ&e=1793400777
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL 🔗",KANAL 7
 #EXTVLCOPT:http-referrer=https://www.kanal7.com/
@@ -4885,10 +4885,6 @@ https://www.dailymotion.com/video/xbrmr92
 #EXTINF:-1 group-title="ATV Dizileri",Alti Ustu Istanbul - 18. Bolum
 https://htxkbiqd.erbvr.com/vms/b/ed/37/bed370e4-9d69-4e43-9f14-a0f06d76deda/bed370e4-9d69-4e43-9f14-a0f06d76deda.smil/.m3u8?st=fCvXO6JJBqhmiQSqOCS1Bw&e=1793352335&sid=LfEBink3_EaHevhNMPf_Vg
 
-#EXTINF:-1 group-title="🖥 WEB beIN SPORTS", Aspor
-#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
-https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukaspor/playlist.m3u8
-
 #EXTINF:-1 group-title="🖥 WEB beIN SPORTS", beIN Sports 2
 #EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
 https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports2/playlist.m3u8
@@ -5020,20 +5016,4 @@ https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcuktivibuspor3/playlist.m3u
 #EXTINF:-1 group-title="🖥 WEB beIN SPORTS", Tivibu Spor 4
 #EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
 https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcuktivibuspor4/playlist.m3u8
-
-#EXTINF:-1 group-title="🖥 WEB beIN SPORTS", Trt1
-#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
-https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcuktrt1/playlist.m3u8
-
-#EXTINF:-1 group-title="🖥 WEB beIN SPORTS", Trtavaz
-#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
-https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcuktrtavaz/playlist.m3u8
-
-#EXTINF:-1 group-title="🖥 WEB beIN SPORTS", Trtspor
-#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
-https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcuktrtspor/playlist.m3u8
-
-#EXTINF:-1 group-title="🖥 WEB beIN SPORTS", Trtspor2
-#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
-https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcuktrtspor2/playlist.m3u8
 
