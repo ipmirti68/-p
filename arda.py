@@ -26,8 +26,9 @@ warnings.filterwarnings("ignore")
 
 HOME_URL = "https://golvarmac1.pro/"
 
-OUTPUT_FILENAME = "golvar.m3u"
-GROUP = "Golvar"
+OUTPUT_FILENAME = "mirti68.m3u"
+STATIC_LOGO = "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+GROUP = "🖥beINSPORTS
 
 # Segmentler su an referersiz de calisiyor; yine de referer eklenir
 # (kaynak gerekli hale gelirse oynaticida kirilmasin).
