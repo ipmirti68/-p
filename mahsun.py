@@ -16,14 +16,14 @@ def generate_iptv_list():
 
     # SADECE beIN kanalları
     channels = [
-        ("androstreamlivebiraz1", "BeIN Sports 1"),
-        ("androstreamlivebs1", "BeIN Sports 1"),
-        ("androstreamlivebs2", "BeIN Sports 2"),
-        ("androstreamlivebs3", "BeIN Sports 3"),
-        ("androstreamlivebs4", "BeIN Sports 4"),
-        ("androstreamlivebs5", "BeIN Sports 5"),
-        ("androstreamlivebsm1", "BeIN Sports Max 1"),
-        ("androstreamlivebsm2", "BeIN Sports Max 2"),
+        ("androstreamlivebiraz1", "BeIN SPORTS 1 Mahsun 🔴"),
+        ("androstreamlivebs1", "BeIN SPORTS 1 Mahsun 🔴"),
+        ("androstreamlivebs2", "BeIN SPORTS 2 Mahsun 🔴"),
+        ("androstreamlivebs3", "BeIN SPORTS 3 Mahsun 🔴"),
+        ("androstreamlivebs4", "BeIN SPORTS 4 Mahsun 🔴"),
+        ("androstreamlivebs5", "BeIN SPORTS 5 Mahsun 🔴"),
+        ("androstreamlivebsm1", "BeIN SPORTS MAX 1 Mahsun 🔴"),
+        ("androstreamlivebsm2", "BeIN SPORTS MAX 2 Mahsun 🔴"),
     ]
 
     try:
