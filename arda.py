@@ -215,7 +215,7 @@ def main():
     entries = [e for e in entries if any(name in e for name in ALLOWED)]
     # --- BITTI ---
 
-    with open(OUTPUT_FILENAME, "a", ...
+        with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
   
     with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
         f.write("#EXTM3U\n" + "\n".join(entries))
