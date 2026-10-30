@@ -28,7 +28,7 @@ GROUP_NAME = "🖥beINSPORTS"
 
 PRETTY_NAMES = {
     "selcukbeinsports1": "beIN SPORTS 1 Selcuk 🔴",
-    "selcukbeinsports2": "beIN SPORTS 2nSelcuk 🔴",
+    "selcukbeinsports2": "beIN SPORTS 2 Selcuk 🔴",
     "selcukbeinsports3": "beIN SPORTS 3 Selcuk 🔴 ",
     "selcukbeinsports4": "beIN SPORTS 4 Selcuk 🔴",
     "selcukbeinsports5": "beIN SPORTS 5 Selcuk 🔴",
