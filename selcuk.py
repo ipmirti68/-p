@@ -1,4 +1,4 @@
-"""SLCK (SelcukSportsHD) spor kaynagi botu - APPEND MODU"""
+"""SLCK (SelcukSportsHD) spor kaynagi botu - APPEND MODU - AYRI GRUPLAR"""
 
 import re
 import sys
@@ -15,7 +15,6 @@ warnings.filterwarnings("ignore")
 
 HOME_URL = "https://www.selcuksportshdfe44b96fcb.xyz/"
 OUTPUT_FILENAME = "mirti68.m3u"
-GROUP = "🖥 WEB beIN SPORTS"
 
 HEADERS = {
     "User-Agent": (
@@ -32,7 +31,6 @@ STREAM_DOMAINS = [
 
 STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
 
-# TRT, A Spor, HT Spor YOK - sadece bunlar
 PRETTY_NAMES = {
     "selcukbeinsports1": "beIN Sports 1",
     "selcukbeinsports2": "beIN Sports 2",
@@ -71,6 +69,29 @@ PRETTY_NAMES = {
     "selcuktabiispor6": "Tabii Spor 6",
     "selcuktabiispor7": "Tabii Spor 7",
 }
+
+def get_group(cid: str) -> str:
+    c = cid.lower()
+    if c.startswith("selcukbeinsports") or c.startswith("selcukbeinconnect"):
+        return "🖥 WEB beIN SPORTS"
+    elif c.startswith("selcukssport") or c.startswith("selcukssplus"):
+        return "⚽ SSPORT"
+    elif c.startswith("selcuktivibuspor"):
+        return "⚽ TiViBU SPOR"
+    elif c.startswith("selcuktabiispor"):
+        return "⚽ TABii SPOR"
+    elif c.startswith("selcuksmartspor"):
+        return "⚽ SMART SPOR"
+    else:
+        return "🖥 WEB beIN SPORTS"
+
+ALL_GROUPS = [
+    "🖥 WEB beIN SPORTS",
+    "⚽ SSPORT",
+    "⚽ TiViBU SPOR",
+    "⚽ TABii SPOR",
+    "⚽ SMART SPOR",
+]
 
 def pretty(cid: str) -> str:
     return PRETTY_NAMES.get(cid.strip().lower(), cid.replace("selcuk", "").title())
@@ -138,37 +159,52 @@ def append_to_mirti68(new_entries):
     if not os.path.exists(OUTPUT_FILENAME):
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
-            for name, url in new_entries:
-                f.write(f'#EXTINF:-1 group-title="{GROUP}", {name}\n')
+            for name, url, grp in new_entries:
+                f.write(f'#EXTINF:-1 group-title="{grp}", {name}\n')
                 f.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
                 f.write(f"{url}\n")
         print(f"✅ Yeni {OUTPUT_FILENAME} oluşturuldu")
         return
 
     with open(OUTPUT_FILENAME, "r", encoding="utf-8", errors="ignore") as f:
-        content = f.read()
-    
-    first_line = content.splitlines()[0] if content else "#EXTM3U"
-    epg_header = first_line if "#EXTM3U" in first_line else "#EXTM3U"
+        lines = f.readlines()
 
-    old_blocks = []
-    parts = content.split("#EXTINF")
-    for p in parts[1:]:
-        if f'group-title="{GROUP}"' in p:
+    header = lines[0].rstrip("\n") if lines else "#EXTM3U"
+    if not header.startswith("#EXTM3U"):
+        header = "#EXTM3U"
+
+    kept_lines = []
+    skip_next_url = False
+    skip_next_vlc = False
+    
+    for line in lines[1:]:
+        if line.startswith("#EXTINF"):
+            if any(f'group-title="{g}"' in line for g in ALL_GROUPS):
+                skip_next_url = True
+                skip_next_vlc = True
+                continue
+            kept_lines.append(line)
+            skip_next_url = False
+            skip_next_vlc = False
+        elif line.startswith("#EXTVLCOPT:http-referrer=") and skip_next_vlc:
+            skip_next_vlc = False
             continue
-        if "http" in p:
-            old_blocks.append("#EXTINF" + p.strip())
+        elif line.startswith("http") and skip_next_url:
+            skip_next_url = False
+            continue
+        else:
+            kept_lines.append(line)
 
     with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
-        out.write(epg_header + "\n")
-        for b in old_blocks:
-            out.write(b + "\n\n")
-        for name, url in new_entries:
-            out.write(f'#EXTINF:-1 group-title="{GROUP}", {name}\n')
+        out.write(header + "\n")
+        for l in kept_lines:
+            out.write(l if l.endswith("\n") else l + "\n")
+        for name, url, grp in new_entries:
+            out.write(f'#EXTINF:-1 group-title="{grp}", {name}\n')
             out.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
-            out.write(f"{url}\n\n")
+            out.write(f"{url}\n")
 
-    print(f"✅ Append tamam: {len(old_blocks)} eski korundu + {len(new_entries)} Selçuk eklendi")
+    print(f"✅ Append tamam: eski satırlar korundu + {len(new_entries)} Selçuk eklendi")
 
 def main():
     print("--- 🏟  SLCK (SelcukSportsHD) taraniyor ---")
@@ -191,8 +227,9 @@ def main():
         for fut in as_completed(futures):
             cid, url = fut.result()
             if url:
-                entries.append((pretty(cid), url))
-                print(f"  ✅ {pretty(cid)}")
+                grp = get_group(cid)
+                entries.append((pretty(cid), url, grp))
+                print(f"  ✅ {pretty(cid)} -> {grp}")
             else:
                 print(f"  ❌ {pretty(cid)} ({cid}): erisilemedi")
 
@@ -200,7 +237,7 @@ def main():
         print("\n❌ HIC CALISAN YAYIN YOK - mirti68.m3u DEGISTIRILMIYOR")
         sys.exit(1)
 
-    entries.sort(key=lambda x: x[0].lower())
+    entries.sort(key=lambda x: (x[2], x[0].lower()))
     append_to_mirti68(entries)
 
 if __name__ == "__main__":
