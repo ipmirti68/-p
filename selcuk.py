@@ -1,4 +1,4 @@
-"""SLCK (SelcukSportsHD) spor kaynagi botu - APPEND MODU - AYRI GRUPLAR"""
+"""SLCK (SelcukSportsHD) spor kaynagi botu - APPEND MODU - AYRI GRUPLAR (İKONLU)"""
 
 import re
 import sys
@@ -73,24 +73,35 @@ PRETTY_NAMES = {
 def get_group(cid: str) -> str:
     c = cid.lower()
     if c.startswith("selcukbeinsports") or c.startswith("selcukbeinconnect"):
-        return "🖥 WEB beIN SPORTS"
+        return "🖥beINSPORTS"
     elif c.startswith("selcukssport") or c.startswith("selcukssplus"):
-        return "⚽ SSPORT"
+        return "⚽SSPORT"
     elif c.startswith("selcuktivibuspor"):
-        return "⚽ TiViBU SPOR"
+        return "⚽TiViBUSPOR"
     elif c.startswith("selcuktabiispor"):
-        return "⚽ TABii SPOR"
+        return "⚽TABiiSPOR"
     elif c.startswith("selcuksmartspor"):
-        return "⚽ SMART SPOR"
+        return "⚽SMARTSPOR"
     else:
-        return "🖥 WEB beIN SPORTS"
+        return "🖥beINSPORTS"
 
-ALL_GROUPS = [
+GROUPS_TO_DELETE = [
+    "beINSPORTS",
+    "SSPORT",
+    "TiViBUSPOR",
+    "TABiiSPOR",
+    "SMARTSPOR",
+    "🖥beINSPORTS",
+    "⚽SSPORT",
+    "⚽TiViBUSPOR",
+    "⚽TABiiSPOR",
+    "⚽SMARTSPOR",
     "🖥 WEB beIN SPORTS",
     "⚽ SSPORT",
     "⚽ TiViBU SPOR",
     "⚽ TABii SPOR",
     "⚽ SMART SPOR",
+    "WEB beIN SPORTS",
 ]
 
 def pretty(cid: str) -> str:
@@ -179,7 +190,7 @@ def append_to_mirti68(new_entries):
     
     for line in lines[1:]:
         if line.startswith("#EXTINF"):
-            if any(f'group-title="{g}"' in line for g in ALL_GROUPS):
+            if any(f'group-title="{g}"' in line for g in GROUPS_TO_DELETE):
                 skip_next_url = True
                 skip_next_vlc = True
                 continue
@@ -204,7 +215,7 @@ def append_to_mirti68(new_entries):
             out.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
             out.write(f"{url}\n")
 
-    print(f"✅ Append tamam: eski satırlar korundu + {len(new_entries)} Selçuk eklendi (ayrı gruplar)")
+    print(f"✅ Append tamam: eski satırlar korundu + {len(new_entries)} Selçuk eklendi")
 
 def main():
     print("--- 🏟  SLCK (SelcukSportsHD) taraniyor ---")
