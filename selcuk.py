@@ -1,4 +1,4 @@
-"""SLCK (SelcukSportsHD) spor kaynagi botu - APPEND MODU - AYRI GRUPLAR (İKONLU)"""
+"""SLCK (SelcukSportsHD) spor kaynagi botu - APPEND MODU - AYRI GRUPLAR"""
 
 import re
 import sys
@@ -73,36 +73,17 @@ PRETTY_NAMES = {
 def get_group(cid: str) -> str:
     c = cid.lower()
     if c.startswith("selcukbeinsports") or c.startswith("selcukbeinconnect"):
-        return "🖥beINSPORTS"
+        return "beINSPORTS"
     elif c.startswith("selcukssport") or c.startswith("selcukssplus"):
-        return "⚽SSPORT"
+        return "SSPORT"
     elif c.startswith("selcuktivibuspor"):
-        return "⚽TiViBUSPOR"
+        return "TiViBUSPOR"
     elif c.startswith("selcuktabiispor"):
-        return "⚽TABiiSPOR"
+        return "TABiiSPOR"
     elif c.startswith("selcuksmartspor"):
-        return "⚽SMARTSPOR"
+        return "SMARTSPOR"
     else:
-        return "🖥beINSPORTS"
-
-GROUPS_TO_DELETE = [
-    "beINSPORTS",
-    "SSPORT",
-    "TiViBUSPOR",
-    "TABiiSPOR",
-    "SMARTSPOR",
-    "🖥beINSPORTS",
-    "⚽SSPORT",
-    "⚽TiViBUSPOR",
-    "⚽TABiiSPOR",
-    "⚽SMARTSPOR",
-    "🖥 WEB beIN SPORTS",
-    "⚽ SSPORT",
-    "⚽ TiViBU SPOR",
-    "⚽ TABii SPOR",
-    "⚽ SMART SPOR",
-    "WEB beIN SPORTS",
-]
+        return "beINSPORTS"
 
 def pretty(cid: str) -> str:
     return PRETTY_NAMES.get(cid.strip().lower(), cid.replace("selcuk", "").title())
@@ -125,47 +106,6 @@ def parse_channel_ids(html):
         out.append(cid)
     return out
 
-def probe_media(playlist_url):
-    r = requests.get(playlist_url, headers=HEADERS, timeout=12)
-    if r.status_code != 200:
-        return None
-    text = r.text.lstrip()
-    if not text.startswith("#EXTM3U"):
-        return None
-    base = playlist_url
-    for _ in range(2):
-        for line in text.splitlines():
-            line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            url = urljoin(base, line)
-            if url.endswith(".m3u8") or ".m3u8?" in url:
-                rr = requests.get(url, headers=HEADERS, timeout=12)
-                if rr.status_code != 200:
-                    return None
-                text, base = rr.text.lstrip(), url
-                break
-            rs = requests.get(url, headers=HEADERS, timeout=12, stream=True)
-            if rs.status_code != 200:
-                return None
-            head = next(rs.iter_content(16), b"")
-            if head[:1] == b"\x47" or b"ftyp" in head[:12]:
-                return playlist_url
-            return None
-        else:
-            return None
-    return None
-
-def resolve(cid):
-    for domain in STREAM_DOMAINS:
-        try:
-            url = probe_media(f"{domain}/live/{cid}/playlist.m3u8")
-        except Exception:
-            url = None
-        if url:
-            return cid, url
-    return cid, None
-
 def append_to_mirti68(new_entries):
     if not os.path.exists(OUTPUT_FILENAME):
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
@@ -184,31 +124,9 @@ def append_to_mirti68(new_entries):
     if not header.startswith("#EXTM3U"):
         header = "#EXTM3U"
 
-    kept_lines = []
-    skip_next_url = False
-    skip_next_vlc = False
-    
-    for line in lines[1:]:
-        if line.startswith("#EXTINF"):
-            if any(f'group-title="{g}"' in line for g in GROUPS_TO_DELETE):
-                skip_next_url = True
-                skip_next_vlc = True
-                continue
-            kept_lines.append(line)
-            skip_next_url = False
-            skip_next_vlc = False
-        elif line.startswith("#EXTVLCOPT:http-referrer=") and skip_next_vlc:
-            skip_next_vlc = False
-            continue
-        elif line.startswith("http") and skip_next_url:
-            skip_next_url = False
-            continue
-        else:
-            kept_lines.append(line)
-
     with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
         out.write(header + "\n")
-        for l in kept_lines:
+        for l in lines[1:]:
             out.write(l if l.endswith("\n") else l + "\n")
         for name, url, grp in new_entries:
             out.write(f'#EXTINF:-1 group-title="{grp}", {name}\n')
@@ -233,20 +151,12 @@ def main():
         sys.exit(1)
 
     entries = []
-    with ThreadPoolExecutor(max_workers=10) as pool:
-        futures = {pool.submit(resolve, cid): cid for cid in ids}
-        for fut in as_completed(futures):
-            cid, url = fut.result()
-            if url:
-                grp = get_group(cid)
-                entries.append((pretty(cid), url, grp))
-                print(f"  ✅ {pretty(cid)} -> {grp}")
-            else:
-                print(f"  ❌ {pretty(cid)} ({cid}): erisilemedi")
-
-    if not entries:
-        print("\n❌ HIC CALISAN YAYIN YOK - mirti68.m3u DEGISTIRILMIYOR")
-        sys.exit(1)
+    for cid in ids:
+        # Probe yok, direkt ilk domain ile ekle
+        url = f"{STREAM_DOMAINS[0]}/live/{cid}/playlist.m3u8"
+        grp = get_group(cid)
+        entries.append((pretty(cid), url, grp))
+        print(f"  ✅ {pretty(cid)} -> {grp}")
 
     entries.sort(key=lambda x: (x[2], x[0].lower()))
     append_to_mirti68(entries)
