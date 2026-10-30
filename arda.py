@@ -167,10 +167,10 @@ def main():
     print("--- 🏟  Golvar taraniyor ---")
     html = fetch_home()
     items = parse_items(html)
-    print(f"✅ {len(items)} kaynak sayfasi bulundu (kanal + gunun maclari)")
+    print(f"✅ {len(items)} kaynak sayfasi bulundu (kanal )")
 
     if not items:
-        print("❌ HIC SAYFA YOK - golvar.m3u DEGISTIRILMIYOR")
+        print("❌ HIC SAYFA YOK - mirti.m3u DEGISTIRILMIYOR")
         sys.exit(1)
 
     results = []
