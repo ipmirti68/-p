@@ -210,7 +210,13 @@ def main():
     if not entries:
         print("\n❌ HIC CALISAN YAYIN YOK - mirti68.m3u DEGISTIRILMIYOR")
         sys.exit(1)
+    # --- SADECE 7 KANAL KALSIN ---
+    ALLOWED = ["beIN SPORTS 1","beIN SPORTS 2","beIN SPORTS 3","beIN SPORTS 4","beIN SPORTS MAX 1","beIN SPORTS MAX 2","beIN SPORTS 5"]
+    entries = [e for e in entries if any(name in e for name in ALLOWED)]
+    # --- BITTI ---
 
+    with open(OUTPUT_FILENAME, "a", ...
+  
     with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
         f.write("#EXTM3U\n" + "\n".join(entries))
 
