@@ -162,8 +162,6 @@ def verify(session, url):
         return None
     return None
 
-
-def main():
 def main():
     print("--- 🏟  Golvar taraniyor ---")
     html = fetch_home()
