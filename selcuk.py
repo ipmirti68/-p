@@ -27,15 +27,15 @@ STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
 GROUP_NAME = "🖥beINSPORTS"
 
 PRETTY_NAMES = {
-    "selcukbeinsports1": "beIN Sports 1",
-    "selcukbeinsports2": "beIN Sports 2",
-    "selcukbeinsports3": "beIN Sports 3",
-    "selcukbeinsports4": "beIN Sports 4",
-    "selcukbeinsports5": "beIN Sports 5",
-    "selcukbeinsportsmax1": "beIN Sports Max 1",
-    "selcukbeinsportsmax2": "beIN Sports Max 2",
-    "selcukbeinsportshaber": "beIN Sports Haber",
-    "selcukbeinconnect1": "beIN Connect 1",
+    "selcukbeinsports1": "beIN SPORTS 1 Selcuk 🔴",
+    "selcukbeinsports2": "beIN SPORTS 2nSelcuk 🔴",
+    "selcukbeinsports3": "beIN SPORTS 3 Selcuk 🔴 ",
+    "selcukbeinsports4": "beIN SPORTS 4 Selcuk 🔴",
+    "selcukbeinsports5": "beIN SPORTS 5 Selcuk 🔴",
+    "selcukbeinsportsmax1": "beIN SPORTS MAX 1 Selcuk 🔴",
+    "selcukbeinsportsmax2": "beIN SPORTS MAX 2 Selcuk 🔴",
+    "selcukbeinsportshaber": "beIN SPORTS Haber Selcuk 🔴",
+    "selcukbeinconnect1": "beIN Con 1 Selcuk 🔴",
 }
 
 def pretty(cid: str) -> str:
