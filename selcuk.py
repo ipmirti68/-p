@@ -1,16 +1,4 @@
-"""SLCK (SelcukSportsHD) spor kaynagi botu.
-
-Akis:
-  1) Ana sayfadaki ``index.php?id=<kanal>`` baglantilarindan kanal ID'leri okunur.
-  2) Her kanal icin ``<stream_domain>/live/<id>/playlist.m3u8`` GET ile dogrulanir;
-     ardindan ilk segmentin gercek medya (MPEG-TS/fMP4) oldugu kontrol edilir
-     (TikTok kaynakli "placeholder" PNG yayinlar boylece elenir).
-     Segmentler Referer header'i ZORUNLU (yoksa HTTP 403); m3u ciktisina
-     ``#EXTVLCOPT:http-referrer`` satiri yazilir (VLC + uygulama destekler).
-  3) Domain, player.js'te saklanmadigi icin (WASM/protobuf sifreli /api/config)
-     bilinen calisan domain + yedekler sirayla denenir.
-  4) Hic calisan yayin yoksa DOSYA YAZILMAZ ve cikis 1 olur (eski liste korunur).
-"""
+"""SLCK (SelcukSportsHD) spor kaynagi botu - APPEND MODU"""
 
 import re
 import sys
@@ -111,7 +99,6 @@ def probe_media(playlist_url):
     text = r.text.lstrip()
     if not text.startswith("#EXTM3U"):
         return None
-
     base = playlist_url
     for _ in range(2):
         for line in text.splitlines():
@@ -146,6 +133,46 @@ def resolve(cid):
             return cid, url
     return cid, None
 
+def append_to_mirti68(new_entries):
+    """Mevcut mirti68.m3u'yu bozmayacak, sadece Selçukları yenileyecek"""
+    if not os.path.exists(OUTPUT_FILENAME):
+        # Dosya yoksa yeni oluştur
+        with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n")
+            for name, url in new_entries:
+                f.write(f'#EXTINF:-1 group-title="{GROUP}", {name}\n')
+                f.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
+                f.write(f"{url}\n")
+        print(f"✅ Yeni {OUTPUT_FILENAME} oluşturuldu")
+        return
+
+    with open(OUTPUT_FILENAME, "r", encoding="utf-8", errors="ignore") as f:
+        content = f.read()
+    
+    first_line = content.splitlines()[0] if content else "#EXTM3U"
+    epg_header = first_line if "#EXTM3U" in first_line else "#EXTM3U"
+
+    old_blocks = []
+    parts = content.split("#EXTINF")
+    for p in parts[1:]:
+        # Sadece eski Selçuk grubunu sil
+        if f'group-title="{GROUP}"' in p:
+            continue
+        if "http" in p:
+            old_blocks.append("#EXTINF" + p.strip())
+
+    # Geri yaz
+    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
+        out.write(epg_header + "\n")
+        for b in old_blocks:
+            out.write(b + "\n\n")
+        for name, url in new_entries:
+            out.write(f'#EXTINF:-1 group-title="{GROUP}", {name}\n')
+            out.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
+            out.write(f"{url}\n\n")
+
+    print(f"✅ Append tamam: {len(old_blocks)} eski korundu + {len(new_entries)} Selçuk eklendi")
+
 def main():
     print("--- 🏟  SLCK (SelcukSportsHD) taraniyor ---")
     try:
@@ -177,14 +204,7 @@ def main():
         sys.exit(1)
 
     entries.sort(key=lambda x: x[0].lower())
-    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n")
-        for name, url in entries:
-            f.write(f'#EXTINF:-1 group-title="{GROUP}", {name}\n')
-            f.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
-            f.write(f"{url}\n")
-
-    print(f"\n✅ ISLEM TAMAMLANDI!  {len(entries)} yayin  ->  {os.path.abspath(OUTPUT_FILENAME)}")
+    append_to_mirti68(entries)
 
 if __name__ == "__main__":
     main()
