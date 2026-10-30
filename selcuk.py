@@ -1,4 +1,4 @@
-"""SLCK (SelcukSportsHD) spor kaynagi botu - APPEND MODU - AYRI GRUPLAR"""
+"""SLCK (SelcukSportsHD) spor kaynagi botu - APPEND MODU - SILMEDEN EKLE"""
 
 import re
 import sys
@@ -85,14 +85,6 @@ def get_group(cid: str) -> str:
     else:
         return "🖥 WEB beIN SPORTS"
 
-ALL_GROUPS = [
-    "🖥 WEB beIN SPORTS",
-    "⚽ SSPORT",
-    "⚽ TiViBU SPOR",
-    "⚽ TABii SPOR",
-    "⚽ SMART SPOR",
-]
-
 def pretty(cid: str) -> str:
     return PRETTY_NAMES.get(cid.strip().lower(), cid.replace("selcuk", "").title())
 
@@ -156,6 +148,7 @@ def resolve(cid):
     return cid, None
 
 def append_to_mirti68(new_entries):
+    """HİÇBİR ŞEYİ SİLME, SADECE SONA EKLE"""
     if not os.path.exists(OUTPUT_FILENAME):
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
@@ -166,45 +159,13 @@ def append_to_mirti68(new_entries):
         print(f"✅ Yeni {OUTPUT_FILENAME} oluşturuldu")
         return
 
-    with open(OUTPUT_FILENAME, "r", encoding="utf-8", errors="ignore") as f:
-        lines = f.readlines()
-
-    header = lines[0].rstrip("\n") if lines else "#EXTM3U"
-    if not header.startswith("#EXTM3U"):
-        header = "#EXTM3U"
-
-    kept_lines = []
-    skip_next_url = False
-    skip_next_vlc = False
-    
-    for line in lines[1:]:
-        if line.startswith("#EXTINF"):
-            if any(f'group-title="{g}"' in line for g in ALL_GROUPS):
-                skip_next_url = True
-                skip_next_vlc = True
-                continue
-            kept_lines.append(line)
-            skip_next_url = False
-            skip_next_vlc = False
-        elif line.startswith("#EXTVLCOPT:http-referrer=") and skip_next_vlc:
-            skip_next_vlc = False
-            continue
-        elif line.startswith("http") and skip_next_url:
-            skip_next_url = False
-            continue
-        else:
-            kept_lines.append(line)
-
-    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
-        out.write(header + "\n")
-        for l in kept_lines:
-            out.write(l if l.endswith("\n") else l + "\n")
+    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as out:
         for name, url, grp in new_entries:
             out.write(f'#EXTINF:-1 group-title="{grp}", {name}\n')
             out.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
             out.write(f"{url}\n")
 
-    print(f"✅ Append tamam: eski satırlar korundu + {len(new_entries)} Selçuk eklendi")
+    print(f"✅ Append tamam: mevcut liste korundu + {len(new_entries)} Selçuk eklendi")
 
 def main():
     print("--- 🏟  SLCK (SelcukSportsHD) taraniyor ---")
