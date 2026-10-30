@@ -33,7 +33,9 @@ jobs:
         run: python atv.py
       - name: 6 - SELCUK
         run: python selcuk.py
-      - name: Commit
+      - name: 7 - MAHSUN
+        run: python mahsun.py
+        : Commit
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
