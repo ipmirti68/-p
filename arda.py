@@ -164,31 +164,60 @@ def verify(session, url):
 
 
 def main():
-    print("--- taraniyor ---")
-    entries = []
+def main():
+    print("--- 🏟  Golvar taraniyor ---")
+    html = fetch_home()
+    items = parse_items(html)
+    print(f"✅ {len(items)} kaynak sayfasi bulundu (kanal + gunun maclari)")
 
-    if not os.path.exists(OUTPUT_FILENAME):
-        with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
+    if not items:
+        print("❌ HIC SAYFA YOK - golvar.m3u DEGISTIRILMIYOR")
+        sys.exit(1)
 
-    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
-        f.write("\n".join(entries) + "\n")    # 1. ana sayfayı çek (sende fetch_home)
-    # 2. kanal listesini parse et (sende parse_items)
-    # 3. her biri için resolve et ve verify yap - bu kısmı sen dolduracaksın
-    # 4. m3u'yu yaz
+    results = []
 
-    # mirti68.m3u içine append et - yeni oluşturma, mevcut listeye dokunma
-    if not os.path.exists(OUTPUT_FILENAME):
-        with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
+    def work(item):
+        title, slug = item
+        s = make_session()  # her is parcasinda kendi session/cerez
+        stitle, m3u8 = resolve_source(s, slug)
+        if not m3u8:
+            return None
+        final = verify(s, m3u8)
+        if not final:
+            return None
+        return (pretty(stitle or title), final)
 
-    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
-        f.write("\n".join(entries) + "\n")
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = {pool.submit(work, it): it for it in items}
+        for fut in as_completed(futures):
+            res = fut.result()
+            title, slug = futures[fut]
+            if res:
+                results.append(res)
+                print(f"  ✅ {res[0]}")
+            else:
+                print(f"  ⏭️  {title} ({slug}): yayin yok/gecis kapanmis")
 
-    print(f"\n✅ İŞLEM TAMAMLANDI!")
-    print(f"💾 Dosya Adı: {OUTPUT_FILENAME}")
-    print(f"📝 Toplam Kanal: {len(entries)}")
-    print(f"📍 Kayıt Yeri: {os.path.abspath(OUTPUT_FILENAME)}")
+    # Ayni yayin iki ad altinda gelebilir (mac + kanal ayni source): URL tekilligi.
+    entries, seen = [], set()
+    for title, url in results:
+        if url in seen:
+            continue
+        seen.add(url)
+        entries.append(
+            f'#EXTINF:-1 group-title="{GROUP}", {title}\n'
+            f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n{url}"
+        )
+
+    if not entries:
+        print("\n❌ HIC CALISAN YAYIN YOK - golvar.m3u DEGISTIRILMIYOR")
+        sys.exit(1)
+
+    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
+        f.write("#EXTM3U\n" + "\n".join(entries))
+
+    print(f"\n✅ ISLEM TAMAMLANDI!  {len(entries)} yayin  ->  {os.path.abspath(OUTPUT_FILENAME)}")
+
 
 if __name__ == "__main__":
     main()
