@@ -16,6 +16,9 @@ api_params = {
     "limit": "100"
 }
 
+# SADECE GELMESİNİ İSTEDİĞİN DİZİLER
+WANTED_SERIES = ["baskasinin-hayati", "tuzlu-kahve", "sevdim-sensin"]
+
 def get_items_page(url):
     item_list = []
     r = requests.get(url, timeout=15)
@@ -26,9 +29,11 @@ def get_items_page(url):
         href = a.get("href")
         if href and href not in seen:
             seen.add(href)
-            item_url = base_url + href
             slug = href.split("/")[-1]
-            name = slug.replace("-", "").strip()
+            if slug not in WANTED_SERIES:
+                continue
+            item_url = base_url + href
+            name = slug.replace("-", " ").strip()
             item_list.append({
                 "name": name,
                 "img": "",
@@ -86,7 +91,6 @@ def append_to_mirti68():
         print(f"{mirti_file} yok, önce iptv.py çalıştır")
         return
 
-    # startv.m3u bloklarını oku
     with open(m3u_file, "r", encoding="utf-8", errors="ignore") as f:
         startv_content = f.read()
     
@@ -98,7 +102,6 @@ def append_to_mirti68():
 
     print(f"STARTV Dizileri: {len(startv_blocks)} bölüm bulundu")
 
-    # mirti68.m3u oku, EPG + eski STARTV Dizileri hariç her şey kalsın
     with open(mirti_file, "r", encoding="utf-8", errors="ignore") as f:
         content = f.read()
         first_line = content.splitlines()[0] if content else "#EXTM3U"
@@ -107,13 +110,11 @@ def append_to_mirti68():
         old_blocks = []
         parts2 = content.split("#EXTINF")
         for p in parts2[1:]:
-            # Eğer daha önce eklenmiş STARTV Dizileri varsa sil, yenileyeceğiz
-            if "STARTV Dizileri" in p:
+            if "STAR Dizileri" in p or "STARTV Dizileri" in p:
                 continue
             if "http" in p:
                 old_blocks.append("#EXTINF" + p.strip())
 
-    # Geri yaz: EPG + eski liste + yeni STARTV Dizileri
     with open(mirti_file, "w", encoding="utf-8") as out:
         out.write(epg_header + "\n")
         for b in old_blocks:
@@ -121,7 +122,7 @@ def append_to_mirti68():
         for b in startv_blocks:
             out.write(b + "\n\n")
 
-    print(f"Bitti! {mirti_file} bozulmadı, {len(old_blocks)} eski + {len(startv_blocks)} STARTV eklendi")
+    print(f"Bitti! {mirti_file} bozulmadı, {len(old_blocks)} eski + {len(startv_blocks)} STAR eklendi")
 
 def main(start=0, end=0):
     data = []
@@ -142,7 +143,6 @@ def main(start=0, end=0):
         temp_serie["episodes"] = episodes
         data.append(temp_serie)
 
-    # M3U oluştur
     with open(m3u_file, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for serie in data:
@@ -151,8 +151,6 @@ def main(start=0, end=0):
                 f.write(line)
 
     print(f"{m3u_file} başarıyla oluşturuldu!")
-
-    # HEMEN mirti68.m3u'ya bozmayacak şekilde ilave et
     append_to_mirti68()
 
 if __name__ == "__main__":
