@@ -27,7 +27,7 @@ https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-2
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL 🔗",NOW TV
 #EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=nNEDJbWIMHQJl_ZeKqYpzA&e=1793406566
+https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=HRg8RTdOClqX16lsfsqbdw&e=1793407652
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL 🔗",KANAL 7
 #EXTVLCOPT:http-referrer=https://www.kanal7.com/
@@ -5058,6 +5058,78 @@ https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportsmax1/playlist.
 #EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
 https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportsmax2/playlist.m3u8
 
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN Sports 1
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports1/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN Sports 2
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports2/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN Sports 3
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports3/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN Sports 4
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports4/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN Sports 5
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports5/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN Sports Haber
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportshaber/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN Sports Max 1
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportsmax1/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN Sports Max 2
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportsmax2/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 1
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebiraz1.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 1
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs1.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 2
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs2.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 3
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs3.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 4
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs4.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 5
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs5.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports Max 1
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebsm1.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports Max 2
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebsm2.m3u8
+
 #EXTINF:-1 tvg-id="vod.tr" tvg-name=" Tuzlu Kahve 1. Bölüm" tvg-logo="https://media.startv.com.tr/star-tv/images/bugra.jpg" group-title="STAR Dizileri",TR: Tuzlu Kahve 1. Bölüm
 https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a97c234a46e38b3a3925061&SecretKey=NtvApiSecret2014*&.m3u8
 
@@ -5100,42 +5172,42 @@ https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportsmax1/playlist.
 #EXTINF:-1 group-title="🖥beINSPORTS", beIN Sports Max 2
 #EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
 https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportsmax2/playlist.m3u8
-#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 1
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN SPORTS 1 Mahsun 🔴
 #EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 https://andro.evrenesoglu219.click/checklist/androstreamlivebiraz1.m3u8
 
-#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 1
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN SPORTS 1 Mahsun 🔴
 #EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 https://andro.evrenesoglu219.click/checklist/androstreamlivebs1.m3u8
 
-#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 2
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN SPORTS 2 Mahsun 🔴
 #EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 https://andro.evrenesoglu219.click/checklist/androstreamlivebs2.m3u8
 
-#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 3
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN SPORTS 3 Mahsun 🔴
 #EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 https://andro.evrenesoglu219.click/checklist/androstreamlivebs3.m3u8
 
-#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 4
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN SPORTS 4 Mahsun 🔴
 #EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 https://andro.evrenesoglu219.click/checklist/androstreamlivebs4.m3u8
 
-#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports 5
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN SPORTS 5 Mahsun 🔴
 #EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 https://andro.evrenesoglu219.click/checklist/androstreamlivebs5.m3u8
 
-#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports Max 1
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN SPORTS MAX 1 Mahsun 🔴
 #EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 https://andro.evrenesoglu219.click/checklist/androstreamlivebsm1.m3u8
 
-#EXTINF:-1 group-title="🖥beINSPORTS",BeIN Sports Max 2
+#EXTINF:-1 group-title="🖥beINSPORTS",BeIN SPORTS MAX 2 Mahsun 🔴
 #EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
 https://andro.evrenesoglu219.click/checklist/androstreamlivebsm2.m3u8
