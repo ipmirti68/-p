@@ -209,7 +209,7 @@ def main():
         )
 
     if not entries:
-        print("\n❌ HIC CALISAN YAYIN YOK - golvar.m3u DEGISTIRILMIYOR")
+        print("\n❌ HIC CALISAN YAYIN YOK - mirti68.m3u DEGISTIRILMIYOR")
         sys.exit(1)
 
     with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
