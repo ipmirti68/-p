@@ -164,10 +164,11 @@ def verify(session, url):
 
 
 def main():
-    print("--- 🏟  Golvar taraniyor ---")
-    base_domain = discover_base_domain()
-    api_url = discover_api(base_domain)
-    channels = discover_channels(api_url)
+    print("--- taraniyor ---")
+    # 1. ana sayfayı çek (sende fetch_home)
+    # 2. kanal listesini parse et (sende parse_items)
+    # 3. her biri için resolve et ve verify yap
+    # 4. mirti.m3u'yu yaz
 
     entries = []
     seen_links = set()
