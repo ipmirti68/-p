@@ -208,10 +208,10 @@ def main():
         )
 
     if not entries:
-        print("\n❌ HIC CALISAN YAYIN YOK - golvar.m3u DEGISTIRILMIYOR")
+        print("\n❌ HIC CALISAN YAYIN YOK - mirti68.m3u DEGISTIRILMIYOR")
         sys.exit(1)
 
-    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
+    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
         f.write("#EXTM3U\n" + "\n".join(entries))
 
     print(f"\n✅ ISLEM TAMAMLANDI!  {len(entries)} yayin  ->  {os.path.abspath(OUTPUT_FILENAME)}")
