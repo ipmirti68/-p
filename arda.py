@@ -171,11 +171,7 @@ def main():
     # 4. mirti.m3u'yu yaz
 
     entries = []
-    seen_links = set()
-        link = get_stream(api_url, cid)
-        if not link:
-            print(f"  ❌ {name} ({cid}): yayin yok")
-            continue
+    
         # Ayni yayin iki ayri ad ile gelirse (site yanlis esleme yapabiliyor)
         # ilk gecen ad kalir: yanlis etiketli kanal listeye girmesin.
         if link in seen_links:
