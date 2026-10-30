@@ -170,25 +170,6 @@ def main():
     # 3. her biri için resolve et ve verify yap
     # 4. mirti.m3u'yu yaz
 
-    entries = []
-    
-        # Ayni yayin iki ayri ad ile gelirse (site yanlis esleme yapabiliyor)
-        # ilk gecen ad kalir: yanlis etiketli kanal listeye girmesin.
-        if link in seen_links:
-            print(f"  ⏭️  {name} ({cid}): ayni yayin zaten var, atlandi")
-            continue
-        seen_links.add(link)
-        entries.append(
-            f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="{GROUP}", {name}\n{link}'
-        )
-        print(f"  ✅ {name}")
-
-    # Guvenlik: hic kanal yoksa dosyayi bosaltma! Mevcut liste korunur,
-    # workflow hata verir ve boylece eski liste silinmez.
-    if not entries:
-        print("\n❌ HIC KANAL YOK - mirti68.m3u DEGISTIRILMEYOR (mevcut liste korunuyor)")
-        sys.exit(1)
-
     # mirti68.m3u içine append et - yeni oluşturma, mevcut listeye dokunma
     if not os.path.exists(OUTPUT_FILENAME):
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
