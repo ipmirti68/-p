@@ -165,10 +165,14 @@ def verify(session, url):
 
 def main():
     print("--- taraniyor ---")
-    entries = [#EXTINF:-1 tvg-logo="logo" group-title="🖥beINSPORTS", beIN SPORTS 1 Arda 🔴
-mirti68.m3u8]  # NameError buradan geliyordu, düzeldi
+    entries = []
 
-    # 1. ana sayfayı çek (sende fetch_home)
+    if not os.path.exists(OUTPUT_FILENAME):
+        with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n")
+
+    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
+        f.write("\n".join(entries) + "\n")    # 1. ana sayfayı çek (sende fetch_home)
     # 2. kanal listesini parse et (sende parse_items)
     # 3. her biri için resolve et ve verify yap - bu kısmı sen dolduracaksın
     # 4. m3u'yu yaz
