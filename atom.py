@@ -160,7 +160,8 @@ def main():
     entries = [e for e in entries if any(name in e for name in ALLOWED)]
     # --- BITTI ---
 
-    with open(OUTPUT_FILENAME, "a", ...
+    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
+        f.write("\n".join(entries) + "\n")
     # mirti68.m3u içine append et - yeni oluşturma, mevcut listeye dokunma
     if not os.path.exists(OUTPUT_FILENAME):
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
