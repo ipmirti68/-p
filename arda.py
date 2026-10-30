@@ -49,8 +49,8 @@ PRETTY_NAMES = {
     "bein sports 3": "beIN SPORTS 3 Arda 🔴",
     "bein sports 4": "beIN SPORTS 4 Arda 🔴",
     "bein sports 5": "beIN SPORTS 5 Arda 🔴",
-    "bein sports max 1": "beIN SPORTS Max 1 Arda 🔴",
-    "bein sports max 2": "beIN SPORTS Max 2 Arda 🔴",
+    "bein sports max 1": "beIN SPORTS MAX 1 Arda 🔴",
+    "bein sports max 2": "beIN SPORTS MAX 2 Arda 🔴",
 }
 
 
