@@ -172,7 +172,6 @@ def main():
 
     entries = []
     seen_links = set()
-    for cid, name in channels:
         link = get_stream(api_url, cid)
         if not link:
             print(f"  ❌ {name} ({cid}): yayin yok")
