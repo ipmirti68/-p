@@ -155,7 +155,12 @@ def main():
     if not entries:
         print("\n❌ HIC KANAL YOK - mirti68.m3u DEGISTIRILMEYOR (mevcut liste korunuyor)")
         sys.exit(1)
+    # --- SADECE 7 KANAL KALSIN ---
+    ALLOWED = ["beIN SPORTS 1","beIN SPORTS 2","beIN SPORTS 3","beIN SPORTS 4","beIN SPORTS MAX 1","beIN SPORTS MAX 2","beIN SPORTS 5"]
+    entries = [e for e in entries if any(name in e for name in ALLOWED)]
+    # --- BITTI ---
 
+    with open(OUTPUT_FILENAME, "a", ...
     # mirti68.m3u içine append et - yeni oluşturma, mevcut listeye dokunma
     if not os.path.exists(OUTPUT_FILENAME):
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
