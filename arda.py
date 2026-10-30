@@ -165,58 +165,46 @@ def verify(session, url):
 
 def main():
     print("--- 🏟  Golvar taraniyor ---")
-    html = fetch_home()
-    items = parse_items(html)
-    print(f"✅ {len(items)} kaynak sayfasi bulundu (kanal )")
+    base_domain = discover_base_domain()
+    api_url = discover_api(base_domain)
+    channels = discover_channels(api_url)
 
-    if not items:
-        print("❌ HIC SAYFA YOK - mirti.m3u DEGISTIRILMIYOR")
-        sys.exit(1)
-
-    results = []
-
-    def work(item):
-        title, slug = item
-        s = make_session()  # her is parcasinda kendi session/cerez
-        stitle, m3u8 = resolve_source(s, slug)
-        if not m3u8:
-            return None
-        final = verify(s, m3u8)
-        if not final:
-            return None
-        return (pretty(stitle or title), final)
-
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        futures = {pool.submit(work, it): it for it in items}
-        for fut in as_completed(futures):
-            res = fut.result()
-            title, slug = futures[fut]
-            if res:
-                results.append(res)
-                print(f"  ✅ {res[0]}")
-            else:
-                print(f"  ⏭️  {title} ({slug}): yayin yok/gecis kapanmis")
-
-    # Ayni yayin iki ad altinda gelebilir (mac + kanal ayni source): URL tekilligi.
-    entries, seen = [], set()
-    for title, url in results:
-        if url in seen:
+    entries = []
+    seen_links = set()
+    for cid, name in channels:
+        link = get_stream(api_url, cid)
+        if not link:
+            print(f"  ❌ {name} ({cid}): yayin yok")
             continue
-        seen.add(url)
+        # Ayni yayin iki ayri ad ile gelirse (site yanlis esleme yapabiliyor)
+        # ilk gecen ad kalir: yanlis etiketli kanal listeye girmesin.
+        if link in seen_links:
+            print(f"  ⏭️  {name} ({cid}): ayni yayin zaten var, atlandi")
+            continue
+        seen_links.add(link)
         entries.append(
-            f'#EXTINF:-1 group-title="{GROUP}", {title}\n'
-            f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n{url}"
+            f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="{GROUP}", {name}\n{link}'
         )
+        print(f"  ✅ {name}")
 
+    # Guvenlik: hic kanal yoksa dosyayi bosaltma! Mevcut liste korunur,
+    # workflow hata verir ve boylece eski liste silinmez.
     if not entries:
-        print("\n❌ HIC CALISAN YAYIN YOK - mirti68.m3u DEGISTIRILMIYOR")
+        print("\n❌ HIC KANAL YOK - mirti68.m3u DEGISTIRILMEYOR (mevcut liste korunuyor)")
         sys.exit(1)
 
-    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n" + "\n".join(entries))
+    # mirti68.m3u içine append et - yeni oluşturma, mevcut listeye dokunma
+    if not os.path.exists(OUTPUT_FILENAME):
+        with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n")
 
-    print(f"\n✅ ISLEM TAMAMLANDI!  {len(entries)} yayin  ->  {os.path.abspath(OUTPUT_FILENAME)}")
+    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
+        f.write("\n".join(entries) + "\n")
 
+    print(f"\n✅ İŞLEM TAMAMLANDI!")
+    print(f"💾 Dosya Adı: {OUTPUT_FILENAME}")
+    print(f"📝 Toplam Kanal: {len(entries)}")
+    print(f"📍 Kayıt Yeri: {os.path.abspath(OUTPUT_FILENAME)}")
 
 if __name__ == "__main__":
     main()
