@@ -78,31 +78,16 @@ def append_to_mirti68(new_entries):
     if not header.startswith("#EXTM3U"):
         header = "#EXTM3U"
 
-    kept_lines = []
-    skip_next = 0
-    for line in lines[1:]:
-        if line.startswith("#EXTINF"):
-            if f'group-title="{GROUP_NAME}"' in line:
-                skip_next = 2
-                continue
-            kept_lines.append(line)
-            skip_next = 0
-        elif skip_next > 0:
-            skip_next -= 1
-            continue
-        else:
-            kept_lines.append(line)
-
     with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
         out.write(header + "\n")
-        for l in kept_lines:
+        for l in lines[1:]:
             out.write(l if l.endswith("\n") else l + "\n")
         for name, url in new_entries:
             out.write(f'#EXTINF:-1 group-title="{GROUP_NAME}", {name}\n')
             out.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
             out.write(f"{url}\n")
 
-    print(f"✅ Tamam: eski {GROUP_NAME} silindi, {len(new_entries)} yeni eklendi")
+    print(f"✅ Append tamam: {len(new_entries)} beIN mevcut {GROUP_NAME} grubuna eklendi")
 
 def main():
     print("--- 🏟  SLCK (SelcukSportsHD) beIN taraniyor ---")
