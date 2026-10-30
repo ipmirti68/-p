@@ -3,7 +3,6 @@
 import re
 import sys
 import os
-from urllib.parse import urljoin
 
 import requests
 import urllib3
@@ -23,11 +22,7 @@ HEADERS = {
     "Referer": HOME_URL,
 }
 
-STREAM_DOMAINS = [
-    "https://dga1op10s1u3lea.9e694e1c2ce7ac.click",
-    "https://dga1op10s1u3leo.77b6de8e471484.click",
-]
-
+STREAM_DOMAIN = "https://dga1op10s1u3lea.9e694e1c2ce7ac.click"
 STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
 GROUP_NAME = "🖥beINSPORTS"
 
@@ -65,47 +60,6 @@ def parse_bein_ids(html):
         out.append(cid)
     return out
 
-def probe_media(playlist_url):
-    r = requests.get(playlist_url, headers=HEADERS, timeout=12)
-    if r.status_code != 200:
-        return None
-    text = r.text.lstrip()
-    if not text.startswith("#EXTM3U"):
-        return None
-    base = playlist_url
-    for _ in range(2):
-        for line in text.splitlines():
-            line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            url = urljoin(base, line)
-            if url.endswith(".m3u8") or ".m3u8?" in url:
-                rr = requests.get(url, headers=HEADERS, timeout=12)
-                if rr.status_code != 200:
-                    return None
-                text, base = rr.text.lstrip(), url
-                break
-            rs = requests.get(url, headers=HEADERS, timeout=12, stream=True)
-            if rs.status_code != 200:
-                return None
-            head = next(rs.iter_content(16), b"")
-            if head[:1] == b"\x47" or b"ftyp" in head[:12]:
-                return playlist_url
-            return None
-        else:
-            return None
-    return None
-
-def resolve(cid):
-    for domain in STREAM_DOMAINS:
-        try:
-            url = probe_media(f"{domain}/live/{cid}/playlist.m3u8")
-        except Exception:
-            url = None
-        if url:
-            return cid, url
-    return cid, None
-
 def append_to_mirti68(new_entries):
     if not os.path.exists(OUTPUT_FILENAME):
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
@@ -125,23 +79,16 @@ def append_to_mirti68(new_entries):
         header = "#EXTM3U"
 
     kept_lines = []
-    skip_next_url = False
-    skip_next_vlc = False
-    
+    skip_next = 0
     for line in lines[1:]:
         if line.startswith("#EXTINF"):
             if f'group-title="{GROUP_NAME}"' in line:
-                skip_next_url = True
-                skip_next_vlc = True
+                skip_next = 2
                 continue
             kept_lines.append(line)
-            skip_next_url = False
-            skip_next_vlc = False
-        elif line.startswith("#EXTVLCOPT:http-referrer=") and skip_next_vlc:
-            skip_next_vlc = False
-            continue
-        elif line.startswith("http") and skip_next_url:
-            skip_next_url = False
+            skip_next = 0
+        elif skip_next > 0:
+            skip_next -= 1
             continue
         else:
             kept_lines.append(line)
@@ -155,7 +102,7 @@ def append_to_mirti68(new_entries):
             out.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
             out.write(f"{url}\n")
 
-    print(f"✅ Append tamam: eski {GROUP_NAME} temizlendi + {len(new_entries)} beIN eklendi")
+    print(f"✅ Tamam: eski {GROUP_NAME} silindi, {len(new_entries)} yeni eklendi")
 
 def main():
     print("--- 🏟  SLCK (SelcukSportsHD) beIN taraniyor ---")
@@ -173,16 +120,9 @@ def main():
 
     entries = []
     for cid in ids:
-        cid, url = resolve(cid)
-        if url:
-            entries.append((pretty(cid), url))
-            print(f"  ✅ {pretty(cid)}")
-        else:
-            print(f"  ❌ {pretty(cid)}: erisilemedi")
-
-    if not entries:
-        print("❌ HIC CALISAN beIN YOK")
-        sys.exit(1)
+        url = f"{STREAM_DOMAIN}/live/{cid}/playlist.m3u8"
+        entries.append((pretty(cid), url))
+        print(f"  ✅ {pretty(cid)}")
 
     entries.sort(key=lambda x: x[0].lower())
     append_to_mirti68(entries)
