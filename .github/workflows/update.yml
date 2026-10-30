@@ -31,6 +31,8 @@ jobs:
         run: python kanald.py
       - name: 5 - ATV
         run: python atv.py
+        - name: 6- SELCUK
+        run: python selcuk.py
       - name: Commit
         run: |
           git config --global user.name "bot"
