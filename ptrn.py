@@ -24,7 +24,7 @@ import warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
-HOME_URL = "https://patronsaha1.cfd/"
+HOME_URL = "https://gooolspor-lab.github.io/macweb/"
 
 OUTPUT_FILENAME = "mirti68.m3u"
 STATIC_LOGO = "https://ibb.co/BV3Rw9Pp"
