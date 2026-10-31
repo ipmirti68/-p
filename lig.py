@@ -82,7 +82,7 @@ def fetch_and_parse(url_info):
         return []
 
 def main():
-    output_folder = 'metv'
+    output_folder = 'lig.m3u'
     os.makedirs(output_folder, exist_ok=True)
 
     all_urls_to_fetch = []
