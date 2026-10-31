@@ -25,8 +25,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
 HOME_URL = "https://golvarmac1.pro/"
-OUTPUT_FILENAME = "golvar.m3u"
-GROUP = "Golvar"
+OUTPUT_FILENAME = "mirti68.m3u"
+GROUP = "🖥beINSPORTS"
 
 # Segmentler su an referersiz de calisiyor; yine de referer eklenir
 # (kaynak gerekli hale gelirse oynaticida kirilmasin).
@@ -49,11 +49,7 @@ PRETTY_NAMES = {
     "bein sports 5": "beIN Sports 5",
     "bein sports max 1": "beIN Sports Max 1",
     "bein sports max 2": "beIN Sports Max 2",
-    "s sport": "S Sport",
-    "s sport 2": "S Sport 2",
-    "trt spor": "TRT Spor",
-    "trt 1": "TRT 1",
-    "a spor": "A Spor",
+    
 }
 
 
@@ -215,7 +211,7 @@ def main():
         print("\n❌ HIC CALISAN YAYIN YOK - golvar.m3u DEGISTIRILMIYOR")
         sys.exit(1)
 
-    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
+    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
         f.write("#EXTM3U\n" + "\n".join(entries))
 
     print(f"\n✅ ISLEM TAMAMLANDI!  {len(entries)} yayin  ->  {os.path.abspath(OUTPUT_FILENAME)}")
