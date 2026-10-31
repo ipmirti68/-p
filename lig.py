@@ -4,15 +4,8 @@ import json
 import requests
 import concurrent.futures
 
-# --- AYARLAR ---
-super_lig_sezonlar = {
-    3853: '2025/2026', 
-    3974: '2026/2027',
-}
-super_lig_haftalar = {
-    3853: range(1, 39),
-    3974: range(1, 39),
-}
+super_lig_sezonlar = { 3853: '2025/2026', 3974: '2026/2027' }
+super_lig_haftalar = { 3853: range(1, 39), 3974: range(1, 39) }
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
@@ -33,10 +26,9 @@ def get_birinci_lig_urls_dynamically():
         if not highlights_data: return []
         for season in highlights_data[0].get("seasons", []):
             sid = season.get("id")
-            sname = season.get("name")
             for rnd in season.get("rounds", []):
                 url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=130&s={sid}&r={rnd.get('round')}&st={rnd.get('st',0)}"
-                urls_to_fetch.append((url, f"TFF 1. Lig {sname}"))
+                urls_to_fetch.append((url, sid))
         return urls_to_fetch
     except Exception as e:
         print(f"TFF 1. Lig hatası: {e}")
@@ -56,42 +48,58 @@ def fetch_and_parse(url_info):
             hs = ev.get('homeTeam', {}).get('matchScore', '-')
             aws = ev.get('awayTeam', {}).get('matchScore', '-')
             video_url = ev.get('highlightVideoUrl') or ev.get('videoUrl') or ev.get('mp4Url')
-            logo = ev.get('highlightThumbnail', '') or ev.get('thumbnail', '')
+            logo = ev.get('highlightThumbnail', '') or ''
             mid = ev.get('matchId', '')
             if video_url:
                 title = f"{home} {hs}-{aws} {away}"
-                # DİREKT GOLLER GRUBU
                 line1 = f'#EXTINF:-1 tvg-id="{mid}" tvg-logo="{logo}" group-title="GOLLER",{title}\n'
-                line2 = f"{video_url}\n"
+                line2 = f"{video_url.strip()}\n"
                 result.append((line1, line2))
         return result
-    except Exception as e:
-        print(f"FAIL {url} - {e}")
+    except:
         return []
 
 def main():
+    dosya = "mirti68.m3u"
+    
+    # 1. MEVCUT DOSYAYI OKU
+    mevcut_linkler = set()
+    if os.path.exists(dosya):
+        with open(dosya, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and line.startswith("http"):
+                    mevcut_linkler.add(line)
+        print(f"Mevcut dosyada {len(mevcut_linkler)} video var, silinmeyecek.")
+    else:
+        print("Mevcut dosya yok, yeni oluşturulacak.")
+        with open(dosya, "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n\n")
+
+    # 2. YENİLERİ ÇEK
     all_urls = []
-    for sid, sname in super_lig_sezonlar.items():
+    for sid in super_lig_sezonlar.keys():
         for hafta in super_lig_haftalar.get(sid, range(1,39)):
             url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=18&s={sid}&r={hafta}&st=0"
-            all_urls.append((url, sname))
-
+            all_urls.append((url, sid))
     all_urls.extend(get_birinci_lig_urls_dynamically())
-    print(f"Toplam {len(all_urls)} hafta taranacak...")
 
-    all_videos = []
+    yeni_videolar = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
         for res in ex.map(fetch_and_parse, all_urls):
-            all_videos.extend(res)
+            for l1, l2 in res:
+                if l2.strip() not in mevcut_linkler:
+                    yeni_videolar.append((l1, l2))
 
-    # mirti68.m3u oluştur
-    with open("mirti68.m3u", "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n\n")
-        for l1, l2 in all_videos:
-            f.write(l1)
-            f.write(l2)
-
-    print(f"BİTTİ: {len(all_videos)} gol -> mirti68.m3u oluşturuldu")
+    # 3. SADECE YENİLERİ EKLE (APPEND)
+    if yeni_videolar:
+        with open(dosya, "a", encoding="utf-8") as f:
+            for l1, l2 in yeni_videolar:
+                f.write(l1)
+                f.write(l2)
+        print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi -> {dosya}")
+    else:
+        print("Yeni gol yok, dosya aynı kaldı.")
 
 if __name__ == "__main__":
     main()
