@@ -83,7 +83,7 @@ def append_to_mirti68(new_entries):
         for l in lines[1:]:
             out.write(l if l.endswith("\n") else l + "\n")
         for name, url in new_entries:
-            out.write(f'#EXTINF:-1 group-title="{GROUP_NAME}", {name}\n')
+            out.write(f'#EXTINF:-1 group-title="{GROUP_NAME}" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg", {name}\n')
             out.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
             out.write(f"{url}\n")
 
