@@ -42,13 +42,13 @@ HEADERS = {
 
 # Site buyuk harfle yazar; diger kaynaklarla ayni gorunen adlari kullan.
 PRETTY_NAMES = {
-    "bein sports 1": "beIN SPORTS 1",
-    "bein sports 2": "beIN SPORTS 2",
-    "bein sports 3": "beIN SPORTS 3",
-    "bein sports 4": "beIN SPORTS 4",
-    "bein sports 5": "beIN SPORTS 5",
-    "bein sports max 1": "beIN SPORTS MAX 1",
-    "bein sports max 2": "beIN SPORTS MAX 2",
+    "bein sports 1": "beIN SPORTS 1 Arda 🔴 ",
+    "bein sports 2": "beIN SPORTS 2 Arda 🔴 ",
+    "bein sports 3": "beIN SPORTS 3 Arda 🔴 ",
+    "bein sports 4": "beIN SPORTS 4 Arda 🔴 ",
+    "bein sports 5": "beIN SPORTS 5 Arda 🔴 ",
+    "bein sports max 1": "beIN SPORTS MAX 1 Arda 🔴 ",
+    "bein sports max 2": "beIN SPORTS MAX 2 Arda 🔴 ",
     
 }
 
