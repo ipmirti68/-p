@@ -172,8 +172,15 @@ def main():
         print("❌ HIC SAYFA YOK - golvar.m3u DEGISTIRILMIYOR")
         sys.exit(1)
               # --- SADECE 7 KANAL KALSIN - ESNEK FILTRE ---
-    ALLOWED = ["sports 1", "sports 2", "sports 3", "sports 4", "sports 5", "max 1", "max 2"]
-    results = []
+    
+ALLOWED = ["sports 1", "sports 2", "sports 3", "sports 4", "sports 5", "max 1", "max 2"]
+filtered_items = []
+for title, slug in items:
+    low = title.lower()
+    if any(a in low for a in ALLOWED):
+        filtered_items.append((title, slug))
+
+print(f"{len(items)} -> {len(filtered_items)} sadece SPORTS kaldı") results = []
 
     def work(item):
         title, slug = item
