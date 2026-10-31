@@ -27,7 +27,7 @@ https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-2
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL 🔗",NOW TV
 #EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=64FebSs_Duso-LQPQxXAiQ&e=1793444468
+https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=nBkntW8idsRN1t3DZvPpLg&e=1793445016
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL 🔗",KANAL 7
 #EXTVLCOPT:http-referrer=https://www.kanal7.com/
@@ -5860,6 +5860,153 @@ https://css.d6e3eds5e065t5.help//beinmax1/tracks-v1a1/mono.m3u8
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//beinmax2/tracks-v1a1/mono.m3u8
 
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN Con 1 Selcuk 🔴
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinconnect1/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 1 Selcuk 🔴
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports1/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 2 Selcuk 🔴
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports2/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 3 Selcuk 🔴 
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports3/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 4 Selcuk 🔴
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports4/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 5 Selcuk 🔴
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsports5/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS Haber Selcuk 🔴
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportshaber/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS MAX 1 Selcuk 🔴
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportsmax1/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS MAX 2 Selcuk 🔴
+#EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
+https://dga1op10s1u3lea.9e694e1c2ce7ac.click/live/selcukbeinsportsmax2/playlist.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN SPORTS 1 Mahsun 🔴
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebiraz1.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN SPORTS 1 Mahsun 🔴
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs1.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN SPORTS 2 Mahsun 🔴
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs2.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN SPORTS 3 Mahsun 🔴
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs3.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN SPORTS 4 Mahsun 🔴
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs4.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN SPORTS 5 Mahsun 🔴
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebs5.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN SPORTS MAX 1 Mahsun 🔴
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebsm1.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN SPORTS MAX 2 Mahsun 🔴
+#EXTVLCOPT:http-referrer=https://birazcikspor44.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36
+https://andro.evrenesoglu219.click/checklist/androstreamlivebsm2.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 1 Atom 🔴 
+https://css.d6e3eds5e065t5.help//beintv/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 2 Atom 🔴
+https://css.d6e3eds5e065t5.help//bein2/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 3 Atom 🔴
+https://css.d6e3eds5e065t5.help//bein3/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 4 Atom 🔴
+https://css.d6e3eds5e065t5.help//bein4/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 5 Atom 🔴
+https://css.d6e3eds5e065t5.help//bein5/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS MAX 1 Atom 🔴
+https://css.d6e3eds5e065t5.help//beinmax1/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS MAX 2 Atom 🔴
+https://css.d6e3eds5e065t5.help//beinmax2/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 1 Atom 🔴 
+https://css.d6e3eds5e065t5.help//beintv/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 2 Atom 🔴
+https://css.d6e3eds5e065t5.help//bein2/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 3 Atom 🔴
+https://css.d6e3eds5e065t5.help//bein3/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 4 Atom 🔴
+https://css.d6e3eds5e065t5.help//bein4/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS 5 Atom 🔴
+https://css.d6e3eds5e065t5.help//bein5/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS MAX 1 Atom 🔴
+https://css.d6e3eds5e065t5.help//beinmax1/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS MAX 2 Atom 🔴
+https://css.d6e3eds5e065t5.help//beinmax2/tracks-v1a1/mono.m3u8
+#EXTM3U
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 1 Arda 🔴
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//hls/bein1.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 3 Arda 🔴
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//bein3/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 5 Arda 🔴
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//bein5/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 4 Arda 🔴
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//bein4/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 2 Arda 🔴
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//bein2/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS MAX 1 Arda 🔴
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//beinmax1/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS MAX 2 Arda 🔴
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//beinmax2/tracks-v1a1/mono.m3u8
+
 #EXTINF:-1 tvg-id="vod.tr" tvg-name=" Tuzlu Kahve 1. Bölüm" tvg-logo="https://media.startv.com.tr/star-tv/images/bugra.jpg" group-title="STAR Dizileri",TR: Tuzlu Kahve 1. Bölüm
 https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a97c234a46e38b3a3925061&SecretKey=NtvApiSecret2014*&.m3u8
 
@@ -5974,15 +6121,12 @@ https://css.d6e3eds5e065t5.help//beinmax1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🖥beINSPORTS", beIN SPORTS MAX 2 Atom 🔴
 https://css.d6e3eds5e065t5.help//beinmax2/tracks-v1a1/mono.m3u8
 #EXTM3U
-#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 1 Arda 🔴
-#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
-https://css.d6e3eds5e065t5.help//hls/bein1.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 3 Arda 🔴
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//bein3/tracks-v1a1/mono.m3u8
-#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 5 Arda 🔴
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 1 Arda 🔴
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
-https://css.d6e3eds5e065t5.help//bein5/tracks-v1a1/mono.m3u8
+https://css.d6e3eds5e065t5.help//hls/bein1.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 4 Arda 🔴
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//bein4/tracks-v1a1/mono.m3u8
@@ -5992,6 +6136,9 @@ https://css.d6e3eds5e065t5.help//bein2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS MAX 1 Arda 🔴
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//beinmax1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS 5 Arda 🔴
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//bein5/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", beIN SPORTS MAX 2 Arda 🔴
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//beinmax2/tracks-v1a1/mono.m3u8
