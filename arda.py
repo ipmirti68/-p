@@ -25,10 +25,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
 HOME_URL = "https://golvarmac1.pro/"
-
-OUTPUT_FILENAME = "mirti68.m3u"
-STATIC_LOGO = "https://ibb.co/BV3Rw9Pp"
-GROUP = "🖥beINSPORTS"
+OUTPUT_FILENAME = "golvar.m3u"
+GROUP = "Golvar"
 
 # Segmentler su an referersiz de calisiyor; yine de referer eklenir
 # (kaynak gerekli hale gelirse oynaticida kirilmasin).
@@ -44,13 +42,18 @@ HEADERS = {
 
 # Site buyuk harfle yazar; diger kaynaklarla ayni gorunen adlari kullan.
 PRETTY_NAMES = {
-    "bein sports 1": "beIN SPORTS 1 Arda 🔴",
-    "bein sports 2": "beIN SPORTS 2 Arda 🔴",
-    "bein sports 3": "beIN SPORTS 3 Arda 🔴",
-    "bein sports 4": "beIN SPORTS 4 Arda 🔴",
-    "bein sports 5": "beIN SPORTS 5 Arda 🔴",
-    "bein sports max 1": "beIN SPORTS MAX 1 Arda 🔴",
-    "bein sports max 2": "beIN SPORTS MAX 2 Arda 🔴",
+    "bein sports 1": "beIN Sports 1",
+    "bein sports 2": "beIN Sports 2",
+    "bein sports 3": "beIN Sports 3",
+    "bein sports 4": "beIN Sports 4",
+    "bein sports 5": "beIN Sports 5",
+    "bein sports max 1": "beIN Sports Max 1",
+    "bein sports max 2": "beIN Sports Max 2",
+    "s sport": "S Sport",
+    "s sport 2": "S Sport 2",
+    "trt spor": "TRT Spor",
+    "trt 1": "TRT 1",
+    "a spor": "A Spor",
 }
 
 
@@ -162,6 +165,7 @@ def verify(session, url):
         return None
     return None
 
+
 def main():
     print("--- 🏟  Golvar taraniyor ---")
     html = fetch_home()
@@ -203,20 +207,15 @@ def main():
             continue
         seen.add(url)
         entries.append(
-            f'#EXTINF:-1 group-title="{GROUP}" tvg-logo= "https://ibb.co/BV3Rw9Pp", {title}\n'
+            f'#EXTINF:-1 group-title="{GROUP}", {title}\n'
             f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n{url}"
         )
 
     if not entries:
-        print("\n❌ HIC CALISAN YAYIN YOK - mirti68.m3u DEGISTIRILMIYOR")
+        print("\n❌ HIC CALISAN YAYIN YOK - golvar.m3u DEGISTIRILMIYOR")
         sys.exit(1)
-        # --- SADECE 7 KANAL KALSIN - ESNEK FILTRE ---
-    ALLOWED = ["sports 1", "sports 2", "sports 3", "sports 4", "sports 5", "max 1", "max 2"]
-    entries = [e for e in entries if any(name in e.lower() for name in ALLOWED)]
-    # --- BITTI ---  entries = [e for e in entries if any(name in e for name in ALLOWED)]
-    # --- BITTI ---
 
-    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
+    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n" + "\n".join(entries))
 
     print(f"\n✅ ISLEM TAMAMLANDI!  {len(entries)} yayin  ->  {os.path.abspath(OUTPUT_FILENAME)}")
