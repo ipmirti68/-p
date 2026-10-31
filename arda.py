@@ -171,7 +171,8 @@ def main():
     if not items:
         print("❌ HIC SAYFA YOK - golvar.m3u DEGISTIRILMIYOR")
         sys.exit(1)
-
+              # --- SADECE 7 KANAL KALSIN - ESNEK FILTRE ---
+    ALLOWED = ["sports 1", "sports 2", "sports 3", "sports 4", "sports 5", "max 1", "max 2"]
     results = []
 
     def work(item):
