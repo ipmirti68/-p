@@ -1,4 +1,4 @@
-""Golvar (https://patronsaha1.cfd/) spor kaynagi botu.
+"""Golvar (https://patronsaha1.cfd/) spor kaynagi botu.
 
 Akis:
   1) ``beget=begetok`` cookie + reload ile ana sayfa acilir (Cloudflare/Beget kilidi).
