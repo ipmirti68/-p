@@ -163,6 +163,7 @@ def verify(session, url):
 
 
 def main():
+def main():
     print("--- 🏟  Golvar taraniyor ---")
     html = fetch_home()
     items = parse_items(html)
@@ -171,18 +172,19 @@ def main():
     if not items:
         print("❌ HIC SAYFA YOK - golvar.m3u DEGISTIRILMIYOR")
         sys.exit(1)
-              # --- SADECE 7 KANAL KALSIN - ESNEK FILTRE ---
-    
-ALLOWED = ["sports 1", "sports 2", "sports 3", "sports 4", "sports 5", "max 1", "max 2"]
-filtered_items = []
-for title, slug in items:
-    low = title.lower()
-    if any(a in low for a in ALLOWED):
-        filtered_items.append((title, slug))
 
-    print(f"{len(items)} -> {len(filtered_items)} sadece SPORTS kaldı") 
+    # --- SADECE 7 KANAL KALSIN - ESNEK FILTRE ---
+    ALLOWED = ["sports 1", "sports 2", "sports 3", "sports 4", "sports 5", "max 1", "max 2"]
+    filtered_items = []
+    for title, slug in items:
+        low = title.lower()
+        if any(a in low for a in ALLOWED):
+            filtered_items.append((title, slug))
+
+    print(f"{len(items)} -> {len(filtered_items)} sadece SPORTS kaldı")
     results = []
 
+    # work ve ThreadPool buradan devam edecek...
     def work(item):
         title, slug = item
         s = make_session()  # her is parcasinda kendi session/cerez
