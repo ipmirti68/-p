@@ -180,8 +180,8 @@ for title, slug in items:
     if any(a in low for a in ALLOWED):
         filtered_items.append((title, slug))
 
-print(f"{len(items)} -> {len(filtered_items)} sadece SPORTS kaldı") 
-results = []
+    print(f"{len(items)} -> {len(filtered_items)} sadece SPORTS kaldı") 
+    results = []
 
     def work(item):
         title, slug = item
