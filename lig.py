@@ -3,129 +3,112 @@ import re
 import json
 import requests
 import concurrent.futures
-from datetime import datetime
-import traceback
 
-# --- LİG BİLGİLERİ ---
-super_lig_sezonlar = {
-    3853: '2025/2026', 3974: '2026/2027',
-}
-super_lig_haftalar = {
-    32: range(1, 35), 30: range(1, 35), 25: range(1, 35),
-    34: range(1, 35), 37: range(1, 35), 24: range(1, 35),
-    29: range(1, 35), 23: range(1, 35), 20: range(1, 35),
-    994: range(1, 35), 3189: range(1, 43), 3308: range(1, 39),
-    3438: range(1, 39), 3580: range(1, 39), 3746: range(1, 39),
-    3853: range(1, 39), 3974: range(1, 39),
-}
-super_lig_st = {key: 0 for key in super_lig_sezonlar.keys()}
+super_lig_sezonlar = { 3853: '2025/2026', 3974: '2026/2027' }
+super_lig_haftalar = { 3853: range(1, 39), 3974: range(1, 39) }
+super_lig_st = {3853: 0, 3974: 0}
 
-# --- TFF 1. LİG URL ÇEKME ---
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+    'Referer': 'https://www.beinsports.com.tr/',
+    'Origin': 'https://www.beinsports.com.tr'
+}
+
 def get_birinci_lig_urls_dynamically():
     page_url = "https://www.beinsports.com.tr/mac-ozetleri-goller/tff-1-lig"
     urls_to_fetch = []
     try:
-        response = requests.get(page_url, timeout=20, headers={
-            'User-Agent': 'Mozilla/5.0'
-        })
-        response.raise_for_status()
-        match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', response.text, re.DOTALL)
-        if not match: return []
+        r = requests.get(page_url, timeout=20, headers=HEADERS)
+        r.raise_for_status()
+        match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', r.text, re.DOTALL)
+        if not match: 
+            print("NEXT_DATA bulunamadı")
+            return []
         data = json.loads(match.group(1))
         highlights_data = data.get("props", {}).get("pageProps", {}).get("initialReduxState", {}).get("highlights", {}).get("data", [])
-        if not highlights_data: return []
-
-        league_info = highlights_data[0]
-        seasons = league_info.get("seasons", [])
-
-        for season in seasons:
+        if not highlights_data:
+            print("highlights data boş")
+            return []
+        for season in highlights_data[0].get("seasons", []):
             season_name = season.get("name")
             season_id = season.get("id")
-            rounds = season.get("rounds", [])
-            group_title = f"TFF 1. Lig {season_name}"
-            for round_info in rounds:
-                round_number = round_info.get("round")
-                st_code = round_info.get("st", 0)
-                if season_id and round_number:
-                    url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=130&s={season_id}&r={round_number}&st={st_code}"
-                    urls_to_fetch.append((url, group_title))
+            for rnd in season.get("rounds", []):
+                url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=130&s={season_id}&r={rnd.get('round')}&st={rnd.get('st',0)}"
+                urls_to_fetch.append((url, f"TFF 1. Lig {season_name}"))
+        print(f"TFF 1. Lig için {len(urls_to_fetch)} URL bulundu")
         return urls_to_fetch
     except Exception as e:
-        print("TFF 1. Lig veri hatası:", e)
+        print(f"TFF 1. Lig hatası: {e}")
         return []
 
-# --- VERİ ÇEKME VE M3U OLUŞTURMA ---
 def fetch_and_parse(url_info):
     url, group_title = url_info
     try:
-        response = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
-        response.raise_for_status()
-        data = response.json()
-        events = data.get('Data', {}).get('events', [])
+        r = requests.get(url, timeout=15, headers=HEADERS)
+        r.raise_for_status()
+        j = r.json()
+        # API bazen Data, bazen data
+        events = j.get('Data', {}).get('events', []) or j.get('data', {}).get('events', []) or j.get('events', [])
         result = []
-        for event in events:
-            home = event.get('homeTeam', {}).get('name', 'Ev Sahibi')
-            home_score = event.get('homeTeam', {}).get('matchScore', '-')
-            away = event.get('awayTeam', {}).get('name', 'Deplasman')
-            away_score = event.get('awayTeam', {}).get('matchScore', '-')
-            video_url = event.get('highlightVideoUrl')
-            logo = event.get('highlightThumbnail', '')
-            match_id = event.get('matchId', '')
+        for ev in events:
+            home = ev.get('homeTeam', {}).get('name', 'Ev')
+            away = ev.get('awayTeam', {}).get('name', 'Dep')
+            hs = ev.get('homeTeam', {}).get('matchScore', '-')
+            aws = ev.get('awayTeam', {}).get('matchScore', '-')
+            # video alanı değişmiş olabilir
+            video_url = ev.get('highlightVideoUrl') or ev.get('videoUrl') or ev.get('video_url') or ev.get('mp4Url')
+            logo = ev.get('highlightThumbnail', '') or ev.get('thumbnail', '')
+            mid = ev.get('matchId', '')
             if video_url:
-                title = f"{home} {home_score}-{away_score} {away}"
-                line1 = f'#EXTINF:-1 tvg-id="{match_id}" tvg-logo="{logo}" group-title="{group_title}",{title}\n'
+                title = f"{home} {hs}-{aws} {away}"
+                line1 = f'#EXTINF:-1 tvg-id="{mid}" tvg-logo="{logo}" group-title="{group_title}",{title}\n'
                 line2 = f"{video_url}\n"
                 result.append((group_title, line1, line2))
+        if result:
+            print(f"OK {group_title} -> {url} : {len(result)} video")
         return result
     except Exception as e:
-        print(f"Hata URL: {url} - {e}")
+        print(f"FAIL {url} - {e}")
         return []
 
 def main():
-    output_folder = 'lig.m3u'
+    output_folder = 'output' # DÜZELTİLDİ: lig.m3u değil
     os.makedirs(output_folder, exist_ok=True)
 
-    all_urls_to_fetch = []
+    all_urls = []
+    for sid, sname in super_lig_sezonlar.items():
+        for hafta in super_lig_haftalar.get(sid, range(1,39)):
+            url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=18&s={sid}&r={hafta}&st={super_lig_st.get(sid,0)}"
+            all_urls.append((url, f"Süper Lig {sname}"))
+    
+    all_urls.extend(get_birinci_lig_urls_dynamically())
+    print(f"Toplam {len(all_urls)} URL çekilecek...")
 
-    # Süper Lig
-    for sezon_id, sezon_adi in super_lig_sezonlar.items():
-        haftalar = super_lig_haftalar.get(sezon_id, range(1, 39))
-        st = super_lig_st.get(sezon_id, 0)
-        group_title = f"Süper Lig {sezon_adi}"
-        for hafta in haftalar:
-            url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=18&s={sezon_id}&r={hafta}&st={st}"
-            all_urls_to_fetch.append((url, group_title))
+    grouped = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+        for res in ex.map(fetch_and_parse, all_urls):
+            for g, l1, l2 in res:
+                grouped.setdefault(g, []).append((l1,l2))
 
-    # TFF 1. Lig
-    all_urls_to_fetch.extend(get_birinci_lig_urls_dynamically())
-
-    grouped_results = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-        future_results = executor.map(fetch_and_parse, all_urls_to_fetch)
-        for result_list in future_results:
-            for group_title, line1, line2 in result_list:
-                grouped_results.setdefault(group_title, []).append((line1, line2))
-
-    all_lines_combined = []
-    for group_title, lines in sorted(grouped_results.items()):
-        safe_folder_name = group_title.replace('/', '-').replace(' ', '_')
-        folder_path = os.path.join(output_folder, safe_folder_name)
-        os.makedirs(folder_path, exist_ok=True)
-        file_path = os.path.join(folder_path, f"{safe_folder_name}.m3u")
-        with open(file_path, 'w', encoding='utf-8') as f:
+    if not grouped:
+        print("HİÇ VİDEO BULUNAMADI! API engelliyor olabilir.")
+    
+    all_combined = []
+    for g, lines in sorted(grouped.items()):
+        safe = g.replace('/','-').replace(' ','_')
+        fp = os.path.join(output_folder, f"{safe}.m3u")
+        with open(fp, 'w', encoding='utf-8') as f:
             f.write("#EXTM3U\n\n")
-            for line1, line2 in lines:
-                f.write(line1)
-                f.write(line2)
-                all_lines_combined.append((line1, line2))
+            for l1,l2 in lines:
+                f.write(l1); f.write(l2)
+                all_combined.append((l1,l2))
 
-    # Master M3U
-    all_m3u_path = os.path.join(output_folder, 'all_leagues.m3u')
-    with open(all_m3u_path, 'w', encoding='utf-8') as f:
+    with open(os.path.join(output_folder, 'all_leagues.m3u'), 'w', encoding='utf-8') as f:
         f.write("#EXTM3U\n\n")
-        for line1, line2 in all_lines_combined:
-            f.write(line1)
-            f.write(line2)
+        for l1,l2 in all_combined:
+            f.write(l1); f.write(l2)
+    
+    print(f"BİTTİ: {len(all_combined)} video -> {output_folder}/all_leagues.m3u")
 
 if __name__ == "__main__":
     main()
