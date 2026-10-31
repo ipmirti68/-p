@@ -1,4 +1,4 @@
-"""Golvar (golvarmac1.pro) spor kaynagi botu.
+8"""Golvar (golvarmac1.pro) spor kaynagi botu.
 
 Akis:
   1) ``beget=begetok`` cookie + reload ile ana sayfa acilir (Cloudflare/Beget kilidi).
@@ -162,7 +162,7 @@ def verify(session, url):
     return None
 
 
-def main():
+
 def main():
     print("--- 🏟  Golvar taraniyor ---")
     html = fetch_home()
