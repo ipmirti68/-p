@@ -245,7 +245,7 @@ def main():
             url = fut.result()
             if url:
                 entries.append(
-                    f'#EXTINF:-1 group-title= "{🖥beINSPORTS}" için tvg-logo="https://i.imgur.com/OqdfQmw.png", {title}\n'
+                    f'#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", {title}\n'
                     f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n{url}"
                 )
                 ok += 1
