@@ -3,6 +3,7 @@ import re
 import json
 import requests
 import concurrent.futures
+from datetime import datetime
 
 super_lig_sezonlar = { 3853: '2025/2026', 3974: '2026/2027' }
 super_lig_haftalar = { 3853: range(1, 39), 3974: range(1, 39) }
@@ -50,9 +51,20 @@ def fetch_and_parse(url_info):
             video_url = ev.get('highlightVideoUrl') or ev.get('videoUrl') or ev.get('mp4Url')
             logo = ev.get('highlightThumbnail', '') or ''
             mid = ev.get('matchId', '')
+
+            # TARİH
+            raw_date = ev.get('eventDate') or ev.get('matchDate') or ev.get('date') or ev.get('startDate') or ev.get('eventTime')
+            tarih_str = ""
+            if raw_date:
+                try:
+                    dt = datetime.fromisoformat(str(raw_date).replace("Z", "+00:00"))
+                    tarih_str = dt.strftime("%d.%m.%Y")
+                except:
+                    tarih_str = str(raw_date)[:10]
+
             if video_url:
-                title = f"{home} {hs}-{aws} {away}"
-                line1 = f'#EXTINF:-1 tvg-id="{mid}" tvg-logo="{logo}" group-title="GOLLER",{title}\n'
+                title = f"{tarih_str} - {home} {hs}-{aws} {away}" if tarih_str else f"{home} {hs}-{aws} {away}"
+                line1 = f'#EXTINF:-1 tvg-id="{mid}" tvg-logo="{logo}" group-title="⚽🔥 GOLLER",{title}\n'
                 line2 = f"{video_url.strip()}\n"
                 result.append((line1, line2))
         return result
@@ -62,7 +74,6 @@ def fetch_and_parse(url_info):
 def main():
     dosya = "mirti68.m3u"
     
-    # 1. MEVCUT DOSYAYI OKU
     mevcut_linkler = set()
     if os.path.exists(dosya):
         with open(dosya, "r", encoding="utf-8") as f:
@@ -70,13 +81,12 @@ def main():
                 line = line.strip()
                 if line and not line.startswith("#") and line.startswith("http"):
                     mevcut_linkler.add(line)
-        print(f"Mevcut dosyada {len(mevcut_linkler)} video var, silinmeyecek.")
+        print(f"Mevcut: {len(mevcut_linkler)} video korunacak.")
     else:
-        print("Mevcut dosya yok, yeni oluşturulacak.")
+        print("Dosya yok, yeni oluşturuluyor.")
         with open(dosya, "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n\n")
 
-    # 2. YENİLERİ ÇEK
     all_urls = []
     for sid in super_lig_sezonlar.keys():
         for hafta in super_lig_haftalar.get(sid, range(1,39)):
@@ -89,17 +99,4 @@ def main():
         for res in ex.map(fetch_and_parse, all_urls):
             for l1, l2 in res:
                 if l2.strip() not in mevcut_linkler:
-                    yeni_videolar.append((l1, l2))
-
-    # 3. SADECE YENİLERİ EKLE (APPEND)
-    if yeni_videolar:
-        with open(dosya, "a", encoding="utf-8") as f:
-            for l1, l2 in yeni_videolar:
-                f.write(l1)
-                f.write(l2)
-        print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi -> {dosya}")
-    else:
-        print("Yeni gol yok, dosya aynı kaldı.")
-
-if __name__ == "__main__":
-    main()
+                    yeni_videolar
