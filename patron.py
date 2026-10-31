@@ -172,29 +172,33 @@ def main():
                     'away': away
                 })
                 
-                # Logoları kontrol et ve varsa yazdır
-                if home_logo and away_logo:
-                    print(f"  ✓ {home} - {away}: Her iki logo da mevcut")
-                elif home_logo or away_logo:
-                    print(f"  ✓ {home} - {away}: Tek logo mevcut")
-                else:
-                    print(f"  ✓ {home} - {away}: Logo yok")
-        
-        print(f"✅ {len(all_matches)} maç hazır.")
-        
-    except Exception as e:
-        print(f"⚠️ Maç API'si hatası: {e}")
-        print("Devam ediliyor...")
-    
-    # Sabit kanallar
-    print("\n📺 Sabit kanallar hazırlanıyor...")
-    
-    static_html = """<div id="matchList"><div class="channel-item" data-src="/ch.html?id=patron" data-id="channel_1">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS 1</span>
-                            </div>
+                      # Logoları kontrol et ve varsa yazdır
+        if home_logo and away_logo:
+            print(f" ✓ {home} - {away}: Her ikisi de var")
+        elif home_logo or away_logo:
+            print(f" ✓ {home} - {away}: Tek logo var")
+        else:
+            print(f" ✓ {home} - {away}: Logo yok")
+
+    print(f"✅ {len(all_matches)} maç hazır.")
+
+except Exception as e:
+    print(f"⚠️ Maç API'si hatası: {e}")
+    print("Devam ediliyor...")
+
+print("📺 Sabit kanallar hazırlanıyor...")
+
+html = '''
+<div id="matchList"><div class="channel-item" data-src="/ch.html?id=patron" data-id="channel_1">
+    <div class="channel-row" style="">
+        <div class="channel-left">
+            <div class="tv-icon-box">
+                <span class="channel-n">TEST</span>
+            </div>
+        </div>
+    </div>
+</div></div>
+'''
                             <div class="channel-right">
                                 <span class="channel-live-badge">CANLI</span>
                                 <img src="https://patronsports1.cfd/img/beinsports1.png" class="channel-logo-right" alt="">
