@@ -66,7 +66,7 @@ def generate_iptv_list():
         with open("mirti68.m3u", "a", encoding="utf-8") as f:
             for cid, cname in channels:
                 stream_url = f"{final_base}{cid}.m3u8"
-                f.write(f'#EXTINF:-1 group-title="🖥beINSPORTS",{cname}\n')
+                f.write(f'#EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.imgur.com/OqdfQmw.png", {cname}\n')
                 f.write(f"#EXTVLCOPT:http-referrer={active_domain}/\n")
                 f.write(f"#EXTVLCOPT:http-user-agent={user_agent}\n")
                 f.write(f"{stream_url}\n\n")
