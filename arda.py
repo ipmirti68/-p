@@ -1,4 +1,4 @@
-8"""Golvar (golvarmac1.pro) spor kaynagi botu.
+"""Golvar (golvarmac1.pro) spor kaynagi botu.
 
 Akis:
   1) ``beget=begetok`` cookie + reload ile ana sayfa acilir (Cloudflare/Beget kilidi).
