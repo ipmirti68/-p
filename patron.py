@@ -189,7 +189,7 @@ def main():
     # Sabit kanallar
     print("\n📺 Sabit kanallar hazırlanıyor...")
     
-    static_html = """<div id="matchList"><div class="channel-item" data-src="/ch.html?id=patron" data-id="channel_1">
+    static_html = " "<div id="matchList"><div class="channel-item" data-src="/ch.html?id=patron" data-id="channel_1">
                         <div class="channel-row" style="flex: 1;">
                             <div class="channel-left">
                                 <div class="tv-icon-box"></div>
