@@ -27,7 +27,7 @@ warnings.filterwarnings("ignore")
 HOME_URL = "https://golvarmac1.pro/"
 
 OUTPUT_FILENAME = "mirti68.m3u"
-STATIC_LOGO = "https://i.imgur.com/FZyAWkI.jpeg"
+STATIC_LOGO = "https://ibb.co/BV3Rw9Pp"
 GROUP = "🖥beINSPORTS"
 
 # Segmentler su an referersiz de calisiyor; yine de referer eklenir
@@ -203,7 +203,7 @@ def main():
             continue
         seen.add(url)
         entries.append(
-            f'#EXTINF:-1 group-title="{GROUP}" tvg-logo= "https://i.imgur.com/FZyAWkI.jpeg" , {title}\n'
+            f'#EXTINF:-1 group-title="{GROUP}" tvg-logo= "https://ibb.co/BV3Rw9Pp" , {title}\n'
             f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n{url}"
         )
 
