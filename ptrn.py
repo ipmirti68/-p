@@ -1,4 +1,4 @@
-"""Golvar (https://patronsaha1.cfd/) spor kaynagi botu.
+""Golvar (https://patronsaha1.cfd/) spor kaynagi botu.
 
 Akis:
   1) ``beget=begetok`` cookie + reload ile ana sayfa acilir (Cloudflare/Beget kilidi).
@@ -24,7 +24,7 @@ import warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
-HOME_URL = "https://izleamk1.com/"
+HOME_URL = "https://fixbettv84.com/"
 
 OUTPUT_FILENAME = "mirti68.m3u"
 STATIC_LOGO = "https://ibb.co/BV3Rw9Pp"
