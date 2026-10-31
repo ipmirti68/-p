@@ -24,7 +24,7 @@ import warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
-HOME_URL = "https://restizle858.com/"
+HOME_URL = "https://izleamk1.com/"
 
 OUTPUT_FILENAME = "mirti68.m3u"
 STATIC_LOGO = "https://ibb.co/BV3Rw9Pp"
@@ -163,7 +163,7 @@ def verify(session, url):
     return None
 
 def main():
-    print("--- 🏟  Golvar taraniyor ---")
+    print("--- 🏟   taraniyor ---")
     html = fetch_home()
     items = parse_items(html)
     print(f"✅ {len(items)} kaynak sayfasi bulundu (kanal + gunun maclari)")
