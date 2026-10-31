@@ -133,7 +133,7 @@ def main():
         print("\n📡 Maç API'sinden veriler alınıyor...")
         response = requests.get(MATCHES_API_URL, headers=HEADERS, timeout=15)
         matches = response.json()
-        print(f"🔍 API'den {len(matches)} maç kaydı alındı.")
+        print("f 🔍 API'den {len(matches)} maç kaydı alındı.")
         
         for match in matches:
             url_path = match.get('URL', '')
