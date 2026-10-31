@@ -38,7 +38,7 @@ jobs:
       - name: 8 - ATOM
         run: python atom.py
       - name: 9 - ARDA
-        run: python arda1.py
+        run: python arda.py
       - name: Commit
         run: |
           git config --global user.name "bot"
