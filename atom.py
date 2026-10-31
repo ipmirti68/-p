@@ -14,7 +14,7 @@ HEADERS = {
 }
 
 OUTPUT_FILENAME = "mirti68.m3u"
-STATIC_LOGO = "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+STATIC_LOGO = "https://i.imgur.com/71TSn0Q.jpeg"
 GROUP = "🖥beINSPORTS"
 
 # Ana sayfa yonlendirme zinciri (alan adi her ay degisebiliyor)
