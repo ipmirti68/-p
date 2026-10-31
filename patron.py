@@ -362,4 +362,4 @@ def main():
                         </div></div><div class="channel-item" data-src="/ch.html?id=trt1" data-id="channel_18">
                         <div class="channel-row" style="flex: 1;">
                             <div class="channel-left">
-                                <div class="t
+                                <div class="t"
