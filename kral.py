@@ -234,7 +234,9 @@ def main():
     if not tasks:
         print("❌ HIC YAYIN YOK - kral.m3u DEGISTIRILMIYOR")
         sys.exit(1)
-
+              # --- SADECE 7 KANAL KALSIN - ESNEK FILTRE ---
+    ALLOWED = ["sports 1", "sports 2", "sports 3", "sports 4", "sports 5", "max 1", "max 2"]
+  
     base = pick_working_base(tasks[0][1])
 
     ok = 0
