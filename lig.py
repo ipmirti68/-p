@@ -52,7 +52,6 @@ def fetch_and_parse(url_info):
             logo = ev.get('highlightThumbnail', '') or ''
             mid = ev.get('matchId', '')
 
-            # TARİH
             raw_date = ev.get('eventDate') or ev.get('matchDate') or ev.get('date') or ev.get('startDate') or ev.get('eventTime')
             tarih_str = ""
             if raw_date:
@@ -68,7 +67,8 @@ def fetch_and_parse(url_info):
                 line2 = f"{video_url.strip()}\n"
                 result.append((line1, line2))
         return result
-    except:
+    except Exception as e:
+        print(f"Hata {url}: {e}")
         return []
 
 def main():
@@ -76,7 +76,7 @@ def main():
     
     mevcut_linkler = set()
     if os.path.exists(dosya):
-        with open(dosya, "r", encoding="utf-8") as f:
+        with open(dosya, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith("#") and line.startswith("http"):
@@ -93,10 +93,24 @@ def main():
             url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=18&s={sid}&r={hafta}&st=0"
             all_urls.append((url, sid))
     all_urls.extend(get_birinci_lig_urls_dynamically())
+    print(f"Toplam {len(all_urls)} hafta taranacak")
 
     yeni_videolar = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
         for res in ex.map(fetch_and_parse, all_urls):
             for l1, l2 in res:
                 if l2.strip() not in mevcut_linkler:
-                    yeni_videolar
+                    yeni_videolar.append((l1, l2))
+
+    # ---- EKSİK OLAN KISIM BURASI ----
+    if yeni_videolar:
+        with open(dosya, "a", encoding="utf-8") as f:
+            for l1, l2 in yeni_videolar:
+                f.write(l1)
+                f.write(l2)
+        print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi -> {dosya}")
+    else:
+        print("Yeni gol yok, beIN API boş dönüyor olabilir.")
+
+if __name__ == "__main__":
+    main()
