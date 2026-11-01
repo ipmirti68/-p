@@ -49,6 +49,7 @@ scraper = cloudscraper.create_scraper(
         "desktop": True
     }
 )
+
 scraper.headers.update(HEADERS)
 
 
@@ -58,16 +59,16 @@ scraper.headers.update(HEADERS)
 
 def get_page(url):
     try:
-        r = scraper.get(url, timeout=30)
-        r.raise_for_status()
+        response = scraper.get(url, timeout=30)
+        response.raise_for_status()
 
-        if not r.encoding:
-            r.encoding = r.apparent_encoding
+        if not response.encoding:
+            response.encoding = response.apparent_encoding
 
-        return r.text
+        return response.text
 
-    except Exception as e:
-        print(f" SAYFA HATASI: {e}")
+    except Exception as error:
+        print(f"SAYFA HATASI: {error}")
         return None
 
 
@@ -91,22 +92,22 @@ def find_series_page(key, info):
 
         soup = BeautifulSoup(source, "html.parser")
 
-        for a in soup.find_all("a", href=True):
-            href = a["href"]
-            text = a.get_text(" ", strip=True).lower()
-            full = urljoin(BASE, href)
+        for link in soup.find_all("a", href=True):
+            href = link["href"]
+            text = link.get_text(" ", strip=True).lower()
+            full_url = urljoin(BASE, href)
 
             if (
-                "/dizi/tanitim/" in full.lower()
+                "/dizi/tanitim/" in full_url.lower()
                 and (
                     info["name"].lower() in text
-                    or info["slug"] in full.lower()
+                    or info["slug"] in full_url.lower()
                 )
             ):
-                print(f" TANITIM: {full}")
-                return full
+                print(f"TANITIM: {full_url}")
+                return full_url
 
-    print(" Tanıtım sayfası bulunamadı.")
+    print("Tanıtım sayfası bulunamadı.")
     return None
 
 
@@ -155,9 +156,9 @@ def get_episode_links(series_url, info):
         "roportaj"
     ]
 
-    for a in soup.find_all("a", href=True):
-        full = urljoin(BASE, a["href"])
-        lower_url = full.lower()
+    for link in soup.find_all("a", href=True):
+        full_url = urljoin(BASE, link["href"])
+        lower_url = full_url.lower()
 
         if "/dizi/tum_bolumler/" not in lower_url:
             continue
@@ -165,7 +166,7 @@ def get_episode_links(series_url, info):
         if info["slug"] not in lower_url:
             continue
 
-        title = a.get_text(" ", strip=True)
+        title = link.get_text(" ", strip=True)
 
         if any(word in lower_url for word in excluded):
             continue
@@ -173,10 +174,10 @@ def get_episode_links(series_url, info):
         if any(word in title.lower() for word in excluded):
             continue
 
-        number = get_episode_number(full, title)
+        number = get_episode_number(full_url, title)
 
         if number is not None:
-            links[number] = full
+            links[number] = full_url
 
     result = sorted(
         links.items(),
@@ -184,10 +185,10 @@ def get_episode_links(series_url, info):
         reverse=True
     )
 
-    print(f" Bulunan bölüm: {len(result)}")
+    print(f"Bulunan bölüm: {len(result)}")
 
     for number, url in result[:LIMIT]:
-        print(f" Bölüm {number}: {url}")
+        print(f"Bölüm {number}: {url}")
 
     return result[:LIMIT]
 
@@ -251,7 +252,7 @@ def extract_m3u8(source):
 
 
 def get_vmcdn(episode_url):
-    print(" M3U8 aranıyor...")
+    print("M3U8 aranıyor...")
 
     source = get_page(episode_url)
 
@@ -266,7 +267,7 @@ def get_vmcdn(episode_url):
 # ==================================================
 
 def get_poster(series_url, slug):
-    print(" POSTER ARANIYOR...")
+    print("POSTER ARANIYOR...")
 
     source = get_page(series_url)
     candidates = []
@@ -330,31 +331,31 @@ def get_poster(series_url, slug):
 
     for url in unique:
         try:
-            r = scraper.get(
+            response = scraper.get(
                 url,
                 timeout=15,
                 stream=True
             )
 
-            content_type = r.headers.get(
+            content_type = response.headers.get(
                 "Content-Type", ""
             ).lower()
 
             valid = (
-                r.status_code == 200
+                response.status_code == 200
                 and "image/" in content_type
             )
 
-            r.close()
+            response.close()
 
             if valid:
-                print(" POSTER BULUNDU:", url)
+                print("POSTER BULUNDU:", url)
                 return url
 
         except Exception:
             continue
 
-    print(" POSTER BULUNAMADI!")
+    print("POSTER BULUNAMADI!")
     return ""
 
 
@@ -388,8 +389,8 @@ def read_m3u_blocks(path):
         "r",
         encoding="utf-8-sig",
         errors="ignore"
-    ) as f:
-        lines = f.read().splitlines()
+    ) as file:
+        lines = file.read().splitlines()
 
     current = []
 
@@ -432,6 +433,139 @@ def update_mirti(new_entries):
     preserved = []
 
     for block in old_blocks:
+        first_line = block[0]
+
+        is_show = f'group-title="{GROUP}"' in first_line
+
+        if is_show:
+            old_title = (
+                first_line.split(",", 1)[1].strip()
+                if "," in first_line
+                else ""
+            )
+
+            if old_title in new_titles:
+                continue
+
+        preserved.append("\n".join(block).strip())
+
+    with open(
+        MIRTI,
+        "w",
+        encoding="utf-8"
+    ) as file:
+        file.write("#EXTM3U\n")
+
+        for entry in preserved + new_entries:
+            file.write(entry.strip() + "\n\n")
+
+    print(
+        f"\nMIRTI GÜNCELLENDİ: "
+        f"{len(new_entries)} yeni kayıt"
+    )
+
+
+# ==================================================
+# ANA PROGRAM
+# ==================================================
+
+def main():
+    print("=" * 50)
+    print("SHOW TV - OTOMATİK SON 3 BÖLÜM")
+    print("=" * 50)
+
+    entries = []
+
+    for key, info in SERIES.items():
+        print("\n" + "=" * 40)
+        print(info["name"])
+        print("=" * 40)
+
+        series_url = find_series_page(key, info)
+
+        if not series_url:
+            continue
+
+        poster = get_poster(
+            series_url,
+            info["slug"]
+        )
+
+        episodes = get_episode_links(
+            series_url,
+            info
+        )
+
+        if not episodes:
+            print("Bölüm bulunamadı.")
+            continue
+
+        added = 0
+
+        for number, episode_url in episodes:
+            print(f"\n{number}. BÖLÜM")
+
+            stream = get_vmcdn(episode_url)
+
+            if not stream:
+                print("M3U8 BULUNAMADI!")
+                time.sleep(1)
+                continue
+
+            entry = make_entry(
+                info["name"],
+                number,
+                stream,
+                poster
+            )
+
+            entries.append(entry)
+            added += 1
+
+            print("BAŞARILI!")
+            time.sleep(1)
+
+        print(
+            f"\n{info['name']}: "
+            f"{added} bölüm eklendi."
+        )
+
+    # Yeni kayıt bulunamazsa mevcut listeleri koru.
+    if not entries:
+        print("\nHİÇ YENİ YAYIN BULUNAMADI.")
+        print("Mevcut M3U dosyaları korunuyor.")
+        return
+
+    # SHOWTV.M3U DOSYASINI OLUŞTUR
+    with open(
+        M3U,
+        "w",
+        encoding="utf-8"
+    ) as file:
+        file.write("#EXTM3U\n")
+
+        for entry in entries:
+            file.write(entry.strip() + "\n\n")
+
+    print(
+        f"\n{M3U}: "
+        f"{len(entries)} kayıt oluşturuldu."
+    )
+
+    # ANA MIRTI LISTESINI GUNCELLE
+    update_mirti(entries)
+
+    print("\nİŞLEM TAMAMLANDI!")
+    print("=" * 50)
+
+
+# ==================================================
+# PROGRAMI BASLAT
+# ==================================================
+
+if __name__ == "__main__":
+    main()
+ck in old_blocks:
         first_line = block[0]
 
         is_show = f'group-title="{GROUP}"' in first_line
