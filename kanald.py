@@ -584,7 +584,7 @@ def main():
 
     with open(
         temp_file,
-        "w",
+        "a",
         encoding="utf-8"
     ) as f:
 
