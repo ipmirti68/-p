@@ -2,7 +2,7 @@ import requests, re, os
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 base_url="https://www.startv.com.tr"
-m3u_file="startv.m3u"
+m3u_file="mirti68.m3u"
 mirti_file="mirti68.m3u"
 WANTED_SERIES=["baskalarinin-hayati","tuzlu-kahve","sevdigim-sensin"]
 
