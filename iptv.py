@@ -3,8 +3,7 @@ import os
 import re
 import html
 import requests
-from urllib.parse import urljoin
-
+from m3u_manager import update_group
 # ==================================================
 # MIRTI68 - ULUSAL KANALLAR
 # ==================================================
