@@ -117,7 +117,7 @@ def main():
                 use_logo=ep.get("thumb") or logo
                 # logo varsa tvg-logo ekle
                 if use_logo:
-                    all_eps.append(f'#EXTINF:-1 tvg-logo="{use_logo}" group-title="STAR Dizileri",TR: {ep["name"]}\n{ep["url"]}\n')
+                    all_eps.append(f'#EXTINF:-1 tvg-logo="{use_logo}" group-title="STAR Dizileri", {ep["name"]}\n{ep["url"]}\n')
                 else:
                     all_eps.append(f'#EXTINF:-1 group-title="STAR Dizileri",TR: {ep["name"]}\n{ep["url"]}\n')
         except Exception as e:
