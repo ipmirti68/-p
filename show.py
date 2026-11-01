@@ -738,7 +738,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-  for block in old_entries:
+     for block in old_entries:
 
         info = "\n".join(block)
 
