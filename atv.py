@@ -10,10 +10,10 @@ scraper.headers.update({"Referer":"https://www.atv.com.tr/","User-Agent":"Mozill
 def fetch(url):
     try:
         r=scraper.get(url, timeout=20)
-        if len(r.text) > 1000:
+        if len(r.text) > 2000:
             return r.text
     except Exception as e:
-        print(f"  fetch hata {e}")
+        print(f"  fetch hata: {e}")
     return ""
 
 def extract_with_ytdlp(page_url):
@@ -22,9 +22,10 @@ def extract_with_ytdlp(page_url):
         ydl_opts = {"quiet": True, "no_warnings": True, "skip_download": True}
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(page_url, download=False)
+            # en iyi m3u8'i al
             for f in info.get("formats", [])[::-1]:
                 u = f.get("url","")
-                if ".m3u8" in u and ("erbvr" in u or "【entity-atv¦canonical_name=ATV】" in u):
+                if ".m3u8" in u and "erbvr" in u:
                     return u
             if info.get("url") and ".m3u8" in info["url"]:
                 return info["url"]
@@ -33,11 +34,13 @@ def extract_with_ytdlp(page_url):
     return None
 
 def extract_atv_m3u8(html):
-    m=re.findall(r'https?://[^"\'\s]*erbvr\.com[^"\'\s]*\.m3u8[^"\'\s]*',html)
-    if m: return m[0].replace("\\/","/")
-    m2=re.findall(r'https?://[^"\'\s]+\.m3u8[^"\'\s]*',html)
+    # senin örneğin gibi: https://htxkbiqd.erbvr.com/.../.m3u8?st=...
+    m=re.findall(r'https?://[^\s"\'\\]*erbvr\.com[^\s"\'\\]*\.m3u8[^\s"\'\\]*', html)
+    if m:
+        return m[0].replace("\\/","/").replace("\\u002F","/")
+    m2=re.findall(r'https?://[^\s"\'\\]+\.m3u8[^\s"\'\\]*', html)
     for u in m2:
-        if "erbvr" in u or "atv" in u or "vms" in u:
+        if "erbvr" in u or "atv" in u:
             return u.replace("\\/","/")
     return None
 
@@ -62,37 +65,50 @@ for slug in slugs:
     if not html:
         html=fetch(f"{BASE_URL}/diziler/{slug}")
     soup=BeautifulSoup(html, "html.parser")
-    # ATV yeni yapıda tüm bolum linkleri <a href="/diziler/xxx/bolum/yyy"> veya /izle
-    links=[]
+    links=set()
     for a in soup.find_all("a", href=True):
         href=a["href"]
-        if slug in href and ("bolum" in href or "izle" in href):
+        # bolum linki mi?
+        if "bolum" in href.lower() and slug.split("-")[0] in href.lower():
             if href.startswith("/"):
                 href=BASE_URL+href
-            links.append(href)
-    uniq=list(dict.fromkeys(links))[:8]
-    print(f"  {len(uniq)} link bulundu")
+            links.add(href)
+        # izle linki de olabilir
+        if "/izle" in href.lower() and slug.replace("-","") in href.lower().replace("-",""):
+            if href.startswith("/"):
+                href=BASE_URL+href
+            links.add(href)
+    # regex ile de yedek ara
+    for m in re.findall(r'/diziler/'+re.escape(slug)+r'/bolum/[^"\'\s]+', html):
+        links.add(BASE_URL+m)
+
+    uniq=list(links)[:8]
+    print(f"  {len(uniq)} bolum bulundu")
     if len(uniq)==0:
-        print(f"  hiç link yok, atlanıyor")
-        continue
+        # örnek senin attığın gibi tek sayfa dene
+        if slug=="gunesin-dogdugu-yer":
+            uniq=[f"{BASE_URL}/diziler/{slug}/bolum/7-bolum"]
+            print(f"  örnek link deneniyor: {uniq[0]}")
+        else:
+            continue
 
     for full in uniq:
-        print(f"  deniyor {full}")
+        print(f"  -> {full}")
         m3u8 = extract_with_ytdlp(full)
         if not m3u8:
             bhtml=fetch(full)
             m3u8=extract_atv_m3u8(bhtml)
         if m3u8:
-            bm=re.search(r'(\d+)',full)
+            bm=re.search(r'(\d+)[^0-9]*bolum', full.lower())
             bname=f"{bm.group(1)}. Bolum" if bm else "Bolum"
-            dizi_adi = slug.replace("-"," ").title()
+            dizi_adi=slug.replace("-"," ").title()
             entries.append({"dizi":dizi_adi,"bolum":bname,"url":m3u8})
             print(f"  OK {dizi_adi} {bname}")
         else:
             print(f"  BULAMADI")
         time.sleep(0.5)
 
-print(f"\nToplam {len(entries)} bölüm")
+print(f"\nToplam {len(entries)} bolum")
 
 with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
     f.write("#EXTM3U\n")
