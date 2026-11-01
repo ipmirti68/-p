@@ -280,24 +280,135 @@ def get_vmcdn(episode_url):
 # POSTER BUL
 # ==================================================
 
-def get_poster(series_url):
+
+def get_poster(series_url, slug):
+
+    print("  POSTER ARANIYOR...")
 
     source = get_page(series_url)
 
-    if not source:
-        return ""
+    candidates = []
 
-    soup = BeautifulSoup(source, "html.parser")
+    if source:
 
-    meta = soup.find(
-        "meta",
-        attrs={"property": "og:image"}
+        soup = BeautifulSoup(source, "html.parser")
+
+        # 1. SEO görselleri
+        for meta in soup.find_all("meta"):
+
+            prop = (
+                meta.get("property", "")
+                + " "
+                + meta.get("name", "")
+            ).lower()
+
+            if any(x in prop for x in [
+                "og:image",
+                "twitter:image"
+            ]):
+
+                content = meta.get("content")
+
+                if content:
+                    candidates.append(
+                        urljoin(BASE, content)
+                    )
+
+        # 2. Sayfadaki resimler
+        for img in soup.find_all("img"):
+
+            for attr in [
+                "src",
+                "data-src",
+                "data-original",
+                "data-lazy-src"
+            ]:
+
+                value = img.get(attr)
+
+                if value:
+                    candidates.append(
+                        urljoin(BASE, value)
+                    )
+
+            # srcset
+            srcset = img.get("srcset", "")
+
+            for item in srcset.split(","):
+
+                value = item.strip().split(" ")[0]
+
+                if value:
+                    candidates.append(
+                        urljoin(BASE, value)
+                    )
+
+        # 3. HTML içerisindeki görsel adresleri
+        pattern = (
+            r'https?://(?:mo\.ciner\.com\.tr|'
+            r'im\.showtv\.com\.tr)/[^"\'\s<>]+\.(?:jpg|jpeg|png|webp)'
+        )
+
+        found = re.findall(pattern, source, re.I)
+
+        candidates.extend(found)
+
+    # 4. Bilinen Show TV afiş adresi biçimi
+    candidates.append(
+        f"https://mo.ciner.com.tr/showtv/iu/"
+        f"1920x1080_6/{slug}.jpg"
     )
 
-    if meta and meta.get("content"):
-        return urljoin(BASE, meta["content"])
+    # Tekrarları temizle
+    unique = []
+
+    for url in candidates:
+
+        url = html.unescape(url).replace("\\/", "/")
+
+        if url not in unique:
+            unique.append(url)
+
+    # Dizi adına uygun görselleri öne al
+    unique.sort(
+        key=lambda x: slug.lower() not in x.lower()
+    )
+
+    # Görsel adresini doğrula
+    for url in unique:
+
+        try:
+
+            r = scraper.get(
+                url,
+                timeout=15,
+                stream=True
+            )
+
+            content_type = r.headers.get(
+                "Content-Type", ""
+            ).lower()
+
+            if r.status_code == 200 and (
+                "image/" in content_type
+            ):
+
+                r.close()
+
+                print("  POSTER BULUNDU!")
+                print(" ", url)
+
+                return url
+
+            r.close()
+
+        except Exception:
+            continue
+
+    print("  POSTER BULUNAMADI!")
 
     return ""
+    
 
 
 # ==================================================
