@@ -16,33 +16,58 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
           ref: main
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: Kutuphaneler
-        run: pip install requests tqdm beautifulsoup4 cloudscraper
+        run: pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml
+
       - name: 1 - ULUSAL
+        continue-on-error: true
         run: python iptv.py
+
       - name: 2 - STAR
+        continue-on-error: true
         run: python star.py
+
       - name: 3 - SHOW
+        continue-on-error: true
         run: python show.py
+
       - name: 4 - KANALD
+        continue-on-error: true
         run: python kanald.py
+
       - name: 5 - ATV
+        continue-on-error: true
         run: python atv.py
+
       - name: 6 - SELCUK
+        continue-on-error: true
         run: python selcuk.py
+
       - name: 7 - MAHSUN
+        continue-on-error: true
         run: python mahsun.py
+
       - name: 8 - ATOM
+        continue-on-error: true
         run: python atom.py
+
       - name: 9 - KRAL
+        continue-on-error: true
         run: python kral.py
+
       - name: 10 - ARDA
+        continue-on-error: true
         run: python arda.py
+
       - name: 11 - LİG
+        continue-on-error: true
         run: python lig.py
+
       - name: Commit
         run: |
           git config --global user.name "bot"
