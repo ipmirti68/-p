@@ -13,8 +13,8 @@ from bs4 import BeautifulSoup
 # ==================================================
 
 BASE = "https://www.showtv.com.tr"
-M3U = "showtv.m3u"
-MIRTI = "mirti68.m3u"
+
+M3U = "mirti68.m3u"
 GROUP = "SHOW Dizileri"
 LIMIT = 3
 
