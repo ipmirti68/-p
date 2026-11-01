@@ -350,11 +350,7 @@ def main():
     print(f"Kanal bazli M3U dosyalari: {OUTPUT_DIR}")
 
 
-if __name__ == "__main__":
-    main()
-}")
         episode_list = find_episodes(series_url)
-
         if not episode_list:
             print("  Bolum linki bulunamadi.")
             continue
