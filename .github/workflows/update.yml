@@ -50,7 +50,7 @@ jobs:
       # 9. SELCUK
       - name: 2  - SELCUK
         continue-on-error: true
-        run: python selcuk.py
+        run: python selcu.py
 
       # 10. MAHSUN
       - name: 3 - MAHSUN
@@ -60,7 +60,7 @@ jobs:
       # 11. ATOM
       - name: 4 - ATOM
         continue-on-error: true
-        run: python atom.py
+        run: python ato.py
 
       # 12. KRAL
       - name: 5 - KRAL
@@ -70,7 +70,7 @@ jobs:
       # 13. ARDA
       - name: 6 - ARDA
         continue-on-error: true
-        run: python arda.py
+        run: python ard.py
 
       # 14. LIG
       - name: 7 - LIG
