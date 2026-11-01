@@ -78,25 +78,58 @@ def fetch_home():
 
 
 def parse_items(html):
-    """``/izle/<slug>`` + yanindaki ``<strong class="name">`` (kanal/mac adi)."""
+    """Yalnızca spor TV kanallarını alır."""
+
     items = re.findall(
         r'<a[^>]+href="([^"]*?/izle/[^"]+)"[^>]*>.*?'
         r'<strong[^>]*class="name[^"]*"[^>]*>(.*?)</strong>',
-        html, re.S | re.I,
+        html,
+        re.S | re.I,
     )
-    out, seen = [], set()
+
+    sports_keywords = (
+        "bein",
+        "beinsports",
+        "s sport",
+        "ssport",
+        "trt spor",
+        "a spor",
+        "tivibu spor",
+        "smart spor",
+        "spor smart",
+        "eurosport",
+        "tabii spor",
+        "exxen spor",
+        "nba",
+        "tnt sports",
+        "sport tv",
+    )
+
+    out = []
+    seen = set()
+
     for href, name in items:
+
+        title = re.sub(r"<[^>]+>", "", name)
+        title = title.strip()
+
+        if not title:
+            continue
+
+        normalized = title.casefold()
+
+        # Spor kanalı değilse atla
+        if not any(word in normalized for word in sports_keywords):
+            continue
+
         slug = href.split("/izle/", 1)[-1].rstrip("/")
+
         if not slug or slug in seen:
             continue
+
         seen.add(slug)
-        title = re.sub(r"<[^>]+>", "", name).strip() or slug.replace("-", " ").title()
         out.append((title, slug))
-    # Dogrudan verilen diger kanal slugs'i da (menu disi) ekle
-    for slug in re.findall(r'/channel/watch/([a-z0-9\-]+)', html, re.I):
-        if slug not in seen:
-            seen.add(slug)
-            out.append((slug.replace("-", " ").title(), slug))
+
     return out
 
 
