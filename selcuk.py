@@ -67,9 +67,10 @@ def append_to_mirti68(new_entries):
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
             for name, url in new_entries:
-                f.write(f'#EXTINF:-1 group-title="{GROUP_NAME}" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg", {name}\n')
-                f.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
-                f.write(f"{url}\n")
+                f.write(
+                f'#EXTINF:-1 tvg-logo="{LOGO}" '
+                f'group-title="{BEIN_GROUP}",{name}\n'
+                )
         print(f"✅ Yeni {OUTPUT_FILENAME} oluşturuldu")
         return
 
