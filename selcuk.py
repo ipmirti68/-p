@@ -63,16 +63,35 @@ def parse_bein_ids(html):
     return out
 
 def append_to_mirti68(new_entries):
-    if not os.path.exists(OUTPUT_FILENAME):
-        with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
-            for name, url in new_entries:
-                f.write(
-                f'#EXTINF:-1 tvg-logo="{LOGO}" '
-                f'group-title="{BEIN_GROUP}",{name}\n'
-                )
-        print(f"✅ Yeni {OUTPUT_FILENAME} oluşturuldu")
-        return
+
+    if not new_entries:
+        print("❌ Eklenecek kanal yok. Dosya korunuyor.")
+        sys.exit(1)
+
+    from m3u_manager import update_group
+
+    formatted_entries = []
+
+    for name, url in new_entries:
+        entry = (
+            f'#EXTINF:-1 tvg-logo="{LOGO}" '
+            f'group-title="{BEIN_GROUP}",{name}\n'
+            f'#EXTVLCOPT:http-referrer={STREAM_REFERER}\n'
+            f'{url}'
+        )
+
+        formatted_entries.append(entry)
+
+    update_group(
+        BEIN_GROUP,
+        formatted_entries,
+        filename=OUTPUT_FILENAME
+    )
+
+    print(
+        f"✅ {len(formatted_entries)} beIN kanalı "
+        f"{BEIN_GROUP} grubunda güncellendi."
+    )
 
     with open(OUTPUT_FILENAME, "r", encoding="utf-8", errors="ignore") as f:
         lines = f.readlines()
