@@ -181,9 +181,11 @@ def get_soup(url):
     _, soup = fetch_page(url)
     return soup
 
-        valid_candidates.append((number, final_url))
+                valid_candidates.append((number, final_url))
+
         if len(valid_candidates) >= MAX_EPISODES_PER_SERIES:
             break
+
         time.sleep(0.2)
 
     return valid_candidates
