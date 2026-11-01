@@ -586,7 +586,7 @@ def main():
 
     # Geçici dosyaya yaz
     M3U = "mirti68.m3u"
-    temp_file = M3U + ".tmp""
+    temp_file = M3U + ".tmp"
 
     with open(
         temp_file,
