@@ -18,21 +18,21 @@ STATIC_LOGO = "https://i.imgur.com/71TSn0Q.jpeg"
 GROUP = "🖥beINSPORTS"
 
 # Ana sayfa yonlendirme zinciri (alan adi her ay degisebiliyor)
-START_URL = "https://url24.link/AtomSporTV"
+START_URL = "https://golvarmac1.pro/"
 # Zincir kirilirsa son bilinen ana makine
-FALLBACK_BASE = "https://www.atomsportv519.top"
+FALLBACK_BASE = "https://golvarmac1.pro/"
 # API adresi ana sayfadan dinamik okunur; okunamazsa son bilinen adres
-FALLBACK_API = "https://teletv15.top/load/yayinlink.php"
+FALLBACK_API = "https://golvarmac1.pro/"
 
 # Kanal adlari sitesiden gelir; bilinen id'ler icin daha duzgun gosterim
 PRETTY_NAMES = {
-    "bein-sports-1": "beIN SPORTS 1 Atom 🔴 ",
-    "bein-sports-2": "beIN SPORTS 2 Atom 🔴",
-    "bein-sports-3": "beIN SPORTS 3 Atom 🔴",
-    "bein-sports-4": "beIN SPORTS 4 Atom 🔴",
-    "bein-sports-5": "beIN SPORTS 5 Atom 🔴",
-    "bein-sports-max-1": "beIN SPORTS MAX 1 Atom 🔴",
-    "bein-sports-max-2": "beIN SPORTS MAX 2 Atom 🔴",
+    "bein-sports-1": "beIN SPORTS 1 Arda 🔴 ",
+    "bein-sports-2": "beIN SPORTS 2 Arda 🔴",
+    "bein-sports-3": "beIN SPORTS 3 Arda 🔴",
+    "bein-sports-4": "beIN SPORTS 4 Arda 🔴",
+    "bein-sports-5": "beIN SPORTS 5 Arda 🔴",
+    "bein-sports-max-1": "beIN SPORTS MAX 1 Arda 🔴",
+    "bein-sports-max-2": "beIN SPORTS MAX 2 Arda 🔴",
     
 }
 
