@@ -11,7 +11,7 @@ import warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
-HOME_URL = "https://www.selcuksportshd1900.xyz/"
+HOME_URL = "https://www.selcuksportshd14e17ba2ad.xyz/"
 
 HEADERS = {
     "User-Agent": (
@@ -21,7 +21,7 @@ HEADERS = {
     "Referer": HOME_URL,
 }
 
-STREAM_DOMAIN = "https://dga1op10s1u3lea.9e694e1c2ce7ac.click"
+STREAM_DOMAIN = "https://dga1op10s1u3lea.acb65d4e703641.click"
 STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
 OUTPUT_FILENAME = "mirti68.m3u"
 BEIN_GROUP = "🖥beINSPORTS"
