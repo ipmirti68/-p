@@ -42,7 +42,7 @@ jobs:
 
       - name: 5 - ATV
         continue-on-error: true
-        run: python atv.py
+        run: python dizi.py
 
       - name: 6 - SELCUK
         continue-on-error: true
