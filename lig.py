@@ -84,7 +84,7 @@ def main():
         print(f"Mevcut: {len(mevcut_linkler)} video korunacak.")
     else:
         print("Dosya yok, yeni oluşturuluyor.")
-        with open(dosya, "w", encoding="utf-8") as f:
+        with open(dosya, "a", encoding="utf-8") as f:
             f.write("#EXTM3U\n\n")
 
     all_urls = []
