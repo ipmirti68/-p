@@ -179,8 +179,7 @@ def fetch_page(url):
 
     def get_soup(url):
     _, soup = fetch_page(url)
-    return soupf forbidden_content("", final_url) or forbidden_path(final_url):
-            continue
+    return soup
 
         valid_candidates.append((number, final_url))
         if len(valid_candidates) >= MAX_EPISODES_PER_SERIES:
