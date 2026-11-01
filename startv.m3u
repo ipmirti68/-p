@@ -1,0 +1,28 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 3. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac8a9dc147366462aad1563&SecretKey=NtvApiSecret2014*&.m3u8
+
+#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 4. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad1dbbfef431c557785daf9&SecretKey=NtvApiSecret2014*&.m3u8
+
+#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 5. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6adb1c31ef431c557785ddc4&SecretKey=NtvApiSecret2014*&.m3u8
+
+#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 1. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a97c234a46e38b3a3925061&SecretKey=NtvApiSecret2014*&.m3u8
+
+#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 2. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aa03ca6755f87153f61dc6a&SecretKey=NtvApiSecret2014*&.m3u8
+
+#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 3. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abf5758d3270c47b787413e&SecretKey=NtvApiSecret2014*&.m3u8
+
+#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 20. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac80622147366462aad14f4&SecretKey=NtvApiSecret2014*&.m3u8
+
+#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 21. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6acf70cf147366462aad1883&SecretKey=NtvApiSecret2014*&.m3u8
+
+#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 22. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad9e5c3ef431c557785dd62&SecretKey=NtvApiSecret2014*&.m3u8
+
