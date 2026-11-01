@@ -1,172 +1,68 @@
-import requests
-from tqdm import tqdm
+import requests, re, os
 from bs4 import BeautifulSoup
-import re
-import os
+from tqdm import tqdm
+base_url="https://www.startv.com.tr"
+m3u_file="startv.m3u"
+mirti_file="mirti68.m3u"
+WANTED_SERIES=["baskasinin-hayati","tuzlu-kahve","sevdim-sensin"]
 
-base_url = "https://www.startv.com.tr"
-img_base_url = "https://media.startv.com.tr/star-tv"
-dizi_url = "https://www.startv.com.tr/dizi"
-m3u_file = "startv.m3u"
-mirti_file = "mirti68.m3u"
-pattern = r'"apiUrl\\":\\"(.*?)\\"'
+def get_items_page():
+    r=requests.get(f"{base_url}/dizi", timeout=15)
+    soup=BeautifulSoup(r.content, "html.parser")
+    out=[]
+    for a in soup.find_all("a", href=re.compile(r'/dizi/')):
+        href=a.get("href","").strip().strip("/")
+        slug=href.split("/")[-1].lower()
+        if slug in WANTED_SERIES and slug not in [x["slug"] for x in out]:
+            out.append({"slug":slug,"url":base_url+"/dizi/"+slug})
+    return out
 
-api_params = {
-    "sort": "episodeNo asc",
-    "limit": "100"
-}
-
-# SADECE BU 3 DİZİ GELSİN
-WANTED_SERIES = ["baskasinin-hayati", "tuzlu-kahve", "sevdim-sensin"]
-
-def get_items_page(url):
-    item_list = []
-    r = requests.get(url, timeout=15)
-    soup = BeautifulSoup(r.content, "html.parser")
-    links = soup.find_all("a", href=re.compile(r'^/dizi/'))
-    seen = set()
-    for a in links:
-        href = a.get("href", "")
-        if not href:
-            continue
-        href = href.strip().strip("/")
-        slug = href.split("/")[-1].lower()
-        if not slug or slug in seen:
-            continue
-        # sadece istediğimiz 3 dizi
-        if slug not in WANTED_SERIES:
-            continue
-        seen.add(slug)
-        item_url = base_url + "/dizi/" + slug
-        name = slug.replace("-", " ").strip()
-        print(f"Bulundu: {slug} -> {item_url}")
-        item_list.append({
-            "name": name,
-            "img": "",
-            "url": item_url
-        })
-    return item_list
-
-def get_item_api_url(url):
-    api_path = ""
-    try:
-        r = requests.get(url + "/bolumler", timeout=15)
-        results = re.findall(pattern, r.text)
-        if results:
-            api_path = results[0]
-    except:
-        pass
-    return api_path
-
-def get_item_api(path):
-    item_list = []
-    params = api_params.copy()
-    flag = True
-    skip = 0
-    url = base_url + path
-    while flag:
-        params["skip"] = skip
+def get_episodes(api_path):
+    item_list=[]
+    url=base_url+api_path
+    skip=0
+    while True:
         try:
-            r = requests.get(url, params=params, timeout=15)
-            data = r.json()
-            items = data.get("items", [])
-            for item in items:
-                name = f'{item["heading"]} {item["title"]}'
-                name = name.replace("-", " ").replace("  ", " ").strip()
-                img = img_base_url + item["image"]["fullPath"] if item.get("image") else ""
-                stream_url = ""
-                if "video" in item:
-                    stream_url = f'https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_{item["video"]["referenceId"]}&SecretKey=NtvApiSecret2014*&.m3u8'
-                if stream_url:
-                    item_list.append({
-                        "name": name,
-                        "img": img,
-                        "stream_url": stream_url
-                    })
-            if len(items) < 100:
-                flag = False
-            else:
-                skip += 100
-        except:
-            flag = False
+            r=requests.get(url, params={"sort":"episodeNo asc","limit":"100","skip":skip}, timeout=15)
+            data=r.json()
+            items=data.get("items",[])
+            for it in items:
+                name=f'{it["heading"]} {it["title"]}'.strip()
+                if "video" in it:
+                    stream=f'https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_{it["video"]["referenceId"]}&SecretKey=NtvApiSecret2014*&.m3u8'
+                    item_list.append({"name":name,"url":stream})
+            if len(items)<100: break
+            skip+=100
+        except: break
     return item_list
 
-def append_to_mirti68():
-    if not os.path.exists(m3u_file):
-        print(f"{m3u_file} yok!")
-        return
-    if not os.path.exists(mirti_file):
-        print(f"{mirti_file} yok, önce iptv.py çalıştır")
-        return
+def main():
+    series=get_items_page()
+    print(f"Filtrelenen: {len(series)} - {series}")
+    all_eps=[]
+    for s in series:
+        print(f"\n=== {s['slug']} ===")
+        # apiUrl bul
+        r=requests.get(s["url"]+"/bolumler", timeout=15)
+        m=re.findall(r'"apiUrl\\":\\"(.*?)\\"', r.text)
+        if not m: continue
+        eps=get_episodes(m[0])
+        print(f"  {len(eps)} bolum")
+        for ep in eps:
+            all_eps.append(f'#EXTINF:-1 group-title="STAR Dizileri",TR: {ep["name"]}\n{ep["url"]}\n')
 
-    with open(m3u_file, "r", encoding="utf-8", errors="ignore") as f:
-        startv_content = f.read()
-    
-    startv_blocks = []
-    parts = startv_content.split("#EXTINF")
-    for p in parts[1:]:
-        if "http" in p:
-            startv_blocks.append("#EXTINF" + p.strip())
-
-    print(f"STAR Dizileri: {len(startv_blocks)} bölüm bulundu")
-
-    with open(mirti_file, "r", encoding="utf-8", errors="ignore") as f:
-        content = f.read()
-        first_line = content.splitlines()[0] if content else "#EXTM3U"
-        epg_header = first_line if "#EXTM3U" in first_line else "#EXTM3U"
-        
-        old_blocks = []
-        parts2 = content.split("#EXTINF")
-        for p in parts2[1:]:
-            if "STAR Dizileri" in p:
-                continue
-            if "http" in p:
-                old_blocks.append("#EXTINF" + p.strip())
-
-    with open(mirti_file, "w", encoding="utf-8") as out:
-        out.write(epg_header + "\n")
-        for b in old_blocks:
-            out.write(b + "\n\n")
-        for b in startv_blocks:
-            out.write(b + "\n\n")
-
-    print(f"Bitti! {mirti_file} -> {len(old_blocks)} eski + {len(startv_blocks)} STAR eklendi")
-
-def main(start=0, end=0):
-    data = []
-    series_list = get_items_page(dizi_url)
-    print(f"Filtrelenen dizi sayısı: {len(series_list)}")
-    if len(series_list) == 0:
-        print(f"WANTED: {WANTED_SERIES}")
-        print("Hiçbiri bulunamadı, startv.com.tr slug'ları değişmiş olabilir")
-        return
-
-    if end == 0:
-        end_index = len(series_list)
-    else:
-        end_index = end
-
-    for i in tqdm(range(start, end_index)):
-        serie = series_list[i]
-        print(i+1, serie["name"])
-        api_path = get_item_api_url(serie["url"])
-        if not api_path:
-            print(f"  API bulunamadı: {serie['url']}")
-            continue
-        episodes = get_item_api(api_path)
-        temp_serie = serie.copy()
-        temp_serie["episodes"] = episodes
-        data.append(temp_serie)
-
-    with open(m3u_file, "w", encoding="utf-8") as f:
+    with open(m3u_file,"w",encoding="utf-8") as f:
         f.write("#EXTM3U\n")
-        for serie in data:
-            for ep in serie["episodes"]:
-                line = f'#EXTINF:-1 tvg-id="vod.tr" tvg-name="{ep["name"]}" tvg-logo="{ep["img"]}" group-title="STAR Dizileri",TR: {ep["name"]}\n{ep["stream_url"]}\n'
-                f.write(line)
+        for b in all_eps: f.write(b+"\n")
 
-    print(f"{m3u_file} başarıyla oluşturuldu!")
-    append_to_mirti68()
+    if os.path.exists(mirti_file):
+        with open(m3u_file,"r",encoding="utf-8",errors="ignore") as ff: blocks=["#EXTINF"+p.strip() for p in ff.read().split("#EXTINF")[1:] if "http" in p]
+        with open(mirti_file,"r",encoding="utf-8",errors="ignore") as ff:
+            cont=ff.read(); first=cont.splitlines()[0] if cont else "#EXTM3U"
+            old=["#EXTINF"+p.strip() for p in cont.split("#EXTINF")[1:] if "http" in p and "STAR Dizileri" not in p]
+        with open(mirti_file,"w",encoding="utf-8") as out:
+            out.write(first+"\n")
+            for b in old: out.write(b+"\n\n")
+            for b in blocks: out.write(b+"\n\n")
 
-if __name__ == "__main__":
-    main()
+if __name__=="__main__": main()
