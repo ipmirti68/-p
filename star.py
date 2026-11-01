@@ -8,7 +8,7 @@ base_url = "https://www.startv.com.tr"
 img_base_url = "https://media.startv.com.tr/star-tv"
 dizi_url = "https://www.startv.com.tr/dizi"
 m3u_file = "startv.m3u"
-mirti_file = "mirti68.m3u"  # ANA LISTEN
+mirti_file = "mirti68.m3u"
 pattern = r'"apiUrl\\":\\"(.*?)\\"'
 
 api_params = {
@@ -16,7 +16,7 @@ api_params = {
     "limit": "100"
 }
 
-# SADECE GELMESİNİ İSTEDİĞİN DİZİLER
+# SADECE BU 3 DİZİ GELSİN
 WANTED_SERIES = ["baskasinin-hayati", "tuzlu-kahve", "sevdim-sensin"]
 
 def get_items_page(url):
@@ -26,27 +26,36 @@ def get_items_page(url):
     links = soup.find_all("a", href=re.compile(r'^/dizi/'))
     seen = set()
     for a in links:
-        href = a.get("href")
-        if href and href not in seen:
-            seen.add(href)
-            slug = href.split("/")[-1]
-            if slug not in WANTED_SERIES:
-                continue
-            item_url = base_url + href
-            name = slug.replace("-", " ").strip()
-            item_list.append({
-                "name": name,
-                "img": "",
-                "url": item_url
-            })
+        href = a.get("href", "")
+        if not href:
+            continue
+        href = href.strip().strip("/")
+        slug = href.split("/")[-1].lower()
+        if not slug or slug in seen:
+            continue
+        # sadece istediğimiz 3 dizi
+        if slug not in WANTED_SERIES:
+            continue
+        seen.add(slug)
+        item_url = base_url + "/dizi/" + slug
+        name = slug.replace("-", " ").strip()
+        print(f"Bulundu: {slug} -> {item_url}")
+        item_list.append({
+            "name": name,
+            "img": "",
+            "url": item_url
+        })
     return item_list
 
 def get_item_api_url(url):
     api_path = ""
-    r = requests.get(url + "/bolumler", timeout=15)
-    results = re.findall(pattern, r.text)
-    if results:
-        api_path = results[0]
+    try:
+        r = requests.get(url + "/bolumler", timeout=15)
+        results = re.findall(pattern, r.text)
+        if results:
+            api_path = results[0]
+    except:
+        pass
     return api_path
 
 def get_item_api(path):
@@ -83,7 +92,6 @@ def get_item_api(path):
     return item_list
 
 def append_to_mirti68():
-    """startv.m3u -> mirti68.m3u bozmayacak şekilde ekle"""
     if not os.path.exists(m3u_file):
         print(f"{m3u_file} yok!")
         return
@@ -100,7 +108,7 @@ def append_to_mirti68():
         if "http" in p:
             startv_blocks.append("#EXTINF" + p.strip())
 
-    print(f"STARTV Dizileri: {len(startv_blocks)} bölüm bulundu")
+    print(f"STAR Dizileri: {len(startv_blocks)} bölüm bulundu")
 
     with open(mirti_file, "r", encoding="utf-8", errors="ignore") as f:
         content = f.read()
@@ -110,7 +118,7 @@ def append_to_mirti68():
         old_blocks = []
         parts2 = content.split("#EXTINF")
         for p in parts2[1:]:
-            if "STAR Dizileri" in p or "STARTV Dizileri" in p:
+            if "STAR Dizileri" in p:
                 continue
             if "http" in p:
                 old_blocks.append("#EXTINF" + p.strip())
@@ -122,11 +130,17 @@ def append_to_mirti68():
         for b in startv_blocks:
             out.write(b + "\n\n")
 
-    print(f"Bitti! {mirti_file} bozulmadı, {len(old_blocks)} eski + {len(startv_blocks)} STAR eklendi")
+    print(f"Bitti! {mirti_file} -> {len(old_blocks)} eski + {len(startv_blocks)} STAR eklendi")
 
 def main(start=0, end=0):
     data = []
     series_list = get_items_page(dizi_url)
+    print(f"Filtrelenen dizi sayısı: {len(series_list)}")
+    if len(series_list) == 0:
+        print(f"WANTED: {WANTED_SERIES}")
+        print("Hiçbiri bulunamadı, startv.com.tr slug'ları değişmiş olabilir")
+        return
+
     if end == 0:
         end_index = len(series_list)
     else:
@@ -137,6 +151,7 @@ def main(start=0, end=0):
         print(i+1, serie["name"])
         api_path = get_item_api_url(serie["url"])
         if not api_path:
+            print(f"  API bulunamadı: {serie['url']}")
             continue
         episodes = get_item_api(api_path)
         temp_serie = serie.copy()
@@ -147,7 +162,7 @@ def main(start=0, end=0):
         f.write("#EXTM3U\n")
         for serie in data:
             for ep in serie["episodes"]:
-                line = f'#EXTINF:-1 tvg-id="vod.tr" tvg-name=" {ep["name"]}" tvg-logo="{ep["img"]}" group-title="STAR Dizileri",TR: {ep["name"]}\n{ep["stream_url"]}\n'
+                line = f'#EXTINF:-1 tvg-id="vod.tr" tvg-name="{ep["name"]}" tvg-logo="{ep["img"]}" group-title="STAR Dizileri",TR: {ep["name"]}\n{ep["stream_url"]}\n'
                 f.write(line)
 
     print(f"{m3u_file} başarıyla oluşturuldu!")
