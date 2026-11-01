@@ -133,7 +133,7 @@ def main():
         with open(mirti_file,"r",encoding="utf-8",errors="ignore") as ff:
             cont=ff.read(); first=cont.splitlines()[0] if cont else "#EXTM3U"
             old=["#EXTINF"+p.strip() for p in cont.split("#EXTINF")[1:] if "http" in p and "STAR Dizileri" not in p]
-        with open(mirti_file,"w",encoding="utf-8") as out:
+        with open(mirti_file,"a",encoding="utf-8") as out:
             out.write(first+"\n")
             for b in old: out.write(b+"\n\n")
             for b in blocks: out.write(b+"\n\n")
