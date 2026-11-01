@@ -1,15 +1,22 @@
+
 name: update
+
 on:
   workflow_dispatch:
+
   schedule:
     - cron: '0 */6 * * *'
+
   push:
     branches: [main]
+
 permissions:
   contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -22,7 +29,13 @@ jobs:
           python-version: '3.11'
 
       - name: Kutuphaneler
-        run: pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml
+
+      - name: Python dosyalarini kontrol et
+        run: |
+          python -m py_compile iptv.py star.py show.py kanald.py dizi.py selcuk.py mahsun.py atom.py kral.py arda.py lig.py atv.py
 
       - name: 1 - ULUSAL
         continue-on-error: true
@@ -40,9 +53,9 @@ jobs:
         continue-on-error: true
         run: python kanald.py
 
-      - name: 5 - DİZİ
+      - name: 5 - DIZI
         continue-on-error: true
-        run: python dizi.py 
+        run: python dizi.py
 
       - name: 6 - SELCUK
         continue-on-error: true
@@ -64,19 +77,31 @@ jobs:
         continue-on-error: true
         run: python arda.py
 
-      - name: 11 - LİG
+      - name: 11 - LIG
         continue-on-error: true
         run: python lig.py
 
       - name: 12 - ATV
         continue-on-error: true
         run: python atv.py
-      
+
+      - name: Olusan M3U dosyalarini kontrol et
+        if: always()
+        run: |
+          echo "OLUSAN M3U DOSYALARI"
+          find . -type f -name "*.m3u" -print
+
       - name: Commit
+        if: always()
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@bot.com"
-          git checkout main
-          git add mirti68.m3u
-          git commit -m "auto update" || echo "no changes"
-          git push origin main
+
+          git add -A -- "*.m3u"
+
+          if git diff --cached --quiet; then
+            echo "Kaydedilecek degisiklik yok."
+          else
+            git commit -m "auto update"
+            git push origin main
+          fi
