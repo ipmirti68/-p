@@ -42,7 +42,7 @@ jobs:
 
       - name: 5 - DİZİ
         continue-on-error: true
-        run: python dizi.py
+        run: python dizi.py 
 
       - name: 6 - SELCUK
         continue-on-error: true
@@ -68,6 +68,9 @@ jobs:
         continue-on-error: true
         run: python lig.py
 
+      - name: - KANALD
+        continue-on-error: true
+        run: python kanald.py
       - name: Commit
         run: |
           git config --global user.name "bot"
