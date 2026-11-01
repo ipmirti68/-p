@@ -1,3 +1,4 @@
+
 name: update
 
 on:
@@ -11,6 +12,11 @@ on:
 
 permissions:
   contents: write
+
+# Aynı anda iki Actions çalışmasını engelle
+concurrency:
+  group: m3u-guncelleme
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -95,8 +101,14 @@ jobs:
 
           echo "================================"
           echo "TOPLAM M3U DOSYASI"
+
           find . -type f -name "*.m3u" \
             -not -path "./.git/*" | wc -l
+
+      - name: GitHub degisikliklerini al
+        if: always()
+        run: |
+          git pull --rebase origin main
 
       - name: M3U dosyalarini GitHub'a kaydet
         if: always()
