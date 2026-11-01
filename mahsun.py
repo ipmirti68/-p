@@ -604,12 +604,13 @@ def get_andro_content():
         # ----------------------------------------------------
 
         entry = (
-            f'#EXTINF:-1 '
-            f'group-title="🖥beINSPORTS",'
-            f'{channel_name}\n'
-            f'#EXTVLCOPT:http-referrer='
-            f'{active_site}/\n'
-            f'{final_url}'
+    f'#EXTINF:-1 '
+    f'tvg-logo="https://i.imgur.com/OqdfQmw.png" '
+    f'group-title="🖥beINSPORTS",'
+    f'{channel_name}\n'
+    f'#EXTVLCOPT:http-referrer='
+    f'{active_site}/\n'
+    f'{final_url}'
         )
 
         results.append(
