@@ -11,7 +11,7 @@ import warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
-HOME_URL = "https://www.selcuksportshdfe44b96fcb.xyz/"
+HOME_URL = "https://www.selcuksportshd14e17ba2ad.xyz/"
 OUTPUT_FILENAME = "mirti68.m3u"
 
 HEADERS = {
