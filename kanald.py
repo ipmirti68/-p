@@ -17,8 +17,8 @@ BASE = "https://www.kanald.com.tr"
 
 WORKER = "https://mak.sadecenjoy.workers.dev"
 
+MIRTI = "mirti68.m3u"
 
-M3U = "mirti68.m3u"
 
 GROUP = "KANALD Dizileri"
 LIMIT = 3
