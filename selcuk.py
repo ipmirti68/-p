@@ -12,7 +12,6 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
 HOME_URL = "https://www.selcuksportshd14e17ba2ad.xyz/"
-OUTPUT_FILENAME = "mirti68.m3u"
 
 HEADERS = {
     "User-Agent": (
@@ -24,7 +23,10 @@ HEADERS = {
 
 STREAM_DOMAIN = "https://dga1op10s1u3lea.9e694e1c2ce7ac.click"
 STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
-GROUP_NAME = "🖥beINSPORTS"
+OUTPUT_FILENAME = "mirti68.m3u"
+BEIN_GROUP = "🖥beINSPORTS"
+SPORTS_GROUP = "🖥SPORTS"
+LOGO = "https://i.imgur.com/OqdfQmw.png"
 
 PRETTY_NAMES = {
     "selcukbeinsports1": "beIN SPORTS 1 Selcuk 🔴",
