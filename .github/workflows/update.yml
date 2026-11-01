@@ -47,60 +47,37 @@ jobs:
         continue-on-error: true
         run: python iptv.py
 
-      # 5. STAR
-      - name: 2 - STAR
-        continue-on-error: true
-        run: python star.py
-
-      # 6. SHOW
-      - name: 3 - SHOW
-        continue-on-error: true
-        run: python show.py
-
-      # 7. KANAL D
-      - name: 4 - KANALD
-        continue-on-error: true
-        run: python kanald.py
-
-      # 8. DIZI
-      - name: 5 - DIZI
-        continue-on-error: true
-        run: python d.py
-
       # 9. SELCUK
-      - name: 6 - SELCUK
+      - name: 2  - SELCUK
         continue-on-error: true
         run: python selcuk.py
 
       # 10. MAHSUN
-      - name: 7 - MAHSUN
+      - name: 3 - MAHSUN
         continue-on-error: true
         run: python mahsun.py
 
       # 11. ATOM
-      - name: 8 - ATOM
+      - name: 4 - ATOM
         continue-on-error: true
         run: python atom.py
 
       # 12. KRAL
-      - name: 9 - KRAL
+      - name: 5 - KRAL
         continue-on-error: true
         run: python kral.py
 
       # 13. ARDA
-      - name: 10 - ARDA
+      - name: 6 - ARDA
         continue-on-error: true
         run: python arda.py
 
       # 14. LIG
-      - name: 11 - LIG
+      - name: 7 - LIG
         continue-on-error: true
         run: python lig.py
 
-      # 15. ATV
-      - name: 12 - ATV
-        continue-on-error: true
-        run: python atv.py
+    
 
       # 16. M3U DOSYALARINI RAPORLA
       - name: Olusan M3U listelerini raporla
