@@ -34,7 +34,9 @@ HEADERS = {
 }
 
 OUTPUT_FILENAME = "mirti68.m3u"
-GROUP = "🖥beINSPORTS"
+BEIN_GROUP = "🖥beINSPORTS"
+SPORTS_GROUP = "🖥SPORTS"
+LOGO = "https://i.imgur.com/OqdfQmw.png"
 
 
 BASE_PATTERN = "https://mahsunsports{}.xyz"
@@ -603,15 +605,20 @@ def get_andro_content():
         # tvg-logo YOK
         # ----------------------------------------------------
 
+                # Kanal grubunu otomatik belirle
+        if "bein sport" in channel_name.lower():
+            group = BEIN_GROUP
+        else:
+            group = SPORTS_GROUP
+
         entry = (
-    f'#EXTINF:-1 '
-    f'tvg-logo="https://i.imgur.com/OqdfQmw.png" '
-    f'group-title="🖥beINSPORTS",'
-    f'{channel_name}\n'
-    f'#EXTVLCOPT:http-referrer='
-    f'{active_site}/\n'
-    f'{final_url}'
-        )
+            f'#EXTINF:-1 tvg-logo="{LOGO}" '
+            f'group-title="{group}",'
+            f'{channel_name}\n'
+            f'#EXTVLCOPT:http-referrer='
+            f'{active_site}/\n'
+            f'{final_url}'
+    )
 
         results.append(
             entry
