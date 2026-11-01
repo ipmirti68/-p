@@ -52,7 +52,7 @@ jobs:
 
       - name: 5 - DIZI
         continue-on-error: true
-        run: python dizi.py
+        run: python d.py
 
       - name: 6 - SELCUK
         continue-on-error: true
