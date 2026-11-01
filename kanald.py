@@ -6,6 +6,11 @@ import time
 import html
 import cloudscraper
 
+
+M3U = "mirti68.m3u"
+MIRTI = M3U
+M3U_FILE = M3U
+
 from urllib.parse import urljoin, urlparse, unquote
 from bs4 import BeautifulSoup
 
