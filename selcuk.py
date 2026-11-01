@@ -11,7 +11,7 @@ import warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
-HOME_URL = "https://www.selcuksportshd14e17ba2ad.xyz/"
+HOME_URL = "https://www.selcuksportshd1900.xyz/"
 
 HEADERS = {
     "User-Agent": (
