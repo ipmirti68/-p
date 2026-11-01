@@ -451,7 +451,7 @@ def update_mirti(new_entries):
 
     with open(
         MIRTI,
-        "w",
+        "a",
         encoding="utf-8"
     ) as file:
         file.write("#EXTM3U\n")
