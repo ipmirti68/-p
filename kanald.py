@@ -1,92 +1,75 @@
-import cloudscraper, re, os, time, json
-from bs4 import BeautifulSoup
-from datetime import datetime
+import os, re, time
+m3u="kanald_playlist.m3u"
+mirti="mirti68.m3u"
+GROUP="KANALD Dizileri"
+BASE="https://www.kanald.com.tr"
 
-OUTPUT_FILE = "kanald_playlist.m3u"
-MIRTI_FILE = "mirti68.m3u"
-BASE_URL = "https://www.kanald.com.tr"
-WORKER_URL = "https://mak.sadecenjoy.workers.dev"
+def get_m3u8(url):
+    if not url.startswith("http"): return None
+    try:
+        import cloudscraper
+        scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
+        r=scraper.get(url, timeout=15)
+        m=re.search(r'https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*', r.text)
+        if m: return m.group(0).replace('\\/', '/')
+        # worker embed
+        em=re.search(r'itemprop=["\']embedURL["\'][^>]+href=["\']([^"\']+)["\']', r.text)
+        if em:
+            import requests
+            wr=f"https://mak.sadecenjoy.workers.dev/?url={em.group(1)}"
+            r2=scraper.get(wr, timeout=15)
+            m2=re.search(r'https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*', r2.text)
+            if m2: return m2.group(0).replace('\\/', '/')
+    except: return None
+    return None
 
-WANTED = {
-    "uzak-sehir": "Uzak Şehir",
-    "haysiyet": "Haysiyet",
-    "guller-ve-gunahlar": "Güller ve Günahlar",
-    "daha-17": "Daha 17"
+WANTED={
+    "uzak-sehir": 32,
+    "haysiyet": 5,
+    "guller-ve-gunahlar": 10,
+    "daha-17": 4
 }
 
-def get_real_m3u8(scraper, bolum_url):
-    try:
-        r1 = scraper.get(bolum_url, timeout=10)
-        embed_match = re.search(r'<link[^>]+itemprop=["\']embedURL["\'][^>]+href=["\']([^"\']+)["\']', r1.text)
-        if not embed_match:
-            m = re.search(r'(https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*)', r1.text)
-            if m: return m.group(1).replace('\\/', '/')
-            return None
-        embed_url = embed_match.group(1)
-        worker_req_url = f"{WORKER_URL}/?url={embed_url}"
-        r2 = scraper.get(worker_req_url, timeout=15)
-        if r2.status_code == 200:
-            m3u8_match = re.search(r'https?://[^\s"\'<>]+\.m3u8[^\s"\'<>]*', r2.text)
-            if m3u8_match: return m3u8_match.group(0).replace('\\/', '/')
-        return r2.url if r2.url != worker_req_url else embed_url
-    except: return None
-
-def fetch_episodes(scraper, series_url):
-    episodes = []
-    seen = set()
-    try:
-        r = scraper.get(series_url.rstrip('/') + "/bolumler", timeout=15)
-        soup = BeautifulSoup(r.text, 'html.parser')
-        for a in soup.find_all('a', href=True):
-            href = a.get('href','')
-            if '/bolum/' not in href: continue
-            if href.startswith('/'): full = BASE_URL + href
-            else: full = href
-            if full in seen: continue
-            seen.add(full)
-            name = a.get_text(strip=True) or f"{len(episodes)+1}. Bölüm"
-            if len(name) < 3: continue
-            episodes.append({'name': name, 'url': full})
-        # numara ile sırala son 3
-        def num(ep):
-            m = re.search(r'(\d+)', ep['name'])
-            return int(m.group(1)) if m else 0
-        episodes = sorted(episodes, key=num, reverse=True)[:3]
-        return episodes
-    except Exception as e:
-        print(f"  hata {e}")
-        return []
-
-scraper = cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
-entries = []
-print("🚀 【entity-Kanal D¦canonical_name=Kanal D】 - KANALD Dizileri")
-
-for slug, title in WANTED.items():
-    url = f"{BASE_URL}/diziler/{slug}"
-    print(f"\n=== {title} ===")
-    eps = fetch_episodes(scraper, url)
-    print(f"  {len(eps)} bolum bulundu")
-    for ep in eps:
-        m3u8 = get_real_m3u8(scraper, ep['url'])
+entries=[]
+for slug,last in WANTED.items():
+    print(f"\n=== {slug} son {last} ===")
+    for num in range(last, last-3, -1):
+        if num<=0: continue
+        # Kanal D'de URL genelde /diziler/{slug}/bolum/{num}-bolum
+        url=f"{BASE}/diziler/{slug}/bolum/{num}-bolum"
+        print(f"  -> {url}")
+        m3u8=get_m3u8(url)
         if m3u8:
-            entries.append({'dizi': title, 'bolum': ep['name'], 'url': m3u8})
-            print(f"  OK {ep['name']}")
+            entries.append((slug.replace("-"," ").title(), num, m3u8))
+            print(f"  OK {num}")
+        else:
+            print(f"  yok, dene izle")
+            url2=f"{BASE}/diziler/{slug}/bolum/{num}-bolum-izle"
+            m3u8=get_m3u8(url2)
+            if m3u8:
+                entries.append((slug.replace("-"," ").title(), num, m3u8))
+                print(f"  OK {num} izle")
+        time.sleep(0.5)
 
-# yaz
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+# KESİN YAZ - 0 kalsa bile dosya oluşsun
+with open(m3u,"w",encoding="utf-8") as f:
     f.write("#EXTM3U\n")
-    for e in entries:
-        f.write(f'#EXTINF:-1 group-title="KANALD Dizileri",{e["dizi"]} - {e["bolum"]}\n{e["url"]}\n\n')
+    if not entries:
+        print("  UYARI 0 bulundu, bos dosya degil placeholder yaziliyor")
+        # en azından 1 tane placeholder ki mirti bozulmasin
+        f.write('#EXTINF:-1 group-title="KANALD Dizileri",Uzak Sehir - 1. Bolum\nhttps://example.com/placeholder.m3u8\n\n')
+    for d,n,u in entries:
+        f.write(f'#EXTINF:-1 group-title="{GROUP}",{d} - {n}. Bolum\n{u}\n\n')
 
-print(f"\n{OUTPUT_FILE} -> {len(entries)} bolum")
+print(f"{m3u} -> {len(entries)} bolum")
 
-if not os.path.exists(MIRTI_FILE): open(MIRTI_FILE,"w").write("#EXTM3U\n")
-with open(MIRTI_FILE,"r",encoding="utf-8",errors="ignore") as ff: cont=ff.read()
+if not os.path.exists(mirti): open(mirti,"w").write("#EXTM3U\n")
+with open(mirti,"r",encoding="utf-8",errors="ignore") as ff: cont=ff.read()
 first=cont.splitlines()[0] if cont else "#EXTM3U"
-old=["#EXTINF"+p for p in cont.split("#EXTINF")[1:] if "http" in p and "KANALD Dizileri" not in p]
-with open(OUTPUT_FILE,"r",encoding="utf-8",errors="ignore") as ff: new=["#EXTINF"+p for p in ff.read().split("#EXTINF")[1:] if "http" in p]
-with open(MIRTI_FILE,"w",encoding="utf-8") as out:
+old=["#EXTINF"+p for p in cont.split("#EXTINF")[1:] if "http" in p and GROUP not in p]
+with open(m3u,"r",encoding="utf-8",errors="ignore") as ff: new=["#EXTINF"+p for p in ff.read().split("#EXTINF")[1:] if "http" in p]
+with open(mirti,"w",encoding="utf-8") as out:
     out.write(first+"\n")
     for b in old: out.write(b.strip()+"\n\n")
     for b in new: out.write(b.strip()+"\n\n")
-print(f"mirti68.m3u guncellendi {len(new)} kayit")
+print(f"mirti68.m3u {len(new)} kayit")
