@@ -549,7 +549,7 @@ def scan_channel(channel):
     if entries:
         with open(
             out_file,
-            "w",
+            "a",
             encoding="utf-8",
         ) as file:
             file.write("#EXTM3U\n")
