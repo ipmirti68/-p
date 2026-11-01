@@ -33,7 +33,9 @@ HEADERS = {
     "Accept-Language": "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7",
 }
 
-OUTPUT_FILENAME = "mahsun.m3u"
+OUTPUT_FILENAME = "mirti68.m3u"
+GROUP = "🖥beINSPORTS"
+
 
 BASE_PATTERN = "https://mahsunsports{}.xyz"
 
