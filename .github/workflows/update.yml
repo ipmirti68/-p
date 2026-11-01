@@ -40,7 +40,7 @@ jobs:
       - name: 9 - KRAL
         run: python kral.py
       - name: 10 - ARDA
-        run: python arda.py
+        run: python ard.py
       - name: 11 - LİG
         run: python lig.py
       - name: Commit
