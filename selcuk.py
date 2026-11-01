@@ -61,12 +61,11 @@ def parse_bein_ids(html):
         seen.add(cid)
         out.append(cid)
     return out
-
 def append_to_mirti68(new_entries):
 
     if not new_entries:
-        print("❌ Eklenecek kanal yok. Dosya korunuyor.")
-        sys.exit(1)
+        print("❌ Yeni kayıt bulunamadı.")
+        return
 
     from m3u_manager import update_group
 
@@ -79,7 +78,6 @@ def append_to_mirti68(new_entries):
             f'#EXTVLCOPT:http-referrer={STREAM_REFERER}\n'
             f'{url}'
         )
-
         formatted_entries.append(entry)
 
     update_group(
