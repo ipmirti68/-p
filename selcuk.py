@@ -26,7 +26,7 @@ STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
 OUTPUT_FILENAME = "mirti68.m3u"
 BEIN_GROUP = "🖥beINSPORTS"
 SPORTS_GROUP = "🖥SPORTS"
-LOGO = "https://i.imgur.com/OqdfQmw.png"
+LOGO = "https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg"
 
 PRETTY_NAMES = {
     "selcukbeinsports1": "beIN SPORTS 1 Selcuk 🔴",
