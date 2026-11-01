@@ -1,109 +1,96 @@
-import os
-import time
+import cloudscraper, re, os, json, time
+from bs4 import BeautifulSoup
 
-m3u_file = "showtv.m3u"
-mirti_file = "mirti68.m3u"
-GROUP_NAME = "SHOW Dizileri"
-BASE = "https://www.showtv.com.tr"
+M3U="showtv.m3u"
+MIRTI="mirti68.m3u"
+GROUP="SHOW Dizileri"
+BASE="https://www.showtv.com.tr"
 
-def get_m3u8(full_url):
-    # SADECE tam http link kabul et, yarım olan 145-bolum gibi olanı direkt reddet
-    if not full_url.startswith("http"):
-        print(f"  SKIP yarim url: {full_url}")
-        return None
-    if any(x in full_url.lower() for x in ["fragman", "galeri", "fotograf"]):
-        return None
+def get_vmcdn(url):
     try:
-        import yt_dlp
-        ydl_opts = {"quiet": True, "no_warnings": True, "skip_download": True}
-        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            info = ydl.extract_info(full_url, download=False)
-            for f in info.get("formats", [])[::-1]:
-                u = f.get("url", "")
-                if ".m3u8" in u and "vmcdn" in u:
-                    return u
+        scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
+        r=scraper.get(url, timeout=20)
+        txt=r.text
+        # 1. direkt vmcdn m3u8
+        m=re.search(r'(https://vmcdn\.ciner\.com\.tr/ht/[^\s"\'<>]+\.m3u8\?e=[^"\'\s]+&st=[^"\'\s]+)', txt)
+        if m:
+            return m.group(1).replace('\\/', '/')
+        # 2. data-hope-video içinde
+        m2=re.search(r'data-hope-video=\'([^\']+)\'', txt)
+        if m2:
+            j=json.loads(m2.group(1).replace('&quot;','"').replace('&amp;','&'))
+            if 'media' in j and 'm3u8' in j['media']:
+                return j['media']['m3u8'][0]['src'].replace('\\/', '/')
+        # 3. genel m3u8
+        m3=re.search(r'(https?://[^"\'\s]*vmcdn[^"\'\s]*\.m3u8[^"\'\s]*)', txt)
+        if m3:
+            return m3.group(1).replace('\\/', '/')
     except Exception as e:
-        print(f"  yt-dlp hata {full_url[-40:]}: {e}")
+        print(f"  vmcdn hata {url[-30:]} {e}")
     return None
 
-# TAZE MANUEL - senin verdiğin hep duracak, 404 olmaz
-MANUEL_URL = "https://vmcdn.ciner.com.tr/ht/2026/10/28/01418A5689B618D9BA980AE927ECD0EC.m3u8?e=1793536249&st=d9a494327d774d3e48f8f8114a94a392"
+def get_bolum_links():
+    scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
+    r=scraper.get(f"{BASE}/diziler", timeout=20)
+    soup=BeautifulSoup(r.text,'html.parser')
+    links=[]
+    for a in soup.find_all('a', href=True):
+        href=a['href']
+        if '/dizi/tum_bolumler/sevdan-bir-ates' in href or '/dizi/tum_bolumler/kizilcik-serbeti' in href or '/dizi/tum_bolumler/muhtemel-ask' in href:
+            full=href if href.startswith('http') else BASE+href
+            links.append(full)
+    # en azından son 3
+    # sevdan-bir-ates için senin verdiğin sayfalar
+    links+=[
+        "https://www.showtv.com.tr/dizi/tum_bolumler/sevdan-bir-ates-sezon-1-bolum-8-izle/135714",
+        "https://www.showtv.com.tr/dizi/tum_bolumler/sevdan-bir-ates-sezon-1-bolum-7-izle/135500",
+        "https://www.showtv.com.tr/dizi/tum_bolumler/sevdan-bir-ates-sezon-1-bolum-6-izle/135300",
+    ]
+    # tekrar temizle
+    uniq=[]
+    seen=set()
+    for l in links:
+        if l not in seen:
+            seen.add(l)
+            uniq.append(l)
+    return uniq[:6]
 
-LAST = {
-    "kizilcik-serbeti": 145,
-    "sevdan-bir-ates": 8,
-    "muhtemel-ask": 10,
-    "menekse": 5
-}
+print("SHOW - SHOW Dizileri")
+scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
+bolum_urls=get_bolum_links()
+entries=[]
 
-entries = []
-entries.append({"dizi": "Sevdan Bir Ates", "bolum": "8. Bolum", "url": MANUEL_URL, "num": 8})
-print(f"MANUEL 8 eklendi")
+# manuel taze - senin verdiğin hep dursun
+MANUEL="https://vmcdn.ciner.com.tr/ht/2026/10/28/01418A5689B618D9BA980AE927ECD0EC.m3u8?e=1793551971&st=6f8dcf39f79e70a0322648c92043eb04"
+entries.append(("Sevdan Bir Ates","8. Bolum",MANUEL))
+print(f"MANUEL 8 eklendi {MANUEL[:60]}...")
 
-for slug, last in LAST.items():
-    # sevdan-bir-ates 8 manuel var, 7,6 dene
-    start = last if slug != "sevdan-bir-ates" else 7
-    print(f"\n=== {slug.upper()} ===")
-    for num in range(start, start - 2, -1):
-        if num <= 0:
-            continue
-        # TAM URL'ler - kesinlikle tam
-        url1 = f"{BASE}/dizi/{slug}/bolum/{num}-bolum"
-        url2 = f"{BASE}/dizi/{slug}/bolum/{num}-bolum-izle"
-        
-        found = False
-        for full_url in [url1, url2]:
-            print(f"  -> {full_url}")
-            m3u8 = get_m3u8(full_url)
-            if m3u8 and len(m3u8) > 60:
-                dizi_adi = slug.replace("-", " ").title()
-                if slug == "kizilcik-serbeti": dizi_adi = "Kizilcik Serbeti"
-                if slug == "sevdan-bir-ates": dizi_adi = "Sevdan Bir Ates"
-                entries.append({"dizi": dizi_adi, "bolum": f"{num}. Bolum", "url": m3u8, "num": num})
-                print(f"  OK {num}")
-                found = True
-                break
-            else:
-                print(f"  yok")
-        if not found:
-            print(f"  BULAMADI {num}")
-        time.sleep(0.5)
+for url in bolum_urls:
+    if 'sevdan-bir-ates-sezon-1-bolum-8' in url: continue # manuel var
+    print(f" -> {url}")
+    m3u8=get_vmcdn(url)
+    if m3u8:
+        # numara çıkar
+        m=re.search(r'bolum-(\d+)-', url)
+        num=m.group(1) if m else "B"
+        dizi="Sevdan Bir Ates" if "sevdan-bir-ates" in url else "Kizilcik Serbeti" if "kizilcik" in url else "Muhtemel Ask"
+        entries.append((dizi, f"{num}. Bolum", m3u8))
+        print(f"   OK {num}")
+    time.sleep(0.5)
 
-# tekilleştir ve son 3
-final_dict = {}
-for e in entries:
-    key = f"{e['dizi'].lower()}_{e['num']}"
-    if key not in final_dict:
-        final_dict[key] = e
-
-all_final = list(final_dict.values())
-
-with open(m3u_file, "w", encoding="utf-8") as f:
+# yaz
+poster="https://showtv.mncdn.com/mnresize/1180/665/upload/diziler/sevdan-bir-ates/afis.jpg"
+with open(M3U,"w",encoding="utf-8") as f:
     f.write("#EXTM3U\n")
-    for e in sorted(all_final, key=lambda x: (x["dizi"], -x["num"])):
-        f.write(f'#EXTINF:-1 group-title="{GROUP_NAME}",TR: SHOW - {e["bolum"]} - {e["dizi"]}\n{e["url"]}\n\n')
+    for dizi,bolum,m3u8 in entries:
+        f.write(f'#EXTINF:-1 tvg-logo="{poster}" group-title="{GROUP}",TR: {dizi} - {bolum}\n{m3u8}\n\n')
 
-print(f"\n{m3u_file} -> {len(all_final)} bolum")
+print(f"{M3U} -> {len(entries)}")
 
-if not os.path.exists(mirti_file):
-    with open(mirti_file, "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n")
-
-with open(mirti_file, "r", encoding="utf-8", errors="ignore") as ff:
-    cont = ff.read()
-
-first = cont.splitlines()[0] if cont else "#EXTM3U"
-old = ["#EXTINF" + p for p in cont.split("#EXTINF")[1:] if "http" in p and GROUP_NAME not in p]
-
-with open(m3u_file, "r", encoding="utf-8", errors="ignore") as ff:
-    new = ["#EXTINF" + p for p in ff.read().split("#EXTINF")[1:] if "http" in p]
-
-with open(mirti_file, "w", encoding="utf-8") as out:
-    out.write(first + "\n")
-    for b in old:
-        out.write(b.strip() + "\n\n")
-    for b in new:
-        out.write(b.strip() + "\n\n")
-
-print(f"mirti68.m3u guncellendi - {len(new)} kayit")
-print("Bitti")
+if not os.path.exists(MIRTI): open(MIRTI,"w").write("#EXTM3U\n")
+cont=open(MIRTI,"r",encoding="utf-8",errors="ignore").read()
+first=cont.splitlines()[0] if cont else "#EXTM3U"
+old=["#EXTINF"+p for p in cont.split("#EXTINF")[1:] if "http" in p and GROUP not in p]
+new=["#EXTINF"+p for p in open(M3U,"r",encoding="utf-8",errors="ignore").read().split("#EXTINF")[1:] if "http" in p]
+open(MIRTI,"w",encoding="utf-8").write(first+"\n"+"\n\n".join([b.strip() for b in old+new])+"\n")
+print(f"{MIRTI} {len(new)} kayit")
