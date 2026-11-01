@@ -93,9 +93,9 @@ with open(m3u_file,"w",encoding="utf-8") as f:
     for e in sorted(all_final, key=lambda x:(x["dizi"], -x["num"])):
         logo=e.get("logo","")
         if logo:
-            f.write(f'#EXTINF:-1 tvg-logo="{logo}" group-title="{GROUP}",TR: SHOW - {e["bolum"]} - {e["dizi"]}\n{e["url"]}\n\n')
+            f.write(f'#EXTINF:-1 tvg-logo="{logo}" group-title="{GROUP}", - {e["bolum"]} - {e["dizi"]}\n{e["url"]}\n\n')
         else:
-            f.write(f'#EXTINF:-1 group-title="{GROUP}",TR: SHOW - {e["bolum"]} - {e["dizi"]}\n{e["url"]}\n\n')
+            f.write(f'#EXTINF:-1 group-title="{GROUP}",- {e["bolum"]} - {e["dizi"]}\n{e["url"]}\n\n')
 
 print(f"\n{m3u_file} -> {len(all_final)} bolum")
 
