@@ -7,7 +7,7 @@ def main():
     all_entries = []
 
     # Dosyayı en başta oluştur.
-    with open(M3U_FILE, "w", encoding="utf-8") as f:
+    with open(M3U_FILE, "a", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
 
     for slug, info in SERIES.items():
