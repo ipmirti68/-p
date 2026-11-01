@@ -5,7 +5,7 @@ import requests
 import concurrent.futures
 from datetime import datetime
 
-super_lig_sezonlar = { 3853: '2025/2026', 3974: '2026/2027' }
+super_lig_sezonlar = { 3974: '2026/2027' }
 super_lig_haftalar = { 3853: range(1, 39), 3974: range(1, 39) }
 
 HEADERS = {
