@@ -40,7 +40,7 @@ jobs:
         continue-on-error: true
         run: python kanald.py
 
-      - name: 5 - ATV
+      - name: 5 - DİZİ
         continue-on-error: true
         run: python dizi.py
 
