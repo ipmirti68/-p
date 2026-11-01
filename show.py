@@ -1,56 +1,63 @@
-import cloudscraper, re, os, time, json
+import re, os, time, json
+from bs4 import BeautifulSoup
 
 m3u_file="showtv.m3u"
 mirti_file="mirti68.m3u"
 GROUP="SHOW Dizileri"
 site="https://www.showtv.com.tr"
-scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
 
-def fetch(u):
+def get_poster(slug):
     try:
-        r=scraper.get(u, timeout=20)
-        if len(r.text)>1000: return r.text
-    except: return ""
+        import requests
+        r=requests.get(f"{site}/dizi/{slug}", timeout=15, headers={"User-Agent":"Mozilla/5.0"})
+        soup=BeautifulSoup(r.content, "html.parser")
+        og=soup.find("meta", property="og:image")
+        if og and og.get("content"): return og["content"]
+    except: pass
     return ""
 
-def extract_m3u8(html):
-    m=re.findall(r'https?://[^"\'\s]*vmcdn\.ciner\.com\.tr[^"\'\s]*\.m3u8[^"\'\s]*', html)
-    if m:
-        return sorted(m, key=len)[-1].replace("\\/","/")
-    mh=re.search(r"data-hope-video='(.*?)'", html)
-    if mh:
-        try:
-            j=json.loads(mh.group(1).replace('&quot;','"').replace("&amp;","&"))
-            return j["media"]["m3u8"][0]["src"].replace("\\/","/")
-        except: pass
-    return None
-
-def ytdlp_m3u8(page_url):
-    if "fragman" in page_url or "galeri" in page_url: return None
+def get_m3u8(url):
+    # 1. yt-dlp en sağlamı 【entity-SHOW TV¦canonical_name=SHOW TV】 için
     try:
         import yt_dlp
         ydl_opts={"quiet":True,"no_warnings":True,"skip_download":True}
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            info=ydl.extract_info(page_url, download=False)
+            info=ydl.extract_info(url, download=False)
             for f in info.get("formats",[])[::-1]:
                 u=f.get("url","")
                 if ".m3u8" in u and "vmcdn" in u:
                     return u
+            # data-hope-video json içinde de olabilir
+            if "formats" in info and info["formats"]:
+                for f in info["formats"]:
+                    if ".m3u8" in f.get("url",""):
+                        return f["url"]
+    except Exception as e:
+        print(f"    yt-dlp hata: {e}")
+    
+    # 2. cloudscraper fallback
+    try:
+        import cloudscraper
+        scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
+        r=scraper.get(url, timeout=20)
+        html=r.text
+        m=re.findall(r'https?://[^"\'\s]*vmcdn\.ciner\.com\.tr[^"\'\s]*\.m3u8[^"\'\s]*', html)
+        if m: return sorted(m, key=len)[-1].replace("\\/","/")
+        mh=re.search(r"data-hope-video='(.*?)'", html)
+        if mh:
+            j=json.loads(mh.group(1).replace('&quot;','"').replace("&amp;","&"))
+            return j["media"]["m3u8"][0]["src"].replace("\\/","/")
     except: pass
     return None
 
-# MANUEL - senin verdiğin 8. bölüm hep duracak
+# TAZE MANUEL - senin verdiğin hep duracak
 MANUEL={
-    "sevdan-bir-ates": [{"num":8, "url":"https://vmcdn.ciner.com.tr/ht/2026/10/28/01418A5689B618D9BA980AE927ECD0EC.m3u8?e=1793536249&st=d9a494327d774d3e48f8f8114a94a392"}]
+    "sevdan-bir-ates": [
+        {"num":8, "url":"https://vmcdn.ciner.com.tr/ht/2026/10/28/01418A5689B618D9BA980AE927ECD0EC.m3u8?e=1793536249&st=d9a494327d774d3e48f8f8114a94a392", "poster":""},
+    ]
 }
 
-entries=[]
-for slug, items in MANUEL.items():
-    for it in items:
-        entries.append({"dizi":slug.replace("-"," ").title(),"bolum":f"{it['num']}. Bolum","url":it["url"],"num":it["num"]})
-        print(f"MANUEL {slug} {it['num']}")
-
-# DİZİ BAŞINA SON BÖLÜM NUMARALARI - bunları otomatik bulamazsa buradan deneyecek
+# son bölüm numaraları - burayı güncelle yeter
 LAST_NUM={
     "kizilcik-serbeti": 145,
     "sevdan-bir-ates": 8,
@@ -58,45 +65,50 @@ LAST_NUM={
     "menekse": 5
 }
 
-slugs=["kizilcik-serbeti","sevdan-bir-ates","muhtemel-ask","menekse"]
+entries=[]
+posters={}
 
-for slug in slugs:
-    print(f"\n=== {slug.upper()} ===")
-    last=LAST_NUM.get(slug, 10)
-    # son 3 bölümü dene: 145,144,143 gibi
+# posterleri çek
+for slug in LAST_NUM.keys():
+    p=get_poster(slug)
+    posters[slug]=p
+    print(f"Poster {slug}: {p[:60]}")
+
+# manuel ekle
+for slug, items in MANUEL.items():
+    for it in items:
+        logo=posters.get(slug,"")
+        entries.append({"dizi":slug.replace("-"," ").title(),"bolum":f"{it['num']}. Bolum","url":it["url"],"num":it["num"],"logo":logo})
+
+# otomatik son 3
+for slug, last in LAST_NUM.items():
+    print(f"\n=== {slug.upper()} son {last} ===")
     for num in range(last, last-3, -1):
-        # manuelde varsa atla
         if any(e["dizi"].lower()==slug.replace("-"," ").title().lower() and e["num"]==num for e in entries):
             continue
-        # SHOW TV'de 2 farklı URL kalıbı var, ikisini de dene
         candidates=[
             f"{site}/dizi/{slug}/bolum/{num}-bolum",
             f"{site}/dizi/{slug}/bolum/{num}-bolum-izle",
             f"{site}/dizi/{slug}/{num}-bolum",
+            f"{site}/dizi/{slug}/bolum/{num}",
         ]
-        found=False
+        ok=False
         for url in candidates:
-            print(f"  -> dene {url}")
-            # önce yt-dlp
-            m3u8=ytdlp_m3u8(url)
-            if not m3u8:
-                html=fetch(url)
-                if not html: continue
-                # fragman sayfası mı?
-                if "fragman" in html.lower() and f"{num}. bolum fragman" in html.lower():
-                    print(f"     fragman, atla")
-                    continue
-                m3u8=extract_m3u8(html)
-            if m3u8 and len(m3u8)>60:
-                entries.append({"dizi":slug.replace("-"," ").title(),"bolum":f"{num}. Bolum","url":m3u8,"num":num})
-                print(f"  OK {num} -> {m3u8[:70]}...")
-                found=True
+            print(f"  -> {url}")
+            m3u8=get_m3u8(url)
+            if m3u8 and len(m3u8)>60 and "fragman" not in m3u8.lower():
+                logo=posters.get(slug,"")
+                entries.append({"dizi":slug.replace("-"," ").title(),"bolum":f"{num}. Bolum","url":m3u8,"num":num,"logo":logo})
+                print(f"  OK {num}")
+                ok=True
                 break
-        if not found:
+            else:
+                print(f"  yok")
+        if not ok:
             print(f"  BULAMADI {num}")
         time.sleep(0.5)
 
-# tekrar temizle - her diziden son 3
+# her diziden son 3'e indir, tekrar yok
 final={}
 for e in entries:
     k=e["dizi"].lower()
@@ -109,10 +121,15 @@ for k,v in final.items():
     top3=sorted(uniq.values(), key=lambda x:x["num"], reverse=True)[:3]
     all_final.extend(top3)
 
+# yaz
 with open(m3u_file,"w",encoding="utf-8") as f:
     f.write("#EXTM3U\n")
     for e in sorted(all_final, key=lambda x:(x["dizi"], -x["num"])):
-        f.write(f'#EXTINF:-1 group-title="{GROUP}",TR: {e["bolum"]} - {e["dizi"]}\n{e["url"]}\n\n')
+        logo=e.get("logo","")
+        if logo:
+            f.write(f'#EXTINF:-1 tvg-logo="{logo}" group-title="{GROUP}",TR: {e["bolum"]} - {e["dizi"]}\n{e["url"]}\n\n')
+        else:
+            f.write(f'#EXTINF:-1 group-title="{GROUP}",TR: {e["bolum"]} - {e["dizi"]}\n{e["url"]}\n\n')
 
 print(f"\n{m3u_file} -> {len(all_final)} bolum")
 
@@ -126,4 +143,4 @@ with open(mirti_file,"w",encoding="utf-8") as out:
     for b in old: out.write(b.strip()+"\n\n")
     for b in new: out.write(b.strip()+"\n\n")
 
-print(f"mirti68.m3u güncellendi - {len(new)} kayıt, fragman yok")
+print(f"mirti68.m3u güncellendi - {len(new)} kayit")
