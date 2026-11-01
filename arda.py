@@ -214,7 +214,7 @@ def main():
             continue
         seen.add(url)
         entries.append(
-            f'#EXTINF:-1 group-title="{GROUP}", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg" {title}\n'
+            f'#EXTINF:-1 group-title="{GROUP}", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", {title}\n'
             f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n{url}"
         )
 
