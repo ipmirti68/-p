@@ -1,5 +1,4 @@
 import cloudscraper, re, os, time, json
-from bs4 import BeautifulSoup
 
 m3u_file="showtv.m3u"
 mirti_file="mirti68.m3u"
@@ -17,11 +16,7 @@ def fetch(u):
 def extract_m3u8(html):
     m=re.findall(r'https?://[^"\'\s]*vmcdn\.ciner\.com\.tr[^"\'\s]*\.m3u8[^"\'\s]*', html)
     if m:
-        # fragman değil, bölüm olan en uzun m3u8
-        # galeri ve fragman sayfalarında mp4 oluyor genelde
-        long_m=[x for x in m if len(x)>80]
-        if long_m: return sorted(long_m, key=len)[-1].replace("\\/","/")
-        return m[0].replace("\\/","/")
+        return sorted(m, key=len)[-1].replace("\\/","/")
     mh=re.search(r"data-hope-video='(.*?)'", html)
     if mh:
         try:
@@ -30,64 +25,78 @@ def extract_m3u8(html):
         except: pass
     return None
 
+def ytdlp_m3u8(page_url):
+    if "fragman" in page_url or "galeri" in page_url: return None
+    try:
+        import yt_dlp
+        ydl_opts={"quiet":True,"no_warnings":True,"skip_download":True}
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info=ydl.extract_info(page_url, download=False)
+            for f in info.get("formats",[])[::-1]:
+                u=f.get("url","")
+                if ".m3u8" in u and "vmcdn" in u:
+                    return u
+    except: pass
+    return None
+
+# MANUEL - senin verdiğin 8. bölüm hep duracak
 MANUEL={
-    "sevdan-bir-ates": [
-        {"num":8, "url":"https://vmcdn.ciner.com.tr/ht/2026/10/28/01418A5689B618D9BA980AE927ECD0EC.m3u8?e=1793536249&st=d9a494327d774d3e48f8f8114a94a392", "title":"8. Bolum"},
-    ]
+    "sevdan-bir-ates": [{"num":8, "url":"https://vmcdn.ciner.com.tr/ht/2026/10/28/01418A5689B618D9BA980AE927ECD0EC.m3u8?e=1793536249&st=d9a494327d774d3e48f8f8114a94a392"}]
 }
 
-slugs=["kizilcik-serbeti","sevdan-bir-ates","muhtemel-ask","menekse"]
 entries=[]
 for slug, items in MANUEL.items():
     for it in items:
-        entries.append({"dizi":slug.replace("-"," ").title(),"bolum":it["title"],"url":it["url"],"num":it["num"]})
+        entries.append({"dizi":slug.replace("-"," ").title(),"bolum":f"{it['num']}. Bolum","url":it["url"],"num":it["num"]})
+        print(f"MANUEL {slug} {it['num']}")
+
+# DİZİ BAŞINA SON BÖLÜM NUMARALARI - bunları otomatik bulamazsa buradan deneyecek
+LAST_NUM={
+    "kizilcik-serbeti": 145,
+    "sevdan-bir-ates": 8,
+    "muhtemel-ask": 10,
+    "menekse": 5
+}
+
+slugs=["kizilcik-serbeti","sevdan-bir-ates","muhtemel-ask","menekse"]
 
 for slug in slugs:
     print(f"\n=== {slug.upper()} ===")
-    html=fetch(f"{site}/dizi/{slug}")
-    if not html: html=fetch(f"{site}/dizi/{slug}/bolumler")
-    soup=BeautifulSoup(html, "html.parser")
-    links={}
-    for a in soup.find_all("a", href=True):
-        h=a["href"].lower()
-        # FRAGMAN / GALERI / FOTO ENGELLE
-        if "fragman" in h: continue
-        if "galeri" in h: continue
-        if "fotograf" in h: continue
-        if "haber" in h: continue
-        if "oyuncu" in h: continue
-        if slug not in h: continue
-        if "/bolum/" not in h: continue  # sadece gerçek bölüm sayfası /bolum/ içermeli
-        if h.startswith("/"): h=site+h
-        else: h="https://www.showtv.com.tr"+h if not h.startswith("http") else h
-        mm=re.search(r'(\d+)\s*[-.]?\s*bolum', h)
-        if not mm: mm=re.search(r'bolum[^0-9]*(\d+)', h)
-        num=int(mm.group(1)) if mm else 0
-        if num==0: continue
-        if h not in links or num>links[h]: links[h]=num
-
-    # son 3
-    existing=[e["num"] for e in entries if slug in e["dizi"].lower()]
-    sorted_links=sorted(links.items(), key=lambda x:x[1], reverse=True)
-    print(f"  bulunan gerçek bölümler: {len(sorted_links)} - {sorted_links[:5]}")
-    cnt=0
-    for url,num in sorted_links:
-        if num in existing: continue
-        if cnt>=3: break
-        print(f"  -> {url} ({num})")
-        bh=fetch(url)
-        # fragman sayfası mı kontrol et
-        if "fragman" in bh.lower() and "bolum" not in bh.lower().split("fragman")[0][-100:]:
-            print(f"    fragman sayfası, atlanıyor")
+    last=LAST_NUM.get(slug, 10)
+    # son 3 bölümü dene: 145,144,143 gibi
+    for num in range(last, last-3, -1):
+        # manuelde varsa atla
+        if any(e["dizi"].lower()==slug.replace("-"," ").title().lower() and e["num"]==num for e in entries):
             continue
-        u=extract_m3u8(bh)
-        if u and len(u)>60: # gerçek m3u8
-            entries.append({"dizi":slug.replace("-"," ").title(),"bolum":f"{num}. Bolum","url":u,"num":num})
-            print(f"  OK {num}")
-            cnt+=1
-        time.sleep(0.4)
+        # SHOW TV'de 2 farklı URL kalıbı var, ikisini de dene
+        candidates=[
+            f"{site}/dizi/{slug}/bolum/{num}-bolum",
+            f"{site}/dizi/{slug}/bolum/{num}-bolum-izle",
+            f"{site}/dizi/{slug}/{num}-bolum",
+        ]
+        found=False
+        for url in candidates:
+            print(f"  -> dene {url}")
+            # önce yt-dlp
+            m3u8=ytdlp_m3u8(url)
+            if not m3u8:
+                html=fetch(url)
+                if not html: continue
+                # fragman sayfası mı?
+                if "fragman" in html.lower() and f"{num}. bolum fragman" in html.lower():
+                    print(f"     fragman, atla")
+                    continue
+                m3u8=extract_m3u8(html)
+            if m3u8 and len(m3u8)>60:
+                entries.append({"dizi":slug.replace("-"," ").title(),"bolum":f"{num}. Bolum","url":m3u8,"num":num})
+                print(f"  OK {num} -> {m3u8[:70]}...")
+                found=True
+                break
+        if not found:
+            print(f"  BULAMADI {num}")
+        time.sleep(0.5)
 
-# son 3'e indir
+# tekrar temizle - her diziden son 3
 final={}
 for e in entries:
     k=e["dizi"].lower()
@@ -105,6 +114,8 @@ with open(m3u_file,"w",encoding="utf-8") as f:
     for e in sorted(all_final, key=lambda x:(x["dizi"], -x["num"])):
         f.write(f'#EXTINF:-1 group-title="{GROUP}",TR: {e["bolum"]} - {e["dizi"]}\n{e["url"]}\n\n')
 
+print(f"\n{m3u_file} -> {len(all_final)} bolum")
+
 if not os.path.exists(mirti_file): open(mirti_file,"w").write("#EXTM3U\n")
 with open(mirti_file,"r",encoding="utf-8",errors="ignore") as ff: cont=ff.read()
 first=cont.splitlines()[0] if cont else "#EXTM3U"
@@ -115,4 +126,4 @@ with open(mirti_file,"w",encoding="utf-8") as out:
     for b in old: out.write(b.strip()+"\n\n")
     for b in new: out.write(b.strip()+"\n\n")
 
-print(f"Bitti {len(new)} kayıt - fragman yok")
+print(f"mirti68.m3u güncellendi - {len(new)} kayıt, fragman yok")
