@@ -1,114 +1,100 @@
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 3. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac8a9dc147366462aad1563&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Daha 17 - 22. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a0b708b6857e013a393b8de.jpg" group-title="KANALD Dizileri",TR: Daha 17 - 22. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/i/QK/doy_22blm/doy_22blm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 4. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad1dbbfef431c557785daf9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Daha 17 - 21. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a0b708b6857e013a393b8de.jpg" group-title="KANALD Dizileri",TR: Daha 17 - 21. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/K/IC/daha17_21_bolum_rev/daha17_21_bolum_rev.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 5. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6adb1c31ef431c557785ddc4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Daha 17 - 20. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a0b708b6857e013a393b8de.jpg" group-title="KANALD Dizileri",TR: Daha 17 - 20. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/H/Nw/doy_bol20/doy_bol20.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 1. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a97c234a46e38b3a3925061&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Uzak Şehir - 70. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="KANALD Dizileri",TR: Uzak Şehir - 70. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/5/Zx/us_70blm/us_70blm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 2. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aa03ca6755f87153f61dc6a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Uzak Şehir - 69. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="KANALD Dizileri",TR: Uzak Şehir - 69. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/p/lm/us_bolum_69/us_bolum_69.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 3. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abf5758d3270c47b787413e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Uzak Şehir - 68. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="KANALD Dizileri",TR: Uzak Şehir - 68. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/E/h-/us_68blm/us_68blm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 20. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac80622147366462aad14f4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 8. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="KANALD Dizileri",TR: Haysiyet - 8. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/t/gU/haysiyet_bolum_8/haysiyet_bolum_8.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 21. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6acf70cf147366462aad1883&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 7. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="KANALD Dizileri",TR: Haysiyet - 7. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/N/kS/haysiyet_bolum_7/haysiyet_bolum_7.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 22. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad9e5c3ef431c557785dd62&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 6. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="KANALD Dizileri",TR: Haysiyet - 6. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/e/6u/h6_blm/h6_blm.smil/playlist.m3u8
 
-#EXTM3U
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 3. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac8a9dc147366462aad1563&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 39. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="KANALD Dizileri",TR: Güller ve Günahlar - 39. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/A/-O/gvg_39blm/gvg_39blm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 4. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad1dbbfef431c557785daf9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 38. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="KANALD Dizileri",TR: Güller ve Günahlar - 38. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/A/-0/gg_38_bolumm/gg_38_bolumm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 5. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6adb1c31ef431c557785ddc4&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 1. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a97c234a46e38b3a3925061&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 2. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aa03ca6755f87153f61dc6a&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 3. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abf5758d3270c47b787413e&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 20. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac80622147366462aad14f4&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 21. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6acf70cf147366462aad1883&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 22. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad9e5c3ef431c557785dd62&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 37. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="KANALD Dizileri",TR: Güller ve Günahlar - 37. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/r/fg/gvg_bolum37/gvg_bolum37.smil/playlist.m3u8
 
 #EXTM3U
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 3. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac8a9dc147366462aad1563&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Daha 17 - 22. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a0b708b6857e013a393b8de.jpg" group-title="KANALD Dizileri",TR: Daha 17 - 22. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/i/QK/doy_22blm/doy_22blm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 4. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad1dbbfef431c557785daf9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Daha 17 - 21. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a0b708b6857e013a393b8de.jpg" group-title="KANALD Dizileri",TR: Daha 17 - 21. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/K/IC/daha17_21_bolum_rev/daha17_21_bolum_rev.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 5. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6adb1c31ef431c557785ddc4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Daha 17 - 20. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a0b708b6857e013a393b8de.jpg" group-title="KANALD Dizileri",TR: Daha 17 - 20. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/H/Nw/doy_bol20/doy_bol20.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 1. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a97c234a46e38b3a3925061&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Uzak Şehir - 70. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="KANALD Dizileri",TR: Uzak Şehir - 70. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/5/Zx/us_70blm/us_70blm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 2. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aa03ca6755f87153f61dc6a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Uzak Şehir - 69. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="KANALD Dizileri",TR: Uzak Şehir - 69. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/p/lm/us_bolum_69/us_bolum_69.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 3. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abf5758d3270c47b787413e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Uzak Şehir - 68. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="KANALD Dizileri",TR: Uzak Şehir - 68. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/E/h-/us_68blm/us_68blm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 20. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac80622147366462aad14f4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 8. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="KANALD Dizileri",TR: Haysiyet - 8. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/t/gU/haysiyet_bolum_8/haysiyet_bolum_8.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 21. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6acf70cf147366462aad1883&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 7. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="KANALD Dizileri",TR: Haysiyet - 7. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/N/kS/haysiyet_bolum_7/haysiyet_bolum_7.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 22. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad9e5c3ef431c557785dd62&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 6. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="KANALD Dizileri",TR: Haysiyet - 6. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/e/6u/h6_blm/h6_blm.smil/playlist.m3u8
 
-#EXTM3U
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 3. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac8a9dc147366462aad1563&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 39. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="KANALD Dizileri",TR: Güller ve Günahlar - 39. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/A/-O/gvg_39blm/gvg_39blm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 4. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad1dbbfef431c557785daf9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 38. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="KANALD Dizileri",TR: Güller ve Günahlar - 38. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/A/-0/gg_38_bolumm/gg_38_bolumm.smil/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" group-title="STAR Dizileri", Başkalarının Hayatı 5. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6adb1c31ef431c557785ddc4&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 1. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a97c234a46e38b3a3925061&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 2. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aa03ca6755f87153f61dc6a&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/banner(2).jpg" group-title="STAR Dizileri", Tuzlu Kahve 3. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abf5758d3270c47b787413e&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 20. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac80622147366462aad14f4&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 21. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6acf70cf147366462aad1883&SecretKey=NtvApiSecret2014*&.m3u8
-
-#EXTINF:-1 tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" group-title="STAR Dizileri", Sevdiğim Sensin 22. Bölüm
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad9e5c3ef431c557785dd62&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 37. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="KANALD Dizileri",TR: Güller ve Günahlar - 37. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/r/fg/gvg_bolum37/gvg_bolum37.smil/playlist.m3u8
 
 #EXTINF:-1 group-title="🖥beINSPORTS" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg", beIN SPORTS 1 Selcuk 🔴
 #EXTVLCOPT:http-referrer=https://main.uxsyplayer6859599e6c.click/
@@ -206,18 +192,12 @@ https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN Sports 1
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivebs1.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN Sports 3
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivebs3.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN Sports 4
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivebs4.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN Sports 5
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivebs5.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN Sports Max 2
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivebsm2.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN Sports 2
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivebs2.m3u8
@@ -227,57 +207,63 @@ https://andro.evrenesoglu217.click/checklist/androstreamlivess1.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN Sports Max 1
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivebsm1.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN Sports 3
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivebs3.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", BeIN Sports Max 2
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivebsm2.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", S Sport 2
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivess2.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tivibu Spor
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivets.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", S Sport Plus
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivessplus1.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tivibu Spor 4
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivets4.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tivibu Spor 2
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivets2.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tivibu Spor 3
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivets3.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tivibu Spor 1
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivets1.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Smart Spor 1
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivesm1.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tivibu Spor
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tivibu Spor 1
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivets.m3u8
+https://andro.evrenesoglu217.click/checklist/androstreamlivets1.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Smart Spor 2
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivesm2.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", IDMAN TV
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tivibu Spor 4
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamliveidm.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Euro Sport 2
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivees2.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", TRT Spor Yıldız
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivetrtsy.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", ATV
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamliveatv.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", TRT 1
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivetrt1.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", TRT Spor
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivetrts.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", A Spor
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamliveas.m3u8
+https://andro.evrenesoglu217.click/checklist/androstreamlivets4.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Euro Sport 1
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivees1.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Euro Sport 2
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivees2.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", TRT Spor
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivetrts.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", IDMAN TV
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamliveidm.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", ATV
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamliveatv.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", TRT Spor Yıldız
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivetrtsy.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", A Spor
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamliveas.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", TRT 1
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivetrt1.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", A2
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivea2.m3u8
@@ -287,54 +273,57 @@ https://andro.evrenesoglu217.click/checklist/androstreamlivetjk.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", HT Spor
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamliveht.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", TV8
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivetv8.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivetb.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 1
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivetb1.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", TV8.5
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivetv85.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", NBA TV
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivenba.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", TV8
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivetv8.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 1
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivetb1.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 2
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivetb2.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 4
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivetb4.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 5
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivetb5.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 3
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivetb3.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 4
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivetb4.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 6
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivetb6.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 8
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivetb8.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 7
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivetb7.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Tabi Spor 8
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivetb8.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", FB TV
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivefb.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", CBC Sport
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivecbcs.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Sports TV
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Exxen Sports 2
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamlivesptstv.m3u8
+https://andro.evrenesoglu217.click/checklist/androstreamliveexn2.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", GS TV
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivegs.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Sports TV
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamlivesptstv.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Exxen
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamliveexn.m3u8
@@ -344,9 +333,6 @@ https://andro.evrenesoglu217.click/checklist/androstreamliveexn1.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Exxen Sports 3
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamliveexn3.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Exxen Sports 2
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamliveexn2.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Exxen Sports 4
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamliveexn4.m3u8
@@ -356,39 +342,36 @@ https://andro.evrenesoglu217.click/checklist/androstreamliveexn5.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Exxen Sports 6
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamliveexn6.m3u8
-#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Exxen Sports 7
-#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
-https://andro.evrenesoglu217.click/checklist/androstreamliveexn7.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Exxen Sports 8
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamliveexn8.m3u8
+#EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Exxen Sports 7
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu217.click/checklist/androstreamliveexn7.m3u8
 #EXTINF:-1 group-title= "🖥beINSPORTS" için tvg-logo="https://i.imgur.com/OqdfQmw.png", Aachen - Preussen Münster
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu217.click/checklist/androstreamlivesifir.m3u8#EXTM3U
+#EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", Juventus - Napoli
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//ss2/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", Marsilya - Toulouse
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", Athletic Bilbao - Real Sociedad
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//ss/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", Formula 1 - Yarış
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
-#EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", Marsilya - Toulouse
-#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
-https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
-#EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", Juventus - Napoli
-#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
-https://css.d6e3eds5e065t5.help//ss2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", beIN SPORTS 1 Arda 🔴 
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//hls/b1.m3u8
-#EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", beIN SPORTS MAX 1 Arda 🔴 
-#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
-https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", beIN SPORTS 5 Arda 🔴 
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
-#EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", beIN SPORTS MAX 2 Arda 🔴 
+#EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", beIN SPORTS MAX 1 Arda 🔴 
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
-https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
+https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", beIN SPORTS 2 Arda 🔴 
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
 https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
@@ -397,7 +380,10 @@ https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
 https://css.d6e3eds5e065t5.help//trt-spor/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", A SPOR
 #EXTVLCOPT:http-referrer=https://golvarmac1.pro/
-https://css.d6e3eds5e065t5.help//aspor/tracks-v1a1/mono.m3u8#EXTINF:-1 tvg-id="1515721" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515721.jpg" group-title="⚽🔥 GOLLER",17.08.2026 - Samsunspor 3-3 Göztepe
+https://css.d6e3eds5e065t5.help//aspor/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="🖥beINSPORTS", tvg-logo="https://i.imgur.com/FZyAWkI.jpeg", beIN SPORTS MAX 2 Arda 🔴 
+#EXTVLCOPT:http-referrer=https://golvarmac1.pro/
+https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8#EXTINF:-1 tvg-id="1515721" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515721.jpg" group-title="⚽🔥 GOLLER",17.08.2026 - Samsunspor 3-3 Göztepe
 https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_sam_goz_1h_17agu_ip&secure=1
 #EXTINF:-1 tvg-id="1515709" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515709.jpg" group-title="⚽🔥 GOLLER",16.08.2026 - Amed Sportif Faaliyetler 3-0 Erzurumspor FK
 https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_amed_erzurum_1h_15agu_ip&secure=1
@@ -559,6 +545,8 @@ https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&cust
 https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_eyup_kas_9h_24ekim_ip&secure=1
 #EXTINF:-1 tvg-id="1515813" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515813.jpg" group-title="⚽🔥 GOLLER",23.10.2026 - Corendon Alanyaspor 1-2 Kocaelispor
 https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_ala_koca_9h_23ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515830" tvg-logo="https://media03.tr.beinsports.com/img/highlights/ozet.jpg" group-title="⚽🔥 GOLLER",01.11.2026 - Kasımpaşa 2-2 Beşiktaş
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_kas_bjk_1kas_ip&secure=1
 #EXTINF:-1 tvg-id="1515829" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515829.jpg" group-title="⚽🔥 GOLLER",01.11.2026 - İstanbul Başakşehir 5-2 Samsunspor
 https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_bas_sam_1kas_ip&secure=1
 #EXTINF:-1 tvg-id="1515833" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515833.jpg" group-title="⚽🔥 GOLLER",01.11.2026 - Trabzonspor 2-0 Gaziantep FK
