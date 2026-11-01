@@ -1,96 +1,491 @@
-import cloudscraper, re, os, json, time
+
+import cloudscraper
+import re
+import os
+import json
+import time
+import html
+from urllib.parse import urljoin, urlparse, unquote
 from bs4 import BeautifulSoup
 
-M3U="showtv.m3u"
-MIRTI="mirti68.m3u"
-GROUP="SHOW Dizileri"
-BASE="https://www.showtv.com.tr"
+# ==================================================
+# SHOW TV - SON 3 BÖLÜM OTOMATİK TARAMA
+# ==================================================
 
-def get_vmcdn(url):
+BASE = "https://www.showtv.com.tr"
+
+M3U = "showtv.m3u"
+MIRTI = "mirti68.m3u"
+
+GROUP = "SHOW Dizileri"
+LIMIT = 3
+
+SERIES = {
+    "sevdan-bir-ates": {
+        "name": "Sevdan Bir Ateş",
+        "slug": "sevdan-bir-ates"
+    },
+    "kizilcik-serbeti": {
+        "name": "Kızılcık Şerbeti",
+        "slug": "kizilcik-serbeti"
+    },
+    "muhtemel-ask": {
+        "name": "Muhtemel Aşk",
+        "slug": "muhtemel-ask"
+    }
+}
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/130.0.0.0 Safari/537.36"
+    ),
+    "Referer": BASE + "/"
+}
+
+scraper = cloudscraper.create_scraper(
+    browser={
+        "browser": "chrome",
+        "platform": "windows",
+        "desktop": True
+    }
+)
+
+scraper.headers.update(HEADERS)
+
+
+# ==================================================
+# SAYFA İNDİRME
+# ==================================================
+
+def get_page(url):
+
     try:
-        scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
-        r=scraper.get(url, timeout=20)
-        txt=r.text
-        # 1. direkt vmcdn m3u8
-        m=re.search(r'(https://vmcdn\.ciner\.com\.tr/ht/[^\s"\'<>]+\.m3u8\?e=[^"\'\s]+&st=[^"\'\s]+)', txt)
-        if m:
-            return m.group(1).replace('\\/', '/')
-        # 2. data-hope-video içinde
-        m2=re.search(r'data-hope-video=\'([^\']+)\'', txt)
-        if m2:
-            j=json.loads(m2.group(1).replace('&quot;','"').replace('&amp;','&'))
-            if 'media' in j and 'm3u8' in j['media']:
-                return j['media']['m3u8'][0]['src'].replace('\\/', '/')
-        # 3. genel m3u8
-        m3=re.search(r'(https?://[^"\'\s]*vmcdn[^"\'\s]*\.m3u8[^"\'\s]*)', txt)
-        if m3:
-            return m3.group(1).replace('\\/', '/')
+        r = scraper.get(url, timeout=30)
+        r.raise_for_status()
+
+        if not r.encoding:
+            r.encoding = r.apparent_encoding
+
+        return r.text
+
     except Exception as e:
-        print(f"  vmcdn hata {url[-30:]} {e}")
+        print(f"  SAYFA HATASI: {e}")
+        return None
+
+
+# ==================================================
+# DİZİ TANITIM SAYFASINI BUL
+# ==================================================
+
+def find_series_page(key, info):
+
+    print(f"\nDİZİ ARANIYOR: {info['name']}")
+
+    pages = [
+        BASE + "/diziler",
+        BASE + "/"
+    ]
+
+    for page_url in pages:
+
+        source = get_page(page_url)
+
+        if not source:
+            continue
+
+        soup = BeautifulSoup(source, "html.parser")
+
+        for a in soup.find_all("a", href=True):
+
+            href = a["href"]
+            text = a.get_text(" ", strip=True).lower()
+
+            full = urljoin(BASE, href)
+
+            if (
+                "/dizi/tanitim/" in full
+                and (
+                    info["name"].lower() in text
+                    or info["slug"] in full.lower()
+                )
+            ):
+
+                print(f"  TANITIM: {full}")
+                return full
+
+    print("  Tanıtım sayfası bulunamadı.")
     return None
 
-def get_bolum_links():
-    scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
-    r=scraper.get(f"{BASE}/diziler", timeout=20)
-    soup=BeautifulSoup(r.text,'html.parser')
-    links=[]
-    for a in soup.find_all('a', href=True):
-        href=a['href']
-        if '/dizi/tum_bolumler/sevdan-bir-ates' in href or '/dizi/tum_bolumler/kizilcik-serbeti' in href or '/dizi/tum_bolumler/muhtemel-ask' in href:
-            full=href if href.startswith('http') else BASE+href
-            links.append(full)
-    # en azından son 3
-    # sevdan-bir-ates için senin verdiğin sayfalar
-    links+=[
-        "https://www.showtv.com.tr/dizi/tum_bolumler/sevdan-bir-ates-sezon-1-bolum-8-izle/135714",
-        "https://www.showtv.com.tr/dizi/tum_bolumler/sevdan-bir-ates-sezon-1-bolum-7-izle/135500",
-        "https://www.showtv.com.tr/dizi/tum_bolumler/sevdan-bir-ates-sezon-1-bolum-6-izle/135300",
+
+# ==================================================
+# BÖLÜM NUMARASINI BUL
+# ==================================================
+
+def get_episode_number(url, title=""):
+
+    text = unquote(url + " " + title).lower()
+
+    patterns = [
+        r"bolum[-_ ](\d+)",
+        r"(\d+)[-_. ]bolum",
+        r"bölüm[-_ ](\d+)",
+        r"(\d+)[-_. ]bölüm"
     ]
-    # tekrar temizle
-    uniq=[]
-    seen=set()
-    for l in links:
-        if l not in seen:
-            seen.add(l)
-            uniq.append(l)
-    return uniq[:6]
 
-print("SHOW - SHOW Dizileri")
-scraper=cloudscraper.create_scraper(browser={'browser':'chrome','platform':'windows','desktop':True})
-bolum_urls=get_bolum_links()
-entries=[]
+    for pattern in patterns:
 
-# manuel taze - senin verdiğin hep dursun
-MANUEL="https://vmcdn.ciner.com.tr/ht/2026/10/28/01418A5689B618D9BA980AE927ECD0EC.m3u8?e=1793551971&st=6f8dcf39f79e70a0322648c92043eb04"
-entries.append(("Sevdan Bir Ates","8. Bolum",MANUEL))
-print(f"MANUEL 8 eklendi {MANUEL[:60]}...")
+        m = re.search(pattern, text)
 
-for url in bolum_urls:
-    if 'sevdan-bir-ates-sezon-1-bolum-8' in url: continue # manuel var
-    print(f" -> {url}")
-    m3u8=get_vmcdn(url)
-    if m3u8:
-        # numara çıkar
-        m=re.search(r'bolum-(\d+)-', url)
-        num=m.group(1) if m else "B"
-        dizi="Sevdan Bir Ates" if "sevdan-bir-ates" in url else "Kizilcik Serbeti" if "kizilcik" in url else "Muhtemel Ask"
-        entries.append((dizi, f"{num}. Bolum", m3u8))
-        print(f"   OK {num}")
-    time.sleep(0.5)
+        if m:
+            return int(m.group(1))
 
-# yaz
-poster="https://showtv.mncdn.com/mnresize/1180/665/upload/diziler/sevdan-bir-ates/afis.jpg"
-with open(M3U,"w",encoding="utf-8") as f:
-    f.write("#EXTM3U\n")
-    for dizi,bolum,m3u8 in entries:
-        f.write(f'#EXTINF:-1 tvg-logo="{poster}" group-title="{GROUP}",TR: {dizi} - {bolum}\n{m3u8}\n\n')
+    return None
 
-print(f"{M3U} -> {len(entries)}")
 
-if not os.path.exists(MIRTI): open(MIRTI,"w").write("#EXTM3U\n")
-cont=open(MIRTI,"r",encoding="utf-8",errors="ignore").read()
-first=cont.splitlines()[0] if cont else "#EXTM3U"
-old=["#EXTINF"+p for p in cont.split("#EXTINF")[1:] if "http" in p and GROUP not in p]
-new=["#EXTINF"+p for p in open(M3U,"r",encoding="utf-8",errors="ignore").read().split("#EXTINF")[1:] if "http" in p]
-open(MIRTI,"w",encoding="utf-8").write(first+"\n"+"\n\n".join([b.strip() for b in old+new])+"\n")
-print(f"{MIRTI} {len(new)} kayit")
+# ==================================================
+# DİZİNİN BÖLÜM LİNKLERİNİ TOPLA
+# ==================================================
+
+def get_episode_links(series_url, info):
+
+    source = get_page(series_url)
+
+    if not source:
+        return []
+
+    soup = BeautifulSoup(source, "html.parser")
+
+    links = {}
+
+    for a in soup.find_all("a", href=True):
+
+        href = a["href"]
+
+        full = urljoin(BASE, href)
+
+        if "/dizi/tum_bolumler/" not in full:
+            continue
+
+        if info["slug"] not in full.lower():
+            continue
+
+        title = a.get_text(" ", strip=True)
+
+        number = get_episode_number(full, title)
+
+        if number is None:
+            continue
+
+        # Fragman ve kısa video bağlantılarını alma
+        if any(x in full.lower() for x in [
+            "fragman",
+            "on-izleme",
+            "sahne",
+            "kamera-arkasi"
+        ]):
+            continue
+
+        links[number] = full
+
+    result = sorted(
+        links.items(),
+        key=lambda x: x[0],
+        reverse=True
+    )
+
+    print(f"  Bulunan bölüm: {len(result)}")
+
+    for number, url in result[:LIMIT]:
+        print(f"  Bölüm {number}: {url}")
+
+    return result[:LIMIT]
+
+
+# ==================================================
+# M3U8 ADRESİNİ ÇIKAR
+# ==================================================
+
+def extract_m3u8(source):
+
+    if not source:
+        return None
+
+    source = html.unescape(source)
+    source = source.replace("\\/", "/")
+    source = source.replace("\\u0026", "&")
+
+    soup = BeautifulSoup(source, "html.parser")
+
+    # 1. data-hope-video JSON
+    for tag in soup.find_all(attrs={"data-hope-video": True}):
+
+        raw = tag.get("data-hope-video")
+
+        try:
+            data = json.loads(html.unescape(raw))
+
+            media = data.get("media", {})
+
+            videos = media.get("m3u8", [])
+
+            for video in videos:
+
+                if isinstance(video, dict):
+
+                    url = video.get("src")
+
+                    if url and ".m3u8" in url:
+                        return url.replace("\\/", "/")
+
+        except Exception:
+            pass
+
+    # 2. Sayfa içerisindeki vmcdn bağlantıları
+    patterns = [
+        r'https?://vmcdn\.ciner\.com\.tr/ht/[^"\'\s<>]+?\.m3u8[^"\'\s<>]*',
+        r'https?://[^"\'\s<>]+\.m3u8(?:\?[^"\'\s<>]*)?'
+    ]
+
+    for pattern in patterns:
+
+        matches = re.findall(pattern, source, re.I)
+
+        for url in matches:
+
+            url = html.unescape(url)
+            url = url.replace("\\/", "/")
+
+            if ".m3u8" in url.lower():
+
+                return url.rstrip("\\)")
+
+    return None
+
+
+def get_vmcdn(episode_url):
+
+    print("  M3U8 aranıyor...")
+
+    source = get_page(episode_url)
+
+    if not source:
+        return None
+
+    return extract_m3u8(source)
+
+
+# ==================================================
+# POSTER BUL
+# ==================================================
+
+def get_poster(series_url):
+
+    source = get_page(series_url)
+
+    if not source:
+        return ""
+
+    soup = BeautifulSoup(source, "html.parser")
+
+    meta = soup.find(
+        "meta",
+        attrs={"property": "og:image"}
+    )
+
+    if meta and meta.get("content"):
+        return urljoin(BASE, meta["content"])
+
+    return ""
+
+
+# ==================================================
+# M3U KAYIT OLUŞTUR
+# ==================================================
+
+def make_entry(name, number, stream, poster):
+
+    title = f"TR: {name} - {number}. Bölüm"
+
+    logo = poster or ""
+
+    return (
+        f'#EXTINF:-1 tvg-name="{title}" '
+        f'tvg-logo="{logo}" '
+        f'group-title="{GROUP}",{title}\n'
+        f'{stream}'
+    )
+
+
+# ==================================================
+# MIRTI68.M3U İÇİNE TEKRARSIZ EKLE
+# ==================================================
+
+def update_mirti(new_entries):
+
+    if not new_entries:
+        print("Yeni kayıt yok. MIRTI korunuyor.")
+        return
+
+    old_entries = []
+
+    if os.path.exists(MIRTI):
+
+        with open(
+            MIRTI,
+            "r",
+            encoding="utf-8-sig",
+            errors="ignore"
+        ) as f:
+
+            lines = f.read().splitlines()
+
+        current = []
+
+        for line in lines:
+
+            if line.startswith("#EXTINF:"):
+
+                if current:
+                    old_entries.append(current)
+
+                current = [line]
+
+            elif current:
+                current.append(line)
+
+        if current:
+            old_entries.append(current)
+
+    # Eski SHOW Dizileri grubunu çıkar
+    preserved = []
+
+    for block in old_entries:
+
+        info = "\n".join(block)
+
+        if f'group-title="{GROUP}"' not in info:
+            preserved.append("\n".join(block).strip())
+
+    # Yeni kayıtları ekle
+    all_entries = preserved + new_entries
+
+    with open(
+        MIRTI,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        f.write("#EXTM3U\n")
+
+        for entry in all_entries:
+
+            f.write(entry.strip() + "\n\n")
+
+    print(
+        f"\nMIRTI GÜNCELLENDİ: "
+        f"{len(new_entries)} yeni kayıt"
+    )
+
+
+# ==================================================
+# ANA PROGRAM
+# ==================================================
+
+def main():
+
+    print("=" * 50)
+    print("SHOW TV - OTOMATİK SON 3 BÖLÜM")
+    print("=" * 50)
+
+    entries = []
+
+    for key, info in SERIES.items():
+
+        print("\n" + "=" * 40)
+        print(info["name"])
+        print("=" * 40)
+
+        series_url = find_series_page(key, info)
+
+        if not series_url:
+            continue
+
+        poster = get_poster(series_url)
+
+        episodes = get_episode_links(
+            series_url,
+            info
+        )
+
+        if not episodes:
+            print("  Bölüm bulunamadı.")
+            continue
+
+        added = 0
+
+        for number, episode_url in episodes:
+
+            print(f"\n  {number}. BÖLÜM")
+
+            stream = get_vmcdn(episode_url)
+
+            if not stream:
+
+                print("  M3U8 BULUNAMADI!")
+                time.sleep(1)
+                continue
+
+            entry = make_entry(
+                info["name"],
+                number,
+                stream,
+                poster
+            )
+
+            entries.append(entry)
+
+            added += 1
+
+            print("  BAŞARILI!")
+
+            time.sleep(1)
+
+        print(
+            f"\n{info['name']}: "
+            f"{added} bölüm eklendi."
+        )
+
+    # Hiç kayıt yoksa eski listeleri koru
+    if not entries:
+
+        print("\nHİÇ YENİ YAYIN BULUNAMADI.")
+        print("Mevcut M3U dosyaları korunuyor.")
+        return
+
+    # showtv.m3u
+    with open(
+        M3U,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        f.write("#EXTM3U\n")
+
+        for entry in entries:
+
+            f.write(entry.strip() + "\n\n")
+
+    print("\n" + "=" * 50)
+    print(f"{M3U}: {len(entries)} kayıt oluşturuldu.")
+
+    # Ana listeye ekle
+    update_mirti(entries)
+
+    print("\nİŞLEM TAMAMLANDI!")
+    print("=" * 50)
+
+
+if __name__ == "__main__":
+    main()
