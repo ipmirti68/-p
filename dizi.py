@@ -8,7 +8,7 @@ import re
 import time
 import html
 import logging
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, urldefrag
 
 import requests
 from bs4 import BeautifulSoup
@@ -29,7 +29,6 @@ HEADERS = {
     "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.7",
 }
 
-# Dizi sayfalari resmi liste sayfalarindan otomatik bulunur.
 CHANNELS = [
     {
         "name": "SHOW TV",
@@ -97,16 +96,33 @@ session = requests.Session()
 session.headers.update(HEADERS)
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 
+# Tam bolum olmayan iceriklerde sik gorulen kelimeler.
+EXCLUDED_WORDS = (
+    "fragman", "fragmani", "teaser", "tanitim", "on izleme",
+    "ozet", "son sahne", "sahne", "sahneler", "kamera arkasi",
+    "cekım hatalari", "cekim hatalari", "cekım-hatalari",
+    "cekim-hatalari", "test", "testler", "ozel test",
+    "galeri", "foto galeri", "foto-galeri", "oyuncu",
+    "haber", "roportaj", "röportaj", "kulup", "shorts",
+    "d shorts", "incelemesi", "yorumlari", "yorumları",
+    "mutfakta", "set arkasi", "set-arkasi", "kamera-arkasi",
+)
 
-def get_soup(url):
-    try:
-        response = session.get(url, timeout=REQUEST_TIMEOUT)
-        response.raise_for_status()
-        response.encoding = response.apparent_encoding or "utf-8"
-        return BeautifulSoup(response.text, "html.parser")
-    except Exception as exc:
-        print(f"  [SAYFA HATASI] {url} -> {exc}")
-        return None
+# Bunlar bolum sayfasi olarak kabul edilmemesi gereken URL bolumleri.
+EXCLUDED_PATH_PARTS = (
+    "fragman", "fragmanlar", "sahne", "sahneler", "test",
+    "testler", "galeri", "foto", "haber", "oyuncu",
+    "kamera-arkasi", "set-arkasi", "show-dijital",
+    "program", "yayin-akisi", "arsiv",
+)
+
+
+def normalize(value):
+    value = html.unescape(value or "").lower()
+    value = value.replace("ı", "i").replace("İ", "i")
+    value = value.replace("ş", "s").replace("ğ", "g")
+    value = value.replace("ü", "u").replace("ö", "o").replace("ç", "c")
+    return re.sub(r"\s+", " ", value).strip()
 
 
 def clean_text(value):
@@ -114,7 +130,80 @@ def clean_text(value):
 
 
 def valid_url(url):
-    return url.startswith("https://") or url.startswith("http://")
+    return urlparse(url).scheme in ("http", "https")
+
+
+def same_host(url_a, url_b):
+    host_a = (urlparse(url_a).hostname or "").lower().removeprefix("www.")
+    host_b = (urlparse(url_b).hostname or "").lower().removeprefix("www.")
+    return bool(host_a and host_a == host_b)
+
+
+def forbidden_content(text, url):
+    sample = normalize(clean_text(text) + " " + url)
+    return any(normalize(word) in sample for word in EXCLUDED_WORDS)
+
+
+def forbidden_path(url):
+    path = normalize(urlparse(url).path)
+    parts = [part for part in path.split("/") if part]
+    return any(any(bad in part for bad in EXCLUDED_PATH_PARTS) for part in parts)
+
+
+def fetch_page(url):
+    """Sayfayi acar; HTTP hatalarini ve baska adrese yonlenmeleri ayiklar."""
+    try:
+        response = session.get(
+            url, timeout=REQUEST_TIMEOUT, allow_redirects=True
+        )
+        if response.status_code != 200:
+            print(f"    [HTTP {response.status_code}] {url}")
+            return None, None
+
+        final_url = urldefrag(response.url)[0]
+        if not valid_url(final_url) or not same_host(url, final_url):
+            print(f"    [YONLENDIRME ATLANDI] {url} -> {final_url}")
+            return None, None
+
+        if forbidden_path(final_url):
+            print(f"    [ICERIK TÜRÜ ATLANDI] {final_url}")
+            return None, None
+
+        response.encoding = response.apparent_encoding or "utf-8"
+        return response, BeautifulSoup(response.text, "html.parser")
+    except requests.RequestException as exc:
+        print(f"    [SAYFA HATASI] {url} -> {str(exc)[:160]}")
+        return None, None
+
+
+def get_soup(url):
+    _, soup = fetch_page(url)
+    return soup
+
+
+def get_episode_number(text, url):
+    sample = normalize(clean_text(text) + " " + url)
+    patterns = (
+        r"(\d{1,4})\s*\.?\s*bolum\b",
+        r"\bbolum[-_/ ]*(\d{1,4})\b",
+        r"\bepisode[-_/ ]*(\d{1,4})\b",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, sample)
+        if match:
+            try:
+                return int(match.group(1))
+            except ValueError:
+                return None
+    return None
+
+
+def is_full_episode(text, url):
+    if not valid_url(url):
+        return False
+    if forbidden_content(text, url) or forbidden_path(url):
+        return False
+    return get_episode_number(text, url) is not None
 
 
 def discover_series(channel):
@@ -126,120 +215,110 @@ def discover_series(channel):
         if not soup:
             continue
 
+        host = urlparse(channel["home"]).hostname
         for a in soup.find_all("a", href=True):
             title = clean_text(a.get_text(" ", strip=True))
-            href = urljoin(root, a["href"].split("#")[0])
+            href = urldefrag(urljoin(root, a["href"]))[0]
 
             if not title or not valid_url(href):
                 continue
-
-            low = (title + " " + href).lower()
-            if any(word in low for word in (
-                "fragman", "fragmani", "ön-izleme", "on-izleme",
-                "ozel-sahne", "özel-sahne", "haber", "oyuncu",
-                "foto", "galeri", "canli-yayin", "yayin-akisi",
-                "programlar", "arsiv", "archive"
-            )):
+            if not same_host(channel["home"], href):
                 continue
-
-            host = urlparse(channel["home"]).netloc
-            if urlparse(href).netloc not in ("", host):
+            if forbidden_content(title, href) or forbidden_path(href):
                 continue
 
             path = urlparse(href).path.strip("/")
-            parts = [p for p in path.split("/") if p]
-            if not parts:
+            parts = [part for part in path.split("/") if part]
+            if not parts or len(parts) > 3:
                 continue
 
-            # Liste sayfalarindan bulunan dizi sayfalari genellikle tek/iki slug derinligindedir.
-            if len(parts) > 2:
+            # Bolum/video adreslerini dizi sayfasi olarak ekleme.
+            if get_episode_number(title, href) is not None:
                 continue
-
-            if any(x in path.lower() for x in (
-                "/bolum", "/episode", "/video", "/izle/"
+            if any(word in normalize(path) for word in (
+                "bolum", "episode", "video", "izle"
             )):
                 continue
 
-            if title.lower() in ("detaylar", "izle", "tümü", "diziler", "dizi"):
+            if normalize(title) in (
+                "detaylar", "izle", "tumu", "diziler", "dizi",
+                "ana sayfa", "tum diziler"
+            ):
                 continue
 
             found.setdefault(title, href)
 
-    # Bilinen URL'leri de kontrol et; sayfa gercekten acilmiyorsa yine sonraki adimda atlanir.
-    return list(found.items())
+    # Bilinen ve otomatik bulunan sayfalari gercekten acilabiliyor mu diye kontrol et.
+    checked = []
+    seen = set()
+    for name, url in found.items():
+        if url in seen or forbidden_path(url):
+            continue
+        seen.add(url)
+        response, _ = fetch_page(url)
+        if response is not None:
+            checked.append((name, response.url))
+        time.sleep(0.2)
 
-
-def get_episode_number(text, url):
-    sample = (clean_text(text) + " " + url).lower()
-    sample = sample.replace("ü", "u").replace("ö", "o").replace("ş", "s")
-    patterns = [
-        r"(\d{1,4})\s*\.?\s*bolum",
-        r"bolum[-_/ ]*(\d{1,4})",
-        r"episode[-_/ ]*(\d{1,4})",
-    ]
-    for pattern in patterns:
-        match = re.search(pattern, sample)
-        if match:
-            try:
-                return int(match.group(1))
-            except ValueError:
-                pass
-    return None
-
-
-def is_full_episode(text, url):
-    value = (clean_text(text) + " " + url).lower()
-    value = value.replace("ı", "i").replace("ü", "u").replace("ö", "o")
-    excluded = (
-        "fragman", "teaser", "on izleme", "ön izleme",
-        "ozet", "özet", "son sahne", "sahne", "kamera arkasi",
-        "kamera arkası", "foto", "galeri", "shorts", "d shorts",
-        "oyuncu", "haber", "tanitim", "tanıtım"
-    )
-    if any(word in value for word in excluded):
-        return False
-    return get_episode_number(text, url) is not None
+    return checked
 
 
 def find_episodes(series_url):
-    soup = get_soup(series_url)
+    response, soup = fetch_page(series_url)
     if not soup:
         return []
 
     candidates = {}
-    base_host = urlparse(series_url).netloc
+    base_url = response.url
 
-    # Dizi sayfasindaki bolum listesi linkleri.
-    for a in soup.find_all("a", href=True):
-        title = clean_text(a.get_text(" ", strip=True))
-        href = urljoin(series_url, a["href"].split("#")[0])
-
-        if not valid_url(href) or urlparse(href).netloc != base_host:
-            continue
-        if href.rstrip("/") == series_url.rstrip("/"):
-            continue
+    def add_candidate(title, href):
+        href = urldefrag(urljoin(base_url, href))[0]
+        if not valid_url(href) or not same_host(base_url, href):
+            return
+        if href.rstrip("/") == base_url.rstrip("/"):
+            return
         if not is_full_episode(title, href):
-            continue
+            return
 
         number = get_episode_number(title, href)
-        if number is not None:
-            candidates[number] = href
+        if number is None:
+            return
 
-    # Bazı sitelerde bolum linkleri select option icinde olabilir.
+        # Aynı numara için önce resmi bolum sayfasi adayini tut.
+        candidates[number] = href
+
+    for a in soup.find_all("a", href=True):
+        add_candidate(clean_text(a.get_text(" ", strip=True)), a["href"])
+
     for option in soup.find_all("option"):
-        title = clean_text(option.get_text(" ", strip=True))
-        href = option.get("value", "")
-        href = urljoin(series_url, href)
-        if is_full_episode(title, href):
-            number = get_episode_number(title, href)
-            if number is not None:
-                candidates[number] = href
+        add_candidate(
+            clean_text(option.get_text(" ", strip=True)),
+            option.get("value", "")
+        )
 
-    return sorted(candidates.items(), key=lambda item: item[0], reverse=True)[:MAX_EPISODES_PER_SERIES]
+    # Aday sayfalarin HTTP durumunu ve son yonlendirme adresini kontrol et.
+    valid_candidates = []
+    for number, url in sorted(
+        candidates.items(), key=lambda item: item[0], reverse=True
+    ):
+        page_response, _ = fetch_page(url)
+        if page_response is None:
+            continue
+
+        final_url = urldefrag(page_response.url)[0]
+        if forbidden_content("", final_url) or forbidden_path(final_url):
+            continue
+
+        valid_candidates.append((number, final_url))
+        if len(valid_candidates) >= MAX_EPISODES_PER_SERIES:
+            break
+        time.sleep(0.2)
+
+    return valid_candidates
 
 
 def extract_direct_media(page_url):
-    # yt-dlp sadece sayfanin herkese acik medya bilgisini okumayi dener.
+    """yt-dlp ile yalnizca herkese acik dogrudan medya bilgisi denenir."""
     opts = {
         "quiet": True,
         "no_warnings": True,
@@ -255,7 +334,6 @@ def extract_direct_media(page_url):
             return ""
 
         formats = info.get("formats") or []
-        # HLS tercih edilir; sonra en yuksek cozunurluk.
         formats.sort(
             key=lambda f: (
                 "m3u8" in str(f.get("protocol", "")).lower(),
@@ -263,6 +341,7 @@ def extract_direct_media(page_url):
             ),
             reverse=True
         )
+
         for fmt in formats:
             media_url = fmt.get("url") or ""
             if valid_url(media_url):
@@ -273,7 +352,7 @@ def extract_direct_media(page_url):
             return media_url
 
     except Exception as exc:
-        print(f"    [MEDYA YOK/KORUMALI] {str(exc)[:150]}")
+        print(f"    [MEDYA YOK/KORUMALI] {str(exc)[:180]}")
 
     return ""
 
@@ -286,20 +365,26 @@ def safe_filename(value):
 def read_master_blocks():
     if not os.path.exists(MASTER_FILE):
         return []
+
     try:
         with open(MASTER_FILE, "r", encoding="utf-8-sig") as file:
             content = file.read()
-    except Exception:
+    except OSError as exc:
+        print(f"[ANA LISTE OKUNAMADI] {exc}")
         return []
 
-    blocks = re.findall(r"(?m)^#EXTINF:[\s\S]*?(?=^#EXTINF:|\Z)", content)
+    blocks = re.findall(
+        r"(?m)^#EXTINF:[\s\S]*?(?=^#EXTINF:|\Z)", content
+    )
     owned_groups = [channel["group"] for channel in CHANNELS]
     kept = []
+
     for block in blocks:
         if any(group in block for group in owned_groups):
             continue
         if re.search(r"(?m)^https?://", block):
             kept.append(block.strip())
+
     return kept
 
 
@@ -309,11 +394,93 @@ def scan_channel(channel):
     print("=" * 58)
 
     series_list = discover_series(channel)
-    print(f"Bulunan dizi adayi: {len(series_list)}")
+    print(f"Kontrolden gecen dizi sayfasi: {len(series_list)}")
 
     entries = []
     for series_name, series_url in series_list:
-        print(f"\n[DIZI] {series_name}")
+        print(f"\n[DIZI] {series_name} -> {series_url}")
+        episode_list = find_episodes(series_url)
+
+        if not episode_list:
+            print("  Gecerli tam bolum adayi bulunamadi.")
+            continue
+
+        for number, episode_url in episode_list:
+            print(f"  {number}. bolum -> medya kontrolu")
+            media_url = extract_direct_media(episode_url)
+
+            if not media_url:
+                print("    M3U'ya eklenmedi (dogrudan medya bulunamadi).")
+                continue
+
+            title = f"{series_name} - {number}. Bölüm"
+            title = title.replace('"', "'").replace("\n", " ")
+            entries.append(
+                f'#EXTINF:-1 tvg-name="{title}" '
+                f'group-title="{channel["group"]}",{title}\n'
+                f"{media_url}\n"
+            )
+            time.sleep(PAUSE_SECONDS)
+
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    out_file = os.path.join(
+        OUTPUT_DIR, safe_filename(channel["name"].lower()) + ".m3u"
+    )
+
+    if entries:
+        with open(out_file, "w", encoding="utf-8") as file:
+            file.write("#EXTM3U\n")
+            file.writelines(entries)
+        print(f"\n{out_file}: {len(entries)} dogrudan medya kaydi")
+    else:
+        print("\nBu kanalda dogrudan oynatilabilir medya bulunamadi.")
+        print("Onceki kanal M3U dosyasi varsa korunuyor.")
+
+    return entries
+
+
+def main():
+    print("MIRTI 68 - 6 KANAL RESMI DIZI TARAMA")
+    print("Hedef: dizi basina son 3 tam bolum")
+    print("Fragman/test/sahne/cekım hatalari filtrelenir.")
+    print("DRM veya oturum korumasi asilmaz.")
+
+    all_new_entries = []
+    for channel in CHANNELS:
+        try:
+            all_new_entries.extend(scan_channel(channel))
+        except KeyboardInterrupt:
+            print("\nKullanici tarafindan durduruldu.")
+            break
+        except Exception as exc:
+            print(f"\n[KANAL HATASI] {channel['name']}: {exc}")
+            continue
+
+    if not all_new_entries:
+        print("\nYeni dogrudan medya kaydi bulunamadi.")
+        print("Mevcut ana M3U dosyasi degistirilmedi.")
+        return
+
+    old_blocks = read_master_blocks()
+    temp_file = MASTER_FILE + ".tmp"
+
+    with open(temp_file, "w", encoding="utf-8") as file:
+        file.write("#EXTM3U\n")
+        for block in old_blocks:
+            file.write(block + "\n")
+        for entry in all_new_entries:
+            file.write(entry)
+
+    os.replace(temp_file, MASTER_FILE)
+    print("\nBitti!")
+    print(f"Ana liste: {MASTER_FILE}")
+    print(f"Eklenen yeni kayit: {len(all_new_entries)}")
+    print(f"Kanal bazli M3U dosyalari: {OUTPUT_DIR}")
+
+
+if __name__ == "__main__":
+    main()
+}")
         episode_list = find_episodes(series_url)
 
         if not episode_list:
