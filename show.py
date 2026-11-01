@@ -28,13 +28,25 @@ def extract_m3u8(html):
     return None
 
 entries=[]
-# Senin verdigin Sevdan 8 manuel - e=1793317167 uzun omurlu
+# Senin verdiğin Sevdan 8 manuel
 entries.append({"dizi":"Sevdan Bir Ates","bolum":"8. Bolum","url":"https://vmcdn.ciner.com.tr/ht/2026/10/28/01418A5689B618D9BA980AE927ECD0EC.m3u8?e=1793317167&st=9f56173e468ce41d4a9e21d474c60eb9"})
 print("MANUEL Sevdan 8 eklendi")
 
-slugs=["sevdan-bir-ates","kizilcik-serbeti","bahar","siyah-kalp","deha","sandik-kokusu","guldur-guldur-show"]
+# SENİN İSTEDİĞİN 4'LÜ + DİĞERLERİ
+slugs=[
+    "kizilcik-serbeti",
+    "sevdan-bir-ates",
+    "menekse",
+    "muhtemel-ask",
+    "bahar",
+    "siyah-kalp",
+    "deha",
+    "sandik-kokusu",
+    "guldur-guldur-show"
+]
+
 for slug in slugs:
-    print(f"\n=== {slug} ===")
+    print(f"\n=== {slug.upper()} ===")
     html=fetch(f"{site_url}/dizi/{slug}")
     links=re.findall(r'/dizi/'+re.escape(slug)+r'/bolum/[^"\'\s]+',html)
     uniq=list(dict.fromkeys(links))[:8]
@@ -47,8 +59,13 @@ for slug in slugs:
         if m3u8:
             bm=re.search(r'(\d+)',link)
             bname=f"{bm.group(1)}. Bolum" if bm else "Bolum"
-            entries.append({"dizi":slug.replace("-"," ").title(),"bolum":bname,"url":m3u8})
-            print(f"  OK {bname}")
+            dizi_adi = slug.replace("-"," ").title()
+            if slug=="kizilcik-serbeti": dizi_adi="Kizilcik Serbeti"
+            if slug=="sevdan-bir-ates": dizi_adi="Sevdan Bir Ates"
+            if slug=="menekse": dizi_adi="Menekse"
+            if slug=="muhtemel-ask": dizi_adi="Muhtemel Ask"
+            entries.append({"dizi":dizi_adi,"bolum":bname,"url":m3u8})
+            print(f"  OK {dizi_adi} {bname}")
         time.sleep(0.6)
 
 with open(m3u_file,"w",encoding="utf-8") as f:
