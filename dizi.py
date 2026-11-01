@@ -177,7 +177,7 @@ def fetch_page(url):
         return None, None
 
 
-    def get_soup(url):
+def get_soup(url):
     _, soup = fetch_page(url)
     return soup
 
