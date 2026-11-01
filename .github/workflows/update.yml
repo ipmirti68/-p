@@ -68,9 +68,10 @@ jobs:
         continue-on-error: true
         run: python lig.py
 
-      - name: - KANALD
+      - name: 12 - ATV
         continue-on-error: true
-        run: python kanald.py
+        run: python atv.py
+      
       - name: Commit
         run: |
           git config --global user.name "bot"
