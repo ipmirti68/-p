@@ -190,7 +190,7 @@ def fetch_page(url):
     return valid_candidates
 
 
-def extract_direct_media(page_url):
+    def extract_direct_media(page_url):
     """yt-dlp ile yalnizca herkese acik dogrudan medya bilgisi denenir."""
     opts = {
         "quiet": True,
@@ -543,34 +543,31 @@ def find_episodes(series_url):
 
         if not valid_url(href):
             return
-
         if not same_host(base_url, href):
             return
-
         if href.rstrip("/") == base_url.rstrip("/"):
             return
-
         if not is_full_episode(title, href):
             return
 
         number = get_episode_number(title, href)
-
         if number is None:
             return
 
         candidates[number] = href
 
-    # Sayfadaki bölüm bağlantıları
     for a in soup.find_all("a", href=True):
-        title = clean_text(a.get_text(" ", strip=True))
-        add_candidate(title, a["href"])
+        add_candidate(
+            clean_text(a.get_text(" ", strip=True)),
+            a["href"]
+        )
 
-    # Açılır liste içindeki bölüm bağlantıları
     for option in soup.find_all("option"):
-        title = clean_text(option.get_text(" ", strip=True))
-        add_candidate(title, option.get("value", ""))
+        add_candidate(
+            clean_text(option.get_text(" ", strip=True)),
+            option.get("value", "")
+        )
 
-    # HTTP 404 ve hatalı yönlendirmeleri ele
     valid_candidates = []
 
     for number, url in sorted(
