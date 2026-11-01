@@ -205,10 +205,11 @@ def main():
     for title, url in results:
         if url in seen:
             continue
-        seen.add(url)
-        entries.append(
-            f'#EXTINF:-1 group-title="{GROUP}", {title}\n'
-            f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n{url}"
+        seen.add(url)entries.append(
+    f'#EXTINF:-1 tvg-logo="https://ardaspor.live/ardaspor2.png" '
+    f'group-title="{GROUP}",{title}\n'
+    f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n"
+    f"{url}"
         )
 
     if not entries:
