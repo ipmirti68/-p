@@ -343,7 +343,7 @@ def main():
     try:
         with open(
             OUTPUT_FILE,
-            "w",
+            "a",
             encoding="utf-8"
         ) as file:
 
