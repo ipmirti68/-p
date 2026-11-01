@@ -26,7 +26,11 @@ warnings.filterwarnings("ignore")
 
 HOME_URL = "https://golvarmac1.pro/"
 OUTPUT_FILENAME = "mirti68.m3u"
-GROUP = "🖥beINSPORTS"
+
+BEIN_GROUP = "🖥beINSPORTS"
+
+
+LOGO = "https://ardaspor.live/ardaspor2.png"
 
 # Segmentler su an referersiz de calisiyor; yine de referer eklenir
 # (kaynak gerekli hale gelirse oynaticida kirilmasin).
@@ -78,7 +82,7 @@ def fetch_home():
 
 
 def parse_items(html):
-    """Yalnızca spor TV kanallarını alır."""
+    """Yalnızca beIN Sports kanallarını alır."""
 
     items = re.findall(
         r'<a[^>]+href="([^"]*?/izle/[^"]+)"[^>]*>.*?'
@@ -87,39 +91,17 @@ def parse_items(html):
         re.S | re.I,
     )
 
-    sports_keywords = (
-        "bein",
-        "beinsports",
-        "s sport",
-        "ssport",
-        "trt spor",
-        "a spor",
-        "tivibu spor",
-        "smart spor",
-        "spor smart",
-        "eurosport",
-        "tabii spor",
-        "exxen spor",
-        "nba",
-        "tnt sports",
-        "sport tv",
-    )
-
     out = []
     seen = set()
 
     for href, name in items:
-
-        title = re.sub(r"<[^>]+>", "", name)
-        title = title.strip()
+        title = re.sub(r"<[^>]+>", "", name).strip()
 
         if not title:
             continue
 
-        normalized = title.casefold()
-
-        # Spor kanalı değilse atla
-        if not any(word in normalized for word in sports_keywords):
+        # Yalnızca beIN Sports ve beIN Max
+        if not re.search(r"\bbein\s*(?:sports?|max)\b", title, re.I):
             continue
 
         slug = href.split("/izle/", 1)[-1].rstrip("/")
