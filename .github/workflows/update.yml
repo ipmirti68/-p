@@ -50,7 +50,7 @@ jobs:
       # 9. SELCUK
       - name: 2  - SELCUK
         continue-on-error: true
-        run: python selcu.py
+        run: python selcuk.py
 
       # 10. MAHSUN
       - name: 3 - MAHSUN
