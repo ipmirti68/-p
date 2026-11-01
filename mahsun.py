@@ -675,7 +675,7 @@ def main():
 
         with open(
             OUTPUT_FILENAME,
-            "w",
+            "a",
             encoding="utf-8"
         ) as f:
 
