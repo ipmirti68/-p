@@ -28,6 +28,8 @@ jobs:
 
       - name: Voleybol programını güncelle
         run: python voleybol.py
+      - name: YouTube canli voleybol yayinlarini bul
+        run: python voleybol_youtube.py
 
       - name: Dosyaları kaydet
         run: |
