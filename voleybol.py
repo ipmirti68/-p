@@ -52,6 +52,34 @@ session.headers.update(HEADERS)
 # =====================================
 
 
+def load_state():
+
+    if not os.path.exists(STATE_FILE):
+        return {}
+
+    try:
+        with open(STATE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    except Exception as e:
+        print("Eski program hafizasi okunamadi:", e)
+        return {}
+
+
+def save_json(path, data):
+
+    temp = str(path) + ".tmp"
+
+    with open(temp, "w", encoding="utf-8") as f:
+        json.dump(
+            data,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    os.replace(temp, path)
+    
 
 def get_program():
 
