@@ -3,11 +3,16 @@ name: MIRTI68 Voleybol Güncelleme
 
 on:
   workflow_dispatch:
+
   schedule:
     - cron: "*/30 * * * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: mirti68-voleybol
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -37,18 +42,33 @@ jobs:
         run: python voleybol.py
 
       - name: YouTube canli voleybol yayinlarini bul
+        id: youtube
+        continue-on-error: true
         run: python voleybol_youtube.py
 
       - name: Dosyalari kaydet
+        if: always()
         run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
 
-          git add -A
+          git add -f voleybol_program.json
+          git add -f voleybol_canli.m3u
+          git add -f voleybol_youtube.json
 
           if git diff --cached --quiet; then
             echo "Kaydedilecek yeni dosya yok."
           else
-            git commit -m "MIRTI68 Voleybol program guncelleme"
+            git commit -m "MIRTI68 Voleybol guncellendi"
             git push
+          fi
+
+      - name: Tarama sonucunu bildir
+        if: always()
+        run: |
+          if [ "${{ steps.youtube.outcome }}" = "success" ]; then
+            echo "YouTube taramasi tamamlandi."
+          else
+            echo "YouTube taramasi basarisiz."
+            echo "Eski canli yayin listesi korunuyor."
           fi
