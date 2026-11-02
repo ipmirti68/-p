@@ -70,7 +70,7 @@ jobs:
       # 13. ARDA
       - name: 6 - ARDA
         continue-on-error: true
-        run: python arda.py
+        run: python ard.py
 
       # 14. LIG
       - name: 7 - LIG
