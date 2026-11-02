@@ -55,7 +55,7 @@ jobs:
       # 10. MAHSUN
       - name: 3 - MAHSUN
         continue-on-error: true
-        run: python mahsun.py
+        run: python mahsu.py
 
       # 11. ATOM
       - name: 4 - ATOM
@@ -65,7 +65,7 @@ jobs:
       # 12. KRAL
       - name: 5 - KRAL
         continue-on-error: true
-        run: python kral.py
+        run: python kra.py
 
       # 13. ARDA
       - name: 6 - ARDA
@@ -75,7 +75,7 @@ jobs:
       # 14. LIG
       - name: 7 - LIG
         continue-on-error: true
-        run: python lig.py
+        run: python li.py
 
     
 
