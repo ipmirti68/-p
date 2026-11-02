@@ -4,8 +4,12 @@
 
 """
 MIRTI68 - TVF VOLEYBOL MAC TAKIP SISTEMI
-Eski program yeni program gelene kadar korunur.
-Yalnizca kendi kayitlarini yonetir.
+
+- TVF fiksturunu otomatik alir.
+- Eski program, yeni program gelene kadar korunur.
+- Program degisikligini SHA256 ile kontrol eder.
+- JSON dosyalarini guvenli sekilde kaydeder.
+- mirti68.m3u dosyasina dokunmaz.
 """
 
 import os
@@ -14,14 +18,12 @@ import json
 import hashlib
 import requests
 
-from pathlib import Path
 from bs4 import BeautifulSoup
 
 # =====================================
 # AYARLAR
 # =====================================
 
-MASTER_FILE = "mirti68.m3u"
 STATE_FILE = "voleybol_eski.json"
 PROGRAM_FILE = "voleybol_program.json"
 
@@ -31,9 +33,6 @@ YOUTUBE_CHANNEL = (
     "https://www.youtube.com/channel/"
     "UCTgQ8Bfq3AUuo1vWULdvRKw"
 )
-
-GROUP = "🏐 VOLEYBOL CANLI"
-MARKER = "# MIRTI68_VOLEYBOL_AUTO"
 
 HEADERS = {
     "User-Agent": (
@@ -48,9 +47,25 @@ session.headers.update(HEADERS)
 
 
 # =====================================
-# TVF PROGRAMINI AL
+# PROGRAM HASH KONTROLU
 # =====================================
 
+def program_hash(matches):
+
+    content = json.dumps(
+        matches,
+        ensure_ascii=False,
+        sort_keys=True
+    )
+
+    return hashlib.sha256(
+        content.encode("utf-8")
+    ).hexdigest()
+
+
+# =====================================
+# ESKI PROGRAM HAFIZASI
+# =====================================
 
 def load_state():
 
@@ -58,7 +73,11 @@ def load_state():
         return {}
 
     try:
-        with open(STATE_FILE, "r", encoding="utf-8") as f:
+        with open(
+            STATE_FILE,
+            "r",
+            encoding="utf-8"
+        ) as f:
             return json.load(f)
 
     except Exception as e:
@@ -66,11 +85,20 @@ def load_state():
         return {}
 
 
+# =====================================
+# GUVENLI JSON KAYDI
+# =====================================
+
 def save_json(path, data):
 
     temp = str(path) + ".tmp"
 
-    with open(temp, "w", encoding="utf-8") as f:
+    with open(
+        temp,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
         json.dump(
             data,
             f,
@@ -79,16 +107,23 @@ def save_json(path, data):
         )
 
     os.replace(temp, path)
-    
+
+
+# =====================================
+# TVF PROGRAMINI AL
+# =====================================
 
 def get_program():
 
     print("🏐 TVF programi indiriliyor...")
 
-    response = session.get(TVF_URL, timeout=30)
+    response = session.get(
+        TVF_URL,
+        timeout=30
+    )
+
     response.raise_for_status()
 
-    # Türkçe karakter kodlaması
     response.encoding = "iso-8859-9"
 
     soup = BeautifulSoup(
@@ -97,12 +132,15 @@ def get_program():
     )
 
     lines = [
-        re.sub(r"\s+", " ", x).strip()
-        for x in soup.get_text("\n").splitlines()
-        if x.strip()
+        re.sub(r"\s+", " ", line).strip()
+        for line in soup.get_text("\n").splitlines()
+        if line.strip()
     ]
 
+    print("Okunan satir:", len(lines))
+
     matches = []
+
     current_date = None
     current_channel = None
 
@@ -121,7 +159,7 @@ def get_program():
 
         lower = line.casefold()
 
-        # Tarih kontrolü
+        # Tarih kontrolu
         date_match = date_pattern.search(line)
 
         if date_match:
@@ -135,15 +173,17 @@ def get_program():
             current_channel = None
             team_parts = []
             separator_found = False
+
             continue
 
-        # Yayın kanalı kontrolü
+        # Yayin kanali kontrolu
         if "tvf voleybol tv" in lower:
 
             current_channel = "TVF Voleybol TV"
 
             team_parts = []
             separator_found = False
+
             continue
 
         if "trt spor yıldız" in lower:
@@ -152,35 +192,38 @@ def get_program():
 
             team_parts = []
             separator_found = False
+
             continue
 
-        # Yalnızca TVF Voleybol TV maçları
+        # Simdilik yalnizca TVF Voleybol TV
         if current_channel != "TVF Voleybol TV":
             continue
 
         if not current_date:
             continue
 
-        # Takımlar arasındaki ayraç
+        # Takimlar arasindaki ayirac
         if line.strip() in ("-", "–", "—"):
 
             separator_found = True
             continue
 
-        # Maç saati bulundu
+        # Mac saati kontrolu
         time_match = time_pattern.fullmatch(line)
 
         if time_match:
 
-            if separator_found and len(team_parts) >= 2:
+            if separator_found and "|" in team_parts:
+
+                separator_index = team_parts.index("|")
 
                 home_team = " ".join(
-                    team_parts[:team_parts.index("|")]
-                )
+                    team_parts[:separator_index]
+                ).strip()
 
                 away_team = " ".join(
-                    team_parts[team_parts.index("|") + 1:]
-                )
+                    team_parts[separator_index + 1:]
+                ).strip()
 
                 if home_team and away_team:
 
@@ -199,23 +242,28 @@ def get_program():
 
             team_parts = []
             separator_found = False
+
             continue
 
-        # Takım isimlerini biriktir
+        # Takim isimlerini biriktir
         if len(line) < 2:
             continue
 
         if not separator_found:
+
             team_parts.append(line)
+
         else:
+
             if "|" not in team_parts:
                 team_parts.append("|")
 
             team_parts.append(line)
 
-    print("✅ Bulunan TVF maci:", len(matches))
+    print("Bulunan TVF maci:", len(matches))
 
     for item in matches:
+
         print(
             "🏐",
             item["date"],
@@ -226,47 +274,8 @@ def get_program():
     return matches
 
 
-
 # =====================================
-# SADECE KENDI M3U KAYITLARINI SIL
-# =====================================
-
-def remove_own_records(lines):
-
-    result = []
-    i = 0
-
-    while i < len(lines):
-
-        if lines[i].strip() == MARKER:
-
-            i += 1
-
-            if i < len(lines) and lines[i].strip().startswith("#EXTINF:"):
-                i += 1
-
-                while i < len(lines):
-                    current = lines[i].strip()
-
-                    if current and not current.startswith("#"):
-                        i += 1
-                        break
-
-                    if current.startswith("#EXTINF:"):
-                        break
-
-                    i += 1
-
-            continue
-
-        result.append(lines[i])
-        i += 1
-
-    return result
-
-
-# =====================================
-# PROGRAMI GUNCELLE
+# ANA GUNCELLEME
 # =====================================
 
 def main():
@@ -275,78 +284,71 @@ def main():
     print(" MIRTI68 - VOLEYBOL GUNCELLEYICI")
     print("=" * 45)
 
+    # TVF programini indir
     try:
+
         matches = get_program()
 
     except Exception as e:
-        print("❌ TVF programi alinamadi:", e)
+
+        print("TVF programi alinamadi:", e)
         print("Eski program korunuyor.")
         return
 
+    # Bos programi kaydetme
     if not matches:
-        print("⚠ Program bos geldi.")
+
+        print("Program bos geldi.")
         print("Eski program korunuyor.")
         return
 
+    # Eski hafizayi oku
     old_state = load_state()
 
-    new_hash = program_hash(matches)
     old_hash = old_state.get("hash")
 
+    # Yeni program hash
+    new_hash = program_hash(matches)
+
+    # Program degisikligi
     if old_hash == new_hash:
-        print("ℹ Program degismemis.")
-        print("Eski program korunuyor.")
+
+        print("Program degismemis.")
 
     else:
-        print("🆕 Yeni TVF programi bulundu.")
 
-        save_json(STATE_FILE, {
+        print("Yeni TVF programi bulundu!")
+
+        new_state = {
             "hash": new_hash,
             "matches": matches
-        })
+        }
 
-        print("✅ Yeni program kaydedildi.")
+        save_json(
+            STATE_FILE,
+            new_state
+        )
 
-    # Program dosyasini kaydet
-    save_json(PROGRAM_FILE, matches)
+        print("Yeni program hafizaya kaydedildi.")
 
-    # Ana M3U dosyasini oku
-    if not os.path.exists(MASTER_FILE):
-        print("❌ mirti68.m3u bulunamadi!")
-        return
-
-    with open(
-        MASTER_FILE,
-        "r",
-        encoding="utf-8-sig"
-    ) as f:
-        lines = f.readlines()
-
-    # Yalnizca kendi eski kayitlarini kaldir
-    output = remove_own_records(lines)
-
-    if not any(x.strip() == "#EXTM3U" for x in output):
-        output.insert(0, "#EXTM3U\n")
-
-    # Bu ilk aşamada maçları program JSON dosyasında tutuyoruz.
-    # Henüz doğrulanmış oynatılabilir YouTube URL'si bulunmadığı
-    # için sahte M3U8 bağlantısı eklemiyoruz.
-
-    temp = MASTER_FILE + ".tmp"
-
-    with open(temp, "w", encoding="utf-8") as f:
-        f.writelines(output)
-
-    os.replace(temp, MASTER_FILE)
+    # Guncel program JSON dosyasi
+    save_json(
+        PROGRAM_FILE,
+        matches
+    )
 
     print("=" * 45)
     print("TVF mac sayisi:", len(matches))
-    print("Program:", PROGRAM_FILE)
-    print("Hafiza:", STATE_FILE)
-    print("Ana liste:", MASTER_FILE)
-    print("Diger gruplar: KORUNDU")
+    print("Program dosyasi:", PROGRAM_FILE)
+    print("Hafiza dosyasi:", STATE_FILE)
+    print("Ana M3U: DEGISTIRILMEDI")
+    print("Diger IPTV gruplari: KORUNDU")
     print("=" * 45)
 
+
+# =====================================
+# BASLAT
+# =====================================
 
 if __name__ == "__main__":
     main()
