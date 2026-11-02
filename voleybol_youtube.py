@@ -416,22 +416,18 @@ def save_files(results):
         if os.path.exists(RESULT_FILE):
             shutil.copy2(RESULT_FILE, RESULT_FILE + ".bak")
 
-        # JSON once, ana M3U sonra guncellensin.
-        # M3U degistirme basarisizsa eski JSON yedegi korunur.
+        # JSON once, ana M3U sonra guncellensin
         os.replace(json_temp, RESULT_FILE)
 
         try:
-
             os.replace(temp_file, MASTER_FILE)
 
         except Exception:
-
             if os.path.exists(RESULT_FILE + ".bak"):
                 shutil.copy2(
                     RESULT_FILE + ".bak",
                     RESULT_FILE
                 )
-
             raise
 
         print("=" * 45)
