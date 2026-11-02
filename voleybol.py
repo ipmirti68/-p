@@ -51,6 +51,7 @@ session.headers.update(HEADERS)
 # TVF PROGRAMINI AL
 # =====================================
 
+
 def get_program():
 
     print("🏐 TVF programi indiriliyor...")
@@ -58,116 +59,118 @@ def get_program():
     response = session.get(TVF_URL, timeout=30)
     response.raise_for_status()
 
-    soup = BeautifulSoup(response.text, "html.parser")
+    print("HTTP durum:", response.status_code)
+    print("Sayfa adresi:", response.url)
+    print("Icerik tipi:", response.headers.get("Content-Type"))
+    print("Indirilen boyut:", len(response.content), "byte")
+
+    soup = BeautifulSoup(
+        response.content,
+        "html.parser"
+    )
 
     lines = [
         re.sub(r"\s+", " ", x).strip()
         for x in soup.get_text("\n").splitlines()
+        if x.strip()
     ]
+
+    print("Okunan satir:", len(lines))
+
+    # Gelen sayfada TVF programi var mi?
+    tvf_lines = [
+        line for line in lines
+        if "tvf voleybol tv" in line.casefold()
+    ]
+
+    print("TVF kanal satiri:", len(tvf_lines))
+
+    date_pattern = re.compile(
+        r"\b(\d{2}[./-]\d{2}[./-]\d{4})\b"
+    )
+
+    time_pattern = re.compile(
+        r"\b([01]?\d|2[0-3]):([0-5]\d)\b"
+    )
 
     matches = []
     current_date = None
     current_channel = None
 
-    date_pattern = re.compile(
-        r"(\d{2}\.\d{2}\.\d{4})"
-    )
-
     for line in lines:
 
-        if not line:
-            continue
+        lower = line.casefold()
 
         date_match = date_pattern.search(line)
 
-        if date_match and "|" in line:
-            current_date = date_match.group(1)
+        if date_match:
 
-            if "TVF Voleybol TV" in line:
-                current_channel = "TVF Voleybol TV"
+            current_date = (
+                date_match.group(1)
+                .replace("/", ".")
+                .replace("-", ".")
+            )
 
-            elif "TRT Spor Yıldız" in line:
-                current_channel = "TRT Spor Yıldız"
+            current_channel = (
+                "TVF Voleybol TV"
+                if "tvf voleybol tv" in lower
+                else None
+            )
 
-            else:
-                current_channel = None
+            # Tarih ve maç aynı satırdaysa da kontrol et.
+            if not current_channel:
+                continue
 
+        elif "tvf voleybol tv" in lower:
+            current_channel = "TVF Voleybol TV"
+            continue
+
+        elif "trt spor yıldız" in lower:
+            current_channel = "TRT Spor Yıldız"
             continue
 
         if current_channel != "TVF Voleybol TV":
             continue
 
-        match = re.match(
-            r"(.+?)\s+(\d{1,2}:\d{2})$",
-            line
-        )
+        time_match = time_pattern.search(line)
 
-        if not match or not current_date:
+        if not time_match or not current_date:
             continue
 
-        team_names = match.group(1).strip()
-        match_time = match.group(2)
+        match_time = time_match.group(0)
 
-        matches.append({
-            "date": current_date,
-            "time": match_time,
-            "name": team_names,
-            "channel": current_channel,
-            "youtube": YOUTUBE_CHANNEL
-        })
-
-    print(f"✅ Bulunan TVF maci: {len(matches)}")
-
-    return matches
-
-
-# =====================================
-# PROGRAM KIMLIGI
-# =====================================
-
-def program_hash(matches):
-
-    content = json.dumps(
-        matches,
-        ensure_ascii=False,
-        sort_keys=True
-    )
-
-    return hashlib.sha256(
-        content.encode("utf-8")
-    ).hexdigest()
-
-
-# =====================================
-# ESKI PROGRAMI KORU
-# =====================================
-
-def load_state():
-
-    if not os.path.exists(STATE_FILE):
-        return {}
-
-    try:
-        with open(STATE_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-
-    except Exception:
-        return {}
-
-
-def save_json(path, data):
-
-    temp = str(path) + ".tmp"
-
-    with open(temp, "w", encoding="utf-8") as f:
-        json.dump(
-            data,
-            f,
-            ensure_ascii=False,
-            indent=2
+        match_name = (
+            line[:time_match.start()]
+            .strip(" |:-")
         )
 
-    os.replace(temp, path)
+        # Tarih veya kanal bilgisi içeren satırları atla.
+        if len(match_name) < 4:
+            continue
+
+        if "tvf voleybol tv" in match_name.casefold():
+            continue
+
+        item = {
+            "date": current_date,
+            "time": match_time,
+            "name": match_name,
+            "channel": current_channel,
+            "youtube": YOUTUBE_CHANNEL
+        }
+
+        if item not in matches:
+            matches.append(item)
+
+    print("Bulunan TVF maci:", len(matches))
+
+    if not matches:
+        print("⚠ TVF sayfasindan mac okunamadi.")
+        print("----- SAYFA METNI ILK 3000 KARAKTER -----")
+        print("\n".join(lines)[:3000])
+        print("-----------------------------------------")
+
+    return matches
 
 
 # =====================================
