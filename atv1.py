@@ -15,9 +15,6 @@ MARKER = "# MIRTI68_ULUSAL_AUTO"
 
 source_urls = {
     "TRT 1": "https://www.tabii.com/tr/watch/live/trt1?trackId=150002",
-    "TRT Spor": "https://www.tabii.com/watch/live/trtspor?trackId=150022",
-    "TRT Haber": "https://www.tabii.com/watch/live/trthaber?trackId=150017",
-    "TRT Spor Yildiz": "https://www.tabii.com/tr/watch/live/trtsporyildiz?trackId=150028",
     "NOW TV": "https://www.nowtv.com.tr/canli-yayin",
     "Show TV": "https://www.showtv.com.tr/canli-yayin",
     "Star TV": "https://www.startv.com.tr/canli-yayin",
