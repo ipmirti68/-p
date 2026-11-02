@@ -76,6 +76,11 @@ jobs:
       - name: 7 - LIG
         continue-on-error: true
         run: python li.py
+        
+        # 14. ATV
+      - name: 8 - ATV
+        continue-on-error: true
+        run: python atv1.py
 
     
 
