@@ -1,40 +1,36 @@
+⁶
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
 MIRTI68 - TVF VOLEYBOL YAYIN TARAMA
 
-TVF resmi YouTube yayin sayfasini tarar.
-Canli ve planlanmis yayinlari bulur.
+Canli ve planlanmis TVF yayinlarini tarar.
 Canli yayinlarda HLS adresini alir.
 Planlanmis yayinlarda YouTube adresini kaydeder.
-mirti68.m3u dosyasindaki diger kanallari korur.
+Diger M3U kanallarini korur.
 """
 
 import os
+import re
 import json
 import shutil
-
 from datetime import datetime, timezone
 from yt_dlp import YoutubeDL
-
 
 # =====================================
 # AYARLAR
 # =====================================
 
 CHANNEL_URL = "https://www.youtube.com/@tvfvoleyboltv/streams"
-
 OFFICIAL_CHANNEL_ID = "UCTgQ8Bfq3AUuo1vWULdvRKw"
 
 MASTER_FILE = "mirti68.m3u"
 RESULT_FILE = "voleybol_youtube.json"
 
 GROUP = "🏐 VOLEYBOL CANLI"
-
 MAX_VIDEOS = 50
 TIMEOUT = 30
-
 
 # =====================================
 # YOUTUBE AYARLARI
@@ -42,18 +38,34 @@ TIMEOUT = 30
 
 OPTIONS = {
     "quiet": True,
-    "no_warnings": False,
+    "no_warnings": True,
     "skip_download": True,
-    "ignoreerrors": False,
+    "ignoreerrors": True,
     "socket_timeout": TIMEOUT,
     "extract_flat": "in_playlist",
     "playlistend": MAX_VIDEOS,
     "noplaylist": False,
     "retries": 2,
     "extractor_retries": 2,
-    "fragment_retries": 2,
     "cachedir": False,
 }
+
+# =====================================
+# YOUTUBE URL
+# =====================================
+
+def youtube_url(video_id):
+    return f"https://www.youtube.com/watch?v={video_id}"
+
+
+# =====================================
+# BASLIK TEMIZLE
+# =====================================
+
+def clean_title(title):
+    title = str(title or "TVF VOLEYBOL")
+    title = re.sub(r"[\r\n,]+", " ", title)
+    return title.strip()
 
 
 # =====================================
@@ -85,7 +97,7 @@ def get_hls(info):
 
 
 # =====================================
-# VIDEO KONTROL
+# VIDEO BILGISI ISLE
 # =====================================
 
 def scan_video(ydl, entry):
@@ -95,64 +107,82 @@ def scan_video(ydl, entry):
     if not video_id:
         return None, True
 
-    video_url = (
-        entry.get("url")
-        or entry.get("webpage_url")
-        or f"https://www.youtube.com/watch?v={video_id}"
+    url = youtube_url(video_id)
+
+    title = clean_title(entry.get("title"))
+
+    channel_id = (
+        entry.get("channel_id")
+        or entry.get("uploader_id")
     )
 
-    if not video_url.startswith("http"):
-        video_url = f"https://www.youtube.com/watch?v={video_id}"
+    # Resmi kanal bilgisi yoksa video detayini kontrol et.
+    info = None
+    extraction_error = None
 
     try:
-
         info = ydl.extract_info(
-            video_url,
+            url,
             download=False
         )
 
     except Exception as e:
+        extraction_error = str(e)
+        print("Video detay bilgisi alinamadi:", video_id)
+        print("Hata:", extraction_error)
 
-        print("Video okunamadi:", video_id)
-        print("Hata:", e)
+    if info:
 
-        return None, False
+        channel_id = (
+            info.get("channel_id")
+            or info.get("channel")
+            or channel_id
+        )
 
-    if not info:
-        return None, False
+        title = clean_title(
+            info.get("title") or title
+        )
 
-    channel_id = (
-        info.get("channel_id")
-        or entry.get("channel_id")
-    )
-
+    # Kanal doğrulaması yapılmadan kayıt ekleme.
     if channel_id != OFFICIAL_CHANNEL_ID:
 
-        print("Resmi olmayan kanal atlandi:", video_id)
+        print("Resmi kanal dogrulanamadi:", video_id)
 
         return None, True
 
-    title = (
-        info.get("title")
-        or entry.get("title")
-        or "TVF VOLEYBOL"
-    )
+    status = ""
 
-    status = (
-        info.get("live_status")
-        or entry.get("live_status")
-        or ""
-    )
+    if info:
+        status = (
+            info.get("live_status")
+            or ""
+        )
+
+    if not status:
+        status = (
+            entry.get("live_status")
+            or ""
+        )
 
     is_live = (
         status == "is_live"
-        or info.get("is_live") is True
+        or (info and info.get("is_live") is True)
     )
 
     is_upcoming = (
         status == "is_upcoming"
-        or info.get("is_upcoming") is True
+        or (info and info.get("is_upcoming") is True)
     )
+
+    # YouTube planlanmış yayın hatası:
+    # Başlık ve kanal bilgisi doğrulandıysa yaklaşan yayın kabul et.
+    if (
+        not info
+        and extraction_error
+        and "This live event will begin" in extraction_error
+        and channel_id == OFFICIAL_CHANNEL_ID
+    ):
+        is_upcoming = True
 
     if not is_live and not is_upcoming:
 
@@ -160,14 +190,9 @@ def scan_video(ydl, entry):
 
         return None, True
 
-    youtube_url = (
-        info.get("webpage_url")
-        or f"https://www.youtube.com/watch?v={video_id}"
-    )
-
     if is_live:
 
-        stream_url = get_hls(info)
+        stream_url = get_hls(info) if info else None
 
         if not stream_url:
 
@@ -177,31 +202,30 @@ def scan_video(ydl, entry):
 
         state = "CANLI"
 
-        print("CANLI YAYIN:", title)
-
     else:
 
-        stream_url = youtube_url
-
+        stream_url = url
         state = "YAYINA HAZIR"
 
-        print("YAYINA HAZIR:", title)
+    print(state + ":", title)
 
     return {
         "video_id": video_id,
         "name": title,
         "title": title,
-        "youtube_url": youtube_url,
+        "youtube_url": url,
         "stream_url": stream_url,
         "channel_id": channel_id,
-        "live_status": status,
+        "live_status": status or (
+            "is_upcoming" if is_upcoming else "is_live"
+        ),
         "state": state,
         "checked_at": datetime.now(timezone.utc).isoformat()
     }, True
 
 
 # =====================================
-# TVF YAYIN SAYFASINI TARA
+# TVF KANALINI TARA
 # =====================================
 
 def scan_channel():
@@ -209,13 +233,9 @@ def scan_channel():
     options = OPTIONS.copy()
 
     if os.path.exists("cookies.txt"):
-
         options["cookiefile"] = "cookies.txt"
-
         print("YouTube cookies kullaniliyor.")
-
     else:
-
         print("Cookies bulunamadi.")
 
     results = []
@@ -236,17 +256,13 @@ def scan_channel():
             )
 
             if not channel_data:
-
                 print("TVF sayfasi okunamadi.")
-
                 return [], False
 
             entries = channel_data.get("entries") or []
 
             if not entries:
-
                 print("Yayin sayfasinda video bulunamadi.")
-
                 return [], False
 
             print("Bulunan video:", len(entries))
@@ -274,9 +290,7 @@ def scan_channel():
                 )
 
                 if not completed:
-
                     scan_complete = False
-
                     continue
 
                 if result:
@@ -285,7 +299,6 @@ def scan_channel():
     except Exception as e:
 
         print("YOUTUBE TARAMA HATASI:", e)
-
         return [], False
 
     return results, scan_complete
@@ -312,7 +325,6 @@ def remove_old_group(lines):
 
                 current = lines[i].strip()
 
-                # Sonraki kanal kaydina geldiysek onu koru.
                 if current.startswith("#EXTINF:"):
                     break
 
@@ -320,7 +332,6 @@ def remove_old_group(lines):
                     i += 1
                     continue
 
-                # Eski kanal URL satiri atlandi.
                 i += 1
                 break
 
@@ -333,21 +344,17 @@ def remove_old_group(lines):
 
 
 # =====================================
-# DOSYALARI GUVENLI KAYDET
+# M3U VE JSON KAYDET
 # =====================================
 
 def save_files(results):
 
     if not results:
-
         print("Yayin yok. Ana liste korunuyor.")
-
         return False
 
     if not os.path.exists(MASTER_FILE):
-
         print("Ana M3U bulunamadi:", MASTER_FILE)
-
         return False
 
     temp_file = MASTER_FILE + ".tmp"
@@ -360,15 +367,12 @@ def save_files(results):
             "r",
             encoding="utf-8-sig"
         ) as f:
-
             old_lines = f.readlines()
 
         if not old_lines:
-
             raise ValueError("Ana M3U bos!")
 
         if not old_lines[0].strip().startswith("#EXTM3U"):
-
             raise ValueError("M3U basligi gecersiz!")
 
         cleaned = remove_old_group(old_lines)
@@ -389,16 +393,7 @@ def save_files(results):
 
             added_ids.add(video_id)
 
-            name = str(
-                item.get("name") or "TVF VOLEYBOL"
-            )
-
-            name = (
-                name.replace(",", " ")
-                .replace("\n", " ")
-                .replace("\r", " ")
-            )
-
+            name = clean_title(item.get("name"))
             state = item.get("state", "")
 
             channel_name = f"{name} [{state}]"
@@ -410,7 +405,6 @@ def save_files(results):
             new_lines.append(stream_url + "\n")
 
         if not new_lines:
-
             raise ValueError("Eklenecek gecerli yayin yok!")
 
         content = "".join(cleaned)
@@ -420,24 +414,10 @@ def save_files(results):
 
         content += "".join(new_lines)
 
-        # Gecici M3U dosyasi
-
-        with open(
-            temp_file,
-            "w",
-            encoding="utf-8"
-        ) as f:
-
+        with open(temp_file, "w", encoding="utf-8") as f:
             f.write(content)
 
-        # M3U kontrolu
-
-        with open(
-            temp_file,
-            "r",
-            encoding="utf-8"
-        ) as f:
-
+        with open(temp_file, "r", encoding="utf-8") as f:
             check = f.read()
 
         if not check.startswith("#EXTM3U"):
@@ -446,14 +426,7 @@ def save_files(results):
         if GROUP not in check:
             raise ValueError("Voleybol grubu bulunamadi!")
 
-        # JSON gecici dosyasi
-
-        with open(
-            json_temp,
-            "w",
-            encoding="utf-8"
-        ) as f:
-
+        with open(json_temp, "w", encoding="utf-8") as f:
             json.dump(
                 results,
                 f,
@@ -461,43 +434,93 @@ def save_files(results):
                 indent=2
             )
 
-        # Eski ana listeyi yedekle
-
-        shutil.copy2(
-            MASTER_FILE,
-            MASTER_FILE + ".bak"
-        )
+        # Yedekler
+        shutil.copy2(MASTER_FILE, MASTER_FILE + ".bak")
 
         if os.path.exists(RESULT_FILE):
+            shutil.copy2(RESULT_FILE, RESULT_FILE + ".bak")
 
-            shutil.copy2(
-                RESULT_FILE,
-                RESULT_FILE + ".bak"
-            )
+        # M3U önce kaydedilir.
+        os.replace(temp_file, MASTER_FILE)
 
-        # JSON kaydet
+        # JSON kaydedilir.
+        os.replace(json_temp, RESULT_FILE)
 
-        os.replace(
-            json_temp,
-            RESULT_FILE
-        )
+        print("=" * 45)
+        print("MIRTI68 ANA LISTE GUNCELLENDI")
+        print("Ana dosya:", MASTER_FILE)
+        print("Voleybol grubu:", GROUP)
+        print("Yayin sayisi:", len(added_ids))
+        print("=" * 45)
 
-        # Ana M3U kaydet
+        return True
 
-        try:
+    except Exception as e:
 
-            os.replace(
-                temp_file,
-                MASTER_FILE
-            )
+        print("KAYIT HATASI:", e)
+        print("Ana liste korunmaya calisildi.")
 
-        except Exception:
-
-            if os.path.exists(MASTER_FILE + ".bak"):
-
+        if os.path.exists(MASTER_FILE + ".bak"):
+            try:
                 shutil.copy2(
                     MASTER_FILE + ".bak",
                     MASTER_FILE
+                )
+            except Exception:
+                pass
+
+        return False
+
+    finally:
+
+        for path in (temp_file, json_temp):
+
+            if os.path.exists(path):
+                try:
+                    os.remove(path)
+                except OSError:
+                    pass
+
+
+# =====================================
+# ANA PROGRAM
+# =====================================
+
+def main():
+
+    print("=" * 50)
+    print("MIRTI68 TVF VOLEYBOL YAYIN TARAMA")
+    print("=" * 50)
+
+    results, scan_complete = scan_channel()
+
+    print()
+    print("Bulunan yayin:", len(results))
+
+    if not scan_complete:
+        print("Tarama eksik veya basarisiz.")
+        print("mirti68.m3u korunuyor.")
+        return
+
+    if not results:
+        print("Canli veya planlanmis yayin bulunamadi.")
+        print("mirti68.m3u korunuyor.")
+        return
+
+    if save_files(results):
+        print("VOLEYBOL GRUBU GUNCELLENDI.")
+
+    print("=" * 45)
+    print("Bulunan yayin:", len(results))
+    print("Ana M3U:", MASTER_FILE)
+    print("Grup:", GROUP)
+    print("Diger kanallar korundu.")
+    print("=" * 45)
+
+
+if __name__ == "__main__":
+    main()
+           MASTER_FILE
                 )
 
             if os.path.exists(RESULT_FILE + ".bak"):
