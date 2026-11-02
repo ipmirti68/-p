@@ -65,7 +65,7 @@ jobs:
       # 12. KRAL
       - name: 5 - KRAL
         continue-on-error: true
-        run: python krl.py
+        run: python kral.py
 
       # 13. ARDA
       - name: 6 - ARDA
