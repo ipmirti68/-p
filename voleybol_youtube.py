@@ -524,7 +524,7 @@ if __name__ == "__main__":
     print("Yayin sayisi:", len(added_ids))
     print("=" * 45)
 
-        return True
+    return True
 
     except Exception as e:
 
