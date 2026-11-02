@@ -5,17 +5,19 @@
 """
 MIRTI68 - TVF YOUTUBE CANLI YAYIN BULUCU
 
-- voleybol_program.json dosyasini okur.
-- Bugunun maclarini YouTube'da arar.
-- Yalnizca TVF resmi kanalini kabul eder.
-- Yalnizca gercekten canli yayinlari ekler.
-- Onceki M3U dosyasini, yeni yayin bulunamazsa korur.
+- Günün maçlarını JSON dosyasından okur.
+- YouTube'da TVF resmi kanalını arar.
+- Yalnızca doğrulanmış canlı yayınları kabul eder.
+- YouTube bot hatasında eski listeyi korur.
+- Yeni yayın bulunana kadar eski M3U ve JSON dosyalarını silmez.
+- Boş veya hatalı listeyi kaydetmez.
 """
 
 import os
 import re
 import json
 import unicodedata
+import shutil
 
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -36,6 +38,8 @@ GROUP = "🏐 VOLEYBOL CANLI"
 
 MAX_SEARCH_RESULTS = 8
 
+TIMEOUT = 25
+
 
 # =====================================
 # YARDIMCI FONKSIYONLAR
@@ -45,10 +49,7 @@ def normalize(text):
 
     text = str(text or "").lower()
 
-    text = unicodedata.normalize(
-        "NFKD",
-        text
-    )
+    text = unicodedata.normalize("NFKD", text)
 
     text = "".join(
         c for c in text
@@ -73,11 +74,13 @@ def load_program():
         return []
 
     try:
+
         with open(
             PROGRAM_FILE,
             "r",
             encoding="utf-8"
         ) as f:
+
             data = json.load(f)
 
         if not isinstance(data, list):
@@ -87,6 +90,7 @@ def load_program():
         return data
 
     except Exception as e:
+
         print("Program okunamadi:", e)
         return []
 
@@ -94,6 +98,7 @@ def load_program():
 def is_today(match):
 
     try:
+
         today = datetime.now(
             ZoneInfo("Europe/Istanbul")
         ).strftime("%d.%m.%Y")
@@ -101,6 +106,7 @@ def is_today(match):
         return match.get("date") == today
 
     except Exception:
+
         return False
 
 
@@ -112,9 +118,13 @@ def title_matches(title, match):
     away = normalize(match.get("away", ""))
 
     ignored = {
-        "spor", "belediye", "kulubu",
-        "voleybol", "tvf", "spor",
-        "genclik", "takim"
+        "spor",
+        "belediye",
+        "kulubu",
+        "voleybol",
+        "tvf",
+        "genclik",
+        "takim"
     }
 
     home_words = {
@@ -166,13 +176,24 @@ def search_match(ydl, match):
 
     except Exception as e:
 
-        print("YouTube arama hatasi:", e)
-        return None
+        print("❌ YouTube arama hatasi:", e)
+
+        # Tarama tamamlanamadi
+        return None, False
 
     if not search_result:
-        return None
+
+        return None, True
 
     entries = search_result.get("entries") or []
+
+    if not entries:
+
+        print("Arama sonucu bulunamadi.")
+
+        return None, True
+
+    scan_error = False
 
     for entry in entries:
 
@@ -198,65 +219,77 @@ def search_match(ydl, match):
 
         except Exception as e:
 
-            print("Video kontrol edilemedi:", e)
+            print("⚠️ Video kontrol hatasi:", e)
+
+            scan_error = True
             continue
 
         if not info:
+
             continue
 
         # Resmi kanal kontrolu
+
         channel_id = info.get("channel_id")
 
         if channel_id != OFFICIAL_CHANNEL_ID:
 
-            print("⛔ Resmi olmayan kanal:", info.get("title"))
+            print(
+                "⛔ Resmi olmayan kanal:",
+                info.get("title")
+            )
+
             continue
 
         # Mac adi kontrolu
+
         title = info.get("title", "")
 
         if not title_matches(title, match):
 
             print("⛔ Mac adi eslesmedi:", title)
+
             continue
 
-        # Yalnizca su anda canli olan yayin
+        # Canli yayin kontrolu
+
         if info.get("live_status") != "is_live":
 
-            print("⏳ Yayin su anda canli degil:", title)
+            print("⏳ Yayin canli degil:", title)
+
             continue
 
         if info.get("is_live") is not True:
+
             continue
 
-        # HLS formatini bul
+        # HLS adresi bul
+
         formats = info.get("formats") or []
 
         hls_formats = [
             fmt for fmt in formats
-            if "m3u8" in str(fmt.get("protocol", "")).lower()
+            if "m3u8" in str(
+                fmt.get("protocol", "")
+            ).lower()
             and fmt.get("url")
         ]
 
-        if hls_formats:
+        if not hls_formats:
 
-            hls_formats.sort(
-                key=lambda x: (
-                    x.get("height") or 0,
-                    x.get("tbr") or 0
-                ),
-                reverse=True
-            )
+            print("⚠️ HLS adresi bulunamadi:", title)
 
-            stream_url = hls_formats[0]["url"]
-
-        else:
-
-            stream_url = info.get("url")
-
-        if not stream_url:
-            print("Oynatilabilir adres bulunamadi.")
             continue
+
+        hls_formats.sort(
+            key=lambda x: (
+                x.get("height") or 0,
+                x.get("tbr") or 0
+            ),
+            reverse=True
+        )
+
+        stream_url = hls_formats[0]["url"]
 
         return {
             "date": match.get("date"),
@@ -268,53 +301,168 @@ def search_match(ydl, match):
             "stream_url": stream_url,
             "channel_id": channel_id,
             "live_status": info.get("live_status")
-        }
+        }, True
 
-    return None
+    # Bazı videolar kontrol edilemediyse
+    # tarama eksik sayılır.
+    if scan_error:
+
+        print("⚠️ Tarama tamamlanamadi.")
+
+        return None, False
+
+    return None, True
 
 
 # =====================================
-# M3U OLUSTUR
+# GUVENLI DOSYA KAYDI
 # =====================================
 
-def save_playlist(results):
+def save_files(results):
 
     if not results:
-        print("Yeni canli yayin yok.")
-        print("Onceki M3U dosyasi korunuyor.")
+
+        print("⚠️ Yeni canli yayin yok.")
+        print("✅ Eski dosyalar korundu.")
+
         return False
+
+    # M3U icerigi hazirla
 
     lines = ["#EXTM3U\n"]
 
     for item in results:
 
-        name = (
-            item["name"]
-            .replace(",", " ")
-        )
+        stream_url = item.get("stream_url", "")
+
+        if not stream_url.startswith("http"):
+            print("Gecersiz yayin adresi!")
+            return False
+
+        name = str(
+            item.get("name") or item.get("title") or "VOLEYBOL"
+        ).replace(",", " ")
 
         lines.append(
-            f'#EXTINF:-1 group-title="{GROUP}",'
-            f'{name}\n'
+            f'#EXTINF:-1 group-title="{GROUP}",{name}\n'
         )
 
-        lines.append(
-            item["stream_url"] + "\n"
-        )
+        lines.append(stream_url + "\n")
 
-    temp = OUTPUT_FILE + ".tmp"
+    m3u_content = "".join(lines)
 
-    with open(
-        temp,
-        "w",
-        encoding="utf-8"
-    ) as f:
+    if len(results) == 0:
+        return False
 
-        f.writelines(lines)
+    # JSON icerigi hazirla
 
-    os.replace(temp, OUTPUT_FILE)
+    json_content = json.dumps(
+        results,
+        ensure_ascii=False,
+        indent=2
+    )
 
-    return True
+    temp_m3u = OUTPUT_FILE + ".tmp"
+    temp_json = RESULT_FILE + ".tmp"
+
+    try:
+
+        # Once gecici dosyalara yaz
+
+        with open(
+            temp_m3u,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            f.write(m3u_content)
+
+        with open(
+            temp_json,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            f.write(json_content)
+
+        # Gecici dosyalarin bos olmadigini kontrol et
+
+        if os.path.getsize(temp_m3u) <= len("#EXTM3U"):
+            raise ValueError("M3U dosyasi bos!")
+
+        if os.path.getsize(temp_json) == 0:
+            raise ValueError("JSON dosyasi bos!")
+
+        # Eski dosyalari yedekle
+
+        old_m3u = None
+        old_json = None
+
+        if os.path.exists(OUTPUT_FILE):
+
+            shutil.copy2(
+                OUTPUT_FILE,
+                OUTPUT_FILE + ".bak"
+            )
+
+            with open(OUTPUT_FILE, "rb") as f:
+                old_m3u = f.read()
+
+        if os.path.exists(RESULT_FILE):
+
+            shutil.copy2(
+                RESULT_FILE,
+                RESULT_FILE + ".bak"
+            )
+
+            with open(RESULT_FILE, "rb") as f:
+                old_json = f.read()
+
+        # Yeni dosyalari devreye al
+
+        os.replace(temp_m3u, OUTPUT_FILE)
+
+        try:
+
+            os.replace(temp_json, RESULT_FILE)
+
+        except Exception:
+
+            # JSON kaydi basarisizsa M3U'yu geri al
+
+            if old_m3u is not None:
+
+                with open(OUTPUT_FILE, "wb") as f:
+                    f.write(old_m3u)
+
+            else:
+
+                if os.path.exists(OUTPUT_FILE):
+                    os.remove(OUTPUT_FILE)
+
+            raise
+
+        print("✅ M3U ve JSON guvenli sekilde kaydedildi.")
+
+        return True
+
+    except Exception as e:
+
+        print("❌ Dosya kayit hatasi:", e)
+        print("✅ Onceki dosyalar korunuyor.")
+
+        return False
+
+    finally:
+
+        for temp in (temp_m3u, temp_json):
+
+            if os.path.exists(temp):
+
+                try:
+                    os.remove(temp)
+                except OSError:
+                    pass
 
 
 # =====================================
@@ -330,7 +478,10 @@ def main():
     matches = load_program()
 
     if not matches:
+
         print("Mac programi bulunamadi.")
+        print("Eski liste korunuyor.")
+
         return
 
     today_matches = [
@@ -338,24 +489,49 @@ def main():
         if is_today(match)
     ]
 
-    print("Bugunun mac sayisi:", len(today_matches))
+    print(
+        "Bugunun mac sayisi:",
+        len(today_matches)
+    )
 
     if not today_matches:
+
         print("Bugun icin mac bulunamadi.")
-        print("Eski yayin listesi korunuyor.")
+        print("Eski liste korunuyor.")
+
         return
 
     options = {
+
         "quiet": True,
-        "no_warnings": True,
+        "no_warnings": False,
+
         "skip_download": True,
-        "ignoreerrors": True,
-        "socket_timeout": 25,
+
+        # Hatalari yakalayabilmek icin
+        "ignoreerrors": False,
+
+        "socket_timeout": TIMEOUT,
+
         "extract_flat": False,
-        "playlistend": MAX_SEARCH_RESULTS
+
+        "playlistend": MAX_SEARCH_RESULTS,
+
+        "noplaylist": True,
+
+        "retries": 2,
+
+        "extractor_retries": 2,
+
+        "fragment_retries": 2,
+
+        "cachedir": False,
+
     }
 
     results = []
+
+    scan_complete = True
 
     try:
 
@@ -366,14 +542,19 @@ def main():
                 print()
                 print("🏐", match.get("name"))
 
-                result = search_match(
+                result, completed = search_match(
                     ydl,
                     match
                 )
 
+                if not completed:
+
+                    scan_complete = False
+
                 if result:
 
                     print("✅ CANLI YAYIN BULUNDU!")
+
                     print(result["title"])
 
                     results.append(result)
@@ -384,49 +565,52 @@ def main():
 
     except Exception as e:
 
-        print("YouTube tarama hatasi:", e)
-        print("Onceki liste korunuyor.")
+        print()
+        print("❌ YOUTUBE TARAMA HATASI:", e)
+        print("✅ ESKI LISTE KORUNDU.")
+
         return
+
+    # Eksik tarama varsa listeyi degistirme
+
+    if not scan_complete:
+
+        print()
+        print("⚠️ YouTube taramasi eksik kaldi.")
+        print("✅ Eski M3U ve JSON korunuyor.")
+
+        return
+
+    # Hic canli yayin yoksa eski listeyi koru
 
     if not results:
+
+        print()
         print("Gecerli canli yayin bulunamadi.")
-        print("Onceki liste korunuyor.")
+        print("✅ Onceki liste korunuyor.")
+
         return
 
-    # JSON kaydet
-    temp_json = RESULT_FILE + ".tmp"
+    # Yeni listeyi kaydet
 
-    with open(
-        temp_json,
-        "w",
-        encoding="utf-8"
-    ) as f:
-
-        json.dump(
-            results,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
-
-    os.replace(
-        temp_json,
-        RESULT_FILE
-    )
-
-    # M3U kaydet
-    if save_playlist(results):
+    if save_files(results):
 
         print()
         print("✅ VOLEYBOL CANLI LISTESI GUNCELLENDI.")
 
     print("=" * 45)
+
     print("Bulunan canli yayin:", len(results))
+
     print("M3U:", OUTPUT_FILE)
+
     print("JSON:", RESULT_FILE)
+
     print("Ana mirti68.m3u: DEGISTIRILMEDI")
+
     print("=" * 45)
 
 
 if __name__ == "__main__":
+
     main()
