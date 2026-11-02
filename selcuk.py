@@ -107,7 +107,7 @@ def append_to_mirti68(new_entries):
             out.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
             out.write(f"{url}\n")
 
-    print(f"✅ Append tamam: {len(new_entries)} beIN mevcut BEIN_GROUP} grubuna eklendi")
+print(f"✅ Append tamam: {len(new_entries)} beIN mevcut {BEIN_GROUP} grubuna eklendi")
 
 def main():
     print("--- 🏟  SLCK (SelcukSportsHD) beIN taraniyor ---")
