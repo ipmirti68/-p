@@ -47,22 +47,22 @@ BASE_PATTERN = "https://mahsunsports{}.xyz"
 # ============================================================
 
 channels = [
-    ("androstreamlivebiraz1", "TR:beIN Sport 1 HD-Mahsun"),
-    ("androstreamlivebs1", "TR:beIN Sport 1 HD-Mahsun"),
+    ("androstreamlivebiraz1", "TR:beIN SPORTS 1 HD-Mahsun"),
+    ("androstreamlivebs1", "TR:beIN SPORTS 1 HD-Mahsun"),
 
-    ("androstreamlivebs2", "TR:beIN Sport 2 HD-Mahsun"),
-    ("androstreamlivebs3", "TR:beIN Sport 3 HD-Mahsun"),
-    ("androstreamlivebs4", "TR:beIN Sport 4 HD-Mahsun"),
-    ("androstreamlivebs5", "TR:beIN Sport 5 HD-Mahsun"),
+    ("androstreamlivebs2", "TR:beIN SPORTS 2 HD-Mahsun"),
+    ("androstreamlivebs3", "TR:beIN SPORTS 3 HD-Mahsun"),
+    ("androstreamlivebs4", "TR:beIN SPORTS 4 HD-Mahsun"),
+    ("androstreamlivebs5", "TR:beIN SPORTS 5 HD-Mahsun"),
 
-    ("androstreamlivebsm1", "TR:beIN Sport Max 1 HD-Mahsun"),
-    ("androstreamlivebsm2", "TR:beIN Sport Max 2 HD-Mahsun"),
+    ("androstreamlivebsm1", "TR:beIN SPORTS Max 1 HD-Mahsun"),
+    ("androstreamlivebsm2", "TR:beIN SPORTS Max 2 HD-Mahsun"),
 
-    ("androstreamlivess1", "TR:S Sport 1 HD-Mahsun"),
-    ("androstreamlivess2", "TR:S Sport 2 HD-Mahsun"),
+    ("androstreamlivess1", "TR:S SPORTS 1 HD-Mahsun"),
+    ("androstreamlivess2", "TR:S SPORTS 2 HD-Mahsun"),
 
-    ("androstreamlivets", "TR:Tivibu Sport HD-Mahsun"),
-    ("androstreamlivets1", "TR:Tivibu Sport 1 HD-Mahsun"),
+    ("androstreamlivets", "TR:Tivibu SPOR HD-Mahsun"),
+    ("androstreamlivets1", "TR:Tivibu SPOR 1 HD-Mahsun"),
     ("androstreamlivets2", "TR:Tivibu Sport 2 HD-Mahsun"),
     ("androstreamlivets3", "TR:Tivibu Sport 3 HD-Mahsun"),
     ("androstreamlivets4", "TR:Tivibu Sport 4 HD-Mahsun"),
