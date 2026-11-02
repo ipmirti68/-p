@@ -84,6 +84,38 @@ def fetch_home():
     r = requests.get(HOME_URL, headers=HEADERS, timeout=25)
     r.raise_for_status()
     return r.text
+def parse_items(html):
+    """Yalnızca beIN Sports kanallarını alır."""
+
+    items = re.findall(
+        r'<a[^>]+href="([^"]*?/izle/[^"]+)"[^>]*>.*?'
+        r'<strong[^>]*class="name[^"]*"[^>]*>(.*?)</strong>',
+        html,
+        re.S | re.I,
+    )
+
+    out = []
+    seen = set()
+
+    for href, name in items:
+        title = re.sub(r"<[^>]+>", "", name).strip()
+
+        if not title:
+            continue
+
+        # Yalnızca beIN Sports ve beIN Max
+        if not re.search(r"\bbein\s*(?:sports?|max)\b", title, re.I):
+            continue
+
+        slug = href.split("/izle/", 1)[-1].rstrip("/")
+
+        if not slug or slug in seen:
+            continue
+
+        seen.add(slug)
+        out.append((title, slug))
+
+    return out
 
 
 def fetch_script_blobs(html):
