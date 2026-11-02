@@ -52,6 +52,7 @@ session.headers.update(HEADERS)
 # =====================================
 
 
+
 def get_program():
 
     print("🏐 TVF programi indiriliyor...")
@@ -59,13 +60,11 @@ def get_program():
     response = session.get(TVF_URL, timeout=30)
     response.raise_for_status()
 
-    print("HTTP durum:", response.status_code)
-    print("Sayfa adresi:", response.url)
-    print("Icerik tipi:", response.headers.get("Content-Type"))
-    print("Indirilen boyut:", len(response.content), "byte")
+    # Türkçe karakter kodlaması
+    response.encoding = "iso-8859-9"
 
     soup = BeautifulSoup(
-        response.content,
+        response.text,
         "html.parser"
     )
 
@@ -75,32 +74,26 @@ def get_program():
         if x.strip()
     ]
 
-    print("Okunan satir:", len(lines))
+    matches = []
+    current_date = None
+    current_channel = None
 
-    # Gelen sayfada TVF programi var mi?
-    tvf_lines = [
-        line for line in lines
-        if "tvf voleybol tv" in line.casefold()
-    ]
-
-    print("TVF kanal satiri:", len(tvf_lines))
+    team_parts = []
+    separator_found = False
 
     date_pattern = re.compile(
         r"\b(\d{2}[./-]\d{2}[./-]\d{4})\b"
     )
 
     time_pattern = re.compile(
-        r"\b([01]?\d|2[0-3]):([0-5]\d)\b"
+        r"^([01]?\d|2[0-3]):([0-5]\d)$"
     )
-
-    matches = []
-    current_date = None
-    current_channel = None
 
     for line in lines:
 
         lower = line.casefold()
 
+        # Tarih kontrolü
         date_match = date_pattern.search(line)
 
         if date_match:
@@ -111,66 +104,99 @@ def get_program():
                 .replace("-", ".")
             )
 
-            current_channel = (
-                "TVF Voleybol TV"
-                if "tvf voleybol tv" in lower
-                else None
-            )
+            current_channel = None
+            team_parts = []
+            separator_found = False
+            continue
 
-            # Tarih ve maç aynı satırdaysa da kontrol et.
-            if not current_channel:
-                continue
+        # Yayın kanalı kontrolü
+        if "tvf voleybol tv" in lower:
 
-        elif "tvf voleybol tv" in lower:
             current_channel = "TVF Voleybol TV"
+
+            team_parts = []
+            separator_found = False
             continue
 
-        elif "trt spor yıldız" in lower:
+        if "trt spor yıldız" in lower:
+
             current_channel = "TRT Spor Yıldız"
+
+            team_parts = []
+            separator_found = False
             continue
 
+        # Yalnızca TVF Voleybol TV maçları
         if current_channel != "TVF Voleybol TV":
             continue
 
-        time_match = time_pattern.search(line)
-
-        if not time_match or not current_date:
+        if not current_date:
             continue
 
-        match_time = time_match.group(0)
+        # Takımlar arasındaki ayraç
+        if line.strip() in ("-", "–", "—"):
 
-        match_name = (
-            line[:time_match.start()]
-            .strip(" |:-")
+            separator_found = True
+            continue
+
+        # Maç saati bulundu
+        time_match = time_pattern.fullmatch(line)
+
+        if time_match:
+
+            if separator_found and len(team_parts) >= 2:
+
+                home_team = " ".join(
+                    team_parts[:team_parts.index("|")]
+                )
+
+                away_team = " ".join(
+                    team_parts[team_parts.index("|") + 1:]
+                )
+
+                if home_team and away_team:
+
+                    item = {
+                        "date": current_date,
+                        "time": line,
+                        "name": home_team + " - " + away_team,
+                        "home": home_team,
+                        "away": away_team,
+                        "channel": current_channel,
+                        "youtube": YOUTUBE_CHANNEL
+                    }
+
+                    if item not in matches:
+                        matches.append(item)
+
+            team_parts = []
+            separator_found = False
+            continue
+
+        # Takım isimlerini biriktir
+        if len(line) < 2:
+            continue
+
+        if not separator_found:
+            team_parts.append(line)
+        else:
+            if "|" not in team_parts:
+                team_parts.append("|")
+
+            team_parts.append(line)
+
+    print("✅ Bulunan TVF maci:", len(matches))
+
+    for item in matches:
+        print(
+            "🏐",
+            item["date"],
+            item["time"],
+            item["name"]
         )
 
-        # Tarih veya kanal bilgisi içeren satırları atla.
-        if len(match_name) < 4:
-            continue
-
-        if "tvf voleybol tv" in match_name.casefold():
-            continue
-
-        item = {
-            "date": current_date,
-            "time": match_time,
-            "name": match_name,
-            "channel": current_channel,
-            "youtube": YOUTUBE_CHANNEL
-        }
-
-        if item not in matches:
-            matches.append(item)
-
-    print("Bulunan TVF maci:", len(matches))
-
-    if not matches:
-        print("⚠ TVF sayfasindan mac okunamadi.")
-        print("----- SAYFA METNI ILK 3000 KARAKTER -----")
-        print("\n".join(lines)[:3000])
-        print("-----------------------------------------")
-
     return matches
+
 
 
 # =====================================
