@@ -2,12 +2,12 @@
 import os
 import re
 import requests
-import shutil
-from urllib.parse import urljoin
 
-# ==================================
-# MIRTI68 ULUSAL KANALLAR
-# ==================================
+# =====================================
+# MIRTI68 - ULUSAL KANAL GUNCELLEYICI
+# =====================================
+
+MASTER_FILE = "mirti68.m3u"
 
 source_urls = {
     "TRT 1": "https://www.tabii.com/tr/watch/live/trt1?trackId=150002",
@@ -34,124 +34,158 @@ source_urls = {
     "TV100": "https://www.tv100.com/canli-yayin"
 }
 
-STREAM_FOLDER = "stream"
-MASTER_FILE = "mirti68.m3u"
+GROUP = "🇹🇷 ULUSAL"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/130.0 Mobile Safari/537.36"
+    "User-Agent": (
+        "Mozilla/5.0 (Linux; Android 14) "
+        "AppleWebKit/537.36 Chrome/130.0 Mobile Safari/537.36"
+    )
 }
 
 session = requests.Session()
 session.headers.update(HEADERS)
 
 
-def extract_m3u8(url):
+def extract_m3u8(page_url):
     try:
-        response = session.get(url, timeout=25)
+        response = session.get(page_url, timeout=25)
         response.raise_for_status()
 
         html = response.text
 
-        patterns = [
-            r'https?:\\?/\\?/[^\'"\s<>]+?\.m3u8[^\'"\s<>]*',
-            r'https?://[^\'"\s<>]+?\.m3u8[^\'"\s<>]*'
-        ]
+        html = html.replace("\\/", "/")
+        html = html.replace("\\u0026", "&")
+        html = html.replace("&amp;", "&")
 
-        for pattern in patterns:
-            matches = re.findall(pattern, html)
+        matches = re.findall(
+            r'https?://[^\s\'"<>]+?\.m3u8(?:\?[^\s\'"<>]*)?',
+            html,
+            re.IGNORECASE
+        )
 
-            for link in matches:
-                link = link.replace("\\/", "/")
-                link = link.replace("\\u0026", "&")
+        for link in matches:
+            link = link.rstrip("\\),;")
 
-                if link.startswith("http"):
-                    return link
+            if ".m3u8" in link.lower():
+                return link
 
         print("   M3U8 bulunamadi.")
         return None
 
-    except Exception as e:
-        print(f"   HATA: {e}")
+    except requests.RequestException as e:
+        print(f"   Baglanti hatasi: {e}")
         return None
 
 
-def save_stream(name, url):
-    filename = re.sub(r'[^a-zA-Z0-9_-]', '_', name.lower())
-    path = os.path.join(STREAM_FOLDER, filename + ".m3u8")
+def remove_old_ulusal(lines):
+    """Yalnizca eski ULUSAL kanal kayitlarini kaldir."""
 
-    with open(path, "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n")
-        f.write(url + "\n")
+    result = []
+    i = 0
 
-    return path.replace("\\", "/")
+    while i < len(lines):
+        line = lines[i]
+        clean = line.strip()
 
+        if clean.startswith("#EXTINF:"):
+            match = re.search(
+                r'group-title="([^"]*)"',
+                clean,
+                re.IGNORECASE
+            )
 
-def read_existing():
-    if not os.path.exists(MASTER_FILE):
-        return []
+            if match and "ULUSAL" in match.group(1).upper():
+                # Kanalin URL satirina kadar atla.
+                i += 1
 
-    with open(MASTER_FILE, "r", encoding="utf-8") as f:
-        return f.readlines()
+                while i < len(lines):
+                    current = lines[i].strip()
+
+                    if current.startswith("#EXTINF:"):
+                        break
+
+                    if current and not current.startswith("#"):
+                        i += 1
+                        break
+
+                    i += 1
+
+                continue
+
+        result.append(line)
+        i += 1
+
+    return result
 
 
 def main():
-    print("================================")
-    print(" MIRTI68 - ULUSAL KANAL TARAMA")
-    print("================================")
 
-    os.makedirs(STREAM_FOLDER, exist_ok=True)
+    print("====================================")
+    print(" MIRTI68 - ULUSAL KANAL GUNCELLEME")
+    print("====================================")
 
-    # Mevcut listeyi koru
-    old_lines = read_existing()
+    if not os.path.exists(MASTER_FILE):
+        print("[HATA] mirti68.m3u bulunamadi!")
+        return
 
-    # Eski ulusal grubu yenile, diğer gruplara dokunma
-    output = []
-    skip = False
+    # Ana listeyi oku
+    with open(MASTER_FILE, "r", encoding="utf-8-sig") as f:
+        old_lines = f.readlines()
 
-    for line in old_lines:
-        if line.startswith("#EXTINF:") and 'group-title="🇹🇷 ULUSAL"' in line:
-            skip = True
-            continue
+    # Eski ULUSAL grubunu temizle
+    output = remove_old_ulusal(old_lines)
 
-        if skip:
-            if not line.startswith("#"):
-                skip = False
-            continue
+    # M3U basligini koru
+    if not any(x.strip() == "#EXTM3U" for x in output):
+        output.insert(0, "#EXTM3U\n")
 
-        output.append(line)
-
-    # Yeni kanalları ekle
-    output.append("\n")
-
-    added = 0
+    # Yeni ULUSAL kanallar
+    new_channels = []
+    success = 0
 
     for name, page_url in source_urls.items():
-        print(f"\n[+] {name} taraniyor...")
+
+        print(f"\n[+] {name} kontrol ediliyor...")
 
         stream_url = extract_m3u8(page_url)
 
         if not stream_url:
-            print("[X] Atlandi.")
+            print(f"[X] {name} eklenmedi.")
             continue
 
-        path = save_stream(name, stream_url)
-
-        output.append(
-            f'#EXTINF:-1 group-title="🇹🇷 ULUSAL",{name}\n'
+        new_channels.append(
+            f'#EXTINF:-1 group-title="{GROUP}",{name}\n'
         )
-        output.append(path + "\n")
 
-        print(f"[OK] {name} eklendi.")
-        added += 1
+        new_channels.append(stream_url + "\n")
 
-    with open(MASTER_FILE, "w", encoding="utf-8") as f:
+        print(f"[OK] {name} bulundu.")
+        success += 1
+
+    # Yeni grubu listenin sonuna ekle
+    if new_channels:
+        if output and not output[-1].endswith("\n"):
+            output[-1] += "\n"
+
+        output.append("\n")
+        output.extend(new_channels)
+
+    # Ana dosyayi kaydet
+    temp_file = MASTER_FILE + ".tmp"
+
+    with open(temp_file, "w", encoding="utf-8") as f:
         f.writelines(output)
 
-    print("\n================================")
-    print(f" Eklenen kanal: {added}")
-    print(f" Ana liste: {MASTER_FILE}")
-    print(" Grup: 🇹🇷 ULUSAL")
-    print("================================")
+    os.replace(temp_file, MASTER_FILE)
+
+    print("\n====================================")
+    print(f" Bulunan kanal : {success}")
+    print(f" Eklenmeyen    : {len(source_urls) - success}")
+    print(f" Ana liste     : {MASTER_FILE}")
+    print(f" Grup          : {GROUP}")
+    print(" Diger gruplar : KORUNDU")
+    print("====================================")
 
 
 if __name__ == "__main__":
