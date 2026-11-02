@@ -1,14 +1,5 @@
 [
   {
-    "date": "02.11.2026",
-    "time": "18:00",
-    "name": "ATAŞEHİR KARTALLARI - ASYA KARTALLARI KAMARİN SPOR",
-    "home": "ATAŞEHİR KARTALLARI",
-    "away": "ASYA KARTALLARI KAMARİN SPOR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
     "date": "03.11.2026",
     "time": "16:00",
     "name": "HALKBANK - KASTAMONU YURDUM GENÇLİK SPOR",
@@ -464,6 +455,60 @@
     "name": "ARKAS SPOR - DÜZCE BELEDİYESİ SPOR AKADEMİ",
     "home": "ARKAS SPOR",
     "away": "DÜZCE BELEDİYESİ SPOR AKADEMİ",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "10.11.2026",
+    "time": "16:00",
+    "name": "MALİYE VOLEYBOL - KONYA B.ŞEHİR BLD. SPOR",
+    "home": "MALİYE VOLEYBOL",
+    "away": "KONYA B.ŞEHİR BLD. SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "10.11.2026",
+    "time": "16:00",
+    "name": "GÖLBAŞI İNCEK SPOR - ANKARA DSİ",
+    "home": "GÖLBAŞI İNCEK SPOR",
+    "away": "ANKARA DSİ",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "10.11.2026",
+    "time": "18:00",
+    "name": "SÜREYYAPAŞA DOĞU AKADEMİ - FENERBAHÇE MEDICANA",
+    "home": "SÜREYYAPAŞA DOĞU AKADEMİ",
+    "away": "FENERBAHÇE MEDICANA",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "10.11.2026",
+    "time": "19:00",
+    "name": "VEGA ATLETİK - PTT",
+    "home": "VEGA ATLETİK",
+    "away": "PTT",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "10.11.2026",
+    "time": "19:00",
+    "name": "ERYAMAN GELİŞİM - ANKARA BAROSU",
+    "home": "ERYAMAN GELİŞİM",
+    "away": "ANKARA BAROSU",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "10.11.2026",
+    "time": "19:30",
+    "name": "SPOR TOTO - AKEDAŞ ONİKİŞUBAT BELEDİYE SPOR",
+    "home": "SPOR TOTO",
+    "away": "AKEDAŞ ONİKİŞUBAT BELEDİYE SPOR",
     "channel": "TVF Voleybol TV",
     "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
   }
