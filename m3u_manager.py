@@ -7,14 +7,16 @@ M3U_FILE = "mirti68.m3u"
 
 
 def parse_entries(text):
-    """M3U içeriğini kanal kayıtlarına ayırır."""
+    """M3U başlığını ve kanal kayıtlarını koruyarak ayırır."""
     lines = text.splitlines()
+
     header = []
     entries = []
     current = []
 
     for line in lines:
         if line.startswith("#EXTM3U"):
+            header.append(line)
             continue
 
         if line.startswith("#EXTINF:"):
@@ -25,9 +27,8 @@ def parse_entries(text):
         elif current:
             current.append(line)
 
-        else:
-            if line.strip():
-                header.append(line)
+        elif line.strip():
+            header.append(line)
 
     if current:
         entries.append(current)
@@ -51,11 +52,6 @@ def entry_group(entry):
 
 
 def update_group(group_title, new_entries, filename=M3U_FILE):
-    """
-    Aynı isimli kanalı günceller.
-    Yeni bulunmayan eski kanalı korur.
-    Diğer kategorilere dokunmaz.
-    """
 
     if not new_entries:
         print("Yeni kayıt yok. Mevcut liste korunuyor.")
@@ -69,7 +65,10 @@ def update_group(group_title, new_entries, filename=M3U_FILE):
 
     header, old_entries = parse_entries(old_text)
 
-    # Yeni kayıtları doğrula ve hazırla
+    # EPG bilgili orijinal M3U başlığını koru
+    if not any(x.startswith("#EXTM3U") for x in header):
+        header.insert(0, "#EXTM3U")
+
     new_map = {}
 
     for item in new_entries:
@@ -95,7 +94,7 @@ def update_group(group_title, new_entries, filename=M3U_FILE):
         print("Geçerli yeni kayıt bulunamadı. Eski liste korundu.")
         return False
 
-    # Eski kayıtları koru, aynı isimlileri yenile
+    # Eski hedef grup kayıtlarını koru ve yenileri güncelle
     merged = {}
     target_order = []
 
@@ -115,7 +114,7 @@ def update_group(group_title, new_entries, filename=M3U_FILE):
 
     target_entries = [merged[x] for x in target_order]
 
-    # Diğer kategorileri aynen koru
+    # Diğer grupları aynen koru
     output_entries = []
     inserted = False
 
@@ -131,9 +130,8 @@ def update_group(group_title, new_entries, filename=M3U_FILE):
     if not inserted:
         output_entries.extend(target_entries)
 
-    # Dosyayı güvenli şekilde hazırla
-    output = ["#EXTM3U"]
-    output.extend(header)
+    # Orijinal EPG başlığı dahil tüm üst bilgileri koru
+    output = list(header)
 
     for entry in output_entries:
         output.extend(entry)
@@ -159,9 +157,10 @@ def update_group(group_title, new_entries, filename=M3U_FILE):
             os.remove(temp_path)
         raise
 
-    print("M3U GÜNCELLENDİ:", filename)
-    print("Kategori:", group_title)
-    print("Yeni bulunan kayıt:", len(new_map))
-    print("Korunan/eski kayıtlarla toplam:", len(target_entries))
+    print("✅ M3U GÜNCELLENDİ:", filename)
+    print("📺 Kategori:", group_title)
+    print("🆕 Yeni bulunan kayıt:", len(new_map))
+    print("📋 Toplam grup kaydı:", len(target_entries))
+    print("✅ EPG başlığı ve diğer gruplar korundu.")
 
     return True
