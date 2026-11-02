@@ -222,7 +222,6 @@ def create_m3u(data, quiet=False):
     if not quiet:
         print("✅ M3U Tamamlandı!")
 
-M3U_FILE = "mirti68.m3u"
 
 def main():
     all_content = get_all_content() # senin fonksiyonun
