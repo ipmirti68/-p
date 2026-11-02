@@ -1,9 +1,8 @@
+
 """SLCK (SelcukSportsHD) spor kaynagi botu - SADECE beIN"""
 
 import re
 import sys
-import os
-
 import requests
 import urllib3
 import warnings
@@ -15,23 +14,26 @@ HOME_URL = "https://www.selcuksportshd14e17ba2ad.xyz/"
 
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/152.0.0.0 Safari/537.36"
     ),
     "Referer": HOME_URL,
 }
 
 STREAM_DOMAIN = "https://dga1op10s1u3lea.acb65d4e703641.click"
 STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
+
 OUTPUT_FILENAME = "mirti68.m3u"
 BEIN_GROUP = "🖥beINSPORTS"
 SPORTS_GROUP = "🖥SPORTS"
+
 LOGO = "https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg"
 
 PRETTY_NAMES = {
     "selcukbeinsports1": "beIN SPORTS 1 Selcuk 🔴",
     "selcukbeinsports2": "beIN SPORTS 2 Selcuk 🔴",
-    "selcukbeinsports3": "beIN SPORTS 3 Selcuk 🔴 ",
+    "selcukbeinsports3": "beIN SPORTS 3 Selcuk 🔴",
     "selcukbeinsports4": "beIN SPORTS 4 Selcuk 🔴",
     "selcukbeinsports5": "beIN SPORTS 5 Selcuk 🔴",
     "selcukbeinsportsmax1": "beIN SPORTS MAX 1 Selcuk 🔴",
@@ -40,34 +42,60 @@ PRETTY_NAMES = {
     "selcukbeinconnect1": "beIN Con 1 Selcuk 🔴",
 }
 
+
 def pretty(cid: str) -> str:
-    return PRETTY_NAMES.get(cid.strip().lower(), cid.replace("selcuk", "").title())
+    return PRETTY_NAMES.get(
+        cid.strip().lower(),
+        cid.replace("selcuk", "").title()
+    )
+
 
 def fetch_home():
-    r = requests.get(HOME_URL, headers=HEADERS, timeout=25)
+    r = requests.get(
+        HOME_URL,
+        headers=HEADERS,
+        timeout=25
+    )
     r.raise_for_status()
     r.encoding = r.apparent_encoding or "utf-8"
     return r.text
 
+
 def parse_bein_ids(html):
-    ids = re.findall(r"index\.php\?id=([A-Za-z0-9_\-]+)", html)
-    out, seen = [], set()
+    ids = re.findall(
+        r"index\.php\?id=([A-Za-z0-9_\-]+)",
+        html
+    )
+
+    out = []
+    seen = set()
+
     for cid in ids:
         low = cid.lower()
+
         if low not in PRETTY_NAMES:
             continue
-        if cid in seen:
+
+        if low in seen:
             continue
-        seen.add(cid)
+
+        seen.add(low)
         out.append(cid)
+
     return out
+
+
 def append_to_mirti68(new_entries):
 
     if not new_entries:
         print("❌ Yeni kayıt bulunamadı.")
         return
 
-    from m3u_manager import update_group
+    try:
+        from m3u_manager import update_group
+    except ImportError:
+        print("❌ m3u_manager.py bulunamadı!")
+        return
 
     formatted_entries = []
 
@@ -78,59 +106,61 @@ def append_to_mirti68(new_entries):
             f'#EXTVLCOPT:http-referrer={STREAM_REFERER}\n'
             f'{url}'
         )
+
         formatted_entries.append(entry)
 
-    update_group(
-        BEIN_GROUP,
-        formatted_entries,
-        filename=OUTPUT_FILENAME
-    )
+    try:
+        update_group(
+            BEIN_GROUP,
+            formatted_entries,
+            filename=OUTPUT_FILENAME
+        )
 
-    print(
-        f"✅ {len(formatted_entries)} beIN kanalı "
-        f"{BEIN_GROUP} grubunda güncellendi."
-    )
+        print(
+            f"✅ {len(formatted_entries)} beIN kanalı "
+            f"{BEIN_GROUP} grubunda güncellendi."
+        )
 
-    with open(OUTPUT_FILENAME, "r", encoding="utf-8", errors="ignore") as f:
-        lines = f.readlines()
+    except Exception as e:
+        print(f"❌ M3U güncelleme hatası: {e}")
 
-    header = lines[0].rstrip("\n") if lines else "#EXTINF"
-    if not header.startswith("#EXTINF"):
-        header = "#EXTINF"
-
-    with open(OUTPUT_FILENAME, "a", encoding="utf-8") as out:
-        out.write(header + "\n")
-        for l in lines[1:]:
-            out.write(l if l.endswith("\n") else l + "\n")
-        for name, url in new_entries:
-            out.write(f'#EXTINF:-1 group-title="{BEIN_GROUP}" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg", {name}\n')
-            out.write(f"#EXTVLCOPT:http-referrer={STREAM_REFERER}\n")
-            out.write(f"{url}\n")
-
-print(f"✅ Append tamam: {len(new_entries)} beIN mevcut {BEIN_GROUP} grubuna eklendi")
 
 def main():
-    print("--- 🏟  SLCK (SelcukSportsHD) beIN taraniyor ---")
+
+    print("--- 🏟 SLCK (SelcukSportsHD) beIN taraniyor ---")
+
     try:
         html = fetch_home()
+
     except Exception as e:
         print(f"❌ Ana sayfa erisilemiyor: {e}")
         sys.exit(1)
 
     ids = parse_bein_ids(html)
+
     print(f"✅ {len(ids)} beIN kanali bulundu")
+
     if not ids:
         print("❌ beIN KANAL YOK")
         sys.exit(1)
 
     entries = []
+
     for cid in ids:
+
         url = f"{STREAM_DOMAIN}/live/{cid}/playlist.m3u8"
-        entries.append((pretty(cid), url))
+
+        entries.append((
+            pretty(cid),
+            url
+        ))
+
         print(f"  ✅ {pretty(cid)}")
 
     entries.sort(key=lambda x: x[0].lower())
+
     append_to_mirti68(entries)
+
 
 if __name__ == "__main__":
     main()
