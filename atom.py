@@ -20,7 +20,7 @@ GROUP = "🖥beINSPORTS"
 # Ana sayfa yonlendirme zinciri (alan adi her ay degisebiliyor)
 START_URL = "https://url24.link/AtomSporTV"
 # Zincir kirilirsa son bilinen ana makine
-FALLBACK_BASE = "https://www.atomsportv519.top"
+FALLBACK_BASE = "https://www.atomsportv517.top"
 # API adresi ana sayfadan dinamik okunur; okunamazsa son bilinen adres
 FALLBACK_API = "https://teletv15.top/load/yayinlink.php"
 
