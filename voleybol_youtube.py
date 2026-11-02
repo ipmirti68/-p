@@ -1,4 +1,4 @@
-⁶
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -450,6 +450,77 @@ def save_files(results):
         print("MIRTI68 ANA LISTE GUNCELLENDI")
         print("Ana dosya:", MASTER_FILE)
         print("Voleybol grubu:", GROUP)
+        print("Yayin sayisi:", len(added_ids))
+        print("=" * 45)
+
+        return True
+
+    except Exception as e:
+
+        print("KAYIT HATASI:", e)
+        print("Ana liste korunmaya calisildi.")
+
+        if os.path.exists(MASTER_FILE + ".bak"):
+            try:
+                shutil.copy2(
+                    MASTER_FILE + ".bak",
+                    MASTER_FILE
+                )
+            except Exception:
+                pass
+
+        return False
+
+    finally:
+
+        for path in (temp_file, json_temp):
+
+            if os.path.exists(path):
+                try:
+                    os.remove(path)
+                except OSError:
+                    pass
+
+
+# =====================================
+# ANA PROGRAM
+# =====================================
+
+def main():
+
+    print("=" * 50)
+    print("MIRTI68 TVF VOLEYBOL YAYIN TARAMA")
+    print("=" * 50)
+
+    results, scan_complete = scan_channel()
+
+    print()
+    print("Bulunan yayin:", len(results))
+
+    if not scan_complete:
+        print("Tarama eksik veya basarisiz.")
+        print("mirti68.m3u korunuyor.")
+        return
+
+    if not results:
+        print("Canli veya planlanmis yayin bulunamadi.")
+        print("mirti68.m3u korunuyor.")
+        return
+
+    if save_files(results):
+        print("VOLEYBOL GRUBU GUNCELLENDI.")
+
+    print("=" * 45)
+    print("Bulunan yayin:", len(results))
+    print("Ana M3U:", MASTER_FILE)
+    print("Grup:", GROUP)
+    print("Diger kanallar korundu.")
+    print("=" * 45)
+
+
+if __name__ == "__main__":
+    main()
+oleybol grubu:", GROUP)
         print("Yayin sayisi:", len(added_ids))
         print("=" * 45)
 
