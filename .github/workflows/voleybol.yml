@@ -22,16 +22,24 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Deno kur
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
       - name: Paketleri kur
         run: |
-          pip install requests beautifulsoup4 yt-dlp
+          python -m pip install --upgrade pip
+          pip install --upgrade requests beautifulsoup4
+          pip install --upgrade "yt-dlp[default]" yt-dlp-ejs
 
-      - name: Voleybol programını güncelle
+      - name: Voleybol programini guncelle
         run: python voleybol.py
+
       - name: YouTube canli voleybol yayinlarini bul
         run: python voleybol_youtube.py
 
-      - name: Dosyaları kaydet
+      - name: Dosyalari kaydet
         run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
@@ -41,6 +49,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Kaydedilecek yeni dosya yok."
           else
-            git commit -m "MIRTI68 Voleybol program güncelleme"
+            git commit -m "MIRTI68 Voleybol program guncelleme"
             git push
           fi
