@@ -26,6 +26,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: TVF voleybol yayinlarini tara
+        run: python voleybol_youtube.py
 
       - name: Deno kur
         uses: denoland/setup-deno@v2
