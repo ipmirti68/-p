@@ -8,7 +8,6 @@ import json
 BASE_URL = "https://www.atv.com.tr"
 
 # Kalıcı kayıt (daha önce çekilenler tekrar çekilmez)
-STATE_FILE = "atv_state.json"
 M3U_FILE = "mirti68.m3u"
 FULL_REFRESH = os.environ.get("FULL_REFRESH") == "1"  # 1 ise kayıtlar yok sayılır
 
