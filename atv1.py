@@ -34,7 +34,7 @@ source_urls = {
     "TV100": "https://www.tv100.com/canli-yayin"
 }
 
-GROUP = "🇹🇷 ULUSAL"
+GROUP = "🇹🇷 ULUSAL1"
 
 HEADERS = {
     "User-Agent": (
