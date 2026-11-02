@@ -174,7 +174,7 @@ def main():
     # Ana dosyayi kaydet
     temp_file = MASTER_FILE + ".tmp"
 
-    with open(temp_file, "w", encoding="utf-8") as f:
+    with open(temp_file, "a", encoding="utf-8") as f:
         f.writelines(output)
 
     os.replace(temp_file, MASTER_FILE)
