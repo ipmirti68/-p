@@ -38,6 +38,18 @@ jobs:
           pip install --upgrade requests beautifulsoup4
           pip install --upgrade "yt-dlp[default]" yt-dlp-ejs
 
+      - name: YouTube cookies hazirla
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: |
+          if [ -n "$YOUTUBE_COOKIES" ]; then
+            printf '%s' "$YOUTUBE_COOKIES" > cookies.txt
+            chmod 600 cookies.txt
+            echo "YouTube cookies hazir."
+          else
+            echo "YouTube cookies tanimlanmamis."
+          fi
+
       - name: Voleybol programini guncelle
         run: python voleybol.py
 
@@ -49,20 +61,12 @@ jobs:
       - name: Dosyalari kaydet
         if: always()
         run: |
-          if [ ! -d .git ]; then
-            echo "Git deposu bulunamadi."
-            exit 0
-          fi
-
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
 
           for file in mirti68.m3u voleybol_program.json voleybol_youtube.json; do
             if [ -f "$file" ]; then
               git add -f "$file"
-              echo "Eklendi: $file"
-            else
-              echo "Dosya bulunamadi, atlandi: $file"
             fi
           done
 
@@ -72,6 +76,10 @@ jobs:
             git commit -m "MIRTI68 Voleybol grubu guncellendi"
             git push
           fi
+
+      - name: Cookies dosyasini sil
+        if: always()
+        run: rm -f cookies.txt
 
       - name: Tarama sonucunu bildir
         if: always()
