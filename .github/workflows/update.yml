@@ -60,7 +60,7 @@ jobs:
       # 11. ATOM
       - name: 4 - ATOM
         continue-on-error: true
-        run: python ato.py
+        run: python atom.py
 
       # 12. KRAL
       - name: 5 - KRAL
