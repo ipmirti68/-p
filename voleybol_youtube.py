@@ -558,9 +558,8 @@ def main():
         print("Gecerli canli yayin bulunamadi.")
         print("mirti68.m3u korunuyor.")
         return
-
+        
     if save_files(results):
-
         print()
         print("VOLEYBOL GRUBU BASARIYLA GUNCELLENDI.")
 
@@ -572,8 +571,9 @@ def main():
     print("=" * 45)
 
 
-if __name__ == "__main__":
-    main()
+    if __name__ == "__main__":
+         main()
+    
           os.replace(
                 json_temp,
                 RESULT_FILE
