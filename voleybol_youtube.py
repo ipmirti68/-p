@@ -520,9 +520,9 @@ def main():
 
 if __name__ == "__main__":
     main()
-        print("🏐 Voleybol grubu:", GROUP)
-        print("Yayin sayisi:", len(added_ids))
-        print("=" * 45)
+    print("🏐 Voleybol grubu:", GROUP)
+    print("Yayin sayisi:", len(added_ids))
+    print("=" * 45)
 
         return True
 
