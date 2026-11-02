@@ -520,7 +520,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-oleybol grubu:", GROUP)
+        print("🏐 Voleybol grubu:", GROUP)
         print("Yayin sayisi:", len(added_ids))
         print("=" * 45)
 
