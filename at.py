@@ -34,7 +34,7 @@ source_urls = {
     "TV100": "https://www.tv100.com/canli-yayin"
 }
 
-GROUP = "🇹🇷 ULUSAL1"
+GROUP = "🇹🇷 ULUSAL  🔴"
 
 HEADERS = {
     "User-Agent": (
@@ -130,7 +130,7 @@ def main():
         return
 
     # Ana listeyi oku
-    with open(MASTER_FILE, "r", encoding="utf-8-sig") as f:
+    with open(MASTER_FILE, "a", encoding="utf-8-sig") as f:
         old_lines = f.readlines()
 
     # Eski ULUSAL grubunu temizle
