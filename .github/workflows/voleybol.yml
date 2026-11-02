@@ -33,8 +33,12 @@ jobs:
         run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
-          git add mirti68.m3u voleybol_eski.json voleybol_program.json
-          git diff --cached --quiet || (
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "Kaydedilecek yeni dosya yok."
+          else
             git commit -m "MIRTI68 Voleybol program güncelleme"
             git push
-          )
+          fi
