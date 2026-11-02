@@ -5,9 +5,13 @@ import requests
 
 # =====================================
 # MIRTI68 - ULUSAL KANAL GUNCELLEYICI
+# SADECE KENDI KAYITLARINI GUNCELLER
 # =====================================
 
 MASTER_FILE = "mirti68.m3u"
+
+GROUP = "🇹🇷 ULUSAL 🔴"
+MARKER = "# MIRTI68_ULUSAL_AUTO"
 
 source_urls = {
     "TRT 1": "https://www.tabii.com/tr/watch/live/trt1?trackId=150002",
@@ -34,8 +38,6 @@ source_urls = {
     "TV100": "https://www.tv100.com/canli-yayin"
 }
 
-GROUP = "🇹🇷 ULUSAL  🔴"
-
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Linux; Android 14) "
@@ -53,7 +55,6 @@ def extract_m3u8(page_url):
         response.raise_for_status()
 
         html = response.text
-
         html = html.replace("\\/", "/")
         html = html.replace("\\u0026", "&")
         html = html.replace("&amp;", "&")
@@ -66,7 +67,6 @@ def extract_m3u8(page_url):
 
         for link in matches:
             link = link.rstrip("\\),;")
-
             if ".m3u8" in link.lower():
                 return link
 
@@ -78,42 +78,47 @@ def extract_m3u8(page_url):
         return None
 
 
-def remove_old_ulusal(lines):
-    """Yalnizca eski ULUSAL kanal kayitlarini kaldir."""
+def remove_own_records(lines):
+    """Yalnizca bu kodun isaretledigi kayitlari sil."""
 
     result = []
     i = 0
 
     while i < len(lines):
-        line = lines[i]
-        clean = line.strip()
 
-        if clean.startswith("#EXTINF:"):
-            match = re.search(
-                r'group-title="([^"]*)"',
-                clean,
-                re.IGNORECASE
-            )
+        if lines[i].strip() == MARKER:
 
-            if match and "ULUSAL" in match.group(1).upper():
-                # Kanalin URL satirina kadar atla.
-                i += 1
+            i += 1
 
-                while i < len(lines):
-                    current = lines[i].strip()
+            # Isaretli kanal kaydini ve URL satirini atla
+            while i < len(lines):
+                line = lines[i].strip()
 
-                    if current.startswith("#EXTINF:"):
-                        break
-
-                    if current and not current.startswith("#"):
-                        i += 1
-                        break
-
+                if line.startswith("#EXTINF:"):
                     i += 1
 
-                continue
+                    while i < len(lines):
+                        current = lines[i].strip()
 
-        result.append(line)
+                        if current and not current.startswith("#"):
+                            i += 1
+                            break
+
+                        if current.startswith("#EXTINF:"):
+                            break
+
+                        i += 1
+
+                    break
+
+                if line == MARKER:
+                    break
+
+                i += 1
+
+            continue
+
+        result.append(lines[i])
         i += 1
 
     return result
@@ -122,25 +127,23 @@ def remove_old_ulusal(lines):
 def main():
 
     print("====================================")
-    print(" MIRTI68 - ULUSAL KANAL GUNCELLEME")
+    print(" MIRTI68 ULUSAL GUNCELLEYICI")
     print("====================================")
 
     if not os.path.exists(MASTER_FILE):
         print("[HATA] mirti68.m3u bulunamadi!")
         return
 
-    # Ana listeyi oku
-    with open(MASTER_FILE, "a", encoding="utf-8-sig") as f:
+    # Dosyayi oku: eski icerik korunur
+    with open(MASTER_FILE, "r", encoding="utf-8-sig") as f:
         old_lines = f.readlines()
 
-    # Eski ULUSAL grubunu temizle
-    output = remove_old_ulusal(old_lines)
+    # Sadece kendi onceki kayitlarini kaldir
+    output = remove_own_records(old_lines)
 
-    # M3U basligini koru
     if not any(x.strip() == "#EXTM3U" for x in output):
         output.insert(0, "#EXTM3U\n")
 
-    # Yeni ULUSAL kanallar
     new_channels = []
     success = 0
 
@@ -154,27 +157,28 @@ def main():
             print(f"[X] {name} eklenmedi.")
             continue
 
-        new_channels.append(
-            f'#EXTINF:-1 group-title="{GROUP}",{name}\n'
-        )
-
-        new_channels.append(stream_url + "\n")
+        new_channels.extend([
+            MARKER + "\n",
+            f'#EXTINF:-1 group-title="{GROUP}",{name}\n',
+            stream_url + "\n"
+        ])
 
         print(f"[OK] {name} bulundu.")
         success += 1
 
-    # Yeni grubu listenin sonuna ekle
+    # Yeni kanallari sona ekle
     if new_channels:
+
         if output and not output[-1].endswith("\n"):
             output[-1] += "\n"
 
         output.append("\n")
         output.extend(new_channels)
 
-    # Ana dosyayi kaydet
+    # Guvenli kaydetme
     temp_file = MASTER_FILE + ".tmp"
 
-    with open(temp_file, "a", encoding="utf-8") as f:
+    with open(temp_file, "w", encoding="utf-8") as f:
         f.writelines(output)
 
     os.replace(temp_file, MASTER_FILE)
@@ -183,8 +187,8 @@ def main():
     print(f" Bulunan kanal : {success}")
     print(f" Eklenmeyen    : {len(source_urls) - success}")
     print(f" Ana liste     : {MASTER_FILE}")
-    print(f" Grup          : {GROUP}")
     print(" Diger gruplar : KORUNDU")
+    print(" Elle eklenenler: KORUNDU")
     print("====================================")
 
 
