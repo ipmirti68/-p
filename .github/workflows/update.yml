@@ -55,7 +55,7 @@ jobs:
       # 10. MAHSUN
       - name: 3 - MAHSUN
         continue-on-error: true
-        run: python mahsu.py
+        run: python mahsun.py
 
       # 11. ATOM
       - name: 4 - ATOM
