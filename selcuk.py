@@ -94,9 +94,9 @@ def append_to_mirti68(new_entries):
     with open(OUTPUT_FILENAME, "r", encoding="utf-8", errors="ignore") as f:
         lines = f.readlines()
 
-    header = lines[0].rstrip("\n") if lines else "#EXTM3U"
-    if not header.startswith("#EXTM3U"):
-        header = "#EXTM3U"
+    header = lines[0].rstrip("\n") if lines else "#EXTINF"
+    if not header.startswith("#EXTINF"):
+        header = "#EXTINF"
 
     with open(OUTPUT_FILENAME, "a", encoding="utf-8") as out:
         out.write(header + "\n")
