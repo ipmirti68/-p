@@ -49,17 +49,27 @@ jobs:
       - name: Dosyalari kaydet
         if: always()
         run: |
+          if [ ! -d .git ]; then
+            echo "Git deposu bulunamadi."
+            exit 0
+          fi
+
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
 
-          git add -f voleybol_program.json
-          git add -f voleybol_canli.m3u
-          git add -f voleybol_youtube.json
+          for file in mirti68.m3u voleybol_program.json voleybol_youtube.json; do
+            if [ -f "$file" ]; then
+              git add -f "$file"
+              echo "Eklendi: $file"
+            else
+              echo "Dosya bulunamadi, atlandi: $file"
+            fi
+          done
 
           if git diff --cached --quiet; then
             echo "Kaydedilecek yeni dosya yok."
           else
-            git commit -m "MIRTI68 Voleybol guncellendi"
+            git commit -m "MIRTI68 Voleybol grubu guncellendi"
             git push
           fi
 
@@ -70,5 +80,5 @@ jobs:
             echo "YouTube taramasi tamamlandi."
           else
             echo "YouTube taramasi basarisiz."
-            echo "Eski canli yayin listesi korunuyor."
+            echo "Mevcut MIRTI68 listesi korunmalidir."
           fi
