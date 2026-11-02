@@ -24,7 +24,7 @@ warnings.filterwarnings("ignore")
 
 HOME_URL = "https://kralbozguncu.xyz/"
 OUTPUT_FILENAME = "mirti68.m3u"
-GROUP = "KralBozguncu"
+GROUP = "🖥beINSPORTS"
 
 # Segmentler su an referersiz de calisiyor; yine de referer eklenir
 # (kaynak gerekli hale gelirse oynaticida kirilmasin).
