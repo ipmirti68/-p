@@ -201,12 +201,6 @@ def load_state():
             print(f"⚠️ State okunamadı, sıfırdan başlanıyor: {e}")
     return {}
 
-def save_state(state):
-    tmp = STATE_FILE + ".tmp"
-    with open(tmp, "a", encoding="utf-8") as f:
-        json.dump(state, f, ensure_ascii=False, indent=1)
-    os.replace(tmp, STATE_FILE)
-
 def create_m3u(data, quiet=False):
     """M3U Dosyası Oluşturur"""
     if not quiet:
@@ -228,50 +222,27 @@ def create_m3u(data, quiet=False):
     if not quiet:
         print("✅ M3U Tamamlandı!")
 
+M3U_FILE = "mirti68.m3u"
+
 def main():
-    print("🚀 ATV VOD Scraper Başlatıldı (M3U Modu)...")
+    all_content = get_all_content() # senin fonksiyonun
+    print(f"Toplam {len(all_content)} içerik")
 
-    state = load_state()  # { slug: {name, group, logo, episodes: [{name,url,page,order}]} }
-    print(f"📦 Kayıtlı içerik: {len(state)} dizi/program")
+    # Tek seferde W modunda aç, her çalışmada sıfırdan yaz
+    with open(M3U_FILE, "w", encoding="utf-8") as f:
+        f.write("#EXTM3U\n")
 
-    all_content = get_all_content()
-    total = len(all_content)
+        for item in all_content:
+            episodes = get_episodes(item['slug'], item['name'])
+            for ep in episodes:
+                video_url = extract_video_url(ep['url'])
+                if video_url:
+                    full_title = f"{item['name']} - {ep['name']}"
+                    f.write(f'#EXTINF:-1 group-title="{item["group"]}" tvg-logo="{item["logo"]}",{full_title}\n')
+                    f.write(f"{video_url}\n")
+    
+    print("bitti")
 
-    for i, item in enumerate(all_content, 1):
-        print(f"\n[{i}/{total}] İşleniyor: {item['name']} ({item['group']})")
-
-        episodes = get_episodes(item['slug'], item['name'])
-        if not episodes:
-            print("  -> Bölüm bulunamadı.")
-            continue
-
-        entry = state.get(item['slug'])
-        known = {e['page'] for e in entry['episodes']} if entry else set()
-
-        new_eps = []
-        for ep in episodes:
-            if ep['url'] not in known:
-                known.add(ep['url'])
-                new_eps.append(ep)
-
-        if not new_eps:
-            print(f"  ✓ Yeni bölüm yok ({len(entry['episodes']) if entry else 0} kayıtlı).")
-            continue
-
-        print(f"  -> {len(new_eps)} yeni bölüm, linkler çözülüyor...")
-        resolved = []
-        for ep in new_eps:
-            video_url = extract_video_url(ep['url'])
-            if video_url:
-                resolved.append({
-                    'name': ep['name'],
-                    'url': video_url,
-                    'page': ep['url'],
-                    'order': ep['order']
-                })
-                print(f"    + {ep['name']} eklendi.")
-            else:
-                print(f"    - {ep['name']} video bulunamadı.")
 
         if not resolved:
             continue
