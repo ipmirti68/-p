@@ -18,11 +18,11 @@ STATIC_LOGO = "https://i.imgur.com/71TSn0Q.jpeg"
 GROUP = "🖥beINSPORTS"
 
 # Ana sayfa yonlendirme zinciri (alan adi her ay degisebiliyor)
-START_URL = "https://golvarmac1.pro/"
+START_URL = "https://fixbettv84.com/"
 # Zincir kirilirsa son bilinen ana makine
-FALLBACK_BASE = "https://golvarmac1.pro/"
+FALLBACK_BASE = "https://fixbettv84.com/"
 # API adresi ana sayfadan dinamik okunur; okunamazsa son bilinen adres
-FALLBACK_API = "https://golvarmac1.pro/"
+FALLBACK_API = "https://fixbettv84.com/"
 
 # Kanal adlari sitesiden gelir; bilinen id'ler icin daha duzgun gosterim
 PRETTY_NAMES = {
@@ -127,7 +127,7 @@ def get_stream(api_url, cid):
     return ""
 
 def main():
-    print("--- 📡 Atom Spor Taranıyor ---")
+    print("--- 📡 Fixtv Taranıyor ---")
     base_domain = discover_base_domain()
     api_url = discover_api(base_domain)
     channels = discover_channels(api_url)
