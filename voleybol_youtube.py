@@ -350,19 +350,18 @@ def main():
 
     print("\nBulunan yayin:", len(results))
 
-    if not scan_complete:
+        if not scan_complete:
         print("Tarama eksik veya basarisiz.")
         print("mirti68.m3u korunuyor.")
         return
 
-        if not results:
+    if not results:
         print("Canli veya planlanmis yayin bulunamadi.")
         print("mirti68.m3u korunuyor.")
         return
 
     if save_files(results):
         print("VOLEYBOL GRUBU GUNCELLENDI.")
-
     print("=" * 45)
     print("Bulunan yayin:", len(results))
     print("Ana M3U:", MASTER_FILE)
