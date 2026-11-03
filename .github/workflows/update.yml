@@ -2,10 +2,8 @@ name: update
 
 on:
   workflow_dispatch:
-
   schedule:
     - cron: '0 */6 * * *'
-
   push:
     branches:
       - main
@@ -20,9 +18,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Depoyu indir
       - name: Depoyu indir
         uses: actions/checkout@v4
         with:
@@ -30,110 +26,87 @@ jobs:
           fetch-depth: 0
           ref: main
 
-      # 2. Python kurulumu
       - name: Python kur
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      # 3. Gerekli kütüphaneler
+      # 3. Gerekli kütüphaneler - DÜZELTİLDİ
       - name: Kutuphaneleri kur
         run: |
           python -m pip install --upgrade pip
-          pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml
+          pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome
 
-      # 4. ULUSAL
       - name: 1 - ULUSAL
         continue-on-error: true
         run: python iptv.py
 
-      # 9. SELCUK
       - name: 2  - SELCUK
         continue-on-error: true
         run: python slck.py
 
-      # 10. MAHSUN
       - name: 3 - MAHSUN
         continue-on-error: true
         run: python mahsun.py
 
-      # 11. ATOM
       - name: 4 - ATOM
         continue-on-error: true
         run: python atom.py
 
-      # 12. KRAL
       - name: 5 - KRAL
         continue-on-error: true
         run: python kra.py
 
-      # 13. ARDA
       - name: 6 - ARDA
         continue-on-error: true
         run: python arda.py
 
-      # 14. LIG
       - name: 7 - LIG
         continue-on-error: true
         run: python li.py
         
-        # 14. ATV
       - name: 8 - ATV
         continue-on-error: true
         run: python atv1.py
         
-        # 14. ALSPOR
-      - name: 8 - ALLSPOR
+      - name: 9 - ALLSPOR
         continue-on-error: true
         run: python allspor.py
 
-    
-
-      # 16. M3U DOSYALARINI RAPORLA
       - name: Olusan M3U listelerini raporla
         if: always()
         run: |
           echo "================================"
           echo "OLUSAN M3U DOSYALARI"
           echo "================================"
-
           find . -type f -name "*.m3u" \
             -not -path "./.git/*" \
             -printf "%p | %s byte\n" | sort
-
           echo "================================"
           echo "TOPLAM M3U DOSYASI"
-
           find . -type f -name "*.m3u" \
             -not -path "./.git/*" | wc -l
 
-      # 17. GITHUB DEGISIKLIKLERINI AL
       - name: GitHub son degisikliklerini al
         if: always()
         run: |
           git fetch origin main
-
           if ! git diff --quiet || ! git diff --cached --quiet; then
             echo "Yerel degisiklikler mevcut."
           fi
-
           git stash push -u -m "M3U otomatik yedek" || true
           git rebase origin/main
           git stash pop || true
 
-      # 18. M3U DOSYALARINI KAYDET
       - name: M3U dosyalarini GitHub'a kaydet
         if: always()
         run: |
           git config user.name "bot"
           git config user.email "bot@bot.com"
-
           git add -A -- "*.m3u"
-
           if git diff --cached --quiet; then
             echo "Kaydedilecek yeni degisiklik yok."
           else
             git commit -m "Otomatik M3U guncelleme"
-
             git push origin HEAD:main
           fi
