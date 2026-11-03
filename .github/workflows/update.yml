@@ -85,8 +85,7 @@ jobs:
         # 14. ALSPOR
       - name: 8 - ATV
         continue-on-error: true
-        run: python allspot
-        .py
+        run: python allspor.py
 
     
 
