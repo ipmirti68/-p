@@ -18,29 +18,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Depoyu indir
       - name: Depoyu indir
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
+      # 2. Python kur
       - name: Python kur
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
+      # 3. Deno kur
       - name: Deno kur
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
 
+      # 4. Paketleri kur
       - name: Paketleri kur
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade requests beautifulsoup4
           python -m pip install --upgrade "yt-dlp[default]" yt-dlp-ejs
 
+      # 5. yt-dlp kontrol
       - name: yt-dlp kontrol
         run: |
           python -c "import yt_dlp; print('yt-dlp başarıyla kuruldu:', yt_dlp.version.__version__)"
 
+      # 6. YouTube cookies hazirla
       - name: YouTube cookies hazirla
         env:
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
@@ -53,19 +61,24 @@ jobs:
             echo "Cookies bulunamadi."
           fi
 
+      # 7. Python kodlarini kontrol et
       - name: Python kodunu kontrol et
         run: |
           python -m py_compile voleybol.py
           python -m py_compile voleybol_youtube.py
+          echo "Python kod kontrolu basarili."
 
+      # 8. Voleybol programini guncelle
       - name: Voleybol programini guncelle
         run: python voleybol.py
 
+      # 9. YouTube canli ve planli yayinlari tara
       - name: YouTube canli ve planli yayinlari tara
         id: youtube
         continue-on-error: true
         run: python voleybol_youtube.py
 
+      # 10. Dosyalari GitHub'a kaydet
       - name: Dosyalari kaydet
         if: always()
         run: |
@@ -83,13 +96,22 @@ jobs:
             echo "Kaydedilecek yeni dosya yok."
           else
             git commit -m "MIRTI68 Voleybol grubu guncellendi"
-            git push
+
+            echo "GitHub son degisiklikleri aliniyor..."
+            git pull --rebase origin main
+
+            echo "GitHub'a guncelleme gonderiliyor..."
+            git push origin HEAD:main
           fi
 
+      # 11. Cookies dosyasini sil
       - name: Cookies dosyasini sil
         if: always()
-        run: rm -f cookies.txt
+        run: |
+          rm -f cookies.txt
+          echo "Cookies dosyasi silindi."
 
+      # 12. Tarama sonucunu bildir
       - name: Tarama sonucunu bildir
         if: always()
         run: |
@@ -99,3 +121,6 @@ jobs:
             echo "YouTube taramasi basarisiz."
             echo "Ana liste korunuyor."
           fi
+
+          echo "MIRTI68 Voleybol workflow tamamlandi."
+          
