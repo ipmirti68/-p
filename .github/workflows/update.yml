@@ -50,7 +50,7 @@ jobs:
       # 9. SELCUK
       - name: 2  - SELCUK
         continue-on-error: true
-        run: python selcuk.py
+        run: python slck.py
 
       # 10. MAHSUN
       - name: 3 - MAHSUN
@@ -83,7 +83,7 @@ jobs:
         run: python atv1.py
         
         # 14. ALSPOR
-      - name: 8 - ATV
+      - name: 8 - ALLSPOR
         continue-on-error: true
         run: python allspor.py
 
