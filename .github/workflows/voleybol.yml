@@ -85,6 +85,10 @@ jobs:
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
 
+          # Cookies dosyasini Git islemlerinden once sil
+          rm -f cookies.txt
+
+          # Ana cikti dosyalarini ekle
           for file in mirti68.m3u mirti68.m3u.bak voleybol_program.json voleybol_youtube.json voleybol_youtube.json.bak; do
             if [ -f "$file" ]; then
               git add -f "$file"
@@ -92,35 +96,22 @@ jobs:
             fi
           done
 
-          if git diff --cached --quiet; then
-            echo "Kaydedilecek yeni dosya yok."
-          else
+          # Diger takip edilen dosyalardaki degisiklikleri de ekle
+          git add -u
+
+          echo "Git durumu:"
+          git status --short
+
+          if ! git diff --cached --quiet; then
             git commit -m "MIRTI68 Voleybol grubu guncellendi"
-
-            echo "GitHub son degisiklikleri aliniyor..."
-            git pull --rebase origin main
-
-            echo "GitHub'a guncelleme gonderiliyor..."
-            git push origin HEAD:main
-          fi
-
-      # 11. Cookies dosyasini sil
-      - name: Cookies dosyasini sil
-        if: always()
-        run: |
-          rm -f cookies.txt
-          echo "Cookies dosyasi silindi."
-
-      # 12. Tarama sonucunu bildir
-      - name: Tarama sonucunu bildir
-        if: always()
-        run: |
-          if [ "${{ steps.youtube.outcome }}" = "success" ]; then
-            echo "YouTube taramasi tamamlandi."
           else
-            echo "YouTube taramasi basarisiz."
-            echo "Ana liste korunuyor."
+            echo "Kaydedilecek yeni dosya yok."
           fi
 
-          echo "MIRTI68 Voleybol workflow tamamlandi."
-          
+          # Uzak depodaki son degisiklikleri al
+          git pull --rebase origin main
+
+          # GitHub'a gonder
+          git push origin HEAD:main
+
+          echo "MIRTI68 GitHub guncellemesi tamamlandi."
