@@ -6,7 +6,7 @@
     "kuzeyboru maxi",
     "kuzeyboru"
   ],
-  "updated_at": "2026-11-03T15:38:43.322657+00:00",
+  "updated_at": "2026-11-03T16:44:41.559299+00:00",
   "total": 48,
   "hls_total": 0,
   "matches": [
@@ -22,7 +22,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 0,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:26.377732+00:00"
+      "checked_at": "2026-11-03T16:44:21.484876+00:00"
     },
     {
       "video_id": "cMM1VRfJlpI",
@@ -36,7 +36,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 1,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:05.389915+00:00"
+      "checked_at": "2026-11-03T16:43:58.194170+00:00"
     },
     {
       "video_id": "Q85CLMe1rB0",
@@ -50,7 +50,49 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 1,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:37.174846+00:00"
+      "checked_at": "2026-11-03T16:44:33.634570+00:00"
+    },
+    {
+      "video_id": "k9Xt2_H5cHM",
+      "name": "ERYAMAN GELİŞİM - MKE ANKARAGÜCÜ T.E.B. Uzman Posta Kadınlar 2. Ligi",
+      "title": "ERYAMAN GELİŞİM - MKE ANKARAGÜCÜ T.E.B. Uzman Posta Kadınlar 2. Ligi",
+      "youtube_url": "https://www.youtube.com/watch?v=k9Xt2_H5cHM",
+      "stream_url": "",
+      "thumbnail": "https://i.ytimg.com/vi/k9Xt2_H5cHM/hq720.jpg?v=6ae83c69&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5X5T2hePk8yflty1tMHeNKL97aw",
+      "match_time": "Tarih bekleniyor",
+      "state": "CANLI",
+      "hls_status": "HLS_HENUZ_YOK",
+      "priority": 2,
+      "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
+      "checked_at": "2026-11-03T16:44:37.640899+00:00"
+    },
+    {
+      "video_id": "EgmEN9QeSJE",
+      "name": "ZİRAAT BANKKART - SUNGURLU BELEDİYESİ SPOR SMS Grup Efeler Ligi",
+      "title": "ZİRAAT BANKKART - SUNGURLU BELEDİYESİ SPOR SMS Grup Efeler Ligi",
+      "youtube_url": "https://www.youtube.com/watch?v=EgmEN9QeSJE",
+      "stream_url": "",
+      "thumbnail": "https://i.ytimg.com/vi/EgmEN9QeSJE/hq720.jpg?v=6ae8509a&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB6WrH_4ov9Slx8PaMztLMfj7FR0g",
+      "match_time": "Tarih bekleniyor",
+      "state": "CANLI",
+      "hls_status": "HLS_HENUZ_YOK",
+      "priority": 2,
+      "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
+      "checked_at": "2026-11-03T16:44:38.562986+00:00"
+    },
+    {
+      "video_id": "Kz8R93EivxU",
+      "name": "ANKARA BAROSU - YEDİDAĞ SPOR Uzman Posta Erkekler 2. Ligi",
+      "title": "ANKARA BAROSU - YEDİDAĞ SPOR Uzman Posta Erkekler 2. Ligi",
+      "youtube_url": "https://www.youtube.com/watch?v=Kz8R93EivxU",
+      "stream_url": "",
+      "thumbnail": "https://i.ytimg.com/vi/Kz8R93EivxU/hq720.jpg?v=6ae83ba0&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCG6Cn5_hZCeWocbxhQ2q_1w3hcZA",
+      "match_time": "Tarih bekleniyor",
+      "state": "CANLI",
+      "hls_status": "HLS_HENUZ_YOK",
+      "priority": 2,
+      "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
+      "checked_at": "2026-11-03T16:44:39.701359+00:00"
     },
     {
       "video_id": "tlUg2Whaw4M",
@@ -64,7 +106,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:06.071148+00:00"
+      "checked_at": "2026-11-03T16:43:59.098862+00:00"
     },
     {
       "video_id": "c8V0EhSmeDE",
@@ -78,7 +120,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:07.358081+00:00"
+      "checked_at": "2026-11-03T16:43:59.840520+00:00"
     },
     {
       "video_id": "adKQoYXBbgw",
@@ -92,7 +134,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:08.048022+00:00"
+      "checked_at": "2026-11-03T16:44:00.486686+00:00"
     },
     {
       "video_id": "Uj8ERtmkW14",
@@ -106,7 +148,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:08.813874+00:00"
+      "checked_at": "2026-11-03T16:44:01.209876+00:00"
     },
     {
       "video_id": "Ftnn3wZV5S4",
@@ -120,7 +162,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:09.575565+00:00"
+      "checked_at": "2026-11-03T16:44:02.094795+00:00"
     },
     {
       "video_id": "fwRBDN6rDEE",
@@ -134,7 +176,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:10.381454+00:00"
+      "checked_at": "2026-11-03T16:44:02.953974+00:00"
     },
     {
       "video_id": "u1iSlhk3CLk",
@@ -148,7 +190,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:11.035972+00:00"
+      "checked_at": "2026-11-03T16:44:03.914491+00:00"
     },
     {
       "video_id": "izXuHi2X9Ck",
@@ -162,7 +204,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:11.807830+00:00"
+      "checked_at": "2026-11-03T16:44:04.844936+00:00"
     },
     {
       "video_id": "J7zZqRmNmkI",
@@ -176,7 +218,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:12.485597+00:00"
+      "checked_at": "2026-11-03T16:44:05.819708+00:00"
     },
     {
       "video_id": "NMXU7Kf8xwY",
@@ -190,7 +232,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:13.135129+00:00"
+      "checked_at": "2026-11-03T16:44:06.582728+00:00"
     },
     {
       "video_id": "B0VXbo6kfg4",
@@ -204,7 +246,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:13.770176+00:00"
+      "checked_at": "2026-11-03T16:44:07.294712+00:00"
     },
     {
       "video_id": "-kS1NgezZNA",
@@ -218,7 +260,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:14.586568+00:00"
+      "checked_at": "2026-11-03T16:44:08.425777+00:00"
     },
     {
       "video_id": "tqyeZlOvJz8",
@@ -232,7 +274,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:15.399170+00:00"
+      "checked_at": "2026-11-03T16:44:09.373296+00:00"
     },
     {
       "video_id": "yGH3Ts0apJo",
@@ -246,7 +288,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:16.079320+00:00"
+      "checked_at": "2026-11-03T16:44:10.243686+00:00"
     },
     {
       "video_id": "PiDcpDa1s14",
@@ -260,7 +302,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:16.753719+00:00"
+      "checked_at": "2026-11-03T16:44:11.088413+00:00"
     },
     {
       "video_id": "OnHJXhOy66Q",
@@ -274,7 +316,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:17.705956+00:00"
+      "checked_at": "2026-11-03T16:44:11.830785+00:00"
     },
     {
       "video_id": "uY9LDIAUAj0",
@@ -288,7 +330,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:18.405535+00:00"
+      "checked_at": "2026-11-03T16:44:12.646713+00:00"
     },
     {
       "video_id": "usC1NHdWDr4",
@@ -302,7 +344,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:19.069571+00:00"
+      "checked_at": "2026-11-03T16:44:13.635752+00:00"
     },
     {
       "video_id": "urnx6zvE7R4",
@@ -316,7 +358,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:19.983631+00:00"
+      "checked_at": "2026-11-03T16:44:14.538095+00:00"
     },
     {
       "video_id": "bAQ_ph9Q4X0",
@@ -330,7 +372,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:20.932324+00:00"
+      "checked_at": "2026-11-03T16:44:15.270352+00:00"
     },
     {
       "video_id": "Yofmq_42s2U",
@@ -344,7 +386,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:21.658236+00:00"
+      "checked_at": "2026-11-03T16:44:16.253945+00:00"
     },
     {
       "video_id": "v_b1H0HSTT8",
@@ -358,7 +400,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:22.645712+00:00"
+      "checked_at": "2026-11-03T16:44:17.227099+00:00"
     },
     {
       "video_id": "pw9YkU49M5I",
@@ -372,7 +414,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:23.343469+00:00"
+      "checked_at": "2026-11-03T16:44:18.093456+00:00"
     },
     {
       "video_id": "dftlcrjEhSM",
@@ -386,7 +428,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:24.216471+00:00"
+      "checked_at": "2026-11-03T16:44:19.158184+00:00"
     },
     {
       "video_id": "TTLy5s0WmB0",
@@ -400,7 +442,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:24.931390+00:00"
+      "checked_at": "2026-11-03T16:44:19.893316+00:00"
     },
     {
       "video_id": "9ZSM0R4j54Q",
@@ -414,7 +456,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:25.600150+00:00"
+      "checked_at": "2026-11-03T16:44:20.752255+00:00"
     },
     {
       "video_id": "WQmGah1bjv8",
@@ -428,7 +470,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:27.108945+00:00"
+      "checked_at": "2026-11-03T16:44:22.401825+00:00"
     },
     {
       "video_id": "CUjC4avTewk",
@@ -442,7 +484,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:27.913378+00:00"
+      "checked_at": "2026-11-03T16:44:23.312348+00:00"
     },
     {
       "video_id": "KOrJb9rQmmw",
@@ -456,7 +498,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:28.606800+00:00"
+      "checked_at": "2026-11-03T16:44:24.194041+00:00"
     },
     {
       "video_id": "AJmLat8iz_Q",
@@ -470,7 +512,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:29.261177+00:00"
+      "checked_at": "2026-11-03T16:44:25.095673+00:00"
     },
     {
       "video_id": "9ClhDOF5C44",
@@ -484,7 +526,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:30.264682+00:00"
+      "checked_at": "2026-11-03T16:44:26.047584+00:00"
     },
     {
       "video_id": "F57WkYg9fIM",
@@ -498,7 +540,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:31.019003+00:00"
+      "checked_at": "2026-11-03T16:44:27.014259+00:00"
     },
     {
       "video_id": "kD1gmy81mnU",
@@ -512,7 +554,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:31.746293+00:00"
+      "checked_at": "2026-11-03T16:44:27.754707+00:00"
     },
     {
       "video_id": "OG8jYMyzu1g",
@@ -526,7 +568,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:32.478157+00:00"
+      "checked_at": "2026-11-03T16:44:28.529749+00:00"
     },
     {
       "video_id": "KjvU2aVVRRs",
@@ -540,7 +582,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:33.244888+00:00"
+      "checked_at": "2026-11-03T16:44:29.295116+00:00"
     },
     {
       "video_id": "gDi2DqFe6aM",
@@ -554,7 +596,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:33.953462+00:00"
+      "checked_at": "2026-11-03T16:44:30.170783+00:00"
     },
     {
       "video_id": "K5KkZL4g768",
@@ -568,7 +610,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:34.922160+00:00"
+      "checked_at": "2026-11-03T16:44:31.158550+00:00"
     },
     {
       "video_id": "2p-UMhJoapw",
@@ -582,7 +624,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:35.589345+00:00"
+      "checked_at": "2026-11-03T16:44:32.013888+00:00"
     },
     {
       "video_id": "mqB3aKuHeaA",
@@ -596,7 +638,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:36.381874+00:00"
+      "checked_at": "2026-11-03T16:44:32.757867+00:00"
     },
     {
       "video_id": "__OVdjjqPgQ",
@@ -610,7 +652,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:37.940234+00:00"
+      "checked_at": "2026-11-03T16:44:34.603755+00:00"
     },
     {
       "video_id": "wnFt4y0nupE",
@@ -624,7 +666,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:38.675111+00:00"
+      "checked_at": "2026-11-03T16:44:35.832825+00:00"
     },
     {
       "video_id": "Vm3qFjLHqTg",
@@ -638,49 +680,7 @@
       "hls_status": "HLS_HENUZ_YOK",
       "priority": 2,
       "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:39.390361+00:00"
-    },
-    {
-      "video_id": "k9Xt2_H5cHM",
-      "name": "ERYAMAN GELİŞİM - MKE ANKARAGÜCÜ T.E.B. Uzman Posta Kadınlar 2. Ligi",
-      "title": "ERYAMAN GELİŞİM - MKE ANKARAGÜCÜ T.E.B. Uzman Posta Kadınlar 2. Ligi",
-      "youtube_url": "https://www.youtube.com/watch?v=k9Xt2_H5cHM",
-      "stream_url": "",
-      "thumbnail": "https://i.ytimg.com/vi/k9Xt2_H5cHM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5X5T2hePk8yflty1tMHeNKL97aw",
-      "match_time": "Tarih bekleniyor",
-      "state": "YAKLAŞAN",
-      "hls_status": "HLS_HENUZ_YOK",
-      "priority": 2,
-      "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:40.246380+00:00"
-    },
-    {
-      "video_id": "Kz8R93EivxU",
-      "name": "ANKARA BAROSU - YEDİDAĞ SPOR Uzman Posta Erkekler 2. Ligi",
-      "title": "ANKARA BAROSU - YEDİDAĞ SPOR Uzman Posta Erkekler 2. Ligi",
-      "youtube_url": "https://www.youtube.com/watch?v=Kz8R93EivxU",
-      "stream_url": "",
-      "thumbnail": "https://i.ytimg.com/vi/Kz8R93EivxU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCG6Cn5_hZCeWocbxhQ2q_1w3hcZA",
-      "match_time": "Tarih bekleniyor",
-      "state": "YAKLAŞAN",
-      "hls_status": "HLS_HENUZ_YOK",
-      "priority": 2,
-      "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:40.957465+00:00"
-    },
-    {
-      "video_id": "EgmEN9QeSJE",
-      "name": "ZİRAAT BANKKART - SUNGURLU BELEDİYESİ SPOR SMS Grup Efeler Ligi",
-      "title": "ZİRAAT BANKKART - SUNGURLU BELEDİYESİ SPOR SMS Grup Efeler Ligi",
-      "youtube_url": "https://www.youtube.com/watch?v=EgmEN9QeSJE",
-      "stream_url": "",
-      "thumbnail": "https://i.ytimg.com/vi/EgmEN9QeSJE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB6WrH_4ov9Slx8PaMztLMfj7FR0g",
-      "match_time": "Tarih bekleniyor",
-      "state": "YAKLAŞAN",
-      "hls_status": "HLS_HENUZ_YOK",
-      "priority": 2,
-      "channel_id": "UCTgQ8Bfq3AUuo1vWULdvRKw",
-      "checked_at": "2026-11-03T15:38:41.864426+00:00"
+      "checked_at": "2026-11-03T16:44:36.785966+00:00"
     }
   ]
 }
