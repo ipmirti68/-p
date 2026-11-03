@@ -21,8 +21,9 @@ HEADERS = {
 TIMEOUT_VAL = 15
 PROXY_URL = "https://seep.eu.org/"
 OUTPUT_FILENAME = "mirti68.m3u"
-STATIC_LOGO = "https://i.hizliresim.com/r58pzxkz.png"
 BEIN_GROUP = "🖥beINSPORTS"
+STATIC_LOGO = "https://i.hizliresim.com/r58pzxkz.png"
+
 # ============================================
 # 1. SELCUK SPORTS
 # ============================================
@@ -506,4 +507,230 @@ def get_renconnect_content():
         ("601", "beIN Sports 1"),
         ("602", "beIN Sports 2"),
         ("603", "beIN Sports 3"),
-   
+        ("604", "beIN Sports 4"),
+        ("605", "beIN Sports 5"),
+        ("607", "S Sport 1"),
+        ("608", "S Sport 2"),
+        ("609", "Smart Spor 1"),
+        ("610", "Smart Spor 2"),
+        ("701", "Tivibu Spor 1"),
+        ("702", "Tivibu Spor 2"),
+        ("703", "Tivibu Spor 3"),
+        ("704", "Tivibu Spor 4"),
+        ("beinsportshaber", "beIN Haber"),
+        ("eurosport1", "Eurosport 1"),
+        ("eurosport2", "Eurosport 2"),
+    ]
+
+    results_map = {}
+    ordered_results = []
+    old_links = []
+
+    # Eski linkleri korumak için mevcut dosyadan okuma işlemi
+    if os.path.exists(OUTPUT_FILENAME):
+        try:
+            with open(OUTPUT_FILENAME, 'r', encoding='utf-8') as f:
+                content = f.read()
+            # Dosyayı #EXTINF bloklarına böl ve sadece renconnect olanları ayıkla
+            blocks = content.split('#EXTINF:')
+            for block in blocks[1:]:
+                if 'group-title="renconnect"' in block:
+                    old_links.append('#EXTINF:' + block.strip())
+        except Exception as e:
+            print(f"Eski linkleri okuma hatasi: {e}")
+
+    active_site = get_palazzo_domain()
+    
+    # HATA KONTROL 1: Site Bulunamazsa
+    if not active_site:
+        print("❌ Palazzo: Site bulunamadı")
+        if old_links:
+            print("⚠️ Mevcut (Eski) renconnect linkleri korunuyor...")
+            return old_links
+        return []
+
+    print("🌐 Palazzo Domain:", active_site)
+
+    try:
+        r = requests.get(active_site, headers=HEADERS, timeout=10, verify=False)
+        player_template = get_palazzo_template(r.text)
+    except Exception as e:
+        player_template = None
+        print(f"Palazzo HTML Okuma Hatası: {e}")
+
+    # HATA KONTROL 2: Şablon Çözülemezse
+    if not player_template:
+        print("❌ Palazzo: Template bulunamadı")
+        if old_links:
+            print("⚠️ Mevcut (Eski) renconnect linkleri korunuyor...")
+            return old_links
+        return []
+
+    # PLAYER LİNKİNİN DOMAINİNİ AYIR (M3U ÇIKTISINDA YAYINI OYNATMAK İÇİN REF OLARAK KULLANILACAK)
+    parsed_uri = urlparse(player_template)
+    player_domain = f"{parsed_uri.scheme}://{parsed_uri.netloc}"
+    print(f"🔑 M3U Player Ref Domaini: {player_domain}")
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as ex:
+        futures = [
+            ex.submit(fetch_palazzo_channel, cid, player_template, active_site)
+            for cid, _ in channels
+        ]
+
+        for f in concurrent.futures.as_completed(futures):
+            cid, stream = f.result()
+            name = next(n for c, n in channels if c == cid)
+
+            if not stream:
+                print("❌ FAIL:", name)
+                continue
+
+            print("✅ OK:", name)
+
+            entry = (
+                f'#EXTINF:-1 '
+                f'tvg-logo="{STATIC_LOGO}" '
+                f'group-title="renconnect",{name}\n'
+                f'#EXTVLCOPT:http-user-agent={HEADERS["User-Agent"]}\n'
+                f'#EXTVLCOPT:http-referrer={player_domain}/\n'
+                f'#EXTVLCOPT:http-origin={player_domain}\n'
+                f'{stream}'
+            )
+
+            results_map[cid] = entry
+
+    for cid, _ in channels:
+        if cid in results_map:
+            ordered_results.append(results_map[cid])
+
+    # HATA KONTROL 3: Şifreler çözülemez ve 0 kanal çekilirse
+    if not ordered_results:
+        print("❌ Palazzo: Hiçbir kanal çekilemedi.")
+        if old_links:
+            print("⚠️ Mevcut (Eski) renconnect linkleri korunuyor...")
+            return old_links
+
+    return ordered_results
+
+
+# ============================================
+# 7. BONUS TV (ZEUS) - GÜNCELLENMİŞ VERSİYON
+# ============================================
+
+def get_bonus_content():
+    print("--- 7. Bonus TV (Zeus) ---")
+    results = []
+
+    BASE_DOMAIN_PATTERN = "zeustv{}.vip"
+    START_INDEX = 262
+    END_INDEX = 500
+
+    CHANNELS = {
+        'b1': 'beIN Spor 1', 'b1local': 'beIN Spor 1 YDK',
+        'b2': 'beIN Spor 2', 'b3': 'beIN Spor 3',
+        'b4': 'beIN Spor 4', 'bein5': 'beIN Spor 5',
+        'b1max': 'beIN Max 1', 'b2max': 'beIN Max 2',
+        's1': 'S Spor 1', 's2': 'S Spor 2',
+        'smart1': 'Smart Spor 1', 'smart2': 'Smart Spor 2',
+        'tivibu': 'Tivibu Spor', 'tivibu1': 'Tivibu Spor 1',
+        'tivibu2': 'Tivibu Spor 2', 'tivibu3': 'Tivibu Spor 3',
+        'sifirtv': 'Sıfırtv', 'euro1': 'Euro Spor 1', 'euro2': 'Euro Spor 2',
+        'tabiiyedek': 'Tabii Spor YDK', 'tabii1': 'Tabii Spor 1',
+        'tabii2': 'Tabii Spor 2', 'tabii3': 'Tabii Spor 3',
+        'tabii4': 'Tabii Spor 4', 'tabii5': 'Tabii Spor 5',
+        'tabii6': 'Tabii Spor 6', 'xexxen': 'Exxen', 'xexxen1': 'Exxen 1'
+    }
+
+    def check_site(index):
+        url = f"https://{BASE_DOMAIN_PATTERN.format(index)}"
+        try:
+            r = requests.get(url + "/", headers=HEADERS, timeout=5, verify=False, allow_redirects=True)
+            if r.status_code == 200:
+                return url
+        except:
+            return None
+        return None
+
+    def get_base_url_from_page(active_domain):
+        page_url = f"{active_domain}/ch.html?id=b1"
+        try:
+            response = requests.get(page_url, headers=HEADERS, timeout=10, verify=False)
+            response.raise_for_status()
+            html_content = response.text
+
+            # Yeni sistemdeki çekme mantığı
+            match = re.search(r'var\s+streamUrl\s*=\s*["\']([^"\']+)["\']', html_content)
+            if match:
+                base_video_url = match.group(1)
+                if not base_video_url.endswith('/'):
+                    base_video_url += '/'
+                return base_video_url
+        except:
+            pass
+        return None
+
+    active_url = None
+    with concurrent.futures.ThreadPoolExecutor(max_workers=25) as executor:
+        futures = [executor.submit(check_site, i) for i in range(START_INDEX, END_INDEX + 1)]
+        for future in concurrent.futures.as_completed(futures):
+            result = future.result()
+            if result:
+                active_url = result
+                executor.shutdown(wait=False, cancel_futures=True)
+                break
+
+    if not active_url:
+        print("❌ Zeus TV: Aktif domain bulunamadı.")
+        return results
+
+    print(f"✅ Zeus TV Domain: {active_url}")
+
+    base_video_url = get_base_url_from_page(active_url)
+    if not base_video_url:
+        print("❌ Zeus TV: Video URL bulunamadı.")
+        return results
+        
+    print(f"✅ Zeus TV Çözülen URL: {base_video_url}")
+
+    for channel_id, channel_name in CHANNELS.items():
+        stream_url = f"{base_video_url}{channel_id}/index.m3u8"
+        entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="Bonustv", {channel_name}\n{stream_url}'
+        results.append(entry)
+
+    return results
+
+
+# ============================================
+# MAIN
+# ============================================
+
+def main():
+    print("🔥 Umitmod-Bot v3.3 Başladı")
+
+    all_content = ["#EXTM3U"]
+    all_content.extend(get_selcuk_content())
+    all_content.extend(get_atom_content())
+    all_content.extend(get_trgoals_content())
+    all_content.extend(get_andro_content())
+    all_content.extend(get_xsport_content())
+    all_content.extend(get_renconnect_content())
+    all_content.extend(get_bonus_content())
+
+    try:
+        with open(OUTPUT_FILENAME, "a", encoding="utf-8") as f:
+            f.write("\n".join(all_content))
+
+        full_path = os.path.abspath(OUTPUT_FILENAME)
+        total_channels = len(all_content) - 1
+
+        print("\n✅ Tamamlandı!")
+        print(f"📄 Dosya: {OUTPUT_FILENAME}")
+        print(f"📺 Kanal Sayısı: {total_channels}")
+        print(f"📂 Konum: {full_path}")
+
+    except IOError as e:
+        print(f"\n❌ Hata: {e}")
+
+
+if __name__ == "__main__":
+    main()
