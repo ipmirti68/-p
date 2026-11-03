@@ -45,7 +45,7 @@ jobs:
       # 4. ULUSAL
       - name: 1 - ULUSAL
         continue-on-error: true
-        run: python ipt.py
+        run: python iptv.py
 
       # 9. SELCUK
       - name: 2  - SELCUK
