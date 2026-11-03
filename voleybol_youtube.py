@@ -50,6 +50,9 @@ def clean_title(title):
 
 
 def get_hls(info):
+    if not info:
+        return None
+
     formats = info.get("formats") or []
 
     hls_formats = [
@@ -81,8 +84,6 @@ def scan_video(ydl, entry):
     url = youtube_url(video_id)
     title = clean_title(entry.get("title"))
 
-    # Video resmi TVF /streams sayfasından geldiği için
-    # kaynak kanal bu aşamada esas alınır.
     info = None
     extraction_error = ""
 
@@ -94,6 +95,7 @@ def scan_video(ydl, entry):
 
     if info:
         actual_channel = info.get("channel_id")
+
         if actual_channel and actual_channel != OFFICIAL_CHANNEL_ID:
             print("Resmi kanal degil, atlandi:", video_id)
             return None, True
@@ -101,6 +103,7 @@ def scan_video(ydl, entry):
         title = clean_title(info.get("title") or title)
 
     status = ""
+
     if info:
         status = info.get("live_status") or ""
 
@@ -123,13 +126,14 @@ def scan_video(ydl, entry):
         return None, True
 
     if is_live:
-        stream_url = get_hls(info) if info else None
+        stream_url = get_hls(info)
 
         if not stream_url:
             print("Canli yayin HLS bulunamadi:", title)
             return None, False
 
         state = "CANLI"
+
     else:
         stream_url = url
         state = "YAYINA HAZIR"
@@ -186,6 +190,7 @@ def scan_channel():
                 return [], False
 
             print("Bulunan video:", len(entries))
+
             seen = set()
 
             for entry in entries:
@@ -198,6 +203,7 @@ def scan_channel():
                     continue
 
                 seen.add(video_id)
+
                 print("\nKontrol:", entry.get("title"))
 
                 result, completed = scan_video(ydl, entry)
@@ -283,6 +289,7 @@ def save_files(results):
                 continue
 
             added_ids.add(video_id)
+
             name = clean_title(item.get("name"))
             state = item.get("state", "")
             channel_name = f"{name} [{state}]"
@@ -296,6 +303,7 @@ def save_files(results):
             raise ValueError("Eklenecek gecerli yayin yok!")
 
         content = "".join(cleaned)
+
         if not content.endswith("\n"):
             content += "\n"
 
@@ -330,6 +338,13 @@ def save_files(results):
     except Exception as e:
         print("KAYIT HATASI:", e)
         print("Ana liste korunmaya calisildi.")
+
+        if os.path.exists(backup_file):
+            try:
+                shutil.copy2(backup_file, MASTER_FILE)
+            except Exception as restore_error:
+                print("Yedek geri yuklenemedi:", restore_error)
+
         return False
 
     finally:
@@ -350,77 +365,6 @@ def main():
 
     print("\nBulunan yayin:", len(results))
 
-        if not scan_complete:
-        print("Tarama eksik veya basarisiz.")
-        print("mirti68.m3u korunuyor.")
-        return
-
-    if not results:
-        print("Canli veya planlanmis yayin bulunamadi.")
-        print("mirti68.m3u korunuyor.")
-        return
-
-    if save_files(results):
-        print("VOLEYBOL GRUBU GUNCELLENDI.")
-    print("=" * 45)
-    print("Bulunan yayin:", len(results))
-    print("Ana M3U:", MASTER_FILE)
-    print("Grup:", GROUP)
-    print("Diger kanallar korundu.")
-    print("=" * 45)
-
-
-    if __name__ == "__main__":
-         main():
-        
-        print("Voleybol grubu:", GROUP)
-        print("Yayin sayisi:", len(added_ids))
-        print("=" * 45)
-
-        return True
-
-    except Exception as e:
-
-        print("KAYIT HATASI:", e)
-        print("Ana liste korunmaya calisildi.")
-
-        if os.path.exists(MASTER_FILE + ".bak"):
-            try:
-                shutil.copy2(
-                    MASTER_FILE + ".bak",
-                    MASTER_FILE
-                )
-            except Exception:
-                pass
-
-        return False
-
-    finally:
-
-        for path in (temp_file, json_temp):
-
-            if os.path.exists(path):
-                try:
-                    os.remove(path)
-                except OSError:
-                    pass
-
-
-# =====================================
-# ANA PROGRAM
-# =====================================
-
-def main():
-
-    print("=" * 50)
-    print("MIRTI68 TVF VOLEYBOL YAYIN TARAMA")
-    print("=" * 50)
-
-    results, scan_complete = scan_channel()
-
-    print()
-    print("Bulunan yayin:", len(results))
-
     if not scan_complete:
         print("Tarama eksik veya basarisiz.")
         print("mirti68.m3u korunuyor.")
@@ -444,159 +388,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print("🏐 Voleybol grubu:", GROUP)
-    print("Yayin sayisi:", len(added_ids))
-    print("=" * 45)
-
-    return True
-
-    except Exception as e:
-
-        print("KAYIT HATASI:", e)
-        print("Ana liste korunmaya calisildi.")
-
-        if os.path.exists(MASTER_FILE + ".bak"):
-            try:
-                shutil.copy2(
-                    MASTER_FILE + ".bak",
-                    MASTER_FILE
-                )
-            except Exception:
-                pass
-
-        return False
-
-    finally:
-
-        for path in (temp_file, json_temp):
-
-            if os.path.exists(path):
-                try:
-                    os.remove(path)
-                except OSError:
-                    pass
-
-
-# =====================================
-# ANA PROGRAM
-# =====================================
-
-def main():
-
-    print("=" * 50)
-    print("MIRTI68 TVF VOLEYBOL YAYIN TARAMA")
-    print("=" * 50)
-
-    results, scan_complete = scan_channel()
-
-    print()
-    print("Bulunan yayin:", len(results))
-
-    if not scan_complete:
-        print("Tarama eksik veya basarisiz.")
-        print("mirti68.m3u korunuyor.")
-        return
-
-    if not results:
-        print("Canli veya planlanmis yayin bulunamadi.")
-        print("mirti68.m3u korunuyor.")
-        return
-
-    if save_files(results):
-        print("VOLEYBOL GRUBU GUNCELLENDI.")
-
-    print("=" * 45)
-    print("Bulunan yayin:", len(results))
-    print("Ana M3U:", MASTER_FILE)
-    print("Grup:", GROUP)
-    print("Diger kanallar korundu.")
-    print("=" * 45)
-
-
-if __name__ == "__main__":
-    main()
-           MASTER_FILE
-                )
-
-            if os.path.exists(RESULT_FILE + ".bak"):
-
-                shutil.copy2(
-                    RESULT_FILE + ".bak",
-                    RESULT_FILE
-                )
-
-            raise
-
-        print("=" * 45)
-        print("MIRTI68 ANA LISTE GUNCELLENDI")
-        print("Ana dosya:", MASTER_FILE)
-        print("Voleybol grubu:", GROUP)
-        print("Yayin sayisi:", len(added_ids))
-        print("=" * 45)
-
-        return True
-
-    except Exception as e:
-
-        print("KAYIT HATASI:", e)
-        print("Ana liste korunmaya calisildi.")
-
-        return False
-
-    finally:
-
-        for path in (temp_file, json_temp):
-
-            if os.path.exists(path):
-
-                try:
-                    os.remove(path)
-
-                except OSError:
-                    pass
-
-
-# =====================================
-# ANA PROGRAM
-# =====================================
-
-def main():
-
-    print("=" * 50)
-    print("MIRTI68 TVF VOLEYBOL YAYIN TARAMA")
-    print("=" * 50)
-
-    results, scan_complete = scan_channel()
-
-    print()
-    print("Bulunan yayin:", len(results))
-
-    if not scan_complete:
-
-        print("Tarama eksik veya basarisiz.")
-        print("mirti68.m3u korunuyor.")
-
-        return
-
-    if not results:
-
-        print("Canli veya planlanmis yayin bulunamadi.")
-        print("mirti68.m3u korunuyor.")
-
-        return
-
-    if save_files(results):
-
-        print()
-        print("VOLEYBOL GRUBU GUNCELLENDI.")
-
-    print("=" * 45)
-    print("Bulunan yayin:", len(results))
-    print("Ana M3U:", MASTER_FILE)
-    print("Grup:", GROUP)
-    print("Diger kanallar korundu.")
-    print("=" * 45)
-
-
-if __name__ == "__main__":
-    main()
+    
