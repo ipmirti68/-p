@@ -21,7 +21,7 @@ HEADERS = {
     "Referer": HOME_URL,
 }
 
-STREAM_DOMAIN = "https://dga1op10s1u3lea.acb65d4e703641.click"
+STREAM_DOMAIN = "dga1op10s1u3lea.308aae467c3965.click"
 STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
 
 OUTPUT_FILENAME = "mirti68.m3u"
