@@ -19,20 +19,13 @@ source_urls = {
     "Show TV": "https://www.showtv.com.tr/canli-yayin",
     "Star TV": "https://www.startv.com.tr/canli-yayin",
     "TV8": "https://www.tv8.com.tr/canli-yayin",
-    "TV8,5": "https://www.tv8bucuk.com/tv8-5-canli-yayin",
     "ATV": "https://www.atv.com.tr/canli-yayin",
     "Kanal D": "https://www.kanald.com.tr/canli-yayin",
     "teve2": "https://www.teve2.com.tr/canli-yayin",
     "DMAX": "https://www.dmax.com.tr/canli-izle",
     "a2": "https://www.atv.com.tr/a2tv/canli-yayin",
     "TV360": "https://www.tv360.com.tr/canli-yayin",
-    "A Spor": "https://www.aspor.com.tr/webtv/canli-yayin",
-    "Beyaz TV": "https://www.beyaztv.com.tr/canli-yayin",
-    "CNN Türk": "https://www.cnnturk.com/canli-yayin",
-    "SZC TV": "https://www.szctv.com.tr/canli-yayin-izle",
-    "KRT TV": "https://www.krttv.com.tr/canli-yayin",
-    "Halk TV": "https://halktv.com.tr/canli-yayin",
-    "TV100": "https://www.tv100.com/canli-yayin"
+    
 }
 
 HEADERS = {
