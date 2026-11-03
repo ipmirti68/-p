@@ -81,6 +81,12 @@ jobs:
       - name: 8 - ATV
         continue-on-error: true
         run: python atv1.py
+        
+        # 14. ALSPOR
+      - name: 8 - ATV
+        continue-on-error: true
+        run: python allspot
+        .py
 
     
 
