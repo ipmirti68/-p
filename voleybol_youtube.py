@@ -1,32 +1,36 @@
 import os
 import re
 import json
-import shutil
 import tempfile
+import unicodedata
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
-from urllib.parse import quote
 
 from yt_dlp import YoutubeDL
 
 
 # ==================================================
-# MIRTI68 - TVF VOLEYBOL YOUTUBE TARAMA
+# MIRTI68 - KUZEYBORU HLS TARAMA
 # ==================================================
 
 MASTER_FILE = "mirti68.m3u"
 RESULT_FILE = "voleybol_youtube.json"
-BACKUP_FILE = "mirti68.m3u.bak"
-JSON_BACKUP = "voleybol_youtube.json.bak"
-
-GROUP = "🏐 VOLEYBOL CANLI"
 
 CHANNEL_URL = "https://www.youtube.com/@tvfvoleyboltv/streams"
 OFFICIAL_CHANNEL_ID = "UCTgQ8Bfq3AUuo1vWULdvRKw"
 
+GROUP = "🏐 KUZEYBORU"
+OLD_GROUP = "🏐 VOLEYBOL CANLI"
+
 ISTANBUL = ZoneInfo("Europe/Istanbul")
 
 MAX_VIDEOS = 50
+
+# Yalnızca bu takımlara ait maçları takip et.
+PRIORITY_TEAMS = (
+    "kuzeyboru maxi",
+    "kuzeyboru",
+)
 
 HEADERS = {
     "User-Agent": (
@@ -71,45 +75,65 @@ DETAIL_OPTIONS = {
 
 
 # ==================================================
-# GENEL YARDIMCILAR
+# YARDIMCI FONKSİYONLAR
 # ==================================================
 
 def clean_title(value):
     if not value:
-        return "TVF Voleybol Yayını"
+        return "Kuzeyboru Voleybol"
 
     value = str(value)
     value = re.sub(r"\s+", " ", value)
-    value = value.replace("\n", " ").strip()
+    return value.strip()[:250]
 
-    return value[:250]
+
+def normalize_text(value):
+    value = str(value or "").lower()
+
+    value = value.replace("ı", "i")
+    value = unicodedata.normalize("NFKD", value)
+
+    value = "".join(
+        char for char in value
+        if not unicodedata.combining(char)
+    )
+
+    return value
+
+
+def is_priority_match(title):
+    title = normalize_text(title)
+
+    return any(
+        normalize_text(team) in title
+        for team in PRIORITY_TEAMS
+    )
 
 
 def get_video_id(entry):
     if not entry:
         return ""
 
-    video_id = entry.get("id")
+    value = entry.get("id") or entry.get("url") or ""
 
-    if not video_id:
-        video_id = entry.get("url", "")
+    if not isinstance(value, str):
+        return ""
 
-    if isinstance(video_id, str):
-        match = re.search(
-            r"(?:v=|youtu\.be/|/shorts/)([A-Za-z0-9_-]{11})",
-            video_id
-        )
+    match = re.search(
+        r"(?:v=|youtu\.be/|/shorts/)([A-Za-z0-9_-]{11})",
+        value
+    )
 
-        if match:
-            return match.group(1)
+    if match:
+        return match.group(1)
 
-        if re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id):
-            return video_id
+    if re.fullmatch(r"[A-Za-z0-9_-]{11}", value):
+        return value
 
     return ""
 
 
-def get_thumbnail(info, entry):
+def get_thumbnail(info, entry, video_id):
     sources = [info or {}, entry or {}]
 
     for source in sources:
@@ -136,13 +160,19 @@ def get_thumbnail(info, entry):
         if thumbnail:
             return thumbnail
 
+    # YouTube görseli için standart yedek adres.
+    if video_id:
+        return (
+            f"https://i.ytimg.com/vi/"
+            f"{video_id}/hqdefault.jpg"
+        )
+
     return ""
 
 
 def get_match_time(info, entry):
     sources = [info or {}, entry or {}]
 
-    # Önce yaklaşan yayın için planlanan zamanı kontrol et.
     fields = (
         "release_timestamp",
         "scheduled_start_time",
@@ -161,25 +191,28 @@ def get_match_time(info, entry):
                         tz=timezone.utc
                     )
 
-                    dt = dt.astimezone(ISTANBUL)
-
-                    return dt.strftime("%d.%m.%Y %H:%M")
+                    return dt.astimezone(
+                        ISTANBUL
+                    ).strftime("%d.%m.%Y %H:%M")
 
                 except (ValueError, TypeError, OSError):
                     pass
 
-    # Bazı YouTube kayıtlarında tarih metin olarak gelebilir.
     for source in sources:
         release_date = source.get("release_date")
 
-        if release_date and re.fullmatch(r"\d{8}", str(release_date)):
+        if release_date and re.fullmatch(
+            r"\d{8}", str(release_date)
+        ):
             try:
                 dt = datetime.strptime(
                     str(release_date),
                     "%Y%m%d"
                 )
 
-                return dt.strftime("%d.%m.%Y") + " Saat bekleniyor"
+                return dt.strftime(
+                    "%d.%m.%Y"
+                ) + " Saat bekleniyor"
 
             except ValueError:
                 pass
@@ -209,25 +242,31 @@ def get_state(info, entry):
     return "YAYIN"
 
 
-def get_stream_url(info, youtube_url, state):
+# ==================================================
+# GERÇEK HLS ADRESİNİ BUL
+# ==================================================
+
+def get_hls_url(info):
     info = info or {}
-
-    # Yaklaşan yayınlarda henüz oynatılabilir HLS adresi olmayabilir.
-    if state == "YAKLAŞAN":
-        return youtube_url
-
-    formats = info.get("formats") or []
 
     candidates = []
 
-    for item in formats:
-        url = item.get("url", "")
+    for item in info.get("formats") or []:
+        if not isinstance(item, dict):
+            continue
+
+        url = item.get("url") or ""
 
         if not url:
             continue
 
-        protocol = str(item.get("protocol", "")).lower()
-        ext = str(item.get("ext", "")).lower()
+        protocol = str(
+            item.get("protocol") or ""
+        ).lower()
+
+        ext = str(
+            item.get("ext") or ""
+        ).lower()
 
         if (
             "m3u8" in protocol
@@ -245,15 +284,14 @@ def get_stream_url(info, youtube_url, state):
             reverse=True
         )
 
-        return candidates[0].get("url", youtube_url)
+        return candidates[0].get("url", "")
 
-    # Bazı durumlarda yt-dlp doğrudan HLS adresi verebilir.
-    direct_url = info.get("url", "")
+    direct_url = info.get("url") or ""
 
-    if direct_url and "m3u8" in direct_url.lower():
+    if "m3u8" in direct_url.lower():
         return direct_url
 
-    return youtube_url
+    return ""
 
 
 # ==================================================
@@ -266,10 +304,21 @@ def scan_video(ydl, entry):
     if not video_id:
         return None
 
-    youtube_url = f"https://www.youtube.com/watch?v={video_id}"
+    youtube_url = (
+        f"https://www.youtube.com/watch?v={video_id}"
+    )
+
+    entry_title = clean_title(
+        entry.get("title")
+    )
+
+    # Önce başlıktan takım kontrolü.
+    if not is_priority_match(entry_title):
+        return None
 
     print("\n------------------------------------")
-    print("YouTube video:", video_id)
+    print("Öncelikli maç:", entry_title)
+    print("Video ID:", video_id)
 
     info = {}
 
@@ -280,63 +329,62 @@ def scan_video(ydl, entry):
         ) or {}
 
     except Exception as error:
-        error_text = str(error).lower()
-
-        print("Detay bilgisi:", str(error)[:250])
-
-        # Yaklaşan yayın bazı durumlarda henüz açılmadığı
-        # için yt-dlp ayrıntıları alamayabilir.
-        if (
-            "will begin" in error_text
-            or "upcoming" in error_text
-            or "not started" in error_text
-        ):
-            info = {}
-        else:
-            info = {}
+        print(
+            "YouTube detay bilgisi alınamadı:",
+            str(error)[:200]
+        )
 
     title = clean_title(
-        info.get("title")
-        or entry.get("title")
-        or "TVF Voleybol Yayını"
+        info.get("title") or entry_title
     )
+
+    # Gerçek başlık üzerinden tekrar kontrol.
+    if not is_priority_match(title):
+        print("Takım eşleşmesi bulunamadı.")
+        return None
 
     state = get_state(info, entry)
 
-    thumbnail = get_thumbnail(info, entry)
-
-    match_time = get_match_time(info, entry)
-
-    stream_url = get_stream_url(
+    thumbnail = get_thumbnail(
         info,
-        youtube_url,
-        state
+        entry,
+        video_id
     )
+
+    match_time = get_match_time(
+        info,
+        entry
+    )
+
+    hls_url = get_hls_url(info)
+
+    if state == "TAMAMLANDI":
+        print("Tamamlanmış maç atlandı.")
+        return None
+
+    if hls_url:
+        hls_status = "HLS_BULUNDU"
+        print("✅ Gerçek HLS adresi bulundu.")
+    else:
+        hls_status = "HLS_HENUZ_YOK"
+        print("⏳ HLS adresi henüz alınamadı.")
 
     print("Maç:", title)
     print("Durum:", state)
-    print("Maç tarihi:", match_time)
-    print("Maç görseli:", thumbnail or "Bulunamadı")
-
-    if state == "TAMAMLANDI":
-        print("Tamamlanmış yayın, listeye eklenmedi.")
-        return None
+    print("Tarih:", match_time)
+    print("Görsel:", thumbnail or "Yok")
 
     return {
         "video_id": video_id,
         "name": title,
         "title": title,
         "youtube_url": youtube_url,
-        "stream_url": stream_url,
+        "stream_url": hls_url,
         "thumbnail": thumbnail,
         "match_time": match_time,
-        "channel_id": OFFICIAL_CHANNEL_ID,
-        "live_status": (
-            info.get("live_status")
-            or entry.get("live_status")
-            or state.lower()
-        ),
         "state": state,
+        "hls_status": hls_status,
+        "channel_id": OFFICIAL_CHANNEL_ID,
         "checked_at": datetime.now(
             timezone.utc
         ).isoformat()
@@ -344,25 +392,27 @@ def scan_video(ydl, entry):
 
 
 # ==================================================
-# RESMÎ TVF YAYINLARINI TARA
+# TVF YOUTUBE YAYINLARINI TARA
 # ==================================================
 
 def scan_channel():
     print("\n====================================")
-    print("🏐 MIRTI68 TVF VOLEYBOL TARAMA")
-    print("Resmî YouTube yayınları kontrol ediliyor")
+    print("MIRTI68 KUZEYBORU TARAMASI")
+    print("Kuzeyboru ve Kuzeyboru Maxi")
     print("====================================")
 
     results = []
     seen = set()
 
-    cookie_file = "cookies.txt"
-
     options = dict(OPTIONS)
+    detail_options = dict(DETAIL_OPTIONS)
+
+    cookie_file = "cookies.txt"
 
     if os.path.isfile(cookie_file):
         options["cookiefile"] = cookie_file
-        print("YouTube cookies.txt kullanılıyor.")
+        detail_options["cookiefile"] = cookie_file
+        print("YouTube çerezleri kullanılıyor.")
 
     try:
         with YoutubeDL(options) as ydl:
@@ -377,12 +427,7 @@ def scan_channel():
 
             entries = playlist.get("entries") or []
 
-            print("Bulunan video:", len(entries))
-
-            detail_options = dict(DETAIL_OPTIONS)
-
-            if os.path.isfile(cookie_file):
-                detail_options["cookiefile"] = cookie_file
+            print("Toplam YouTube kaydı:", len(entries))
 
             with YoutubeDL(detail_options) as detail_ydl:
                 for index, entry in enumerate(entries, start=1):
@@ -396,9 +441,16 @@ def scan_channel():
 
                     seen.add(video_id)
 
+                    entry_title = clean_title(
+                        entry.get("title")
+                    )
+
+                    if not is_priority_match(entry_title):
+                        continue
+
                     print(
                         f"\n[{index}/{len(entries)}] "
-                        "Yayın kontrol ediliyor..."
+                        "Öncelikli maç inceleniyor..."
                     )
 
                     try:
@@ -412,40 +464,62 @@ def scan_channel():
 
                     except Exception as error:
                         print(
-                            "Video tarama hatası:",
+                            "Tarama hatası:",
                             str(error)[:250]
                         )
 
     except Exception as error:
-        print("\nYouTube kanal tarama hatası:")
+        print("\nYouTube tarama hatası:")
         print(str(error)[:500])
 
-    # Canlı yayınlar önce, yaklaşanlar sonra.
-    results.sort(
-        key=lambda item: (
-            0 if item["state"] == "CANLI" else 1,
-            item.get("match_time", "")
-        )
-    )
+    # Önce Kuzeyboru Maxi, ardından Kuzeyboru;
+    # aynı öncelik içinde canlı yayınlar önce.
+    def sort_key(item):
+        title = normalize_text(item["name"])
 
-    print("\nToplam bulunan yayın:", len(results))
+        if "kuzeyboru maxi" in title:
+            team_priority = 0
+        else:
+            team_priority = 1
+
+        live_priority = (
+            0 if item["state"] == "CANLI" else 1
+        )
+
+        return team_priority, live_priority, item["match_time"]
+
+    results.sort(key=sort_key)
+
+    print("\nToplam öncelikli maç:", len(results))
+    print(
+        "HLS bulunan maç:",
+        sum(1 for item in results if item["stream_url"])
+    )
 
     return results
 
 
 # ==================================================
-# ESKİ VOLEYBOL GRUBUNU M3U'DAN ÇIKAR
+# ESKİ VOLEYBOL GRUPLARINI TEMİZLE
 # ==================================================
 
-def remove_old_group(lines):
+def remove_old_groups(lines):
     output = []
     skip_url = False
+
+    groups_to_remove = (
+        f'group-title="{GROUP}"',
+        f'group-title="{OLD_GROUP}"',
+    )
 
     for line in lines:
         stripped = line.strip()
 
         if stripped.startswith("#EXTINF:"):
-            if f'group-title="{GROUP}"' in stripped:
+            if any(
+                group in stripped
+                for group in groups_to_remove
+            ):
                 skip_url = True
                 continue
 
@@ -467,7 +541,7 @@ def remove_old_group(lines):
 
 
 # ==================================================
-# M3U VE JSON DOSYALARINI GÜVENLİ KAYDET
+# DOSYAYI GÜVENLİ KAYDET
 # ==================================================
 
 def atomic_write(path, content):
@@ -480,7 +554,12 @@ def atomic_write(path, content):
     )
 
     try:
-        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as file:
+        with os.fdopen(
+            fd,
+            "w",
+            encoding="utf-8",
+            newline="\n"
+        ) as file:
             file.write(content)
 
         os.replace(temp_path, path)
@@ -491,10 +570,53 @@ def atomic_write(path, content):
         raise
 
 
+# ==================================================
+# M3U VE JSON KAYDET
+# ==================================================
+
 def save_files(items):
-    print("\n====================================")
-    print("Dosyalar hazırlanıyor...")
-    print("====================================")
+    print("\nDosyalar hazırlanıyor...")
+
+    # JSON'da HLS bulunmayan maçlar da saklanır.
+    json_content = json.dumps(
+        {
+            "channel": "TVF Voleybol TV",
+            "channel_id": OFFICIAL_CHANNEL_ID,
+            "channel_url": CHANNEL_URL,
+            "priority_teams": list(PRIORITY_TEAMS),
+            "updated_at": datetime.now(
+                timezone.utc
+            ).isoformat(),
+            "total": len(items),
+            "hls_total": sum(
+                1 for item in items
+                if item.get("stream_url")
+            ),
+            "matches": items
+        },
+        ensure_ascii=False,
+        indent=2
+    )
+
+    atomic_write(
+        RESULT_FILE,
+        json_content
+    )
+
+    hls_items = [
+        item for item in items
+        if item.get("stream_url")
+        and "m3u8" in item["stream_url"].lower()
+    ]
+
+    # HLS yoksa eski M3U kayıtlarını silme.
+    if not hls_items:
+        print(
+            "⚠️ Gerçek HLS bulunamadı. "
+            "Mevcut M3U korunuyor."
+        )
+        print("JSON güncellendi:", RESULT_FILE)
+        return
 
     if os.path.isfile(MASTER_FILE):
         with open(
@@ -503,17 +625,10 @@ def save_files(items):
             encoding="utf-8-sig"
         ) as file:
             old_lines = file.readlines()
-
-        shutil.copy2(
-            MASTER_FILE,
-            BACKUP_FILE
-        )
-
     else:
         old_lines = ["#EXTM3U\n"]
 
-    # Eski voleybol grubunu temizle.
-    base_lines = remove_old_group(old_lines)
+    base_lines = remove_old_groups(old_lines)
 
     if not base_lines:
         base_lines = ["#EXTM3U\n"]
@@ -529,28 +644,20 @@ def save_files(items):
     if new_lines and not new_lines[-1].endswith("\n"):
         new_lines[-1] += "\n"
 
-    # Yeni voleybol yayınlarını ekle.
-    for item in items:
-        name = clean_title(item.get("name"))
-
-        state = item.get("state", "YAYIN")
-
+    for item in hls_items:
+        name = clean_title(item["name"])
         match_time = item.get(
             "match_time",
             "Tarih bekleniyor"
         )
+        state = item.get("state", "CANLI")
+        thumbnail = str(
+            item.get("thumbnail") or ""
+        ).replace('"', "%22")
 
-        thumbnail = item.get("thumbnail", "")
+        hls_url = item["stream_url"]
 
-        stream_url = item.get("stream_url", "")
-
-        if not stream_url:
-            continue
-
-        # M3U içindeki tırnakları temizle.
-        thumbnail = str(thumbnail).replace('"', "%22")
-
-        thumbnail_tag = (
+        logo_tag = (
             f' tvg-logo="{thumbnail}"'
             if thumbnail else ""
         )
@@ -560,51 +667,20 @@ def save_files(items):
         )
 
         new_lines.append(
-            f'#EXTINF:-1{thumbnail_tag} '
+            f'#EXTINF:-1{logo_tag} '
             f'group-title="{GROUP}",{channel_name}\n'
         )
 
-        new_lines.append(stream_url + "\n")
-
-    m3u_content = "".join(new_lines)
-
-    # JSON çıktısı.
-    json_content = json.dumps(
-        {
-            "channel": "TVF Voleybol TV",
-            "channel_id": OFFICIAL_CHANNEL_ID,
-            "channel_url": CHANNEL_URL,
-            "updated_at": datetime.now(
-                timezone.utc
-            ).isoformat(),
-            "total": len(items),
-            "matches": items
-        },
-        ensure_ascii=False,
-        indent=2
-    )
-
-    # Önceki JSON yedeği.
-    if os.path.isfile(RESULT_FILE):
-        shutil.copy2(
-            RESULT_FILE,
-            JSON_BACKUP
-        )
+        new_lines.append(hls_url + "\n")
 
     atomic_write(
         MASTER_FILE,
-        m3u_content
-    )
-
-    atomic_write(
-        RESULT_FILE,
-        json_content
+        "".join(new_lines)
     )
 
     print("\n✅ M3U güncellendi:", MASTER_FILE)
     print("✅ JSON güncellendi:", RESULT_FILE)
-    print("✅ Yedek:", BACKUP_FILE)
-    print("✅ Bulunan voleybol yayını:", len(items))
+    print("✅ M3U'ya eklenen gerçek HLS:", len(hls_items))
 
 
 # ==================================================
@@ -613,27 +689,26 @@ def save_files(items):
 
 def main():
     print("====================================")
-    print("MIRTI68 - TVF VOLEYBOL GÜNCELLEME")
+    print("MIRTI68 - KUZEYBORU HLS BOT")
     print("====================================")
 
     items = scan_channel()
 
     if not items:
         print(
-            "\n⚠️ Yeni yayın bulunamadı. "
-            "Mevcut M3U dosyası korunuyor."
+            "\nÖncelikli Kuzeyboru maçı bulunamadı."
         )
         return
 
     save_files(items)
 
     print("\n====================================")
-    print("🏐 VOLEYBOL GÜNCELLEMESİ TAMAMLANDI")
+    print("TARAMA TAMAMLANDI")
     print("====================================")
 
     for item in items:
         print(
-            item["state"],
+            item["hls_status"],
             "|",
             item["match_time"],
             "|",
