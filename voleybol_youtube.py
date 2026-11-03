@@ -355,7 +355,7 @@ def main():
         print("mirti68.m3u korunuyor.")
         return
 
-    if not results:
+        if not results:
         print("Canli veya planlanmis yayin bulunamadi.")
         print("mirti68.m3u korunuyor.")
         return
@@ -371,8 +371,9 @@ def main():
     print("=" * 45)
 
 
-        if __name__ == "__main__":
-            main()
+    if __name__ == "__main__":
+         main():
+        
         print("Voleybol grubu:", GROUP)
         print("Yayin sayisi:", len(added_ids))
         print("=" * 45)
