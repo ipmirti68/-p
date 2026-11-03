@@ -1,50 +1,5 @@
 [
   {
-    "date": "03.11.2026",
-    "time": "16:00",
-    "name": "HALKBANK - KASTAMONU YURDUM GENÇLİK SPOR",
-    "home": "HALKBANK",
-    "away": "KASTAMONU YURDUM GENÇLİK SPOR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "03.11.2026",
-    "time": "16:00",
-    "name": "GÖLBAŞI İNCEK SPOR - ANKARA BAROSU",
-    "home": "GÖLBAŞI İNCEK SPOR",
-    "away": "ANKARA BAROSU",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "03.11.2026",
-    "time": "19:00",
-    "name": "ZİRAAT BANKKART - SUNGURLU BELEDİYESİ SPOR",
-    "home": "ZİRAAT BANKKART",
-    "away": "SUNGURLU BELEDİYESİ SPOR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "03.11.2026",
-    "time": "19:00",
-    "name": "ANKARA BAROSU - YEDİDAĞ SPOR",
-    "home": "ANKARA BAROSU",
-    "away": "YEDİDAĞ SPOR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "03.11.2026",
-    "time": "19:00",
-    "name": "ERYAMAN GELİŞİM - MKE ANKARAGÜCÜ T.E.B.",
-    "home": "ERYAMAN GELİŞİM",
-    "away": "MKE ANKARAGÜCÜ T.E.B.",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
     "date": "04.11.2026",
     "time": "16:00",
     "name": "TVF SPOR LİSESİ - ANKARA DSİ",
@@ -509,6 +464,42 @@
     "name": "SPOR TOTO - AKEDAŞ ONİKİŞUBAT BELEDİYE SPOR",
     "home": "SPOR TOTO",
     "away": "AKEDAŞ ONİKİŞUBAT BELEDİYE SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "11.11.2026",
+    "time": "16:00",
+    "name": "İSTANBUL VOLEYBOL - ÇERKEZKÖY VOLEYBOL AKADEMİ",
+    "home": "İSTANBUL VOLEYBOL",
+    "away": "ÇERKEZKÖY VOLEYBOL AKADEMİ",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "11.11.2026",
+    "time": "16:00",
+    "name": "ANKARA BAROSU - KASTAMONU YURDUM GENÇLİK SPOR",
+    "home": "ANKARA BAROSU",
+    "away": "KASTAMONU YURDUM GENÇLİK SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "11.11.2026",
+    "time": "16:00",
+    "name": "MKE ANKARAGÜCÜ T.E.B. - MISIROĞLU BEYTEPE",
+    "home": "MKE ANKARAGÜCÜ T.E.B.",
+    "away": "MISIROĞLU BEYTEPE",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "11.11.2026",
+    "time": "19:00",
+    "name": "TVF SPOR LİSESİ - BAŞKENT BEŞİKTAŞLILAR",
+    "home": "TVF SPOR LİSESİ",
+    "away": "BAŞKENT BEŞİKTAŞLILAR",
     "channel": "TVF Voleybol TV",
     "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
   }
