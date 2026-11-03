@@ -22,7 +22,7 @@ TIMEOUT_VAL = 15
 PROXY_URL = "https://seep.eu.org/"
 OUTPUT_FILENAME = "mirti68.m3u"
 BEIN_GROUP = "🖥beINSPORTS"
-STATIC_LOGO = "https://i.hizliresim.com/r58pzxkz.png"
+STATIC_LOGO = "https://ibb.co/XrsW00cN"
 
 # ============================================
 # 1. SELCUK SPORTS
