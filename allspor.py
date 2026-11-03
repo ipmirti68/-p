@@ -121,7 +121,7 @@ def get_selcuk_content():
 
         for cid, name in SELCUK_NAMES.items():
             link = f"{base_stream_url}{cid}/playlist.m3u8"
-            entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="Selçuk-🜲ÜⲘ𝖎ţ Ⲙ0Ď🜲", {name}\n#EXTVLCOPT:http-referrer={SELCUK_REFERRER}\n{link}'
+            entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="Selçuk", {name}\n#EXTVLCOPT:http-referrer={SELCUK_REFERRER}\n{link}'
             results.append(entry)
 
     return results
@@ -176,7 +176,7 @@ def get_atom_content():
                 if m3u8_match:
                     link = m3u8_match.group(1).replace('\\', '')
                     if link.endswith('.m3u8'):
-                        entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="Atom-🜲ÜⲘ𝖎ţ Ⲙ0Ď🜲", {name}\n#EXTVLCOPT:http-referrer={base_domain}\n{link}'
+                        entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="Atom", {name}\n#EXTVLCOPT:http-referrer={base_domain}\n{link}'
                         results.append(entry)
         except:
             continue
@@ -212,7 +212,7 @@ def get_trgoals_content():
     print("--- 3. TRGoals ---")
     results = []
     for name, url in TRGOALS_STATIC_LIST:
-        entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="TRGoals-🜲ÜⲘ𝖎ţ Ⲙ0Ď🜲", {name}\n{url}'
+        entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="TRGoals", {name}\n{url}'
         results.append(entry)
     return results
 
@@ -308,7 +308,7 @@ def get_andro_content():
         for cid, cname in channels:
             final_url = f"{server}/{cid}.m3u8" if "checklist" in server else f"{server}/checklist/{cid}.m3u8"
             final_url = final_url.replace("checklist//", "checklist/")
-            entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="Andro-🜲ÜⲘ𝖎ţ Ⲙ0Ď🜲", {cname}\n#EXTVLCOPT:http-referrer={active_site}/\n{final_url}'
+            entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="MAHSUNSPORT", {cname}\n#EXTVLCOPT:http-referrer={active_site}/\n{final_url}'
             results.append(entry)
 
     return results
@@ -379,7 +379,7 @@ def get_xsport_content():
                     clean_name = cid.replace("x", "").replace("-", " ").upper()
                     if "BEINSPORTS" in clean_name:
                         clean_name = clean_name.replace("BEINSPORTS", "beIN Sports")
-                    entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="XSport-🜲ÜⲘ𝖎ţ Ⲙ0Ď🜲", {clean_name}\n#EXTVLCOPT:http-referer={domain}\n{final_url}'
+                    entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="XSPORT", {clean_name}\n#EXTVLCOPT:http-referer={domain}\n{final_url}'
                     results.append(entry)
     except:
         pass
