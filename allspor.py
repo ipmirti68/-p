@@ -183,38 +183,8 @@ def get_atom_content():
     return results
 
 
-# ============================================
-# 3. TRGOALS
-# ============================================
 
-TRGOALS_STATIC_LIST = [
-    ("TRGoals Ana", "https://deathless.pantonum1.workers.dev/taraftarium.m3u8"),
-    ("beIN Sports 1 (Zirve)", "https://deathless.pantonum1.workers.dev/patron.m3u8"),
-    ("beIN Sports 2", "https://deathless.pantonum1.workers.dev/b2.m3u8"),
-    ("beIN Sports 3", "https://deathless.pantonum1.workers.dev/b3.m3u8"),
-    ("beIN Sports 4", "https://deathless.pantonum1.workers.dev/b4.m3u8"),
-    ("beIN Sports 5", "https://deathless.pantonum1.workers.dev/b5.m3u8"),
-    ("beIN Sports Max 1", "https://deathless.pantonum1.workers.dev/bm1.m3u8"),
-    ("beIN Sports Max 2", "https://deathless.pantonum1.workers.dev/bm2.m3u8"),
-    ("S Sport 1", "https://deathless.pantonum1.workers.dev/ss.m3u8"),
-    ("S Sport 2", "https://deathless.pantonum1.workers.dev/ss2.m3u8"),
-    ("Smart Spor 1", "https://deathless.pantonum1.workers.dev/smarts.m3u8"),
-    ("Smart Spor 2", "https://deathless.pantonum1.workers.dev/sms2.m3u8"),
-    ("Tivibu Spor 1", "https://deathless.pantonum1.workers.dev/t1.m3u8"),
-    ("Tivibu Spor 2", "https://deathless.pantonum1.workers.dev/t2.m3u8"),
-    ("Tivibu Spor 3", "https://deathless.pantonum1.workers.dev/t3.m3u8"),
-    ("Tivibu Spor 4", "https://deathless.pantonum1.workers.dev/t4.m3u8"),
-    ("Eurosport 1", "https://deathless.pantonum1.workers.dev/eu1.m3u8"),
-    ("Eurosport 2", "https://deathless.pantonum1.workers.dev/eu2.m3u8")
-]
 
-def get_trgoals_content():
-    print("--- 3. TRGoals ---")
-    results = []
-    for name, url in TRGOALS_STATIC_LIST:
-        entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="TRGoals", {name}\n{url}'
-        results.append(entry)
-    return results
 
 
 # ============================================
@@ -228,21 +198,11 @@ def get_andro_content():
     headers = HEADERS.copy()
 
     channels = [
-        ("androstreamlivebiraz1", 'TR:beIN Sport 1 HD'), ("androstreamlivebs1", 'TR:beIN Sport 1 HD'),
-        ("androstreamlivebs2", 'TR:beIN Sport 2 HD'), ("androstreamlivebs3", 'TR:beIN Sport 3 HD'),
-        ("androstreamlivebs4", 'TR:beIN Sport 4 HD'), ("androstreamlivebs5", 'TR:beIN Sport 5 HD'),
-        ("androstreamlivebsm1", 'TR:beIN Sport Max 1 HD'), ("androstreamlivebsm2", 'TR:beIN Sport Max 2 HD'),
-        ("androstreamlivess1", 'TR:S Sport 1 HD'), ("androstreamlivess2", 'TR:S Sport 2 HD'),
-        ("androstreamlivets", 'TR:Tivibu Sport HD'), ("androstreamlivets1", 'TR:Tivibu Sport 1 HD'),
-        ("androstreamlivets2", 'TR:Tivibu Sport 2 HD'), ("androstreamlivets3", 'TR:Tivibu Sport 3 HD'),
-        ("androstreamlivets4", 'TR:Tivibu Sport 4 HD'), ("androstreamlivesm1", 'TR:Smart Sport 1 HD'),
-        ("androstreamlivesm2", 'TR:Smart Sport 2 HD'), ("androstreamlivees1", 'TR:Euro Sport 1 HD'),
-        ("androstreamlivees2", 'TR:Euro Sport 2 HD'), ("androstreamliveexn", 'TR:Exxen HD'),
-        ("androstreamliveexn1", 'TR:Exxen 1 HD'), ("androstreamliveexn2", 'TR:Exxen 2 HD'),
-        ("androstreamliveexn3", 'TR:Exxen 3 HD'), ("androstreamliveexn4", 'TR:Exxen 4 HD'),
-        ("androstreamliveexn5", 'TR:Exxen 5 HD'), ("androstreamliveexn6", 'TR:Exxen 6 HD'),
-        ("androstreamliveexn7", 'TR:Exxen 7 HD'), ("androstreamliveexn8", 'TR:Exxen 8 HD')
-    ]
+        ("androstreamlivebiraz1", 'beIN Sport 1 '), ("androstreamlivebs1", 'beIN Sport 1 '),
+        ("androstreamlivebs2", 'beIN Sport 2 '), ("androstreamlivebs3", 'beIN Sport 3 '),
+        ("androstreamlivebs4", 'beIN Sport 4 '), ("androstreamlivebs5", 'beIN Sport 5 '),
+        ("androstreamlivebsm1", 'beIN Sport Max 1 '), ("androstreamlivebsm2", 'beIN Sport Max 2 '),
+       
 
     def check_domain(index):
         url = base_pattern.format(index)
@@ -327,10 +287,7 @@ def get_xsport_content():
     }
     channel_ids = [
         "xbeinsports-1", "xbeinsports-2", "xbeinsports-3", "xbeinsports-4", "xbeinsports-5",
-        "xbeinsportsmax-1", "xbeinsportsmax-2", "xtivibuspor-1", "xtivibuspor-2",
-        "xtivibuspor-3", "xtivibuspor-4", "xssport", "xssport2", "xtabiispor1",
-        "xtabiispor2", "xtabiispor3", "xtabiispor4", "xtabiispor5", "xtabiispor6", "xtabiispor7"
-    ]
+        "xbeinsportsmax-1", "xbeinsportsmax-2", 
 
     def check_domain(index):
         url = base_pattern.format(index)
