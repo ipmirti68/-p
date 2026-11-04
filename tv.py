@@ -18,7 +18,13 @@ KANALLAR = [
         "url": "https://www.showtv.com.tr/canli-yayin",
         "anahtar": ".m3u8", 
         "logo": "https://mo.ciner.com.tr/showtv/iletisim/logo.png"
-    }
+    },
+    {
+        "isim": "ATVtset",
+        "url": "https://www.atv.com.tr/canli-yayin",
+        "anahtar": ".m3u8", 
+        "logo": "https://mo.ciner.com.tr/showtv/iletisim/logo.png"
+}
 ]
 
 async def get_m3u8_link(browser, kanal):
