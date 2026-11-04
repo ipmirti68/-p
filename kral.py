@@ -22,7 +22,7 @@ import warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
-HOME_URL = "https://kralbozguncu.xyz/"
+HOME_URL = "kralsportshd8.xyz"
 OUTPUT_FILENAME = "mirti68.m3u"
 GROUP = "🖥beINSPORTS"
 
