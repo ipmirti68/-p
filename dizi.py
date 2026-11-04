@@ -34,7 +34,11 @@ CHANNELS = [
         "group": "📺 SHOW TV Dizileri",
         "home": "https://www.showtv.com.tr/",
         "lists": ["https://www.showtv.com.tr/diziler"],
-        "known": [],
+        "known": [
+             ("Kızılcık Şerbeti", "https://www.showtv.com.tr/dizi/tanitim/kizilcik-serbeti/2875"),
+            ("Muhtemel Aşk", "https://www.showtv.com.tr/dizi/tanitim/muhtemel-ask/3072"),
+            ("Sevdan Bir Ateş", "https://www.showtv.com.tr/dizi/tanitim/sevdan-bir-ates/3087"),
+        ],
     },
     {
         "name": "STAR TV",
