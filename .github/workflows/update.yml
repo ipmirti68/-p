@@ -73,9 +73,13 @@ jobs:
         continue-on-error: true
         run: python allspor.py
 
-      - name: 2  - SELCUK
+      - name: 10  - SELCUK
         continue-on-error: true
         run: python selcuk.py
+
+      - name: 11  - PATRON
+        continue-on-error: true
+        run: python patron.py
 
         
       
