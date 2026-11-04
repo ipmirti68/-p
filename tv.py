@@ -8,13 +8,13 @@ CIKIS_DOSYASI = "ulusal.m3u"
 # Takip edilecek kanalların listesi
 KANALLAR = [
     {
-        "isim": "Star TV",
+        "isim": "Star TVtest",
         "url": "https://www.startv.com.tr/canli-yayin",
         "anahtar": "startv_720p.m3u8",
         "logo": "https://img-startv.mncdn.com/assets/images/logo.png"
     },
     {
-        "isim": "Show TV",
+        "isim": "Show TVtset",
         "url": "https://www.showtv.com.tr/canli-yayin",
         "anahtar": ".m3u8", 
         "logo": "https://mo.ciner.com.tr/showtv/iletisim/logo.png"
