@@ -23,7 +23,7 @@ source_urls = {
     "Kanal D": "https://www.kanald.com.tr/canli-yayin",
     "teve2": "https://www.teve2.com.tr/canli-yayin",
     "DMAX": "https://www.dmax.com.tr/canli-izle",
-    "a2": "https://www.atv.com.tr/a2tv/canli-yayin",
+    "Kanal 7": "https://www.kanal7.com/canli-izle",
     "TV360": "https://www.tv360.com.tr/canli-yayin",
     
 }
