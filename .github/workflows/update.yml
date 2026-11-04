@@ -81,6 +81,10 @@ jobs:
         continue-on-error: true
         run: python patron.py
 
+      - name: 11  - PATRON
+        continue-on-error: true
+        run: python ptrn.py
+
         
       
 
