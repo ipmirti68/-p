@@ -28,7 +28,7 @@ CHANNELS = {
     },
     "ATV": {
         "page": "https://www.atv.com.tr/canli-yayin",
-        "backup": None,
+        "backup": "https://trkvz.daioncdn.net/atv/atv_1080p.m3u8?",
         "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png"
     },
     "KANAL D": {
