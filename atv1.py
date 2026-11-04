@@ -14,7 +14,6 @@ GROUP = "📺 ULUSAL"
 MARKER = "# MIRTI68_ULUSAL_AUTO"
 
 source_urls = {
-    "TRT 1 🔴": "https://www.tabii.com/tr/watch/live/trt1?trackId=150002",
     "NOW  🔴": "https://www.nowtv.com.tr/canli-yayin",
     "Show 🔴": "https://www.showtv.com.tr/canli-yayin",
     "Star 🔴": "https://www.startv.com.tr/canli-yayin",
