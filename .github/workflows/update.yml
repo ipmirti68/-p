@@ -73,9 +73,7 @@ jobs:
         continue-on-error: true
         run: python allspor.py
         
-      - name: 10 - DİZİ
-        continue-on-error: true
-        run: python dizi.py
+      
 
       - name: Olusan M3U listelerini raporla
         if: always()
