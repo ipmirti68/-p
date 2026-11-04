@@ -10,7 +10,7 @@ import requests
 
 MASTER_FILE = "mirti68.m3u"
 
-GROUP = "🇹🇷 ULUSAL 🔴"
+GROUP = "📺 ULUSAL"
 MARKER = "# MIRTI68_ULUSAL_AUTO"
 
 source_urls = {
