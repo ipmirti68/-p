@@ -72,6 +72,11 @@ jobs:
       - name: 9 - ALLSPOR
         continue-on-error: true
         run: python allspor.py
+
+      - name: 2  - SELCUK
+        continue-on-error: true
+        run: python selcuk.py
+
         
       
 
