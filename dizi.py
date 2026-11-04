@@ -45,7 +45,11 @@ CHANNELS = [
         "group": "📺 STAR TV Dizileri",
         "home": "https://www.startv.com.tr/",
         "lists": ["https://www.startv.com.tr/dizi"],
-        "known": [],
+        "known": [
+             ("Başkalarının Hayatı", "https://www.startv.com.tr/dizi/baskalarinin-hayati"),
+            ("Tuzlu Kahve", "https://www.startv.com.tr/dizi/tuzlu-kahve"),
+            ("Sevdiğim Sensin", "https://www.startv.com.tr/dizi/sevdigim-sensin"),
+        ],
     },
     {
         "name": "ATV",
