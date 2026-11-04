@@ -15,7 +15,6 @@ from bs4 import BeautifulSoup
 import yt_dlp
 
 MASTER_FILE = "mirti68.m3u"
-OUTPUT_DIR = "mirti68_kanallar"
 MAX_EPISODES_PER_SERIES = 3
 REQUEST_TIMEOUT = 25
 PAUSE_SECONDS = 0.7
@@ -606,7 +605,7 @@ def main():
 
     with open(
         temp_file,
-        "w",
+        "a",
         encoding="utf-8",
     ) as file:
         file.write("#EXTM3U\n")
