@@ -14,17 +14,17 @@ GROUP = "🇹🇷 ULUSAL 🔴"
 MARKER = "# MIRTI68_ULUSAL_AUTO"
 
 source_urls = {
-    "TRT 1": "https://www.tabii.com/tr/watch/live/trt1?trackId=150002",
-    "NOW TV": "https://www.nowtv.com.tr/canli-yayin",
-    "Show TV": "https://www.showtv.com.tr/canli-yayin",
-    "Star TV": "https://www.startv.com.tr/canli-yayin",
-    "TV8": "https://www.tv8.com.tr/canli-yayin",
-    "ATV": "https://www.atv.com.tr/canli-yayin",
-    "Kanal D": "https://www.kanald.com.tr/canli-yayin",
+    "TRT 1 🔴": "https://www.tabii.com/tr/watch/live/trt1?trackId=150002",
+    "NOW  🔴": "https://www.nowtv.com.tr/canli-yayin",
+    "Show 🔴": "https://www.showtv.com.tr/canli-yayin",
+    "Star 🔴": "https://www.startv.com.tr/canli-yayin",
+    "TV8 🔴": "https://www.tv8.com.tr/canli-yayin",
+    "ATV 🔴": "https://www.atv.com.tr/canli-yayin",
+    "Kanal D 🔴": "https://www.kanald.com.tr/canli-yayin",
     "teve2": "https://www.teve2.com.tr/canli-yayin",
     "DMAX": "https://www.dmax.com.tr/canli-izle",
-    "Kanal 7": "https://www.kanal7.com/canli-izle",
-    "TV360": "https://www.tv360.com.tr/canli-yayin",
+    "Kanal 7 🔴": "https://www.kanal7.com/canli-izle",
+    "TV360 🔴": "https://www.tv360.com.tr/canli-yayin",
     
 }
 
