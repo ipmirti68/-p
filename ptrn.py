@@ -24,7 +24,7 @@ import warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
-HOME_URL = "https://taratv51.shop/"
+HOME_URL = "https://patrongol41.cfd/"
 
 OUTPUT_FILENAME = "mirti68.m3u"
 STATIC_LOGO = "https://ibb.co/BV3Rw9Pp"
@@ -44,13 +44,13 @@ HEADERS = {
 
 # Site buyuk harfle yazar; diger kaynaklarla ayni gorunen adlari kullan.
 PRETTY_NAMES = {
-    "bein sports 1": "beIN SPORTS 1 Arda 🔴",
-    "bein sports 2": "beIN SPORTS 2 Arda 🔴",
-    "bein sports 3": "beIN SPORTS 3 Arda 🔴",
-    "bein sports 4": "beIN SPORTS 4 Arda 🔴",
-    "bein sports 5": "beIN SPORTS 5 Arda 🔴",
-    "bein sports max 1": "beIN SPORTS MAX 1 Arda 🔴",
-    "bein sports max 2": "beIN SPORTS MAX 2 Arda 🔴",
+    "bein sports 1": "beIN SPORTS 1 Patron 🔴",
+    "bein sports 2": "beIN SPORTS 2 Patron 🔴",
+    "bein sports 3": "beIN SPORTS 3 Patron 🔴",
+    "bein sports 4": "beIN SPORTS 4 Patron 🔴",
+    "bein sports 5": "beIN SPORTS 5 Patron 🔴",
+    "bein sports max 1": "beIN SPORTS MAX 1 Patron 🔴",
+    "bein sports max 2": "beIN SPORTS MAX 2 Patron🔴",
 }
 
 
