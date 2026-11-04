@@ -22,8 +22,8 @@ HEADERS = {
 
 CHANNELS = {
     "TRT 1": {
-        "page": None,
-        "backup": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
+        "page": "https://www.tabii.com/tr/watch/live/trt1?trackId=150002",
+        "backup": "https://trt.daioncdn.net/trt-1/master.m3u8?app=web",
         "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png"
     },
     "ATV": {
