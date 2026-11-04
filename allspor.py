@@ -42,7 +42,7 @@ SELCUK_NAMES = {
     "selcuktabiispor3": "Tabii Spor 3", "selcuktabiispor4": "Tabii Spor 4",
     "selcuktabiispor5": "Tabii Spor 5"
 }
-SELCUK_REFERRER = "https://selcuksportshd1903.xyz"
+SELCUK_REFERRER = "https://selcuksports180.top/"
 
 def get_selcuk_content():
     print("--- 1. Selcuk Sports ---")
