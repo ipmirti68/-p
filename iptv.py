@@ -33,7 +33,7 @@ CHANNELS = {
     },
     "KANAL D": {
         "page": "https://www.kanald.com.tr/canli-yayin",
-        "backup": "https://demiroren.daioncdn.net/kanald/kanald.m3u8",
+        "backup": "https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?",
         "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png"
     },
     "SHOW TV": {
@@ -43,22 +43,22 @@ CHANNELS = {
     },
     "STAR TV": {
         "page": "https://www.startv.com.tr/canli-yayin",
-        "backup": None,
+        "backup": "https://dogus.daioncdn.net/startv/startv_720p.m3u8?",
         "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png"
     },
     "NOW TV": {
         "page": "https://www.nowtv.com.tr/canli-yayin",
-        "backup": "https://nowtv-live-ad.ercdn.net/nowtv/playlist.m3u8",
+        "backup": "https://nowtv-live-ad.ercdn.net/nowtv/nowtv_720p.m3u8?",
         "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png"
     },
     "KANAL 7": {
         "page": "https://www.kanal7.com/canli-izle",
-        "backup": "https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8",
+        "backup": "https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?",
         "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png"
     },
     "TV8": {
         "page": "https://www.tv8.com.tr/canli-yayin",
-        "backup": "https://tv8.daioncdn.net/tv8/tv8.m3u8",
+        "backup": "https://tv8.daioncdn.net/tv8/tv8_1080p.m3u8?",
         "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png"
     }
 }
