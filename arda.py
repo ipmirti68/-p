@@ -30,7 +30,7 @@ OUTPUT_FILENAME = "mirti68.m3u"
 BEIN_GROUP = "🖥beINSPORTS"
 
 
-LOGO = "https://ardaspor.live/ardaspor2.png"
+LOGO = "https://ardaspor39.top/dimg/26273ardalogo.png"
 
 # Segmentler su an referersiz de calisiyor; yine de referer eklenir
 # (kaynak gerekli hale gelirse oynaticida kirilmasin).
