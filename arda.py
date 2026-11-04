@@ -24,7 +24,7 @@ import warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 warnings.filterwarnings("ignore")
 
-HOME_URL = "https://golvarmac1.pro/"
+HOME_URL = "https://ardaspor39.top/"
 OUTPUT_FILENAME = "mirti68.m3u"
 
 BEIN_GROUP = "🖥beINSPORTS"
