@@ -95,3 +95,100 @@ https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
 https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
 #EXTINF:-1 tvg-name="UYDU BİLGİLERİ - 16. Bölüm" group-title="📺 NOW TV Dizileri",UYDU BİLGİLERİ - 16. Bölüm
 https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTM3U
+#EXTINF:-1 tvg-name="Sevdam Karadeniz - 39. Bölüm" group-title="📺 NOW TV Dizileri",Sevdam Karadeniz - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Sevdam Karadeniz - 18. Bölüm" group-title="📺 NOW TV Dizileri",Sevdam Karadeniz - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Sevdam Karadeniz - 16. Bölüm" group-title="📺 NOW TV Dizileri",Sevdam Karadeniz - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Anne Yarısı - 39. Bölüm" group-title="📺 NOW TV Dizileri",Anne Yarısı - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Anne Yarısı - 18. Bölüm" group-title="📺 NOW TV Dizileri",Anne Yarısı - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Anne Yarısı - 16. Bölüm" group-title="📺 NOW TV Dizileri",Anne Yarısı - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Yeraltı - 39. Bölüm" group-title="📺 NOW TV Dizileri",Yeraltı - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Yeraltı - 20. Bölüm" group-title="📺 NOW TV Dizileri",Yeraltı - 20. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Yeraltı - 19. Bölüm" group-title="📺 NOW TV Dizileri",Yeraltı - 19. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Halef: Köklerin Çağrısı - 40. Bölüm" group-title="📺 NOW TV Dizileri",Halef: Köklerin Çağrısı - 40. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Halef: Köklerin Çağrısı - 39. Bölüm" group-title="📺 NOW TV Dizileri",Halef: Köklerin Çağrısı - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Halef: Köklerin Çağrısı - 38. Bölüm" group-title="📺 NOW TV Dizileri",Halef: Köklerin Çağrısı - 38. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Ömür Usta - 39. Bölüm" group-title="📺 NOW TV Dizileri",Ömür Usta - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Ömür Usta - 18. Bölüm" group-title="📺 NOW TV Dizileri",Ömür Usta - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Ömür Usta - 16. Bölüm" group-title="📺 NOW TV Dizileri",Ömür Usta - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Gizlilik Politikasını - 39. Bölüm" group-title="📺 NOW TV Dizileri",Gizlilik Politikasını - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Gizlilik Politikasını - 18. Bölüm" group-title="📺 NOW TV Dizileri",Gizlilik Politikasını - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="Gizlilik Politikasını - 16. Bölüm" group-title="📺 NOW TV Dizileri",Gizlilik Politikasını - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="CANLI YAYIN - 39. Bölüm" group-title="📺 NOW TV Dizileri",CANLI YAYIN - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="CANLI YAYIN - 18. Bölüm" group-title="📺 NOW TV Dizileri",CANLI YAYIN - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="CANLI YAYIN - 16. Bölüm" group-title="📺 NOW TV Dizileri",CANLI YAYIN - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="ARŞİV - 39. Bölüm" group-title="📺 NOW TV Dizileri",ARŞİV - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="ARŞİV - 18. Bölüm" group-title="📺 NOW TV Dizileri",ARŞİV - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="ARŞİV - 16. Bölüm" group-title="📺 NOW TV Dizileri",ARŞİV - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="DİZİ ARŞİVİ - 39. Bölüm" group-title="📺 NOW TV Dizileri",DİZİ ARŞİVİ - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="DİZİ ARŞİVİ - 18. Bölüm" group-title="📺 NOW TV Dizileri",DİZİ ARŞİVİ - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="DİZİ ARŞİVİ - 16. Bölüm" group-title="📺 NOW TV Dizileri",DİZİ ARŞİVİ - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="BAŞVURU FORMLARI - 39. Bölüm" group-title="📺 NOW TV Dizileri",BAŞVURU FORMLARI - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="BAŞVURU FORMLARI - 18. Bölüm" group-title="📺 NOW TV Dizileri",BAŞVURU FORMLARI - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="BAŞVURU FORMLARI - 16. Bölüm" group-title="📺 NOW TV Dizileri",BAŞVURU FORMLARI - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="ALT YAZILI İÇERİKLER - 39. Bölüm" group-title="📺 NOW TV Dizileri",ALT YAZILI İÇERİKLER - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="ALT YAZILI İÇERİKLER - 18. Bölüm" group-title="📺 NOW TV Dizileri",ALT YAZILI İÇERİKLER - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="ALT YAZILI İÇERİKLER - 16. Bölüm" group-title="📺 NOW TV Dizileri",ALT YAZILI İÇERİKLER - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="KULLANIM KOŞULLARI - 39. Bölüm" group-title="📺 NOW TV Dizileri",KULLANIM KOŞULLARI - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="KULLANIM KOŞULLARI - 18. Bölüm" group-title="📺 NOW TV Dizileri",KULLANIM KOŞULLARI - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="KULLANIM KOŞULLARI - 16. Bölüm" group-title="📺 NOW TV Dizileri",KULLANIM KOŞULLARI - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="İNTERNET SİTESİ AYDINLATMA METNİ - 39. Bölüm" group-title="📺 NOW TV Dizileri",İNTERNET SİTESİ AYDINLATMA METNİ - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="İNTERNET SİTESİ AYDINLATMA METNİ - 18. Bölüm" group-title="📺 NOW TV Dizileri",İNTERNET SİTESİ AYDINLATMA METNİ - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="İNTERNET SİTESİ AYDINLATMA METNİ - 16. Bölüm" group-title="📺 NOW TV Dizileri",İNTERNET SİTESİ AYDINLATMA METNİ - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="ÇEREZ POLİTİKALARI - 39. Bölüm" group-title="📺 NOW TV Dizileri",ÇEREZ POLİTİKALARI - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="ÇEREZ POLİTİKALARI - 18. Bölüm" group-title="📺 NOW TV Dizileri",ÇEREZ POLİTİKALARI - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="ÇEREZ POLİTİKALARI - 16. Bölüm" group-title="📺 NOW TV Dizileri",ÇEREZ POLİTİKALARI - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="KÜNYE - 39. Bölüm" group-title="📺 NOW TV Dizileri",KÜNYE - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="KÜNYE - 18. Bölüm" group-title="📺 NOW TV Dizileri",KÜNYE - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="KÜNYE - 16. Bölüm" group-title="📺 NOW TV Dizileri",KÜNYE - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="UYDU BİLGİLERİ - 39. Bölüm" group-title="📺 NOW TV Dizileri",UYDU BİLGİLERİ - 39. Bölüm
+https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="UYDU BİLGİLERİ - 18. Bölüm" group-title="📺 NOW TV Dizileri",UYDU BİLGİLERİ - 18. Bölüm
+https://www.nowtv.com.tr/Yeralti/bolum/'+ item.video_url +'
+#EXTINF:-1 tvg-name="UYDU BİLGİLERİ - 16. Bölüm" group-title="📺 NOW TV Dizileri",UYDU BİLGİLERİ - 16. Bölüm
+https://www.nowtv.com.tr/Gundem-Futbol/bolum/'+ item.video_url +'
