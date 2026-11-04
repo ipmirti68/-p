@@ -15,8 +15,8 @@ REDIRECT_SOURCE_URL = (
     "http://raw.githack.com/eniyiyayinci/redirect-cdn/main/inattv.html"
 )
 
-DOMAIN_API_URL = "https://patronsports2.cfd/domain.php"
-MATCHES_API_URL = "https://patronsports2.cfd/matches.php"
+DOMAIN_API_URL = "https://patrongol41.cfd/domain.php"
+MATCHES_API_URL = "https://patrongol41.cfd//matches.php"
 
 OUTPUT_FILE = "mirti68.m3u"
 GROUP_NAME = "🖥beINSPORTS"
@@ -208,7 +208,7 @@ def get_static_channels(base_url):
     for channel_id, name, logo_file in STATIC_CHANNELS:
 
         logo_url = (
-            f"https://patronsports1.cfd/img/{logo_file}"
+            f"https://patrongol41.cfd/img/{logo_file}"
         )
 
         stream_url = make_stream_url(
@@ -481,8 +481,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # KAYNAKLAR
 REDIRECT_SOURCE_URL = "http://raw.githack.com/eniyiyayinci/redirect-cdn/main/inattv.html"
-DOMAIN_API_URL = "https://patronsports2.cfd/domain.php"
-MATCHES_API_URL = "https://patronsports2.cfd/matches.php"
+DOMAIN_API_URL = "https://patrongol41.cfd/domain.php"
+MATCHES_API_URL = "https://patrongol41.cfd/matches.php"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
