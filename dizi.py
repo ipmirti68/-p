@@ -52,7 +52,10 @@ CHANNELS = [
         "group": "📺 ATV Dizileri",
         "home": "https://www.atv.com.tr/",
         "lists": ["https://www.atv.com.tr/diziler"],
-        "known": [],
+        "known": [ 
+            ("Altı Üstü İstanbul", "https://www.atv.com.tr/alti-ustu-istanbul"),
+            ("Güneşin Doğdugu Yer", "https://www.atv.com.tr/gunesin-dogdugu-yer"),
+        ],
     },
     {
         "name": "KANAL D",
