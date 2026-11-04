@@ -107,7 +107,7 @@ def main():
     # Yeni kayıtları ekle
     with open(
         M3U_FILE,
-        "w",
+        "a",
         encoding="utf-8"
     ) as f:
 
