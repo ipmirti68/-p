@@ -63,7 +63,7 @@ jobs:
 
       - name: 7 - LIG
         continue-on-error: true
-        run: python li.py
+        run: python lig.py
         
       - name: 8 - ATV
         continue-on-error: true
@@ -84,6 +84,10 @@ jobs:
       - name: 11  - PATRON
         continue-on-error: true
         run: python ptrn.py
+
+      - name: 12  - STAR
+        continue-on-error: true
+        run: python iptv.py
 
         
       
