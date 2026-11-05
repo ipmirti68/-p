@@ -37,53 +37,108 @@ jobs:
           pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome playwright
           playwright install --with-deps chromium
 
-      - name: 1 - ULUSAL
+      - name: Baslangic boyutu
+        run: |
+          echo "BASLANGIC: $(stat -c%s mirti68.m3u) byte - $(wc -l < mirti68.m3u) satir"
+
+      - name: 1 - ULUSAL iptv.py
         continue-on-error: true
-        run: python iptv.py
-      - name: 2 - SELCUK
+        run: |
+          python iptv.py
+          echo "SONRA iptv.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> iptv.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 2 - SELCUK slck.py
         continue-on-error: true
-        run: python slck.py
-      - name: 3 - MAHSUN
+        run: |
+          python slck.py
+          echo "SONRA slck.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> slck.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 3 - MAHSUN mahsun.py
         continue-on-error: true
-        run: python mahsun.py
-      - name: 4 - ATOM
+        run: |
+          python mahsun.py
+          echo "SONRA mahsun.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> mahsun.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 4 - ATOM atom.py
         continue-on-error: true
-        run: python atom.py
-      - name: 5 - KRAL
+        run: |
+          python atom.py
+          echo "SONRA atom.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atom.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 5 - KRAL kra.py
         continue-on-error: true
-        run: python kra.py
-      - name: 6 - ARDA
+        run: |
+          python kra.py
+          echo "SONRA kra.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> kra.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 6 - ARDA arda.py
         continue-on-error: true
-        run: python arda.py
-      - name: 7 - LIG
+        run: |
+          python arda.py
+          echo "SONRA arda.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> arda.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 7 - LIG lig.py
         continue-on-error: true
-        run: python lig.py
-      - name: 8 - ATV
+        run: |
+          python lig.py
+          echo "SONRA lig.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> lig.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 8 - ATV atv1.py
         continue-on-error: true
-        run: python atv1.py
-      - name: 9 - ALLSPOR
+        run: |
+          python atv1.py
+          echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 9 - ALLSPOR allspor.py
         continue-on-error: true
-        run: python allspor.py
-      - name: 10 - SELCUK
+        run: |
+          python allspor.py
+          echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 10 - SELCUK selcuk.py
         continue-on-error: true
-        run: python selcuk.py
-      - name: 11 - PATRON
+        run: |
+          python selcuk.py
+          echo "SONRA selcuk.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> selcuk.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 11 - PATRON patron.py
         continue-on-error: true
-        run: python patron.py
-      - name: 11b - PATRON 2
+        run: |
+          python patron.py
+          echo "SONRA patron.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> patron.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 11b - PATRON 2 ptrn.py
         continue-on-error: true
-        run: python ptrn.py
-      - name: 12 - STAR ve ULUSAL
+        run: |
+          python ptrn.py
+          echo "SONRA ptrn.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> ptrn.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 12 - STAR ve ULUSAL tv.py
         continue-on-error: true
-        run: python tv.py
+        run: |
+          echo "ONCE tv.py: $(stat -c%s mirti68.m3u) byte"
+          python tv.py
+          echo "SONRA tv.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> tv.py SILDI!"; git checkout -- mirti68.m3u; fi
 
       - name: Olusan M3U listelerini raporla
         if: always()
         run: |
           ls -lh *.m3u
           wc -l mirti68.m3u
-          echo "ilk 20 satir:"
-          head -20 mirti68.m3u
+          echo "Boyut: $(stat -c%s mirti68.m3u)"
 
       - name: M3U dosyalarini GitHub'a kaydet
         if: always()
@@ -91,15 +146,13 @@ jobs:
           git config user.name "bot"
           git config user.email "bot@bot.com"
           SIZE=$(stat -c%s "mirti68.m3u" 2>/dev/null || echo 0)
-          echo "mirti68.m3u boyutu: $SIZE"
+          echo "Final boyut: $SIZE"
           if [ "$SIZE" -lt 80000 ]; then
-            echo "HATA: mirti68.m3u silinmis gibi ($SIZE byte), push iptal! Eski liste korunuyor."
+            echo "HATA: mirti68.m3u hala kucuk ($SIZE byte), push iptal!"
             exit 1
           fi
-          git stash push -u -m "temp" --keep-index || true
-          git pull --rebase origin main || true
-          git stash pop || true
           git add -A -- "*.m3u"
           git diff --cached --quiet && echo "Degisiklik yok" && exit 0
           git commit -m "Otomatik M3U guncelleme"
+          git pull --rebase origin main || true
           git push origin HEAD:main
