@@ -104,7 +104,7 @@ async def main():
     if not final_icerik.startswith("#EXTM3U"):
         final_icerik = f'#EXTM3U x-tvg-url="{EPG_URL}"\n' + final_icerik
 
-    with open(CIKIS_DOSYASI, "w", encoding="utf-8") as f:
+    with open(CIKIS_DOSYASI, "a", encoding="utf-8") as f:
         f.write(final_icerik)
 
     print(f"\n[+] M3U Dosyası Oluşturuluyor -> {CIKIS_DOSYASI}")
