@@ -31,17 +31,26 @@ jobs:
         with:
           python-version: '3.11'
 
-      # 3. Gerekli kütüphaneler - DÜZELTİLDİ
       - name: Kutuphaneleri kur
         run: |
           python -m pip install --upgrade pip
-          pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome
+          pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome playwright
+          playwright install --with-deps chromium
+
+      # Kod hatalarını otomatik düzelt
+      - name: Kod hatalarini duzelt
+        run: |
+          sed -i 's/MARKER = "# MIRTI68_ULUSAL_AUTO.*/MARKER = "# MIRTI68_ULUSAL_AUTO"/' tv.py || true
+          # atv1.py icinde EPG_URL yoksa ekle
+          if ! grep -q "EPG_URL =" atv1.py; then
+            sed -i '1iEPG_URL = ""' atv1.py
+          fi
 
       - name: 1 - ULUSAL
         continue-on-error: true
         run: python iptv.py
 
-      - name: 2  - SELCUK
+      - name: 2 - SELCUK
         continue-on-error: true
         run: python slck.py
 
@@ -73,24 +82,21 @@ jobs:
         continue-on-error: true
         run: python allspor.py
 
-      - name: 10  - SELCUK
+      - name: 10 - SELCUK
         continue-on-error: true
         run: python selcuk.py
 
-      - name: 11  - PATRON
+      - name: 11 - PATRON
         continue-on-error: true
         run: python patron.py
 
-      - name: 11  - PATRON
+      - name: 11b - PATRON 2
         continue-on-error: true
         run: python ptrn.py
 
-      - name: 12  - STAR
+      - name: 12 - STAR
         continue-on-error: true
         run: python tv.py
-
-        
-      
 
       - name: Olusan M3U listelerini raporla
         if: always()
@@ -106,18 +112,15 @@ jobs:
           find . -type f -name "*.m3u" \
             -not -path "./.git/*" | wc -l
 
-      - name: GitHub son degisikliklerini al
+      - name: 【entity-GitHub¦canonical_name=GitHub】 son degisikliklerini al
         if: always()
         run: |
           git fetch origin main
-          if ! git diff --quiet || ! git diff --cached --quiet; then
-            echo "Yerel degisiklikler mevcut."
-          fi
           git stash push -u -m "M3U otomatik yedek" || true
           git rebase origin/main
           git stash pop || true
 
-      - name: M3U dosyalarini GitHub'a kaydet
+      - name: M3U dosyalarini 【entity-GitHub¦canonical_name=GitHub】'a kaydet
         if: always()
         run: |
           git config user.name "bot"
