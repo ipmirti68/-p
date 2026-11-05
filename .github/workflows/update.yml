@@ -5,67 +5,43 @@ on:
     - cron: "*/20 * * * *"
 permissions:
   contents: write
-
+concurrency:
+  group: mirti68-main
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-
       - name: Paketleri kur
         run: |
           pip install -U pip
           pip install -U yt-dlp requests beautifulsoup4 lxml playwright
           playwright install chromium --with-deps
-
-      - name: 1 - ALLSPOR
+      - name: MAHSUN
+        run: python mahsun.py
+      - name: GOLVAR
+        run: python gol.py || echo "golvar bitti"
+      - name: IPTV
         continue-on-error: true
-        run: python allspor.py || echo "allspor failed"
-
-      - name: 2 - ATV
+        run: python iptv.py || echo "iptv bitti"
+      - name: VOLEYBOL
         continue-on-error: true
-        run: python atv1.py || echo "atv1 failed"
-
-      - name: 3 - LIG
-        continue-on-error: true
-        run: python lig.py || echo "lig failed"
-
-      - name: 4 - SLCK
-        continue-on-error: true
-        run: python slck.py || echo "slck failed"
-
-      - name: 5 - MAHSUN
-        continue-on-error: true
-        run: python mahsun.py || echo "mahsun failed"
-
-      - name: 6 - VOLEYBOL
-        continue-on-error: true
-        run: python voleybol_youtube.py || echo "voleybol failed"
-
-      - name: 7 - IPTV (Ulusal)
-        continue-on-error: true
-        run: python iptv.py || echo "iptv failed"
-
-      - name: 8 - GOLVAR 
-        continue-on-error: true
-        run: python gol.py || echo "iptv failed"
-
-      - name: Dosyaları kaydet
+        run: python voleybol_youtube.py || echo "voleybol bitti"
+      - name: Kaydet
         if: always()
         run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
-          ls -lh *.m3u *.json 2>/dev/null || true
-          git add -f *.m3u *.json 2>/dev/null || true
+          rm -rf __pycache__ .pytest_cache/
+          rm -f mırtı68.m3u
+          ls -lh *.m3u
+          git add -f mirti68.m3u
           git status --short
           if ! git diff --cached --quiet; then
             git commit -m "update $(date +'%d.%m %H:%M')"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          else
-            echo "Değişiklik yok"
+            for i in 1 2 3; do git pull --rebase --autostash origin main && git push origin HEAD:main && break; sleep 3; done
           fi
