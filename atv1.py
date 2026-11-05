@@ -6,35 +6,35 @@ import base64
 MASTER_FILE = "mirti68.m3u"
 GROUP = "📺 ULUSAL"
 MARKER = "# MIRTI68_ULUSAL_AUTO"
-EPG_URL = "https://epg.pw/api/epg.xml?lang=tr"
+
 
 source_urls = {
-    "【entity-ATV¦canonical_name=ATV】 🔴": "https://www.atv.com.tr/canli-yayin",
-    "【entity-Kanal D¦canonical_name=Kanal D】 🔴": "https://www.kanald.com.tr/canli-yayin",
-    "【entity-Show¦canonical_name=Show TV】 🔴": "https://www.showtv.com.tr/canli-yayin",
-    "【entity-Star¦canonical_name=Star TV】 🔴": "https://www.startv.com.tr/canli-yayin",
+    "ATV 🔴": "https://www.atv.com.tr/canli-yayin",
+    "KANAL D 🔴": "https://www.kanald.com.tr/canli-yayin",
+    "SHOW 🔴": "https://www.showtv.com.tr/canli-yayin",
+    "STAR 🔴": "https://www.startv.com.tr/canli-yayin",
     "TV8 🔴": "https://www.tv8.com.tr/canli-yayin",
     "NOW 🔴": "https://www.nowtv.com.tr/canli-yayin",
-    "Kanal 7 🔴": "https://www.kanal7.com/canli-izle",
+    "KANAL 7 7 🔴": "https://www.kanal7.com/canli-izle",
     "TV360 🔴": "https://www.tv360.com.tr/canli-yayin",
 }
 
 LOGO_URLS = {
-    "【entity-ATV¦canonical_name=ATV】 🔴": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png",
-    "【entity-Kanal D¦canonical_name=Kanal D】 🔴": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png",
-    "【entity-Show¦canonical_name=Show TV】 🔴": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png",
-    "【entity-Star¦canonical_name=Star TV】 🔴": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png",
-    "TV8 🔴": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png",
-    "NOW 🔴": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png",
-    "Kanal 7 🔴": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png",
-    "TV360 🔴": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv360.png",
+    "ATV 🔴": "https://medya.dsmart.com.tr/uploads/atv_1d00e30f_7d773106a0.png",
+    "KANAL D 🔴": "https://medya.dsmart.com.tr/uploads/kanal_d_4a0f0323_791e93c4c3.png",
+    "SHOW 🔴": "https://medya.dsmart.com.tr/uploads/show_tv_f0716ef6_a0c29b9846.png",
+    "STAR 🔴": "https://medya.dsmart.com.tr/uploads/star_abfb3b0c_04b167fd8f.png",
+    "TV8 🔴": "https://medya.dsmart.com.tr/uploads/tv8_e29e33cb_383f1b8a2e.png",
+    "NOW 🔴": "https://medya.dsmart.com.tr/uploads/now_new_d291a389_a022fe1395.png",
+    "Kanal 7 🔴": "https://medya.dsmart.com.tr/uploads/kanal_7_23db4968_45f09094d0.png",
+    "360 🔴": "https://medya.dsmart.com.tr/uploads/360_e47c08db_e35a7f2424.png",
 }
 
 TVG_IDS = {
-    "【entity-ATV¦canonical_name=ATV】 🔴": "【entity-ATV¦canonical_name=ATV】.tr",
-    "【entity-Kanal D¦canonical_name=Kanal D】 🔴": "KanalD.tr",
-    "【entity-Show¦canonical_name=Show TV】 🔴": "ShowTV.tr",
-    "【entity-Star¦canonical_name=Star TV】 🔴": "StarTV.tr",
+    "ATV 🔴": "ATV.tr",
+    "KANAL D 🔴": "KanalD.tr",
+    "SHOW 🔴": "ShowTV.tr",
+    "STAR🔴": "StarTV.tr",
     "TV8 🔴": "TV8.tr",
     "NOW 🔴": "NowTV.tr",
     "Kanal 7 🔴": "Kanal7.tr",
