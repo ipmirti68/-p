@@ -97,28 +97,22 @@ jobs:
           echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 9 - SELCUK selcuk.py
-        continue-on-error: true
-        run: |
-          python selcuk.py
-          echo "SONRA selcuk.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> selcuk.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 10 - PATRON patron.py
+      
+      - name: 9 - PATRON patron.py
         continue-on-error: true
         run: |
           python patron.py
           echo "SONRA patron.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> patron.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 11 - PATRON 2 ptrn.py
+      - name: 10 - PATRON 2 ptrn.py
         continue-on-error: true
         run: |
           python ptrn.py
           echo "SONRA ptrn.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> ptrn.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 12 - STAR ve ULUSAL tv.py
+      - name: 11 - STAR ve ULUSAL tv.py
         continue-on-error: true
         run: |
           echo "ONCE tv.py: $(stat -c%s mirti68.m3u) byte"
