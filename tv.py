@@ -7,6 +7,7 @@ from playwright.async_api import async_playwright
 MASTER_FILE = "mirti68.m3u"
 
 GROUP = "📺 ULUSAL"
+MARKER = "# MIRTI68_ULUSAL_AUTO"
 
 
 # Takip edilecek kanalların listesi
