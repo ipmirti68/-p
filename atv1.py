@@ -6,7 +6,7 @@ import base64
 MASTER_FILE = "mirti68.m3u"
 GROUP = "📺 ULUSAL"
 MARKER = "# MIRTI68_ULUSAL_AUTO"
-
+EPG_URL = ""
 
 source_urls = {
     "ATV 🔴": "https://www.atv.com.tr/canli-yayin",
