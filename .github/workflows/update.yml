@@ -37,25 +37,6 @@ jobs:
           pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome playwright
           playwright install --with-deps chromium
 
-      - name: Kod hatalarini duzelt
-        run: |
-          sed -i 's/MARKER = "# MIRTI68_ULUSAL_AUTO.*/MARKER = "# MIRTI68_ULUSAL_AUTO"/' tv.py || true
-          grep -q "EPG_URL =" tv.py || sed -i '1iEPG_URL = ""' tv.py
-          grep -q "CIKIS_DOSYASI =" tv.py || sed -i '1iCIKIS_DOSYASI = "mirti68.m3u"' tv.py
-          grep -q "MASTER_FILE =" tv.py || sed -i '1iMASTER_FILE = "mirti68.m3u"' tv.py
-          grep -q "GROUP =" tv.py || sed -i '1iGROUP = "📺 ULUSAL"' tv.py
-          grep -q "EPG_URL =" atv1.py || sed -i '1iEPG_URL = ""' atv1.py
-          python3 << 'PY'
-          import re
-          path="allspor.py"
-          try:
-              t=open(path,encoding="utf-8",errors="ignore").read()
-              t=re.sub(r'(channels\s*=\s*\[.*?)(?=\n\s*def )',lambda m:m.group(1).rstrip()+"\n    ]\n\n",t,flags=re.DOTALL)
-              t=re.sub(r'(channel_ids\s*=\s*\[.*?)(?=\n\s*def )',lambda m:m.group(1).rstrip().rstrip(',')+"\n    ]\n\n",t,flags=re.DOTALL)
-              open(path,"w",encoding="utf-8").write(t)
-          except: pass
-          PY
-
       - name: 1 - ULUSAL
         continue-on-error: true
         run: python iptv.py
@@ -77,7 +58,7 @@ jobs:
       - name: 7 - LIG
         continue-on-error: true
         run: python lig.py
-      - name: 8 - 【entity-ATV¦canonical_name=ATV】
+      - name: 8 - ATV
         continue-on-error: true
         run: python atv1.py
       - name: 9 - ALLSPOR
@@ -101,6 +82,8 @@ jobs:
         run: |
           ls -lh *.m3u
           wc -l mirti68.m3u
+          echo "ilk 20 satir:"
+          head -20 mirti68.m3u
 
       - name: M3U dosyalarini GitHub'a kaydet
         if: always()
@@ -108,8 +91,9 @@ jobs:
           git config user.name "bot"
           git config user.email "bot@bot.com"
           SIZE=$(stat -c%s "mirti68.m3u" 2>/dev/null || echo 0)
+          echo "mirti68.m3u boyutu: $SIZE"
           if [ "$SIZE" -lt 80000 ]; then
-            echo "HATA: mirti68.m3u silinmis gibi ($SIZE byte), push iptal!"
+            echo "HATA: mirti68.m3u silinmis gibi ($SIZE byte), push iptal! Eski liste korunuyor."
             exit 1
           fi
           git stash push -u -m "temp" --keep-index || true
