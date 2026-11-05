@@ -6,7 +6,7 @@ import concurrent.futures
 from datetime import datetime
 
 super_lig_sezonlar = { 3974: '2026/2027' }
-super_lig_haftalar = { 3853: range(1, 39), 3974: range(1, 39) }
+super_lig_haftalar = { 3853: range(1, 49), 3974: range(1, 49) }
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
