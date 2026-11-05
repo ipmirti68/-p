@@ -3,11 +3,12 @@ import sys
 from playwright.async_api import async_playwright
 
 # Çıktı dosyamızın adı
-
-MASTER_FILE = "mirti68.m3u"
-
-GROUP = "📺 ULUSAL"
+# AYARLAR - tv.py için
+MASTER_FILE = "mirti68.m3u"  # Güncellenecek ana liste
+CIKIS_DOSYASI = "mirti68.m3u"  # Çıktı dosyası (aynı dosya ise üzerine yazar)
 MARKER = "# MIRTI68_ULUSAL_AUTO"
+GROUP = "📺 ULUSAL"
+EPG_URL = ""
 
 
 # Takip edilecek kanalların listesi
