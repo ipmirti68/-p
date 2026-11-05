@@ -1,166 +1,38 @@
+import re, os
 
-import os
-import re
-import tempfile
+def update_group(group_name, new_entries, filename="mirti68.m3u"):
+    """
+    group-title="GRUP" olan bloklari silip yeni entries ile degistirir
+    Diger gruplari korur, dosyayi silmez
+    """
+    if not os.path.exists(filename):
+        with open(filename,"w",encoding="utf-8") as f:
+            f.write("#EXTM3U\n\n" + "\n".join(new_entries) + "\n")
+        return
 
-M3U_FILE = "mirti68.m3u"
+    with open(filename,"r",encoding="utf-8",errors="ignore") as f:
+        content = f.read()
 
-
-def parse_entries(text):
-    """M3U başlığını ve kanal kayıtlarını koruyarak ayırır."""
-    lines = text.splitlines()
-
-    header = []
-    entries = []
-    current = []
-
-    for line in lines:
-        if line.startswith("#EXTM3U"):
-            header.append(line)
-            continue
-
-        if line.startswith("#EXTINF:"):
-            if current:
-                entries.append(current)
-            current = [line]
-
-        elif current:
-            current.append(line)
-
-        elif line.strip():
-            header.append(line)
-
-    if current:
-        entries.append(current)
-
-    return header, entries
-
-
-def entry_title(entry):
-    for line in entry:
-        if line.startswith("#EXTINF:"):
-            return line.split(",", 1)[-1].strip().casefold()
-    return ""
-
-
-def entry_group(entry):
-    for line in entry:
-        if line.startswith("#EXTINF:"):
-            match = re.search(r'group-title="([^"]*)"', line)
-            return match.group(1) if match else ""
-    return ""
-
-
-def update_group(group_title, new_entries, filename=M3U_FILE):
-
-    if not new_entries:
-        print("Yeni kayıt yok. Mevcut liste korunuyor.")
-        return False
-
-    if os.path.exists(filename):
-        with open(filename, "r", encoding="utf-8-sig") as f:
-            old_text = f.read()
-    else:
-        old_text = ""
-
-    header, old_entries = parse_entries(old_text)
-
-    # EPG bilgili orijinal M3U başlığını koru
-    if not any(x.startswith("#EXTM3U") for x in header):
-        header.insert(0, "#EXTM3U")
-
-    new_map = {}
-
-    for item in new_entries:
-        if isinstance(item, str):
-            lines = item.strip().splitlines()
-        else:
-            lines = [str(x).strip() for x in item]
-
-        if not lines or not any(x.startswith("#EXTINF:") for x in lines):
-            print("Geçersiz M3U kaydı atlandı.")
-            continue
-
-        if entry_group(lines) != group_title:
-            print("Kategori uyuşmazlığı nedeniyle kayıt atlandı.")
-            continue
-
-        title = entry_title(lines)
-
-        if title:
-            new_map[title] = lines
-
-    if not new_map:
-        print("Geçerli yeni kayıt bulunamadı. Eski liste korundu.")
-        return False
-
-    # Eski hedef grup kayıtlarını koru ve yenileri güncelle
-    merged = {}
-    target_order = []
-
-    for entry in old_entries:
-        if entry_group(entry) == group_title:
-            title = entry_title(entry)
-
-            if title and title not in merged:
-                merged[title] = entry
-                target_order.append(title)
-
-    for title, entry in new_map.items():
-        if title not in merged:
-            target_order.append(title)
-
-        merged[title] = entry
-
-    target_entries = [merged[x] for x in target_order]
-
-    # Diğer grupları aynen koru
-    output_entries = []
-    inserted = False
-
-    for entry in old_entries:
-        if entry_group(entry) == group_title:
-            if not inserted:
-                output_entries.extend(target_entries)
-                inserted = True
-            continue
-
-        output_entries.append(entry)
-
-    if not inserted:
-        output_entries.extend(target_entries)
-
-    # Orijinal EPG başlığı dahil tüm üst bilgileri koru
-    output = list(header)
-
-    for entry in output_entries:
-        output.extend(entry)
-
-    final_text = "\n".join(output).rstrip() + "\n"
-
-    directory = os.path.dirname(os.path.abspath(filename))
-
-    fd, temp_path = tempfile.mkstemp(
-        prefix="m3u_",
-        suffix=".tmp",
-        dir=directory
-    )
-
-    try:
-        with os.fdopen(fd, "w", encoding="utf-8") as f:
-            f.write(final_text)
-
-        os.replace(temp_path, filename)
-
-    except Exception:
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
-        raise
-
-    print("✅ M3U GÜNCELLENDİ:", filename)
-    print("📺 Kategori:", group_title)
-    print("🆕 Yeni bulunan kayıt:", len(new_map))
-    print("📋 Toplam grup kaydı:", len(target_entries))
-    print("✅ EPG başlığı ve diğer gruplar korundu.")
-
-    return True
+    # group-title="BEIN" olan tum EXTINF + URL bloklarini sil
+    pattern = re.compile(r'#EXTINF.*group-title="%s".*\n.*\n.*m3u8.*\n?' % re.escape(group_name), re.IGNORECASE)
+    # daha genis pattern: group-title iceren 2-3 satirlik blok
+    pattern2 = re.compile(r'#EXTINF[^\n]*group-title="%s"[^\n]*\n(?:#EXTVLCOPT[^\n]*\n)?[^\n]*m3u8[^\n]*\n?' % re.escape(group_name), re.IGNORECASE)
+    
+    # once dar pattern sonra genis
+    new_content = pattern2.sub("", content)
+    # eger hala ayni ise eski pattern
+    if new_content == content:
+        new_content = pattern.sub("", new_content)
+    
+    # bos satirlari temizle ama dosya yapisini koru
+    new_content = new_content.rstrip() + "\n\n" + "\n".join(new_entries) + "\n"
+    
+    # eger dosya cok kuculduyse (silme oldu) geri al
+    if len(new_content) < 80000 and len(content) > 80000:
+        print(f"[!] m3u_manager: dosya cok kuculdu {len(content)} -> {len(new_content)}, koruma devreye girdi")
+        # sadece eski grubu silmeden ekle
+        new_content = content.rstrip() + "\n\n" + "\n".join(new_entries) + "\n"
+    
+    with open(filename,"w",encoding="utf-8") as f:
+        f.write(new_content)
+    print(f"[m3u_manager] {group_name}: {len(new_entries)} kanal yazildi, dosya korundu")
