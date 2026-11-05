@@ -1,20 +1,17 @@
-import os
-import re
-import json
-import requests
-import concurrent.futures
+import os, re, json, requests, concurrent.futures
 from datetime import datetime
 
-super_lig_sezonlar = { 3974: '2026/2027' }
-super_lig_haftalar = { 3853: range(1, 49), 3974: range(1, 49) }
+super_lig_sezonlar = {3974: '2026/2027'}
+super_lig_haftalar = {3853: range(1,49), 3974: range(1,49)}
 
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+    'User-Agent': 'Mozilla/5.0',
     'Referer': 'https://www.beinsports.com.tr/',
     'Origin': 'https://www.beinsports.com.tr'
 }
 
 def get_birinci_lig_urls_dynamically():
+    # ... senin fonksiyonun aynı kalsın ...
     page_url = "https://www.beinsports.com.tr/mac-ozetleri-goller/tff-1-lig"
     urls_to_fetch = []
     try:
@@ -51,66 +48,62 @@ def fetch_and_parse(url_info):
             video_url = ev.get('highlightVideoUrl') or ev.get('videoUrl') or ev.get('mp4Url')
             logo = ev.get('highlightThumbnail', '') or ''
             mid = ev.get('matchId', '')
-
-            raw_date = ev.get('eventDate') or ev.get('matchDate') or ev.get('date') or ev.get('startDate') or ev.get('eventTime')
+            raw_date = ev.get('eventDate') or ev.get('matchDate') or ev.get('date') or ev.get('startDate')
             tarih_str = ""
+            dt_obj = datetime.min
             if raw_date:
                 try:
-                    dt = datetime.fromisoformat(str(raw_date).replace("Z", "+00:00"))
-                    tarih_str = dt.strftime("%d.%m.%Y")
+                    dt_obj = datetime.fromisoformat(str(raw_date).replace("Z", "+00:00"))
+                    tarih_str = dt_obj.strftime("%d.%m.%Y")
                 except:
                     tarih_str = str(raw_date)[:10]
-
             if video_url:
                 title = f"{tarih_str} - {home} {hs}-{aws} {away}" if tarih_str else f"{home} {hs}-{aws} {away}"
                 line1 = f'#EXTINF:-1 tvg-id="{mid}" tvg-logo="{logo}" group-title="⚽🔥 GOLLER",{title}\n'
                 line2 = f"{video_url.strip()}\n"
-                result.append((line1, line2))
+                # dt_obj ile birlikte döndür ki sıralayabilelim
+                result.append((dt_obj, line1, line2))
         return result
     except Exception as e:
-        print(f"Hata {url}: {e}")
         return []
 
 def main():
     dosya = "mirti68.m3u"
-    
     mevcut_linkler = set()
     if os.path.exists(dosya):
         with open(dosya, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
-                line = line.strip()
+                line=line.strip()
                 if line and not line.startswith("#") and line.startswith("http"):
                     mevcut_linkler.add(line)
-        print(f"Mevcut: {len(mevcut_linkler)} video korunacak.")
     else:
-        print("Dosya yok, yeni oluşturuluyor.")
-        with open(dosya, "a", encoding="utf-8") as f:
-            f.write("#EXTM3U\n\n")
+        with open(dosya, "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n")
 
-    all_urls = []
+    all_urls=[]
     for sid in super_lig_sezonlar.keys():
         for hafta in super_lig_haftalar.get(sid, range(1,39)):
-            url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=18&s={sid}&r={hafta}&st=0"
-            all_urls.append((url, sid))
+            all_urls.append((f"https://beinsports.com.tr/api/highlights/events?sp=1&o=18&s={sid}&r={hafta}&st=0", sid))
     all_urls.extend(get_birinci_lig_urls_dynamically())
     print(f"Toplam {len(all_urls)} hafta taranacak")
 
-    yeni_videolar = []
+    yeni_videolar=[]
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
         for res in ex.map(fetch_and_parse, all_urls):
-            for l1, l2 in res:
+            for dt_obj, l1, l2 in res:
                 if l2.strip() not in mevcut_linkler:
-                    yeni_videolar.append((l1, l2))
+                    yeni_videolar.append((dt_obj, l1, l2))
 
-    # ---- EKSİK OLAN KISIM BURASI ----
+    # EN YENİ TARİH EN ÜSTE - sıralama burada
+    yeni_videolar.sort(key=lambda x: x[0], reverse=True)
+
     if yeni_videolar:
         with open(dosya, "a", encoding="utf-8") as f:
-            for l1, l2 in yeni_videolar:
+            for dt_obj, l1, l2 in yeni_videolar:
                 f.write(l1)
                 f.write(l2)
-        print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi -> {dosya}")
+        print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi (en yeni en üstte) -> {dosya}")
     else:
-        print("Yeni gol yok, beIN API boş dönüyor olabilir.")
+        print("Yeni gol yok")
 
-if __name__ == "__main__":
-    main()
+if __name__=="__main__": main()
