@@ -8,19 +8,27 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: mirti68-voleybol
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - name: Depoyu indir
+        uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v6
+      - name: Python kur
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-          cache: 'pip'
+          # cache: pip  <-- BUNU SİLDİK, requirements.txt olmadığı için fail veriyordu
 
       - name: Paketleri kur
-        run: pip install -U yt-dlp requests beautifulsoup4 lxml
+        run: |
+          pip install --upgrade pip
+          pip install -U yt-dlp requests beautifulsoup4 lxml
 
       - name: YouTube cookies hazırla
         env:
@@ -29,13 +37,20 @@ jobs:
           if [ -n "$YOUTUBE_COOKIES" ]; then
             echo "$YOUTUBE_COOKIES" > cookies.txt
             chmod 600 cookies.txt
+            echo "Cookies hazır"
+          else
+            echo "Cookies yok, devam"
           fi
 
       - name: Voleybol programını güncelle
-        run: python voleybol.py
+        run: |
+          python voleybol.py || echo "voleybol.py yok veya hatalı"
+          ls -lh *.json 2>/dev/null || true
 
-      - name: YouTube tarama (Canlı + Son Hafta Tekrar)
-        run: python voleybol_youtube.py
+      - name: YouTube canlı + tekrar tara
+        run: |
+          python voleybol_youtube.py
+          ls -lh mirti68.m3u voleybol_youtube.json
 
       - name: Dosyaları kaydet
         if: always()
@@ -43,7 +58,12 @@ jobs:
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
           rm -f cookies.txt
-          git add -f mirti68.m3u voleybol_youtube.json voleybol_program.json
-          git diff --cached --quiet || git commit -m "MIRTI68 güncellendi $(date +'%d.%m %H:%M')"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git add -f mirti68.m3u voleybol_youtube.json voleybol_program.json mac_takvimi.json 2>/dev/null || true
+          git status --short
+          if ! git diff --cached --quiet; then
+            git commit -m "MIRTI68 güncellendi $(date +'%d.%m %H:%M')"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "Değişiklik yok"
+          fi
