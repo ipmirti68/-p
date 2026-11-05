@@ -52,11 +52,11 @@ jobs:
       - name: 2 - SLCK slck.py
         continue-on-error: true
         run: |
-          python slck.py
+          python slc.py
           echo "SONRA slck.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> slck.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 3 - LIG lig.py
+      - name: 3 - LIG li.py
         continue-on-error: true
         run: |
           python lig.py
@@ -66,21 +66,21 @@ jobs:
       - name: 4 - ATV atv1.py
         continue-on-error: true
         run: |
-          python atv1.py
+          python at1.py
           echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
 
       - name: 5 - ALLSPOR allspor.py
         continue-on-error: true
         run: |
-          python allspor.py
+          python allspo.py
           echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
 
       - name: 6 - ULUSAL iptv.py
         continue-on-error: true
         run: |
-          python iptv.py
+          python ipt.py
           echo "SONRA iptv.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> iptv.py SILDI!"; git checkout -- mirti68.m3u; fi
 
