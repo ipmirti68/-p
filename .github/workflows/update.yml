@@ -48,42 +48,36 @@ jobs:
           echo "SONRA mahsun.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> mahsun.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 2 - ATOM atom.py
-        continue-on-error: true
-        run: |
-          python atom.py
-          echo "SONRA atom.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atom.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 3 - SLCK slck.py
+      
+      - name: 2 - SLCK slck.py
         continue-on-error: true
         run: |
           python slck.py
           echo "SONRA slck.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> slck.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 4 - LIG lig.py
+      - name: 3 - LIG lig.py
         continue-on-error: true
         run: |
           python lig.py
           echo "SONRA lig.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> lig.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 5 - ATV atv1.py
+      - name: 4 - ATV atv1.py
         continue-on-error: true
         run: |
           python atv1.py
           echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 6 - ALLSPOR allspor.py
+      - name: 5 - ALLSPOR allspor.py
         continue-on-error: true
         run: |
           python allspor.py
           echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 7 - ULUSAL iptv.py
+      - name: 6 - ULUSAL iptv.py
         continue-on-error: true
         run: |
           python iptv.py
