@@ -1,361 +1,228 @@
-# voleybol_youtube.py - TEST MODU
+import os
+import re
+import json
+import tempfile
+import unicodedata
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
+from yt_dlp import YoutubeDL
 
+MASTER_FILE = "mirti68.m3u"
+RESULT_FILE = "voleybol_youtube.json"
+TAKVIM_FILE = "mac_takvimi.json"
+
+CHANNEL_URL = "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw/streams"
+CHANNEL_ID = "UCTgQ8Bfq3AUuo1vWULdvRKw"
 GROUP_LIVE = "🏐 VOLEYBOL HLS"
 GROUP_REPLAY = "🏐 SULTANLAR LİGİ TEKRAR"
-OLD_GROUPS = ("🏐 VOLEYBOL CANLI", "🏐 KUZEYBORU", "🏐 VOLEYBOL HLS", "🏐 SULTANLAR LİGİ TEKRAR")
+OLD_GROUPS = ("🏐 VOLEYBOL CANLI", "🏐 KUZEYBORU", "🏐 VOLEYBOL HLS", GROUP_LIVE, GROUP_REPLAY)
+ISTANBUL = ZoneInfo("Europe/Istanbul")
+MAX_VIDEOS = 50
 
-# TEST İÇİN: Son hafta maçlarını da al
-INCLUDE_PAST = True 
-PAST_LIMIT = 15 # Son 15 bitmiş maçı tara
+SEED_VIDEO_URLS = ["https://www.youtube.com/watch?v=cMM1VRfJlpI"]
+
+OPTIONS = {
+    "quiet": True, "no_warnings": True, "ignoreerrors": True,
+    "extract_flat": "in_playlist", "playlistend": MAX_VIDEOS,
+    "skip_download": True, "socket_timeout": 30, "retries": 2,
+    "extractor_args": {"youtube": {"player_client": ["android", "web"]}},
+    "allow_unplayable_formats": True,
+}
+DETAIL_OPTIONS = {
+    "quiet": True, "no_warnings": True, "ignoreerrors": False,
+    "skip_download": True, "socket_timeout": 30, "retries": 2,
+    "extractor_args": {"youtube": {"player_client": ["android", "web", "mweb"]}},
+    "allow_unplayable_formats": True,
+}
+
+def clean_title(v): return re.sub(r"\s+", " ", str(v or "TVF Voleybol Yayini")).strip()[:250]
+def normalize_text(v):
+    v = str(v or "").lower().replace("ı","i")
+    v = unicodedata.normalize("NFKD", v)
+    return "".join(c for c in v if not unicodedata.combining(c))
+def team_priority(t):
+    t = normalize_text(t)
+    if "kuzeyboru maxi" in t: return 0
+    if "kuzeyboru" in t: return 1
+    return 2
+def get_video_id(value):
+    if isinstance(value, dict): value = value.get("id") or value.get("url") or ""
+    if not isinstance(value, str): return ""
+    m = re.search(r"(?:v=|youtu\.be/|/shorts/)([A-Za-z0-9_-]{11})", value)
+    if m: return m.group(1)
+    if re.fullmatch(r"[A-Za-z0-9_-]{11}", value): return value
+    return ""
+def get_thumbnail(info, entry, video_id):
+    for source in (info or {}, entry or {}):
+        thumbs = source.get("thumbnails") or []
+        valid = [x for x in thumbs if isinstance(x, dict) and x.get("url")]
+        if valid:
+            valid.sort(key=lambda x: x.get("width") or 0, reverse=True)
+            return valid[0]["url"]
+        if source.get("thumbnail"): return source["thumbnail"]
+    return f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg" if video_id else ""
+def get_match_time(info, entry):
+    for source in (info or {}, entry or {}):
+        for field in ("scheduled_start_time","release_timestamp","timestamp"):
+            val = source.get(field)
+            if val:
+                try:
+                    dt = datetime.fromtimestamp(float(val), timezone.utc)
+                    return dt.astimezone(ISTANBUL).strftime("%d.%m.%Y %H:%M")
+                except: pass
+    return "Tarih bekleniyor"
+def get_state(info, entry):
+    info=info or {}; entry=entry or {}
+    status = info.get("live_status") or entry.get("live_status") or ""
+    if info.get("is_live") or status=="is_live": return "CANLI"
+    if info.get("is_upcoming") or status=="is_upcoming": return "YAKLAŞAN"
+    if status=="was_live": return "TAMAMLANDI"
+    return "YAYIN"
+def get_hls_url(info):
+    info=info or {}; cands=[]
+    for item in info.get("formats") or []:
+        if not isinstance(item, dict): continue
+        url=item.get("url") or ""; proto=str(item.get("protocol") or "").lower()
+        if "m3u8" in url.lower() or "m3u8" in proto or "hls" in proto: cands.append(item)
+    if cands:
+        cands.sort(key=lambda x: (x.get("height") or 0, x.get("tbr") or 0), reverse=True)
+        return cands[0].get("url","")
+    for k in ("manifest_url","hls_manifest_url","url"):
+        v=info.get(k) or ""
+        if "m3u8" in v.lower(): return v
+    return ""
+def load_takvim():
+    try:
+        with open(TAKVIM_FILE,"r",encoding="utf-8") as f: return json.load(f)
+    except: return []
+def takvimden_tarih_bul(title, takvim):
+    tn=normalize_text(title)
+    for mac in takvim:
+        hn=normalize_text(mac.get("home") or ""); an=normalize_text(mac.get("away") or "")
+        if hn and an and hn in tn and an in tn: return f"{mac['date']} {mac['time']}"
+    return None
+
+TAKVIM = load_takvim()
 
 def scan_video(ydl, video_id, entry=None):
-    youtube_url = f"https://www.youtube.com/watch?v={video_id}"
-    try:
-        info = ydl.extract_info(youtube_url, download=False) or {}
+    entry=entry or {}
+    youtube_url=f"https://www.youtube.com/watch?v={video_id}"
+    print(f"\nVideo: {youtube_url}")
+    try: info=ydl.extract_info(youtube_url, download=False) or {}
     except Exception as e:
-        print(f"Hata: {video_id} - {e}")
-        return None
-
-    title = clean_title(info.get("title") or (entry or {}).get("title") or video_id)
-    
-    # Sultanlar Ligi filtresi
-    if "sultanlar" not in normalize_text(title) and "kuzeyboru" not in normalize_text(title):
-        # İstersen bu filtreyi kaldır, tüm ligler gelsin
-        pass
-
-    state = get_state(info, entry)
-    hls_url = get_hls_url(info)
-
-    # ÖNEMLİ: Artık TAMAMLANDI'yı silmiyoruz
+        print(f"Bilgi alınamadı: {e}"); info={}
+    title=clean_title(info.get("title") or entry.get("title") or video_id)
+    state=get_state(info, entry)
+    hls_url=get_hls_url(info)
+    match_time=get_match_time(info, entry)
+    if match_time=="Tarih bekleniyor":
+        tb=takvimden_tarih_bul(title, TAKVIM)
+        if tb: match_time=tb
+    if not hls_url and state=="YAKLAŞAN":
+        print(f"⏳ YAKLAŞAN: {title} | {match_time}")
+        return {"video_id":video_id,"name":title,"title":title,"youtube_url":youtube_url,"stream_url":"","thumbnail":get_thumbnail(info,entry,video_id),"match_time":match_time,"state":state,"hls_status":"YAKLAŞAN","priority":team_priority(title),"is_replay":False,"checked_at":datetime.now(timezone.utc).isoformat()}
     if not hls_url:
-        print(f"⏳ HLS yok: {state} - {title}")
-        # YAKLAŞAN'da zaten HLS olmaz, normal
-        if state == "YAKLAŞAN":
-            return {
-                "video_id": video_id, "name": title, "title": title,
-                "youtube_url": youtube_url, "stream_url": "",
-                "thumbnail": get_thumbnail(info, entry, video_id),
-                "match_time": takvimden_tarih_bul(title, TAKVIM) or get_match_time(info, entry),
-                "state": state, "hls_status": "YAKLAŞAN",
-                "priority": team_priority(title), "is_replay": False
-            }
+        print(f"⏳ HLS yok: {title}")
         return None
+    is_replay = state=="TAMAMLANDI"
+    print(f"{'🔁 TEKRAR' if is_replay else '🔴 CANLI'} HLS bulundu: {title}")
+    return {"video_id":video_id,"name":title,"title":title,"youtube_url":youtube_url,"stream_url":hls_url,"thumbnail":get_thumbnail(info,entry,video_id),"match_time":match_time,"state":state,"hls_status":"HLS_BULUNDU","priority":team_priority(title),"is_replay":is_replay,"channel_id":CHANNEL_ID,"checked_at":datetime.now(timezone.utc).isoformat()}
 
-    print(f"✅ HLS bulundu: {state} - {title}")
-
-    return {
-        "video_id": video_id,
-        "name": title,
-        "title": title,
-        "youtube_url": youtube_url,
-        "stream_url": hls_url, # Bu artık VOD HLS de olabilir
-        "thumbnail": get_thumbnail(info, entry, video_id),
-        "match_time": takvimden_tarih_bul(title, TAKVIM) or get_match_time(info, entry),
-        "state": state,
-        "hls_status": "HLS_BULUNDU",
-        "priority": team_priority(title),
-        "is_replay": state == "TAMAMLANDI",
-        "channel_id": CHANNEL_ID,
-    }
-
-def save_files(items):
-    # ... JSON aynı ...
-    
-    live_items = [i for i in items if i.get("stream_url") and not i.get("is_replay")]
-    replay_items = [i for i in items if i.get("stream_url") and i.get("is_replay")][:PAST_LIMIT]
-
-    # Eski grupları temizle
-    base_lines = remove_old_groups(old_lines)
-
-    # 1. CANLI'ları ekle
-    for item in live_items:
-        new_lines.append(f'#EXTINF:-1 tvg-logo="{item["thumbnail"]}" group-title="{GROUP_LIVE}",🏐 {item["name"]} | {item["match_time"]} | CANLI\n')
-        new_lines.append(item["stream_url"] + "\n")
-
-    # 2. SON HAFTA TEKRAR'ları ekle - TEST İÇİN
-    for item in replay_items:
-        # Kuzeyboru ve Sultanlar Ligi öncelikli
-        if "kuzeyboru" in normalize_text(item["name"]) or "sultanlar" in normalize_text(item["name"]):
-            new_lines.append(f'#EXTINF:-1 tvg-logo="{item["thumbnail"]}" group-title="{GROUP_REPLAY}",{item["name"]} | {item["match_time"]} | TEKRAR\n')
-            new_lines.append(item["stream_url"] + "\n")
-
-    atomic_write(MASTER_FILE, "".join(new_lines))
-    print(f"✅ M3U: {len(live_items)} canlı + {len(replay_items)} tekrar eklendi")
-    results = []
-
-    detail_options = dict(DETAIL_OPTIONS)
-
-    if os.path.isfile(cookie_file):
-        detail_options["cookiefile"] = cookie_file
-
-    with YoutubeDL(detail_options) as detail_ydl:
-        for index, video_id in enumerate(
-            video_ids,
-            start=1
-        ):
-            print(
-                f"\n[{index}/{len(video_ids)}] "
-                "Video inceleniyor..."
-            )
-
-            entry = next(
-                (
-                    item for item in entries
-                    if get_video_id(item) == video_id
-                ),
-                {}
-            )
-
+def scan_channel():
+    print("MIRTI68 - TÜM VOLEYBOL HLS TARAMA")
+    entries=[]; video_ids=[]; seen=set()
+    for url in SEED_VIDEO_URLS:
+        vid=get_video_id(url)
+        if vid and vid not in seen: seen.add(vid); video_ids.append(vid)
+    co=dict(OPTIONS)
+    if os.path.isfile("cookies.txt"): co["cookiefile"]="cookies.txt"
+    try:
+        with YoutubeDL(co) as ydl:
+            pl=ydl.extract_info(CHANNEL_URL, download=False)
+            if pl:
+                entries=pl.get("entries") or []
+                print(f"Kanal kayıt: {len(entries)}")
+                for e in entries:
+                    if not e: continue
+                    vid=get_video_id(e)
+                    if vid and vid not in seen: seen.add(vid); video_ids.append(vid)
+    except Exception as e: print(f"Kanal hatası: {e}")
+    print(f"Kontrol edilecek: {len(video_ids)}")
+    results=[]
+    det=dict(DETAIL_OPTIONS)
+    if os.path.isfile("cookies.txt"): det["cookiefile"]="cookies.txt"
+    with YoutubeDL(det) as d_ydl:
+        for idx, vid in enumerate(video_ids,1):
+            print(f"[{idx}/{len(video_ids)}] {vid}")
+            ent=next((x for x in entries if get_video_id(x)==vid), {})
             try:
-                item = scan_video(
-                    detail_ydl,
-                    video_id,
-                    entry
-                )
-
-                if item:
-                    results.append(item)
-
-            except Exception as error:
-                print(
-                    "Video hatası:",
-                    str(error)[:300]
-                )
-
-    # Kuzeyboru Maxi önce, Kuzeyboru sonra,
-    # diğer maçlar en son.
-    results.sort(
-        key=lambda item: (
-            item["priority"],
-            0 if item["state"] == "CANLI" else 1,
-            item["match_time"]
-        )
-    )
-
-    print("\nToplam incelenen sonuç:", len(results))
-
-    print(
-        "HLS bulunan:",
-        sum(
-            1 for item in results
-            if item["stream_url"]
-        )
-    )
-
+                it=scan_video(d_ydl, vid, ent)
+                if it: results.append(it)
+            except Exception as e: print(f"Hata: {e}")
+    results.sort(key=lambda x: (x["priority"], 0 if x["state"]=="CANLI" else 1, x["match_time"]))
     return results
 
-
-# ==================================================
-# ESKİ VOLEYBOL GRUPLARINI TEMİZLE
-# ==================================================
-
 def remove_old_groups(lines):
-    output = []
-    skip_url = False
-
-    group_markers = [
-        f'group-title="{group}"'
-        for group in OLD_GROUPS
-    ]
-
+    out=[]; skip=False
+    markers=[f'group-title="{g}"' for g in OLD_GROUPS]
     for line in lines:
-        stripped = line.strip()
-
-        if stripped.startswith("#EXTINF:"):
-            if any(
-                marker in stripped
-                for marker in group_markers
-            ):
-                skip_url = True
-                continue
-
-            skip_url = False
-            output.append(line)
-            continue
-
-        if skip_url:
-            if stripped and not stripped.startswith("#"):
-                skip_url = False
-                continue
-
-            if stripped.startswith("#"):
-                continue
-
-        output.append(line)
-
-    return output
-
-
-# ==================================================
-# DOSYA KAYDET
-# ==================================================
+        s=line.strip()
+        if s.startswith("#EXTINF:"):
+            if any(m in s for m in markers): skip=True; continue
+            skip=False; out.append(line); continue
+        if skip:
+            if s and not s.startswith("#"): skip=False; continue
+            if s.startswith("#"): continue
+        out.append(line)
+    return out
 
 def atomic_write(path, content):
-    directory = os.path.dirname(path) or "."
-
-    fd, temp_path = tempfile.mkstemp(
-        prefix="mirti68_",
-        suffix=".tmp",
-        dir=directory
-    )
-
+    d=os.path.dirname(path) or "."
+    fd, tp = tempfile.mkstemp(prefix="mirti68_", dir=d)
     try:
-        with os.fdopen(
-            fd,
-            "w",
-            encoding="utf-8",
-            newline="\n"
-        ) as file:
-            file.write(content)
-
-        os.replace(temp_path, path)
-
-    except Exception:
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
-
+        with os.fdopen(fd,"w",encoding="utf-8",newline="\n") as f: f.write(content)
+        os.replace(tp, path)
+    except:
+        if os.path.exists(tp): os.remove(tp)
         raise
 
-
 def save_files(items):
-    # JSON: HLS olmayan maçlar da kaydedilir.
-    json_content = json.dumps(
-        {
-            "channel": "TVF Voleybol TV",
-            "channel_id": CHANNEL_ID,
-            "channel_url": CHANNEL_URL,
-            "priority_teams": list(PRIORITY_TEAMS),
-            "updated_at": datetime.now(
-                timezone.utc
-            ).isoformat(),
-            "total": len(items),
-            "hls_total": sum(
-                1 for item in items
-                if item.get("stream_url")
-            ),
-            "matches": items
-        },
-        ensure_ascii=False,
-        indent=2
-    )
-
-    atomic_write(
-        RESULT_FILE,
-        json_content
-    )
-
-    hls_items = [
-        item for item in items
-        if item.get("stream_url")
-        and "m3u8" in item["stream_url"].lower()
-    ]
-
-    # HLS bulunmadıysa mevcut listeyi koru.
-    if not hls_items:
-        print(
-            "\n⚠️ HLS bulunamadı. "
-            "Mevcut M3U değiştirilmedi."
-        )
+    json_content=json.dumps({"channel":"TVF Voleybol TV","channel_id":CHANNEL_ID,"channel_url":CHANNEL_URL,"updated_at":datetime.now(timezone.utc).isoformat(),"total":len(items),"hls_total":sum(1 for i in items if i.get("stream_url")),"matches":items}, ensure_ascii=False, indent=2)
+    atomic_write(RESULT_FILE, json_content)
+    hls_live=[i for i in items if i.get("stream_url") and not i.get("is_replay")]
+    hls_replay=[i for i in items if i.get("stream_url") and i.get("is_replay")]
+    # En azından tekrarlar için M3U oluşsun
+    target_items = hls_live + hls_replay[:15]
+    if not target_items:
+        print("⚠️ HLS bulunamadı, M3U değiştirilmedi")
         return
-
     if os.path.isfile(MASTER_FILE):
-        with open(
-            MASTER_FILE,
-            "r",
-            encoding="utf-8-sig"
-        ) as file:
-            old_lines = file.readlines()
-    else:
-        old_lines = ["#EXTM3U\n"]
-
-    base_lines = remove_old_groups(old_lines)
-
-    if not base_lines:
-        base_lines = ["#EXTM3U\n"]
-
-    if not any(
-        line.strip() == "#EXTM3U"
-        for line in base_lines
-    ):
-        base_lines.insert(0, "#EXTM3U\n")
-
-    new_lines = list(base_lines)
-
-    if new_lines and not new_lines[-1].endswith("\n"):
-        new_lines[-1] += "\n"
-
-    for item in hls_items:
-        name = clean_title(item["name"])
-
-        match_time = item.get(
-            "match_time",
-            "Tarih bekleniyor"
-        )
-
-        state = item.get("state", "CANLI")
-
-        thumbnail = str(
-            item.get("thumbnail") or ""
-        ).replace('"', "%22")
-
-        logo_tag = (
-            f' tvg-logo="{thumbnail}"'
-            if thumbnail else ""
-        )
-
-        channel_name = (
-            f"🏐 {name} | {match_time} | {state}"
-        )
-
-        new_lines.append(
-            f'#EXTINF:-1{logo_tag} '
-            f'group-title="{GROUP}",{channel_name}\n'
-        )
-
-        new_lines.append(
-            item["stream_url"] + "\n"
-        )
-
-    atomic_write(
-        MASTER_FILE,
-        "".join(new_lines)
-    )
-
-    print("\n✅ M3U güncellendi:", MASTER_FILE)
-    print("✅ JSON güncellendi:", RESULT_FILE)
-    print("✅ M3U'ya eklenen HLS:", len(hls_items))
-
-
-# ==================================================
-# ANA PROGRAM
-# ==================================================
+        with open(MASTER_FILE,"r",encoding="utf-8-sig") as f: old=f.readlines()
+    else: old=["#EXTM3U\n"]
+    base=remove_old_groups(old)
+    if not any(l.strip()=="#EXTM3U" for l in base): base.insert(0,"#EXTM3U\n")
+    new=list(base)
+    if new and not new[-1].endswith("\n"): new[-1]+="\n"
+    for item in hls_live:
+        logo=item.get("thumbnail","").replace('"',"%22")
+        lt=f' tvg-logo="{logo}"' if logo else ""
+        new.append(f'#EXTINF:-1{lt} group-title="{GROUP_LIVE}",{item["name"]} | {item["match_time"]} | CANLI\n')
+        new.append(item["stream_url"]+"\n")
+    for item in hls_replay:
+        logo=item.get("thumbnail","").replace('"',"%22")
+        lt=f' tvg-logo="{logo}"' if logo else ""
+        # Sultanlar Ligi öncelikli ekle
+        if "sultanlar" in normalize_text(item["name"]) or "kuzeyboru" in normalize_text(item["name"]):
+            new.append(f'#EXTINF:-1{lt} group-title="{GROUP_REPLAY}",{item["name"]} | {item["match_time"]} | TEKRAR\n')
+            new.append(item["stream_url"]+"\n")
+    atomic_write(MASTER_FILE, "".join(new))
+    print(f"✅ M3U: {len(hls_live)} canlı + {len([i for i in hls_replay if 'kuzeyboru' in normalize_text(i['name']) or 'sultanlar' in normalize_text(i['name'])])} tekrar")
 
 def main():
-    print("====================================")
     print("MIRTI68 VOLEYBOL HLS BOT")
-    print("====================================")
-
-    items = scan_channel()
-
-    if not items:
-        print("İncelenecek video bulunamadı.")
-        return
-
+    items=scan_channel()
+    if not items: print("Video yok, boş JSON yazılıyor"); items=[]
     save_files(items)
+    print("BİTTİ")
 
-    print("\n====================================")
-    print("TARAMA TAMAMLANDI")
-    print("====================================")
-
-    for item in items:
-        print(
-            item["hls_status"],
-            "|",
-            item["match_time"],
-            "|",
-            item["name"]
-        )
-
-
-if __name__ == "__main__":
-    main()
+if __name__=="__main__": main()
