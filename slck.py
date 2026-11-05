@@ -93,7 +93,7 @@ def append_to_mirti68(new_entries):
                 old=f.read()
             block="\n".join([f'#EXTINF:-1 tvg-logo="{LOGO}" group-title="{BEIN_GROUP}",{n}\n#EXTVLCOPT:http-referrer={STREAM_REFERER}\n{u}' for n,u in new_entries])
             # eski beIN bloklarini silme, sadece ekle (koruma)
-            with open(OUTPUT_FILENAME,"w",encoding="utf-8") as f:
+            with open(OUTPUT_FILENAME,"a",encoding="utf-8") as f:
                 f.write(old.rstrip()+"\n\n"+block+"\n")
             print(f"\u2705 {len(new_entries)} kanal eklendi (fallback)")
         except Exception as e:
