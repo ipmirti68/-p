@@ -22,23 +22,19 @@ def get_atv_link():
     def on_response(resp):
         try:
             url=resp.url
-            # url'de m3u8 varsa direkt al
             if ".m3u8" in url:
                 if url not in found:
                     print(f"  [URL] {url[:150]}...")
                     found.append(url)
-            # body icinde m3u8 ara (JSON icinde)
-            if "atv" in url.lower() or "player" in url.lower() or "token" in url.lower() or "live" in url.lower():
+            if "atv" in url.lower() or "player" in url.lower() or "token" in url.lower() or "live" in url.lower() or "ercdn" in url.lower():
                 try:
                     text=resp.text()
                     if ".m3u8" in text:
                         m=re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', text)
                         for u in m:
-                            # trkvz.daioncdn.net icereni al
-                            if "trkvz.daioncdn.net" in u or "daioncdn.net" in u:
-                                if u not in found:
-                                    print(f"  [BODY] {u[:150]}...")
-                                    found.append(u)
+                            if u not in found:
+                                print(f"  [BODY] {u[:150]}...")
+                                found.append(u)
                 except:
                     pass
         except:
@@ -51,40 +47,17 @@ def get_atv_link():
         page.on("response", on_response)
         print(f"[*] {PAGE_URL} aciliyor...")
         try:
-            page.goto(PAGE_URL, timeout=60000, wait_until="networkidle")
+            page.goto(PAGE_URL, timeout=60000, wait_until="domcontentloaded")
             page.wait_for_timeout(10000)
-            # sayfa iceriginde direkt ara
             try:
                 html=page.content()
                 m=re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', html)
                 for u in m:
-                    if "trkvz.daioncdn.net" in u and u not in found:
+                    if u not in found:
                         print(f"  [HTML] {u[:150]}...")
                         found.append(u)
             except:
                 pass
-            # JS degiskenlerinde ara
-            try:
-                # window icindeki player datasini dene
-                for js in [
-                    "document.documentElement.innerHTML",
-                    "window.__INITIAL_DATA__",
-                    "window.playerData",
-                    "localStorage.getItem('player')",
-                ]:
-                    try:
-                        txt=page.evaluate(f"() => {{ try {{ return JSON.stringify({js}) }} catch(e) {{ return {js} }} }}")
-                        if txt and ".m3u8" in str(txt):
-                            m=re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', str(txt))
-                            for u in m:
-                                if u not in found:
-                                    print(f"  [JS] {u[:150]}...")
-                                    found.append(u)
-                    except:
-                        pass
-            except:
-                pass
-            # play butonlarini tikla
             for sel in ["button", ".play-button", ".vjs-big-play-button", ".atv-player", "[class*=play]", ".jwplayer", "#player"]:
                 try:
                     page.click(sel, timeout=1000)
@@ -96,7 +69,17 @@ def get_atv_link():
             print(f"  [!] hata: {e}")
         browser.close()
     
-    # en iyi secim - trkvz.daioncdn.net ve atv iceren, en uzun tokenli olan
+    # DUZELTILMIS SECIM - ONCE 1080p LIVE.ERCDN.NET
+    print(f"[*] Toplam {len(found)} link bulundu")
+    for u in found:
+        if "trkvz-live.ercdn.net" in u and "1080p" in u:
+            print(f"  [SECILDI - 1080p] {u[:150]}...")
+            return u
+    for u in found:
+        if "trkvz-live.ercdn.net" in u and "atvhd" in u:
+            print(f"  [SECILDI - LIVE] {u[:150]}...")
+            return u
+    # sonra daioncdn
     best=None
     max_len=0
     for u in found:
@@ -105,19 +88,19 @@ def get_atv_link():
                 max_len=len(u)
                 best=u
     if best:
+        print(f"  [SECILDI - DAION] {best[:150]}...")
         return best
-       # en iyi secim - once live.ercdn.net 1080p, sonra daioncdn
-    for u in found:
-        if "trkvz-live.ercdn.net" in u and "1080p" in u:
-            return u
-    for u in found:
-        if "trkvz-live.ercdn.net" in u:
-            return u
-    return found[0] if found else None
+    if found:
+        print(f"  [SECILDI - ILK] {found[0][:150]}...")
+        return found[0]
+    return None
 
 def update_m3u(new_url):
+    # REFERER EKLI - YAYIN CEKMESI ICIN
     new_block=f"""{MARKER}
 #EXTINF:-1 tvg-name="{NAME}" tvg-logo="{LOGO}" group-title="{GROUP}",{NAME}
+#EXTVLCOPT:http-referrer=https://www.atv.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/130.0.0.0 Safari/537.36
 {new_url}
 """
     if not os.path.exists(OUTPUT_FILE):
@@ -138,16 +121,12 @@ def update_m3u(new_url):
     print(f"[OK] {OUTPUT_FILE} - ATV guncellendi - boyut: {len(final)}")
 
 def main():
-    print("ATV BASLADI - FINAL")
+    print("ATV BASLADI - FINAL FIX")
     url=get_atv_link()
     if not url:
-        print("[!] ATV ALINAMADI - senin verdigin ornek gibi link bulunamadi")
-        print("[!] Ornek: https://trkvz.daioncdn.net/atv/atv.m3u8?ce=3&app=...")
+        print("[!] ATV ALINAMADI")
         return
     print(f"[+] ATV LINK: {url}")
-    # token kontrolu
-    if "e=" in url and "st=" in url:
-        print("[+] Token'li link OK")
     update_m3u(url)
 
 if __name__=="__main__":
