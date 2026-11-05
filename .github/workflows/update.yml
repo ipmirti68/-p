@@ -69,10 +69,10 @@ jobs:
           echo "SONRA kra.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> kra.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 5 - ARDA arda.py
+      - name: 5 - SLCK slck.py
         continue-on-error: true
         run: |
-          python arda.py
+          python slck.py
           echo "SONRA arda.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> arda.py SILDI!"; git checkout -- mirti68.m3u; fi
 
