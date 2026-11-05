@@ -37,14 +37,33 @@ jobs:
           pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome playwright
           playwright install --with-deps chromium
 
-      # Kod hatalarını otomatik düzelt
-      - name: Kod hatalarini duzelt
+      - name: Kod hatalarini otomatik duzelt
         run: |
+          echo "tv.py duzeltiliyor..."
           sed -i 's/MARKER = "# MIRTI68_ULUSAL_AUTO.*/MARKER = "# MIRTI68_ULUSAL_AUTO"/' tv.py || true
-          # atv1.py icinde EPG_URL yoksa ekle
-          if ! grep -q "EPG_URL =" atv1.py; then
-            sed -i '1iEPG_URL = ""' atv1.py
-          fi
+          grep -q "EPG_URL =" tv.py || sed -i '1iEPG_URL = ""' tv.py
+          grep -q "CIKIS_DOSYASI =" tv.py || sed -i '1iCIKIS_DOSYASI = "mirti68.m3u"' tv.py
+          grep -q "MASTER_FILE =" tv.py || sed -i '1iMASTER_FILE = "mirti68.m3u"' tv.py
+          grep -q "GROUP =" tv.py || sed -i '1iGROUP = "📺 ULUSAL"' tv.py
+          
+          echo "atv1.py duzeltiliyor..."
+          grep -q "EPG_URL =" atv1.py || sed -i '1iEPG_URL = ""' atv1.py
+          
+          echo "allspor.py duzeltiliyor..."
+          # Andro ve Xsport listelerini kapat - en yaygın hata
+          python3 << 'PY'
+          import re
+          path = "allspor.py"
+          try:
+              text = open(path, encoding="utf-8", errors="ignore").read()
+              # channels = [ ... def  -> ] ekle
+              text = re.sub(r'(channels\s*=\s*\[.*?)(?=\n\s*def )', lambda m: m.group(1).rstrip() + "\n    ]\n\n", text, flags=re.DOTALL)
+              text = re.sub(r'(channel_ids\s*=\s*\[.*?)(?=\n\s*def )', lambda m: m.group(1).rstrip().rstrip(',') + "\n    ]\n\n", text, flags=re.DOTALL)
+              open(path, "w", encoding="utf-8").write(text)
+              print("allspor.py duzeltildi")
+          except Exception as e:
+              print(f"allspor duzeltme hatasi: {e}")
+          PY
 
       - name: 1 - ULUSAL
         continue-on-error: true
@@ -94,7 +113,7 @@ jobs:
         continue-on-error: true
         run: python ptrn.py
 
-      - name: 12 - STAR
+      - name: 12 - STAR ve ULUSAL (playwright ile token'lı linkler)
         continue-on-error: true
         run: python tv.py
 
@@ -108,19 +127,9 @@ jobs:
             -not -path "./.git/*" \
             -printf "%p | %s byte\n" | sort
           echo "================================"
-          echo "TOPLAM M3U DOSYASI"
-          find . -type f -name "*.m3u" \
-            -not -path "./.git/*" | wc -l
+          ls -lh *.m3u 2>/dev/null || true
 
-      - name: 【entity-GitHub¦canonical_name=GitHub】 son degisikliklerini al
-        if: always()
-        run: |
-          git fetch origin main
-          git stash push -u -m "M3U otomatik yedek" || true
-          git rebase origin/main
-          git stash pop || true
-
-      - name: M3U dosyalarini 【entity-GitHub¦canonical_name=GitHub】'a kaydet
+      - name: M3U dosyalarini GitHub'a kaydet
         if: always()
         run: |
           git config user.name "bot"
@@ -130,5 +139,6 @@ jobs:
             echo "Kaydedilecek yeni degisiklik yok."
           else
             git commit -m "Otomatik M3U guncelleme"
+            git pull --rebase origin main || true
             git push origin HEAD:main
           fi
