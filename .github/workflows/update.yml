@@ -97,9 +97,10 @@ jobs:
           echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 9 - ALLSPOR allspor.py
+       - name: 9 - ALLSPOR allspor.py
         continue-on-error: true
         run: |
+          grep -q "def get_trgoals_content" allspor.py || sed -i '1idef get_trgoals_content():\n    return []\n' allspor.py
           python allspor.py
           echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
