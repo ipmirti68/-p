@@ -106,8 +106,12 @@ def get_atv_link():
                 best=u
     if best:
         return best
+       # en iyi secim - once live.ercdn.net 1080p, sonra daioncdn
     for u in found:
-        if "daioncdn.net" in u and "atv" in u.lower():
+        if "trkvz-live.ercdn.net" in u and "1080p" in u:
+            return u
+    for u in found:
+        if "trkvz-live.ercdn.net" in u:
             return u
     return found[0] if found else None
 
