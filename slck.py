@@ -18,7 +18,7 @@ HEADERS = {
 STREAM_DOMAIN = "dga1op10s1u3lea.308aae467c3965.click"
 STREAM_REFERER = "https://main.uxsyplayer6859599e6c.click/"
 OUTPUT_FILENAME = "mirti68.m3u"
-BEIN_GROUP = "\U0001f5a5\ufe0fbeINSPORTS"
+BEIN_GROUP = "🖥beINSPORTS"
 LOGO = "https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg"
 
 PRETTY_NAMES = {
