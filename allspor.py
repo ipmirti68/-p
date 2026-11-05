@@ -203,16 +203,15 @@ def get_andro_content():
         ("androstreamlivebs4", 'beIN Sport 4 '), ("androstreamlivebs5", 'beIN Sport 5 '),
         ("androstreamlivebsm1", 'beIN Sport Max 1 '), ("androstreamlivebsm2", 'beIN Sport Max 2 '),
        
-
-    def check_domain(index):
-        url = base_pattern.format(index)
-        try:
-            response = requests.get(url, headers=headers, timeout=5, verify=False)
-            if response.status_code == 200:
-                return url
-        except:
-            return None
+def check_domain(index):
+    url = base_pattern.format(index)
+    try:
+        response = requests.get(url, headers=headers, timeout=5, verify=False)
+        if response.status_code == 200:
+            return url
+    except:
         return None
+    return None
 
     print("Andro Panel icin aktif domain araniyor (35-99)...")
     active_site = None
