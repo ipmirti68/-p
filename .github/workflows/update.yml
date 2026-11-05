@@ -38,8 +38,8 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           rm -rf __pycache__ .pytest_cache/
           rm -f mırtı68.m3u
-          ls -lh *.m3u
-          git add -f mirti68.m3u
+          ls -lh *.m3u *.json 2>/dev/null || true
+          git add -f *.m3u *.json
           git status --short
           if ! git diff --cached --quiet; then
             git commit -m "update $(date +'%d.%m %H:%M')"
