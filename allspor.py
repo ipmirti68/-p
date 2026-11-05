@@ -292,7 +292,75 @@ def get_andro_content():
 
 def get_xsport_content():
     print("--- 5. XSport ---")
+    results = [# ============================================
+# 5. XSPORT
+# ============================================
+
+def get_xsport_content():
+    print("--- 5. XSport ---")
     results = []
+    base_pattern = "https://www.xsportv{}.xyz/"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+    channel_ids = [
+        "xbeinsports-1", "xbeinsports-2", "xbeinsports-3", "xbeinsports-4", "xbeinsports-5",
+        "xbeinsportsmax-1", "xbeinsportsmax-2", ]
+
+    def check_domain(index):
+        url = base_pattern.format(index)
+        try:
+            response = requests.get(url, headers=headers, timeout=5)
+            if response.status_code == 200:
+                return url
+        except:
+            return None
+
+    def find_active_domain():
+        with concurrent.futures.ThreadPoolExecutor(max_workers=25) as executor:
+            futures = [executor.submit(check_domain, i) for i in range(56, 1000)]
+            for future in concurrent.futures.as_completed(futures):
+                result = future.result()
+                if result:
+                    executor.shutdown(wait=False, cancel_futures=True)
+                    return result
+        return None
+
+    def get_stream_url(player_url, stream_id):
+        try:
+            res = requests.get(player_url, headers=headers, timeout=5)
+            match = re.search(r"this\.baseStreamUrl\s*=\s*'(.*?)'", res.text)
+            if match:
+                base = match.group(1)
+                return f"{base}{stream_id}/playlist.m3u8"
+        except:
+            pass
+        return None
+
+    domain = find_active_domain()
+    if not domain:
+        return results
+    print(f"XSport Domain: {domain}")
+
+    try:
+        response = requests.get(domain, headers=headers, timeout=10)
+        for cid in channel_ids:
+            pattern = rf'data-url="(.*?id={cid}.*?)"'
+            match = re.search(pattern, response.text)
+            if match:
+                player_link = match.group(1)
+                final_url = get_stream_url(player_link, cid)
+                if final_url:
+                    clean_name = cid.replace("x", "").replace("-", " ").upper()
+                    if "BEINSPORTS" in clean_name:
+                        clean_name = clean_name.replace("BEINSPORTS", "beIN Sports")
+                    entry = f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="XSPORT", {clean_name}\n#EXTVLCOPT:http-referer={domain}\n{final_url}'
+                    results.append(entry)
+    except:
+        pass
+    return results
+
+
     base_pattern = "https://www.xsportv{}.xyz/"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
