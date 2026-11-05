@@ -356,7 +356,8 @@ def get_xsport_content():
     }
     channel_ids = [
         "xbeinsports-1", "xbeinsports-2", "xbeinsports-3", "xbeinsports-4", "xbeinsports-5",
-        "xbeinsportsmax-1", "xbeinsportsmax-2", ]
+        "xbeinsportsmax-1", "xbeinsportsmax-2" 
+    ]
 
     def check_domain(index):
         url = base_pattern.format(index)
