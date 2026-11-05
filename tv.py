@@ -1,116 +1,77 @@
-from playwright.async_api import async_playwright
-import asyncio
-import os
-import re
+from playwright.sync_api import sync_playwright
+import re, os
 
+OUTPUT_FILE = "mirti68.m3u"
 MASTER_FILE = "mirti68.m3u"
-CIKIS_DOSYASI = "mirti68.m3u"
 MARKER = "# MIRTI68_ULUSAL_AUTO"
 GROUP = "📺 ULUSAL"
 EPG_URL = ""
 
-async def get_links(page):
-    links = {}
-    # Star
-    print("[*] Star TVtest canlı yayın linki aranıyor...")
-    try:
-        await page.goto("https://www.startv.com.tr/canli-yayin", timeout=20000, wait_until="domcontentloaded")
-        # senin mevcut yakalama kodun buradaydı - örnek:
-        content = await page.content()
-        m = re.search(r'https://dogus\.daioncdn\.net/startv/[^"\']+\.m3u8[^"\']*', content)
-        if m:
-            links["Star TV"] = m.group(0)
-            print(f"[+] Star TVtest Linki Yakalandı: {links['Star TV TEST'][:70]}...")
-    except Exception as e:
-        print(f"[!] Star hata: {e}")
+CHANNELS = {
+    "【entity-ATV¦canonical_name=ATV】": {"page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "【entity-atv¦canonical_name=ATV】"},
+    "【entity-KANAL D¦canonical_name=KANAL D】": {"page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald"},
+    "【entity-STAR TV¦canonical_name=STAR TV】": {"page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv"},
+    "【entity-SHOW TV¦canonical_name=SHOW TV】": {"page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", "keyword": "showtv"},
+    "【entity-TV8¦canonical_name=TV8】": {"page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": "【entity-tv8¦canonical_name=TV8】"},
+    "【entity-KANAL 7¦canonical_name=KANAL 7】": {"page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7"},
+    "NOW TV": {"page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "nowtv"},
+    "【entity-TRT 1¦canonical_name=TRT 1】": {"page": "https://www.trt1.com.tr/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt-1", "direct": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
+}
 
-    # Show - aynı mantık
-    print("[*] Show TVtset canlı yayın linki aranıyor...")
-    try:
-        await page.goto("https://www.showtv.com.tr/canli-yayin", timeout=20000, wait_until="domcontentloaded")
-        content = await page.content()
-        m = re.search(r'https://ciner\.daioncdn\.net/showtv/[^"\']+\.m3u8[^"\']*', content)
-        if m:
-            links["Show TV"] = m.group(0)
-            print(f"[+] Show TVtset Linki Yakalandı: {links['Show TV TEST'][:70]}...")
-    except Exception as e:
-        print(f"[!] Show hata: {e}")
-
-    # ATV
-    print("[*] ATVtset canlı yayın linki aranıyor...")
-    try:
-        await page.goto("https://www.atv.com.tr/canli-yayin", timeout=30000, wait_until="domcontentloaded")
-        content = await page.content()
-        m = re.search(r'https://securevideotoken\.tmgrup\.com\.tr/webtv/secure\?[^"\']+', content)
-        if m:
-            links["ATV"] = m.group(0)
-            print(f"[+] ATVtset Linki Yakalandı: {links['ATV TEST'][:70]}...")
-    except Exception as e:
-        print(f"[!] ATVtset sayfası tam yüklenemedi (Yine de devam ediliyor): {e}")
-        # sayfa kaynağından yine dene
+def get_link(page_url, keyword):
+    found = []
+    def on_dialog(d):
+        urls = re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', d.message)
+        found.extend(urls)
+        d.accept()
+    with sync_playwright() as p:
+        b = p.chromium.launch(headless=True)
+        pg = b.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/130.0.0.0 Safari/537.36")
+        pg.on("dialog", on_dialog)
         try:
-            content = await page.content()
-            m = re.search(r'https://securevideotoken[^"\']+', content)
-            if m:
-                links["ATV"] = m.group(0)
+            pg.goto(page_url, timeout=40000, wait_until="domcontentloaded")
+            pg.wait_for_timeout(15000)
         except: pass
+        b.close()
+    for u in found:
+        if keyword == "kanal7" and "kanal7.daioncdn.net" in u:
+            return u
+        if keyword in u.lower() and "daioncdn.net" in u:
+            return u
+    return found[0] if found else None
 
-    return links
+def main():
+    print("MIRTI68 ULUSAL BASLADI")
+    new_lines = [MARKER]
+    for name, info in CHANNELS.items():
+        url = info.get("direct") or get_link(info["page"], info["keyword"])
+        if not url:
+            print(f"[!] {name} alinamadi")
+            continue
+        print(f"[+] {name} OK")
+        new_lines.append(f'#EXTINF:-1 tvg-name="{name}" tvg-logo="{info["logo"]}" group-title="{GROUP}",{name}')
+        new_lines.append(url)
+    new_block = "\n".join(new_lines) + "\n"
 
-async def main():
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-        kanallar = await get_links(page)
-        await browser.close()
-
-    if not kanallar:
-        print("[!] Hiç link yakalanamadı, dosya yazılmayacak!")
+    if not os.path.exists(OUTPUT_FILE):
+        open(OUTPUT_FILE,"w",encoding="utf-8").write(f"#EXTM3U\n\n{new_block}")
         return
 
-    # Yeni blok oluştur
-    yeni_blok_lines = [MARKER]
-    for isim, url in kanallar.items():
-        yeni_blok_lines.append(f'#EXTINF:-1 tvg-name="{isim}" group-title="{GROUP}",{isim}')
-        yeni_blok_lines.append(url)
-    
-    yeni_blok = "\n".join(yeni_blok_lines) + "\n"
+    with open(OUTPUT_FILE,"r",encoding="utf-8",errors="ignore") as f:
+        old = f.read()
 
-    # Ana dosyayı oku
-    if os.path.exists(MASTER_FILE):
-        with open(MASTER_FILE, "r", encoding="utf-8", errors="ignore") as f:
-            icerik = f.read()
+    if MARKER in old:
+        before = old.split(MARKER)[0]
+        after_part = old.split(MARKER,1)[1]
+        m = re.search(r'\n# MIRTI68_', after_part)
+        after = after_part[m.start():] if m else ""
+        final = before.rstrip() + "\n" + new_block + after.lstrip()
     else:
-        icerik = f'#EXTM3U x-tvg-url="{EPG_URL}"\n'
+        final = old.rstrip() + "\n\n" + new_block
 
-    # ESKİ BLOĞU DÜZGÜN SİL - MARKER'dan sonraki bir sonraki # MIRTI68_ marker'ına kadar sil
-    if MARKER in icerik:
-        # MARKER öncesi
-        oncesi = icerik.split(MARKER)[0]
-        # MARKER sonrası içinde bir sonraki bölüm var mı? # MIRTI68_
-        sonrasi_kisim = icerik.split(MARKER, 1)[1]
-        # sonrasi_kisim içinde \n# MIRTI68_ ile başlayan bir yer ara
-        match_next = re.search(r'\n# MIRTI68_', sonrasi_kisim)
-        if match_next:
-            sonrasi = sonrasi_kisim[match_next.start():]
-        else:
-            sonrasi = "" # yoksa dosya bitiyor
-        final_icerik = oncesi.rstrip() + "\n" + yeni_blok + sonrasi.lstrip()
-    else:
-        # MARKER hiç yoksa sona ekle
-        final_icerik = icerik.rstrip() + "\n\n" + yeni_blok
-
-    # Header düzelt
-    if not final_icerik.startswith("#EXTM3U"):
-        final_icerik = f'#EXTM3U x-tvg-url="{EPG_URL}"\n' + final_icerik
-
-    with open(CIKIS_DOSYASI, "a", encoding="utf-8") as f:
-        f.write(final_icerik)
-
-    print(f"\n[+] M3U Dosyası Oluşturuluyor -> {CIKIS_DOSYASI}")
-    print(f"[+] Yazılan kanal sayısı: {len(kanallar)}")
-    print(f"[+] Dosya boyutu: {os.path.getsize(CIKIS_DOSYASI)} byte")
-    print("[+] İşlem tamamlandı")
+    with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
+        f.write(final)
+    print(f"BITTI - {len(new_lines)//2} kanal guncellendi, diger kategoriler korundu")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
