@@ -41,56 +41,45 @@ jobs:
         run: |
           echo "BASLANGIC: $(stat -c%s mirti68.m3u) byte - $(wc -l < mirti68.m3u) satir"
 
-      - name: 1 - ULUSAL iptv.py
-        continue-on-error: true
-        run: |
-          python iptv.py
-          echo "SONRA iptv.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> iptv.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 2 - MAHSUN mahsun.py
+
+      - name: 1 - MAHSUN mahsun.py
         continue-on-error: true
         run: |
           python mahsun.py
           echo "SONRA mahsun.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> mahsun.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 3 - ATOM atom.py
+      - name: 2 - ATOM atom.py
         continue-on-error: true
         run: |
           python atom.py
           echo "SONRA atom.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atom.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 4 - KRAL kra.py
-        continue-on-error: true
-        run: |
-          python kra.py
-          echo "SONRA kra.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> kra.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 5 - SLCK slck.py
+  
+      - name: 3 - SLCK slck.py
         continue-on-error: true
         run: |
           python slck.py
           echo "SONRA arda.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> arda.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 6 - LIG lig.py
+      - name: 4 - LIG lig.py
         continue-on-error: true
         run: |
           python lig.py
           echo "SONRA lig.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> lig.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 7 - ATV atv1.py
+      - name: 5 - ATV atv1.py
         continue-on-error: true
         run: |
           python atv1.py
           echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 8 - ALLSPOR allspor.py
+      - name: 6 - ALLSPOR allspor.py
         continue-on-error: true
         run: |
           python allspor.py
@@ -98,27 +87,21 @@ jobs:
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
 
       
-      - name: 9 - PATRON patron.py
-        continue-on-error: true
-        run: |
-          python patron.py
-          echo "SONRA patron.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> patron.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 10 - PATRON 2 ptrn.py
-        continue-on-error: true
-        run: |
-          python ptrn.py
-          echo "SONRA ptrn.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> ptrn.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 11 - STAR ve ULUSAL tv.py
+      - name: 7 - STAR ve ULUSAL tv.py
         continue-on-error: true
         run: |
           echo "ONCE tv.py: $(stat -c%s mirti68.m3u) byte"
           python tv.py
           echo "SONRA tv.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> tv.py SILDI!"; git checkout -- mirti68.m3u; fi
+          
+      - name: 8 - SHOW show1.py
+        continue-on-error: true
+        run: |
+          python show1.py
+          echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
 
       - name: Olusan M3U listelerini raporla
         if: always()
