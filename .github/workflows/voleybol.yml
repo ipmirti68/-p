@@ -1,67 +1,39 @@
 name: MIRTI68 Voleybol Güncelleme
-
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/10 * * * *"
-
+    - cron: "*/20 * * * *"
 permissions:
   contents: write
-
-concurrency:
-  group: mirti68-voleybol
-  cancel-in-progress: false
-
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Depoyu indir
-        uses: actions/checkout@v5
-
-      - name: Python kur
-        uses: actions/setup-python@v6
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-          # cache: pip  <-- BUNU SİLDİK, requirements.txt olmadığı için fail veriyordu
-
       - name: Paketleri kur
         run: |
-          pip install --upgrade pip
           pip install -U yt-dlp requests beautifulsoup4 lxml
-
-      - name: YouTube cookies hazırla
-        env:
-          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+      - name: MAHSUN M3U güncelle
         run: |
-          if [ -n "$YOUTUBE_COOKIES" ]; then
-            echo "$YOUTUBE_COOKIES" > cookies.txt
-            chmod 600 cookies.txt
-            echo "Cookies hazır"
-          else
-            echo "Cookies yok, devam"
-          fi
-
-      - name: Voleybol programını güncelle
+          python mahsun.py || echo "mahsun.py hatalı"
+          ls -lh *.m3u *.json 2>/dev/null || true
+      - name: VOLEYBOL tarama
         run: |
-          python voleybol.py || echo "voleybol.py yok veya hatalı"
-          ls -lh *.json 2>/dev/null || true
-
-      - name: YouTube canlı + tekrar tara
-        run: |
-          python voleybol_youtube.py
-          ls -lh mirti68.m3u voleybol_youtube.json
-
-      - name: Dosyaları kaydet
+          python voleybol_youtube.py || echo "voleybol_youtube hatalı"
+          ls -lh *.m3u *.json 2>/dev/null || true
+      - name: Hepsini kaydet
         if: always()
         run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
-          rm -f cookies.txt
-          git add -f mirti68.m3u voleybol_youtube.json voleybol_program.json mac_takvimi.json 2>/dev/null || true
+          # TÜM m3u ve json dosyalarını ekle
+          git add -f *.m3u *.json 2>/dev/null || true
           git status --short
           if ! git diff --cached --quiet; then
-            git commit -m "MIRTI68 güncellendi $(date +'%d.%m %H:%M')"
+            git commit -m "MIRTI68 + MAHSUN güncellendi $(date +'%d.%m %H:%M')"
             git pull --rebase origin main
             git push origin HEAD:main
           else
