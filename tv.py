@@ -1,76 +1,158 @@
-from playwright.sync_api import sync_playwright
-import re, os
+name: update
 
-OUTPUT_FILE = "mirti68.m3u"
-MARKER = "# MIRTI68_ULUSAL_AUTO"
-GROUP = "📺 ULUSAL"
-EPG_URL = ""
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+  push:
+    branches:
+      - main
 
-CHANNELS = {
-    "ATV": {"page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "atv"},
-    "KANAL D": {"page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald"},
-    "STAR TV": {"page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv"},
-    "SHOW TV": {"page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", "keyword": "showtv"},
-    "TV8": {"page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": "tv8"},
-    "KANAL 7": {"page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7"},
-    "NOW TV": {"page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "nowtv"},
-    "TRT 1": {"page": "https://www.trt1.com.tr/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt-1", "direct": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
-}
+permissions:
+  contents: write
 
-def get_link(page_url, keyword):
-    found = []
-    def on_dialog(d):
-        urls = re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', d.message)
-        found.extend(urls)
-        d.accept()
-    with sync_playwright() as p:
-        b = p.chromium.launch(headless=True)
-        pg = b.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/130.0.0.0 Safari/537.36")
-        pg.on("dialog", on_dialog)
-        try:
-            pg.goto(page_url, timeout=40000, wait_until="domcontentloaded")
-            pg.wait_for_timeout(15000)
-        except: pass
-        b.close()
-    for u in found:
-        if keyword == "kanal7" and "kanal7.daioncdn.net" in u:
-            return u
-        if keyword in u.lower() and "daioncdn.net" in u:
-            return u
-    return found[0] if found else None
+concurrency:
+  group: m3u-guncelleme
+  cancel-in-progress: false
 
-def main():
-    print("MIRTI68 ULUSAL BASLADI")
-    new_lines = [MARKER]
-    for name, info in CHANNELS.items():
-        url = info.get("direct") or get_link(info["page"], info["keyword"])
-        if not url:
-            print(f"[!] {name} alinamadi")
-            continue
-        print(f"[+] {name} OK")
-        new_lines.append(f'#EXTINF:-1 tvg-name="{name}" tvg-logo="{info["logo"]}" group-title="{GROUP}",{name}')
-        new_lines.append(url)
-    new_block = "\n".join(new_lines) + "\n"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Depoyu indir
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          ref: main
 
-    if not os.path.exists(OUTPUT_FILE):
-        open(OUTPUT_FILE,"w",encoding="utf-8").write(f"#EXTM3U\n\n{new_block}")
-        return
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-    with open(OUTPUT_FILE,"r",encoding="utf-8",errors="ignore") as f:
-        old = f.read()
+      - name: Kutuphaneleri kur
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome playwright
+          playwright install --with-deps chromium
 
-    if MARKER in old:
-        before = old.split(MARKER)[0]
-        after_part = old.split(MARKER,1)[1]
-        m = re.search(r'\n# MIRTI68_', after_part)
-        after = after_part[m.start():] if m else ""
-        final = before.rstrip() + "\n" + new_block + after.lstrip()
-    else:
-        final = old.rstrip() + "\n\n" + new_block
+      - name: Baslangic boyutu
+        run: |
+          echo "BASLANGIC: $(stat -c%s mirti68.m3u) byte - $(wc -l < mirti68.m3u) satir"
 
-    with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
-        f.write(final)
-    print(f"BITTI - {len(new_lines)//2} kanal guncellendi, diger kategoriler korundu")
+      - name: 1 - ULUSAL iptv.py
+        continue-on-error: true
+        run: |
+          python iptv.py
+          echo "SONRA iptv.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> iptv.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-if __name__ == "__main__":
-    main()
+      - name: 2 - SELCUK slck.py
+        continue-on-error: true
+        run: |
+          python slck.py
+          echo "SONRA slck.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> slck.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 3 - MAHSUN mahsun.py
+        continue-on-error: true
+        run: |
+          python mahsun.py
+          echo "SONRA mahsun.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> mahsun.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 4 - ATOM atom.py
+        continue-on-error: true
+        run: |
+          python atom.py
+          echo "SONRA atom.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atom.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 5 - KRAL kra.py
+        continue-on-error: true
+        run: |
+          python kra.py
+          echo "SONRA kra.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> kra.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 6 - ARDA arda.py
+        continue-on-error: true
+        run: |
+          python arda.py
+          echo "SONRA arda.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> arda.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 7 - LIG lig.py
+        continue-on-error: true
+        run: |
+          python lig.py
+          echo "SONRA lig.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> lig.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 8 - ATV atv1.py
+        continue-on-error: true
+        run: |
+          python atv1.py
+          echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 9 - ALLSPOR allspor.py
+        continue-on-error: true
+        run: |
+          python allspor.py
+          echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 10 - SELCUK selcuk.py
+        continue-on-error: true
+        run: |
+          python selcuk.py
+          echo "SONRA selcuk.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> selcuk.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 11 - PATRON patron.py
+        continue-on-error: true
+        run: |
+          python patron.py
+          echo "SONRA patron.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> patron.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 11b - PATRON 2 ptrn.py
+        continue-on-error: true
+        run: |
+          python ptrn.py
+          echo "SONRA ptrn.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> ptrn.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: 12 - STAR ve ULUSAL tv.py
+        continue-on-error: true
+        run: |
+          echo "ONCE tv.py: $(stat -c%s mirti68.m3u) byte"
+          python tv.py
+          echo "SONRA tv.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> tv.py SILDI!"; git checkout -- mirti68.m3u; fi
+
+      - name: Olusan M3U listelerini raporla
+        if: always()
+        run: |
+          ls -lh *.m3u
+          wc -l mirti68.m3u
+          echo "Boyut: $(stat -c%s mirti68.m3u)"
+
+      - name: M3U dosyalarini GitHub'a kaydet
+        if: always()
+        run: |
+          git config user.name "bot"
+          git config user.email "bot@bot.com"
+          SIZE=$(stat -c%s "mirti68.m3u" 2>/dev/null || echo 0)
+          echo "Final boyut: $SIZE"
+          if [ "$SIZE" -lt 80000 ]; then
+            echo "HATA: mirti68.m3u hala kucuk ($SIZE byte), push iptal!"
+            exit 1
+          fi
+          git add -A -- "*.m3u"
+          git diff --cached --quiet && echo "Degisiklik yok" && exit 0
+          git commit -m "Otomatik M3U guncelleme"
+          git pull --rebase origin main || true
+          git push origin HEAD:main
