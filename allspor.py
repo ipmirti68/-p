@@ -197,10 +197,9 @@ def get_andro_content():
     base_pattern = "https://mahsunsports{}.xyz"
     headers = HEADERS.copy()
 
-  # ============================================
+# ============================================
 # 4. ANDRO PANEL
 # ============================================
-
 def get_andro_content():
     print("--- 4. Andro Panel ---")
     results = []
@@ -225,10 +224,7 @@ def get_andro_content():
         return None
 
     print("Andro Panel icin aktif domain araniyor (35-99)...")
-
-    print("Andro Panel icin aktif domain araniyor (35-99)...")
     active_site = None
-
     with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
         futures = [executor.submit(check_domain, i) for i in range(35, 100)]
         for future in concurrent.futures.as_completed(futures):
@@ -243,7 +239,6 @@ def get_andro_content():
         return results
 
     print(f"Andro Panel Domain: {active_site}")
-
     event_url = f"{active_site}/event.html?id=androstreamlivebs1"
     try:
         r2 = requests.get(event_url, headers=headers, verify=False, timeout=10)
@@ -285,17 +280,9 @@ def get_andro_content():
 
     return results
 
-
 # ============================================
 # 5. XSPORT
 # ============================================
-
-def get_xsport_content():
-    print("--- 5. XSport ---")
-    results = [# ============================================
-# 5. XSPORT
-# ============================================
-
 def get_xsport_content():
     print("--- 5. XSport ---")
     results = []
@@ -305,7 +292,8 @@ def get_xsport_content():
     }
     channel_ids = [
         "xbeinsports-1", "xbeinsports-2", "xbeinsports-3", "xbeinsports-4", "xbeinsports-5",
-        "xbeinsportsmax-1", "xbeinsportsmax-2", ]
+        "xbeinsportsmax-1", "xbeinsportsmax-2",
+    ]
 
     def check_domain(index):
         url = base_pattern.format(index)
@@ -315,6 +303,7 @@ def get_xsport_content():
                 return url
         except:
             return None
+        return None
 
     def find_active_domain():
         with concurrent.futures.ThreadPoolExecutor(max_workers=25) as executor:
