@@ -31,15 +31,15 @@ SPORTS_GROUP = "🖥SPORTS"
 LOGO = "https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg"
 
 PRETTY_NAMES = {
-    "selcukbeinsports1": "beIN SPORTS 1 Selcuk 🔴",
-    "selcukbeinsports2": "beIN SPORTS 2 Selcuk 🔴",
-    "selcukbeinsports3": "beIN SPORTS 3 Selcuk 🔴",
-    "selcukbeinsports4": "beIN SPORTS 4 Selcuk 🔴",
-    "selcukbeinsports5": "beIN SPORTS 5 Selcuk 🔴",
-    "selcukbeinsportsmax1": "beIN SPORTS MAX 1 Selcuk 🔴",
-    "selcukbeinsportsmax2": "beIN SPORTS MAX 2 Selcuk 🔴",
-    "selcukbeinsportshaber": "beIN SPORTS Haber Selcuk 🔴",
-    "selcukbeinconnect1": "beIN Con 1 Selcuk 🔴",
+    "selcukbeinsports1": "beIN SPORTS 1 Selcuk 1🔴",
+    "selcukbeinsports2": "beIN SPORTS 2 Selcuk 1🔴",
+    "selcukbeinsports3": "beIN SPORTS 3 Selcuk 1🔴",
+    "selcukbeinsports4": "beIN SPORTS 4 Selcuk 1🔴",
+    "selcukbeinsports5": "beIN SPORTS 5 Selcuk 1🔴",
+    "selcukbeinsportsmax1": "beIN SPORTS MAX 1 Selcuk 1🔴",
+    "selcukbeinsportsmax2": "beIN SPORTS MAX 2 Selcuk 1🔴",
+    "selcukbeinsportshaber": "beIN SPORTS Haber Selcuk 1🔴",
+    "selcukbeinconnect1": "beIN Con 1 Selcuk 1🔴",
 }
 
 
