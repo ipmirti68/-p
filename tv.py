@@ -2,20 +2,19 @@ from playwright.sync_api import sync_playwright
 import re, os
 
 OUTPUT_FILE = "mirti68.m3u"
-MASTER_FILE = "mirti68.m3u"
 MARKER = "# MIRTI68_ULUSAL_AUTO"
 GROUP = "📺 ULUSAL"
 EPG_URL = ""
 
 CHANNELS = {
-    "【entity-ATV¦canonical_name=ATV】": {"page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "【entity-atv¦canonical_name=ATV】"},
-    "【entity-KANAL D¦canonical_name=KANAL D】": {"page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald"},
-    "【entity-STAR TV¦canonical_name=STAR TV】": {"page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv"},
-    "【entity-SHOW TV¦canonical_name=SHOW TV】": {"page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", "keyword": "showtv"},
-    "【entity-TV8¦canonical_name=TV8】": {"page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": "【entity-tv8¦canonical_name=TV8】"},
-    "【entity-KANAL 7¦canonical_name=KANAL 7】": {"page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7"},
+    "ATV": {"page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "atv"},
+    "KANAL D": {"page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald"},
+    "STAR TV": {"page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv"},
+    "SHOW TV": {"page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", "keyword": "showtv"},
+    "TV8": {"page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": "tv8"},
+    "KANAL 7": {"page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7"},
     "NOW TV": {"page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "nowtv"},
-    "【entity-TRT 1¦canonical_name=TRT 1】": {"page": "https://www.trt1.com.tr/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt-1", "direct": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
+    "TRT 1": {"page": "https://www.trt1.com.tr/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt-1", "direct": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
 }
 
 def get_link(page_url, keyword):
