@@ -83,56 +83,7 @@ jobs:
           echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 7 - KANALD kanald1.py
-        continue-on-error: true
-        run: |
-          python kanald1.py
-          echo "SONRA kanald1.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> kanald1.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 8 - STARTV startv1.py
-        continue-on-error: true
-        run: |
-          python startv1.py
-          echo "SONRA startv1.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> startv1.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 9 - SHOW show1.py
-        continue-on-error: true
-        run: |
-          python show1.py
-          echo "SONRA show1.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> show1.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 10 - TV8 tv81.py
-        continue-on-error: true
-        run: |
-          python tv81.py
-          echo "SONRA tv81.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> tv81.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 11 - KANAL7 kanal71.py
-        continue-on-error: true
-        run: |
-          python kanal71.py
-          echo "SONRA kanal71.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> kanal71.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 12 - NOWTV nowtv1.py
-        continue-on-error: true
-        run: |
-          python nowtv1.py
-          echo "SONRA nowtv1.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> nowtv1.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-      - name: 13 - STAR ve ULUSAL tv.py
-        continue-on-error: true
-        run: |
-          echo "ONCE tv.py: $(stat -c%s mirti68.m3u) byte"
-          python tv.py
-          echo "SONRA tv.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> tv.py SILDI!"; git checkout -- mirti68.m3u; fi
-
+     
       - name: Olusan M3U listelerini raporla
         if: always()
         run: |
