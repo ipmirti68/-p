@@ -37,92 +37,130 @@ jobs:
           pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome playwright
           playwright install --with-deps chromium
 
+      - name: Kod hatalarini duzelt - ALLSPOR
+        run: |
+          python3 << 'PY'
+          import sys
+          path="allspor.py"
+          try:
+              code=open(path,encoding="utf-8",errors="ignore").read()
+              # SyntaxError loop ile otomatik ] ekle
+              for attempt in range(10):
+                  try:
+                      compile(code, path, 'exec')
+                      print(f"allspor.py OK - attempt {attempt}")
+                      break
+                  except SyntaxError as e:
+                      print(f"SyntaxError line {e.lineno}: {e.msg}")
+                      lines=code.splitlines()
+                      if e.lineno and e.lineno-1 < len(lines):
+                          # Hatali satirin sonuna ] ekle
+                          lines[e.lineno-1] = lines[e.lineno-1] + "\n    ]"
+                          code="\n".join(lines)
+                      else:
+                          break
+              open(path,"w",encoding="utf-8").write(code)
+              # tv.py duzeltmeleri
+              import re
+              with open("tv.py","r",encoding="utf-8",errors="ignore") as f:
+                  tv=f.read()
+              tv=re.sub(r'MARKER = "# MIRTI68_ULUSAL_AUTO.*', 'MARKER = "# MIRTI68_ULUSAL_AUTO"', tv)
+              if "EPG_URL =" not in tv:
+                  tv='EPG_URL = ""\n'+tv
+              open("tv.py","w",encoding="utf-8").write(tv)
+          except Exception as ex:
+              print(f"duzeltme hatasi: {ex}")
+          PY
+
       - name: Baslangic boyutu
         run: |
           echo "BASLANGIC: $(stat -c%s mirti68.m3u) byte - $(wc -l < mirti68.m3u) satir"
 
+      - name: 1 - ULUSAL iptv.py
+        continue-on-error: true
+        run: |
+          python iptv.py
+          echo "SONRA iptv.py: $(stat -c%s mirti68.m3u) byte"
 
+      - name: 2 - SELCUK slck.py
+        continue-on-error: true
+        run: |
+          python slck.py
+          echo "SONRA slck.py: $(stat -c%s mirti68.m3u) byte"
 
-      - name: 1 - MAHSUN mahsun.py
+      - name: 3 - MAHSUN mahsun.py
         continue-on-error: true
         run: |
           python mahsun.py
           echo "SONRA mahsun.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> mahsun.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 2 - ATOM atom.py
+      - name: 4 - ATOM atom.py
         continue-on-error: true
         run: |
           python atom.py
           echo "SONRA atom.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atom.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-  
-      - name: 3 - SLCK slck.py
+      - name: 5 - KRAL kra.py
         continue-on-error: true
         run: |
-          python slck.py
-          echo "SONRA arda.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> arda.py SILDI!"; git checkout -- mirti68.m3u; fi
+          python kra.py
+          echo "SONRA kra.py: $(stat -c%s mirti68.m3u) byte"
 
-      - name: 4 - LIG lig.py
+      - name: 6 - ARDA arda.py
+        continue-on-error: true
+        run: |
+          python arda.py
+          echo "SONRA arda.py: $(stat -c%s mirti68.m3u) byte"
+
+      - name: 7 - LIG lig.py
         continue-on-error: true
         run: |
           python lig.py
           echo "SONRA lig.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> lig.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 5 - ATV atv1.py
+      - name: 8 - ATV atv1.py
         continue-on-error: true
         run: |
           python atv1.py
           echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 6 - ALLSPOR allspor.py
+      - name: 9 - ALLSPOR allspor.py
         continue-on-error: true
         run: |
           python allspor.py
           echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      
+      - name: 10 - SELCUK selcuk.py
+        continue-on-error: true
+        run: |
+          python selcuk.py
+          echo "SONRA selcuk.py: $(stat -c%s mirti68.m3u) byte"
 
-      - name: 7 - STAR ve ULUSAL tv.py
+      - name: 11 - PATRON patron.py
+        continue-on-error: true
+        run: |
+          python patron.py
+          echo "SONRA patron.py: $(stat -c%s mirti68.m3u) byte"
+
+      - name: 11b - PATRON 2 ptrn.py
+        continue-on-error: true
+        run: |
+          python ptrn.py
+          echo "SONRA ptrn.py: $(stat -c%s mirti68.m3u) byte"
+
+      - name: 12 - STAR ve ULUSAL tv.py
         continue-on-error: true
         run: |
           echo "ONCE tv.py: $(stat -c%s mirti68.m3u) byte"
           python tv.py
           echo "SONRA tv.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> tv.py SILDI!"; git checkout -- mirti68.m3u; fi
-          
-      - name: 8 - SHOW show1.py
-        continue-on-error: true
-        run: |
-          python show1.py
-          echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-       - name: 9 - KANALD kanald1.py
-        continue-on-error: true
-        run: |
-          python kanald1.py
-          echo "SONRA kanald1.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> kanald1.py SILDI!"; git checkout -- mirti68.m3u; fi
-
-       - name: 10 - STARTV startv1.py
-        continue-on-error: true
-        run: |
-          python startv1.py
-          echo "SONRA startv1.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> startv1.py SILDI!"; git checkout -- mirti68.m3u; fi
 
       - name: Olusan M3U listelerini raporla
         if: always()
         run: |
           ls -lh *.m3u
           wc -l mirti68.m3u
-          echo "Boyut: $(stat -c%s mirti68.m3u)"
 
       - name: M3U dosyalarini GitHub'a kaydet
         if: always()
