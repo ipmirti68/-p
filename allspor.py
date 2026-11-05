@@ -21,7 +21,7 @@ HEADERS = {
 TIMEOUT_VAL = 15
 PROXY_URL = "https://seep.eu.org/"
 OUTPUT_FILENAME = "mirti68.m3u"
-BEIN_GROUP = "🖥beINSPORTS"
+BEIN_GROUP = "🖥beINSPORT"
 STATIC_LOGO = "https://ibb.co/XrsW00cN"
 
 # ============================================
