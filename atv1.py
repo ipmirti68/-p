@@ -1,70 +1,94 @@
 from playwright.sync_api import sync_playwright
-import re, os
+import re, os, json
 
 OUTPUT_FILE = "mirti68.m3u"
+MARKER = "# MIRTI68_ATV_AUTO"
 GROUP = "📺 ULUSAL"
+NAME = "ATV"
+LOGO = "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png"
+PAGE_URL = "https://www.atv.com.tr/canli-yayin"
 
-CHANNELS = {
-    "ATV": {"page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "atv", "marker": "# MIRTI68_ATV_AUTO"},
-    "KANAL D": {"page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
-    "STAR TV": {"page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv", "marker": "# MIRTI68_STARTV_AUTO"},
-    "SHOW TV": {"page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png", "keyword": "showtv", "marker": "# MIRTI68_SHOWTV_AUTO"},
-    "TV8": {"page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": "tv8", "marker": "# MIRTI68_TV8_AUTO"},
-    "KANAL 7": {"page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7", "marker": "# MIRTI68_KANAL7_AUTO"},
-    "NOW TV": {"page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "nowtv", "marker": "# MIRTI68_NOWTV_AUTO"},
-    "TRT 1": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt-1", "marker": "# MIRTI68_TRT1_AUTO", "direct": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
-}
-
-def get_link(page_url, keyword):
+def get_atv_link():
     found=[]
     def on_dialog(d):
         urls=re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', d.message)
         if urls:
-            print(f"  [DIALOG] {urls[0][:100]}...")
+            print(f"  [DIALOG] {urls[0][:120]}...")
             found.extend(urls)
         try:
             d.accept()
         except:
             pass
     def on_response(resp):
-        url=resp.url
-        if ".m3u8" in url and keyword in url.lower():
-            if url not in found:
-                print(f"  [NETWORK] {url[:120]}...")
-                found.append(url)
-        elif ".m3u8" in url and "daioncdn.net" in url:
-            if url not in found:
-                print(f"  [NETWORK] {url[:120]}...")
-                found.append(url)
-        elif ".m3u8" in url and "ercdn.net" in url:
-            if url not in found:
-                print(f"  [NETWORK] {url[:120]}...")
-                found.append(url)
+        try:
+            url=resp.url
+            # url'de m3u8 varsa direkt al
+            if ".m3u8" in url:
+                if url not in found:
+                    print(f"  [URL] {url[:150]}...")
+                    found.append(url)
+            # body icinde m3u8 ara (JSON icinde)
+            if "atv" in url.lower() or "player" in url.lower() or "token" in url.lower() or "live" in url.lower():
+                try:
+                    text=resp.text()
+                    if ".m3u8" in text:
+                        m=re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', text)
+                        for u in m:
+                            # trkvz.daioncdn.net icereni al
+                            if "trkvz.daioncdn.net" in u or "daioncdn.net" in u:
+                                if u not in found:
+                                    print(f"  [BODY] {u[:150]}...")
+                                    found.append(u)
+                except:
+                    pass
+        except:
+            pass
 
     with sync_playwright() as p:
         browser=p.chromium.launch(headless=True)
         page=browser.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/130.0.0.0 Safari/537.36")
         page.on("dialog", on_dialog)
         page.on("response", on_response)
-        print(f"[*] {keyword} -> {page_url} aciliyor...")
+        print(f"[*] {PAGE_URL} aciliyor...")
         try:
-            page.goto(page_url, timeout=45000, wait_until="domcontentloaded")
-            page.wait_for_timeout(7000)
-            # sayfa kaynaginda m3u8 ara
+            page.goto(PAGE_URL, timeout=60000, wait_until="networkidle")
+            page.wait_for_timeout(10000)
+            # sayfa iceriginde direkt ara
             try:
-                content=page.content()
-                m=re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', content)
+                html=page.content()
+                m=re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', html)
                 for u in m:
-                    if keyword in u.lower() or "daioncdn.net" in u or "ercdn.net" in u:
-                        if u not in found:
-                            print(f"  [SOURCE] {u[:120]}...")
-                            found.append(u)
+                    if "trkvz.daioncdn.net" in u and u not in found:
+                        print(f"  [HTML] {u[:150]}...")
+                        found.append(u)
             except:
                 pass
-            for sel in ["button", ".play-button", ".vjs-big-play-button", "[class*=play]", ".atv-player", ".ciner-player"]:
+            # JS degiskenlerinde ara
+            try:
+                # window icindeki player datasini dene
+                for js in [
+                    "document.documentElement.innerHTML",
+                    "window.__INITIAL_DATA__",
+                    "window.playerData",
+                    "localStorage.getItem('player')",
+                ]:
+                    try:
+                        txt=page.evaluate(f"() => {{ try {{ return JSON.stringify({js}) }} catch(e) {{ return {js} }} }}")
+                        if txt and ".m3u8" in str(txt):
+                            m=re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', str(txt))
+                            for u in m:
+                                if u not in found:
+                                    print(f"  [JS] {u[:150]}...")
+                                    found.append(u)
+                    except:
+                        pass
+            except:
+                pass
+            # play butonlarini tikla
+            for sel in ["button", ".play-button", ".vjs-big-play-button", ".atv-player", "[class*=play]", ".jwplayer", "#player"]:
                 try:
-                    page.click(sel, timeout=1200)
-                    page.wait_for_timeout(1500)
+                    page.click(sel, timeout=1000)
+                    page.wait_for_timeout(2000)
                 except:
                     pass
             page.wait_for_timeout(8000)
@@ -72,18 +96,24 @@ def get_link(page_url, keyword):
             print(f"  [!] hata: {e}")
         browser.close()
     
-    # en iyi linki sec
+    # en iyi secim - trkvz.daioncdn.net ve atv iceren, en uzun tokenli olan
+    best=None
+    max_len=0
     for u in found:
-        if keyword in u.lower() and "daioncdn.net" in u:
-            return u
+        if "trkvz.daioncdn.net/atv" in u:
+            if len(u) > max_len:
+                max_len=len(u)
+                best=u
+    if best:
+        return best
     for u in found:
-        if "daioncdn.net" in u or "ercdn.net" in u:
+        if "daioncdn.net" in u and "atv" in u.lower():
             return u
     return found[0] if found else None
 
-def update_one_channel(marker, name, logo, new_url):
-    new_block=f"""{marker}
-#EXTINF:-1 tvg-name="{name}" tvg-logo="{logo}" group-title="{GROUP}",{name}
+def update_m3u(new_url):
+    new_block=f"""{MARKER}
+#EXTINF:-1 tvg-name="{NAME}" tvg-logo="{LOGO}" group-title="{GROUP}",{NAME}
 {new_url}
 """
     if not os.path.exists(OUTPUT_FILE):
@@ -91,9 +121,9 @@ def update_one_channel(marker, name, logo, new_url):
         return
     with open(OUTPUT_FILE,"r",encoding="utf-8",errors="ignore") as f:
         old=f.read()
-    if marker in old:
-        before=old.split(marker)[0]
-        after_part=old.split(marker,1)[1]
+    if MARKER in old:
+        before=old.split(MARKER)[0]
+        after_part=old.split(MARKER,1)[1]
         m=re.search(r'\n# MIRTI68_', after_part)
         after=after_part[m.start():] if m else ""
         final=before.rstrip()+"\n"+new_block+after.lstrip()
@@ -101,30 +131,20 @@ def update_one_channel(marker, name, logo, new_url):
         final=old.rstrip()+"\n\n"+new_block
     with open(OUTPUT_FILE,"w",encoding="utf-8") as f:
         f.write(final)
+    print(f"[OK] {OUTPUT_FILE} - ATV guncellendi - boyut: {len(final)}")
 
 def main():
-    print("MIRTI68 ULUSAL - 8 KANAL HEPSI atv1.py ICINDE")
-    if not os.path.exists(OUTPUT_FILE):
-        print(f"[!] {OUTPUT_FILE} yok, bos olusturuluyor")
-        open(OUTPUT_FILE,"w",encoding="utf-8").write("#EXTM3U\n")
-    
-    ok=0
-    for name,info in CHANNELS.items():
-        if info.get("direct"):
-            url=info["direct"]
-            print(f"[+] {name} DIRECT: {url}")
-        else:
-            url=get_link(info["page"], info["keyword"])
-        
-        if not url:
-            print(f"[!] {name} ALINAMADI - eski link korunuyor")
-            continue
-        
-        print(f"[+] {name} OK: {url[:100]}...")
-        update_one_channel(info["marker"], name, info["logo"], url)
-        ok+=1
-    
-    print(f"[TAMAMLANDI] {ok}/8 kanal guncellendi - {OUTPUT_FILE} korundu - boyut: {os.path.getsize(OUTPUT_FILE)}")
+    print("ATV BASLADI - FINAL")
+    url=get_atv_link()
+    if not url:
+        print("[!] ATV ALINAMADI - senin verdigin ornek gibi link bulunamadi")
+        print("[!] Ornek: https://trkvz.daioncdn.net/atv/atv.m3u8?ce=3&app=...")
+        return
+    print(f"[+] ATV LINK: {url}")
+    # token kontrolu
+    if "e=" in url and "st=" in url:
+        print("[+] Token'li link OK")
+    update_m3u(url)
 
 if __name__=="__main__":
     main()
