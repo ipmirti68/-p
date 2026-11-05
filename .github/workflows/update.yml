@@ -44,7 +44,7 @@ jobs:
       - name: 1 - MAHSUN mahsun.py
         continue-on-error: true
         run: |
-          python mahsun.py
+          python mahsu.py
           echo "SONRA mahsun.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> mahsun.py SILDI!"; git checkout -- mirti68.m3u; fi
 
@@ -52,14 +52,14 @@ jobs:
       - name: 2 - SLCK slck.py
         continue-on-error: true
         run: |
-          python slck.py
+          python slc.py
           echo "SONRA slck.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> slck.py SILDI!"; git checkout -- mirti68.m3u; fi
 
       - name: 3 - LIG lig.py
         continue-on-error: true
         run: |
-          python lig.py
+          python li.py
           echo "SONRA lig.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> lig.py SILDI!"; git checkout -- mirti68.m3u; fi
 
@@ -80,7 +80,7 @@ jobs:
       - name: 6 - ULUSAL iptv.py
         continue-on-error: true
         run: |
-          python ipt.py
+          python iptv.py
           echo "SONRA iptv.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> iptv.py SILDI!"; git checkout -- mirti68.m3u; fi
 
