@@ -3,35 +3,24 @@ name: MIRTI68 Voleybol Güncelleme
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/10 * * * *" # Canlı yakalamak için 10 dk ideal
+    - cron: "*/10 * * * *"
 
 permissions:
   contents: write
-
-concurrency:
-  group: mirti68-voleybol
-  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Depoyu indir
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - name: Python kur
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: 'pip'
 
       - name: Paketleri kur
-        run: |
-          pip install --upgrade pip
-          pip install -U yt-dlp requests beautifulsoup4 lxml
-
-      - name: yt-dlp kontrol
-        run: yt-dlp --version
+        run: pip install -U yt-dlp requests beautifulsoup4 lxml
 
       - name: YouTube cookies hazırla
         env:
@@ -39,50 +28,22 @@ jobs:
         run: |
           if [ -n "$YOUTUBE_COOKIES" ]; then
             echo "$YOUTUBE_COOKIES" > cookies.txt
-            # Netscape formatı mı kontrol et
-            head -n 1 cookies.txt
             chmod 600 cookies.txt
-          else
-            echo "UYARI: YOUTUBE_COOKIES secret yok, bot sınırlı çalışacak"
           fi
 
       - name: Voleybol programını güncelle
-        run: |
-          if [ -f voleybol.py ]; then
-            python voleybol.py
-            ls -lh voleybol_program.json mac_takvimi.json 2>/dev/null || true
-          fi
+        run: python voleybol.py
 
-      - name: YouTube canlı ve planlı yayınları tara
-        id: youtube
-        run: |
-          python voleybol_youtube.py
-          echo "---- SONUÇ ----"
-          cat voleybol_youtube.json | python -c "import json,sys; d=json.load(sys.stdin); print(f\"total={d['total']} hls_total={d['hls_total']}\")"
-          ls -lh mirti68.m3u voleybol_youtube.json
+      - name: YouTube tarama (Canlı + Son Hafta Tekrar)
+        run: python voleybol_youtube.py
 
-      - name: Dosyaları GitHub'a kaydet
+      - name: Dosyaları kaydet
         if: always()
         run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
           rm -f cookies.txt
-
-          # Sadece senin istediğin dosyalar
-          git add -f mirti68.m3u voleybol_youtube.json voleybol_program.json mac_takvimi.json 2>/dev/null || true
-
-          git status --short
-
-          if ! git diff --cached --quiet; then
-            # Sadece HLS bulunduysa commit mesajını değiştir
-            HLS=$(python -c "import json; print(json.load(open('voleybol_youtube.json')).get('hls_total',0))" 2>/dev/null || echo 0)
-            if [ "$HLS" -gt 0 ]; then
-              git commit -m "🔴 CANLI: $HLS HLS bulundu - MIRTI68 güncellendi"
-            else
-              git commit -m "MIRTI68 Voleybol programı güncellendi - $(date +'%d.%m %H:%M')"
-            fi
-            git pull --rebase origin main
-            git push origin HEAD:main
-          else
-            echo "Değişiklik yok"
-          fi
+          git add -f mirti68.m3u voleybol_youtube.json voleybol_program.json
+          git diff --cached --quiet || git commit -m "MIRTI68 güncellendi $(date +'%d.%m %H:%M')"
+          git pull --rebase origin main
+          git push origin HEAD:main
