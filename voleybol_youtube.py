@@ -1,4 +1,4 @@
-import os, re, json, tempfile
+import os, re, json
 from yt_dlp import YoutubeDL
 
 MASTER_FILE = "mirti68.m3u"
@@ -6,7 +6,7 @@ RESULT_FILE = "voleybol_youtube.json"
 CHANNEL_URL = "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw/streams"
 GROUP_LIVE = "🏐 VOLEYBOL HLS"
 GROUP_REPLAY = "🏐 SULTANLAR LİGİ TEKRAR"
-MAX_VIDEOS = 40
+MAX_VIDEOS = 60
 
 OPTIONS = {
     "quiet": True, "ignoreerrors": True,
@@ -21,36 +21,33 @@ DETAIL = {
 }
 
 def get_id(v):
-    import re
     m=re.search(r"([A-Za-z0-9_-]{11})", str(v.get("id") or ""))
     return m.group(1) if m else ""
 
 def get_hls(info):
     for f in (info or {}).get("formats") or []:
         u=f.get("url") or ""
-        if "m3u8" in u.lower(): return u
+        proto=str(f.get("protocol") or "").lower()
+        if "m3u8" in u.lower() or "m3u8" in proto or "hls" in proto:
+            return u
     return ""
 
 def scan():
-    print("MIRTI68 - Son hafta TEKRAR + Canli tarama")
+    print("MIRTI68 - Son hafta TEKRAR + Canli")
     vids=[]
-    entries=[]
     try:
         with YoutubeDL(OPTIONS) as ydl:
             pl=ydl.extract_info(CHANNEL_URL, download=False)
-            entries=pl.get("entries") or []
-            for e in entries:
+            for e in (pl.get("entries") or []):
                 vid=get_id(e)
                 if vid: vids.append((vid,e))
     except Exception as e:
         print(f"Kanal hatasi {e}")
         return []
-
     res=[]
     with YoutubeDL(DETAIL) as ydl:
         for vid, entry in vids:
             status=entry.get("live_status") or ""
-            # YAKLAŞAN olanları atla, log kirletmesin
             if status=="is_upcoming":
                 continue
             url=f"https://www.youtube.com/watch?v={vid}"
@@ -59,12 +56,12 @@ def scan():
             except:
                 continue
             title=info.get("title") or entry.get("title") or vid
-            # Sadece Sultanlar Ligi ve Kuzeyboru
             low=title.lower()
             if "sultanlar" not in low and "kuzeyboru" not in low:
                 continue
             hls=get_hls(info)
-            if not hls: continue
+            if not hls:
+                continue
             is_replay = status=="was_live" or info.get("live_status")=="was_live"
             print(f"{'TEKRAR' if is_replay else 'CANLI'}: {title}")
             res.append({"name":title,"stream_url":hls,"is_replay":is_replay})
@@ -76,25 +73,21 @@ def save(items):
     print(f"Bulunan: {len(live)} canli, {len(replay)} tekrar")
     if os.path.isfile(MASTER_FILE):
         with open(MASTER_FILE,"r",encoding="utf-8-sig") as f: old=f.read()
-    else: old="#EXTM3U\n"
-    # Sadece voleybol gruplarini temizle, MAHSUN'u silme
+    else:
+        old="#EXTM3U\n"
     lines=[]
+    skip_next=False
     for l in old.splitlines(True):
-        if GROUP_LIVE in l or GROUP_REPLAY in l: continue
+        if skip_next and l.strip() and not l.strip().startswith("#"):
+            skip_next=False
+            continue
+        if GROUP_LIVE in l or GROUP_REPLAY in l:
+            skip_next=True
+            continue
         lines.append(l)
-    if not lines: lines=["#EXTM3U\n"]
-    # Eski URL satirlarini da temizle (basit yontem)
-    # En temizi: mirti68.m3u zaten mahsun tarafindan yazildi, biz sadece ekleme yapalim
+    if not lines or "#EXTM3U" not in lines[0]:
+        lines=["#EXTM3U\n"]+lines
     for it in live[:5]:
         lines.append(f'#EXTINF:-1 group-title="{GROUP_LIVE}",{it["name"]} | CANLI\n')
         lines.append(it["stream_url"]+"\n")
-    for it in replay[:10]:
-        lines.append(f'#EXTINF:-1 group-title="{GROUP_REPLAY}",{it["name"]} | TEKRAR\n')
-        lines.append(it["stream_url"]+"\n")
-    with open(MASTER_FILE,"w",encoding="utf-8",newline="\n") as f: f.writelines(lines)
-    with open(RESULT_FILE,"w",encoding="utf-8") as f: json.dump({"total":len(items),"matches":items}, f, ensure_ascii=False, indent=2)
-    print(f"M3U guncellendi: {MASTER_FILE}")
-
-if __name__=="__main__":
-    items=scan()
-    save(items)
+    for it in
