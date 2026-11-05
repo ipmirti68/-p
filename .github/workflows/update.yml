@@ -1,109 +1,67 @@
 name: update
-
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *'
-  push:
-    branches:
-      - main
-
+    - cron: "*/20 * * * *"
 permissions:
   contents: write
-
-concurrency:
-  group: m3u-guncelleme
-  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Depoyu indir
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
-          ref: main
+          python-version: "3.12"
 
-      - name: Python kur
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Kutuphaneleri kur
+      - name: Paketleri kur
         run: |
-          python -m pip install --upgrade pip
-          pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome playwright
-          playwright install --with-deps chromium
+          pip install -U pip
+          pip install -U yt-dlp requests beautifulsoup4 lxml playwright
+          playwright install chromium --with-deps
 
-      - name: Baslangic boyutu
-        run: |
-          echo "BASLANGIC: $(stat -c%s mirti68.m3u) byte - $(wc -l < mirti68.m3u) satir"
-
-      - name: 1 - MAHSUN mahsun.py
+      - name: 1 - ALLSPOR
         continue-on-error: true
-        run: |
-          python mahsun.py
-          echo "SONRA mahsun.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> mahsun.py SILDI!"; git checkout -- mirti68.m3u; fi
+        run: python allspor.py || echo "allspor failed"
 
-      
-      - name: 2 - SLCK slck.py
+      - name: 2 - ATV
         continue-on-error: true
-        run: |
-          python slc.py
-          echo "SONRA slck.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> slck.py SILDI!"; git checkout -- mirti68.m3u; fi
+        run: python atv1.py || echo "atv1 failed"
 
-      - name: 3 - LIG lig.py
+      - name: 3 - LIG
         continue-on-error: true
-        run: |
-          python li.py
-          echo "SONRA lig.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> lig.py SILDI!"; git checkout -- mirti68.m3u; fi
+        run: python lig.py || echo "lig failed"
 
-      - name: 4 - ATV atv1.py
+      - name: 4 - SLCK
         continue-on-error: true
-        run: |
-          python at1.py
-          echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
+        run: python slck.py || echo "slck failed"
 
-      - name: 5 - ALLSPOR allspor.py
+      - name: 5 - MAHSUN
         continue-on-error: true
-        run: |
-          python allspo.py
-          echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
+        run: python mahsun.py || echo "mahsun failed"
 
-      - name: 6 - ULUSAL iptv.py
+      - name: 6 - VOLEYBOL
         continue-on-error: true
-        run: |
-          python iptv.py
-          echo "SONRA iptv.py: $(stat -c%s mirti68.m3u) byte"
-          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> iptv.py SILDI!"; git checkout -- mirti68.m3u; fi
+        run: python voleybol_youtube.py || echo "voleybol failed"
 
-      - name: Olusan M3U listelerini raporla
+      - name: 7 - IPTV (Ulusal)
+        continue-on-error: true
+        run: python iptv.py || echo "iptv failed"
+
+      - name: Dosyaları kaydet
         if: always()
         run: |
-          ls -lh *.m3u
-          wc -l mirti68.m3u
-          echo "Boyut: $(stat -c%s mirti68.m3u)"
-
-      - name: M3U dosyalarini GitHub'a kaydet
-        if: always()
-        run: |
-          git config user.name "bot"
-          git config user.email "bot@bot.com"
-          SIZE=$(stat -c%s "mirti68.m3u" 2>/dev/null || echo 0)
-          echo "Final boyut: $SIZE"
-          if [ "$SIZE" -lt 80000 ]; then
-            echo "HATA: mirti68.m3u hala kucuk ($SIZE byte), push iptal!"
-            exit 1
+          git config user.name "MIRTI68 Bot"
+          git config user.email "bot@users.noreply.github.com"
+          ls -lh *.m3u *.json 2>/dev/null || true
+          git add -f *.m3u *.json 2>/dev/null || true
+          git status --short
+          if ! git diff --cached --quiet; then
+            git commit -m "update $(date +'%d.%m %H:%M')"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "Değişiklik yok"
           fi
-          git add -A -- "*.m3u"
-          git diff --cached --quiet && echo "Degisiklik yok" && exit 0
-          git commit -m "Otomatik M3U guncelleme"
-          git pull --rebase origin main || true
-          git push origin HEAD:main
