@@ -44,7 +44,7 @@ async def get_links(page):
         m = re.search(r'https://securevideotoken\.tmgrup\.com\.tr/webtv/secure\?[^"\']+', content)
         if m:
             links["ATV"] = m.group(0)
-            print(f"[+] ATVtset Linki Yakalandı: {links['ATV'TEST][:70]}...")
+            print(f"[+] ATVtset Linki Yakalandı: {links['ATV TEST'][:70]}...")
     except Exception as e:
         print(f"[!] ATVtset sayfası tam yüklenemedi (Yine de devam ediliyor): {e}")
         # sayfa kaynağından yine dene
