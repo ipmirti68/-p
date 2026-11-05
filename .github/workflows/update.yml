@@ -52,11 +52,11 @@ jobs:
       - name: 2 - SLCK slck.py
         continue-on-error: true
         run: |
-          python slc.py
+          python slck.py
           echo "SONRA slck.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> slck.py SILDI!"; git checkout -- mirti68.m3u; fi
 
-      - name: 3 - LIG li.py
+      - name: 3 - LIG lig.py
         continue-on-error: true
         run: |
           python lig.py
