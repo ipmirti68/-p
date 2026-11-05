@@ -86,9 +86,9 @@ jobs:
       - name: 7 - ULUSAL iptv.py
         continue-on-error: true
         run: |
-          echo "iptv.py gecici kapali - 370 byte yapip siliyor"
-          # python iptv.py
+          python iptv.py
           echo "SONRA iptv.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> iptv.py SILDI!"; git checkout -- mirti68.m3u; fi
 
       - name: Olusan M3U listelerini raporla
         if: always()
