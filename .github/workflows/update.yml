@@ -83,6 +83,12 @@ jobs:
           echo "SONRA allspor.py: $(stat -c%s mirti68.m3u) byte"
           if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> allspor.py SILDI!"; git checkout -- mirti68.m3u; fi
 
+        - name: 7 - ULUSAL iptv.py
+        continue-on-error: true
+        run: |
+          python iptv.py
+          echo "SONRA atv1.py: $(stat -c%s mirti68.m3u) byte"
+          if [ $(stat -c%s mirti68.m3u) -lt 80000 ]; then echo ">>> atv1.py SILDI!"; git checkout -- mirti68.m3u; fi
      
       - name: Olusan M3U listelerini raporla
         if: always()
