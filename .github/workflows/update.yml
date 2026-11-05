@@ -37,108 +37,85 @@ jobs:
           pip install requests tqdm beautifulsoup4 cloudscraper yt-dlp lxml pycryptodome playwright
           playwright install --with-deps chromium
 
-      - name: Kod hatalarini otomatik duzelt
+      - name: Kod hatalarini duzelt
         run: |
-          echo "tv.py duzeltiliyor..."
           sed -i 's/MARKER = "# MIRTI68_ULUSAL_AUTO.*/MARKER = "# MIRTI68_ULUSAL_AUTO"/' tv.py || true
           grep -q "EPG_URL =" tv.py || sed -i '1iEPG_URL = ""' tv.py
           grep -q "CIKIS_DOSYASI =" tv.py || sed -i '1iCIKIS_DOSYASI = "mirti68.m3u"' tv.py
           grep -q "MASTER_FILE =" tv.py || sed -i '1iMASTER_FILE = "mirti68.m3u"' tv.py
           grep -q "GROUP =" tv.py || sed -i '1iGROUP = "📺 ULUSAL"' tv.py
-          
-          echo "atv1.py duzeltiliyor..."
           grep -q "EPG_URL =" atv1.py || sed -i '1iEPG_URL = ""' atv1.py
-          
-          echo "allspor.py duzeltiliyor..."
-          # Andro ve Xsport listelerini kapat - en yaygın hata
           python3 << 'PY'
           import re
-          path = "allspor.py"
+          path="allspor.py"
           try:
-              text = open(path, encoding="utf-8", errors="ignore").read()
-              # channels = [ ... def  -> ] ekle
-              text = re.sub(r'(channels\s*=\s*\[.*?)(?=\n\s*def )', lambda m: m.group(1).rstrip() + "\n    ]\n\n", text, flags=re.DOTALL)
-              text = re.sub(r'(channel_ids\s*=\s*\[.*?)(?=\n\s*def )', lambda m: m.group(1).rstrip().rstrip(',') + "\n    ]\n\n", text, flags=re.DOTALL)
-              open(path, "w", encoding="utf-8").write(text)
-              print("allspor.py duzeltildi")
-          except Exception as e:
-              print(f"allspor duzeltme hatasi: {e}")
+              t=open(path,encoding="utf-8",errors="ignore").read()
+              t=re.sub(r'(channels\s*=\s*\[.*?)(?=\n\s*def )',lambda m:m.group(1).rstrip()+"\n    ]\n\n",t,flags=re.DOTALL)
+              t=re.sub(r'(channel_ids\s*=\s*\[.*?)(?=\n\s*def )',lambda m:m.group(1).rstrip().rstrip(',')+"\n    ]\n\n",t,flags=re.DOTALL)
+              open(path,"w",encoding="utf-8").write(t)
+          except: pass
           PY
 
       - name: 1 - ULUSAL
         continue-on-error: true
         run: python iptv.py
-
       - name: 2 - SELCUK
         continue-on-error: true
         run: python slck.py
-
       - name: 3 - MAHSUN
         continue-on-error: true
         run: python mahsun.py
-
       - name: 4 - ATOM
         continue-on-error: true
         run: python atom.py
-
       - name: 5 - KRAL
         continue-on-error: true
         run: python kra.py
-
       - name: 6 - ARDA
         continue-on-error: true
         run: python arda.py
-
       - name: 7 - LIG
         continue-on-error: true
         run: python lig.py
-        
-      - name: 8 - ATV
+      - name: 8 - 【entity-ATV¦canonical_name=ATV】
         continue-on-error: true
         run: python atv1.py
-        
       - name: 9 - ALLSPOR
         continue-on-error: true
         run: python allspor.py
-
       - name: 10 - SELCUK
         continue-on-error: true
         run: python selcuk.py
-
       - name: 11 - PATRON
         continue-on-error: true
         run: python patron.py
-
       - name: 11b - PATRON 2
         continue-on-error: true
         run: python ptrn.py
-
-      - name: 12 - STAR ve ULUSAL (playwright ile token'lı linkler)
+      - name: 12 - STAR ve ULUSAL
         continue-on-error: true
         run: python tv.py
 
       - name: Olusan M3U listelerini raporla
         if: always()
         run: |
-          echo "================================"
-          echo "OLUSAN M3U DOSYALARI"
-          echo "================================"
-          find . -type f -name "*.m3u" \
-            -not -path "./.git/*" \
-            -printf "%p | %s byte\n" | sort
-          echo "================================"
-          ls -lh *.m3u 2>/dev/null || true
+          ls -lh *.m3u
+          wc -l mirti68.m3u
 
       - name: M3U dosyalarini GitHub'a kaydet
         if: always()
         run: |
           git config user.name "bot"
           git config user.email "bot@bot.com"
-          git add -A -- "*.m3u"
-          if git diff --cached --quiet; then
-            echo "Kaydedilecek yeni degisiklik yok."
-          else
-            git commit -m "Otomatik M3U guncelleme"
-            git pull --rebase origin main || true
-            git push origin HEAD:main
+          SIZE=$(stat -c%s "mirti68.m3u" 2>/dev/null || echo 0)
+          if [ "$SIZE" -lt 80000 ]; then
+            echo "HATA: mirti68.m3u silinmis gibi ($SIZE byte), push iptal!"
+            exit 1
           fi
+          git stash push -u -m "temp" --keep-index || true
+          git pull --rebase origin main || true
+          git stash pop || true
+          git add -A -- "*.m3u"
+          git diff --cached --quiet && echo "Degisiklik yok" && exit 0
+          git commit -m "Otomatik M3U guncelleme"
+          git push origin HEAD:main
