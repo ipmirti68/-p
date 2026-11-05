@@ -20,7 +20,7 @@ async def get_links(page):
         m = re.search(r'https://dogus\.daioncdn\.net/startv/[^"\']+\.m3u8[^"\']*', content)
         if m:
             links["Star TV"] = m.group(0)
-            print(f"[+] Star TVtest Linki Yakalandı: {links['Star TV'][:70]}...")
+            print(f"[+] Star TVtest Linki Yakalandı: {links['Star TV TEST'][:70]}...")
     except Exception as e:
         print(f"[!] Star hata: {e}")
 
@@ -32,7 +32,7 @@ async def get_links(page):
         m = re.search(r'https://ciner\.daioncdn\.net/showtv/[^"\']+\.m3u8[^"\']*', content)
         if m:
             links["Show TV"] = m.group(0)
-            print(f"[+] Show TVtset Linki Yakalandı: {links['Show TV'][:70]}...")
+            print(f"[+] Show TVtset Linki Yakalandı: {links['Show TV TEST'][:70]}...")
     except Exception as e:
         print(f"[!] Show hata: {e}")
 
@@ -44,7 +44,7 @@ async def get_links(page):
         m = re.search(r'https://securevideotoken\.tmgrup\.com\.tr/webtv/secure\?[^"\']+', content)
         if m:
             links["ATV"] = m.group(0)
-            print(f"[+] ATVtset Linki Yakalandı: {links['ATV'][:70]}...")
+            print(f"[+] ATVtset Linki Yakalandı: {links['ATV'TEST][:70]}...")
     except Exception as e:
         print(f"[!] ATVtset sayfası tam yüklenemedi (Yine de devam ediliyor): {e}")
         # sayfa kaynağından yine dene
