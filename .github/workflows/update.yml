@@ -52,7 +52,7 @@ jobs:
 
       - name: 6 - VOLEYBOL
         continue-on-error: true
-        run: python voleybol_youtube.p || echo "voleybol failed"
+        run: python voleybol_youtube.py || echo "voleybol failed"
 
       - name: 7 - IPTV (Ulusal)
         continue-on-error: true
