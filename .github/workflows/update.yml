@@ -36,7 +36,7 @@ jobs:
 
       - name: 2 - ATV
         continue-on-error: true
-        run: python atv1.py || echo "atv1 failed"
+        run: python atv1.y || echo "atv1 failed"
 
       - name: 3 - LIG
         continue-on-error: true
