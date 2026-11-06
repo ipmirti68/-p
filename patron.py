@@ -1,839 +1,161 @@
-
-import requests
-import urllib3
-import re
+import asyncio
 import os
-from urllib.parse import urlparse, urljoin
+import sys
+import re
+import requests
+from playwright.async_api import async_playwright
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+# ==================== KULLANICI AYARLARI ====================
+BASLANGIC_DOMAIN_NUM = 1082  # Aktif başlangıç sayısı güncellendi
+CIKTI_DOSYASI = "mirti68.m3u"
 
-# ==================================================
-# KAYNAKLAR
-# ==================================================
+SABIT_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+# ============================================================
 
-REDIRECT_SOURCE_URL = (
-    "http://raw.githack.com/eniyiyayinci/redirect-cdn/main/inattv.html"
-)
+def get_active_taraftarium_url(start_num, max_attempts=15):
+    headers = {'User-Agent': SABIT_USER_AGENT}
+    print("🌐 [ADIM 1] Aktif Taraftarium domaini aranıyor...")
+    
+    for i in range(max_attempts):
+        current_num = start_num + i
+        test_url = f"https://taraftarium{current_num}.xyz"
+        print(f"🔎 {test_url} test ediliyor...")
+        try:
+            # allow_redirects=False eklenerek sahte/yönlendiren domainler engellendi
+            response = requests.get(test_url, headers=headers, timeout=4, allow_redirects=False)
+            
+            # Sadece doğrudan 200 dönen ve yönlendirme yapmayan domain kabul edilir
+            if response.status_code == 200:
+                print(f"✅ AKTİF DOMAİN BULUNDU: {test_url}")
+                return test_url
+            elif response.status_code in [301, 302, 307, 308]:
+                print(f"⏩ {test_url} başka yere yönlendiriyor, atlanıyor...")
+        except requests.RequestException:
+            continue
+            
+    print(f"⚠️ Aktif yeni domain bulunamadı! Başlangıç adresi ({start_num}) ile devam ediliyor.")
+    return f"https://taraftarium{start_num}.xyz"
 
-DOMAIN_API_URL = "https://patrongol41.cfd/domain.php"
-MATCHES_API_URL = "https://patrongol41.cfd//matches.php"
+def m3u_temizle_ve_hazirla(dosya_yolu):
+    with open(dosya_yolu, "a", encoding="utf-8") as f:
+        f.write("#EXTM3U\n")
+    print(f"🧹 {dosya_yolu} temizlendi ve yeni kayıtlar için hazırlandı.")
 
-OUTPUT_FILE = "mirti68.m3u"
-GROUP_NAME = "🖥beINSPORTS"
+def m3u_listesine_ekle(url, kanal_adi, referer_url, dosya_yolu):
+    if not referer_url.endswith('/'):
+        referer_url += '/'
+        
+    if "/ex1/" in url:
+        url = url.replace("/ex1/", "/taraftarium/")
+        
+    with open(dosya_yolu, "a", encoding="utf-8") as f:
+        f.write(f'#EXTINF:-1,{kanal_adi}\n')
+        f.write(f'#EXTVLCOPT:http-referrer={referer_url}\n')
+        f.write(f'#EXTVLCOPT:http-user-agent={SABIT_USER_AGENT}\n')
+        f.write(f"{url}\n\n")
+    print(f"💾 [KAYDEDİLDİ] {kanal_adi} -> M3U formatında yazıldı.")
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36"
-    )
-}
-
-# ==================================================
-# SABİT KANALLAR
-# ==================================================
-
-STATIC_CHANNELS = [
-    ("patron", "BEIN SPORTS 1", "beinsports1.png"),
-    ("b2", "BEIN SPORTS 2", "beinsports2.png"),
-    ("b3", "BEIN SPORTS 3", "beinsports3.png"),
-    ("b4", "BEIN SPORTS 4", "beinsports4.png"),
-    ("b5", "BEIN SPORTS 5", "beinsports5.png"),
-    ("bm1", "BEIN SPORTS MAX 1", "beinsportsmax1.png"),
-    ("bm2", "BEIN SPORTS MAX 2", "beinsportsmax2.png"),
-    ("ss", "S SPORT", "ssport1.png"),
-    ("ss2", "S SPORT 2", "ssport2.png"),
-    ("smarts", "SMART SPOR", "smartspor.png"),
-    ("smarts2", "SMART SPOR 2", "smartspor2.png"),
-    ("t1", "TİVİBU SPOR 1", "tivibu1.png"),
-    ("t2", "TİVİBU SPOR 2", "tivibu2.png"),
-    ("t3", "TİVİBU SPOR 3", "tivibu3.png"),
-    ("t4", "TİVİBU SPOR 4", "tivibu4.png"),
-    ("trtspor", "TRT SPOR", "trtspornew.png"),
-    ("trtyildiz", "TRT SPOR YILDIZ", "trtspor2.png"),
-]
-
-# ==================================================
-# YARDIMCI FONKSİYONLAR
-# ==================================================
-
-def get_base_url():
-    try:
-        response = requests.get(
-            DOMAIN_API_URL,
-            headers=HEADERS,
-            timeout=15,
-            verify=False
+async def main():
+    hedef_url = get_active_taraftarium_url(BASLANGIC_DOMAIN_NUM)
+    m3u_temizle_ve_hazirla(CIKTI_DOSYASI)
+    
+    async with async_playwright() as p:
+        print("🚀 [ADIM 2] Playwright (Chromium) başlatılıyor...")
+        browser = await p.chromium.launch(headless=True) 
+        
+        context = await browser.new_context(
+            user_agent=SABIT_USER_AGENT,
+            viewport={"width": 1280, "height": 720}
         )
-        response.raise_for_status()
+        page = await context.new_page()
 
-        data = response.json()
-        base_url = data.get("baseurl", "").strip()
-
-        if base_url:
-            base_url = base_url.replace("\\", "").rstrip("/") + "/"
-            print("Base URL:", base_url)
-            return base_url
-
-    except Exception as error:
-        print("Domain API hatası:", error)
-
-    parsed = urlparse(MATCHES_API_URL)
-    return f"{parsed.scheme}://{parsed.netloc}/"
-
-
-def get_referrer():
-    try:
-        response = requests.get(
-            REDIRECT_SOURCE_URL,
-            headers=HEADERS,
-            timeout=15
-        )
-        response.raise_for_status()
-
-        matches = re.findall(
-            r'''href=["'](https?://[^"']+\.cfd(?:/[^"']*)?)["']''',
-            response.text,
-            re.IGNORECASE
-        )
-
-        if matches:
-            return matches[0].rstrip("/")
-
-    except Exception as error:
-        print("Redirect kaynağı hatası:", error)
-
-    parsed = urlparse(MATCHES_API_URL)
-    return f"{parsed.scheme}://{parsed.netloc}"
-
-
-def make_stream_url(base_url, channel_id):
-    return urljoin(
-        base_url,
-        f"ch.html?id={channel_id}"
-    )
-
-
-def clean(value):
-    return str(value or "").strip()
-
-
-def make_extinf(name, logo, group=GROUP_NAME):
-    return (
-        f'#EXTINF:-1 group-title="{group}" '
-        f'tvg-logo="{logo}",{name}'
-    )
-
-
-# ==================================================
-# MAÇLARI AL
-# ==================================================
-
-def get_matches():
-    matches_list = []
-
-    try:
-        print("Maç API'sine bağlanılıyor...")
-
-        response = requests.get(
-            MATCHES_API_URL,
-            headers=HEADERS,
-            timeout=20,
-            verify=False
-        )
-        response.raise_for_status()
-
-        data = response.json()
-
-        if isinstance(data, dict):
-            data = data.get("matches", [])
-
-        print("API maç sayısı:", len(data))
-
-        for match in data:
-            url_path = clean(match.get("URL"))
-
-            id_match = re.search(r"[?&]id=([^&]+)", url_path)
-
-            if not id_match:
-                continue
-
-            channel_id = id_match.group(1)
-
-            home = clean(match.get("HomeTeam"))
-            away = clean(match.get("AwayTeam"))
-
-            if not home and not away:
-                continue
-
-            league = clean(match.get("league")) or "Spor"
-            match_time = clean(match.get("Time"))
-
-            home_logo = clean(match.get("HomeLogo"))
-            away_logo = clean(match.get("AwayLogo"))
-
-            logo = home_logo or away_logo
-
-            name = f"{home} - {away}"
-
-            if match_time:
-                name += f" [{match_time}]"
-
-            matches_list.append({
-                "id": channel_id,
-                "name": name,
-                "logo": logo,
-                "league": league
-            })
-
-            if home_logo and away_logo:
-                print(f"✓ {name}: İki logo mevcut")
-            elif logo:
-                print(f"✓ {name}: Tek logo mevcut")
+        async def trafik_filtresi(route, request):
+            if request.resource_type in ["stylesheet", "font", "image"] or any(x in request.url for x in ["google", "analytics", "doubleclick", "adnxs"]):
+                await route.abort()
             else:
-                print(f"✓ {name}: Logo yok")
+                await route.continue_()
 
-    except Exception as error:
-        print("Maç API hatası:", error)
+        await page.route("**/*", trafik_filtresi)
 
-    return matches_list
+        print(f"🛰️ [ADIM 3] Ana menü taranıyor: {hedef_url}")
+        try:
+            await page.goto(hedef_url, wait_until="domcontentloaded", timeout=15000)
+            await page.wait_for_timeout(2000)
+        except Exception as e:
+            print(f"❌ Ana sayfaya erişim başarısız (Süre aşımı): {e}")
+            await browser.close()
+            return
 
+        kanal_elementleri = await page.query_selector_all("a.channel-item")
+        kesfedilen_kanallar = []
 
-# ==================================================
-# SABİT KANALLARI HAZIRLA
-# ==================================================
+        for kutu in kanal_elementleri:
+            href = await kutu.get_attribute("href")
+            id_match = re.search(r"id=([^&]+)", href) if href else None
+            
+            if id_match:
+                kanal_id = id_match.group(1)
+                kanal_adi_element = await kutu.query_selector(".channel-name")
+                if kanal_adi_element:
+                    kanal_adi = (await kanal_adi_element.inner_text()).strip()
+                else:
+                    kanal_adi = f"Kanal {kanal_id.upper()}"
+                
+                if "atv" in kanal_adi.lower() or "atv" in kanal_id.lower():
+                    print(f"⏭️ [ATLANTI] {kanal_adi} (ATV listeden çıkarıldı)")
+                    continue
 
-def get_static_channels(base_url):
-    channels = []
+                kesfedilen_kanallar.append({"id": kanal_id, "name": kanal_adi})
 
-    for channel_id, name, logo_file in STATIC_CHANNELS:
+        total_kanal = len(kesfedilen_kanallar)
+        print(f"📺 Toplam {total_kanal} kanal tespit edildi. Tarama başlıyor...\n")
 
-        logo_url = (
-            f"https://patrongol41.cfd/img/{logo_file}"
-        )
+        if total_kanal == 0:
+            print("❌ HATA: Sitede uygun kanal elemanı bulunamadı!")
+            await browser.close()
+            return
 
-        stream_url = make_stream_url(
-            base_url,
-            channel_id
-        )
+        for index, kanal in enumerate(kesfedilen_kanallar):
+            kanal_id = kanal["id"]
+            kanal_adi = kanal["name"]
+            
+            kanal_sayfa_url = f"{hedef_url}/channel.html?id={kanal_id}"
+            print(f"\n⚡ [{index + 1}/{total_kanal}] Tarama: {kanal_adi} (ID: {kanal_id})")
+            print(f"   -> Sayfaya gidiliyor: {kanal_sayfa_url}")
 
-        channels.append({
-            "name": name,
-            "logo": logo_url,
-            "url": stream_url
-        })
+            yakalanan_url = None
+            link_yakalandi_olayi = asyncio.Event()
 
-    return channels
+            async def istek_dinle(request):
+                nonlocal yakalanan_url
+                url = request.url
+                if re.search(r"\.m3u8(\?|$)", url):
+                    yakalanan_url = url
+                    link_yakalandi_olayi.set()
 
+            page.on("request", istek_dinle)
 
-# ==================================================
-# ESKİ M3U DOSYASINI KORU
-# ==================================================
+            try:
+                await page.goto(kanal_sayfa_url, wait_until="domcontentloaded", timeout=10000)
+                
+                try:
+                    await asyncio.wait_for(link_yakalandi_olayi.wait(), timeout=6.0)
+                except asyncio.TimeoutError:
+                    pass
 
-def read_old_playlist():
-    if not os.path.exists(OUTPUT_FILE):
-        return []
+                if yakalanan_url:
+                    print(f"   🎯 LINK BULUNDU: {yakalanan_url}")
+                    m3u_listesine_ekle(yakalanan_url, kanal_adi, hedef_url, CIKTI_DOSYASI)
+                else:
+                    print(f"   ⚠️ Yayın linki bu kanal için yakalanamadı.")
 
-    try:
-        with open(
-            OUTPUT_FILE,
-            "r",
-            encoding="utf-8"
-        ) as file:
-            lines = file.readlines()
+            except Exception as ex:
+                print(f"   ❌ Sayfa yüklenirken hata oluştu: {str(ex)[:50]}")
+            finally:
+                page.remove_listener("request", istek_dinle)
 
-        preserved = []
-        skip = False
-
-        for line in lines:
-            if line.startswith("#EXTINF:"):
-                skip = GROUP_NAME in line
-            elif line.startswith("#EXTM3U"):
-                continue
-
-            if not skip:
-                preserved.append(line.rstrip("\n"))
-
-        return preserved
-
-    except Exception as error:
-        print("Eski liste okunamadı:", error)
-        return []
-
-
-# ==================================================
-# M3U OLUŞTUR
-# ==================================================
-
-def main():
-
-    print("=" * 45)
-    print("SPOR KANALLARI VE MAÇLAR HAZIRLANIYOR")
-    print("=" * 45)
-
-    base_url = get_base_url()
-    referrer = get_referrer()
-
-    print("Base URL:", base_url)
-    print("Referrer:", referrer)
-
-    matches = get_matches()
-    static_channels = get_static_channels(base_url)
-
-    old_lines = read_old_playlist()
-
-    output = ["#EXTM3U"]
-
-    # Önce sabit spor kanalları
-    for channel in static_channels:
-
-        output.append(
-            make_extinf(
-                channel["name"],
-                channel["logo"]
-            )
-        )
-
-        output.append(channel["url"])
-
-    # Sonra maç yayınları
-    for match in matches:
-
-        stream_url = make_stream_url(
-            base_url,
-            match["id"]
-        )
-
-        output.append(
-            make_extinf(
-                match["name"],
-                match["logo"],
-                f"{GROUP_NAME} | {match['league']}"
-            )
-        )
-
-        output.append(stream_url)
-
-    # Diğer kategorileri koru
-    output.extend(old_lines)
-
-    # Dosyayı yeniden oluştur
-    with open(
-        OUTPUT_FILE,
-        "w",
-        encoding="utf-8"
-    ) as file:
-        file.write("\n".join(output) + "\n")
-
-    print("=" * 45)
-    print("İŞLEM TAMAMLANDI")
-    print("Sabit kanal:", len(static_channels))
-    print("Maç sayısı:", len(matches))
-    print("Dosya:", OUTPUT_FILE)
-    print("=" * 45)
-
+        print(f"\n🏁 [BİTTİ] '{CIKTI_DOSYASI}' dosyası başarıyla güncellendi!")
+        await browser.close()
 
 if __name__ == "__main__":
-    main()
-        </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsports4.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=b5" data-id="channel_5">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS 5</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsports5.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=bm1" data-id="channel_6">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS MAX 1</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsportsmax1.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=bm2" data-id="channel_7">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS MAX 2</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsportsmax2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=ss" data-id="channel_8">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">S SPORT</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/ssport1.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=ss2" data-id="channel_9">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">S SPORT 2</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/ssport2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=smarts" data-id="channel_10">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">SMART SPOR</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/smartspor.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=smarts2" data-id="channel_11">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">SMART SPOR 2</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/smartspor2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=t1" data-id="channel_12">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TİVİBU SPOR 1</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/tivibu1.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=t2" data-id="channel_13">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TİVİBU SPOR 2</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/tivibu2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=t3" data-id="channel_14">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TİVİBU SPOR 3</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/tivibu3.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=t4" data-id="channel_15">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TİVİBU SPOR 4</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/tivibu4.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=trtspor" data-id="channel_16">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TRT SPOR</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/trtspornew.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=trtyildiz" data-id="channel_17">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TRT SPOR YILDIZ</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/trtspor2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=trt1" data-id="channel_18">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="timport requests
-import urllib3
-import json
-import re
-
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-# KAYNAKLAR
-REDIRECT_SOURCE_URL = "http://raw.githack.com/eniyiyayinci/redirect-cdn/main/inattv.html"
-DOMAIN_API_URL = "https://patrongol41.cfd/domain.php"
-MATCHES_API_URL = "https://patrongol41.cfd/matches.php"
-
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-}
-
-def get_base_url_with_fallback():
-    """Base URL'i al, başarısız olursa alternatif yöntemler dene"""
-    
-    # 1. Yöntem: Domain API'si
-    try:
-        r = requests.get(DOMAIN_API_URL, headers=HEADERS, timeout=10, verify=False)
-        data = r.json()
-        base_url = data.get("baseurl", "")
-        if base_url:
-            base_url = base_url.replace("\\", "").rstrip('/')
-            print(f"✅ Domain API'den base URL alındı: {base_url}")
-            return base_url + "/"
-    except Exception as e:
-        print(f"⚠️ Domain API hatası: {e}")
-    
-    # 2. Yöntem: matches.php'den domain çıkarımı
-    try:
-        from urllib.parse import urlparse
-        parsed = urlparse(MATCHES_API_URL)
-        base_url = f"{parsed.scheme}://{parsed.netloc}/"
-        print(f"⚠️ Matches API domain'i base URL olarak kullanılıyor: {base_url}")
-        return base_url
-    except:
-        pass
-    
-    print("❌ Base URL alınamadı!")
-    return None
-
-def get_referrer_with_fallback():
-    """Referrer adresini al, başarısız olursa alternatifler dene"""
-    
-    # 1. Yöntem: Redirect kaynağı
-    try:
-        r = requests.get(REDIRECT_SOURCE_URL, headers=HEADERS, timeout=10)
-        content = r.text
-        
-        # .cfd uzantılı linkleri bul
-        cfd_matches = re.findall(r'href="(https?://[^"]+\.cfd)[/"]', content)
-        if cfd_matches:
-            referrer = cfd_matches[0].rstrip('/')
-            print(f"✅ Redirect'ten referrer alındı: {referrer}")
-            return referrer
-    except Exception as e:
-        print(f"⚠️ Redirect kaynağı hatası: {e}")
-    
-    # 2. Yöntem: Varsayılan domain
-    try:
-        from urllib.parse import urlparse
-        parsed = urlparse(MATCHES_API_URL)
-        referrer = f"{parsed.scheme}://{parsed.netloc}"
-        print(f"⚠️ Varsayılan referrer kullanılıyor: {referrer}")
-        return referrer
-    except:
-        pass
-    
-    print("❌ Referrer alınamadı!")
-    return None
-
-def create_logo_html(home_logo, away_logo):
-    """
-    İki logoyu birleştiren bir HTML veya özel format oluştur.
-    VLC tvg-logo'da sadece tek bir URL gösterir, bu yüzden 
-    logoları yan yana göstermek için özel bir servis kullanmak gerekir.
-    Şimdilik ev sahibi logosunu kullanıp, away logosunu kanal adında belirtelim.
-    """
-    if home_logo and away_logo:
-        # İleride kullanılmak üzere her iki logoyu da sakla
-        return home_logo  # VLC uyumluluğu için tek logo
-    return home_logo or away_logo or ""
-
-def extract_static_channels_from_html(html_content):
-    """Sabit kanalları HTML'den çıkar"""
-    channels = []
-    channel_blocks = re.findall(r'<div class="channel-item".*?data-src="/ch\.html\?id=([^"]+)".*?>(.*?)</div>\s*</div>', html_content, re.DOTALL)
-    
-    for channel_id, block_content in channel_blocks:
-        name_match = re.search(r'class="channel-name-text">([^<]+)</span>', block_content)
-        if name_match:
-            channel_name = name_match.group(1).strip()
-            logo_match = re.search(r'<img src="([^"]+)" class="channel-logo-right"', block_content)
-            logo_url = logo_match.group(1) if logo_match else ""
-            
-            channels.append({
-                'id': channel_id,
-                'name': channel_name,
-                'logo': logo_url,
-                'type': 'static'
-            })
-    return channels
-
-def main():
-    print("🔍 Kaynaklardan bilgiler alınıyor...")
-    print("-" * 50)
-    
-    # Base URL'i dene
-    base_url = get_base_url_with_fallback()
-    if not base_url:
-        print("❌ Base URL alınamadı, işlem durduruluyor.")
-        return
-    
-    # Referrer'ı dene
-    referrer = get_referrer_with_fallback()
-    if not referrer:
-        print("❌ Referrer alınamadı, işlem durduruluyor.")
-        return
-    
-    print("-" * 50)
-    print(f"📡 Kullanılacak Referrer: {referrer}")
-    print(f"🚀 Kullanılacak Base URL: {base_url}")
-    print("-" * 50)
-    
-    m3u_list = ["#EXTM3U"]
-    all_matches = []
-    
-    # Maç API'sinden verileri çek
-    try:
-        print("\n📡 Maç API'sinden veriler alınıyor...")
-        response = requests.get(MATCHES_API_URL, headers=HEADERS, timeout=15)
-        matches = response.json()
-        print(f"🔍 API'den {len(matches)} maç kaydı alındı.")
-        
-        for match in matches:
-            url_path = match.get('URL', '')
-            channel_id = url_path.split('id=')[-1] if 'id=' in url_path else None
-            
-            if channel_id:
-                home = match.get('HomeTeam', '').strip()
-                away = match.get('AwayTeam', '').strip()
-                league = match.get('league', 'Spor').strip()
-                match_type = match.get('type', 'football').strip()
-                match_time = match.get('Time', '').strip()
-                
-                # Her iki takımın logosu
-                home_logo = match.get('HomeLogo', '')
-                away_logo = match.get('AwayLogo', '')
-                
-                # Logo için ev sahibi logosunu kullan (VLC uyumluluğu)
-                logo_url = home_logo or away_logo or ""
-                
-                # Kanal adı (her iki takım da görünsün)
-                channel_name = f"{home} - {away}"
-                if match_time:
-                    channel_name += f" [{match_time}]"
-                
-                # Ek bilgi olarak her iki logoyu da sakla (ileride kullanılmak üzere)
-                all_matches.append({
-                    'id': channel_id,
-                    'name': channel_name,
-                    'logo': logo_url,
-                    'home_logo': home_logo,
-                    'away_logo': away_logo,
-                    'league': league,
-                    'type': match_type,
-                    'time': match_time,
-                    'home': home,
-                    'away': away
-                })
-                
-                # Logoları kontrol et ve varsa yazdır
-                if home_logo and away_logo:
-                    print(f"  ✓ {home} - {away}: Her iki logo da mevcut")
-                elif home_logo or away_logo:
-                    print(f"  ✓ {home} - {away}: Tek logo mevcut")
-                else:
-                    print(f"  ✓ {home} - {away}: Logo yok")
-        
-        print(f"✅ {len(all_matches)} maç hazır.")
-        
-    except Exception as e:
-        print(f"⚠️ Maç API'si hatası: {e}")
-        print("Devam ediliyor...")
-    
-    # Sabit kanallar
-    print("\n📺 Sabit kanallar hazırlanıyor...")
-    
-    static_html = """<div id="matchList"><div class="channel-item" data-src="/ch.html?id=patron" data-id="channel_1">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS 1</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsports1.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-ad-item"><a href="https://t.ly/HepbetSpor" target="_blank"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXWzCfu5DzKQDasl97tLxFdcx05Bcx22a0g8ixY0jVtwzlzHa-n8Rz3rp_y9PL_Wq-NfTfg32ggIYNfgXkRoEJzIcXn9mOpdqGCDmnu62g8RevQf0SD86nuUt56P_BY-LF8kxCyxIfZKkOkktcJzcpfMDi7bt5XGm2WURcvkglqFyAYEZwo_pn_kbbRKk/s1600/gif%20yeni.gif" alt="Reklam"></a></div><div class="channel-item" data-src="/ch.html?id=b2" data-id="channel_2">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS 2</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsports2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-ad-item"><a href="https://t.ly/HepbetSpor" target="_blank"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXWzCfu5DzKQDasl97tLxFdcx05Bcx22a0g8ixY0jVtwzlzHa-n8Rz3rp_y9PL_Wq-NfTfg32ggIYNfgXkRoEJzIcXn9mOpdqGCDmnu62g8RevQf0SD86nuUt56P_BY-LF8kxCyxIfZKkOkktcJzcpfMDi7bt5XGm2WURcvkglqFyAYEZwo_pn_kbbRKk/s1600/gif%20yeni.gif" alt="Reklam"></a></div><div class="channel-item" data-src="/ch.html?id=b3" data-id="channel_3">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS 3</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsports3.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=b4" data-id="channel_4">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS 4</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsports4.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=b5" data-id="channel_5">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS 5</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsports5.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=bm1" data-id="channel_6">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS MAX 1</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsportsmax1.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=bm2" data-id="channel_7">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">BEIN SPORTS MAX 2</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/beinsportsmax2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=ss" data-id="channel_8">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">S SPORT</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/ssport1.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=ss2" data-id="channel_9">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">S SPORT 2</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/ssport2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=smarts" data-id="channel_10">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">SMART SPOR</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/smartspor.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=smarts2" data-id="channel_11">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">SMART SPOR 2</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/smartspor2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=t1" data-id="channel_12">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TİVİBU SPOR 1</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/tivibu1.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=t2" data-id="channel_13">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TİVİBU SPOR 2</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/tivibu2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=t3" data-id="channel_14">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TİVİBU SPOR 3</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/tivibu3.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=t4" data-id="channel_15">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TİVİBU SPOR 4</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/tivibu4.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=trtspor" data-id="channel_16">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TRT SPOR</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/trtspornew.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=trtyildiz" data-id="channel_17">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tv-icon-box"></div>
-                                <span class="channel-name-text">TRT SPOR YILDIZ</span>
-                            </div>
-                            <div class="channel-right">
-                                <span class="channel-live-badge">CANLI</span>
-                                <img src="https://patronsports1.cfd/img/trtspor2.png" class="channel-logo-right" alt="">
-                            </div>
-                        </div></div><div class="channel-item" data-src="/ch.html?id=trt1" data-id="channel_18">
-                        <div class="channel-row" style="flex: 1;">
-                            <div class="channel-left">
-                                <div class="tt"
+    asyncio.run(main())
