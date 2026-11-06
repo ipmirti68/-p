@@ -57,6 +57,10 @@ jobs:
       - name: 7 - IPTV (Ulusal)
         continue-on-error: true
         run: python iptv.py || echo "iptv failed"
+        
+      - name: 8 - PATRON
+        continue-on-error: true
+        run: python patron.py || echo "iptv failed"
 
       - name: Dosyaları kaydet
         if: always()
