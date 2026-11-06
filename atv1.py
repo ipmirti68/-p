@@ -93,7 +93,16 @@ async def main():
     print(" [*] ATV DAION araniyor - bookmarklet mantigi...")
     found=[]
     async with async_playwright() as p:
-        b = await p.chromium.launch(headless=False)  # headless=False: site bot sanmasin, sen de goreceksin
+        # CI / GitHub Actions'ta ekran (XServer) yok -> headless=False patlar
+        # O yuzden: DISPLAY varsa gorunur, yoksa headless. Elle degistirmek istersen: HEADLESS=0 python atv1.py
+        import os as _os
+        _headless = _os.environ.get("HEADLESS", "1") != "0" and not _os.environ.get("DISPLAY")
+        # _headless True ise ekransiz, False ise gorunur
+        try:
+            b = await p.chromium.launch(headless=_headless, args=["--no-sandbox","--disable-dev-shm-usage"])
+        except Exception as e:
+            print(f" [!] Gorunur mod acilamadi ({e}), headless'a dusuluyor...")
+            b = await p.chromium.launch(headless=True, args=["--no-sandbox","--disable-dev-shm-usage"])
         page = await b.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36")
         await page.goto(URL, wait_until="domcontentloaded", timeout=60000)
         print(" [+] Sayfa acildi. Canliyi baslat butonuna basarsan daha iyi, 15sn bekleniyor...")
