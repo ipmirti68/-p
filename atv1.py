@@ -106,7 +106,7 @@ async def main():
                 name = "ATV HD" if "atvhd" in u else "ATV Yedek"
                 content += f'#EXTINF:-1 tvg-name="{name}" group-title="Ulusal",{name}\n{u}\n'
 
-        with open(OUTPUT, "w", encoding="utf-8") as f:
+        with open(OUTPUT, "a", encoding="utf-8") as f:
             f.write(content)
 
         print(f"[OK] {OUTPUT}")
