@@ -8,7 +8,7 @@ from playwright.async_api import async_playwright
 # ==================== KULLANICI AYARLARI ====================
 BASLANGIC_DOMAIN_NUM = 1082  # Aktif başlangıç sayısı güncellendi
 CIKTI_DOSYASI = "mirti68.m3u"
-
+GROUP = "🖥beINSPORTS"
 SABIT_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 # ============================================================
 
