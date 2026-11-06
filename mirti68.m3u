@@ -486,6 +486,8 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315290
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315304
 #EXTINF:-1 tvg-id="HTSPOR.tr" tvg-name="TR | HT SPOR 4K" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/SONRADAN/HT.SPOR.png" group-title="🏟️ SPOR",TR | HT SPOR 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315306
+#EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🖥beINSPORTS",beIN SPORTS 1 Mırtıspor
+https://mirti-spor-2026.fly.dev/cam0/index.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🖥beINSPORTS" http-user-agent="http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" http-referrer="https://fr-1.bc4liveiframecdn.shop/" referrer="https://fr-1.bc4liveiframecdn.shop/",beIN SPORTS 1 a
 #EXTVLCOPT:http-user-agent="http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 #EXTVLCOPT:http-referrer=https://fr-1.bc4liveiframecdn.shop/
@@ -496,6 +498,13 @@ https://1bhscdn.live/701/index.m3u8
 https://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/DEZWG4KWUAEXFK/6817/index.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 1 Zeus
 https://zeus645423.cfd/b1/index.txt
+#EXTINF:-1 tvg-name="beinsports 1.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM7dul5N6GiOfBVGZAgGRRHaUzaT9e3cGifx11zlvrRA&s=10" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" http-referrer="https://taraftarium1087.xyz/" referrer="https://taraftarium1087.xyz/",BeIN Sports 1
+#EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
+#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://124dumantv.com/view/theme/ultimate/img/Dumanbet-1590707043560.png" group-title="🖥beINSPORTS" http-referrer="https://124dumantv.com/" referrer="https://124dumantv.com/",beIN SPORTS 1Duman
+#EXTVLCOPT:http-referrer=https://124dumantv.com/
+https://2lacasaba.site/701/index.m3u8
 #EXTINF:-1 tvg-name="BEIN SPORTS 1.tr" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/5rhmw31628798883.png" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36" http-referrer="https://fr-1.bc4liveiframecdn.shop/" referrer="https://fr-1.bc4liveiframecdn.shop/",beIN SPORTS 1
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 #EXTVLCOPT:http-referrer=https://fr-1.bc4liveiframecdn.shop/
@@ -503,6 +512,10 @@ https://zeus645423.cfd/b1/index.txt
 https://1bhscdn.live/701/index.m3u8
 #EXTINF:-1 tvg-id="bein_sport" tvg-name="bein sports 2.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",BeIN SPORTS 2 Zeus
 https://zeus645423.cfd/b2/index.txt
+#EXTINF:-1 tvg-name="beinsports 2.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM7dul5N6GiOfBVGZAgGRRHaUzaT9e3cGifx11zlvrRA&s=10" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" http-referrer="https://taraftarium1087.xyz/" referrer="https://taraftarium1087.xyz/",BeIN Sports 2
+#EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+https://g1b.d72577a9dd0ec74.cfd/b2/mono.m3u8
 #EXTINF:-1 tvg-id="bein-sports-2724" tvg-name="bein sports 2.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 2
 #EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
@@ -513,6 +526,10 @@ https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports2/playlist.m3u
 https://1bhscdn.live/702/index.m3u8
 #EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 3 Zeus
 https://zeus645423.cfd/b3/index.txt
+#EXTINF:-1 tvg-name="beinsports 3.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM7dul5N6GiOfBVGZAgGRRHaUzaT9e3cGifx11zlvrRA&s=10" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" http-referrer="https://taraftarium1087.xyz/" referrer="https://taraftarium1087.xyz/",BeIN Sports 3
+#EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+https://g1b.d72577a9dd0ec74.cfd/b3/mono.m3u8
 #EXTINF:-1 tvg-id="bein-sports-3724" tvg-name="bein sports 3.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 3
 #EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
@@ -523,16 +540,6 @@ https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports3/playlist.m3u
 https://1bhscdn.live/703/index.m3u8
 #EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 4 Zeus
 https://zeus645423.cfd/b4/index.txt
-#EXTINF:-1 tvg-id="bein-sports-4724" tvg-name="bein sports 4.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 4
-#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports4/playlist.m3u8
-#EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 5 Zeus
-https://zeus645423.cfd/b4/index.txt
-#EXTINF:-1 tvg-id="bein-sports-5724" tvg-name="bein sports 5.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 5
-#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports5/playlist.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡beINSPORTS",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡beINSPORTS",BEİN SPORTS 1
@@ -2912,24 +2919,29 @@ http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392075.mp4
 http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/226996.mp4
 #EXTINF:-1 tvg-name="Dizi | Çirkin" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTsRH1RDC-ZUcgTjRdnrrcdIAOO5fWfVlgnQYUDFI7Fg&s=10" group-title="📺 GÜNCEL DİZİLER",Dizi | Sevdam Karadeniz PAZARTESİ
 http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/234103.mp4
-# MIRTI68_KANALD_AUTO
-#EXTINF:-1 tvg-name="KANAL D 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL",KANAL D 🔴
-https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=957ab0fdca44a906d55fb10c99a8c007&dfp_paln=AQzzBGQEi_1QdpqI8JD398ndEGzCyOW4lCOuwzCuR9ZAAufgBPmwv45ZER04n2o25JaDsNW5Oonyy3hZlIwLTEWXQ0Cr9lbEAYSBzmNRha5Fv4NsT_iPiP412FOmwdFVxeYgrxzY9CyoC5f0Lj5w4RdKkpGiIBWybz4lxGGsUpjNH1OkzgX4cPXFyYBMkA1ujvQS6q7bunpgQq4kC9X7aLMWcJ6GHy6oQETDx8tn3YEuI4XAsTtsvWHfmzoDEXVI2dt9ezuOfkKXKkvk7j-i5CYIkl-nBlhsBBTaOuTYq19VPiPaSzUtCJsPNvYdcFZjmjhT5UNFVJVRLy0FBQMudenutCkZiUXpc7AVlI8h1BkAn-i00I27aYlMP4y_xRtWfyURf5LqU1BVhyu3VohXJro6SFwrbC-JgV4xoKBdF0O37xe34u24Ax3lppUDxDORnijOh_Hvvm20GeDooSm01-hPxUHW6GJaBg8a2yZfgZPU_B-mgJnfHig1yIdNavsgVaHPl7n6EGCvBNY3W6bKMaqxBe3JeFyJlmiKEv0G4wXiQkfRn2oiXQhkQ2dEtF6FXoqyctA7w33m3NlxkG7_taInWEWnZtNSORnwA19owHd4P95nTBO8q2rg9ldCAauAu7CmhMxjBKyzqScBpaKnNM-H-JEa3bwgH3fnJv6XgMT1R8WdbW7akifUCi4HNHu5kcR84-ubziNYlhySSbMGDPQsNnXBGfy3vprmPkeMQLEu_azqeGwJ4KohddIME5YLOn1xIeaSRHvov5fd4-gsyZMn4JPMDrAkmeJx8Rp8OJKdQ951W_EeQmV8w-P_3DZN72s2pLigRRkdFirBmYGU260TBMm2cQYH8RJdK_F6KJmJW3IvsDL9LGecdPtk1OtdBIUpaPU-cisngdqgh1PzKWBtYcfznIut5fJrtUjjQ4BKZePpukZCNriixOxNgXOyMkI_Morq-6gIzY56xnrXowyKhTjAtwbyzuzSFM7Hp2kS2DvCv_bg3MR7ty0GwB55XDzNsb48CsxUy2MtFXNiXAFvoW6NVvNrTVqGyvdDNPhQP4PHA-j56urphOZzSfnwGIx9_DClbhe3LvWdoBEzTyV_8BlWVdfx6aqCN8EJn2asn2l-rOdETS5wluCGOtUlBOnQsKV1mwu7HNAxG73TZS1wavyeJvor088B4Wzj0rhPdRDdr5iYD-ZH3riMV43Vq0_1I-VPG7DpC2x3UAc199P26mB2j6Cd3pEaRglr0MZHF_hM7McJB8Pd70G9cumHmVvO7IqJLNK29-7ULnMBA_mJcsi5XZp1d96VtbfAjQ50ycIdB-VqTamFlwcF-SHbJ6oZxOd2g-nFy9j-Q4721bc7cigTmntKtaGSC9JM-l1SrLfkPumXPbC3XA_6sI9TD03UbLMK20e-tH4UBYx7gafVIYj6BprZfHCijR03pkqtC_i0MYY.
-# MIRTI68_STARTV_AUTO
-#EXTINF:-1 tvg-name="STAR  🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR  🔴
-https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=eee30415ece5e560a86df6b93fccf957&dfp_paln=AQzzBGQEL-yJbzlC-1GTpSrUey74n2oguUhg44F__CCZ83XCX5CyYjzWhl1OCjXpd3Q_QDmTuxVWc5jpU9fi0onJKDb6G-Fd7TJTwquC-A23oMb39i8Jw-Z1BXkjH9aixPP7ZymVVdn0b7byG_7Ot4IR-nLsGuYWMzUwLaHRXSBYnJBg5ENbhXbDKNCMjS-ec0J_TTyBVXN3HWuvMi0SMvpnMPlh6MbB1eS0MxF66a6khZLZVCCMs2tfsdPMYwhkt-RuklidCVnRQkPbpGUFAP1XbmYThoR9OteFIM-deJWYPS2cfSa2idvgE_kTRlfCzcs53-IUoAi2HORXsdRlMGJT3YDhO_6wyjqzILgC_kbDtHQxwwCkoL4D9e7VKhw_UNAq7x7-pFW7vq15hEOioyalD0aCYcuWv5z9uiNaRuX3jrTUklSVTN3oHcz_2I8C13mSDujU3xfsxJKNfomqLON72m9fvu2733UME--ZbLJTVjd9SdRUNtLbrQNyEzKhhlGyPEDY6lp6yHJ9mAOngAuPAmh1kOSc_g0TQb95wUazbzNbVLx_ftZ1tMuH_d_-hxjShZFpmAJN-K8mGRRaitzJnx0ZR5v1yc0gDBupV27mP0IQ8HASWn3Bh07Nf2wexvys7s2Bn2UEk54S88BDxXeNApMjV_9FlABArhO6-pkjhyLb7R-BFz_rek8noICxaz2GAqkRSS_0IEFoA1Xq7bSfupn85bbmPMErD-HWZ1f-ygSvxzUIKR4K47bJOdCVTBBG688EDfy3vSFE5F7XKnjC3YCe3D57coeKyTav4wCxkVTpzNt3sWzXTJ-ZVU_hf8CcbnlL7QC6eGJJSDwUDx4q4hW8__NJgXl_PiLQcxwTs6cvZUcctbgOa-X6DbAxrQue2OPLEmG5qcyRlIP_7RMnSWVeluymyjHlglqucH6BtcDvu28JX5R3FdcKOUYLuVXBvFh-cjIjK_pG9wtr4BJG2PpUIXZh6VWQxNnFmxp7UA4aIwS2vWi_2a5KA6hk5MANEnmojeSrqj96268BzAS9WG-gr4HZLBuQqBNDP1gj0XZgCanecR-11dGNmQmjLbZqqgOXoF675luW3AFYS6CvrY8dGFhgU3xNHun4bzKsn7Fvx7g01X0L9aGsCGfLeibmMHbwGjowh656Gr6X2-a-DbSP2Hko7KYenzkenrO2OqliRI2JLCj_W0QXw0ZIcIdRrQETvfmDL6gw6_X9vaZHL-Tay8P8oFNmg3t0F3MnsKJrMMh8Bu_TvxYoxrKbfpPQD8w3btxl90eA4u8IxBMGYmpEF6LbibBC9dwmUYJ9I3QVCGHAQOe0EE_H2le_4rzMeDlbWngLSj3I9oj704PRmU8PKG642Z-lQ3dwS2sf9BIGnBv3xu51rP6Eqvr0Xw2cykwAZRAMynHKB3YIMBgKqryj3R5mY7B22ug.
-# MIRTI68_SHOWTV_AUTO
-#EXTINF:-1 tvg-name="SHOW 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL",SHOW 🔴
-https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=dfef6cebe93ad9a362bbd3cf9f8be952&dfp_paln=AQzzBGQEBjI5F00220i6ZAY67ogcQZz7oD1f5KIKg82oUYVaXd4PdUxkWieq_3gIoyZDAd-DOKnho6qoAq5d5euTTBL0Z5bt6BlB7NyiYPDn45svUCS6Lhd2PJ5MGwLsfNO-X7Z6HMEmnA1m4aQby_uB9o787vE1dTaMhWhlxl8bHu85dZZsDaaozhdEu2u78XiZMTmPkNph2lFHCWW2OKrYSaAlaP11TU9ESKTO9WQ9sTzBfJjp6qe9eQMKrspiYVHUzAv_rBANU_YDSm7qZ7ptTzDqiXPNx0moeLCM0QUqoif5ZmMI5Uk05s06BCt2kci354gJPQ9qPfngCbF7dCeAG1Td08MbrhOGEGivTzXpa8AkKmh5NjO5cJes6GM3tK2WYqSQgQZSWlcbGRArSWMB_CJQb2L8N_TNA6Pbf3QxtwbGU-gMue7XjeljMhrna9ckwyjod5wjTI8i_C4pReMVu7clIN5qyPePTFeUtcbk_pcymVLNAoBbOuqSfR1CX6yzO13H5yBTXWM8GTNtcxro6nOZAIPP-HQZMApFZD9CUkCcTj9NzLOSYuqKDlATU_Z01tX-XuHf62XPAOUIU64TZ5K2hOlP8e4ith4v667Qt832wpA3PKrg0Xw1WkfVNs47ddzUq-PJBlEmmSKwdNq6mku5XsICRMdHtzazasppPR70iJi4lW3eyUyQq5HeGnY6H6d8m-PKO5s9CDwzhEMiCH_kYV0TUpXB7D8l_HqxJ-0Jh45QVfEevM3mn-vbnjvB-vhJBTdKtHqTIRYNnpCd9aVKhvDKjqGN9hNER9X-HdgRIIl1pNr0IvYE195huH9bzzvTaPLl4d4M9bDJzJqjee7OV8WiU6lBJ5AArs_UpOfopRru9VTjjY15SB2ciZG0CGZWIUGHAJge8R2WmKu85W7HXfrtJcHiRrh3HVgl09XqfSjm3pqGDVXj2ofloVxztZPtXJkPfR5Mpz_NTl8uJUOZUeG7vnTRazQvKpqlfXKGPlCHTrpoyHY1hwzLoq98yq3SLwH1cAW1OUogvIL7aamreVdIdsujm7DAsNe_Py6gJaK45c3DA4aRhoRgrM1C9BRmvVdTLXBbzz7CFOIVde4WXNP67aENATgF35a-e9kPLMko7sARWsdhkPcpPuC7VEXyiSUGZMyrHTaNS9Y1msa1ovG3c_5d2iA3_Ruz3GY8nwOOTMB5EEHmOAw39uiFdT6af-yifPft36Tm6n_BWqBXo7zbDMnqBfNPHQkx7aXhh4g.
-# MIRTI68_TV8_AUTO
-#EXTINF:-1 tvg-name="TV8 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="📺 ULUSAL",TV8 🔴
-https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=a99ed79a938f9a711b083abf1df3dd5f&dfp_paln=AQzzBGQEJDcIQiITtqQMHJLlesKS7bPRg0M7RZ63vRaXe9vfOQyJvpme2hiiQGj7u2emeH83MEry3rGPL2vSZrIyjFaoUiFR_jZ8NmErgwEr9w4jT-ukCPc-JDeN4HNCcxN6sp8VmzD4bKxqA21m3rd_UZZYRhjGaw4my6YXstEf491sN5Fp2XlgwHo9FYzK-Pp7EPWj90-NJSJ6V73_c2LM4i0y4kWRx79Hz3hqeS5ycz03kn1TODBYij-DhQlEnhSEzR7pEBqhkOEOhThCUvggq1hKVkDxr0BU5GmxQ61jPB_Y7TTuupnccs5bU-rHSx-NAqqxpdkn4n2O6h3KO1sEqcgc90ArPqskkN29vR4bIgdCY3ad961VDSPQZOEbxmavgpLm89rrPw-dVfU4fe-6-iA8nFNq3l-bbKMo0jqOCBLgUdqD1hlrBVN3PtOODqvo_fRB7h0avCCRXow30blCL0dzjb6I6agFUpcAa3Zu_3MRaEOWmXId4W5xivLNPigtLNF7QTKcOQO-CndpP-xiYQUbpPPBBoPByXejRKF2RwgwcjnBBfgyQmlrL3vzqUjSButxUhxwJwyFmKMqxUex8_rPWT2jkkYmtKJh1mRY4aUnE5_eDsasdBUHkGsTBM4yYNL6G3DdEeCeNYlm2-6aG1UdJL2bdOYDdLh0zdvRF9ygoTl_paqS9zj_snLU6y55lO02pM5YfLl_9i16jiZjHNBxtjLOvA9LarCFqOIliWkjBF-81FxSaTiEwtakV_-u_OVXV5D717Lxtkz2h51PWN9p51SW4AV5AaFfg_BtlZ49q6wWmvmmueL2TzZh-stFzIxXVCnpgyBq995UbWi1aDd-ur_FS1AssjyJwNHul0-8pZnNxoakPCMuSD0OV-l9eVwyB6wqmfBx_s2r94_hdww4R2JWhH3gzMU61TDRfA0v7uz9ufZRB_fEUswr3KsZKgTU50UNVeAAAUTgHPc-bhtF0D2EGSS21WmeRPPu9Gy3jmHz-X9yY6iet40sPX9tLW46vgKZ5yuANliv5SdNtq5UpNxgFroy7JjbE6DAtLUimLGh0k4-U3uZTvRsMyLTdTY3P3tYeUfE5DJM6FMtvrUPDGX_equdWucckFEgDwVOJ-zuB0IAAiTAylOCDed_e3omoyt1JAfqatg5DHyG_0oGZcJpGseFeddnGzKr_NlNsvQ9DYacOOXaD4rzkgh5xhEAggXHMNEYIhqGktaL5Uz0ZprUHC6mzlCb0IRA9CNLeUjnzw6kXPGN8YoA-R8oIrL-6KhHQU5LzmUP
-# MIRTI68_KANAL7_AUTO
-#EXTINF:-1 tvg-name="KANAL 7 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL",KANAL 7 🔴
-https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=e5a1ce75fa0e5ab394d5c5414d19028b&dfp_paln=AQzzBGQEDnTBOMIsBfu8VOKHD_Oer6BmJLG67V5f1eHoC6IpEmss_Lf6KCNPlJ1P_NL1mI4GDsuLghceZJJQ7F7Ie0zuDuWnFx5nFD25xP4BrG14HPJhjCFPDMNvjfTLElZ6gXsN4gIFDEUGoCZ9UZddBZ7jrzaqn3kd8jhsSZwOEQ5ewT44R-CHomLvH-FqLCb4FTR8cK5qBHUwkBkt9AlYIXDfRDEkW2ptNakgzyMwjkvCnCO0yx5fl_uXVfk4KnGPt0jbOoQtE_d79uU5qf5SLqRhmNFkAPUBPFNVR_0baRHsCGWf8AFARdG5TO_d32-LGcYXDGH0FbChUu-E1MZ08ZHLNL-3VrwjTrexev6S_Vdgfxq8jli5jWkyhP63WbdwH1YxMT0RnRkzvibNGdsxBoz8bhaI5wB6wQSY616jVLYfboHt0dkX4wp8sd6zO73KqlzYFlsiEF6_799G3-QTRbkphx4YJ3NrdHRSwKTSBNZX8hsQLwFOYlMrsetAqO_gu6COn9fqGAmAHEl9CZO9Gaj3BxD_arsJYzRUiqXvBLNQtOfcntXe3PVdp0JkcphAXsFeF3QY66-BMTFHx1_aW8jGDT6-36MlVBLrtOOHRynl6YFp-eiyPPMnsmvDxw3rLTkadQzDuw9JQM9AwJBRl_NdBR7jwwAQpWXLNedHQInSR0yNV4lkbS-m_2vFJGTiqQjAP4HOiYJ50GyWb25n0sk5wOu2bS40tQYm71QPknCO6wUvBKZngJNC4uBPipkjXXoH_rZkGhSWyxzaRfPfz2iwHvVCyV_1ZucsDOGgKuuWIDD-_IvQdPgwvi0U2RsXaAR0_nAkbpf_s9IbTMDElwrGgbBkhvKuOavMuQPXnPwe0rb6X26bnVj4QG2538yYFPcwfsbuR89bIVWGu3oGdVKYpZJ7UAtouNiWVS9QKYNRi4Si9u7PtpJgFRVwBkAm0Fd4CGxFR1wFFueTd8EPrICc22a2nAKw9A22bpivgYTS3gWPyw1Yk_xeJugNPcxZSNeF5r0H2QehabAH3gc4wyyGF8hvoSaeosR4CuHWxOSiMa7hS0py9u_qbqA4sJDgEJTV-Nn9q72bWgpjv7c0pKetTXOpkQaXVmD_KY4TLkxrouq6DoisymU6l5csPq3TJS2BI1x24qNwYXuy8hVwGB0VMVRJGLKHRX0YdN93eY1sIMXCMUYN9De99BOBU5q7SdtqdbVl6tFG-ChamlRi66zwWaS7mF1DUMg4lHELnSsjhMyS1Kjs1a993RKyHPDzPNWl0qSVbImZ9z0m0q2EJgHPSIA7M8g31wq9vaBJW3JUSP--NpowN7g1-AH5MSD8pA1iCsJtzZY3fXFPZ-EgQZ6V5IxLBtiTQP6kHqGqa3fg1_Q3rttJl9c_BAEIW1kJtw0gDlkXUAVf9muuALenApT9uQR-5OYdzgXXczcuUkI8SzSKOcTI81DP5UuEqi5hcrwLNGhMDDipBQ01tbFwdid7hocj8pkwo2_6M3xhlVZUvCA.
-# MIRTI68_NOWTV_AUTO
-#EXTINF:-1 tvg-name="NOW 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL",NOW 🔴
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=-uJjptlIai9koFcm0SyPqQ&e=1793979062
-# MIRTI68_TRT1_AUTO
-#EXTINF:-1 tvg-name="TRT 1 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1 🔴
-https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-name="beinsports 4.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM7dul5N6GiOfBVGZAgGRRHaUzaT9e3cGifx11zlvrRA&s=10" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" http-referrer="https://taraftarium1087.xyz/" referrer="https://taraftarium1087.xyz/",BeIN Sports 4
+#EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+https://g1b.d72577a9dd0ec74.cfd/b4/mono.m3u8
+#EXTINF:-1 tvg-id="bein-sports-4724" tvg-name="bein sports 4.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 4
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports4/playlist.m3u8
+#EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 5 Zeus
+https://zeus645423.cfd/b4/index.txt
+#EXTINF:-1 tvg-id="bein-sports-5724" tvg-name="bein sports 5.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 5
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports5/playlist.m3u8
+#EXTINF:-1 tvg-name="beinsports 5.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM7dul5N6GiOfBVGZAgGRRHaUzaT9e3cGifx11zlvrRA&s=10" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" http-referrer="https://taraftarium1087.xyz/" referrer="https://taraftarium1087.xyz/",BeIN Sports 5
+#EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+#EXTINF:-1 tvg-name="beinsports max 1.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM7dul5N6GiOfBVGZAgGRRHaUzaT9e3cGifx11zlvrRA&s=10" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" http-referrer="https://taraftarium1087.xyz/" referrer="https://taraftarium1087.xyz/",BeIN Max 1
+#EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+https://g1b.d72577a9dd0ec74.cfd/bm1/mono.m3u8
+#EXTINF:-1 tvg-name="beinsports max 2.tr" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM7dul5N6GiOfBVGZAgGRRHaUzaT9e3cGifx11zlvrRA&s=10" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" http-referrer="https://taraftarium1087.xyz/" referrer="https://taraftarium1087.xyz/",BeIN Max 2
+#EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
+#EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+https://g1b.d72577a9dd0ec74.cfd/bm2/mono.m3u8
