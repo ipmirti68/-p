@@ -4,7 +4,7 @@ import re, os, json
 OUTPUT_FILE = "mirti68.m3u"
 MARKER = "# MIRTI68_ATV_AUTO"
 GROUP = "📺 ULUSAL"
-NAME = "ATV"
+NAME = "ATV 🔴"
 LOGO = "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png"
 PAGE_URL = "https://www.atv.com.tr/canli-yayin"
 
