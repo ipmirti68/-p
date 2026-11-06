@@ -23,28 +23,26 @@ jobs:
           playwright install chromium --with-deps
       - name: 1 - ALLSPOR
         continue-on-error: true
-        run: python allspo.py || echo "allspor failed"
+        run: python allspor.py || echo "allspor failed"
       - name: 2 - ATV
         continue-on-error: true
-        run: python atv1.py || echo "atv1 failed"
+        run: python atv1.p || echo "atv1 failed"
       - name: 3 - LIG
         continue-on-error: true
-        run: python lig.py || echo "lig failed"
+        run: python lig.p || echo "lig failed"
       - name: 4 - SLCK
         continue-on-error: true
-        run: python slck.py || echo "slck failed"
+        run: python slck.p || echo "slck failed"
       - name: 5 - MAHSUN
         continue-on-error: true
-        run: python mahsun.py || echo "mahsun failed"
+        run: python mahsun.p || echo "mahsun failed"
       - name: 6 - VOLEYBOL
         continue-on-error: true
         run: python voleybol_youtube.py || echo "voleybol failed"
       - name: 7 - IPTV (Ulusal)
         continue-on-error: true
-        run: python iptv.py || echo "iptv failed"
-      - name: 8 - GOLVAR 
-        continue-on-error: true
-        run: python gol.py || echo "golvar failed"
+        run: python iptv.p || echo "iptv failed"
+      
       - name: Dosyaları kaydet
         if: always()
         run: |
