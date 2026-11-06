@@ -36,12 +36,12 @@ M3U8_RE = re.compile(
 # YAYIN ADRESİNİ BUL
 # ==========================================
 
+
 def get_atv_link():
 
     found = []
 
     def add_url(url, source=""):
-
         url = url.strip().rstrip("),;]}")
 
         if ".m3u8" not in url.lower():
@@ -52,7 +52,6 @@ def get_atv_link():
             print(f"[{source}] {url}")
 
     def on_dialog(dialog):
-
         try:
             print("[DIALOG]", dialog.message[:300])
             dialog.accept()
@@ -60,27 +59,18 @@ def get_atv_link():
             pass
 
     def on_response(response):
-
         try:
             url = response.url
 
-            # Doğrudan M3U8 adresi
             if ".m3u8" in url.lower():
                 add_url(url, "URL")
 
-            # ATV / player / yayın sunucusu yanıtları
             keywords = (
-                "atv",
-                "player",
-                "token",
-                "live",
-                "ercdn",
-                "daioncdn",
-                "trkvz"
+                "atv", "player", "token",
+                "live", "ercdn", "daioncdn", "trkvz"
             )
 
             if any(word in url.lower() for word in keywords):
-
                 try:
                     body = response.text()
 
@@ -94,17 +84,14 @@ def get_atv_link():
             print("[RESPONSE HATASI]", error)
 
     def on_request_failed(request):
-
         try:
-            print(
-                "[REQUEST FAILED]",
-                request.url[:180],
-                request.failure
-            )
+            print("[REQUEST FAILED]", request.url[:180])
+            print("[SEBEP]", request.failure)
         except Exception:
             pass
 
-      with sync_playwright() as p:
+    # TARAYICI BAŞLATMA
+    with sync_playwright() as p:
 
         browser = p.chromium.launch(
             headless=True,
@@ -138,6 +125,14 @@ def get_atv_link():
             )
 
             print("[+] Sayfa açıldı.")
+            page.wait_for_timeout(15000)
+
+            html = page.content()
+
+            for match in M3U8_RE.findall(html):
+                add_url(match, "HTML")
+
+            print("[*] Yayın adresleri bekleniyor...")
             page.wait_for_timeout(10000)
 
         except Exception as error:
@@ -145,57 +140,36 @@ def get_atv_link():
 
         finally:
             browser.close()
-    # ======================================
-    # ADRES SEÇİMİ
-    # ======================================
 
-    print()
+    # ADRES SEÇİMİ
     print("[*] Bulunan toplam M3U8:", len(found))
 
-    # Önce ATV 1080p Daion CDN
     for url in found:
-
         lower = url.lower()
 
         if (
             "trkvz.daioncdn.net/atv" in lower
             and "1080p" in lower
         ):
-
             print("[SECILDI - DAION 1080P]")
             return url
 
-    # Sonra ATV Daion CDN
     for url in found:
-
-        lower = url.lower()
-
-        if "trkvz.daioncdn.net/atv" in lower:
-
+        if "trkvz.daioncdn.net/atv" in url.lower():
             print("[SECILDI - DAION]")
             return url
 
-    # Sonra ATV ERCdn
     for url in found:
-
-        lower = url.lower()
-
-        if (
-            "trkvz-live.ercdn.net" in lower
-            and "atv" in lower
-        ):
-
+        if "trkvz-live.ercdn.net" in url.lower():
             print("[SECILDI - ERCDN]")
             return url
 
-    # Son çare: bulunan ilk M3U8
     if found:
-
         print("[SECILDI - ILK M3U8]")
         return found[0]
 
+    print("[!] M3U8 adresi bulunamadı.")
     return None
-
 
 # ==========================================
 # M3U DOSYASINI GÜNCELLE
