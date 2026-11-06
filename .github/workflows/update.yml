@@ -44,7 +44,7 @@ jobs:
 
       - name: 4 - SLCK
         continue-on-error: true
-        run: python slck.p || echo "slck failed"
+        run: python slck.py || echo "slck failed"
 
       - name: 5 - MAHSUN
         continue-on-error: true
