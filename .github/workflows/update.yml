@@ -23,7 +23,7 @@ jobs:
           playwright install chromium --with-deps
       - name: 1 - ALLSPOR
         continue-on-error: true
-        run: python allspor.py || echo "allspor failed"
+        run: python allspo.py || echo "allspor failed"
       - name: 2 - ATV
         continue-on-error: true
         run: python atv1.py || echo "atv1 failed"
