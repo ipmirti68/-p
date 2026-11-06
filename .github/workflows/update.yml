@@ -1,5 +1,5 @@
 
-name: update
+name: Kanal Güncelle
 
 on:
   workflow_dispatch:
