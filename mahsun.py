@@ -52,7 +52,7 @@ channels = [
     ("androstreamlivebs2", "beIN SPORTS 2 HD-Mahsun 🔴"),
     ("androstreamlivebs3", "beIN SPORTS 3 HD-Mahsun 🔴"),
     ("androstreamlivebs4", "beIN SPORTS 4 HD-Mahsun 🔴"),
-    ("androstreamlivebs5", "beIN SPORTS 5 HD-Mahsun 🔴),
+    ("androstreamlivebs5", "beIN SPORTS 5 HD-Mahsun 🔴"),
 
     ("androstreamlivebsm1", "beIN SPORTS Max 1 HD-Mahsun 🔴"),
     ("androstreamlivebsm2", "beIN SPORTS Max 2 HD-Mahsun 🔴"),
