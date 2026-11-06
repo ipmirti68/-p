@@ -60,7 +60,7 @@ jobs:
         
       - name: 8 - PATRON
         continue-on-error: true
-        run: python patn.py || echo "iptv failed"
+        run: python patron.py || echo "iptv failed"
 
       - name: Dosyaları kaydet
         if: always()
