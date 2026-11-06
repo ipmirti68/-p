@@ -26,7 +26,7 @@ jobs:
         run: python allspor.p || echo "allspor failed"
       - name: 2 - ATV
         continue-on-error: true
-        run: python atv1.p || echo "atv1 failed"
+        run: python atv1.py || echo "atv1 failed"
       - name: 3 - LIG
         continue-on-error: true
         run: python lig.p || echo "lig failed"
