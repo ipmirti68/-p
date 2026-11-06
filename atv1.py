@@ -104,12 +104,16 @@ def get_atv_link():
         except Exception:
             pass
 
-    with sync_playwright() as p:
+      with sync_playwright() as p:
 
-      browser = p.chromium.launch(
-    headless=True,
-    args=["--no-sandbox", "--disable-dev-shm-usage"]
-)
+        browser = p.chromium.launch(
+            headless=True,
+            args=[
+                "--no-sandbox",
+                "--disable-dev-shm-usage"
+            ]
+        )
+
         context = browser.new_context(
             user_agent=USER_AGENT,
             viewport={
@@ -124,12 +128,9 @@ def get_atv_link():
         page.on("response", on_response)
         page.on("requestfailed", on_request_failed)
 
-        print()
         print("[*] ATV sayfası açılıyor...")
-        print(PAGE_URL)
 
         try:
-
             page.goto(
                 PAGE_URL,
                 timeout=60000,
@@ -137,70 +138,13 @@ def get_atv_link():
             )
 
             print("[+] Sayfa açıldı.")
-
-            # Sayfanın yüklenmesini bekle
             page.wait_for_timeout(10000)
 
-            # HTML içerisindeki adresleri kontrol et
-            try:
-
-                html = page.content()
-
-                for match in M3U8_RE.findall(html):
-                    add_url(match, "HTML")
-
-            except Exception as error:
-                print("[HTML HATASI]", error)
-
-            # Oynatıcıyı başlatmayı dene
-            selectors = [
-                "button",
-                ".play-button",
-                ".vjs-big-play-button",
-                ".atv-player",
-                "[class*=play]",
-                ".jwplayer",
-                "#player"
-            ]
-
-            for selector in selectors:
-
-                try:
-
-                    page.locator(selector).first.click(
-                        timeout=1500
-                    )
-
-                    print("[TIKLANDI]", selector)
-                    page.wait_for_timeout(2000)
-
-                except Exception:
-                    pass
-
-            # Ağ yanıtlarını bekle
-            print("[*] Yayın adresleri bekleniyor...")
-
-            page.wait_for_timeout(15000)
-
-            # Son kez HTML kontrolü
-            try:
-
-                html = page.content()
-
-                for match in M3U8_RE.findall(html):
-                    add_url(match, "SON HTML")
-
-            except Exception:
-                pass
-
         except Exception as error:
-
             print("[!] SAYFA HATASI:", error)
 
         finally:
-
             browser.close()
-
     # ======================================
     # ADRES SEÇİMİ
     # ======================================
