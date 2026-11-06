@@ -32,10 +32,10 @@ jobs:
         run: python lig.p || echo "lig failed"
       - name: 4 - SLCK
         continue-on-error: true
-        run: python slck.py || echo "slck failed"
+        run: python slck.p || echo "slck failed"
       - name: 5 - MAHSUN
         continue-on-error: true
-        run: python mahsun.py || echo "mahsun failed"
+        run: python mahsun.p || echo "mahsun failed"
       - name: 6 - VOLEYBOL
         continue-on-error: true
         run: python voleybol_youtube.p || echo "voleybol failed"
