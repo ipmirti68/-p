@@ -82,15 +82,15 @@ channels = [
     ("androstreamlivetb7", "Tabii 7 HD-Mahsun 🔴"),
     ("androstreamlivetb8", "Tabii 8 HD-Mahsun 🔴"),
 
-    ("androstreamliveexn", "Exxen HD-Mahsun 🔴"),
-    ("androstreamliveexn1", "Exxen 1 HD-Mahsun 🔴"),
-    ("androstreamliveexn2", "Exxen 2 HD-Mahsun 🔴"),
-    ("androstreamliveexn3", "Exxen 3 HD-Mahsun 🔴"),
-    ("androstreamliveexn4", "Exxen 4 HD-Mahsun 🔴"),
-    ("androstreamliveexn5", "Exxen 5 HD-Mahsun 🔴"),
-    ("androstreamliveexn6", "Exxen 6 HD-Mahsun 🔴"),
-    ("androstreamliveexn7", "Exxen 7 HD-Mahsun 🔴"),
-    ("androstreamliveexn8", "Exxen 8 HD-Mahsun 🔴"),
+    ("androstreamliveexn", "beIN SPORTS HD-Mahsun 🔴"),
+    ("androstreamliveexn1", "beIN SPORTS HD-Mahsun 🔴"),
+    ("androstreamliveexn2", "DAZN 1-Mahsun 🔴"),
+    ("androstreamliveexn3", "S SPORT+ -Mahsun 🔴"),
+    ("androstreamliveexn4", "S SPORT + -Mahsun 🔴"),
+    ("androstreamliveexn5", "S SPORT + -Mahsun 🔴"),
+    ("androstreamliveexn6", "S SPORT 2 -Mahsun 🔴"),
+    ("androstreamliveexn7", "AZ TV-Mahsun 🔴"),
+    ("androstreamliveexn8", "TRT TÜRK HD-Mahsun 🔴"),
 ]
 
 
