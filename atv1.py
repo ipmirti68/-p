@@ -1,55 +1,66 @@
-# atv1_daion.py - MIRTI68 - SADECE DAION 1080p (v3 - BODY + RESPONSE + TOKEN)
+# atv1.py - MIRTI68 - Senin bookmarklet mantigiyla calisir
+# Mantik: performance + innerHTML + video tagi tara -> DAION 1080p sec -> listeyi bozmadan guncelle
 import asyncio, re, requests, os
 from playwright.async_api import async_playwright
 
 URL = "https://www.atv.com.tr/canli-yayin"
 OUTPUT = "mirti68.m3u"
 
-BLOCKED = ["google","doubleclick","yandex","sharethrough","inmobi","pubmatic","rubicon","zemanta","colossus","iqzone","krushmedia","adkernel","sync.","usync","cs.","match.","ads.","adman","criteo","outbrain","taboola","amazon-adsystem","media.net","aniview","eskimi","apester","kueez","cootlogix","omnitagjs","admatic","drift-pixel","serverbid","peer-39","tynt","e-planning","onetag","sundaysky","gumgum","rlcdn","adblockDetect","mraid.js"]
-def is_ad(u):
-    # DIKKAT: daion / ercdn / tmgrup / securevideotoken ASLA engellenmez
-    if "daioncdn" in u or "ercdn" in u or "tmgrup" in u or "securevideotoken" in u:
-        return False
-    return any(k in u.lower() for k in BLOCKED)
+# === SENIN BOOKMARKLET'ININ AYNISI, AMA ATV'YE OZEL - PLAYWRIGHT ICINDE CALISIR ===
+BOOKMARKLET_JS = r"""
+() => {
+  let u = new Set();
+  // 1) performance - networkte akan m3u8'ler
+  try { performance.getEntriesByType('resource').forEach(r => {
+    if (r.name.includes('.m3u8') || r.name.includes('.mpd')) u.add(r.name);
+  }); } catch(e) {}
+  // 2) sayfa kaynagi - BODY'ye gomulu linkler
+  let h = document.documentElement.innerHTML;
+  let re = /https?:\/\/[^"'\s]+\.m3u8[^"'\s]*/gi;
+  let m = h.match(re);
+  if (m) m.forEach(x => u.add(x));
+  // 3) securevideotoken linkleri de topla
+  let re2 = /https?:\/\/[^"'\s]+securevideotoken[^"'\s]*/gi;
+  let m2 = h.match(re2);
+  let tokens = m2 ? [...new Set(m2)] : [];
+  // 4) video / source taglari
+  document.querySelectorAll('video,source').forEach(v => {
+    if (v.src) u.add(v.src);
+    if (v.currentSrc) u.add(v.currentSrc);
+  });
+  // 5) script taglarinin ici - player config genelde burada
+  document.querySelectorAll('script').forEach(s => {
+    let t = s.textContent || '';
+    let mm = t.match(/https?:\/\/[^"'\s]+\.m3u8[^"'\s]*/gi);
+    if (mm) mm.forEach(x => u.add(x));
+  });
+  return { links: [...u], tokens: tokens };
+}
+"""
+
+def clean(u):
+    return u.replace("\\u0026","&").replace("&amp;","&").replace("\\/","/").strip().strip("'\"")
 
 def resolve_daion_variant(master_url):
     try:
         r = requests.get(master_url, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"}, timeout=15)
-        for q in ["atv_1080p.m3u8", "atv_720p.m3u8"]:
+        for q in ["atv_1080p.m3u8","atv_720p.m3u8"]:
             m = re.findall(r'(' + re.escape(q) + r'[^\s"\']+)', r.text)
             if m:
-                v = m[0]
+                v = clean(m[0])
                 if v.startswith("http"): return v
                 base = master_url.split("atv.m3u8")[0]
-                if "?" not in v and "?" in master_url:
-                    v = v + "?" + master_url.split("?",1)[1]
+                if "?" not in v and "?" in master_url: v = v + "?" + master_url.split("?",1)[1]
                 return base + v
         return master_url
     except Exception as e:
-        print(f" [VARYANT HATASI] {e}")
-        return master_url
-
-def call_secure_token(token_url):
-    """securevideotoken linkinden token'li daion linkini cikar"""
-    try:
-        r = requests.get(token_url, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"}, timeout=15)
-        # donen icerikte daion linki olabilir
-        m = re.findall(r'https://[^\s"\'\\]+daioncdn[^\s"\'\\]+', r.text)
-        if m: return m[0]
-        # bazen json: {"url": "..."}
-        m2 = re.findall(r'https://[^\s"\'\\]+\.m3u8[^\s"\'\\]*', r.text)
-        if m2: return m2[0]
-        return None
-    except Exception as e:
-        print(f" [TOKEN HATASI] {e}")
-        return None
+        print(f" [VARYANT HATASI] {e}"); return master_url
 
 def update_m3u_smart(output_path, new_atv_url):
     if not os.path.exists(output_path):
         content = "#EXTM3U x-tvg-url=\"https://raw.githubusercontent.com/iptv-org/epg/master/epg.xml\"\n"
     else:
-        with open(output_path, "r", encoding="utf-8", errors="ignore") as f:
-            content = f.read()
+        content = open(output_path, "r", encoding="utf-8", errors="ignore").read()
     lines = content.splitlines(); new_lines=[]; i=0; removed=0
     while i < len(lines):
         line = lines[i]
@@ -74,84 +85,52 @@ def update_m3u_smart(output_path, new_atv_url):
         if not inserted and line.startswith("#EXTM3U"):
             out.extend(atv_block); inserted=True
     if not inserted: out = ["#EXTM3U"] + atv_block + out
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(out)+"\n")
+    open(output_path, "w", encoding="utf-8").write("\n".join(out)+"\n")
     print(f" [OK] {removed} adet eski/olu ATV silindi, 1 adet yeni ATV eklendi")
     print(f" [OK] Diger kanallar aynen korundu - toplam satir: {len(out)}")
 
 async def main():
-    print(" [*] ATV DAION araniyor...")
-    found=[]; seen=set()
-    def add(u, src=""):
-        if u and ".m3u8" in u and u not in seen:
-            seen.add(u); found.append(u); print(f" [BULUNDU-{src}] {u[:140]}")
-
+    print(" [*] ATV DAION araniyor - bookmarklet mantigi...")
+    found=[]
     async with async_playwright() as p:
-        b=await p.chromium.launch(headless=True)
-        page=await b.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36")
-        # 1) RESPONSE
-        async def on_resp(r): add(r.url, "RESP")
-        page.on("response", on_resp)
-        # 2) REQUEST - secure token istegi bile yakalanir
-        def on_req(req): add(req.url, "REQ")
-        page.on("request", on_req)
-        async def rh(route):
-            await route.abort() if is_ad(route.request.url) else await route.continue_()
-        await page.route("**/*", rh)
-        try:
-            await page.goto(URL, wait_until="domcontentloaded", timeout=60000)
-            print(" [+] Sayfa acildi, player bekleniyor (25sn)...")
-            await asyncio.sleep(10)
-            # Player'a tiklamaya calis - token o zaman uretiliyor
+        b = await p.chromium.launch(headless=False)  # headless=False: site bot sanmasin, sen de goreceksin
+        page = await b.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36")
+        await page.goto(URL, wait_until="domcontentloaded", timeout=60000)
+        print(" [+] Sayfa acildi. Canliyi baslat butonuna basarsan daha iyi, 15sn bekleniyor...")
+        await asyncio.sleep(15)
+        # SENIN BOOKMARKLET'INI SAYFANIN ICINDE CALISTIR
+        res = await page.evaluate(BOOKMARKLET_JS)
+        found = [clean(x) for x in res.get("links",[])]
+        tokens = [clean(x) for x in res.get("tokens",[])]
+        print(f" [*] Bookmarklet {len(found)} link buldu, {len(tokens)} token linki")
+        for u in found: print("  -", u[:140])
+        # Token varsa onu da coz
+        for t in tokens:
             try:
-                await page.mouse.click(640, 360)
-            except: pass
-            await asyncio.sleep(15)
-            # 3) BODY - sayfa kaynagindaki gomulu daion linkleri
-            html = await page.content()
-            for m in re.findall(r'https://[^\s"\'\\]+daioncdn[^\s"\'\\]*\.m3u8[^\s"\'\\]*', html):
-                add(m.replace("\\u0026","&").replace("&amp;","&"), "BODY")
-            for m in re.findall(r'https://[^\s"\'\\]+securevideotoken[^\s"\'\\]+', html):
-                print(f" [TOKEN LINKI] {m[:140]}")
-                tok = call_secure_token(m.replace("\\u0026","&").replace("&amp;","&"))
-                if tok: add(tok, "TOKEN-COZULDU")
-        except Exception as e: print(" Sayfa hatasi:", e)
-        finally: await b.close()
-
-    print(f"\n [*] Toplam {len(found)} link")
-    for u in found: print("  -", u[:140])
+                r = requests.get(t, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"}, timeout=15)
+                for mm in re.findall(r'https://[^\s"\'\\]+daioncdn[^\s"\'\\]+', r.text):
+                    c = clean(mm)
+                    if c not in found: found.append(c); print(f"  - TOKENDEN: {c[:140]}")
+            except Exception as e: print(f" [TOKEN] {e}")
+        await b.close()
 
     daion_1080 = next((u for u in found if "daioncdn" in u and "atv_1080p" in u), None)
     daion_720 = next((u for u in found if "daioncdn" in u and "atv_720p" in u), None)
-    # master: /atv/atv.m3u8 - ama _1080p olmayan
     daion_master = next((u for u in found if "daioncdn" in u and "/atv/atv.m3u8" in u), None)
-
-    final=None; kaynak=""
-    if daion_1080: final=daion_1080; kaynak="DAION 1080p direkt"
-    elif daion_720: final=daion_720; kaynak="DAION 720p direkt"
+    if daion_1080: final=daion_1080; kaynak="DAION 1080p"
+    elif daion_720: final=daion_720; kaynak="DAION 720p"
     elif daion_master:
-        print(f" [*] Master bulundu, icinden 1080p cikartiliyor")
+        print(" [*] Master bulundu, icinden 1080p cikartiliyor...")
         final=resolve_daion_variant(daion_master); kaynak="DAION master -> 1080p"
     else:
-        print(" [!] DAION bulunamadi!")
-        print("     Sebep genelde: sayfa bot olarak algiladi veya player baslatilmadi")
-        print("     Cozum: 1 dk bekleyip tekrar dene, veya headless=False yap")
-        # yedek ercdn varsa yine de yaz ama uyar
-        ercdn = next((u for u in found if "ercdn" in u and "atvhd" in u), None)
-        if ercdn:
-            print(" [!] Yedek ERCDN yaziliyor (bos gorunebilir)")
-            final=ercdn; kaynak="ERCDN YEDEK"
-        else:
-            print(" [HATA] Hic link yok, dosya degistirilmedi")
-            return
-
-    print(f"\n [SECILDI - {kaynak}]"); print(final)
+        print(" [!] DAION bulunamadi! Canliyi baslat butonuna basip tekrar dene.")
+        if not found: print(" [HATA] Hic link yok"); return
+        final=found[0]; kaynak="ILK BULUNAN (YEDEK)"
+    print(f"\n [SECILDI - {kaynak}]\n{final}")
     try:
         r=requests.get(final, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"}, timeout=15)
-        print(f" [TEST] HTTP {r.status_code} - {len(r.text)} karakter - #EXTM3U var mi? {'#EXTM3U' in r.text}")
+        print(f" [TEST] HTTP {r.status_code} - #EXTM3U var mi? {'#EXTM3U' in r.text}")
     except Exception as e: print(f" [TEST] {e}")
-
     update_m3u_smart(OUTPUT, final)
-    print(" [BITTI] Oynaticiyi kapatip ac.")
 
 if __name__=="__main__": asyncio.run(main())
