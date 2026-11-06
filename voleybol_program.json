@@ -1,32 +1,5 @@
 [
   {
-    "date": "05.11.2026",
-    "time": "14:00",
-    "name": "FENERBAHÇE MEDICANA - SİNNADA HOTELS AFYON BELEDİYE YÜNTAŞ",
-    "home": "FENERBAHÇE MEDICANA",
-    "away": "SİNNADA HOTELS AFYON BELEDİYE YÜNTAŞ",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "06.11.2026",
-    "time": "18:00",
-    "name": "TOYZZ SHOP DİNAMO SPOR - DEV ATAŞEHİR",
-    "home": "TOYZZ SHOP DİNAMO SPOR",
-    "away": "DEV ATAŞEHİR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "06.11.2026",
-    "time": "19:00",
-    "name": "GALATASARAY - FENERBAHÇE MEDICANA",
-    "home": "GALATASARAY",
-    "away": "FENERBAHÇE MEDICANA",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
     "date": "07.11.2026",
     "time": "11:00",
     "name": "HALKBANK - ANKARA BAROSU",
@@ -352,15 +325,6 @@
   },
   {
     "date": "10.11.2026",
-    "time": "16:00",
-    "name": "GÖLBAŞI İNCEK SPOR - ANKARA DSİ",
-    "home": "GÖLBAŞI İNCEK SPOR",
-    "away": "ANKARA DSİ",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "10.11.2026",
     "time": "18:00",
     "name": "SÜREYYAPAŞA DOĞU AKADEMİ - FENERBAHÇE MEDICANA",
     "home": "SÜREYYAPAŞA DOĞU AKADEMİ",
@@ -425,9 +389,171 @@
   {
     "date": "11.11.2026",
     "time": "19:00",
+    "name": "GÖLBAŞI İNCEK SPOR - ANKARA DSİ",
+    "home": "GÖLBAŞI İNCEK SPOR",
+    "away": "ANKARA DSİ",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "11.11.2026",
+    "time": "19:00",
     "name": "TVF SPOR LİSESİ - BAŞKENT BEŞİKTAŞLILAR",
     "home": "TVF SPOR LİSESİ",
     "away": "BAŞKENT BEŞİKTAŞLILAR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "13.11.2026",
+    "time": "18:00",
+    "name": "ÇENGELKÖY VOLEYBOL - GALATASARAY",
+    "home": "ÇENGELKÖY VOLEYBOL",
+    "away": "GALATASARAY",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "13.11.2026",
+    "time": "19:00",
+    "name": "FENERBAHÇE MEDICANA - ATEŞ WIND POWER BERGAMA BELEDİYESİ SPOR",
+    "home": "FENERBAHÇE MEDICANA",
+    "away": "ATEŞ WIND POWER BERGAMA BELEDİYESİ SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "11:00",
+    "name": "YEDİDAĞ SPOR - SEYDİŞEHİR CİMNASTİK BELEDİYE SPOR",
+    "home": "YEDİDAĞ SPOR",
+    "away": "SEYDİŞEHİR CİMNASTİK BELEDİYE SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "13:00",
+    "name": "ANKARA BAROSU - MSA GROUP ÇANKIRI BİRLİK SPOR",
+    "home": "ANKARA BAROSU",
+    "away": "MSA GROUP ÇANKIRI BİRLİK SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "13:00",
+    "name": "BÜYÜKŞEHİR BELEDİYESİ ANKARA SPOR - TRENDY HOTELS MANAVGAT BELEDİYE SPOR",
+    "home": "BÜYÜKŞEHİR BELEDİYESİ ANKARA SPOR",
+    "away": "TRENDY HOTELS MANAVGAT BELEDİYE SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "14:00",
+    "name": "İSTANBUL VOLEYBOL - LÜLEBURGAZ AKADEMİ",
+    "home": "İSTANBUL VOLEYBOL",
+    "away": "LÜLEBURGAZ AKADEMİ",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "14:00",
+    "name": "ON HOTELS ALANYA BELEDİYESPOR - ALTEKMA",
+    "home": "ON HOTELS ALANYA BELEDİYESPOR",
+    "away": "ALTEKMA",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "16:00",
+    "name": "TVF SPOR LİSESİ - VEGA ATLETİK",
+    "home": "TVF SPOR LİSESİ",
+    "away": "VEGA ATLETİK",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "16:00",
+    "name": "SPOR TOTO - İSTANBUL GENÇLİK",
+    "home": "SPOR TOTO",
+    "away": "İSTANBUL GENÇLİK",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "16:00",
+    "name": "AKEDAŞ ONİKİŞUBAT BELEDİYE SPOR - SUNGURLU BELEDİYESİ SPOR",
+    "home": "AKEDAŞ ONİKİŞUBAT BELEDİYE SPOR",
+    "away": "SUNGURLU BELEDİYESİ SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "16:00",
+    "name": "İLBANK - MURATPAŞA BLD. AÇI KOLEJİ",
+    "home": "İLBANK",
+    "away": "MURATPAŞA BLD. AÇI KOLEJİ",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "16:00",
+    "name": "ALTINORDU - AYDIN BÜYÜKŞEHİR BELEDİYE SPOR",
+    "home": "ALTINORDU",
+    "away": "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "16:30",
+    "name": "FENERBAHÇE MEDICANA - BAYRAMPAŞA BELEDİYE SPOR",
+    "home": "FENERBAHÇE MEDICANA",
+    "away": "BAYRAMPAŞA BELEDİYE SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "16:30",
+    "name": "İBB SPOR KULÜBÜ - GAZİANTEP GENÇLİK SPOR",
+    "home": "İBB SPOR KULÜBÜ",
+    "away": "GAZİANTEP GENÇLİK SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "19:00",
+    "name": "HALKBANK - SULTANBEYLİ BELEDİYE SPOR",
+    "home": "HALKBANK",
+    "away": "SULTANBEYLİ BELEDİYE SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "19:00",
+    "name": "CAN MİLAN ATLETİK - ASYA KARTALLARI KAMARİN SPOR",
+    "home": "CAN MİLAN ATLETİK",
+    "away": "ASYA KARTALLARI KAMARİN SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "14.11.2026",
+    "time": "19:00",
+    "name": "İBA KİMYA TED ANKARA KOLEJLİLER - KARAYOLLARI",
+    "home": "İBA KİMYA TED ANKARA KOLEJLİLER",
+    "away": "KARAYOLLARI",
     "channel": "TVF Voleybol TV",
     "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
   }
