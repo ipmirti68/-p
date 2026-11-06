@@ -106,10 +106,10 @@ def get_atv_link():
 
     with sync_playwright() as p:
 
-        browser = p.chromium.launch(
-            headless=False
-        )
-
+      browser = p.chromium.launch(
+    headless=True,
+    args=["--no-sandbox", "--disable-dev-shm-usage"]
+)
         context = browser.new_context(
             user_agent=USER_AGENT,
             viewport={
