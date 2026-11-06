@@ -47,18 +47,18 @@ BASE_PATTERN = "https://mahsunsports{}.xyz"
 # ============================================================
 
 channels = [
-    ("androstreamlivebiraz1", "beIN SPORTS 1 HD-Mahsun 🔴m"),
-    ("androstreamlivebs1", "beIN SPORTS 1 HD-Mahsun 🔴m"),
-    ("androstreamlivebs2", "beIN SPORTS 2 HD-Mahsun 🔴m"),
-    ("androstreamlivebs3", "beIN SPORTS 3 HD-Mahsun 🔴m"),
-    ("androstreamlivebs4", "beIN SPORTS 4 HD-Mahsun 🔴m"),
-    ("androstreamlivebs5", "beIN SPORTS 5 HD-Mahsun 🔴m"),
+    ("androstreamlivebiraz1", "beIN SPORTS 1 HD-Mahsun 🔴"),
+    ("androstreamlivebs1", "beIN SPORTS 1 HD-Mahsun 🔴"),
+    ("androstreamlivebs2", "beIN SPORTS 2 HD-Mahsun 🔴"),
+    ("androstreamlivebs3", "beIN SPORTS 3 HD-Mahsun 🔴"),
+    ("androstreamlivebs4", "beIN SPORTS 4 HD-Mahsun 🔴"),
+    ("androstreamlivebs5", "beIN SPORTS 5 HD-Mahsun 🔴),
 
-    ("androstreamlivebsm1", "beIN SPORTS Max 1 HD-Mahsun 🔴m"),
-    ("androstreamlivebsm2", "beIN SPORTS Max 2 HD-Mahsun 🔴m"),
+    ("androstreamlivebsm1", "beIN SPORTS Max 1 HD-Mahsun 🔴"),
+    ("androstreamlivebsm2", "beIN SPORTS Max 2 HD-Mahsun 🔴"),
 
-    ("androstreamlivess1", "S SPORTS 1 HD-Mahsun 🔴m"),
-    ("androstreamlivess2", "S SPORTS 2 HD-Mahsun 🔴m"),
+    ("androstreamlivess1", "S SPORTS 1 HD-Mahsun 🔴"),
+    ("androstreamlivess2", "S SPORTS 2 HD-Mahsun 🔴"),
 
     ("androstreamlivets", "Tivibu SPOR HD-Mahsun 🔴"),
     ("androstreamlivets1", "Tivibu SPOR 1 HD-Mahsun 🔴"),
