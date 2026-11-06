@@ -1,122 +1,108 @@
-# atv1_temiz.py - MIRTI68 ATV CANLI YAYIN (Temiz Log Versiyonu)
-# Sadece m3u8 bulur, reklam/tracker hatalarini gostermez
-
-import re
-import asyncio
+# atv1_daion.py - MIRTI68 - SADECE DAION 1080p
+import asyncio, re, requests
 from playwright.async_api import async_playwright
 
 URL = "https://www.atv.com.tr/canli-yayin"
 OUTPUT = "mirti68.m3u"
 
-# Reklam / tracker domainleri - bunlari hic loglama, hic bekleme
-BLOCKED_KEYWORDS = [
-    "google", "doubleclick", "g.doubleclick", "googlesyndication",
-    "yandex", "sharethrough", "inmobi", "pubmatic", "rubicon",
-    "zemanta", "colossus", "iqzone", "krushmedia", "adkernel",
-    "sync.", "usync", "cs.", "match.", "ads.", "adman", "criteo",
-    "outbrain", "taboola", "amazon-adsystem", "media.net",
-    "aniview", "eskimi", "apester", "kueez", "cootlogix",
-    "omnitagjs", "admatic", "drift-pixel", "serverbid",
-    "peer-39", "tynt", "e-planning", "onetag", "sundaysky",
-    "gumgum", "rlcdn", "adblockDetect", "mraid.js"
-]
+BLOCKED = ["google","doubleclick","yandex","sharethrough","inmobi","pubmatic","rubicon","zemanta","colossus","iqzone","krushmedia","adkernel","sync.","usync","cs.","match.","ads.","adman","criteo","outbrain","taboola","amazon-adsystem","media.net","aniview","eskimi","apester","kueez","cootlogix","omnitagjs","admatic","drift-pixel","serverbid","peer-39","tynt","e-planning","onetag","sundaysky","gumgum","rlcdn","adblockDetect","mraid.js"]
+def is_ad(u): return any(k in u.lower() for k in BLOCKED)
 
-def is_ad(url: str) -> bool:
-    u = url.lower()
-    return any(k in u for k in BLOCKED_KEYWORDS)
+def resolve_daion_variant(master_url):
+    """daion master m3u8'in icinden _1080p varyantini cikar"""
+    try:
+        r = requests.get(master_url, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"}, timeout=15)
+        txt = r.text
+        # icinde atv_1080p.m3u8?... var mi?
+        m = re.findall(r'(atv_1080p\.m3u8[^\s"\']+)', txt)
+        if m:
+            variant = m[0]
+            # goreceli ise mutlak yap
+            if variant.startswith("http"):
+                return variant
+            base = master_url.split("atv.m3u8")[0]  # .../atv/
+            # master'da query varsa onu da tasi
+            if "?" in master_url:
+                q = master_url.split("?",1)[1]
+                # variant zaten query iceriyorsa ekleme
+                if "?" not in variant:
+                    variant = variant + "?" + q
+            return base + variant
+        # 720p dene
+        m2 = re.findall(r'(atv_720p\.m3u8[^\s"\']+)', txt)
+        if m2:
+            return master_url.split("atv.m3u8")[0] + m2[0]
+        return master_url
+    except Exception as e:
+        print(f" [VARYANT HATASI] {e}")
+        return master_url
 
 async def main():
-    print("="*45)
-    print("       MIRTI68 - ATV CANLI YAYIN")
-    print("="*45)
-    print("[*] ATV sayfasi aciliyor...")
-
-    found = []
-    seen = set()
-
+    print(" [*] ATV DAION araniyor...")
+    found=[]; seen=set()
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
-        )
-
-        # Sadece m3u8 iceren response'lari topla
-        async def on_response(resp):
-            url = resp.url
-            if ".m3u8" in url and url not in seen:
-                seen.add(url)
-                found.append(url)
-                print(f"[BULUNDU] {url}")
-
-        page.on("response", on_response)
-
-        # Reklam isteklerini engelle - sayfa daha hizli acilir, log kirlenmez
-        async def route_handler(route):
-            url = route.request.url
-            if is_ad(url):
-                await route.abort()
-            else:
-                await route.continue_()
-
-        await page.route("**/*", route_handler)
-
-        # requestfailed'i TAMAMEN sustur - artik loga dusmez
-        # page.on("requestfailed", ...) EKLEMEDIK, o yuzden sessiz
-
+        b=await p.chromium.launch(headless=True)
+        page=await b.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36")
+        async def on_resp(r):
+            u=r.url
+            if ".m3u8" in u and u not in seen:
+                seen.add(u); found.append(u); print(f" [BULUNDU] {u[:130]}")
+        page.on("response", on_resp)
+        async def rh(route):
+            await route.abort() if is_ad(route.request.url) else await route.continue_()
+        await page.route("**/*", rh)
         try:
             await page.goto(URL, wait_until="domcontentloaded", timeout=60000)
-            print("[+] Sayfa acildi, yayin adresleri bekleniyor...")
-            await asyncio.sleep(12)  # token'li linkin olusmasi icin bekle
-        except Exception as e:
-            print(f"[!] Sayfa acilirken hata: {e}")
-        finally:
-            await browser.close()
+            await asyncio.sleep(15)
+        except Exception as e: print(" Sayfa hatasi:", e)
+        finally: await b.close()
 
-    print(f"\n[*] Bulunan toplam M3U8: {len(found)}")
+    print(f"\n [*] Toplam {len(found)} link")
+    for u in found: print("  -", u[:130])
 
-    # ATV secimi - once token'li daion linki, sonra digerleri
-    atv_url = None
-    for u in found:
-        if "daioncdn.net/atv/atv.m3u8" in u and "app=" in u and len(u) > 60:
-            atv_url = u
-            break
-    if not atv_url:
-        for u in found:
-            if "/atv/atv.m3u8" in u:
-                atv_url = u
-                break
-    if not atv_url:
-        for u in found:
-            if "atvhd" in u and "st=" in u:
-                atv_url = u
-                break
+    # ONCELIK SIRASI - ERCDN EN SONA ATILDI
+    # 1. daion + _1080p (senin istedigin)
+    # 2. daion + _720p
+    # 3. daion + atv.m3u8 (master, icinden varyant cikartilacak)
+    # 4. ercdn (sadece yedek)
+    daion_1080 = next((u for u in found if "daioncdn.net" in u and "atv_1080p" in u), None)
+    daion_720 = next((u for u in found if "daioncdn.net" in u and "atv_720p" in u), None)
+    daion_master = next((u for u in found if "daioncdn.net" in u and "/atv/atv.m3u8" in u), None)
 
-    if atv_url:
-        print("[SECILDI - DAION]")
-        print("[+] ATV ADRESI BULUNDU:")
-        print(atv_url)
-        print("[OK] ATV listeye eklendi.")
-
-        # M3U dosyasi yaz
-        content = "#EXTM3U\n"
-        content += f'#EXTINF:-1 tvg-name="ATV" tvg-logo="https://i.tmgrup.com.tr/atv/logo.png" group-title="Ulusal",ATV\n{atv_url}\n'
-        # Diger bulunanlari da ekle (istege bagli)
-        for u in found:
-            if u != atv_url:
-                name = "ATV HD" if "atvhd" in u else "ATV Yedek"
-                content += f'#EXTINF:-1 tvg-name="{name}" group-title="Ulusal",{name}\n{u}\n'
-
-        with open(OUTPUT, "a", encoding="utf-8") as f:
-            f.write(content)
-
-        print(f"[OK] {OUTPUT}")
-        print(f"[OK] Dosya boyutu: {len(content)} karakter")
+    final = None
+    kaynak = ""
+    if daion_1080:
+        final = daion_1080; kaynak = "DAION 1080p direkt"
+    elif daion_720:
+        final = daion_720; kaynak = "DAION 720p direkt"
+    elif daion_master:
+        print(f" [*] Master bulundu, icinden 1080p cikartiliyor: {daion_master[:100]}")
+        final = resolve_daion_variant(daion_master); kaynak = "DAION master -> 1080p cozuldu"
     else:
-        print("[HATA] ATV adresi bulunamadi!")
+        print(" [!] DAION bulunamadi, yedek ERCDN kullaniliyor (bos gorunebilir)")
+        final = next((u for u in found if "ercdn" in u and "atvhd" in u), found[0] if found else None)
+        kaynak = "ERCDN YEDEK"
 
-    print("="*45)
-    print("          ISLEM TAMAMLANDI")
-    print("="*45)
+    if not final:
+        print(" [HATA] Hic link yok"); return
 
-if __name__ == "__main__":
-    asyncio.run(main())
+    print(f"\n [SECILDI - {kaynak}]")
+    print(final)
+
+    # Test
+    try:
+        r = requests.get(final, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"}, timeout=15)
+        print(f" [TEST] HTTP {r.status_code} - {len(r.text)} karakter - #EXTM3U var mi? {'#EXTM3U' in r.text}")
+    except Exception as e: print(f" [TEST] {e}")
+
+    m3u = '#EXTM3U x-tvg-url="https://raw.githubusercontent.com/iptv-org/epg/master/epg.xml"\n'
+    m3u += '#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV" tvg-logo="https://i.tmgrup.com.tr/atv/logo.png" group-title="Ulusal",ATV\n'
+    m3u += '#EXTVLCOPT:http-referrer=https://www.atv.com.tr/\n'
+    m3u += '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36\n'
+    m3u += f"{final}\n"
+
+    open(OUTPUT,"a",encoding="utf-8").write(m3u)
+    print(f" [OK] {OUTPUT} yazildi")
+    print(" NOT: Bu link de token'li, 1-2 saate duser. Bos gorunurse scripti tekrar calistir.")
+
+if __name__=="__main__": asyncio.run(main())
