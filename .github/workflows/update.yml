@@ -23,7 +23,7 @@ jobs:
           playwright install chromium --with-deps
       - name: 1 - ALLSPOR
         continue-on-error: true
-        run: python allspor.py || echo "allspor failed"
+        run: python allspor.p || echo "allspor failed"
       - name: 2 - ATV
         continue-on-error: true
         run: python atv1.p || echo "atv1 failed"
@@ -38,7 +38,7 @@ jobs:
         run: python mahsun.py || echo "mahsun failed"
       - name: 6 - VOLEYBOL
         continue-on-error: true
-        run: python voleybol_youtube.py || echo "voleybol failed"
+        run: python voleybol_youtube.p || echo "voleybol failed"
       - name: 7 - IPTV (Ulusal)
         continue-on-error: true
         run: python iptv.py || echo "iptv failed"
