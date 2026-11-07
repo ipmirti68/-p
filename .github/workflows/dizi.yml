@@ -36,31 +36,31 @@ jobs:
         
       - name: 11 - PDİZİ
         continue-on-error: true
-        run: python pdizi.py || echo "pfizi failed"
+        run: python 1dizi.py || echo "pfizi failed"
         
       - name: 12 - SDİZİ
         continue-on-error: true
-        run: python sdizi.py || echo " sdizi failed"
+        run: python 3dizi.py || echo " sdizi failed"
         
       - name: 13 - CDİZİ
         continue-on-error: true
-        run: python cdizi.py || echo "cdizi failed"
+        run: python 3dizi.py || echo "cdizi failed"
         
       - name: 14 - PRDİZİ
         continue-on-error: true
-        run: python prdizi.py || echo "pedizi failed"
+        run: python 4dizi.py || echo "pedizi failed"
         
       - name: 15 - CUDİZİ
         continue-on-error: true
-        run: python cudizi.py || echo "cudizi failed"
+        run: python 5dizi.py || echo "cudizi failed"
 
       - name: 16 - CMDİZİ
         continue-on-error: true
-        run: python cmdizi.py || echo "cmdizi failed"
+        run: python 6dizi.py || echo "cmdizi failed"
         
       - name: 17 - PZDİZİ
         continue-on-error: true
-        run: python pzdizi.py || echo "pzdizi failed"
+        run: python 7dizi.py || echo "pzdizi failed"
         
       - name: Dosyaları kaydet
         if: always()
