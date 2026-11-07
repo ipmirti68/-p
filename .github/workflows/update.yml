@@ -60,11 +60,16 @@ jobs:
         
       - name: 8 - PATRON
         continue-on-error: true
-        run: python patron.py || echo "iptv failed"
+        run: python patron.py || echo "patron failed"
         
       - name: 6 - VOLEYBOL
         continue-on-error: true
         run: python voleybol.py || echo "voleybol failed"
+
+        - name: 7 - LİNK
+        continue-on-error: true
+        run: python link.py || echo "link failed"
+        
         
 
       - name: Dosyaları kaydet
