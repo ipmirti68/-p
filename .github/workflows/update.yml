@@ -62,11 +62,11 @@ jobs:
         continue-on-error: true
         run: python patron.py || echo "patron failed"
         
-      - name: 6 - VOLEYBOL
+      - name: 9 - VOLEYBOL
         continue-on-error: true
         run: python voleybol.py || echo "voleybol failed"
 
-        - name: 7 - LİNK
+      - name: 1ü - LİNK
         continue-on-error: true
         run: python link.py || echo "link failed"
         
