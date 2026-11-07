@@ -7,7 +7,7 @@ M3U_FILE = "mirti68.m3u"
 FILM_GROUP = "🎥 DİZİ SON BÖLÜM"
 
 # Buraya 2'den fazla da yazabilirsin
-KAYNAK_GRUP_LISTESI = ["TR/FILM ► PAZARTESI", "TR/FILM ► SALI", "TR/FILM ► CARSAMBA", "TR/FILM ► PERSEMBE", "TR/FILM ► CUMA", "TR/FILM ► CUMARTESi", "TR/FILM ► PAZAR"]
+KAYNAK_GRUP_LISTESI = ["TR/FILM ► PAZARTESI", "TR/FILM ► SALI", "TR/FILM ► CARSAMBA", "TR/FILM ► PERSEMBE"]
 def main():
     print("=" * 55)
     print("www.com.m3u DEN GRUPFİLİM ÇEKİLİYOR")
