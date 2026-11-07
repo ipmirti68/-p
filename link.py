@@ -3,7 +3,7 @@ import requests
 import re
 
 # KAYNAK URL - senin dediğin
-SOURCE_M3U_URL = "https://www.com.m3u"
+SOURCE_M3U_URL = "http://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=ts"
 
 M3U_FILE = "mirti68.m3u"
 FILM_GROUP = "grupfilim"
@@ -11,7 +11,7 @@ FILM_GROUP = "grupfilim"
 # www.com.m3u içindeki hangi grubu alacaksın?
 # Buraya o m3u'nun içindeki orijinal grup adını yaz
 # Örnek: "ABC" / "Filmler" / "Movies"
-KAYNAKTAKİ_GRUP_ADI = "ABC"
+KAYNAKTAKİ_GRUP_ADI = "TR/FILM ► Yerli 2026"
 
 def main():
     print("=" * 55)
