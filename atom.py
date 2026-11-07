@@ -203,37 +203,68 @@ def main():
     # KANALLARI URL ÜZERİNDEN EŞLEŞTİR
     # ==========================================
 
-    channel_map = {}
+    
+    # ==========================================
+    # URL + KANAL ADI İLE AKILLI GÜNCELLEME
+    # ==========================================
 
-    # Önce mevcut kanalları koru
+    channel_map = {}
+    name_map = {}
+
+    # Eski kanalları koru
     for entry in existing_group:
 
         url = get_stream(entry)
-
-        if url and url not in channel_map:
-            channel_map[url] = entry
-
-    added_count = 0
-    updated_count = 0
-
-    # Yeni yayınları URL kontrolüyle ekle
-    for entry in new_entries:
-
-        url = get_stream(entry)
+        name = make_channel_key(entry[0])
 
         if not url:
             continue
 
-        if url in channel_map:
-            # Aynı URL zaten mevcut
+        if url not in channel_map:
+            channel_map[url] = entry
+
+        if name and name not in name_map:
+            name_map[name] = url
+
+    added_count = 0
+    updated_count = 0
+
+    for entry in new_entries:
+
+        url = get_stream(entry)
+        name = make_channel_key(entry[0])
+
+        if not url:
             continue
 
-        # İsim aynı olsa bile URL farklıysa ekle
-        channel_map[url] = entry
-        added_count += 1
+        # Aynı URL zaten varsa tekrar ekleme
+        if url in channel_map:
+            continue
+
+        # Aynı isim farklı URL ise eski yayını güncelle
+        if name in name_map:
+
+            old_url = name_map[name]
+
+            if old_url in channel_map:
+
+                old_entry = channel_map.pop(old_url)
+
+                channel_map[url] = entry
+
+                name_map[name] = url
+
+                updated_count += 1
+
+        else:
+
+            # Yeni isim ve yeni URL
+            channel_map[url] = entry
+            name_map[name] = url
+
+            added_count += 1
 
     updated_group = list(channel_map.values())
-
 
     # ==========================================
     # YENİ KANALLARI EKLE VE GÜNCELLE
