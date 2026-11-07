@@ -6,7 +6,7 @@ import requests
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=ts")
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🎥 DİZİ SON BÖLÜM"
+FILM_GROUP = "🎥 DİZİ SON BÖLÜM PERŞEMBE"
 SOURCE_GROUP = "TR/FILM  ► PERSEMBE"
 
 
