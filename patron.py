@@ -37,7 +37,7 @@ def get_active_taraftarium_url(start_num, max_attempts=15):
     return f"https://taraftarium{start_num}.xyz"
 
 def m3u_temizle_ve_hazirla(dosya_yolu):
-    with open(dosya_yolu, "a", encoding="utf-8") as f:
+    with open(dosya_yolu, "r", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
     print(f"🧹 {dosya_yolu} temizlendi ve yeni kayıtlar için hazırlandı.")
 
@@ -48,7 +48,7 @@ def m3u_listesine_ekle(url, kanal_adi, referer_url, dosya_yolu):
     if "/ex1/" in url:
         url = url.replace("/ex1/", "/taraftarium/")
         
-    with open(dosya_yolu, "a", encoding="utf-8") as f:
+    with open(dosya_yolu, "w", encoding="utf-8") as f:
         f.write(f'#EXTINF:-1,{kanal_adi}\n')
         f.write(f'#EXTVLCOPT:http-referrer={referer_url}\n')
         f.write(f'#EXTVLCOPT:http-user-agent={SABIT_USER_AGENT}\n')
