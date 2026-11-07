@@ -478,6 +478,10 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315290
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315304
 #EXTINF:-1 tvg-id="HTSPOR.tr" tvg-name="TR | HT SPOR 4K" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/SONRADAN/HT.SPOR.png" group-title="🏟️ SPOR",TR | HT SPOR 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315306
+#EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🖥beINSPORTS",beIN SPORTS 1 Mırtıspor
+https://mirti-spor-2026.fly.dev/cam0/index.m3u8
+#EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🖥beINSPORTS",beIN SPORTS 1 Mırtıspor (copy)
+https://mirti-spor-2026.fly.dev/cam0/index.m3u8
 #EXTINF:-1 http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML http-referrer="https://taraftarium1087.xyz/" referrer="https://taraftarium1087.xyz/", like Gecko) Chrome/120.0.0.0 Safari/537.36",BeIN Sports 1
 #EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -506,6 +510,25 @@ https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
 #EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
+#EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 1 Zeus
+https://zeus645423.cfd/b1/index.txt
+#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://124dumantv.com/view/theme/ultimate/img/Dumanbet-1590707043560.png" group-title="🖥beINSPORTS" http-referrer="https://124dumantv.com/" referrer="https://124dumantv.com/",beIN SPORTS 1Duman
+#EXTVLCOPT:http-referrer=https://124dumantv.com/
+https://2lacasaba.site/701/index.m3u8
+#EXTINF:-1 tvg-id="bein_sport" tvg-name="bein sports 2.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",BeIN SPORTS 2 Zeus
+https://zeus645423.cfd/b2/index.txt
+#EXTINF:-1 tvg-id="bein-sports-2724" tvg-name="bein sports 2.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 2
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports2/playlist.m3u8
+#EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 3 Zeus
+https://zeus645423.cfd/b3/index.txt
+#EXTINF:-1 tvg-id="bein-sports-3724" tvg-name="bein sports 3.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 3
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports3/playlist.m3u8
+#EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 4 Zeus
+https://zeus645423.cfd/b4/index.txt
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡beINSPORTS",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡beINSPORTS",BEİN SPORTS 1
@@ -2837,103 +2860,13 @@ http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392075.mp4
 http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/226996.mp4
 #EXTINF:-1 tvg-name="Dizi | Çirkin" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTsRH1RDC-ZUcgTjRdnrrcdIAOO5fWfVlgnQYUDFI7Fg&s=10" group-title="📺 GÜNCEL DİZİLER",Dizi | Sevdam Karadeniz PAZARTESİ
 http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/234103.mp4
-
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORTS 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivess1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORTS 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivess2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu SPOR HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu SPOR 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu Sport 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu Sport 3 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets3.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu Sport 4 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets4.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Smart Sport 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivesm1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Smart Sport 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivesm2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Euro Sport 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivees1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Euro Sport 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivees2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 3 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb3.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 4 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb4.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 5 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb5.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 6 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb6.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 7 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb7.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 8 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb8.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",DAZN 1-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORT+ -Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn3.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORT + -Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn4.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORT 2 -Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn6.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",AZ TV-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn7.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",TRT TÜRK HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn8.m3u8
-# MIRTI68_KANALD_AUTO
-#EXTINF:-1 tvg-name="KANAL D 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL",KANAL D 🔴
-https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=3873656bb7a6133aa9c0c3a37c31c538&dfp_paln=AQzzBGQEt7AIAJjlR3zy-VyOT2_ZT8mxh_LnGm6Hig2twzin4hdkz0ChMRfG09fsEYa3LB73ibTVOKdin9rMDo4VkBgSFMgrtSazlasvEIvKdv_A_JmlWN69_pQebNwmAzHf48M6tA-q0x9IkwLrODK34kCaLPSXSMSBUv4B3mBYN94RB5al9SFYY-yPmGXlINxly4eBGuiDFHvRP5IF08oN7gfjwOVO9ADp-7fq0K8wR_Ity1MZk3Otq7rBrsD0tBPsw569ggMuTbETEK9QiWiBsPJON8-CiYVZME_OlLVgPkwpzfQzKjB7ELdAV4VkQBPcTy7-Nv3uqLHdY33bD2Z6zHSSXU_QiEhZucSXhe-3nOUZk_C2Q-p3Gcpmqa2_huaqrB0Jl_gg7kj5Qll-wO-NlpNTqFgnxTeZwZj4hOKPEAeIbMK8pR5jleQiPk8rC4B5vvG5oLQmp9S4cIbIW4Qg3LZjrDvjWW5Xlbp_WrCKU-SfehKK5AE9EThBdWhR8xnYkiRWbGKxZTg8x865jTiaHDZnr489aXdMMjt1qvPV5edNk5yimLVGUfrkSMkI7SSA_BQVaJMAYgYgw1N1xeBQCKY7iS4V1d2LFowV4BK2HwGA_64tTe6_7vG05zGAw7NPhYT9gr-xPD5kUFE8DQtJy9WrpIaOUpFxz6W-i8658M-j3scDtBrVNaw8wfEEMNt0lTcqo9Mw6TNV0WGhnvmaDhl2f5YhZMCEnv5NEH1OcAo2WcnIlfa0Labnmpg9pTFz_D8GIIs_QZNr8fMcs0JvvamB8ShwhCig8obm6RS0TjtxYamWm9rzZM3nmDjKMAWVJtAkQWHXlHTvk8NB_fe9PC8eBEFYkTP2uzbK4jPKgrx9MuptxXeNGAxb72GdQ-3oDbQcWH6fR53emhcawVDZemH8lI_uqHy_B4m2GksrzDCuj1tK6cSXolS4bdXw24BvqSdbSpeU_Z0IhhuC1_DD0HMluzOxHHnSudjmLTXmKPn7WEYlQZwq4Dj4hVdW3WvzXi51UpbjSKE53UPGixWA49yCS6OBgObcEAtbR12ldOY8knIkIewd7s5YVJUh11qIhXITRR-9wM1HJADYESrkAe0xLl3QL6YL74ZtOcR-AiyJ3a_vZWEME7k8aUMrWbfvh7ed_mrVdWSpvCs6sXYlu1vcAGe3GW8JT1zWFGynPGxbO6HKiLc59-ok9f5d4Gt-5BbwdcGE6v2M976cegO_IBUw1nrlvij1Ztd5B1Uk5KNOGJ11Ne9nB0vUy1k_l1rEulvBkzvfwzApJt0DDXWQbvdGP_DdH4lT_WBcmgr-6-nYOEwU-WurFinOs3vb2a_kwvXC--yLImhcUODdxIK8lOGg_wHYBRlR95mCcQCe9xpqlXLcR6vrQXSmu6Xa
-# MIRTI68_STARTV_AUTO
-#EXTINF:-1 tvg-name="STAR  🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR  🔴
-https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=63448a9733b59534b4fe3e33a14f68ea&dfp_paln=AQzzBGQEuknIkt-Px6mknJDKg8n3w0zyPKPfZOWhKnEQrRhf5aH06b7_SQiYFDHQE_9tTaV6Bzf_bZ1wHk8spVVRXzVfdgyn3FCh2cYJEm0WUDHIcXBg1owIBKS4nMcUTitHfWIorbPFxjJt1r5cjIScYFnYQ0ImbBG2eQ7kPyMSt0MF8NuHspBMAAas1SMJKNdIRqcxPrfHsPb4EmLfKQhdyhqKMMXWfl0nVU-TXDzZxXJ8aC8qFqSSaN6ghxjCh1zQMWgI2-gVdaiyxwsBd0FEdEtylViOEzUC7Fuj9CMLOk4a7H1L7uy9yE0iJAoTeP3D2lmqCVipgaVDBk9rtk6JoRqHRNGsjw7V-YJDSE4DkysP3Hi2h1eiWocLj37kDuCMDakh4fkF3iEkRxmjv1gBs4VZ2H1jskCSB3B3sgLfDZP3gfBGZtw-ms9GycIVelBt_Uz69lAJJmymHd8AgfmkabNujonmb8T9Sp5zcWvAiX75u-i6YskJeM8NKo_-jP9QssmcFGpja0fd_Z-qz1Nlol1p6jwJvnR1EUMhKIcGYuUdB5EfvKPJu9OQj809uXtdkLTAPuSlDx0y-c8hv0T77gpGBeEuYoqk9YBTXM-vaV0GbVBNje7s7ZXEBGIZz2MJ9yyvqGHoCaYToqOtLEOLo0gnEXaWRC673q3JaJjX-e-94PNSEQt-KW86CnwcKNx9xj-1beHt83uN80kMth44U9AE6B00DJfDkU2rFTCLh61rgsaLUIbMN-tmGMTn2187Fs2SXFaf_gbDvAm8l7gi43B75xYS6RDbFU3eRNvNB5K6wuBt8StoRTlROxComIdkKL4iJOVhK_sR4rC_SKZ6cNJtply9_tFcsdfOe3O8PdTF63UQw5_QoIEOwgf3cvWpZZZGwbGN8vEXaJnoQU4DZtZOJDyxL_eBfEt_yxQkJfHqKpMAMuMleSLGTKHz1qnvhdoD2AZl4HIGksgyEfW1qI1jEaV1j-dcmGHFiZHOMhSCwBcQMgRKgeD9BP1TpamA3PQGLMrSNS9dIHLxeIoQQmUg7BFem0Nkk9_WRTyWfg_0LxmD1_qhU1G9IqXCP82gGJCpe3TUV3K2DRZryRrEjYmC6ehAy_R7LSUOBVzL7mevTmgkKezBOB-wrjmgvDjw1SowumMcs2IhBRRGJihz9qK7E1CBIW7O_Wa5rJxs9D31dseMCeSvBFAJFVCA8T-9t9cG--FzuqdWi-K62MZZE4Abh65iVgpM8XQZy9GmyVaZSoPBzOmHFo9UwBIUvkqvFPTzCDRpdIyYoiFI_YnwEFbcBBmsSwKdARvFEyOpsQcepkbM6qXBZYcKEEaai6eiphr2uyiYRlPetMle9sN8uzLtBGJ3gNUn4T9t-CxltOs0i7jxRlfdLi5Jd8m1FVaHVz6pfTVE3o01C9CdooaL6sIRdYU9iAWO8kg.
-# MIRTI68_SHOWTV_AUTO
-#EXTINF:-1 tvg-name="SHOW 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL",SHOW 🔴
-https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=316f15cc20036b7bf88e46d3eabc526b&dfp_paln=AQzzBGQEXbbYMCu7GS8otrGO-N9JLhsAnc40uUbAK8dML7MJU-7pl6_kcHN8Sd6hhnhHeWYJYYOuz3yGtZnTEHIVSABfTfepQ0g3Ms9EK1gjSLpa6-krGZXQiqRTrN0VzMFdbnVpOwI4UzYPhjHiL1Pn_m7mLUjL9Dln-De0mtBo7K55CzgISAXj0u1oBhCgPbq52Y6nPDOObxgKtQ6wx79So0NcHdOq4XaYBu1c58jPAuD8G5MHB3snhrsiDdYj7NFowPrYQvjaU-c9nYw50qmjOvODiNN3B0hedaZ8OYKFAkEkE2zwF3klC_W4hqtr6bPlZ3_90cUpy9-QOoiYucbA4M12UEPbtM3_XJq1kBDqR4ngAMbht-chw92hXGOxyjXN3e54jBgz1M8Sce6L1_LEc-zjNXiuKVBBHk61iN_Undv3JY2pkzICIJgqVrybZhkzzXxThmOtPP-RVrRlVRVNn84dvz6qk2PCNZROmGteOlDTWhk21A16CiZ9O0gv9N5iwUlxRv6EnAvUOyDa8RiGE2SaN8QZzMGuk5obEOkV4RJ0Cw1saSKIMpFGCxyF5H5UCWBpg0bCDSCDRTNg7_s20qqziS99RN7R9Fy4PcXIGtuA0V24y1JdKMqk-NqYeBLV57OJ9g_5a_QG4t8kjU5wZz2p1RwnHqzrdsw4lfM6NreUA82kGQMmdO1I6higoUW-1-o6xy3c0thobM9nxr6Z59xCgaBzkS4Pp4_gDQsN-4Jir7xSCVAjNs_MVU9caigZPg37kRXSmtrZmQ318O7y3eUQsROsykF33uh1FxUec0z9O3FeaUSwbGfPVFZRg3B0SGc8aipeyYur48R-8oI9rl46JYIXns5BnjcEsgMMi1VtRutHZ-T5okZGIlQRg3oVaqlbjjA_zLsoHTArUjCjQaN2A1pd9yFcljUFmAeaTzcoc3OqKcm3qV_WhIzrRytVIGllUbafEgEgMWHt64QqnvBvuA..
-# MIRTI68_TV8_AUTO
-#EXTINF:-1 tvg-name="TV8 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="📺 ULUSAL",TV8 🔴
-https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=79666386f11129253c4cb40d8a865430&dfp_paln=AQzzBGQExeisM15rnEwCpuo5z_-vqjK-qFx3ZTarQ0nRtqP7m8xTD70S4kWxJKEIrmoEX8PaM2zghjkqf4AJtYynOa8sUSaimbbVBxM3Agi8HGQ0JFhU5B80Rg7BhBHlVjBbOnV8pqLODh3xbGjksxJlKIGagOzC4jxVfrYtw0TvpiF_5ijb6sYOz6mCMzz7JdafFRombFmzHP5cfB5OAj8oVOlYRA_n5rMq9-xPPruPr_oAMuJ_V9u4wsv0Gz2GLV63SvTUl0U0EkUndGCxk7xSpnnWROLz6puFnuN6Q4q4sv89bRuACpZgrrrZC1TGK9kiUp_FhLjZxi3k2B9gAn6qodKlkFpX4iIomOG-28l8FBJBQ5ir8e5ifJPj5ii9FzaeGu90TcFPV04poFW4LxWzECku9nvIXczzaYT0E4AN-1fGDRnXfyebVGMFolak9nrKlK_24Y5VHTjsxnQRXlFRx-sQAGsTO-pGg4kJqgKD8N-7Oiuxt66Aa3q9qGpJT4ewH85GyXlP_v9Y7IkywsY_wSP-K0B0wU-6UuNMchj344XmP2l7lkSNxpV5uigXjUYoJmAf2509JazxJiUNoxCqAO4HIpjbkcwy8_olShdxVHPqQcMGdnl4HXrdhUiNTRb44Ih5G36t9OQ36qzhY6DyTNcuunD68S6TvN2nY0q417_jSMPKnwHaOcptPI6f1sZJlGBE_aidgdhQ2iKw0JREFau4SKy6esr9VUiYjQfFARmm8cWzWMSAeQOV9rXIYUK-3SunT6CrQ0KOFPRvX32fLtY6kWlNaB80OoPqCZqoUpmQwfhtZB9CIUYvJY9oCcCPQEAT-Eui5GNqiG55aNdyW4LQnFwHQ1NXc-yuGFDJMmK32TZ7G1lUOdjH3eXOhEk3mBi35THMWEhH0qCgy8U93_sCI6MK_dHBEpNjeDDOo_pIWMlfHRC5i-VM_G-Bqmrac0OBRiCcRE4zW8a93jEemFoA5bfIeQueljT_HoIHCFyFtVWHTnyd1o1t3HZIQKqPORfFdOWZSAmf1BhmKaZybDDDdCO0urEUYSCIR0pfij5s4dTbRBTBiosUS2dFWgCqCIrbWrb78GnEPZbC03irb_hPPmak5nb1PE5yhg3a8bDkd1dP8E3K6Y7kvF3MfUAGJUAzFA10eGzMgN3GYq7M0P2JG5l87eF8tQ8k7z8myszJnPU8rsmSVLiFNSafBWPFKriD_OCuH5FHkQkCtq9kOWxMh8MD9T3YYDtAdjKlb-SHl3TLwzDG_yWz6Hy-97KK5Q..
-# MIRTI68_KANAL7_AUTO
-#EXTINF:-1 tvg-name="KANAL 7 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL",KANAL 7 🔴
-https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=0bd1f4d5947f0eba10814fc44e8008f6&dfp_paln=AQzzBGQE62gVKAZ_0Fn_8B_kdahNjF-jsOxdCMbwSQ2Uzc0XCgtM4bwBR5TDEjiXgxxTTwVGLlrXyjb-63J_pUlBUBxEWT0hHZV47RTERP6hCWyoBVZjcFdqRB45GRjRDY7ptqEcq4drP7cPCc4rR8YuuUHIcvy38oD8uTWRg6Ft1fA4BP9Cyu5BM8X2WbocPL5Fg91jZxtzJ2M26G6aIRZ1FW6-rmXOCfbb6gPA7qhyW5TJXbl4FTnYUdEbSu_6zaoEjqJ9YICWbwG6fhNrPFXWdWRLHL__r4QJKoKxmNB6HOVDOYdZ9zuoEUQSSK9y4aRVzrm9g4l6fspM5IOCF0rId8509LnVkJvoyeqVAx6MVgsEHPCsofRYkMt3KmLdXCSr5xP8vdhrmOf6P9oj7dnYZIXyjW1JLPqORSoCr_aICvbiQuIQM-K7AWWsWQAywDDfOS9c2SlGir6ID7uMLVmMFCYOzO4z5RhPUGI6mXGyOUTLR8hBFRXhWKLzkSpN0IGivtsp27POzLFEkUbO7MKs3sQfKzqnmWYQIBnoFjefR84ePyDr609F2wd6VF1SfVzE-jBayTV1r3G1m4hNe6opFzHQVTUtziNXTl40QJ4GTezbnhqunqydisq7CbEERcuOZ9Kqy7hDBlYaupusIKuelP9ioNYVCNHrG8YSpGjz-1kH8wwJfQqTHJFGz-rg9xPn3yAyCJb1H6L9EBW9xRBytuz5bEr3-rbxx2trc8m5gmsXTomtcnP60tr-51EUbxU-qIwUsNvDJbgm_oBPE4UM7uoWLFbew0M6V_ZBTuqy4J8HZq7RmkDBZQCO6o-mXzzAiTywduiUxsW9buNS7nYDt09az0px8cdFf0P-rc8VN5w5tYlkuYdIkS55RaPJ5_AtO1M6uv5Z5eVyWZAr0TpPCXctQcN1wy47GO7mIMSdYqbJ7h1pYSGxdXL9KcROQ4VT_ZMYvkWNlOaEplW9-AFwJU5c5TYT0RscCluEjuQXmi1ZdR0xpbdgudqnSryr8sBKWLxq4_sszVWIEBUy0Lheko2O43mSABX7KA9ULwOz4nLiqocQrJqjTjhgSJqrB-QzTsoc1CE57mlukEQ-Fc6JwuYAqkOJXhDXDxTJwXRUAuNGa9YTZvCjs1i9LRq7q_lhb8P19dKlT3s1NEm5sjdxHsen-iYpNX_HteyCqDxnstZrLc1DDDAhu4XaZkCpa2fw3qSgTeHNE64tASDXhsQtrGRrPVJrud3jgTjKqzpc-nfPZKQSuhmwcYOwOK5wrSRYNIetO8onHquoTq4KWeuqDBOsYiqb9YqR_CLWtxt4pBTevnwqxOJa9yBQKsBMzxfy2BNzHzZRRzu0_LQKGFioIIRpj9DfWndia4iXjDc4hFYdve0jyGowdQ4CLfppS7meTnvl6InmGOddZycDawJNPNWX6j4ERu58Bypl6AH5pUdLXbrodwxNBbn0lw..
-# MIRTI68_NOWTV_AUTO
-#EXTINF:-1 tvg-name="NOW 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL",NOW 🔴
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=ac8atKTLQy5V9yiAIiXWpQ&e=1794036249
-# MIRTI68_TRT1_AUTO
-#EXTINF:-1 tvg-name="TRT 1 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1 🔴
-https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="bein-sports-4724" tvg-name="bein sports 4.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 4
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports4/playlist.m3u8
+#EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 5 Zeus
+https://zeus645423.cfd/b4/index.txt
+#EXTINF:-1 tvg-id="bein-sports-5724" tvg-name="bein sports 5.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 5
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports5/playlist.m3u8
