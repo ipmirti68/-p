@@ -34,9 +34,9 @@ jobs:
         continue-on-error: true
         run: python link.py || echo "link failed"
         
-      - name: 11 - PADİZİ
+      - name: 11 - PDİZİ
         continue-on-error: true
-        run: python padizi.py || echo "padizi failed"
+        run: python pdizi.py || echo "pfizi failed"
         
       - name: 12 - SDİZİ
         continue-on-error: true
