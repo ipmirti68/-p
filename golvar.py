@@ -202,20 +202,42 @@ def main():
     # ESKİ KANALLARI KORU
     # ==========================================
 
+    
+    # ==========================================
+    # KANALLARI URL ÜZERİNDEN EŞLEŞTİR
+    # ==========================================
+
     channel_map = {}
 
+    # Önce mevcut kanalları koru
     for entry in existing_group:
 
-        if not get_stream(entry):
-            continue
+        url = get_stream(entry)
 
-        key = make_channel_key(entry[0])
-
-        if key and key not in channel_map:
-            channel_map[key] = entry
+        if url and url not in channel_map:
+            channel_map[url] = entry
 
     added_count = 0
     updated_count = 0
+
+    # Yeni yayınları URL kontrolüyle ekle
+    for entry in new_entries:
+
+        url = get_stream(entry)
+
+        if not url:
+            continue
+
+        if url in channel_map:
+            # Aynı URL zaten mevcut
+            continue
+
+        # İsim aynı olsa bile URL farklıysa ekle
+        channel_map[url] = entry
+        added_count += 1
+
+    updated_group = list(channel_map.values())
+
 
     # ==========================================
     # YENİ KANALLARI EKLE VE GÜNCELLE
