@@ -42,7 +42,7 @@ jobs:
 
       - name: 12 - SDİZİ
         continue-on-error: true
-        run: python dizi.p || echo "sdizi failed"
+        run: python filim.py || echo "filim failed"
 
       - name: 13 - CDİZİ
         continue-on-error: true
