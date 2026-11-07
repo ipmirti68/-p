@@ -5,7 +5,7 @@ import requests
 import tempfile
 
 # ==========================================
-# MIRTI68 - Atom GÜNCELLEME
+# MIRTI68 - ATOM beIN SPORTS GÜNCELLEME
 # ==========================================
 
 SOURCE_M3U_URL = os.environ.get(
@@ -16,11 +16,11 @@ SOURCE_M3U_URL = os.environ.get(
 M3U_FILE = "mirti68.m3u"
 
 FILM_GROUP = "🖥beINSPORTS"
-SOURCE_GROUP = "Atom-Panel"
 
-# Kanal adında bu kelime geçenler de alınacak.
-EXTRA_KEYWORDS = ["beIN Sports "]
 
+# ==========================================
+# M3U YARDIMCI FONKSİYONLARI
+# ==========================================
 
 def get_group(line):
     match = re.search(r'group-title="([^"]*)"', line)
@@ -41,8 +41,10 @@ def read_entries(lines):
         line = line.strip()
 
         if line.startswith("#EXTINF:"):
+
             if current:
                 entries.append(current)
+
             current = [line]
 
         elif current and line:
@@ -66,18 +68,16 @@ def get_stream(entry):
 
 
 def make_channel_key(extinf):
-    """
-    Kanal kimliği:
-    Kanal adını esas alır.
-    Büyük/küçük harf ve gereksiz boşlukları önemsemez.
-    """
-    name = get_channel_name(extinf)
-    name = name.lower()
+
+    name = get_channel_name(extinf).lower()
+
     name = re.sub(r'\s+', ' ', name)
+
     return name.strip()
 
 
 def update_group(extinf):
+
     extinf = re.sub(
         r'group-title="[^"]*"',
         lambda m: f'group-title="{FILM_GROUP}"',
@@ -85,6 +85,7 @@ def update_group(extinf):
     )
 
     if "group-title=" not in extinf:
+
         extinf = extinf.replace(
             "#EXTINF:",
             f'#EXTINF:-1 group-title="{FILM_GROUP}"',
@@ -94,29 +95,46 @@ def update_group(extinf):
     return extinf
 
 
+# ==========================================
+# ANA İŞLEM
+# ==========================================
+
 def main():
 
     print("=" * 55)
-    print("MIRTI68 - ATOM GÜNCELLEME")
+    print("MIRTI68 - ATOM beIN SPORTS BOT")
     print("=" * 55)
 
+    # Kaynak listeyi indir
     try:
+
         response = requests.get(
             SOURCE_M3U_URL,
             timeout=40,
-            headers={"User-Agent": "Mozilla/5.0"}
+            headers={
+                "User-Agent": "Mozilla/5.0"
+            }
         )
+
         response.raise_for_status()
         response.encoding = "utf-8"
 
     except requests.RequestException as e:
-        print("Kaynak okunamadı:", e)
+
+        print("Kaynak liste okunamadı:", e)
         print("Ana liste değiştirilmedi.")
         return
 
-    source_entries = read_entries(response.text.splitlines())
+    # Kaynak kayıtlarını oku
+    source_entries = read_entries(
+        response.text.splitlines()
+    )
 
     new_entries = []
+
+    # ==========================================
+    # SADECE beIN SPORTS KANALLARINI AL
+    # ==========================================
 
     for entry in source_entries:
 
@@ -124,19 +142,14 @@ def main():
             continue
 
         extinf = entry[0]
-        group = get_group(extinf)
-        channel_name = get_channel_name(extinf).lower()
 
-        # Kaynak grup veya Ahmet geçen kanal
-        is_source_group = group == SOURCE_GROUP
+        channel_name = get_channel_name(
+            extinf
+        ).lower()
 
-        is_keyword_channel = any(
-            keyword.lower() in channel_name
-            for keyword in EXTRA_KEYWORDS
-        )
-
-        if "beIN Sports " not in channel_name:
-    continue
+        # Yalnızca beIN Sports kanal isimleri
+        if "bein sports" not in channel_name:
+            continue
 
         stream = get_stream(entry)
 
@@ -151,56 +164,63 @@ def main():
         ])
 
     if not new_entries:
-        print("Yeni kaynak yayın bulunamadı.")
+
+        print("beIN Sports kanalı bulunamadı.")
         print("Ana liste değiştirilmedi.")
         return
 
+    print("Kaynak beIN Sports:", len(new_entries))
+
     # ==========================================
-    # ESKİ ANA LİSTEYİ OKU
+    # MEVCUT ANA LİSTEYİ OKU
     # ==========================================
 
     if os.path.exists(M3U_FILE):
 
-        with open(M3U_FILE, "r", encoding="utf-8-sig") as f:
+        with open(
+            M3U_FILE,
+            "r",
+            encoding="utf-8-sig"
+        ) as f:
+
             old_lines = f.read().splitlines()
 
     else:
-        old_lines = []
+
+        old_lines = ["#EXTM3U"]
 
     old_entries = read_entries(old_lines)
 
-    # Diğer bütün grupları koru.
-    preserved = [
-        entry for entry in old_entries
-        if get_group(entry[0]) != FILM_GROUP
-    ]
-
-    # ==========================================
-    # MEVCUT GRUPTAKİ KANALLARI GÜNCELLE
-    # ==========================================
-
+    # Hedef gruptaki mevcut kanallar
     existing_group = [
-        entry for entry in old_entries
+        entry
+        for entry in old_entries
         if get_group(entry[0]) == FILM_GROUP
     ]
 
+    # ==========================================
+    # ESKİ KANALLARI KORU
+    # ==========================================
+
     channel_map = {}
 
-    # Önce eski kayıtları yerleştir.
     for entry in existing_group:
 
-        if len(entry) < 2:
+        if not get_stream(entry):
             continue
 
         key = make_channel_key(entry[0])
 
-        if key:
+        if key and key not in channel_map:
             channel_map[key] = entry
 
     added_count = 0
     updated_count = 0
 
-    # Yeni kayıtları işle.
+    # ==========================================
+    # YENİ KANALLARI EKLE VE GÜNCELLE
+    # ==========================================
+
     for entry in new_entries:
 
         key = make_channel_key(entry[0])
@@ -210,37 +230,88 @@ def main():
 
         if key in channel_map:
 
-            old_stream = get_stream(channel_map[key])
+            old_stream = get_stream(
+                channel_map[key]
+            )
+
             new_stream = get_stream(entry)
 
             if old_stream != new_stream:
 
-                # Aynı kanal, yeni yayın adresi.
                 channel_map[key] = entry
                 updated_count += 1
 
         else:
 
-            # Yeni kanal mevcut gruba eklenir.
             channel_map[key] = entry
             added_count += 1
 
-    final_group = list(channel_map.values())
+    updated_group = list(channel_map.values())
 
     # ==========================================
-    # ANA M3U DOSYASINI GÜVENLİ YAZ
+    # GRUBUN ESKİ YERİNİ KORU
     # ==========================================
 
-    final_entries = preserved + final_group
+    final_lines = []
+    inserted = False
 
-    output = ["#EXTM3U"]
+    i = 0
 
-    for entry in final_entries:
-        output.extend(entry)
+    while i < len(old_lines):
 
-    content = "\n".join(output) + "\n"
+        line = old_lines[i].strip()
 
-    directory = os.path.dirname(os.path.abspath(M3U_FILE))
+        if line.startswith("#EXTINF:"):
+
+            entry = [line]
+
+            i += 1
+
+            while i < len(old_lines):
+
+                next_line = old_lines[i].strip()
+
+                if next_line.startswith("#EXTINF:"):
+                    break
+
+                if next_line:
+                    entry.append(next_line)
+
+                i += 1
+
+            if get_group(entry[0]) == FILM_GROUP:
+
+                if not inserted:
+
+                    for new_entry in updated_group:
+                        final_lines.extend(new_entry)
+
+                    inserted = True
+
+            else:
+
+                final_lines.extend(entry)
+
+        else:
+
+            if line and line != "#EXTM3U":
+                final_lines.append(line)
+
+            i += 1
+
+    # Hedef grup henüz yoksa listenin sonuna ekle
+    if not inserted:
+
+        for entry in updated_group:
+            final_lines.extend(entry)
+
+    # ==========================================
+    # DOSYAYI GÜVENLİ KAYDET
+    # ==========================================
+
+    directory = os.path.dirname(
+        os.path.abspath(M3U_FILE)
+    )
 
     fd, temp_path = tempfile.mkstemp(
         prefix="mirti68_",
@@ -249,25 +320,43 @@ def main():
     )
 
     try:
-        with os.fdopen(fd, "w", encoding="utf-8") as f:
-            f.write(content)
+
+        with os.fdopen(
+            fd,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            f.write("#EXTM3U\n")
+
+            for line in final_lines:
+                f.write(line + "\n")
 
         os.replace(temp_path, M3U_FILE)
 
     except Exception:
+
         if os.path.exists(temp_path):
             os.remove(temp_path)
+
         raise
 
+    # ==========================================
+    # SONUÇ
+    # ==========================================
+
     print("=" * 55)
-    print("GÜNCELLEME BAŞARILI")
+    print("MIRTI68 GÜNCELLEME TAMAMLANDI")
     print("=" * 55)
-    print("Kaynak bulunan:", len(new_entries))
+
+    print("Kaynak beIN Sports:", len(new_entries))
     print("Yeni kanal:", added_count)
-    print("Yayın adresi güncellenen:", updated_count)
-    print("Korunan diğer grup kayıtları:", len(preserved))
-    print("Son grup kayıtları:", len(final_group))
-    print("Ana dosya:", M3U_FILE)
+    print("Güncellenen kanal:", updated_count)
+    print("Son grup kanal:", len(updated_group))
+    print("Grup yeri korundu:", FILM_GROUP)
+    print("Ana liste:", M3U_FILE)
+
+    print("=" * 55)
 
 
 if __name__ == "__main__":
