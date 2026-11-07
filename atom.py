@@ -135,8 +135,8 @@ def main():
             for keyword in EXTRA_KEYWORDS
         )
 
-        if not (is_source_group or is_keyword_channel):
-            continue
+        if "beIN Sports " not in channel_name:
+    continue
 
         stream = get_stream(entry)
 
