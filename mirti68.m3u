@@ -1,8 +1,4 @@
-#EXTM3U x-tvg-url="https://raw.githubusercontent.com/ipmirti68/epg/main/epg.xml"
-#EXTM3U x-tvg-url="https://raw.githubusercontent.com/serhatyilmaz55/epg/main/tr.xml"
-#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
-#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
-#PLAYLIST:mırtı68
+#EXTM3U
 #EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="atv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04n55YCvUX9Dgc8zHyEIQdd7ZUdbvNL5m6HjT-sbC4g&s=10" group-title="📺 ULUSAL" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV
@@ -1010,15 +1006,15 @@ http://145.239.58.133:28008/kanalada/kanalada/sec-f5-v1-a1.m3u8?app=supersatforu
 https://cdn-kanalavrupa.yayin.com.tr/kanalavrupa/tracks-v2a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8aWrU4ygr14meW5J-GlkerG5L3rCR64bZTD5oZE9Nw&s" group-title="🇪🇺 AVRUPA",KANAL AVRUPA
 https://api-tv27.yayin.com.tr/kanalavrupa/index.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24
 http://cdn-gurbet24.yayin.com.tr/gurbet24/gurbet24/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ
 https://135962.global.ssl.fastly.net/5ff366a512987e2c0a3dabfe/live_14378e1002eb11ef9cb025207067897a/index.fmp4.m3u8
-#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE 
+#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE
 https://i41.ozelip.com:3269/hybrid/play.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ
 https://yayin30.haber100.com/live/kardestv/chunklist_w403767422.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA
 https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/euro-d-buyuk.png?rkt=DfS6Tgv6Hjr93k3" group-title="🇪🇺 AVRUPA",EURO D
 https://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8
@@ -1176,7 +1172,7 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8
 https://tv-trtcocuk.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-name="diyanet çocuk" tvg-logo="https://i.dsmart.com.tr/kanallar/TRT-Diyanet-Cocuk.png" group-title="🧒 ÇOCUK",DİYANET ÇOCUK
 https://tv-trtdiyanetcocuk.medya.trt.com.tr/master_720.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP 
+#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP
 https://narrative-popkids-rakuten.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/zCTf71x.png" group-title="🧒 ÇOCUK",TİNY P
 https://amg01753-narrativeentert-tinypop-samsunguk-hvvb7.amagi.tv/playlist/amg01753-narrativeentert-tinypop-samsunguk/playlist.m3u8
@@ -2979,31 +2975,104 @@ https://andro.evrenesoglu235.click/checklist/androstreamliveexn7.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",TRT TÜRK HD-Mahsun 🔴
 #EXTVLCOPT:http-referrer=https://mahsunsports22.xyz/
 https://andro.evrenesoglu235.click/checklist/androstreamliveexn8.m3u8
-
 # MIRTI68_KANALD_AUTO
 #EXTINF:-1 tvg-name="KANAL D 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL",KANAL D 🔴
 https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=7dba7171ab2af5644129c3b336805440&dfp_paln=AQzzBGQEW6mODb66SNO1zlITfUwBA8d5K42Q94t8NUQ-izCKBQzBktsYQf4q0GVNvkZ0-HjDTGCMPKKtYb3OwOKYu3d9wsiytZ-OxyVaI5nx2ZZ0nOX-viyEs6i75qLQzar0Nc5ClQW1x78tJk7-j7J59CaQ5ftM5kbb6IIXyDf-msLcGyfR-6WdG10McCzwKjOI5rlK9RrCYLQ6-MHSppsmCkDJc-WPDAT8uyXUME9Qg4Tl6CdNP1pYnHE7rHm8ndSWKnZHlH_qrzFpjD0ixtAXma82dlaloCdb2p4dwy7Lrv7M9GcuX7GrO0AIwcU8JfLzslhio4B0PNiZckbPovo3DtSbGBIpR9zGc3ce3JlJ_QllctOYKN4Lm9iZz9kydJtbRSB7Dj5EZADf3Na6nXwFHO1D-UKPCVcQ8IxlrOs-0nh94s6FBh9_F8CQVNK0RCxJ1qFJT3DmcwBThszGu2FocImiiGzzGqmtAUa90ufUGQ4zoLcyD8NpVMqFm9tgWW1MeT01z8W0CDZA056jX7uCSmw3ijkDj7FfzoA47RJCK5sYoc8ibhb9ClBT03_B-o7KJw8Q1g7Lt9NkFuqCAazogNixSWn645TYjrFb_-voRskeq4M1HxN9uEXaWFOhmpy-zLWBXLF_CTfB2hCN7VLIo__ThJN6hTb0h1ig8FcYneDPYFRBCl3W0UzBKUj_L-6XgfTK1lMRfooSdxpnYsfI3N-LCjV7CD0B7beLE_yxhEiSt09maobgA-NyiEju391L74wO-HvVvDkcp7nbWXazkpTtfSmpA0GTEmItcGAYhtOqtPwgGLNJNQOXMSqVqp6PMGegAdoUC8xSXqAtCmGMTvc-XA39qQ6JWLN7aH6ZJPWzwKyLp1oMV33_mnsr_26ip-y0Z2mO_fKjrFbusWv8ob_6XSc_M6LTG7PpQk0p7wHizkUAr32sE4zhD13e8rcizV7AK7dImvRchOd4FxdztVR1NQv4PnN8v6iumIRYma8gGEd0AFPz9-RbrA5iZBf5nWUpulxgqxKJBVbNhg-BXuabznchmFoHSt7V-faF7IvWo74vtbBOqHGq2mVDT7a55J278cXqKjWFOPprLE6s9ryZOyOMq2fv_1NDqeRSmfDTo8hvx4TFhThAu9NFw7fMlQR2wrA3dhCeSrx8c-YsRJh3YkegghoueL4YzFvolX-GfEqovmvNmhPiLAap83bVLlgntzDZY_laKNUyNfuWfYc0Qt7omu1ruJBvL2xbPQtXa2dGJltn2ELjEdHjFc133ygwVrCJiNRm_99Wh0aIkChhoLc3hCWWR5nF6DV9dW2ULEvDN8x3LCKNyffkHllW9DYtwEsrt1ZbCTIF4qqnNbWh2lzTh1y1ZqaKlU6Vmd0jSdkUzA12DM9ZRKaXOXaZKFJ6lWX25ElDv6rLTL74TH-Yfh3dp52ng7wdvgjwZ5g.
-
 # MIRTI68_STARTV_AUTO
 #EXTINF:-1 tvg-name="STAR  🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR  🔴
 https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=b78024a70fa01f8b358e5d6596e2399e&dfp_paln=AQzzBGQEGOhzYAXiPisWniE4_3WDy58Li00ny0hINWnCvl8UpAU9Z_ZWNOHKqQ55xYnJ0IvS8koqRBwbDjszsouah__pkr1eYZQ8MLy4OSNrNnaMIn5TJyKfE7skHkaWXau8ho4JO-i-LsBJ0ZsodxPbCYf35FibpmKsXr-YtFR77QWZ5A5ZsGnk6bCzIQH2nV7WsP-H4n1odBiYQbdnX3W6dHU0lR0vV1Xm1SjPC0oojmQllZFp8FXON5119FKw7RCvgzT6EJsXsl0AZnJhp9p03FXHqILnXu9YogFA-7ghLBtTdFoXMNY9hUgNnFvlpyw2gJtRQ0uszrgPbN_CIJtULMHbdDbDs9iqm0dIdP-n56JbMXEJkeCSaZh1oIr-ubggWq-vUyk8qWVj9bEQPVW9EPV2RyIf1yWWiH75s-pyEQ8G29x_dvaFY944nnpDFFqTYoQt6fzFWTu6lwGnR_Jwp7giMNkOA3EJSz8kGfFD6M2FHj4M4hKPm4yn0s-HKkWWoEmpM6s69fbPzZtv_Fbe9ZWkupvCwkfL98PME5RyroqWoCJZ6cpgXfdfmelY5kJAjyLSjAcBl9gSu6nkZtjIEsShtQhqUGeN1aMCbuw_wkRQts5RHA6BkhRoSlIxNtgd73fUC9zG9J5xAW9XOAOD1R8md1BjV-hvPqbkiKg0v_O6aK5NdV0JqZdGsCaxTlMjgNfLL_Gvx1yAA_tBg1NPDMY3zSVI12DacPwmlqjwLIUEm5uAjotnjzsguszyru0XekK001JWkL2y3cKQ43EYUxQjgxbXM20LS1QhKcZo7EL9rLqprCl8ZEydBnUOq_poS6k0VSphskSQ8YLGJi_1_r26pAPW3iPtSdr0RK6n18kJPS-gaO2XG61C7VL8zG11NGHTVp1QaWHI0NgzNbn6Ur3l-eyEcIuKXy2isZ3hrI5FPF8Sec2Q-TMdtfiJQH910S_cwzDDshQVHUQB2GkJbE9ENuWU07_HsnBjeHU5m8PjLlAxDAkDRWQMEwK-PLDYPv7ZJER4CxTP6DUp8awV-HhDt7UG2cv21OQYa31_IL59TrRGO0ELunhVh5dfBLJnJJuAlR_Bc2BMN9EuWBQ_7K8MXuYXiS3Bdx6fEVHGLxKTkSfuBgswDIuHD0YhEisiBWF4HL2HQRVZqdkmPpbuudKn0bUUOo7zPFIKHMs4g0LJ0ggrEMxcDXvATrxbqzMbQPWD7ZAQgdvSRR8lqRM5ibOD2KJv1zbcFBCFIFvMhJwmUJX6Tx-qZt7i4h9C2lF9qiL3i3robzOhY_80s3WbVZdQGN7dXrj_cJk_gR5j9rRi9XBblL1Fdo53CxGElSjOiMVQmoSoJ8W48WY8-d2UVpKQ3siWOKFxqkwQ5QJe2gxOkeI54PU3envSHND8zMHM6jhEhcHfLe8P28l8NGbpDGSNRhIEEe9Ia8ydG_w.
-
 # MIRTI68_SHOWTV_AUTO
 #EXTINF:-1 tvg-name="SHOW 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL",SHOW 🔴
 https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=63ee2adeca0b4fa8968a2e25c0680d4d&dfp_paln=AQzzBGQERjOaEiezepB0krDI-32wCCXcA-mSO6lVj0YufiRUGiEZ8rmUfkre6jOCwpDrq05CQofQvhrkw7z8oRQSY0g4EGozws9GdMewkED4Gvjit599lM0HXaXwQ02D08tdzR1mgvTp5afeNpF72cby3KWajnpAZcOfI0_BidY4h0lR2r6vghmWG2sdGD-CYU0Lp0IFGJpXA7Yw_C4kCWQctUvZLQhb4wA07zABysnoon8xqHbPXi7Q3Y_ygneSH5q2ixtIiVoP-9eWmImfGGBabf6bDIEoD8s9uV7WWsWQ0iBnWCoXUNL6TgKiT4EbEIfToM50DUsnZJuHC_rXpTTn1X2VP5MYy9Mh_1-p0zYnl3K1wGBF7nVfK7hD5NTHmez875Ikm4Q_HeNG5LkofQM5PQ4SfHEvMlR3AVJVuimUIN5OZeZKE9UI9U--Z65chNFXqlqiQCHMje-NT8WiyvykcQb8qjU09X2rx87spZU3C1xC2sEsC49BHLS516I9PkeuXNOc2f2PpUj7wyd12wHQgtdYq153Vt41w1tH9iqZ3sCda0Izk8gK6acvAtIA3E_Si1fmlF4LD5tfNx_nP3-v07NSI6-VUmumA-jHyCTp3Y3LVK9BE0TvyZf3efFCOUkNEgTspl6TMi1GyyQE52-VzYLsXHHYEp1qWxOVLbI-Tn37tirgEV7CSC5tKUUX3SMZMC4fJ8ki8rwC2pq3p5iOLL64hs4V4dT6kSogGvUxbN1gMoJN8pllG568DFgZ4OzWoqeNvjcLchBHhLHHxDJT1Q6YMc-DZlYIoWL0aFCulZ90hDDHlxdsd338b5L0XGD8gXcRNQgV3pwZuTSbWGkZB3ALQ3L-rXxMfT5lvVU_xJAezbqh-V0ub7ruFjI6zdUygnp2OkgNl3OsH4id7CBy22J4J2A1d6CQFA7N0NfzJmEuWR5mbCJze_-X7Rf7NHedPUhX5tkxAepIuykwSJe0dz7Y4OU.
-
 # MIRTI68_TV8_AUTO
 #EXTINF:-1 tvg-name="TV8 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="📺 ULUSAL",TV8 🔴
 https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=0fe20fe8589f716d0d1940ef88fcbbea&dfp_paln=AQzzBGQE1-pHvvjuhdjpowLLtKoqAjwmz6zxDO9KHbjl2uZUNSLcW-bx6TvRAe_6g1aRg5muFXw9euwnzjSzy9k8iinFKAKwKbdj7zuQhl_Ly1oW_YsqNL8KIUY88ED6iGBtmPPhTxBqu0kaPgGW8HGks-KxhZWO8QKOF2o69kfPOLJMAKxUrvW7sntgg4boQlX11qHQ8KOuvun_aupf4NO5YqW3umnskmH5o009P3rmtIjwCMhImNQOPvrZrQ8AEhLdi5tKKyR4Yk81XWZQB0LCrA_Y2Q8kFBAb3G1H_NMAEcw1UEw5_b_No829B-hfzsRXnzqPTAhQi-ffJSXjoDKCQiOanVmnIrlx_HBYH1Ll27GEQTG29gtAiWzjXURwbAIrYt7-maMa8y6grcrVlmyTQkPsnA9iyunLyeGVbxTi7JDorgb38ZeaqgGhEdQC1iomT7t95Hqf8uaxm2h2pKbsaVjuRnrL3EMtOZgAHz2KQXRdkl2O9qfQ37hd8h-3m9U1mJl40vHySUuZWm5pObD8Vn9PsC1WZJI81WWHKL1rF1GkZyJ8HY52tg4CL9Pp4gy1i00fQu_QiCRgXue-9CcWSNuuPva42cRvx8L6vhaeocDrsH4EihXfRWNLLlRrXIJj9qi_vq-6RF-w5xgh4yOUHLDsYNWedhn8Y0RLHOuJPyRiX--HSCxAJTyVQy4yHnMEesueuVRj2CS-CnwWuC7ul6Gr2uUdJiWLPaIwiBF5ruxOKnUKWlHQtXXF9wtUp8f9Tq3dv7ampAiBx0QiKVRCYsLUeu6uDa4tr1caGKs9zZu8DjuyMB2_u5QZ7AWGitg43DjzpjPq1W6lLl62WiDSELnlAe2xU61BzE0GzESeMvwqgs9Vs5aa2VTzpudNHjK3ggCYLMiwjJIgLVeK6iyPxSYR3g6qSr84FdRwwtUo-NtTNF2MZW_Ulqxzxf4ZZAMZV2XLuINTP-3zSD-2bXILaBImWaHL4H431hyIeEtuIjga9KDNF1sjEfE6axj5zpJ-7RAnU26gAMHCyxBcgRgwYoiYNT6PeU4E5ZZG86a3_nRKt5tFit3UosuzKz6wnzhaHc3HRsP4Snywwnr9pu7zmP-qRF5AMILh0EswDA5bhofACC8T7Yc-4hGV2DYt02dYgBGB0CqOAl4D7ifQ6EIpx2WcO71VTJt0pgl7Uo1SR-om1yNfkQldAKbSWR8_zmEP0t5P4d327YHaIVzxSLoNF7rM5K1liZppInFP0Qo1pB-6jWAGzlj81dwD1NqFhKtC425RXDcFrxRvtdRZvg..
-
 # MIRTI68_KANAL7_AUTO
 #EXTINF:-1 tvg-name="KANAL 7 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL",KANAL 7 🔴
 https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=fe7f9fd7e49a3434552a6173b6fb59ee&dfp_paln=AQzzBGQERT1Wsuyy7tycsmuZUTyW0NpYXggq_ZwoakHeG0Sq1WOq40M22vrEEyc1QSt8xfCxlJ80kjpdA4KTDM5mBOVgAsHMeAXAEwsnzWbUzC3HvBf9bXn1p16-Z1484qaMpDoAQE1hqaUSCou5hOEA3UGqwY243EZpkPr-cB8435re-oJUD8zBj2sELjM0PRbKMEYY3yfbM4Du2DEWub9_YtQB5-4S3G2ItLa7UERap-5a55oWOSbf1fI6AL0ddujnLSkoVwlEVzKlkG6e6k6KOArmZVumYRdjpYxWSFSAagZF2eBgk3FJU2LN0Izl6m3g_YUIDO17pmVGOmDK9tfPbzfjXf49UqFV680tLLVHTXPQwnQNflMLa8YPRBCSfh4zRdXoEvQbF8QG21Jeyl-GKECMnQX9ORQi15WQ492lcyxHaoZijwzIuIYIwCb2tTzLfEKVFj6Zc_voK3TclSqwRVAQeKoyDysJAphUvkaIhHJAUfW9JyaL98DEtpjV6H9p2iu-edZMYKJxur-n29NKnpSTcjPYfNU8-lZlsjP7NIJvIM6H3fB_dPbskPSM-lM3LAc92R1uffmOyBU3s0kkgaSZWDfOSds4YHGXMC0MzuSgS0DEIBMbYc8QmN7BUO6STuQA3Cy4tJeW698smQE8skIh5BByB_bcvrT8_AzItUaFPagYt8g7DfUBPiSos-0apPU_U5koJrgEWXYq9qk5OzJ61AixejP_jhgI18jQpo8JAeQGs9HdehBP_YI_9C1W8h7SLhBWinz6OsbcMF_EbsplP3dqldLsrq5595cUfU2QBHoXhG6szgd7RQGl_f0whVxwbb3xjvHiAQaaGX-wsy_Nw5t7BfCno8FzjxxJP-LbkfZUS-nG_sCWU7lc4GPGTOXXmyozhcnTmiFALr2qnaF-W-2gKDI7OGXLTkKz8MBForVKyGGaOx4-cBsXjd71_woNGyS2TThrHnTImkXPn1ZzA5Qc21LTK7xNK7AqPU4qfBXHcmuRs-ypXbODdEcc4j5Ty60wvDpEq25PlO7s1WnOzM8QsbmCISgMbSeI1udB8m46QrfemyiAJM5im9OkRLHtveZDI-pzcUpsFCvRai4moCx7YncReVj25zPPCkkUZJzM5w8fD2Zaq-Sx3m59XX6XEQVajxe_Q_2QYXpYtSz6CSSHusqvwMe-k_-fEKxlb_zYN5lWuGae5Q3HT13684_zZzkTAD6mJDa48j_Hnlu8RQUcV6WmCQEMWMkoRCSJtjPVf-pYEjvbZVvpuahjRPb3MQPF9ZJ8hpo4m84Mxpuj8jd7w63hTDTZQC1rS87opezIXVKx6GF_Mj86DpIed4Bz1Nba-Im-L1PK0CCVwGN65JDYL46MZ9_IwcMx_xRPMAhMSmB42UwbNankih0HMN_8GwK2GVlYzh-ex4HLDQiAlrHDbxv889eLZ2sIOslcY7yEymEBh46TX28Laddt2XSFrI0aTHdH13kL9d9J
-
 # MIRTI68_NOWTV_AUTO
 #EXTINF:-1 tvg-name="NOW 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL",NOW 🔴
 https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=vOXJxmkblkYKFpwVGYxi5g&e=1794086588
-
 # MIRTI68_TRT1_AUTO
 #EXTINF:-1 tvg-name="TRT 1 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1 🔴
 https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="Sonunda Sen (2026) NF - YERLI " tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mnBW7o8ycDi8WotGeRkGoDxrNMd.jpg" group-title="🎥 VİZYON FİLMLERİ",Sonunda Sen (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/628314.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Güvercin Terbiyecisi Hammal (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ozyoVMeqHgXNDG6dC3QbHPUm9HA.jpg" group-title="🎥 VİZYON FİLMLERİ",Güvercin Terbiyecisi Hammal (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/632550.mkv
+#EXTINF:-1 tvg-id="" tvg-name="D.I.S.C.O. (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zNjm76IFBxiXMZ7ldWrVSudWeqo.jpg" group-title="🎥 VİZYON FİLMLERİ",D.I.S.C.O. (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633508.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yaz Evi (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kA6e4wmyulZn76xBd5Bq29PZwnb.jpg" group-title="🎥 VİZYON FİLMLERİ",Yaz Evi (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633554.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ketenpere: Dalavere (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dznIeiQ34jlQqcWzZnQco46EHf1.jpg" group-title="🎥 VİZYON FİLMLERİ",Ketenpere: Dalavere (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633665.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Cam Sehpa (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p3iMK5XL0GURREEAxXjBlYWveXn.jpg" group-title="🎥 VİZYON FİLMLERİ",Cam Sehpa (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633880.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yasak Aşkın Günahı GAIN -YERLI" tvg-logo="https://jetfilmizle.now/uploads/posters/yasak-askin-gunahi-poster.jpg" group-title="🎥 VİZYON FİLMLERİ",Yasak Aşkın Günahı GAIN -YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634068.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Fırtına Kız (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p7EY5y7ZFPijbobbH0aFYinRbdL.jpg" group-title="🎥 VİZYON FİLMLERİ",Fırtına Kız (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634201.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mutluyuz Mu (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/42G0NOsQq4jyZSaA1yxi8MwTLji.jpg" group-title="🎥 VİZYON FİLMLERİ",Mutluyuz Mu (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634204.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Parçalı Yıllar (2026) AMZN-YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uA6WXb0QVeNdnEbWLb4ZVvNyk1.jpg" group-title="🎥 VİZYON FİLMLERİ",Parçalı Yıllar (2026) AMZN-YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634473.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeş Takımı 3 (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/5VwObi6neCFYPmxDYtnb4KmDGS3.jpg" group-title="🎥 VİZYON FİLMLERİ",Kardeş Takımı 3 (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634487.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Hezeyanlar Doğu Demirkol (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bD9ZEe3DhGXvFooYYExtwLq1FNm.jpg" group-title="🎥 VİZYON FİLMLERİ",Hezeyanlar Doğu Demirkol (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634674.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeşler Araştırma (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6CD5QPUVDSS9hZpkYHKGyVZCGyR.jpg" group-title="🎥 VİZYON FİLMLERİ",Kardeşler Araştırma (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634734.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Öngörü (2026) DSNP - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/8JDJWhPU2rfTal8xkESkxnZb5q0.jpg" group-title="🎥 VİZYON FİLMLERİ",Öngörü (2026) DSNP - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634864.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Soylu Tutsak (2026) GAiN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/k38X0ttLiR28lg5TRAMG7TaYAaF.jpg" group-title="🎥 VİZYON FİLMLERİ",Soylu Tutsak (2026) GAiN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634865.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Efes'in Sırrı (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bwzWzfAA5UcKQTsSGAxdIyo4sKh.jpg" group-title="🎥 VİZYON FİLMLERİ",Efes'in Sırrı (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635193.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZARTESI : Altiustu Istanbul (02.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qnImGr6hA1GJb0IBxulxoOswF6D.jpg" group-title="🎥 DİZİ SON BÖLÜM PAZARTESİ",DIZI PAZARTESI : Altiustu Istanbul (02.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/270772.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZARTESI : Uzak Sehir (02.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/lnpbBuBqKJMGh68sNEWE5tLDl8U.jpg" group-title="🎥 DİZİ SON BÖLÜM PAZARTESİ",DIZI PAZARTESI : Uzak Sehir (02.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/270773.mp4
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZARTESI : Evlilik Guzeldir (02.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kMEUr1CH5fGmeae3rVP4xDfD9t3.jpg" group-title="🎥 DİZİ SON BÖLÜM PAZARTESİ",DIZI PAZARTESI : Evlilik Guzeldir (02.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635227.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI SALI : Mehmed Fetihler Sultani (27.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/A8fHgHmcEQU1UcOcXhW3NXtwwcZ.jpg" group-title="🎥 DİZİ SON BÖLÜM SALI",DIZI SALI : Mehmed Fetihler Sultani (27.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/270810.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZARTESI : Tuzlu Kahve (27.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w1280/i2C7xDd2Kc22GvQtgnvsFSzxa4T.jpg" group-title="🎥 DİZİ SON BÖLÜM SALI",DIZI PAZARTESI : Tuzlu Kahve (27.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635169.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI SALI : Haysiyet (27.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/1N3EctW7cweMUbq3aQZyV0GEEZH.jpg" group-title="🎥 DİZİ SON BÖLÜM SALI",DIZI SALI : Haysiyet (27.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635232.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI SALI : Anne Yarisi (27.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kSTdVwURCDjqIQmYrVeTZIFXxzE.jpg" group-title="🎥 DİZİ SON BÖLÜM SALI",DIZI SALI : Anne Yarisi (27.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635664.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CARSAMBA : Kurulus Orhan (10.06.2026)" tvg-logo="https://image.tmdb.org/t/p/w1280/65K3llBL0wlW0C3pNaQyjWOdwbp.jpg" group-title="🎥 DİZİ SON BÖLÜM ÇARŞAMBA",DIZI CARSAMBA : Kurulus Orhan (10.06.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/279810.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CARSAMBA : Yeralti (04.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bu8ks983hBPEzyAH8gSATW5aPJ7.jpg" group-title="🎥 DİZİ SON BÖLÜM ÇARŞAMBA",DIZI CARSAMBA : Yeralti (04.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/484647.mp4
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CARSAMBA : Sevdan Bir Ates (04.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/pmHRDFAZukHw089H58c6b6EUilQ.jpg" group-title="🎥 DİZİ SON BÖLÜM ÇARŞAMBA",DIZI CARSAMBA : Sevdan Bir Ates (04.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635305.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PERSEMBE : Muhtemel Ask (05.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9dWX56kVLJ47MG6axiTAFdf035k.jpg" group-title="🎥 DİZİ SON BÖLÜM PERŞEMBE",DIZI PERSEMBE : Muhtemel Ask (05.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271152.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PERSEMBE : Sevdigim Sensin (05.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/eVMb930nCNRYGhPlAVRI5hsMdAz.jpg" group-title="🎥 DİZİ SON BÖLÜM PERŞEMBE",DIZI PERSEMBE : Sevdigim Sensin (05.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/627166.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PERSEMBE : Gunesin Dogudugu Yer (05.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9SBRjlJd6ntwY4fe0yVhLHzvztR.jpg" group-title="🎥 DİZİ SON BÖLÜM PERŞEMBE",DIZI PERSEMBE : Gunesin Dogudugu Yer (05.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635626.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PERSEMBE : Halef Koklerin Cagrisi (05.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/sQTx2hiwi9CmRYyt6CAV5sf8C1T.jpg" group-title="🎥 DİZİ SON BÖLÜM PERŞEMBE",DIZI PERSEMBE : Halef Koklerin Cagrisi (05.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635688.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMA : Kizilcik Serbeti (06.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fXATVTtJDNizWjKpHgJEZegr6R2.jpg" group-title="🎥 DİZİ SON BÖLÜM CUMA",DIZI CUMA : Kizilcik Serbeti (06.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/270480.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMA : Tasacak bu deniz (06.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uHIOTJXN9nNTc51WyunL43Fvge3.jpg" group-title="🎥 DİZİ SON BÖLÜM CUMA",DIZI CUMA : Tasacak bu deniz (06.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271506.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMARTESI : Gudur Guldur (25.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6nmdHwVErYl9HOFhesRSMFC3HKj.jpg" group-title="🎥 DİZİ SON BÖLÜM CUMARTESİ",DIZI CUMARTESI : Gudur Guldur (25.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271660.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMARTESI : Guller ve Gunahlar (25.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3Qwhs7xxf9LILllWLnxbSaCBNDf.jpg" group-title="🎥 DİZİ SON BÖLÜM CUMARTESİ",DIZI CUMARTESI : Guller ve Gunahlar (25.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271542.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMARTESI : Gönül Dağı (31.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/lZL5RSSgLSewP0pi8rK4znb9FYZ.jpg" group-title="🎥 DİZİ SON BÖLÜM CUMARTESİ",DIZI CUMARTESI : Gönül Dağı (31.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/161171.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMARTESI : Baskalarinin Hayati (25.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/hjeB5dW5QKdBtlzS3FZrqqDHXNi.jpg" group-title="🎥 DİZİ SON BÖLÜM CUMARTESİ",DIZI CUMARTESI : Baskalarinin Hayati (25.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635719.mp4
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZAR : Kod adi kirlangic (01.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zCdzrmQL1GKy7bsj2gh5t3wxHS6.jpg" group-title="🎥 DİZİ SON BÖLÜM  PAZAR",DIZI PAZAR : Kod adi kirlangic (01.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271388.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZAR : Teskilat (01.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jJ7kZ2KK8VlXCeFRluqSuFzbL3z.jpg" group-title="🎥 DİZİ SON BÖLÜM  PAZAR",DIZI PAZAR : Teskilat (01.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271198.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZAR : Daha 17 (01.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/erd75Gon5bXL38kngnH6DCrOUj2.jpg" group-title="🎥 DİZİ SON BÖLÜM  PAZAR",DIZI PAZAR : Daha 17 (01.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633467.mp4
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZAR : Omur Usta (01.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tNU9FZWQ9vtobH6G4HS9USVGEP4.jpg" group-title="🎥 DİZİ SON BÖLÜM  PAZAR",DIZI PAZAR : Omur Usta (01.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635733.mkv
