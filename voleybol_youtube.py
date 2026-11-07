@@ -2,11 +2,12 @@
 import os
 import re
 import json
-from yt_dlp import YoutubeDL
+import time
+from yt_dlp 
+import YoutubeDL
 
 # ==========================================
-# MIRTI68 - KUZEYBORU / SULTANLAR LIGI
-# CANLI + TEKRAR YAYIN TARAMA
+# MIRTI68 - VOLEYBOL CANLI + ESKI MACLAR
 # ==========================================
 
 MASTER_FILE = "mirti68.m3u"
@@ -25,6 +26,7 @@ MAX_LIVE = 5
 
 OPTIONS = {
     "quiet": True,
+    "no_warnings": True,
     "ignoreerrors": True,
     "extract_flat": "in_playlist",
     "playlistend": MAX_VIDEOS,
@@ -38,6 +40,7 @@ OPTIONS = {
 
 DETAIL = {
     "quiet": True,
+    "no_warnings": True,
     "ignoreerrors": True,
     "skip_download": True,
     "extractor_args": {
@@ -63,7 +66,7 @@ def get_id(v):
 
 
 # ==========================================
-# HLS LINK BUL
+# HLS BUL
 # ==========================================
 
 def get_hls(info):
@@ -81,24 +84,23 @@ def get_hls(info):
             or "m3u8" in proto
             or "hls" in proto
         ):
-
             return u
 
     return ""
 
 
 # ==========================================
-# YOUTUBE KANAL TARA
+# VIDEO TARA
 # ==========================================
 
 def scan():
 
-    print("========================================")
-    print("MIRTI68 - VOLEYBOL TARAMA")
-    print("CANLI + SULTANLAR LIGI TEKRAR")
-    print("========================================")
+    print("====================================")
+    print("MIRTI68 VOLEYBOL TARAMA")
+    print("CANLI + ESKI MACLAR")
+    print("====================================")
 
-    vids = []
+    videos = []
 
     try:
 
@@ -111,31 +113,36 @@ def scan():
 
             if not pl:
                 print("Kanal bilgisi alinamadi.")
-                return []
+                return None
 
-            for e in (pl.get("entries") or []):
+            for entry in pl.get("entries") or []:
 
-                if not e:
+                if not entry:
                     continue
 
-                vid = get_id(e)
+                vid = get_id(entry)
 
                 if vid:
-                    vids.append((vid, e))
+                    videos.append((vid, entry))
 
     except Exception as e:
 
-        print(f"Kanal hatasi: {e}")
-        return []
+        print(f"Kanal tarama hatasi: {e}")
+        return None
 
-    print(f"Bulunan video: {len(vids)}")
+    print(f"Bulunan video: {len(videos)}")
 
     results = []
     seen = set()
 
     with YoutubeDL(DETAIL) as ydl:
 
-        for vid, entry in vids:
+        for index, (vid, entry) in enumerate(videos, 1):
+
+            print(
+                f"\n[{index}/{len(videos)}] "
+                f"Video kontrol: {vid}"
+            )
 
             url = (
                 f"https://www.youtube.com/watch?v={vid}"
@@ -150,7 +157,10 @@ def scan():
 
             except Exception as e:
 
-                print(f"Video atlandi: {vid} - {e}")
+                print(f"Video atlandi: {e}")
+                continue
+
+            if not info:
                 continue
 
             title = (
@@ -161,10 +171,26 @@ def scan():
 
             low = title.lower()
 
-            if (
-                "sultanlar" not in low
-                and "kuzeyboru" not in low
-            ):
+            # İlgili voleybol yayınları
+            keywords = (
+                "sultanlar",
+                "kuzeyboru",
+                "voleybol",
+                "tvf",
+                "misli.com",
+                "eczacıbaşı",
+                "eczacibasi",
+                "vakıfbank",
+                "vakifbank",
+                "fenerbahçe",
+                "fenerbahce",
+                "galatasaray",
+                "nilüfer",
+                "nilüfer belediye",
+                "aralarında",
+            )
+
+            if not any(k in low for k in keywords):
                 continue
 
             status = (
@@ -174,11 +200,13 @@ def scan():
             )
 
             if status == "is_upcoming":
+                print("Baslamamis yayin, atlandi.")
                 continue
 
             hls = get_hls(info)
 
             if not hls:
+                print("HLS bulunamadi.")
                 continue
 
             if vid in seen:
@@ -188,7 +216,10 @@ def scan():
 
             is_replay = (
                 status == "was_live"
+                or status == "not_live"
                 or info.get("live_status") == "was_live"
+                or info.get("live_status") == "not_live"
+                or info.get("live_status") is None
             )
 
             print(
@@ -202,23 +233,23 @@ def scan():
                 "is_replay": is_replay
             })
 
-    print("----------------------------------------")
-    print(f"Tarama sonucu: {len(results)}")
-    print("----------------------------------------")
+            time.sleep(0.5)
+
+    print("\nTarama tamamlandi.")
+    print(f"Bulunan yayin: {len(results)}")
 
     return results
 
 
 # ==========================================
-# ESKI M3U GRUPLARINI AYIKLA
-# DIGER KANALLARA DOKUNMA
+# ESKI GRUPLARI TEMIZLE
+# DIGER KANALLARI KORU
 # ==========================================
 
 def remove_old_groups(old_lines):
 
     preamble = []
     blocks = []
-
     current = None
 
     for line in old_lines:
@@ -259,7 +290,7 @@ def remove_old_groups(old_lines):
             GROUP_REPLAY
         ):
 
-            print(f"Eski grup kaldirildi: {group}")
+            print(f"Eski voleybol grubu yenilenecek: {group}")
             continue
 
         keep_blocks.append(block)
@@ -268,10 +299,23 @@ def remove_old_groups(old_lines):
 
 
 # ==========================================
-# YENI YAYINLARI KAYDET
+# M3U KAYDET
 # ==========================================
 
 def save(items):
+
+    # Tarama başarısızsa mevcut listeyi koru.
+    if items is None:
+
+        print("Tarama basarisiz. M3U korunuyor.")
+        return
+
+    # Hic HLS bulunamadiysa eski listeyi koru.
+    if not items:
+
+        print("Gecerli yayin bulunamadi.")
+        print("Eski voleybol gruplari korundu.")
+        return
 
     live = [
         i for i in items
@@ -283,17 +327,10 @@ def save(items):
         if i.get("is_replay")
     ]
 
-    print("========================================")
-    print(f"Canli: {len(live)}")
-    print(f"Tekrar: {len(replay)}")
-    print("========================================")
-
-    # Hic yayin bulunamazsa eski listeyi koru.
-    if not items:
-
-        print("Yeni yayin bulunamadi.")
-        print("Mevcut M3U korunuyor.")
-        return
+    print("\n====================================")
+    print(f"CANLI: {len(live)}")
+    print(f"TEKRAR: {len(replay)}")
+    print("====================================")
 
     # Ana listeyi oku.
     if os.path.isfile(MASTER_FILE):
@@ -310,15 +347,12 @@ def save(items):
 
         old_lines = ["#EXTM3U"]
 
-    # Eski voleybol gruplarini kaldir.
+    # Eski voleybol gruplarini ayikla.
     preamble, keep_blocks = remove_old_groups(
         old_lines
     )
 
-    # Yeni M3U icerigi.
-    final_lines = []
-
-    final_lines.extend(preamble)
+    final_lines = list(preamble)
 
     if not any(
         line.strip() == "#EXTM3U"
@@ -327,48 +361,51 @@ def save(items):
 
         final_lines.insert(0, "#EXTM3U")
 
-    # Eski diger kanallari koru.
+    # Diger kanallari koru.
     for block in keep_blocks:
-
         final_lines.extend(block)
 
-    # Yeni canli yayinlar.
+    # Canli yayinlari ekle.
     live_seen = set()
 
-    for it in live[:MAX_LIVE]:
+    for item in live[:MAX_LIVE]:
 
-        stream = it["stream_url"]
+        vid = item["id"]
 
-        if stream in live_seen:
+        if vid in live_seen:
             continue
 
-        live_seen.add(stream)
+        live_seen.add(vid)
 
         final_lines.append(
             f'#EXTINF:-1 group-title="{GROUP_LIVE}",'
-            f'{it["name"]} | CANLI'
+            f'{item["name"]} | CANLI'
         )
 
-        final_lines.append(stream)
+        final_lines.append(
+            item["stream_url"]
+        )
 
-    # Yeni tekrar yayinlari.
+    # Eski maclari ekle.
     replay_seen = set()
 
-    for it in replay[:MAX_VIDEOS]:
+    for item in replay[:MAX_VIDEOS]:
 
-        stream = it["stream_url"]
+        vid = item["id"]
 
-        if stream in replay_seen:
+        if vid in replay_seen:
             continue
 
-        replay_seen.add(stream)
+        replay_seen.add(vid)
 
         final_lines.append(
             f'#EXTINF:-1 group-title="{GROUP_REPLAY}",'
-            f'{it["name"]} | TEKRAR'
+            f'{item["name"]} | TEKRAR'
         )
 
-        final_lines.append(stream)
+        final_lines.append(
+            item["stream_url"]
+        )
 
     # Ana M3U dosyasini guncelle.
     with open(
@@ -395,18 +432,16 @@ def save(items):
             indent=2
         )
 
-    print("")
-    print("========================================")
+    print("\n====================================")
     print("MIRTI68 VOLEYBOL GUNCELLENDI")
-    print("========================================")
+    print("====================================")
     print(f"Canli yayin: {len(live_seen)}")
     print(f"Tekrar yayin: {len(replay_seen)}")
     print(f"Ana liste: {MASTER_FILE}")
     print(f"JSON: {RESULT_FILE}")
-    print("Eski diger kanallar: KORUNDU")
-    print("Duplicate: TEMIZLENDI")
+    print("Diger kanallar: KORUNDU")
     print("Yedek dosya: YOK")
-    print("========================================")
+    print("====================================")
 
 
 # ==========================================
