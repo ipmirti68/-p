@@ -207,69 +207,68 @@ def main():
     # KANALLARI URL ÜZERİNDEN EŞLEŞTİR
     # ==========================================
 
-    channel_map = {}
+    
+    # ==========================================
+    # URL + KANAL ADI İLE AKILLI GÜNCELLEME
+    # ==========================================
 
-    # Önce mevcut kanalları koru
+    channel_map = {}
+    name_map = {}
+
+    # Eski kanalları koru
     for entry in existing_group:
 
         url = get_stream(entry)
-
-        if url and url not in channel_map:
-            channel_map[url] = entry
-
-    added_count = 0
-    updated_count = 0
-
-    # Yeni yayınları URL kontrolüyle ekle
-    for entry in new_entries:
-
-        url = get_stream(entry)
+        name = make_channel_key(entry[0])
 
         if not url:
             continue
 
-        if url in channel_map:
-            # Aynı URL zaten mevcut
-            continue
+        if url not in channel_map:
+            channel_map[url] = entry
 
-        # İsim aynı olsa bile URL farklıysa ekle
-        channel_map[url] = entry
-        added_count += 1
+        if name and name not in name_map:
+            name_map[name] = url
 
-    updated_group = list(channel_map.values())
-
-
-    # ==========================================
-    # YENİ KANALLARI EKLE VE GÜNCELLE
-    # ==========================================
+    added_count = 0
+    updated_count = 0
 
     for entry in new_entries:
 
-        key = make_channel_key(entry[0])
+        url = get_stream(entry)
+        name = make_channel_key(entry[0])
 
-        if not key:
+        if not url:
             continue
 
-        if key in channel_map:
+        # Aynı URL zaten varsa tekrar ekleme
+        if url in channel_map:
+            continue
 
-            old_stream = get_stream(
-                channel_map[key]
-            )
+        # Aynı isim farklı URL ise eski yayını güncelle
+        if name in name_map:
 
-            new_stream = get_stream(entry)
+            old_url = name_map[name]
 
-            if old_stream != new_stream:
+            if old_url in channel_map:
 
-                channel_map[key] = entry
+                old_entry = channel_map.pop(old_url)
+
+                channel_map[url] = entry
+
+                name_map[name] = url
+
                 updated_count += 1
 
         else:
 
-            channel_map[key] = entry
+            # Yeni isim ve yeni URL
+            channel_map[url] = entry
+            name_map[name] = url
+
             added_count += 1
 
     updated_group = list(channel_map.values())
-
     # ==========================================
     # GRUBUN ESKİ YERİNİ KORU
     # ==========================================
