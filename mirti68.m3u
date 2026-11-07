@@ -1,8 +1,4 @@
-#EXTM3U x-tvg-url="https://raw.githubusercontent.com/ipmirti68/epg/main/epg.xml"
-#EXTM3U x-tvg-url="https://raw.githubusercontent.com/serhatyilmaz55/epg/main/tr.xml"
-#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
-#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
-#PLAYLIST:mırtı68
+#EXTM3U
 #EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="atv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04n55YCvUX9Dgc8zHyEIQdd7ZUdbvNL5m6HjT-sbC4g&s=10" group-title="📺 ULUSAL" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV
@@ -365,9 +361,8 @@ https://andro.evrenesoglu141.click/checklist/androstreamliveexn.m3u8
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 1B Mahsun
 #EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamliveexn1.m3u8
-#EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 1
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivetexn1.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🖥beINSPORTS", beIN Sports 1
+https://css.d6e3eds5e065t5.help//b1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="bein_sport" tvg-name="bein sports 2.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",BeIN SPORTS 2 Zeus
 https://zeus645423.cfd/b2/index.txt
 #EXTINF:-1 tvg-id="bein-sports-2724" tvg-name="bein sports 2.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 2 Selçuk
@@ -377,9 +372,8 @@ https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports2/playlist.m3u
 #EXTINF:-1 tvg-name="beinsports 2" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 2 Mahsun
 #EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamlivebs2.m3u8
-#EXTINF:-1 tvg-name="beinsports 2" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 2
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs2.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🖥beINSPORTS", beIN Sports 2
+https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 3 Zeus
 https://zeus645423.cfd/b3/index.txt
 #EXTINF:-1 tvg-id="bein-sports-3724" tvg-name="bein sports 3.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 3 Selçuk
@@ -389,11 +383,44 @@ https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports3/playlist.m3u
 #EXTINF:-1 tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 3 Mahsun
 #EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamlivebs3.m3u8
-#EXTINF:-1 tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 3
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs3.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🖥beINSPORTS", beIN Sports 3
+https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 4 Zeus
 https://zeus645423.cfd/b4/index.txt
+#EXTINF:-1 tvg-id="bein-sports-4724" tvg-name="bein sports 4.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 4 Selçuk
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports4/playlist.m3u8
+#EXTINF:-1 tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 4 Mahsun
+#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
+https://andro.evrenesoglu141.click/checklist/androstreamlivebs4.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🖥beINSPORTS", beIN Sports 4
+https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 5 Zeus
+https://zeus645423.cfd/b4/index.txt
+#EXTINF:-1 tvg-id="bein-sports-5724" tvg-name="bein sports 5.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 5 Selçuk
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports5/playlist.m3u8
+#EXTINF:-1 tvg-name="beinsports 5" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 5 Mahsun
+#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
+https://andro.evrenesoglu141.click/checklist/androstreamlivebs5.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🖥beINSPORTS", beIN Sports 5
+https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-name="beIN.SPORTS.MAX.1.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 1 HD
+#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
+https://andro.evrenesoglu141.click/checklist/androstreamlivebsm1.m3u8
+#EXTINF:-1 tvg-name="beIN.SPORTS.MAX.2.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 2 HD
+#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
+https://andro.evrenesoglu141.click/checklist/androstreamlivebsm2.m3u8
+#EXTINF:-1 group-title="🖥beINSPORTS"0 tvg-logo="https://github.com/msolihinam/tv/blob/main/logo/beINsports.png?raw=true" ,beIN Sports Haber
+https://cdn.tecostream.xyz/Bein_Spor_Haber.m3u8
+#EXTINF:-1 group-title="🖥beINSPORTS"-1 tvg-id="LocalNow_beINSPORTSXTRA" tvg-logo="https://f9q4g5j6.ssl.hwcdn.net/626c3b244f859656ba284f02" ,beIN SPORTS XTRA
+https://amg01334-beinsportsllc-beinxtra-localnow-kcy6r.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🖥beINSPORTS", beIN Sports Max 1
+https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🖥beINSPORTS", beIN Sports Max 2
+https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡beINSPORTS",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡beINSPORTS",BEİN SPORTS 1
@@ -1017,15 +1044,15 @@ http://145.239.58.133:28008/kanalada/kanalada/sec-f5-v1-a1.m3u8?app=supersatforu
 https://cdn-kanalavrupa.yayin.com.tr/kanalavrupa/tracks-v2a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8aWrU4ygr14meW5J-GlkerG5L3rCR64bZTD5oZE9Nw&s" group-title="🇪🇺 AVRUPA",KANAL AVRUPA
 https://api-tv27.yayin.com.tr/kanalavrupa/index.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24
 http://cdn-gurbet24.yayin.com.tr/gurbet24/gurbet24/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ
 https://135962.global.ssl.fastly.net/5ff366a512987e2c0a3dabfe/live_14378e1002eb11ef9cb025207067897a/index.fmp4.m3u8
-#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE 
+#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE
 https://i41.ozelip.com:3269/hybrid/play.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ
 https://yayin30.haber100.com/live/kardestv/chunklist_w403767422.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA
 https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/euro-d-buyuk.png?rkt=DfS6Tgv6Hjr93k3" group-title="🇪🇺 AVRUPA",EURO D
 https://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8
@@ -1183,7 +1210,7 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8
 https://tv-trtcocuk.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-name="diyanet çocuk" tvg-logo="https://i.dsmart.com.tr/kanallar/TRT-Diyanet-Cocuk.png" group-title="🧒 ÇOCUK",DİYANET ÇOCUK
 https://tv-trtdiyanetcocuk.medya.trt.com.tr/master_720.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP 
+#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP
 https://narrative-popkids-rakuten.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/zCTf71x.png" group-title="🧒 ÇOCUK",TİNY P
 https://amg01753-narrativeentert-tinypop-samsunguk-hvvb7.amagi.tv/playlist/amg01753-narrativeentert-tinypop-samsunguk/playlist.m3u8
@@ -2856,31 +2883,89 @@ https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
 #EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
-#EXTINF:-1 tvg-id="bein-sports-4724" tvg-name="bein sports 4.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 4 Selçuk
-#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports4/playlist.m3u8
-#EXTINF:-1 tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 4 Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs4.m3u8
-#EXTINF:-1 tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 4
-#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs4.m3u8
-#EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 5 Zeus
-https://zeus645423.cfd/b4/index.txt
-#EXTINF:-1 tvg-id="bein-sports-5724" tvg-name="bein sports 5.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 5 Selçuk
-#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports5/playlist.m3u8
-#EXTINF:-1 tvg-name="beinsports 5" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 5 Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs5.m3u8
-#EXTINF:-1 tvg-name="beinsports 5" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 5
-#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs5.m3u8
-#EXTINF:-1 tvg-name="beIN.SPORTS.MAX.1.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 1 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebsm1.m3u8
-#EXTINF:-1 tvg-name="beIN.SPORTS.MAX.2.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 2 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebsm2.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="Sonunda Sen (2026) NF - YERLI " tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mnBW7o8ycDi8WotGeRkGoDxrNMd.jpg" group-title="🎥 VİZYON FİLMLERİ",Sonunda Sen (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/628314.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Güvercin Terbiyecisi Hammal (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ozyoVMeqHgXNDG6dC3QbHPUm9HA.jpg" group-title="🎥 VİZYON FİLMLERİ",Güvercin Terbiyecisi Hammal (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/632550.mkv
+#EXTINF:-1 tvg-id="" tvg-name="D.I.S.C.O. (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zNjm76IFBxiXMZ7ldWrVSudWeqo.jpg" group-title="🎥 VİZYON FİLMLERİ",D.I.S.C.O. (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633508.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yaz Evi (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kA6e4wmyulZn76xBd5Bq29PZwnb.jpg" group-title="🎥 VİZYON FİLMLERİ",Yaz Evi (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633554.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ketenpere: Dalavere (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dznIeiQ34jlQqcWzZnQco46EHf1.jpg" group-title="🎥 VİZYON FİLMLERİ",Ketenpere: Dalavere (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633665.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Cam Sehpa (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p3iMK5XL0GURREEAxXjBlYWveXn.jpg" group-title="🎥 VİZYON FİLMLERİ",Cam Sehpa (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633880.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yasak Aşkın Günahı GAIN -YERLI" tvg-logo="https://jetfilmizle.now/uploads/posters/yasak-askin-gunahi-poster.jpg" group-title="🎥 VİZYON FİLMLERİ",Yasak Aşkın Günahı GAIN -YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634068.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Fırtına Kız (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p7EY5y7ZFPijbobbH0aFYinRbdL.jpg" group-title="🎥 VİZYON FİLMLERİ",Fırtına Kız (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634201.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mutluyuz Mu (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/42G0NOsQq4jyZSaA1yxi8MwTLji.jpg" group-title="🎥 VİZYON FİLMLERİ",Mutluyuz Mu (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634204.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Parçalı Yıllar (2026) AMZN-YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uA6WXb0QVeNdnEbWLb4ZVvNyk1.jpg" group-title="🎥 VİZYON FİLMLERİ",Parçalı Yıllar (2026) AMZN-YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634473.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeş Takımı 3 (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/5VwObi6neCFYPmxDYtnb4KmDGS3.jpg" group-title="🎥 VİZYON FİLMLERİ",Kardeş Takımı 3 (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634487.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Hezeyanlar Doğu Demirkol (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bD9ZEe3DhGXvFooYYExtwLq1FNm.jpg" group-title="🎥 VİZYON FİLMLERİ",Hezeyanlar Doğu Demirkol (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634674.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeşler Araştırma (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6CD5QPUVDSS9hZpkYHKGyVZCGyR.jpg" group-title="🎥 VİZYON FİLMLERİ",Kardeşler Araştırma (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634734.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Öngörü (2026) DSNP - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/8JDJWhPU2rfTal8xkESkxnZb5q0.jpg" group-title="🎥 VİZYON FİLMLERİ",Öngörü (2026) DSNP - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634864.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Soylu Tutsak (2026) GAiN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/k38X0ttLiR28lg5TRAMG7TaYAaF.jpg" group-title="🎥 VİZYON FİLMLERİ",Soylu Tutsak (2026) GAiN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634865.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Efes'in Sırrı (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bwzWzfAA5UcKQTsSGAxdIyo4sKh.jpg" group-title="🎥 VİZYON FİLMLERİ",Efes'in Sırrı (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635193.mkv
+#EXTINF:-1 tvg-id="" tvg-name="SEVDAM KARADENIZ" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",SEVDAM KARADENIZ
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/594527.mkv
+#EXTINF:-1 tvg-id="" tvg-name="BASKALARININ HAYATI" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",BASKALARININ HAYATI
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/594399.mkv
+#EXTINF:-1 tvg-id="" tvg-name="OMUR USTA" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",OMUR USTA
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/594324.mkv
+#EXTINF:-1 tvg-id="" tvg-name="ANNE YARISI" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",ANNE YARISI
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/594289.mkv
+#EXTINF:-1 tvg-id="" tvg-name="CIRKIN" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",CIRKIN
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/594134.mkv
+#EXTINF:-1 tvg-id="" tvg-name="GUNESIN DOGDUGU YER" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",GUNESIN DOGDUGU YER
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/591917.mkv
+#EXTINF:-1 tvg-id="" tvg-name="ASK VE TAHT" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",ASK VE TAHT
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/591916.mkv
+#EXTINF:-1 tvg-id="" tvg-name="SEVDAN BIR ATES" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",SEVDAN BIR ATES
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/591915.mkv
+#EXTINF:-1 tvg-id="" tvg-name="HAYSIYET" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",HAYSIYET
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/591914.mkv
+#EXTINF:-1 tvg-id="" tvg-name="EVLILIK GUZELDIR" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",EVLILIK GUZELDIR
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/591913.mkv
+#EXTINF:-1 tvg-id="" tvg-name="MERCAN KOSK" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",MERCAN KOSK
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/591865.mkv
+#EXTINF:-1 tvg-id="" tvg-name="TUZLU KAHVE" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",TUZLU KAHVE
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/591851.mkv
+#EXTINF:-1 tvg-id="" tvg-name="MUHTEMEL ASK" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",MUHTEMEL ASK
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/362002.mkv
+#EXTINF:-1 tvg-id="" tvg-name="ALTI USTU ISTANBUL" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",ALTI USTU ISTANBUL
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/361629.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DAHA 17" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",DAHA 17
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/360609.mkv
+#EXTINF:-1 tvg-id="" tvg-name="SEVDIGIM SENSIN" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",SEVDIGIM SENSIN
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/349414.mkv
+#EXTINF:-1 tvg-id="" tvg-name="YERALTI" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",YERALTI
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/348302.mkv
+#EXTINF:-1 tvg-id="" tvg-name="A.B.İ." tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",A.B.İ.
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/347477.mkv
+#EXTINF:-1 tvg-id="" tvg-name="MEHMED FETIHLER SULTANI" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",MEHMED FETIHLER SULTANI
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/247260.mkv
+#EXTINF:-1 tvg-id="" tvg-name="UZAK SEHIR" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",UZAK SEHIR
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/263535.mkv
+#EXTINF:-1 tvg-id="" tvg-name="TASACAK BU DENIZ" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",TASACAK BU DENIZ
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/333382.mkv
+#EXTINF:-1 tvg-id="" tvg-name="GULLER VE GUNAHLAR" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",GULLER VE GUNAHLAR
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/333381.mkv
+#EXTINF:-1 tvg-id="" tvg-name="HALEF" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",HALEF
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/317768.mkv
+#EXTINF:-1 tvg-id="" tvg-name="KIZILCIK SERBETI" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",KIZILCIK SERBETI
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/185554.mkv
+#EXTINF:-1 tvg-id="" tvg-name="TESKILAT" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",TESKILAT
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/145753.mkv
+#EXTINF:-1 tvg-id="" tvg-name="GONUL DAGI" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",GONUL DAGI
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/145741.mkv
+#EXTINF:-1 tvg-id="" tvg-name="ARKA SOKAKLAR" tvg-logo="http://logo.unimaxapp.eu/logoslar/guldurguldur.jpg" group-title="🎥 DİZİ SON BÖLÜMLERİ",ARKA SOKAKLAR
+http://190502.tomtv.eu:80/movie/LiudmilaSheremet/233v9m9kjc/145731.mkv
