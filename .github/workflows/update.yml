@@ -70,12 +70,40 @@ jobs:
         continue-on-error: true
         run: python link.py || echo "link failed"
         
-      - name: 11 - GDİZİ
+      - name: 12 - PADİZİ
         continue-on-error: true
-        run: python gdizi.py || echo "link failed"
+        run: python gdizi.py || echo "padizi failed"
         
+      - name: 12 - SDİZİ
+        continue-on-error: true
+        run: python sdizi.py || echo " sdizi failed"
         
 
+      - name: 13 - CDİZİ
+        continue-on-error: true
+        run: python cdizi.py || echo "cdizi failed"
+        
+
+      - name: 14 - PRDİZİ
+        continue-on-error: true
+        run: python pedizi.py || echo "pedizi failed"
+        
+
+      - name: 15 - CUDİZİ
+        continue-on-error: true
+        run: python cudizi.py || echo "cudizi failed"
+        
+
+      - name: 16 - CMDİZİ
+        continue-on-error: true
+        run: python cmdizi.py || echo "cmdizi failed"
+        
+       - name: 17 - PZİZİ
+        continue-on-error: true
+        run: python pzdizi.py || echo "pzdizi failed"
+        
+
+        
       - name: Dosyaları kaydet
         if: always()
         run: |
