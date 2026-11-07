@@ -40,7 +40,7 @@ jobs:
         
       - name: 12 - SDİZİ
         continue-on-error: true
-        run: python 3dizi.py || echo " sdizi failed"
+        run: python 2dizi.py || echo " sdizi failed"
         
       - name: 13 - CDİZİ
         continue-on-error: true
