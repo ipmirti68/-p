@@ -8,7 +8,7 @@ SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://07falcontr.com:8080/ge
 
 M3U_FILE = "mirti68.m3u"
 FILM_GROUP = "🎥 DİZİ SON BÖLÜM CUMA"
-SOURCE_GROUP = "TR/FILM ► CUMA"
+SOURCE_GROUP = "TR/FILM  ► CUMA"
 
 
 def get_group(line):
