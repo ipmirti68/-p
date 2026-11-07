@@ -38,15 +38,15 @@ jobs:
 
       - name: 11 - PDİZİ
         continue-on-error: true
-        run: python dizi.py || echo "pdizi failed"
+        run: python dizi.p || echo "pdizi failed"
 
       - name: 12 - SDİZİ
         continue-on-error: true
-        run: python dizi.py || echo "sdizi failed"
+        run: python dizi.p || echo "sdizi failed"
 
       - name: 13 - CDİZİ
         continue-on-error: true
-        run: python dizi.py || echo "cdizi failed"
+        run: python dizi.p || echo "cdizi failed"
 
       - name: 14 - PRDİZİ
         continue-on-error: true
@@ -54,15 +54,15 @@ jobs:
 
       - name: 15 - CUDİZİ
         continue-on-error: true
-        run: python dizi.py || echo "cudizi failed"
+        run: python dizi.p || echo "cudizi failed"
 
       - name: 16 - CMDİZİ
         continue-on-error: true
-        run: python dizi.py || echo "cmdizi failed"
+        run: python dizi.p || echo "cmdizi failed"
 
       - name: 17 - PZDİZİ
         continue-on-error: true
-        run: python dizi.py || echo "pzdizi failed"
+        run: python dizi.p || echo "pzdizi failed"
 
       - name: 18 - DİZİ
         continue-on-error: true
