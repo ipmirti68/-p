@@ -81,7 +81,7 @@ def main():
                 preserved.append(line)
 
     # Yeni listeyi yaz
-    with open(M3U_FILE, "w", encoding="utf-8") as f:
+    with open(M3U_FILE, "a", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for line in preserved:
             f.write(line + "\n")
