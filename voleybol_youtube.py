@@ -3,8 +3,7 @@ import os
 import re
 import json
 import time
-from yt_dlp 
-import YoutubeDL
+from yt_dlp import YoutubeDL
 
 # ==========================================
 # MIRTI68 - VOLEYBOL CANLI + ESKI MACLAR
