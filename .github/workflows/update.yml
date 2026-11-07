@@ -72,7 +72,7 @@ jobs:
         
       - name: 11 - PADİZİ
         continue-on-error: true
-        run: python paizi.py || echo "padizi failed"
+        run: python padizi.py || echo "padizi failed"
         
       - name: 12 - SDİZİ
         continue-on-error: true
