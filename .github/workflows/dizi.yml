@@ -40,7 +40,7 @@ jobs:
         continue-on-error: true
         run: python atom.py || echo "atom failed"
 
-      - name: 12 - SDİZİ
+      - name: 12 - FİLİM
         continue-on-error: true
         run: python filim.py || echo "filim failed"
 
