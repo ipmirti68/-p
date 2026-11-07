@@ -1,8 +1,4 @@
-#EXTM3U x-tvg-url="https://raw.githubusercontent.com/ipmirti68/epg/main/epg.xml"
-#EXTM3U x-tvg-url="https://raw.githubusercontent.com/serhatyilmaz55/epg/main/tr.xml"
-#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
-#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
-#PLAYLIST:mırtı68
+#EXTM3U
 #EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="atv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04n55YCvUX9Dgc8zHyEIQdd7ZUdbvNL5m6HjT-sbC4g&s=10" group-title="📺 ULUSAL" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV
@@ -1005,15 +1001,15 @@ http://145.239.58.133:28008/kanalada/kanalada/sec-f5-v1-a1.m3u8?app=supersatforu
 https://cdn-kanalavrupa.yayin.com.tr/kanalavrupa/tracks-v2a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8aWrU4ygr14meW5J-GlkerG5L3rCR64bZTD5oZE9Nw&s" group-title="🇪🇺 AVRUPA",KANAL AVRUPA
 https://api-tv27.yayin.com.tr/kanalavrupa/index.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24
 http://cdn-gurbet24.yayin.com.tr/gurbet24/gurbet24/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ
 https://135962.global.ssl.fastly.net/5ff366a512987e2c0a3dabfe/live_14378e1002eb11ef9cb025207067897a/index.fmp4.m3u8
-#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE 
+#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE
 https://i41.ozelip.com:3269/hybrid/play.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ
 https://yayin30.haber100.com/live/kardestv/chunklist_w403767422.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA 
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA
 https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/euro-d-buyuk.png?rkt=DfS6Tgv6Hjr93k3" group-title="🇪🇺 AVRUPA",EURO D
 https://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8
@@ -1171,7 +1167,7 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8
 https://tv-trtcocuk.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-name="diyanet çocuk" tvg-logo="https://i.dsmart.com.tr/kanallar/TRT-Diyanet-Cocuk.png" group-title="🧒 ÇOCUK",DİYANET ÇOCUK
 https://tv-trtdiyanetcocuk.medya.trt.com.tr/master_720.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP 
+#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP
 https://narrative-popkids-rakuten.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/zCTf71x.png" group-title="🧒 ÇOCUK",TİNY P
 https://amg01753-narrativeentert-tinypop-samsunguk-hvvb7.amagi.tv/playlist/amg01753-narrativeentert-tinypop-samsunguk/playlist.m3u8
@@ -2844,3 +2840,59 @@ https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
 #EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="Sonunda Sen (2026) NF - YERLI " tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mnBW7o8ycDi8WotGeRkGoDxrNMd.jpg" group-title="🎥 VİZYON FİLMLERİ",Sonunda Sen (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/628314.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Güvercin Terbiyecisi Hammal (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ozyoVMeqHgXNDG6dC3QbHPUm9HA.jpg" group-title="🎥 VİZYON FİLMLERİ",Güvercin Terbiyecisi Hammal (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/632550.mkv
+#EXTINF:-1 tvg-id="" tvg-name="D.I.S.C.O. (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zNjm76IFBxiXMZ7ldWrVSudWeqo.jpg" group-title="🎥 VİZYON FİLMLERİ",D.I.S.C.O. (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633508.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yaz Evi (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/kA6e4wmyulZn76xBd5Bq29PZwnb.jpg" group-title="🎥 VİZYON FİLMLERİ",Yaz Evi (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633554.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ketenpere: Dalavere (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/dznIeiQ34jlQqcWzZnQco46EHf1.jpg" group-title="🎥 VİZYON FİLMLERİ",Ketenpere: Dalavere (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633665.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Cam Sehpa (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p3iMK5XL0GURREEAxXjBlYWveXn.jpg" group-title="🎥 VİZYON FİLMLERİ",Cam Sehpa (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633880.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yasak Aşkın Günahı GAIN -YERLI" tvg-logo="https://jetfilmizle.now/uploads/posters/yasak-askin-gunahi-poster.jpg" group-title="🎥 VİZYON FİLMLERİ",Yasak Aşkın Günahı GAIN -YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634068.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Fırtına Kız (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p7EY5y7ZFPijbobbH0aFYinRbdL.jpg" group-title="🎥 VİZYON FİLMLERİ",Fırtına Kız (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634201.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mutluyuz Mu (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/42G0NOsQq4jyZSaA1yxi8MwTLji.jpg" group-title="🎥 VİZYON FİLMLERİ",Mutluyuz Mu (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634204.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Parçalı Yıllar (2026) AMZN-YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/uA6WXb0QVeNdnEbWLb4ZVvNyk1.jpg" group-title="🎥 VİZYON FİLMLERİ",Parçalı Yıllar (2026) AMZN-YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634473.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeş Takımı 3 (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/5VwObi6neCFYPmxDYtnb4KmDGS3.jpg" group-title="🎥 VİZYON FİLMLERİ",Kardeş Takımı 3 (2026) AMZN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634487.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Hezeyanlar Doğu Demirkol (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bD9ZEe3DhGXvFooYYExtwLq1FNm.jpg" group-title="🎥 VİZYON FİLMLERİ",Hezeyanlar Doğu Demirkol (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634674.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeşler Araştırma (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6CD5QPUVDSS9hZpkYHKGyVZCGyR.jpg" group-title="🎥 VİZYON FİLMLERİ",Kardeşler Araştırma (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634734.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Öngörü (2026) DSNP - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/8JDJWhPU2rfTal8xkESkxnZb5q0.jpg" group-title="🎥 VİZYON FİLMLERİ",Öngörü (2026) DSNP - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634864.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Soylu Tutsak (2026) GAiN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/k38X0ttLiR28lg5TRAMG7TaYAaF.jpg" group-title="🎥 VİZYON FİLMLERİ",Soylu Tutsak (2026) GAiN - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634865.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Efes'in Sırrı (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bwzWzfAA5UcKQTsSGAxdIyo4sKh.jpg" group-title="🎥 VİZYON FİLMLERİ",Efes'in Sırrı (2026) NF - YERLI
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635193.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PERSEMBE : Muhtemel Ask (05.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9dWX56kVLJ47MG6axiTAFdf035k.jpg" group-title="🎥 DİZİ SON BÖLÜM",DIZI PERSEMBE : Muhtemel Ask (05.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271152.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PERSEMBE : Sevdigim Sensin (05.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/eVMb930nCNRYGhPlAVRI5hsMdAz.jpg" group-title="🎥 DİZİ SON BÖLÜM",DIZI PERSEMBE : Sevdigim Sensin (05.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/627166.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PERSEMBE : Gunesin Dogudugu Yer (05.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9SBRjlJd6ntwY4fe0yVhLHzvztR.jpg" group-title="🎥 DİZİ SON BÖLÜM",DIZI PERSEMBE : Gunesin Dogudugu Yer (05.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635626.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PERSEMBE : Halef Koklerin Cagrisi (05.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/sQTx2hiwi9CmRYyt6CAV5sf8C1T.jpg" group-title="🎥 DİZİ SON BÖLÜM",DIZI PERSEMBE : Halef Koklerin Cagrisi (05.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635688.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMARTESI : Gudur Guldur (25.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/6nmdHwVErYl9HOFhesRSMFC3HKj.jpg" group-title="🎥 DİZİ SON BÖLÜM - CUMARTESİ",DIZI CUMARTESI : Gudur Guldur (25.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271660.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMARTESI : Guller ve Gunahlar (25.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3Qwhs7xxf9LILllWLnxbSaCBNDf.jpg" group-title="🎥 DİZİ SON BÖLÜM - CUMARTESİ",DIZI CUMARTESI : Guller ve Gunahlar (25.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271542.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMARTESI : Gönül Dağı (31.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/lZL5RSSgLSewP0pi8rK4znb9FYZ.jpg" group-title="🎥 DİZİ SON BÖLÜM - CUMARTESİ",DIZI CUMARTESI : Gönül Dağı (31.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/161171.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI CUMARTESI : Baskalarinin Hayati (25.10.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/hjeB5dW5QKdBtlzS3FZrqqDHXNi.jpg" group-title="🎥 DİZİ SON BÖLÜM - CUMARTESİ",DIZI CUMARTESI : Baskalarinin Hayati (25.10.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635719.mp4
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZAR : Kod adi kirlangic (01.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/zCdzrmQL1GKy7bsj2gh5t3wxHS6.jpg" group-title="🎥 DİZİ SON BÖLÜM - PAZAR",DIZI PAZAR : Kod adi kirlangic (01.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271388.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZAR : Teskilat (01.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/jJ7kZ2KK8VlXCeFRluqSuFzbL3z.jpg" group-title="🎥 DİZİ SON BÖLÜM - PAZAR",DIZI PAZAR : Teskilat (01.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/271198.mkv
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZAR : Daha 17 (01.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/erd75Gon5bXL38kngnH6DCrOUj2.jpg" group-title="🎥 DİZİ SON BÖLÜM - PAZAR",DIZI PAZAR : Daha 17 (01.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/633467.mp4
+#EXTINF:-1 tvg-id="" tvg-name="DIZI PAZAR : Omur Usta (01.11.2026)" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tNU9FZWQ9vtobH6G4HS9USVGEP4.jpg" group-title="🎥 DİZİ SON BÖLÜM - PAZAR",DIZI PAZAR : Omur Usta (01.11.2026)
+http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635733.mkv
