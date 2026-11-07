@@ -48,7 +48,7 @@ jobs:
         
       - name: 14 - PRDİZİ
         continue-on-error: true
-        run: python pedizi.py || echo "pedizi failed"
+        run: python prdizi.py || echo "pedizi failed"
         
       - name: 15 - CUDİZİ
         continue-on-error: true
