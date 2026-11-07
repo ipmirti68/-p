@@ -66,9 +66,13 @@ jobs:
         continue-on-error: true
         run: python voleybol.py || echo "voleybol failed"
 
-      - name: 1ü - LİNK
+      - name: 11 - LİNK
         continue-on-error: true
         run: python link.py || echo "link failed"
+        
+      - name: 11 - GDİZİ
+        continue-on-error: true
+        run: python gdizi.py || echo "link failed"
         
         
 
