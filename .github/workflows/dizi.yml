@@ -36,9 +36,9 @@ jobs:
         continue-on-error: true
         run: python link.py || echo "link failed"
 
-      - name: 11 - PDİZİ
+      - name: 11 - ATOM
         continue-on-error: true
-        run: python dizi.p || echo "pdizi failed"
+        run: python atom.py || echo "atom failed"
 
       - name: 12 - SDİZİ
         continue-on-error: true
