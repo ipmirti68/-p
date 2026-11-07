@@ -24,11 +24,20 @@ jobs:
         with:
           python-version: "3.12"
 
+      # DENO - YOUTUBE JAVASCRIPT DESTEĞİ
+      - name: Deno kur
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      # PYTHON PAKETLERİ
       - name: Paketleri kur
         run: |
-          pip install -U pip
-          pip install -U yt-dlp requests beautifulsoup4 lxml playwright
+          python -m pip install --upgrade pip
+          pip install -U "yt-dlp[default]" requests beautifulsoup4 lxml playwright
           playwright install --with-deps chromium
+          yt-dlp --version
+          deno --version
 
       - name: 1 - ALLSPOR
         continue-on-error: true
@@ -50,22 +59,24 @@ jobs:
         continue-on-error: true
         run: python mahsun.py || echo "mahsun failed"
 
-      - name: 6 - VOLEYBOL
+      # VOLEYBOL YOUTUBE
+      - name: 6 - VOLEYBOL YOUTUBE
         continue-on-error: true
-        run: python voleybol_youtube.py || echo "voleybol failed"
+        run: python voleybol_youtube.py
 
       - name: 7 - IPTV (Ulusal)
         continue-on-error: true
         run: python iptv.py || echo "iptv failed"
-        
+
       - name: 8 - PATRON
         continue-on-error: true
         run: python patron.py || echo "patron failed"
-        
+
       - name: 9 - VOLEYBOL
         continue-on-error: true
         run: python voleybol.py || echo "voleybol failed"
-        
+
+      # DOSYALARI KAYDET
       - name: Dosyaları kaydet
         if: always()
         run: |
