@@ -2,12 +2,17 @@ import os
 import requests
 import re
 
-SOURCE_M3U_URL = "https://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=ts"
+# KAYNAK URL - senin dediğin
+SOURCE_M3U_URL = "http://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=ts"
+
 M3U_FILE = "mirti68.m3u"
 FILM_GROUP = "🎥 DİZİ SON BÖLÜM"
 
-# Buraya 2'den fazla da yazabilirsin
-KAYNAK_GRUP_LISTESI = ["TR/FILM ► PAZARTESI", "TR/FILM ► SALI", "TR/FILM ► CARSAMBA", "TR/FILM ► PERSEMBE"]
+# www.com.m3u içindeki hangi grubu alacaksın?
+# Buraya o m3u'nun içindeki orijinal grup adını yaz
+# Örnek: "ABC" / "Filmler" / "Movies"
+KAYNAKTAKİ_GRUP_ADI = "TR/FILM ► SALI"
+
 def main():
     print("=" * 55)
     print("www.com.m3u DEN GRUPFİLİM ÇEKİLİYOR")
@@ -18,24 +23,28 @@ def main():
     r.encoding = "utf-8"
     source_lines = r.text.splitlines()
 
+    # Kaynak m3u içinden istenen grubu topla
     new_entries = []
     i = 0
     while i < len(source_lines):
         line = source_lines[i].strip()
 
         if line.startswith("#EXTINF:"):
-            # DÜZELTİLEN YER BURASI
-            if any(g in line for g in KAYNAK_GRUP_LISTESI):
+            # Bu satır istenen gruptan mı?
+            if KAYNAKTAKİ_GRUP_ADI in line:
+                # Grup adını grupfilim olarak değiştir
                 new_line = re.sub(
                     r'group-title="[^"]*"',
                     f'group-title="{FILM_GROUP}"',
                     line
                 )
+                # group-title yoksa ekle
                 if 'group-title=' not in new_line:
                     new_line = new_line.replace(
                         '#EXTINF:-1',
                         f'#EXTINF:-1 group-title="{FILM_GROUP}"'
                     )
+                # Bir sonraki satır yayın adresi
                 if i + 1 < len(source_lines):
                     stream = source_lines[i + 1].strip()
                     if stream and not stream.startswith("#"):
@@ -51,11 +60,13 @@ def main():
         print("Ana M3U listesi değiştirilmedi.")
         return
 
+    # Ana listeyi oku
     old_lines = []
     if os.path.exists(M3U_FILE):
         with open(M3U_FILE, "r", encoding="utf-8") as f:
             old_lines = f.read().splitlines()
 
+    # Eski grupfilim kayıtlarını sil, diğerlerini koru
     preserved = []
     skip_url = False
     for line in old_lines:
@@ -69,6 +80,7 @@ def main():
             if not skip_url and line.strip() != "":
                 preserved.append(line)
 
+    # Yeni listeyi yaz
     with open(M3U_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
         for line in preserved:
@@ -79,6 +91,7 @@ def main():
     print("\nGRUPFİLİM GÜNCELLENDİ!")
     print("Yeni kayıt:", len(new_entries) // 2)
     print("Ana dosya:", M3U_FILE)
+    print("Diğer kategoriler korundu.")
 
 if __name__ == "__main__":
     main()
