@@ -11,7 +11,8 @@ FILM_GROUP = "🎥 DİZİ SON BÖLÜM"
 # www.com.m3u içindeki hangi grubu alacaksın?
 # Buraya o m3u'nun içindeki orijinal grup adını yaz
 # Örnek: "ABC" / "Filmler" / "Movies"
-KAYNAK_GRUP_LISTESI = "TR/FILM ► PERSEMBE"
+KAYNAKTAKİ_GRUP_ADI = "TR/FILM  ► PERSEMBE"
+
 def main():
     print("=" * 55)
     print("www.com.m3u DEN GRUPFİLİM ÇEKİLİYOR")
