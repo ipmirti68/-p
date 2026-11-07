@@ -1,0 +1,91 @@
+
+name: Dizi Güncelle
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/20 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mirti68-main
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Paketleri kur
+        run: |
+          pip install -U pip
+          pip install -U yt-dlp requests beautifulsoup4 lxml playwright
+          playwright install --with-deps chromium
+
+      - name: 10 - LİNK
+        continue-on-error: true
+        run: python link.py || echo "link failed"
+        
+      - name: 11 - PADİZİ
+        continue-on-error: true
+        run: python padizi.py || echo "padizi failed"
+        
+      - name: 12 - SDİZİ
+        continue-on-error: true
+        run: python sdizi.py || echo " sdizi failed"
+        
+      - name: 13 - CDİZİ
+        continue-on-error: true
+        run: python cdizi.py || echo "cdizi failed"
+        
+      - name: 14 - PRDİZİ
+        continue-on-error: true
+        run: python pedizi.py || echo "pedizi failed"
+        
+      - name: 15 - CUDİZİ
+        continue-on-error: true
+        run: python cudizi.py || echo "cudizi failed"
+
+      - name: 16 - CMDİZİ
+        continue-on-error: true
+        run: python cmdizi.py || echo "cmdizi failed"
+        
+      - name: 17 - PZDİZİ
+        continue-on-error: true
+        run: python pzdizi.py || echo "pzdizi failed"
+        
+      - name: Dosyaları kaydet
+        if: always()
+        run: |
+          git config user.name "MIRTI68 Bot"
+          git config user.email "bot@users.noreply.github.com"
+
+          rm -rf __pycache__ .pytest_cache/
+
+          ls -lh *.m3u *.json 2>/dev/null || true
+
+          git add -f *.m3u *.json 2>/dev/null || true
+
+          git status --short
+
+          if ! git diff --cached --quiet; then
+            git commit -m "update $(date +'%d.%m %H:%M')"
+
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin main &&
+              git push origin HEAD:main && break
+
+              echo "Push çakıştı, tekrar deneniyor $i"
+              sleep 3
+            done
+          else
+            echo "Değişiklik yok"
+          fi
