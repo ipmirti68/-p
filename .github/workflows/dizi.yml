@@ -19,6 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v6
         with:
@@ -33,23 +35,23 @@ jobs:
       - name: 10 - LİNK
         continue-on-error: true
         run: python link.py || echo "link failed"
-        
+
       - name: 11 - PDİZİ
         continue-on-error: true
-        run: python 1dizi.py || echo "pfizi failed"
-        
+        run: python 1dizi.py || echo "pdizi failed"
+
       - name: 12 - SDİZİ
         continue-on-error: true
-        run: python 2dizi.py || echo " sdizi failed"
-        
+        run: python 2dizi.py || echo "sdizi failed"
+
       - name: 13 - CDİZİ
         continue-on-error: true
         run: python 3dizi.py || echo "cdizi failed"
-        
+
       - name: 14 - PRDİZİ
         continue-on-error: true
-        run: python 4dizi.py || echo "pedizi failed"
-        
+        run: python 4dizi.py || echo "prdizi failed"
+
       - name: 15 - CUDİZİ
         continue-on-error: true
         run: python 5dizi.py || echo "cudizi failed"
@@ -57,7 +59,7 @@ jobs:
       - name: 16 - CMDİZİ
         continue-on-error: true
         run: python 6dizi.py || echo "cmdizi failed"
-        
+
       - name: 17 - PZDİZİ
         continue-on-error: true
         run: python 7dizi.py || echo "pzdizi failed"
@@ -65,31 +67,61 @@ jobs:
       - name: 18 - DİZİ
         continue-on-error: true
         run: python dz.py || echo "dizi failed"
-       
+
       - name: Dosyaları kaydet
         if: always()
         run: |
+          set -e
+
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
 
           rm -rf __pycache__ .pytest_cache/
 
-          ls -lh *.m3u *.json 2>/dev/null || true
+          echo "================================"
+          echo "MIRTI68 DOSYA KONTROL"
+          echo "================================"
 
-          git add -f *.m3u *.json 2>/dev/null || true
+          ls -lh *.m3u >/dev/null || true
+
+          git add -f -- '*.m3u' 
 
           git status --short
 
-          if ! git diff --cached --quiet; then
-            git commit -m "update $(date +'%d.%m %H:%M')"
-
-            for i in 1 2 3; do
-              git pull --rebase --autostash origin main &&
-              git push origin HEAD:main && break
-
-              echo "Push çakıştı, tekrar deneniyor $i"
-              sleep 3
-            done
-          else
+          if git diff --cached --quiet; then
             echo "Değişiklik yok"
+            exit 0
           fi
+
+          git commit -m "MIRTI68 update $(date +'%d.%m %H:%M')"
+
+          for i in 1 2 3 4 5; do
+
+            echo "================================"
+            echo "GITHUB GÖNDERİM DENEMESİ: $i"
+            echo "================================"
+
+            git fetch origin main
+
+            # Yerel olarak oluşturulan M3U/JSON değişikliklerini koru.
+            # Uzak depodaki çakışmayan değişiklikleri de birleştir.
+            if ! git merge --no-edit -X ours origin/main; then
+              echo "Birleştirme başarısız"
+              git merge --abort || true
+              exit 1
+            fi
+
+            if git push origin HEAD:main; then
+              echo "================================"
+              echo "MIRTI68 GÜNCELLEME BAŞARILI"
+              echo "================================"
+              exit 0
+            fi
+
+            echo "Push başarısız, tekrar deneniyor..."
+            sleep 5
+
+          done
+
+          echo "5 denemede gönderim başarısız!"
+          exit 1
