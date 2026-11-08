@@ -21231,6 +21231,10 @@ https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-843
 # MIRTI68_TRT1_AUTO
 #EXTINF:-1 tvg-name="TRT 1 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1 🔴
 https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTQ4ODI0ODA1Ml5BMl5BanBnXkFtZTcwNzMzMjU1MQ@@._V1_.jpg" group-title="⚡Jason Statham⚡",In the Name of the King: A Dungeon Siege Tale (2007)(Aksiyon-Macera-Jason Statham-Ron Perlman-Ray Liotta)
+https://ha.vixolity.com/vs/tt0460780/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTQ2MjAyMDY0NF5BMl5BanBnXkFtZTcwODMwOTY1OQ@@._V1_FMjpg_UX1000_.jpg" group-title="⚡Jason Statham⚡",Blitz (2011) (Aksiyon-Macera--Jason Statham-Paddy Considine-Aidan Gillen)
+https://ha.vixolity.com/vs/tt1297919/
 #EXTINF:-1 tvg-id="" tvg-name="Sonunda Sen (2026) NF - YERLI " tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/mnBW7o8ycDi8WotGeRkGoDxrNMd.jpg" group-title="🎥 VİZYON FİLMLERİ",Sonunda Sen (2026) NF - YERLI
 http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/628314.mkv
 #EXTINF:-1 tvg-id="" tvg-name="Güvercin Terbiyecisi Hammal (2026) AMZN - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ozyoVMeqHgXNDG6dC3QbHPUm9HA.jpg" group-title="🎥 VİZYON FİLMLERİ",Güvercin Terbiyecisi Hammal (2026) AMZN - YERLI
@@ -21263,10 +21267,6 @@ http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634864.mkv
 http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/634865.mkv
 #EXTINF:-1 tvg-id="" tvg-name="Efes'in Sırrı (2026) NF - YERLI" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/bwzWzfAA5UcKQTsSGAxdIyo4sKh.jpg" group-title="🎥 VİZYON FİLMLERİ",Efes'in Sırrı (2026) NF - YERLI
 http://07falcontr.com:8080/movie/x3ulkusinanoba43/gNR4DyD4QXsp/635193.mkv
-#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTQ4ODI0ODA1Ml5BMl5BanBnXkFtZTcwNzMzMjU1MQ@@._V1_.jpg" group-title="⚡Jason Statham⚡",In the Name of the King: A Dungeon Siege Tale (2007)(Aksiyon-Macera-Jason Statham-Ron Perlman-Ray Liotta)
-https://ha.vixolity.com/vs/tt0460780/
-#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTQ2MjAyMDY0NF5BMl5BanBnXkFtZTcwODMwOTY1OQ@@._V1_FMjpg_UX1000_.jpg" group-title="⚡Jason Statham⚡",Blitz (2011) (Aksiyon-Macera--Jason Statham-Paddy Considine-Aidan Gillen)
-https://ha.vixolity.com/vs/tt1297919/
 #EXTINF:-1 tvg-id="" tvg-name="Onemli Bilgilendirme Lutfen Okuyun" tvg-logo="https://pkchtv1.xyz/logo/Ulusalkanallar.png" group-title="📺 ULUSAL HD 📡",Onemli Bilgilendirme Lutfen Okuyun
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/2
 #EXTINF:-1 tvg-id="TRT1.tr" tvg-name="TR | TRT 1 HD" tvg-logo="http://pkchtv1.xyz/logo/Trt1.png" group-title="📺 ULUSAL HD 📡",TR | TRT 1 HD
