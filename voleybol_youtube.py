@@ -376,7 +376,6 @@ def save(items):
     with open(temp, "w", encoding="utf-8") as file:
         file.write("\n".join(final_lines) + "\n")
     os.replace(temp, MASTER_FILE)
-
     save_json(items)
 
     print("\n" + "=" * 45)
