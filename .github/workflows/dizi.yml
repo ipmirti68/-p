@@ -48,9 +48,9 @@ jobs:
         continue-on-error: true
         run: python golvar.py || echo "golvar failed"
 
-      - name: 14 - PRDİZİ
+      - name: 14 - ULUSAL 
         continue-on-error: true
-        run: python dizi.py || echo "prdizi failed"
+        run: python ulusal.py || echo "ulusal failed"
 
       - name: 15 - CUDİZİ
         continue-on-error: true
