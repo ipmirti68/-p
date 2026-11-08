@@ -376,14 +376,16 @@ def save(items):
 
     save_json(items)
 
-    print("\n" + "=" * 45)
+        print("\n" + "=" * 45)
     print("MIRTI68 VOLEYBOL GÜNCELLENDİ")
     print("=" * 45)
+
     for group, records in groups.items():
         if group in replace_groups:
             print(group + ":", min(len(records), LIMITS[group]))
         else:
             print(group + ": Eski kayıtlar korundu")
+
     print("Ana liste:", MASTER_FILE)
     print("JSON:", RESULT_FILE)
     print("Diğer IPTV grupları: KORUNDU")
