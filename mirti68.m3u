@@ -1,4 +1,8 @@
-#EXTM3U
+#EXTM3U x-tvg-url="https://raw.githubusercontent.com/ipmirti68/epg/main/epg.xml"
+#EXTM3U x-tvg-url="https://raw.githubusercontent.com/serhatyilmaz55/epg/main/tr.xml"
+#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
+#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
+#PLAYLIST:mırtı68
 #EXTINF:-1 tvg-id="TRT.1.hd" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="atv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04n55YCvUX9Dgc8zHyEIQdd7ZUdbvNL5m6HjT-sbC4g&s=10" group-title="📺 ULUSAL" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV
@@ -270,6 +274,8 @@ http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141306
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/144
 #EXTINF:-1 tvg-id="NULL" tvg-name="KOZA TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBnPqD71xCspvg3GxcvChOsWG_HhsIS-WF244ino3BQ&s=10" group-title="📰 HABER",KOZA
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/594734
+#EXTINF:-1 tvg-id="NULL" tvg-name="KOZA TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZBnPqD71xCspvg3GxcvChOsWG_HhsIS-WF244ino3BQ&s=10" group-title="📰 HABER",KOZA
+https://live.artidijitalmedya.com/artidijital_kozatv/kozatv/chunks.m3u8
 #EXTINF:-1 tvg-id="KRT TV" tvg-name="KRT TV" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV8tGWscBMMaSIkwrt0nsHfH2p-NPWqENSW0uJTVlhLA&s" group-title="📰 HABER",KRT
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/15281
 #EXTINF:-1 tvg-name="halk TV" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/halk-tv-tr.png?raw=true" group-title="📰 HABER",HALK
@@ -355,7 +361,7 @@ http://92.5.166.217/beinsportskutu1
 #EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
 #EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"}
 http://92.5.166.217/beinsports1
-#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",BeIN SPORTS 1
+#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",beIN SPORTS 1 HD
 #EXTVLCOPT:http-referrer=https://www.atomsportv520.top
 #EXTVLCOPT:http-origin=https://www.atomsportv520.top
 #EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
@@ -388,96 +394,6 @@ https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports2/playlist.m3u
 #EXTINF:-1 tvg-name="beinsports 2" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 2 Mahsun
 #EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamlivebs2.m3u8
-#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",BeIN SPORTS 2
-#EXTVLCOPT:http-referrer=https://www.atomsportv520.top
-#EXTVLCOPT:http-origin=https://www.atomsportv520.top
-#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
-#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)", "Referer": "https://www.atomsportv520.top"}
-https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 3 Zeus
-https://zeus645423.cfd/b3/index.txt
-#EXTINF:-1 tvg-id="bein-sports-3724" tvg-name="bein sports 3.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 3 Selçuk
-#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports3/playlist.m3u8
-#EXTINF:-1 tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 3 Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs3.m3u8
-#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",BeIN SPORTS 3
-#EXTVLCOPT:http-referrer=https://www.atomsportv520.top
-#EXTVLCOPT:http-origin=https://www.atomsportv520.top
-#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
-#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)", "Referer": "https://www.atomsportv520.top"}
-https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 4 Zeus
-https://zeus645423.cfd/b4/index.txt
-#EXTINF:-1 tvg-id="bein-sports-4724" tvg-name="bein sports 4.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 4 Selçuk
-#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports4/playlist.m3u8
-#EXTINF:-1 tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 4 Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs4.m3u8
-#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",BeIN SPORTS 4
-#EXTVLCOPT:http-referrer=https://www.atomsportv520.top
-#EXTVLCOPT:http-origin=https://www.atomsportv520.top
-#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
-#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)", "Referer": "https://www.atomsportv520.top"}
-https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="bein-sports-5724" tvg-name="bein sports 5.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 5 Selçuk
-#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports5/playlist.m3u8
-#EXTINF:-1 tvg-name="beinsports 5" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 5 Mahsun
-#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebs5.m3u8
-#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",BeIN SPORTS 5
-#EXTVLCOPT:http-referrer=https://www.atomsportv520.top
-#EXTVLCOPT:http-origin=https://www.atomsportv520.top
-#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
-#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)", "Referer": "https://www.atomsportv520.top"}
-https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-name="beIN.SPORTS.MAX.1.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 1 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebsm1.m3u8
-#EXTINF:-1 tvg-name="beIN.SPORTS.MAX.2.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 2 HD
-#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
-https://andro.evrenesoglu141.click/checklist/androstreamlivebsm2.m3u8
-#EXTINF:-1 group-title="🖥beINSPORTS"0 tvg-logo="https://github.com/msolihinam/tv/blob/main/logo/beINsports.png?raw=true" ,beIN Sports Haber
-https://cdn.tecostream.xyz/Bein_Spor_Haber.m3u8
-#EXTINF:-1 group-title="🖥beINSPORTS"-1 tvg-id="LocalNow_beINSPORTSXTRA" tvg-logo="https://f9q4g5j6.ssl.hwcdn.net/626c3b244f859656ba284f02" ,beIN SPORTS XTRA
-https://amg01334-beinsportsllc-beinxtra-localnow-kcy6r.amagi.tv/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🖥beINSPORTS", beIN Sports Max 1
-https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🖥beINSPORTS", beIN Sports Max 2
-https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS",beIN SPORTS 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivebiraz1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS",beIN SPORTS 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivebs2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS",beIN SPORTS 3 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivebs3.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS",beIN SPORTS 4 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivebs4.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS",beIN SPORTS 5 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivebs5.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS",beIN SPORTS Max 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivebsm1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS",beIN SPORTS Max 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivebsm2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS",beIN SPORTS * 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS",beIN SPORTS # 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn1.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡beINSPORTS",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="📡beINSPORTS",BEİN SPORTS 1
@@ -1101,15 +1017,15 @@ http://145.239.58.133:28008/kanalada/kanalada/sec-f5-v1-a1.m3u8?app=supersatforu
 https://cdn-kanalavrupa.yayin.com.tr/kanalavrupa/tracks-v2a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8aWrU4ygr14meW5J-GlkerG5L3rCR64bZTD5oZE9Nw&s" group-title="🇪🇺 AVRUPA",KANAL AVRUPA
 https://api-tv27.yayin.com.tr/kanalavrupa/index.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3-AgoM8STt6Qa_k67RJTGwTuANBAYT9g-p2w7j1p_-w&s" group-title="🇪🇺 AVRUPA",GURBET 24 
 http://cdn-gurbet24.yayin.com.tr/gurbet24/gurbet24/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlqCc5QflJPa2ISt8kjoyugq1hFw21AznFrD0I4Dl28w&s=10" group-title="🇪🇺 AVRUPA",TÜRKMENELİ 
 https://135962.global.ssl.fastly.net/5ff366a512987e2c0a3dabfe/live_14378e1002eb11ef9cb025207067897a/index.fmp4.m3u8
-#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE
+#EXTINF:-1 tvg-logo="https://isvicretv.com/upload/tema/20150623__1150018573.jpg" group-title="🇪🇺 AVRUPA",İSVİÇRE 
 https://i41.ozelip.com:3269/hybrid/play.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWIlit_tZgt3yCX9Frzn3GmSl1k7nNKceG047i8MTA&s=10" group-title="🇪🇺 AVRUPA",KARDEŞ 
 https://yayin30.haber100.com/live/kardestv/chunklist_w403767422.m3u8
-#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-GMj6hzMtfyFTDda9RQhgTUYatbzOnIpw7ahEcY-gg&s" group-title="🇪🇺 AVRUPA",FORTUNA 
 https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/euro-d-buyuk.png?rkt=DfS6Tgv6Hjr93k3" group-title="🇪🇺 AVRUPA",EURO D
 https://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8
@@ -1267,7 +1183,7 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8
 https://tv-trtcocuk.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-name="diyanet çocuk" tvg-logo="https://i.dsmart.com.tr/kanallar/TRT-Diyanet-Cocuk.png" group-title="🧒 ÇOCUK",DİYANET ÇOCUK
 https://tv-trtdiyanetcocuk.medya.trt.com.tr/master_720.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP
+#EXTINF:-1 tvg-logo="https://i.imgur.com/fGUlCY3.png" group-title="🧒 ÇOCUK",POP 
 https://narrative-popkids-rakuten.amagi.tv/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/zCTf71x.png" group-title="🧒 ÇOCUK",TİNY P
 https://amg01753-narrativeentert-tinypop-samsunguk-hvvb7.amagi.tv/playlist/amg01753-narrativeentert-tinypop-samsunguk/playlist.m3u8
@@ -2820,292 +2736,60 @@ https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
 #EXTVLCOPT:http-referrer=https://taraftarium1087.xyz/
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
-#EXTINF:-1 tvg-id="1515838" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515838.jpg" group-title="⚽🔥 GOLLER",07.11.2026 - Galatasaray 4-3 Amed Sportif Faaliyetler
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_gs_amed_11h_7kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515840" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515840.jpg" group-title="⚽🔥 GOLLER",07.11.2026 - Göztepe 1-2 İstanbul Başakşehir
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_goz_bas_11h_7kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515841" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515841.jpg" group-title="⚽🔥 GOLLER",07.11.2026 - Samsunspor 1-0 Tümosan Konyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_sam_kon_11h_7kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515837" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515837.jpg" group-title="⚽🔥 GOLLER",07.11.2026 - Eyüpspor 0-2 Kocaelispor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_eyup_koca_7kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515839" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515839.jpg" group-title="⚽🔥 GOLLER",06.11.2026 - Gaziantep FK 0-2 Kasımpaşa
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_gazi_kas_6kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515828" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515828.jpg" group-title="⚽🔥 GOLLER",02.11.2026 - Gençlerbirliği 5-0 Corendon Alanyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_genc_ala_2kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515830" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515830.jpg" group-title="⚽🔥 GOLLER",01.11.2026 - Kasımpaşa 2-2 Beşiktaş
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_kas_bjk_1kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515829" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515829.jpg" group-title="⚽🔥 GOLLER",01.11.2026 - İstanbul Başakşehir 5-2 Samsunspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_bas_sam_1kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515833" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515833.jpg" group-title="⚽🔥 GOLLER",01.11.2026 - Trabzonspor 2-0 Gaziantep FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_ts_gazi_1kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515825" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515825.jpg" group-title="⚽🔥 GOLLER",01.11.2026 - Amed Sportif Faaliyetler 5-1 Eyüpspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_amed_eyup_1kas_ip&secure=1
-#EXTINF:-1 tvg-id="1515827" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515827.jpg" group-title="⚽🔥 GOLLER",31.10.2026 - Fenerbahçe 1-2 Göztepe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_fb_goz_10h_31ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515831" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515831.jpg" group-title="⚽🔥 GOLLER",31.10.2026 - Kocaelispor 0-0 Çaykur Rizespor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_koca_rize_10h_31ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515826" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515826.jpg" group-title="⚽🔥 GOLLER",31.10.2026 - Erzurumspor FK 1-3 Arca Çorum FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_erz_cor_31ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515832" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515832.jpg" group-title="⚽🔥 GOLLER",30.10.2026 - Tümosan Konyaspor 0-4 Galatasaray
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_kon_gs_30ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515820" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515820.jpg" group-title="⚽🔥 GOLLER",26.10.2026 - Galatasaray 2-1 Fenerbahçe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_gs_fb_27ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515814" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515814.jpg" group-title="⚽🔥 GOLLER",26.10.2026 - Beşiktaş 2-0 İstanbul Başakşehir
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_bjk_bas_9h_26ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515816" tvg-logo="https://media01.tr.beinsports.com/img/highlights/ozet.jpg" group-title="⚽🔥 GOLLER",26.10.2026 - Çaykur Rizespor 3-4 Trabzonspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_rizee_ts_26ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515822" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515822.jpg" group-title="⚽🔥 GOLLER",25.10.2026 - Göztepe 2-0 Arca Çorum FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_goz_corum_25ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515823" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515823.jpg" group-title="⚽🔥 GOLLER",25.10.2026 - Tümosan Konyaspor 2-0 Gençlerbirliği
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_kon_genc_25ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515824" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515824.jpg" group-title="⚽🔥 GOLLER",24.10.2026 - Samsunspor 1-2 Amed Sportif Faaliyetler
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_sam_amed_24ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515821" tvg-logo="https://media03.tr.beinsports.com/img/highlights/ozet.jpg" group-title="⚽🔥 GOLLER",24.10.2026 - Gaziantep FK 1-3 Erzurumspor FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_ant_erz_24ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515818" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515818.jpg" group-title="⚽🔥 GOLLER",24.10.2026 - Eyüpspor 0-1 Kasımpaşa
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_eyup_kas_9h_24ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515813" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515813.jpg" group-title="⚽🔥 GOLLER",23.10.2026 - Corendon Alanyaspor 1-2 Kocaelispor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_ala_koca_9h_23ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515811" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515811.jpg" group-title="⚽🔥 GOLLER",19.10.2026 - Trabzonspor 2-0 Beşiktaş
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_ts_bjk_19ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515808" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515808.jpg" group-title="⚽🔥 GOLLER",18.10.2026 - İstanbul Başakşehir 2-1 Gaziantep FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_bas_gazi_8h_18ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515810" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515810.jpg" group-title="⚽🔥 GOLLER",18.10.2026 - Kocaelispor 1-2 Göztepe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_koca_goz_8h_18ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515809" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515809.jpg" group-title="⚽🔥 GOLLER",18.10.2026 - Kasımpaşa 4-1 Samsunspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_kas_sam_18ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515806" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515806.jpg" group-title="⚽🔥 GOLLER",17.10.2026 - Fenerbahçe 3-0 Corendon Alanyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_fb_ala_17ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515804" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515804.jpg" group-title="⚽🔥 GOLLER",17.10.2026 - Amed Sportif Faaliyetler 1-0 Tümosan Konyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_amed_kon_17ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515807" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515807.jpg" group-title="⚽🔥 GOLLER",17.10.2026 - Gençlerbirliği 0-1 Galatasaray
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_genc_gs_17ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515805" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515805.jpg" group-title="⚽🔥 GOLLER",17.10.2026 - Erzurumspor FK 2-0 Eyüpspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_erz_eyup_17ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515812" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515812.jpg" group-title="⚽🔥 GOLLER",16.10.2026 - Arca Çorum FK 2-1 Çaykur Rizespor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_cor_rize_8h_16ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515797" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515797.jpg" group-title="⚽🔥 GOLLER",12.10.2026 - Eyüpspor 0-4 Göztepe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_eyup_goz_12ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515794" tvg-logo="https://media03.tr.beinsports.com/img/highlights/ozet.jpg" group-title="⚽🔥 GOLLER",11.10.2026 - Beşiktaş 2-1 Kocaelispor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_bjk_koca_11ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515800" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515800.jpg" group-title="⚽🔥 GOLLER",11.10.2026 - Gaziantep FK 0-3 Arca Çorum FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_gazi_cor_7h_11ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515802" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515802.jpg" group-title="⚽🔥 GOLLER",11.10.2026 - Tümosan Konyaspor 0-0 İstanbul Başakşehir
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_kon_bas_7h_11ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515795" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515795.jpg" group-title="⚽🔥 GOLLER",10.10.2026 - Çaykur Rizespor 0-3 Fenerbahçe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_rize_fb_7h_10ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515792" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515792.jpg" group-title="⚽🔥 GOLLER",10.10.2026 - Corendon Alanyaspor 0-0 Erzurumspor FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_ala_erz_10ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515803" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515803.jpg" group-title="⚽🔥 GOLLER",10.10.2026 - Samsunspor 0-3 Trabzonspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_sam_ts_10ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515801" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515801.jpg" group-title="⚽🔥 GOLLER",10.10.2026 - Gençlerbirliği 2-2 Amed Sportif Faaliyetler
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_genc_amed2_7h_ip&secure=1
-#EXTINF:-1 tvg-id="1515799" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515799.jpg" group-title="⚽🔥 GOLLER",09.10.2026 - Galatasaray 3-1 Kasımpaşa
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_gs_kas_7h_9ekim_ip&secure=1
-#EXTINF:-1 tvg-id="1515778" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515778.jpg" group-title="⚽🔥 GOLLER",20.09.2026 - Amed Sportif Faaliyetler 3-2 Beşiktaş
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_amed_bjk_20eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515781" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515781.jpg" group-title="⚽🔥 GOLLER",20.09.2026 - Göztepe 2-2 Çaykur Rizespor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_goz_rize_20eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515779" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515779.jpg" group-title="⚽🔥 GOLLER",20.09.2026 - Erzurumspor FK 1-0 Samsunspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_erz_sam_6h_20eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515780" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515780.jpg" group-title="⚽🔥 GOLLER",20.09.2026 - Fenerbahçe 8-0 Eyüpspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_fb_eyup_20eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515783" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515783.jpg" group-title="⚽🔥 GOLLER",19.09.2026 - İstanbul Başakşehir 4-0 Gençlerbirliği
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_bas_genc_19eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515788" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515788.jpeg" group-title="⚽🔥 GOLLER",19.09.2026 - Trabzonspor 4-0 Galatasaray
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_ts_gs_6h_19eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515787" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515787.jpg" group-title="⚽🔥 GOLLER",19.09.2026 - Kocaelispor 2-0 Gaziantep FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_koca_gazi_6h_19eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515790" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515790.jpg" group-title="⚽🔥 GOLLER",19.09.2026 - Arca Çorum FK 1-2 Corendon Alanyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_cor_ala_6h_19eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515785" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515785.jpg" group-title="⚽🔥 GOLLER",18.09.2026 - Kasımpaşa 0-0 Tümosan Konyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_kas_kon_18eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515774" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515774.jpg" group-title="⚽🔥 GOLLER",14.09.2026 - Gaziantep FK 0-0 Fenerbahçe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_antep_fb_5h_14eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515766" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515766.jpg" group-title="⚽🔥 GOLLER",13.09.2026 - Amed Sportif Faaliyetler 5-0 İstanbul Başakşehir
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_amed_bas_5h_13eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515772" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515772.jpg" group-title="⚽🔥 GOLLER",13.09.2026 - Galatasaray 1-0 Kocaelispor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_gs_koca_5h_13eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515775" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515775.jpg" group-title="⚽🔥 GOLLER",13.09.2026 - Gençlerbirliği 1-2 Kasımpaşa
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_genc_kas_13eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515764" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515764.jpg" group-title="⚽🔥 GOLLER",12.09.2026 - Corendon Alanyaspor 2-2 Göztepe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_ala_goz_5h_12eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515776" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515776.jpg" group-title="⚽🔥 GOLLER",12.09.2026 - Tümosan Konyaspor 1-0 Trabzonspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_kon_ts_5h_12eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515770" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515770.jpg" group-title="⚽🔥 GOLLER",12.09.2026 - Eyüpspor 0-2 Çaykur Rizespor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_eyup_rize_5h_12eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515777" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515777.jpg" group-title="⚽🔥 GOLLER",12.09.2026 - Samsunspor 1-5 Arca Çorum FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_sam_cor_5h_12eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515768" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515768.jpg" group-title="⚽🔥 GOLLER",11.09.2026 - Beşiktaş 3-0 Erzurumspor FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_bjk_erz_5h_11eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515750" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515750.jpeg" group-title="⚽🔥 GOLLER",07.09.2026 - Çaykur Rizespor 0-1 Corendon Alanyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_rize_ala_7eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515755" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515755.jpg" group-title="⚽🔥 GOLLER",07.09.2026 - Göztepe 2-4 Gaziantep FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_goz_ant_7eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515758" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515758.jpg" group-title="⚽🔥 GOLLER",06.09.2026 - Kocaelispor 1-0 Samsunspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_koca_sam_6eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515760" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515760.jpg" group-title="⚽🔥 GOLLER",06.09.2026 - Trabzonspor 5-0 Gençlerbirliği
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_ts_genc_6eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515757" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515757.jpg" group-title="⚽🔥 GOLLER",06.09.2026 - Kasımpaşa 2-2 Amed Sportif Faaliyetler
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_ppasa_amed_6eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515762" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515762.jpg" group-title="⚽🔥 GOLLER",06.09.2026 - Arca Çorum FK 3-0 Eyüpspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_cor_eyup_6eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515754" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515754.jpg" group-title="⚽🔥 GOLLER",05.09.2026 - Fenerbahçe 1-2 Beşiktaş
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_fb_bjk_4h_5eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515752" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515752.jpg" group-title="⚽🔥 GOLLER",05.09.2026 - Erzurumspor FK 1-0 Tümosan Konyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_erz_kon_4h_5eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515756" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515756.jpg" group-title="⚽🔥 GOLLER",04.09.2026 - İstanbul Başakşehir 2-3 Galatasaray
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_bas_gs_4h_4eyl_ip&secure=1
-#EXTINF:-1 tvg-id="1515737" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515737.jpg" group-title="⚽🔥 GOLLER",31.08.2026 - Amed Sportif Faaliyetler 2-1 Trabzonspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_amed_ts_31agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515738" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515738.jpg" group-title="⚽🔥 GOLLER",31.08.2026 - Beşiktaş 6-2 Arca Çorum FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_bjk_cor_31agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515745" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515745.jpg" group-title="⚽🔥 GOLLER",30.08.2026 - İstanbul Başakşehir 1-1 Kasımpaşa
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_bas_kas_30agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515748" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515748.jpg" group-title="⚽🔥 GOLLER",30.08.2026 - Samsunspor 0-2 Fenerbahçe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_sam_fb_30agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515740" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515740.jpg" group-title="⚽🔥 GOLLER",30.08.2026 - Eyüpspor 2-1 Corendon Alanyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_eyup_ala_30agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515741" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515741.jpg" group-title="⚽🔥 GOLLER",29.08.2026 - Galatasaray 3-2 Göztepe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_gs_goz_3h_29h_ip&secure=1
-#EXTINF:-1 tvg-id="1515742" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515742.jpg" group-title="⚽🔥 GOLLER",29.08.2026 - Gaziantep FK 1-2 Çaykur Rizespor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_antep_rize_4h_29agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515746" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515746.png" group-title="⚽🔥 GOLLER",29.08.2026 - Tümosan Konyaspor 1-2 Kocaelispor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_kon_koca_29agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515743" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515743.jpg" group-title="⚽🔥 GOLLER",28.08.2026 - Gençlerbirliği 1-1 Erzurumspor FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_genc_erz_28agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515733" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515733.jpg" group-title="⚽🔥 GOLLER",24.08.2026 - Kocaelispor 2-0 Amed Sportif Faaliyetler
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_koca_amed_2h_24agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515722" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515722.jpg" group-title="⚽🔥 GOLLER",23.08.2026 - Corendon Alanyaspor 1-0 Beşiktaş
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_ala_bjk_23agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515731" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515731.jpg" group-title="⚽🔥 GOLLER",23.08.2026 - Göztepe 0-1 Gençlerbirliği
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_goz_genc_2h_23agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515728" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515728.jpg" group-title="⚽🔥 GOLLER",23.08.2026 - Eyüpspor 0-1 Gaziantep FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_eyup_gazi_2h_23agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515734" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515734.jpg" group-title="⚽🔥 GOLLER",23.08.2026 - Trabzonspor 2-1 İstanbul Başakşehir
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_ts_bas_2h_23agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515730" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515730.jpg" group-title="⚽🔥 GOLLER",22.08.2026 - Fenerbahçe 4-2 Tümosan Konyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_fb_kon_22agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515724" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515724.jpg" group-title="⚽🔥 GOLLER",22.08.2026 - Çaykur Rizespor 0-2 Samsunspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_rizee_sam_22agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515735" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515735.jpg" group-title="⚽🔥 GOLLER",22.08.2026 - Arca Çorum FK 0-1 Kasımpaşa
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_corun_kas_22agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515726" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515726.jpg" group-title="⚽🔥 GOLLER",21.08.2026 - Erzurumspor FK 0-4 Galatasaray
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_erz_gs_2h_21agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515721" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515721.jpg" group-title="⚽🔥 GOLLER",17.08.2026 - Samsunspor 3-3 Göztepe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_sam_goz_1h_17agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515709" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515709.jpg" group-title="⚽🔥 GOLLER",16.08.2026 - Amed Sportif Faaliyetler 3-0 Erzurumspor FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_amed_erzurum_1h_15agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515711" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515711.jpg" group-title="⚽🔥 GOLLER",16.08.2026 - Beşiktaş 1-0 Eyüpspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_bjk_eyup_1h_15agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515718" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515718.jpg" group-title="⚽🔥 GOLLER",16.08.2026 - İstanbul Başakşehir 2-0 Kocaelispor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_bas_koca_1h_16agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515714" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515714.jpg" group-title="⚽🔥 GOLLER",15.08.2026 - Gaziantep FK 1-1 Corendon Alanyaspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_ant_ala_1h_ip&secure=1
-#EXTINF:-1 tvg-id="1515716" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515716.jpg" group-title="⚽🔥 GOLLER",15.08.2026 - Gençlerbirliği 2-1 Fenerbahçe
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_genc_fb_1h_15agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515719" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515719.jpg" group-title="⚽🔥 GOLLER",15.08.2026 - Kasımpaşa 1-1 Trabzonspor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_kas_ts_1h_15agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515720" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515720.jpg" group-title="⚽🔥 GOLLER",15.08.2026 - Tümosan Konyaspor 0-1 Çaykur Rizespor
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_kon_rize_1h_15agu_ip&secure=1
-#EXTINF:-1 tvg-id="1515712" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515712.jpg" group-title="⚽🔥 GOLLER",14.08.2026 - Galatasaray 2-2 Arca Çorum FK
-https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_gs_cor_15agu_v3_ip&secure=1
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORTS 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivess1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORTS 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivess2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu SPOR HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu SPOR 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu Sport 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu Sport 3 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets3.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tivibu Sport 4 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivets4.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Smart Sport 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivesm1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Smart Sport 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivesm2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Euro Sport 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivees1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Euro Sport 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivees2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 1 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 2 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 3 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb3.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 4 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb4.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 5 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb5.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 6 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb6.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 7 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb7.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",Tabii 8 HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamlivetb8.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",DAZN 1-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORT+ -Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn3.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORT + -Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn4.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",S SPORT 2 -Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn6.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",AZ TV-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn7.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥SPORTS",TRT TÜRK HD-Mahsun 🔴
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu237.click/checklist/androstreamliveexn8.m3u8
-# MIRTI68_KANALD_AUTO
-#EXTINF:-1 tvg-name="KANAL D 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="📺 ULUSAL",KANAL D 🔴
-https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=a44e16c21f3efbd63003a000a2e7e1ed&dfp_paln=AQzzBGQEktPSNz5LClEf8PFk2w26hvascvqhdpi6uvwvuVNvmmrAiqg68Gz0RBkJRhgzLEoGckGlNtwCt9_XQ9C0tL2Cdtgh-d98yCsR3eB8hjcVx_x1BlKmEQUy1O0WhcZ_LQ8H6SU3HuRQAXgy6v3S8nTlcCDybjAR0QGwHr3AkuxZx3Tcunkz3c6JCUL9ZUwMZO4y6e6BMYMFNq1364NW_O5rNbq4G9XnLwM-QVo1mUDJ9GrADuBfQH2WMAEb8SKB9MrXw7OQPPp4Udy6sDFDzO4d48G-jnG4_P-f40u0pIZH_X8gOf-jgDe6SeJzNz-VNe4j9mRJesuo_JyITfdG30ITP8pW7cFlAgclpivjgDOVquC5xI8qbh2W0fCliTswgmaQDsZ28n-dwbsUpGBe2RDEMuxMGOoU-qzEaupVqAIILe9G_F0TQJubk8d8N6mLDLZOkdXz8TNhZ_fbeW0N7j37gLZjpYC5DwtiIbV1RFG9MScxvJuOAXixzNdjfy1nCxiodLyny6q-nJLvcswI5Jz-qftz5OBjeqei3Tm0nDgVykllidNfH9DQr_LCIuQIdWlfWqq2d6W_sXIS4514IWOduCw9Wu7NmF3LFatpOi00OISeNtCOlEX_zkJu0o0DhIRhCeeE9KppsdoYVcfREb9xNEhi3BPL6WXdp8KBSniw-yywMnCKYsuTkT_7_XtcsZwctBwRD0eo3g31ajQZKqVKRoB0pXWmnt8matByKbdtsuRkng8E96tYB0btbYyLX9gJdd2uHwFtbvaySvpS4QpWTh14A7A6pbBaB8v4JttU-xGZhszR4SJ-wcadJhac0Mc1hW51EO6FrQIJV7AA-qLbD6FEiUVXslBF8RmL8wJhojVe66jY5e5ao5oLretmQHk2XplEnptcTmgWR5uhLi93GF1KHEaQAon-lhH-JiL2piZd8yK6Ap6VhWWDJuhErGGjc_zw9dN48USYrDoPdwuuKolEXtb8lh1Bs_djqiU9dZQx-xD1epZLaJsqnoTol9N7xgtyoIVE4NcOuMH8cpqoNp3ypfU8bxPdW0QgYWG2ke7dk0cUk6A4Abm-5OApo3jkq-QbCIjESEX0GDV2WD6IgBBEsATR2F8kwAU-xVoZ958yeH2taNG1W12L8v2VMQwcLJR_MANQrbriFyfWu0Va33J8CyLbkgdkJmN7R2rGa83txucW8YtoqQsUcs9Q00y4fZjvF1fKm77W7aCzMeJpAwJgC_lJu1RY_AHzRtTgc8rana3T_jqUaf5i1wJXInNWlptifFZysc5LMbB-QGpZOsnXw5y2ndWdL5NFd3Bp087yw274TYCxnOFbkVVvcAqCvU3WOsAce86T5Wuh0qGH6V7QmJMU9k2K225CQxcM70yr9Kb60XVwxh1YjYczV7C-Hhj7T_5hR9NCLoTO38ifuLMqZQ9n1tNXkaVSe-hfvg..
-# MIRTI68_STARTV_AUTO
-#EXTINF:-1 tvg-name="STAR  🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="📺 ULUSAL",STAR  🔴
-https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=336d52badff6f8470b624f141886fcb8&dfp_paln=AQzzBGQEvydE5cJZjSbm-IpLcIcGbx_SjaV69lKxcogOP4WFI_9wPjsrTV51-EFd2eryIKtRrbwbCfpOG5SXtQoODXq2OIlhF60DMMkVQ0UJZWuAY2y07M1HmNqoMzbcrFqJ38twR1b64ZA86T-A0gzhwDcGEiAbZkvKIcDQrMFWIR9p4oIASZDZ1m7uzHzoHPiZR6NG8ptnpbNaHVjWXTfBBqihvuCEH9IMADpX-fav3GjBBKbzhbzzOAAYirm4bfreLHu6XcbM1DL-y8hRB0F5Ge5xmPtYlNk3dJ91Aa1mOwSJBdgI5DOc4xrCM4-CWGzfxowkJFgXRFQ_py8hyD_ANtwfo7E1BH-3M6nW9nHqHheTRXApkWQ_4aiDeDQBcdo2gi98FsMCZLBU1Z2TSy2lA9qJqruvfZeGDilsYXtrtQa_7T_ePDMpPOYW6E78e4VwHxsHNyhz_UMAMqM6lJ5Hb7Jelfd6TyTLHm2fXabvu4lm87SYe7adJWXoIfZ6MTqdX0Zkl9PIqbD22tsSGSoH4o6Wl-gsa4oQHVXNEvBS6KpXvmNlj40x65hAiOcO9c7QhXzDLIDX-Na4BNtS4mfn5G8xtpPOUAZeidHQjSEC23akWvqd5TXrXzMRQ6sccsH5Y6jnYaPb_PEWs_E1YjSatuWPriqheaKyAY1tUb1OoU2ZmDEEESLsGtNvCUPfvkAYqfVANgNHOxZEVNAygnXf-OFrEeFBXjUlO1o31XWe3HsbyM6DwHz8TIPvgVZaxN8ZhiFzfE4-MA95EWMoLKhQMltLhOTHiW93vkoQ1pGAZn62y3OcrPYD8LL2UJqic3lsyFajB444g_lwCdFzXCqFbCyGMz70Nf87o7AFjlD8V9uGgQkBZEe8sZB_HVKSUAacMpCW2lNF44tQCipg-lkU7FSyK3bjAw2KhUh935M848eIh4zdx8lYvrg60z5K4x5XzNrZ7tc14QFjdO1mRCZogIi43zIlJbINEHO3q83bspkbPs53OafFCuc3DBLJuQQ-0E1q59NykBZCJg6wEaxU_vCXyzsvegZOqPsfUGv4bGFbRgHitWAmSqaC-h7PPjg7mjDb0-SH5MoHz_kgfvl2eGA4u2D3zCWq5aCTawmGzhn9Tz7tTAdF88y6eCqbel-iKXfl3lRk1v6Wdw9B1viV0cG40I6DeMexLXVNg8qSouCmVKtBTAQ90q4dj8kqwpTBn4DX5kwK-Q0CTgdwqxHa2-nps8bbhEofcrGk5i22zpO91UwswS8rf3qyIhe0hpgmJGK3bfI9r9JvRWa65FCfPwL11mzb4WRJ3qR7yPhhpzBymY4llLpjpFL_nnCsxkENdctWrAvZqbsCiv1vRr94t_d-EZkVbMG7zEE_t4clhyR17n17zAm_ruZ1lDMH_H9nfOcUpO_4Pg7R95pRi1WdzSGTMK-ZLdPAJd0uSnhq4NZvvUihRBB67EA.
-# MIRTI68_SHOWTV_AUTO
-#EXTINF:-1 tvg-name="SHOW 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/showtv.png" group-title="📺 ULUSAL",SHOW 🔴
-https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=1237a6fb68933e090585379c95073174&dfp_paln=AQzzBGQEArFj0vLc_W3Kg8aD2Xbwa6oEdeGeevOED26unQrIb9snty5hQLpQzKpf3G-Tby7_q1B3nNPhM0zuC7jmNSqZcAz8ZAv_Z9LyUg6zIs7LkF3rBywdxO68W0gAWf7urhpb1qDOaJBdcZISPTK22NNOUa9J7N8u3E6SJoGBDd_F2eLbRZoTDvJD9yTK1FN2Q9EN8VlXPg6eRhqyF1O6KFQPrynS0aVapT3qPQrLVnYApS0dfdCRPVxwndUuNP_iMJ28P878OR-YPXumtEMIeIy9B4oUDvTlC059HcbRQCF-8tQ7wAGLmCSFj-UdNEdnDPrfx2NKWLCSlNLhTnJpr1PghpZ6jiGv_LRL_h1YG9XMxtkDg9vopShY3UgzNeMwtcPraaux11EWHZFoEfOm9Q0OtCMYHs0zmP3FKGPdSLJo3-KR-HUAZ0-nShoOnoq5gieTff3v5KBIDzXFFWpxkv1iEgPOzqbQ5WnctXEN44qUoOC6hpazCxEXgj1hysVE6HoTNqYSJGq0HYWc9NV54zp0EgEhmAzo7xdarRxyHlpUQtLeX6qNDo3hNN3M_xCGjuA17qR2VY-AJD4ay905cxrXn8MYNbX2ZibWH8IM6kLrM9JcvWrJVW2fz_fha3slKFgSZgOu4i2R5G-II1LgUeXMpuZWStQsdpu1I0K_xbaLtuxFpo15T17RYZVxt-ccOAyoCArcWFx8jKWLLB_loozi_r5aXXgUkZzjiSuL5ehnVLM8Vcus_h4MX7hbeo1sdtnvWEDi_xS8ZPdxCMQQA17ZzkwYgIqWxF1JMit8rdPqDhorAca1yadj6y7c6FLZj7RiNj0DLTye9IVv6teIvfyvY9eRKrHjDYIr8wu4HLDriYm2irbmuxl0mmQCghnqUrBv5OsYx_vtdYzCl3wkdCze8N02HSafc5uOSURZppek-NjxudLfff1rviG0K_8x2V63A9ROzE9_-KnLcou_XeF7l8Q.
-# MIRTI68_TV8_AUTO
-#EXTINF:-1 tvg-name="TV8 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="📺 ULUSAL",TV8 🔴
-https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=ed8ad815167f136e80a14c872232f0a5&dfp_paln=AQzzBGQEpo95NT-X9ZnO4epiz4eWd-e1ztxbMF0QvE17sf3VsDV2LQDH2oUVZ4CNT4DbPOJ4ZF7lKs7Pj8IbmvGthrIVahs8jJhJqwkj41PoaTDnnhYqjrWrVMIoURDtOlRx8pp6lJ3tapIyBjsHBEb6kamLltzChlgxyhhp3GAf2aO8NKOFsODhm7s_D5YT4FiYI2XlAFd86IkzRI7Y-WoCbKvY268Ph6LkNc2eMVfJ5hVulRS76eqHdIPW48Vb0b0IbHlvPu0HxTj0lDMMJDTRyzg_LU7HbxDJPjk_Ol8jGcEqvazqurc8ZhIaocR2i42DY6PRbabTHu_QDhgrglA4tkoMLQmyEycyjSLwdOFywlBlfHncuY2TmCg4RGuvkgyJVNKwozQFxA2__weswxetRONh16SZIQvFjS_jPog0pydR96Ek3p4fh_tXTeBFo2Js9eONc9pujoaXRRKGXww_nYi2-E52c953FAubMIpc4kEK8EbTNuLQVVNagN3W4JAHwdCH4iwsDM0uczNq9yYcOb9hC0SW4-ShvrxK-03RlQ9nPZ_qL_qxpLnDq16UzhMJdTgv8c23pKLw7WVpaY1adsnafsEKv2JWtimruDjaAGsOIZLR1eIOXBlsO7_omxuwibDv6uj9x7sXTgHAXKbUHmFk1vIaO8g1X6d8mw4IuoXD1-dLZbZApOc4gwllw7eA3jq9jRUNu5d2vHnq3CPHOr1pCR7N8PR62P5VLzV4pckrZm_ngX3CirlFQ29GoOJCUHnCXrH7lBYH4M8KVlceHhi8U3rWX22DsZprXtlucIMiAFOJIeMRYNM0pS5V8e_QFsoW1z3t6mtRKfvYCRJxtOJTo0l0BHO9FEGCyOxHN_06dRob7acK0785hDPx9VjoVd1rd2rLyCm0Jl0KSzGx1y21z4bItjBzK9rG2kLIXx_flTlyw4i8YnNuLAfqXzwkM2628zotyfSVizyU6Ya5XV9k4Rr9Rv5QCPbe15EgX1oAV5CDedHLXq2JcgKv3qQ92PW57HtOeRqmR2VPkLGa3PM1QHinutQNzPVv5rw-lVGX1sUxTA_MF6x2wPbg0zoOSyfIlEnQzL6-Y2qCeKaE7sc1_0vNeRAOoXklM-32AJWFIIydRBXeYpu5SrtEvMrj4JJLTi1apwoSLAux2qC-PzF55Rt8hr7VdRmSomn9bQ4q0sDyTGWIciByRt-qWRNBv-zdQamxopuNYefLH2288ui3NKZAfJLq1dn75FBJ2q-jIsUqnxrOsCFAaHqbJv-n17lOmWiqrNOyXksD-gRlTvJT5tsFXAD1Sv6TiwXybfr_RL_Zg-F-oaHjOgc7hviYlIocVv5hqlBXA90oTpuqZ-cNcISyIlr7voaA44dT55uZmdIRepLVoozV4-gvrpMGSVm2dlpM
-# MIRTI68_KANAL7_AUTO
-#EXTINF:-1 tvg-name="KANAL 7 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="📺 ULUSAL",KANAL 7 🔴
-https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=47f945b0fc4719b0027609326e634484&dfp_paln=AQzzBGQEzEodaw4qcQslNiIdQrMlKY1qmHMYssip70WBbLdj-DfPz6D-Xc-swW_aRsr0YrHtPgj2wXlaL-VyKL40VInroiv3g_CO7lQYUymwf_lN0RLz6wVanczlvKLnlIdukavU6xNFlHQ2Hbmy4p2LtQjQ1RMuPnszaUH3vX81kp95Yp99xsJTYSf_Ls8Pj-CCcEgn8FeYfVpItb1cAyeIehWmivKKwq3zjTNvgE3v-FEvLzLkyj7Z_LnqEr4eOrH5TpkBdzdJuzLlBEbzKtz8DlJ72QydQuj9YggQoBfA8emUuVNOkfx2ceZX5WdlSHC9FDzzyec5AE1BoOCIG1XGr6LGusETiYvO0Omt09p5nuCv9kwkmok5OKtlQzm5b87RwFbjhgHZjpv4ic2nYGsRJznOBeRTDt00CnUTkbH2lQ-J8SWm_kFchhq1-ZrGXEz3tv-sm3Q2K63AdCWz2H9xwmaDtoWqiZ1EKMibtwkfd9F40YOJQyrxT87SR8L9sjGxbwxcN4waN-yEL6uUpkoKpFfYcUNXFYexbqgiOe8t5rDGfoz6oAFoM_S8oVliAvO3h4InuuwCctNnG7I7TfZXFlx-EUUeOywxd5EJ6Uni98AZo3hZTvEm8mu1crTjntu8ixKC16GnJfEvRtQlMMDHN-SiltRfnTM8PvyxZi6KORoKmX80KLpwethEsrP2rML5mlZ4R8FB28JmFGyoI3XXTYkTJ9AeJl4lSflKoAlNA-Sh1Z6V23tEcGK8p8K-1PFo_0HkTAB_HlAieaxko0udu4WEhPWlIi6qc9H3JjG_4OTxLKug4J_Xrel_JaOhxyIyekF7i7O8yx7NSD3y0-lApGT5AM5mUdCxv5AOV_3GAzmOotsrO36s6yg6WgDQJTYzMpU-dMvo2Zh8hNm31F1rCW4Ww9pg32E4PQf0lOqrz7IvalOOTQ-foHJo2qKXf1oTY0F_EngFiPOrQtagjT88e6EBWOU3w-86llH_CyhdRDFQi7fqyu6-jhD22kKzgtHTH-KMVuvnLRzO3giv0USUlTFNb9QHju5CN826zWyoiOC40bQs85TwRVuhxAtVJDMd4o6Y6GMtyL6r5JyxscEQHpewZUi5i-t2ZzirU9Agg-eqG762rcCvG_0mw60IvZRWeC8Qwqo5CxxkwPAyBYtUz4GS4ROhKkUWRolYw3v_sC6JyvENk9aWxs0QrXP43a7rpkMZJ84Ytet_NkMFiWg8L6ciQlcUQhmNFHcAC-HOl5fOMJGm7UPlTm9mkgi26aHcdVEgG-bYYHrU-U6i9iWTQ1ZuoL9oyLqa92U86B7jhfSUa5_Yr9E8CEhob8rjoaMRtyW44FWOsdfdWZjhOg46FgQyfwdX9X1-cQAsZmuvJOtLUNIC8eI6-szpGA-9NaQfJcVKtehNgMueZ8DxU2RV6unhQsOx4jrH_2bJNKXcVD4UmYVKdoBBaJ6LrBpnnG0YbM8j0pH9KGLsTHok
-# MIRTI68_NOWTV_AUTO
-#EXTINF:-1 tvg-name="NOW 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="📺 ULUSAL",NOW 🔴
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=TIe59b-7kDBS8Dd3pyiG_w&e=1794162075
-# MIRTI68_TRT1_AUTO
-#EXTINF:-1 tvg-name="TRT 1 🔴" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="📺 ULUSAL",TRT 1 🔴
-https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",BeIN SPORTS 2
+#EXTVLCOPT:http-referrer=https://www.atomsportv520.top
+#EXTVLCOPT:http-origin=https://www.atomsportv520.top
+#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
+#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)", "Referer": "https://www.atomsportv520.top"}
+https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="bein sports 3.tr" tvg-name="bein sports 3.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 3 Zeus
+https://zeus645423.cfd/b3/index.txt
+#EXTINF:-1 tvg-id="bein-sports-3724" tvg-name="bein sports 3.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 3 Selçuk
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports3/playlist.m3u8
+#EXTINF:-1 tvg-name="beinsports 3" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports55.xyz/" referrer="https://mahsunsports55.xyz/",beIN SPORTS 3 Mahsun
+#EXTVLCOPT:http-referrer=https://mahsunsports55.xyz/
+https://andro.evrenesoglu141.click/checklist/androstreamlivebs3.m3u8
+#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",BeIN SPORTS 3
+#EXTVLCOPT:http-referrer=https://www.atomsportv520.top
+#EXTVLCOPT:http-origin=https://www.atomsportv520.top
+#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
+#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)", "Referer": "https://www.atomsportv520.top"}
+https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="bein sports 4.tr" tvg-name="bein sports 4.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 4 Zeus
+https://zeus645423.cfd/b4/index.txt
+#EXTINF:-1 tvg-id="bein-sports-4724" tvg-name="bein sports 4.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 4 Selçuk
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports4/playlist.m3u8
+#EXTINF:-1 tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 4 Mahsun
+#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
+https://andro.evrenesoglu141.click/checklist/androstreamlivebs4.m3u8
+#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",BeIN SPORTS 4
+#EXTVLCOPT:http-referrer=https://www.atomsportv520.top
+#EXTVLCOPT:http-origin=https://www.atomsportv520.top
+#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
+#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)", "Referer": "https://www.atomsportv520.top"}
+https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🖥beINSPORTS",beIN SPORTS 5 Zeus
+https://zeus645423.cfd/b4/index.txt
+#EXTINF:-1 tvg-id="bein-sports-5724" tvg-name="bein sports 5.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🖥beINSPORTS" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 5 Selçuk
+#EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports5/playlist.m3u8
+#EXTINF:-1 tvg-name="beinsports 5" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 5 Mahsun
+#EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
+https://andro.evrenesoglu141.click/checklist/androstreamlivebs5.m3u8
+#EXTINF:-1 tvg-id="raw:beinsports4k" tvg-name="BeIN Sports 4K" tvg-logo="https://bit.ly/3f86zet" group-title="🖥beINSPORTS" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)" http-referrer="https://www.atomsportv520.top" referrer="https://www.atomsportv520.top",BeIN SPORTS 5
+#EXTVLCOPT:http-referrer=https://www.atomsportv520.top
+#EXTVLCOPT:http-origin=https://www.atomsportv520.top
+#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
+#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)", "Referer": "https://www.atomsportv520.top"}
+https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-name="beIN.SPORTS.MAX.1.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 1 HD
+#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
+https://andro.evrenesoglu141.click/checklist/androstreamlivebsm1.m3u8
+#EXTINF:-1 tvg-name="beIN.SPORTS.MAX.2.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🖥beINSPORTS" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 2 HD
+#EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
+https://andro.evrenesoglu141.click/checklist/androstreamlivebsm2.m3u8
