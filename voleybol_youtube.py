@@ -401,7 +401,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-ON:", RESULT_FILE)
+print("JSON:", RESULT_FILE)
     print("Diğer IPTV grupları: KORUNDU")
     print("=" * 45)
 
