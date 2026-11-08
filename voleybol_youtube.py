@@ -523,7 +523,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-Sadece yeni HLS bulunan grupları değiştir.
+#Sadece yeni HLS bulunan grupları değiştir.
     replace_groups = {
         group
         for group, records in groups.items()
