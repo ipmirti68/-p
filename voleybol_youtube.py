@@ -376,6 +376,7 @@ def save(items):
     with open(temp, "w", encoding="utf-8") as file:
         file.write("\n".join(final_lines) + "\n")
     os.replace(temp, MASTER_FILE)
+
     save_json(items)
 
     print("\n" + "=" * 45)
@@ -390,6 +391,18 @@ def save(items):
 
     print("Ana liste:", MASTER_FILE)
     print("JSON:", RESULT_FILE)
+    print("Diğer IPTV grupları: KORUNDU")
+    print("=" * 45)
+
+
+def main():
+    items = scan()
+    save(items)
+
+
+if __name__ == "__main__":
+    main()
+
     print("Diğer IPTV grupları: KORUNDU")
     print("=" * 45)
 
