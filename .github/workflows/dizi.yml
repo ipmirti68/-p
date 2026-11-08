@@ -42,7 +42,7 @@ jobs:
 
       - name: 12 - FİLİM
         continue-on-error: true
-        run: python filim.y || echo "filim failed"
+        run: python filim.py || echo "filim failed"
 
       - name: 13 - GOLVAR
         continue-on-error: true
