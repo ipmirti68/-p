@@ -1,167 +1,5 @@
 [
   {
-    "date": "08.11.2026",
-    "time": "11:00",
-    "name": "YEDİDAĞ SPOR - BAŞKENT ZİRVE",
-    "home": "YEDİDAĞ SPOR",
-    "away": "BAŞKENT ZİRVE",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "13:00",
-    "name": "TVF SPOR LİSESİ - KİLİS GENÇLİK",
-    "home": "TVF SPOR LİSESİ",
-    "away": "KİLİS GENÇLİK",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "13:00",
-    "name": "PTT - TVF SPOR LİSESİ",
-    "home": "PTT",
-    "away": "TVF SPOR LİSESİ",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "13:00",
-    "name": "ANKARA DSİ - VEGA ATLETİK",
-    "home": "ANKARA DSİ",
-    "away": "VEGA ATLETİK",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "14:00",
-    "name": "GALATASARAY - CAN MİLAN ATLETİK",
-    "home": "GALATASARAY",
-    "away": "CAN MİLAN ATLETİK",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "15:00",
-    "name": "SİNNADA HOTELS AFYON BELEDİYE YÜNTAŞ - MANİSA BÜYÜKŞEHİR BELEDİYE SPOR",
-    "home": "SİNNADA HOTELS AFYON BELEDİYE YÜNTAŞ",
-    "away": "MANİSA BÜYÜKŞEHİR BELEDİYE SPOR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "15:00",
-    "name": "ECZACIBAŞI PERON İSTANBUL - GÖZTEPE YUPPO",
-    "home": "ECZACIBAŞI PERON İSTANBUL",
-    "away": "GÖZTEPE YUPPO",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "16:00",
-    "name": "ARAS KARGO - İLBANK",
-    "home": "ARAS KARGO",
-    "away": "İLBANK",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "16:00",
-    "name": "ZEREN SPOR - KUZEYBORU",
-    "home": "ZEREN SPOR",
-    "away": "KUZEYBORU",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "16:00",
-    "name": "NİLÜFER BELEDİYESPOR EKER - VAKIFBANK",
-    "home": "NİLÜFER BELEDİYESPOR EKER",
-    "away": "VAKIFBANK",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "16:00",
-    "name": "ANKARA BAROSU - ÇAYYOLU SPORTSA",
-    "home": "ANKARA BAROSU",
-    "away": "ÇAYYOLU SPORTSA",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "16:00",
-    "name": "MISIROĞLU BEYTEPE - ERYAMAN GELİŞİM",
-    "home": "MISIROĞLU BEYTEPE",
-    "away": "ERYAMAN GELİŞİM",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "16:30",
-    "name": "İSTANBUL ANKA - KUZEY YILDIZLARI SPEED SPOR",
-    "home": "İSTANBUL ANKA",
-    "away": "KUZEY YILDIZLARI SPEED SPOR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "19:00",
-    "name": "ÇENGELKÖY VOLEYBOL - KARTAL BELEDİYESPOR",
-    "home": "ÇENGELKÖY VOLEYBOL",
-    "away": "KARTAL BELEDİYESPOR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "19:00",
-    "name": "EKER SPOR - KOÇ SPOR",
-    "home": "EKER SPOR",
-    "away": "KOÇ SPOR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "19:00",
-    "name": "ENGLISH TIME SPOR - BAŞKENT ARMA",
-    "home": "ENGLISH TIME SPOR",
-    "away": "BAŞKENT ARMA",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "19:00",
-    "name": "AHMET HAMDİ TANPINAR ORTAOKULU - MEDİA FİRST TEK METAL SPORTİF",
-    "home": "AHMET HAMDİ TANPINAR ORTAOKULU",
-    "away": "MEDİA FİRST TEK METAL SPORTİF",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "08.11.2026",
-    "time": "19:00",
-    "name": "ARKAS SPOR - DÜZCE BELEDİYESİ SPOR AKADEMİ",
-    "home": "ARKAS SPOR",
-    "away": "DÜZCE BELEDİYESİ SPOR AKADEMİ",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
     "date": "10.11.2026",
     "time": "16:00",
     "name": "MALİYE VOLEYBOL - KONYA B.ŞEHİR BLD. SPOR",
@@ -527,6 +365,24 @@
     "name": "BEŞİKTAŞ - SİNNADA HOTELS AFYON BELEDİYE YÜNTAŞ",
     "home": "BEŞİKTAŞ",
     "away": "SİNNADA HOTELS AFYON BELEDİYE YÜNTAŞ",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "16.11.2026",
+    "time": "18:00",
+    "name": "KUZEY YILDIZLARI SPEED SPOR - MARMARA AKADEMİ",
+    "home": "KUZEY YILDIZLARI SPEED SPOR",
+    "away": "MARMARA AKADEMİ",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "16.11.2026",
+    "time": "19:00",
+    "name": "FENERBAHÇE MEDICANA - KOCAELİ BŞB KAĞIT SPOR",
+    "home": "FENERBAHÇE MEDICANA",
+    "away": "KOCAELİ BŞB KAĞIT SPOR",
     "channel": "TVF Voleybol TV",
     "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
   }
