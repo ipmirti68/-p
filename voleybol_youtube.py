@@ -9,7 +9,7 @@ import time
 from yt_dlp import YoutubeDL
 
 # ==========================================
-# MIRTI68 - VOLEYBOL BOT
+# MIRTI68 - VOLEYBOL YOUTUBE BOT
 # ==========================================
 
 MASTER_FILE = "mirti68.m3u"
@@ -33,6 +33,18 @@ MAX_LIVE = 5
 MAX_KUZEYBORU = 10
 MAX_REPLAY = 60
 
+GROUPS = (
+    GROUP_LIVE,
+    GROUP_KUZEYBORU,
+    GROUP_REPLAY,
+)
+
+LIMITS = {
+    GROUP_LIVE: MAX_LIVE,
+    GROUP_KUZEYBORU: MAX_KUZEYBORU,
+    GROUP_REPLAY: MAX_REPLAY,
+}
+
 KEYWORDS = (
     "voleybol",
     "sultanlar ligi",
@@ -52,18 +64,6 @@ KEYWORDS = (
     "kadinlar ligi",
     "voleybol tv",
 )
-
-GROUPS = (
-    GROUP_LIVE,
-    GROUP_KUZEYBORU,
-    GROUP_REPLAY,
-)
-
-LIMITS = {
-    GROUP_LIVE: MAX_LIVE,
-    GROUP_KUZEYBORU: MAX_KUZEYBORU,
-    GROUP_REPLAY: MAX_REPLAY,
-}
 
 OPTIONS = {
     "quiet": True,
@@ -89,10 +89,11 @@ DETAIL = {
 }
 
 # ==========================================
-# VIDEO ID
+# VIDEO ID BUL
 # ==========================================
 
 def get_id(video):
+
     vid = str(video.get("id") or "")
 
     if re.fullmatch(r"[A-Za-z0-9_-]{11}", vid):
@@ -113,10 +114,12 @@ def get_id(video):
 # ==========================================
 
 def get_hls(info):
+
     if not info:
         return ""
 
     for key in ("hls_manifest_url", "manifest_url"):
+
         value = info.get(key)
 
         if value and "m3u8" in str(value).lower():
@@ -125,6 +128,7 @@ def get_hls(info):
     formats = info.get("formats") or []
 
     for fmt in formats:
+
         url = str(fmt.get("url") or "")
         protocol = str(fmt.get("protocol") or "").lower()
 
@@ -136,6 +140,7 @@ def get_hls(info):
             return url
 
     for fmt in info.get("requested_formats") or []:
+
         url = str(fmt.get("url") or "")
         protocol = str(fmt.get("protocol") or "").lower()
 
@@ -153,6 +158,7 @@ def get_hls(info):
 # ==========================================
 
 def is_live(info):
+
     return (
         info.get("is_live") is True
         or info.get("live_status") == "is_live"
@@ -160,6 +166,7 @@ def is_live(info):
 
 
 def is_upcoming(info):
+
     if info.get("live_status") == "is_upcoming":
         return True
 
@@ -179,18 +186,23 @@ def is_upcoming(info):
 # ==========================================
 
 def classify(info):
+
     title = str(info.get("title") or "")
     description = str(info.get("description") or "")
 
     text = (title + " " + description).casefold()
 
-    if not any(word.casefold() in text for word in KEYWORDS):
+    if not any(
+        word.casefold() in text
+        for word in KEYWORDS
+    ):
         return ""
 
     if is_upcoming(info):
         return ""
 
     if is_live(info):
+
         if "kuzeyboru" in text:
             return GROUP_KUZEYBORU
 
@@ -204,6 +216,7 @@ def classify(info):
 # ==========================================
 
 def scan():
+
     print("=" * 45)
     print("MIRTI68 VOLEYBOL YOUTUBE BOT")
     print("=" * 45)
@@ -217,20 +230,28 @@ def scan():
     seen = set()
     errors = []
 
+    # KANALLARI TARA
+
     for source in sources:
+
         print("\nKaynak:", source)
 
         try:
+
             with YoutubeDL(OPTIONS) as ydl:
+
                 playlist = ydl.extract_info(
                     source,
                     download=False
                 )
 
             if not playlist:
-                raise RuntimeError("Kanal listesi alınamadı")
+                raise RuntimeError(
+                    "Kanal listesi alınamadı"
+                )
 
             for entry in playlist.get("entries") or []:
+
                 if not entry:
                     continue
 
@@ -243,43 +264,59 @@ def scan():
                 videos.append((vid, entry))
 
         except Exception as error:
+
             print("KAYNAK HATASI:", error)
             errors.append(str(error))
 
     print("\nVideo sayısı:", len(videos))
 
     if not videos:
+
         print("Video bulunamadı.")
         return None
 
     results = []
     detail_errors = []
 
+    # VIDEO DETAYLARINI AL
+
     with YoutubeDL(DETAIL) as ydl:
-        for index, (vid, entry) in enumerate(videos, 1):
+
+        for index, (vid, entry) in enumerate(
+            videos, 1
+        ):
+
             print(
                 f"\n[{index}/{len(videos)}] "
                 f"Video kontrol: {vid}"
             )
 
-            url = "https://www.youtube.com/watch?v=" + vid
+            url = (
+                "https://www.youtube.com/watch?v="
+                + vid
+            )
 
             try:
+
                 info = ydl.extract_info(
                     url,
                     download=False
                 )
 
                 if not info:
-                    raise RuntimeError("Video bilgisi yok")
+                    raise RuntimeError(
+                        "Video bilgisi alınamadı"
+                    )
 
             except Exception as error:
+
                 print("VIDEO HATASI:", error)
                 detail_errors.append(str(error))
                 time.sleep(1)
                 continue
 
             if is_upcoming(info):
+
                 print("Henüz başlamadı.")
                 time.sleep(1)
                 continue
@@ -287,6 +324,7 @@ def scan():
             group = classify(info)
 
             if not group:
+
                 print("Voleybol videosu değil.")
                 time.sleep(1)
                 continue
@@ -294,6 +332,7 @@ def scan():
             hls = get_hls(info)
 
             if not hls:
+
                 print("HLS bağlantısı bulunamadı.")
                 time.sleep(1)
                 continue
@@ -324,14 +363,23 @@ def scan():
 
             time.sleep(1)
 
-    # Eksik taramada eski listeyi değiştirme.
+    # EKSİK TARAMADA ESKİ LİSTEYİ KORU
+
     if errors or detail_errors:
+
         print("\nTARAMA TAMAMLANAMADI.")
-        print("Hata sayısı:", len(errors) + len(detail_errors))
+
+        print(
+            "Hata sayısı:",
+            len(errors) + len(detail_errors)
+        )
+
         print("Eski M3U korunacak.")
+
         return None
 
     print("\nGeçerli HLS:", len(results))
+
     return results
 
 
@@ -340,21 +388,26 @@ def scan():
 # ==========================================
 
 def read_blocks(lines):
+
     preamble = []
     blocks = []
     current = None
 
     for line in lines:
+
         if line.startswith("#EXTINF:"):
+
             if current is not None:
                 blocks.append(current)
 
             current = [line]
 
         elif current is not None:
+
             current.append(line)
 
         else:
+
             preamble.append(line)
 
     if current is not None:
@@ -363,7 +416,12 @@ def read_blocks(lines):
     return preamble, blocks
 
 
+# ==========================================
+# GRUP ADINI BUL
+# ==========================================
+
 def get_group(block):
+
     if not block:
         return ""
 
@@ -380,9 +438,15 @@ def get_group(block):
 # ==========================================
 
 def save_json(data):
+
     temp = RESULT_FILE + ".tmp"
 
-    with open(temp, "w", encoding="utf-8") as file:
+    with open(
+        temp,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
         json.dump(
             data,
             file,
@@ -398,21 +462,36 @@ def save_json(data):
 # ==========================================
 
 def save(items):
+
     if items is None:
-        print("Tarama başarısız. M3U değişmedi.")
+
+        print("Tarama başarısız.")
+        print("M3U değişmedi.")
+
         return
 
     if not items:
-        print("Yeni yayın yok. Eski kayıtlar korundu.")
+
+        print("Yeni HLS bulunamadı.")
+        print("Eski kayıtlar korundu.")
+
         return
 
-    groups = {group: [] for group in GROUPS}
+    groups = {
+        group: []
+        for group in GROUPS
+    }
+
+    # YENİ YAYINLARI GRUPLARA AYIR
 
     for item in items:
+
         group = item.get("group")
 
         if group in groups:
             groups[group].append(item)
+
+    # SADECE YENİ HLS BULUNAN GRUPLARI DEĞİŞTİR
 
     replace_groups = {
         group
@@ -421,17 +500,26 @@ def save(items):
     }
 
     if not replace_groups:
+
         print("Güncellenecek grup yok.")
+        print("Eski kayıtlar korundu.")
+
         return
 
+    # ESKİ ANA M3U DOSYASINI OKU
+
     if os.path.isfile(MASTER_FILE):
+
         with open(
             MASTER_FILE,
             "r",
             encoding="utf-8-sig"
         ) as file:
+
             old_lines = file.read().splitlines()
+
     else:
+
         old_lines = ["#EXTM3U"]
 
     preamble, blocks = read_blocks(old_lines)
@@ -442,26 +530,128 @@ def save(items):
         line.strip() == "#EXTM3U"
         for line in final_lines
     ):
+
         final_lines.insert(0, "#EXTM3U")
 
-    # Güncellenmeyen bütün kanalları koru.
+    # DİĞER BÜTÜN KANALLARI KORU
+
     for block in blocks:
+
         group = get_group(block)
 
         if group in replace_groups:
+
             print("Eski grup yenileniyor:", group)
             continue
 
         final_lines.extend(block)
 
-    # Yeni kayıtları ekle.
+    # YENİ HLS YAYINLARINI EKLE
+
     for group, records in groups.items():
+
         if group not in replace_groups:
             continue
 
         added = set()
 
         for item in records[:LIMITS[group]]:
+
+            vid = item["id"]
+
+            if vid in added:
+                continue
+
+            added.add(vid)
+
+            title = re.sub(
+                r'[\r\n"]+',
+                " ",
+                item["name"]
+            ).strip()
+
+            final_lines.append(
+                f'#EXTINF:-1 group-title="{group}",{title}'
+            )
+
+            final_lines.append(
+                item["stream_url"]
+            )
+
+            print("M3U EKLENDİ:", title)
+
+    # ======================================
+    # ATOMİK M3U KAYDI
+    # ======================================
+
+    temp = MASTER_FILE + ".tmp"
+
+    with open(
+        temp,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        file.write(
+            "\n".join(final_lines) + "\n"
+        )
+
+    os.replace(temp, MASTER_FILE)
+
+    # JSON KAYDI
+
+    save_json(items)
+
+    # ======================================
+    # SONUÇ
+    # ======================================
+
+    print("\n" + "=" * 45)
+    print("MIRTI68 VOLEYBOL GÜNCELLENDİ")
+    print("=" * 45)
+
+    for group, records in groups.items():
+
+        if group in replace_groups:
+
+            count = min(
+                len(records),
+                LIMITS[group]
+            )
+
+            print(group + ":", count)
+
+        else:
+
+            print(
+                group + ": Eski kayıtlar korundu"
+            )
+
+    print("Ana liste:", MASTER_FILE)
+    print("JSON:", RESULT_FILE)
+    print("Diğer IPTV grupları: KORUNDU")
+    print("=" * 45)
+
+
+# ==========================================
+# ANA PROGRAM
+# ==========================================
+
+def main():
+
+    items = scan()
+
+    save(items)
+
+
+# ==========================================
+# PROGRAMI BAŞLAT
+# ==========================================
+
+if __name__ == "__main__":
+
+    main()
+ for item in records[:LIMITS[group]]:
             vid = item["id"]
 
             if vid in added:
