@@ -151,16 +151,16 @@ def is_upcoming(info):
 def classify(info):
     title = str(info.get("title") or "")
     description = str(info.get("description") or "")
-    text = (title + " " + description).casefold()
+    text_value = (title + " " + description).casefold()
 
-    if not any(word.casefold() in text for word in KEYWORDS):
+    if not any(word.casefold() in text_value for word in KEYWORDS):
         return ""
 
     if is_upcoming(info):
         return ""
 
     if is_live(info):
-        if "kuzeyboru" in text:
+        if "kuzeyboru" in text_value:
             return GROUP_KUZEYBORU
         return GROUP_LIVE
 
@@ -192,9 +192,11 @@ def scan():
             for entry in playlist.get("entries") or []:
                 if not entry:
                     continue
+
                 vid = get_id(entry)
                 if not vid or vid in seen:
                     continue
+
                 seen.add(vid)
                 videos.append((vid, entry))
 
@@ -258,7 +260,7 @@ def scan():
             print("GRUP:", group)
             time.sleep(1)
 
-    # Bir kaynak veya video detayı hatalıysa eksik tarama ile grupları silme.
+    # Eksik tarama ile eski grupları silme.
     if errors or detail_errors:
         print("\nTARAMA TAMAMLANAMADI.")
         print("Hata sayısı:", len(errors) + len(detail_errors))
@@ -294,6 +296,7 @@ def read_blocks(lines):
 def get_group(block):
     if not block:
         return ""
+
     match = re.search(r'group-title="([^"]*)"', block[0])
     return match.group(1) if match else ""
 
@@ -376,7 +379,7 @@ def save(items):
 
     save_json(items)
 
-        print("\n" + "=" * 45)
+    print("\n" + "=" * 45)
     print("MIRTI68 VOLEYBOL GÜNCELLENDİ")
     print("=" * 45)
 
@@ -388,6 +391,18 @@ def save(items):
 
     print("Ana liste:", MASTER_FILE)
     print("JSON:", RESULT_FILE)
+    print("Diğer IPTV grupları: KORUNDU")
+    print("=" * 45)
+
+
+def main():
+    items = scan()
+    save(items)
+
+
+if __name__ == "__main__":
+    main()
+ON:", RESULT_FILE)
     print("Diğer IPTV grupları: KORUNDU")
     print("=" * 45)
 
