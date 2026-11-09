@@ -46,6 +46,15 @@
   },
   {
     "date": "11.11.2026",
+    "time": "19:00",
+    "name": "GALATASARAY MADEŞ MOBİLYA - GEBZE BELEDİYESİ SPOR",
+    "home": "GALATASARAY MADEŞ MOBİLYA",
+    "away": "GEBZE BELEDİYESİ SPOR",
+    "channel": "TVF Voleybol TV",
+    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
+  },
+  {
+    "date": "11.11.2026",
     "time": "16:00",
     "name": "İSTANBUL VOLEYBOL - ÇERKEZKÖY VOLEYBOL AKADEMİ",
     "home": "İSTANBUL VOLEYBOL",
@@ -275,15 +284,6 @@
     "name": "MEDİA FİRST TEK METAL SPORTİF - YEDİDAĞ SPOR",
     "home": "MEDİA FİRST TEK METAL SPORTİF",
     "away": "YEDİDAĞ SPOR",
-    "channel": "TVF Voleybol TV",
-    "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
-  },
-  {
-    "date": "15.11.2026",
-    "time": "13:00",
-    "name": "FENERBAHÇE MEDICANA - NİLÜFER BELEDİYESPOR EKER",
-    "home": "FENERBAHÇE MEDICANA",
-    "away": "NİLÜFER BELEDİYESPOR EKER",
     "channel": "TVF Voleybol TV",
     "youtube": "https://www.youtube.com/channel/UCTgQ8Bfq3AUuo1vWULdvRKw"
   },
