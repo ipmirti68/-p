@@ -6,6 +6,7 @@ import tempfile
 
 # ==========================================
 # MIRTI68 - TÜM FİLMLERİ ANA LİSTEYE EKLE
+# SERİ / DİZİ GRUPLARI HARİÇ
 # ==========================================
 
 SOURCE_M3U_URL = os.environ.get(
@@ -52,11 +53,41 @@ def is_movie(entry):
     if not entry:
         return False
 
-    extinf = entry[0].lower()
+    extinf = entry[0]
     name = extinf.split(",", 1)[-1].strip()
 
-    # Dizi/seri bölümlerini film listesinden ayır
-    excluded = [
+    # ======================================
+    # SERİ / DİZİ GRUPLARINI ELE
+    # ======================================
+
+    group_match = re.search(
+        r'group-title="([^"]*)"',
+        extinf,
+        re.IGNORECASE
+    )
+
+    if group_match:
+        group_name = group_match.group(1).casefold()
+
+        excluded_groups = [
+            "seri",
+            "dizi",
+            "series",
+            "tv series",
+            "show dizileri",
+        ]
+
+        if any(
+            word in group_name
+            for word in excluded_groups
+        ):
+            return False
+
+    # ======================================
+    # BÖLÜM / SEZON KAYITLARINI ELE
+    # ======================================
+
+    excluded_names = [
         "sezon",
         "season",
         "episode",
@@ -67,7 +98,10 @@ def is_movie(entry):
         "s03e",
     ]
 
-    if any(word in name for word in excluded):
+    if any(
+        word in name.casefold()
+        for word in excluded_names
+    ):
         return False
 
     return True
@@ -84,7 +118,9 @@ def main():
         response = requests.get(
             SOURCE_M3U_URL,
             timeout=40,
-            headers={"User-Agent": "Mozilla/5.0"}
+            headers={
+                "User-Agent": "Mozilla/5.0"
+            }
         )
 
         response.raise_for_status()
@@ -102,12 +138,15 @@ def main():
     # Bütün geçerli film kayıtlarını al
     new_entries = []
 
+    excluded_count = 0
+
     for entry in source_entries:
 
         if not get_stream(entry):
             continue
 
         if not is_movie(entry):
+            excluded_count += 1
             continue
 
         new_entries.append(entry)
@@ -200,6 +239,7 @@ def main():
     print("=" * 55)
     print("Kaynak film:", len(new_entries))
     print("Yeni eklenen:", len(added_entries))
+    print("Filtrelenen:", excluded_count)
     print("Mevcut kayıt:", len(old_entries))
     print("Ana dosya:", M3U_FILE)
     print("=" * 55)
