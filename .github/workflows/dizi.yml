@@ -52,9 +52,9 @@ jobs:
         continue-on-error: true
         run: python ulusal.py || echo "ulusal failed"
 
-      - name: 15 - CUDİZİ
+      - name: 15 - MAHSUN GRUP
         continue-on-error: true
-        run: python dizi.p || echo "cudizi failed"
+        run: python mhsn.py || echo "mahsun failed"
 
       - name: 16 - CMDİZİ
         continue-on-error: true
