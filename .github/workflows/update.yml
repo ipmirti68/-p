@@ -68,21 +68,7 @@ jobs:
         continue-on-error: true
         run: python patron.py || echo "patron failed"
 
-            # VOLEYBOL İŞLEMLERİ EN SONDA
-
-      - name: 8 - TVF VE KUZEYBORU
-        continue-on-error: true
-        run: python voleybol.py
-
-      # PYTHON KOD KONTROLÜ
-      - name: 9 - VOLEYBOL KOD KONTROLÜ
-        run: python -m py_compile voleybol_youtube.py
-
-      # YOUTUBE VOLEYBOL
-      - name: 10 - VOLEYBOL YOUTUBE
-        continue-on-error: true
-        run: python voleybol_youtube.py
-      
+          
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
         if: always()
