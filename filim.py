@@ -104,6 +104,14 @@ def is_movie(entry):
         "s01e",
         "s02e",
         "s03e",
+        "Adam Sandler",
+        "Clint Eastwood",
+        "Sylvester Stallone",
+        "Jackie Chan",
+        "Nicolas Cage",
+        "Steven Seagal",
+        "Jason Statham",
+          
     ]
 
     if any(
