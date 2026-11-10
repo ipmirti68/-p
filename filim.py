@@ -75,6 +75,14 @@ def is_movie(entry):
             "series",
             "tv series",
             "show dizileri",
+             "Adam Sandler",
+            "Clint Eastwood",
+            "Sylvester Stallone",
+            "Jackie Chan",
+            "Nicolas Cage",
+             "Steven Seagal",
+            "Jason Statham",
+          
         ]
 
         if any(
