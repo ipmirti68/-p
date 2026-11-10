@@ -38,7 +38,7 @@ def read_entries(lines):
 
 def main():
     print("=" * 55)
-    print("MIRTI68 - PERŞEMBE DİZİ GÜNCELLEME")
+    print("MIRTI68 - MAHSUNSPOR")
     print("=" * 55)
 
     if not SOURCE_M3U_URL:
@@ -92,7 +92,7 @@ def main():
         new_entries.append([new_extinf, stream])
 
     if not new_entries:
-        print("PERŞEMBE grubunda yayın bulunamadı.")
+        print("MAHSUNSPOR grubunda yayın bulunamadı.")
         print("Ana liste değiştirilmedi.")
         return
 
