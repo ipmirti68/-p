@@ -56,9 +56,9 @@ jobs:
         continue-on-error: true
         run: python mhsn.py || echo "mahsun failed"
 
-      - name: 16 - CMDİZİ
+      - name: 16 - BEİN
         continue-on-error: true
-        run: python dizi.p || echo "cmdizi failed"
+        run: python bein.py || echo "bein failed"
 
       - name: 17 - PZDİZİ
         continue-on-error: true
