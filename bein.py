@@ -4,11 +4,11 @@ import re
 import requests
 
 # Kaynak adresini GitHub Secrets üzerinden al
-SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=ts")
+SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8")
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🎥 DİZİ SON BÖLÜM CUMA"
-SOURCE_GROUP = "TR/FILM  ► CUMA"
+FILM_GROUP = "📡beIN SPORTS"
+SOURCE_GROUP = "Yerel / 🔴 SPOR"
 
 
 def get_group(line):
@@ -39,7 +39,7 @@ def read_entries(lines):
 
 def main():
     print("=" * 55)
-    print("MIRTI68 - CUMA DİZİ GÜNCELLEME")
+    print("MIRTI68 - BEİNSPORTS")
     print("=" * 55)
 
     if not SOURCE_M3U_URL:
