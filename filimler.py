@@ -11,7 +11,7 @@ FILM_GROUP = "🟪◆ 2026 FİLİMLER"
 # www.com.m3u icindeki hangi gruplari alacaksin?
 KAYNAKTAKİ_GRUP_ADLARI = [
     "TR/FILM ► 2026 Filmler",
-    "TR/FILM ► Yerli 2026",
+    "TR/FILM ► Yerli 2026"
 ]
 
 def main():
