@@ -3,11 +3,11 @@ import os
 import re
 import requests
 
-SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=ts")
+SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts")
 
 M3U_FILE = "mirti68.m3u"
 FILM_GROUP = "🎥 DİZİ SON BÖLÜM  PAZAR"
-SOURCE_GROUP = "TR/FILM  ► PAZAR"
+SOURCE_GROUP = "SONVIZYON FILMLER"
 
 
 def get_group(line):
