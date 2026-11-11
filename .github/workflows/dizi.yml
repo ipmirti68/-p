@@ -1,4 +1,3 @@
-
 name: Dizi Güncelle
 
 on:
@@ -15,7 +14,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v5
@@ -30,13 +29,13 @@ jobs:
         run: |
           pip install -U pip
           pip install -U yt-dlp requests beautifulsoup4 lxml playwright
-          playwright install --with-deps chromium
-          
+          playwright install chromium
+
       - name: 1 - IPTV ULUSAL
         continue-on-error: true
+        timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
 
-  
       - name: Dosyaları kaydet
         if: always()
         run: |
@@ -51,9 +50,9 @@ jobs:
           echo "MIRTI68 DOSYA KONTROL"
           echo "================================"
 
-          ls -lh *.m3u >/dev/null || true
+          ls -lh *.m3u || echo "HİÇ M3U ÜRETİLMEDİ!"
 
-          git add -f -- '*.m3u' 
+          git add -f -- '*.m3u'
 
           git status --short
 
@@ -65,15 +64,12 @@ jobs:
           git commit -m "MIRTI68 update $(date +'%d.%m %H:%M')"
 
           for i in 1 2 3 4 5; do
-
             echo "================================"
             echo "GITHUB GÖNDERİM DENEMESİ: $i"
             echo "================================"
 
             git fetch origin main
 
-            # Yerel olarak oluşturulan M3U/JSON değişikliklerini koru.
-            # Uzak depodaki çakışmayan değişiklikleri de birleştir.
             if ! git merge --no-edit -X ours origin/main; then
               echo "Birleştirme başarısız"
               git merge --abort || true
@@ -89,7 +85,6 @@ jobs:
 
             echo "Push başarısız, tekrar deneniyor..."
             sleep 5
-
           done
 
           echo "5 denemede gönderim başarısız!"
