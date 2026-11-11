@@ -50,15 +50,15 @@ jobs:
       - name: 5 - FİLİM 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python link.p || echo "link failed"
+        run: python link.py || echo "link failed"
       - name: 6 - 724 DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python 724.py || echo "724 failed"
+        run: python dizilet.py || echo "724 failed"
       - name: 7 -  DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python diziler.py || echo "dizi failed"
+        run: python dizi.py || echo "dizi failed"
       
       - name: Dosyaları kaydet
         if: always()
