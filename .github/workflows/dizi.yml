@@ -36,42 +36,7 @@ jobs:
         continue-on-error: true
         run: python iptv.py || echo "iptv failed"
 
-      - name: 10 - LİNK
-        continue-on-error: true
-        run: python link.p || echo "link failed"
-
-      - name: 11 - ATOM
-        continue-on-error: true
-        run: python atom.p || echo "atom failed"
-
-      - name: 12 - FİLİM
-        continue-on-error: true
-        run: python filim.p || echo "filim failed"
-
-      - name: 13 - GOLVAR
-        continue-on-error: true
-        run: python golvar.p || echo "golvar failed"
-
-      - name: 14 - ULUSAL 
-        continue-on-error: true
-        run: python ulusal.p || echo "ulusal failed"
-
-      - name: 15 - MAHSUN GRUP
-        continue-on-error: true
-        run: python mhsn.p || echo "mahsun failed"
-
-      - name: 16 - BEİN
-        continue-on-error: true
-        run: python bein.p || echo "bein failed"
-
-      - name: 17 - PZDİZİ
-        continue-on-error: true
-        run: python mahsun.p || echo "pzdizi failed"
-
-      - name: 18 - İPTV
-        continue-on-error: true
-        run: python iptv.p || echo "dizi failed"
-
+  
       - name: Dosyaları kaydet
         if: always()
         run: |
