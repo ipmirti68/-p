@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 import re, os
 
 OUTPUT_FILE = "mirti68.m3u"
-GROUP = "📺 ULUSAL"
+GROUP = "🟨◆  ULUSAL 📺"
 
 CHANNELS = {
     "KANAL D 🔴": {"page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
