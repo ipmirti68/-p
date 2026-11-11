@@ -48,40 +48,40 @@ BASE_PATTERN = "https://mahsunsports{}.xyz"
 # ============================================================
 
 channels = [
-    ("androstreamlivebiraz1", "beIN SPORTS 1 HD-Mahsun 🔴"),
-    ("androstreamlivebs1", "beIN SPORTS 1 HD-Mahsun 🔴"),
-    ("androstreamlivebs2", "beIN SPORTS 2 HD-Mahsun 🔴"),
-    ("androstreamlivebs3", "beIN SPORTS 3 HD-Mahsun 🔴"),
-    ("androstreamlivebs4", "beIN SPORTS 4 HD-Mahsun 🔴"),
-    ("androstreamlivebs5", "beIN SPORTS 5 HD-Mahsun 🔴"),
+    ("androstreamlivebiraz1", "beIN SPORTS 1 Mahsun 🔴"),
+    ("androstreamlivebs1", "beIN SPORTS 1 Mahsun 🔴"),
+    ("androstreamlivebs2", "beIN SPORTS 2 Mahsun 🔴"),
+    ("androstreamlivebs3", "beIN SPORTS 3 Mahsun 🔴"),
+    ("androstreamlivebs4", "beIN SPORTS 4 Mahsun 🔴"),
+    ("androstreamlivebs5", "beIN SPORTS 5 Mahsun 🔴"),
 
-    ("androstreamlivebsm1", "beIN SPORTS Max 1 HD-Mahsun 🔴"),
-    ("androstreamlivebsm2", "beIN SPORTS Max 2 HD-Mahsun 🔴"),
+    ("androstreamlivebsm1", "beIN SPORTS Max 1 Mahsun 🔴"),
+    ("androstreamlivebsm2", "beIN SPORTS Max 2 Mahsun 🔴"),
 
-    ("androstreamlivess1", "S SPORTS 1 HD-Mahsun 🔴"),
-    ("androstreamlivess2", "S SPORTS 2 HD-Mahsun 🔴"),
+    ("androstreamlivess1", "S SPORTS 1 Mahsun 🔴"),
+    ("androstreamlivess2", "S SPORTS 2 Mahsun 🔴"),
 
-    ("androstreamlivets", "Tivibu SPOR HD-Mahsun 🔴"),
-    ("androstreamlivets1", "Tivibu SPOR 1 HD-Mahsun 🔴"),
-    ("androstreamlivets2", "Tivibu Sport 2 HD-Mahsun 🔴"),
-    ("androstreamlivets3", "Tivibu Sport 3 HD-Mahsun 🔴"),
-    ("androstreamlivets4", "Tivibu Sport 4 HD-Mahsun 🔴"),
+    ("androstreamlivets", "Tivibu SPOR Mahsun 🔴"),
+    ("androstreamlivets1", "Tivibu SPOR 1 Mahsun 🔴"),
+    ("androstreamlivets2", "Tivibu Sport 2 Mahsun 🔴"),
+    ("androstreamlivets3", "Tivibu Sport 3 Mahsun 🔴"),
+    ("androstreamlivets4", "Tivibu Sport 4 Mahsun 🔴"),
 
-    ("androstreamlivesm1", "Smart Sport 1 HD-Mahsun 🔴"),
-    ("androstreamlivesm2", "Smart Sport 2 HD-Mahsun 🔴"),
+    ("androstreamlivesm1", "Smart Sport 1 Mahsun 🔴"),
+    ("androstreamlivesm2", "Smart Sport 2 Mahsun 🔴"),
 
-    ("androstreamlivees1", "Euro Sport 1 HD-Mahsun 🔴"),
-    ("androstreamlivees2", "Euro Sport 2 HD-Mahsun 🔴"),
+    ("androstreamlivees1", "Euro Sport 1 Mahsun 🔴"),
+    ("androstreamlivees2", "Euro Sport 2 Mahsun 🔴"),
 
-    ("androstreamlivetb", "Tabii HD-Mahsun 🔴"),
-    ("androstreamlivetb1", "Tabii 1 HD-Mahsun 🔴"),
-    ("androstreamlivetb2", "Tabii 2 HD-Mahsun 🔴"),
-    ("androstreamlivetb3", "Tabii 3 HD-Mahsun 🔴"),
-    ("androstreamlivetb4", "Tabii 4 HD-Mahsun 🔴"),
-    ("androstreamlivetb5", "Tabii 5 HD-Mahsun 🔴"),
-    ("androstreamlivetb6", "Tabii 6 HD-Mahsun 🔴"),
-    ("androstreamlivetb7", "Tabii 7 HD-Mahsun 🔴"),
-    ("androstreamlivetb8", "Tabii 8 HD-Mahsun 🔴"),
+    ("androstreamlivetb", "Tabii Mahsun 🔴"),
+    ("androstreamlivetb1", "Tabii 1 Mahsun 🔴"),
+    ("androstreamlivetb2", "Tabii 2 Mahsun 🔴"),
+    ("androstreamlivetb3", "Tabii 3 Mahsun 🔴"),
+    ("androstreamlivetb4", "Tabii 4 Mahsun 🔴"),
+    ("androstreamlivetb5", "Tabii 5 Mahsun 🔴"),
+    ("androstreamlivetb6", "Tabii 6 Mahsun 🔴"),
+    ("androstreamlivetb7", "Tabii 7 Mahsun 🔴"),
+    ("androstreamlivetb8", "Tabii 8 Mahsun 🔴"),
 
     ("androstreamliveexn", "beIN SPORTS * 🔴"),
     ("androstreamliveexn1", "beIN SPORTS # 🔴"),
@@ -91,7 +91,7 @@ channels = [
     ("androstreamliveexn5", "S SPORT + -Mahsun 🔴"),
     ("androstreamliveexn6", "S SPORT 2 -Mahsun 🔴"),
     ("androstreamliveexn7", "AZ TV-Mahsun 🔴"),
-    ("androstreamliveexn8", "TRT TÜRK HD-Mahsun 🔴"),
+    ("androstreamliveexn8", "TRT TÜRK HMahsun 🔴"),
 ]
 
 
