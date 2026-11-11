@@ -1,9 +1,10 @@
 import os
 import re
 import tempfile
+import requests
 
 # KENDİ YASAL LİSTENİ BURAYA YAZ
-INPUT_M3U = "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"   # örn: kendi arşivin
+INPUT_M3U = "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"
 OUTPUT_M3U = "mirti68.m3u"
 
 EXCLUDED = [
@@ -64,13 +65,37 @@ def is_movie(entry):
         return False
     return True
 
-def main():
-    if not os.path.exists(INPUT_M3U):
-        print(f"{INPUT_M3U} bulunamadı.")
-        return
+def download_m3u(url):
+    # Önce normal link, olmazsa yedek link
+    urls = [
+        url,
+        "https://cdn.jsdelivr.net/gh/GitLatte/patr0n@site/lists/power-sinema.m3u",
+    ]
+    headers = {"User-Agent": "Mozilla/5.0"}
+    for u in urls:
+        try:
+            r = requests.get(u, headers=headers, timeout=60)
+            print(f"Indirildi: {u} -> status: {r.status_code} len: {len(r.text)}")
+            if r.status_code == 200 and "#EXTM3U" in r.text[:500]:
+                return r.text
+        except Exception as e:
+            print(f"Indirme hatası {u}: {e}")
+    return None
 
-    with open(INPUT_M3U, "r", encoding="utf-8-sig") as f:
-        source_entries = read_entries(f.read().splitlines())
+def main():
+    # URL ise indir, yerel dosya ise dosyadan oku
+    if INPUT_M3U.startswith("http://") or INPUT_M3U.startswith("https://"):
+        text = download_m3u(INPUT_M3U)
+        if not text:
+            print(f"{INPUT_M3U} bulunamadı / indirilemedi.")
+            return
+        source_entries = read_entries(text.splitlines())
+    else:
+        if not os.path.exists(INPUT_M3U):
+            print(f"{INPUT_M3U} bulunamadı.")
+            return
+        with open(INPUT_M3U, "r", encoding="utf-8-sig") as f:
+            source_entries = read_entries(f.read().splitlines())
 
     old_entries = []
     if os.path.exists(OUTPUT_M3U):
