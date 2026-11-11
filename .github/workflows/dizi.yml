@@ -35,6 +35,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
+      - name: 2 - MAHSUN
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python mahsun.py || echo "mahsun failed"
+
 
       - name: Dosyaları kaydet
         if: always()
