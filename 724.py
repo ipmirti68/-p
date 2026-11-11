@@ -11,7 +11,16 @@ FILM_GROUP = "🟪◆  7/24 DİZİ 📺🔴"
 # www.com.m3u içindeki hangi grubu alacaksın?
 # Buraya o m3u'nun içindeki orijinal grup adını yaz
 # Örnek: "ABC" / "Filmler" / "Movies"
-KAYNAKTAKİ_GRUP_ADI = "Yerli 7/24"
+KAYNAKTAKİ_GRUP_ADLARI = [
+    "Yerli 7/24",
+    "TR/FILM ► CARSAMBA",
+    "TR/FILM ► CUMA",
+    "TR/FILM ► CUMARTESI",
+    "TR/FILM ► PAZAR",
+    "TR/FILM ► PAZARTESI",
+    "TR/FILM ► PERSEMBE",
+    "TR/FILM ► SALI",
+]
 
 def main():
     print("=" * 55)
@@ -31,7 +40,7 @@ def main():
 
         if line.startswith("#EXTINF:"):
             # Bu satır istenen gruptan mı?
-            if KAYNAKTAKİ_GRUP_ADI in line:
+            if grup in KAYNAKTAKİ_GRUP_ADLARI: in line:
                 # Grup adını grupfilim olarak değiştir
                 new_line = re.sub(
                     r'group-title="[^"]*"',
