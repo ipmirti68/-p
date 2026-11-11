@@ -51,7 +51,7 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python link.py || echo "link failed"
-      - name: 6 - 724 DİZİ 2026
+      - name: 6 - GÜNCEL DİZİLER 2026
         continue-on-error: true
         timeout-minutes: 10
         run: python diziler.py || echo "724 failed"
