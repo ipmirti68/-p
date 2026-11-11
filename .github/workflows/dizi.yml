@@ -39,6 +39,10 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python mahsun.py || echo "mahsun failed"
+      - name: 2 - GOLLER
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python lig.py || echo "lig failed"
 
 
       - name: Dosyaları kaydet
