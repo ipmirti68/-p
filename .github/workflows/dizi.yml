@@ -59,10 +59,14 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python dizi.py || echo "dizi failed"
-      - name: 5 - ULUSAL 
+      - name: 8 - ULUSAL 
         continue-on-error: true
         timeout-minutes: 10
         run: python ulusal.py || echo "ulusal failed"
+      - name: 9 - ULUSAL1
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python ulusal1.py || echo "ulusal2 failed"
       
       
       - name: Dosyaları kaydet
