@@ -40,29 +40,29 @@ jobs:
           yt-dlp --version
           deno --version
 
-      - name: 1 - ALLSPOR
+      - name: 1 - IPTV ULUSAL
+        continue-on-error: true
+        run: python iptv.py || echo "iptv failed"
+        
+      - name: 2 - ALLSPOR
         continue-on-error: true
         run: python allspor.p || echo "allspor failed"
 
-      - name: 2 - ATV
+      - name: 3 - ATV
         continue-on-error: true
         run: python atv1.y || echo "atv1 failed"
 
-      - name: 3 - LIG
+      - name: 4 - LIG
         continue-on-error: true
         run: python lig.py || echo "lig failed"
 
-      - name: 4 - SLCK
+      - name: 5 - SLCK
         continue-on-error: true
         run: python slck.p || echo "slck failed"
 
-      - name: 5 - MAHSUN
+      - name: 6 - MAHSUN
         continue-on-error: true
         run: python mahsun.p || echo "mahsun failed"
-
-      - name: 6 - IPTV ULUSAL
-        continue-on-error: true
-        run: python iptv.p || echo "iptv failed"
 
       - name: 7 - PATRON
         continue-on-error: true
