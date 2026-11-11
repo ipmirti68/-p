@@ -40,9 +40,7 @@ jobs:
           yt-dlp --version
           deno --version
 
-      - name: 1 - IPTV ULUSAL
-        continue-on-error: true
-        run: python iptv.py || echo "iptv failed"
+      
         
       - name: 2 - ALLSPOR
         continue-on-error: true
