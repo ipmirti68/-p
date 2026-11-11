@@ -54,7 +54,7 @@ jobs:
       - name: 6 - 724 DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python 724.py || echo "7/24 failed
+        run: python 724.py || echo "724 failed
 
 
 
