@@ -55,7 +55,7 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python diziler.py || echo "724 failed"
-      - name: 7 -  DİZİ 2026
+      - name: 7 -  7/24 DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
         run: python dizi.py || echo "dizi failed"
