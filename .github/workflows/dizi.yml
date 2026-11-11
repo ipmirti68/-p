@@ -54,7 +54,7 @@ jobs:
 
       - name: 14 - ULUSAL 
         continue-on-error: true
-        run: python ulusal.py || echo "ulusal failed"
+        run: python ulusal.p || echo "ulusal failed"
 
       - name: 15 - MAHSUN GRUP
         continue-on-error: true
