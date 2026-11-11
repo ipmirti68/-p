@@ -52,7 +52,7 @@ jobs:
 
       - name: 4 - LIG
         continue-on-error: true
-        run: python lig.py || echo "lig failed"
+        run: python lig.p || echo "lig failed"
 
       - name: 5 - SLCK
         continue-on-error: true
