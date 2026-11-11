@@ -6,7 +6,7 @@ import re
 SOURCE_M3U_URL = "http://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=ts"
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟪◆ GÜNCEL DİZİLER"
+FILM_GROUP = "🟪◆ GÜNCEL DİZİLER 🔴 "
 
 # www.com.m3u icindeki hangi gruplari alacaksin?
 KAYNAKTAKİ_GRUP_ADLARI = [
