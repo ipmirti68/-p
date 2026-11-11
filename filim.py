@@ -1,265 +1,122 @@
-
 import os
 import re
-import requests
 import tempfile
 
-# ==========================================
-# MIRTI68 - TÜM FİLMLERİ ANA LİSTEYE EKLE
-# SERİ / DİZİ GRUPLARI HARİÇ
-# ==========================================
+# KENDİ YASAL LİSTENİ BURAYA YAZ
+INPUT_M3U = "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"   # örn: kendi arşivin
+OUTPUT_M3U = "mirti68.m3u"
 
-SOURCE_M3U_URL = os.environ.get(
-    "SOURCE_M3U_URL",
-    "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"
-)
-
-M3U_FILE = "mirti68.m3u"
-
+EXCLUDED = [
+    "【entity-adam sandler¦canonical_name=adam sandler】",
+    "clint eastwood",
+    "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
+    "【entity-jackie chan¦canonical_name=jackie chan】",
+    "nicolas cage",
+    "【entity-steven seagal¦canonical_name=steven seagal】",
+    "【entity-jason statham¦canonical_name=jason statham】",
+    "seri",
+    "dizi",
+    "series",
+    "sezon",
+    "season",
+    "episode",
+    "bölüm",
+    "bolum",
+    "s01e",
+    "s02e",
+    "s03e",
+]
 
 def read_entries(lines):
     entries = []
     current = []
-
     for line in lines:
         line = line.strip()
-
         if line.startswith("#EXTINF:"):
             if current:
                 entries.append(current)
             current = [line]
-
         elif current and line:
             current.append(line)
-
     if current:
         entries.append(current)
-
     return entries
-
 
 def get_stream(entry):
     return next(
-        (
-            line.strip()
-            for line in entry[1:]
-            if line.startswith(("http://", "https://"))
-        ),
+        (line.strip() for line in entry[1:] if line.startswith(("http://", "https://"))),
         ""
     )
-
 
 def is_movie(entry):
     if not entry:
         return False
-
     extinf = entry[0]
     name = extinf.split(",", 1)[-1].strip()
 
-    # ======================================
-    # SERİ / DİZİ GRUPLARINI ELE
-    # ======================================
-
-    group_match = re.search(
-        r'group-title="([^"]*)"',
-        extinf,
-        re.IGNORECASE
-    )
-
+    group_match = re.search(r'group-title="([^"]*)"', extinf, re.IGNORECASE)
     if group_match:
         group_name = group_match.group(1).casefold()
-
-        excluded_groups = [
-            "seri",
-            "dizi",
-            "series",
-            "tv series",
-            "show dizileri",
-             "Adam Sandler",
-            "Clint Eastwood",
-            "Sylvester Stallone",
-            "Jackie Chan",
-            "Nicolas Cage",
-             "Steven Seagal",
-            "Jason Statham",
-          
-        ]
-
-        if any(
-            word in group_name
-            for word in excluded_groups
-        ):
+        if any(word in group_name for word in EXCLUDED):
             return False
 
-    # ======================================
-    # BÖLÜM / SEZON KAYITLARINI ELE
-    # ======================================
-
-    excluded_names = [
-        "sezon",
-        "season",
-        "episode",
-        "bölüm",
-        "bolum",
-        "s01e",
-        "s02e",
-        "s03e",
-        "Adam Sandler",
-        "Clint Eastwood",
-        "Sylvester Stallone",
-        "Jackie Chan",
-        "Nicolas Cage",
-        "Steven Seagal",
-        "Jason Statham",
-          
-    ]
-
-    if any(
-        word in name.casefold()
-        for word in excluded_names
-    ):
+    if any(word in name.casefold() for word in EXCLUDED):
         return False
-
     return True
 
-
 def main():
-
-    print("=" * 55)
-    print("MIRTI68 - TÜM FİLM LİSTESİ")
-    print("=" * 55)
-
-    # Kaynak listeyi indir
-    try:
-        response = requests.get(
-            SOURCE_M3U_URL,
-            timeout=40,
-            headers={
-                "User-Agent": "Mozilla/5.0"
-            }
-        )
-
-        response.raise_for_status()
-        response.encoding = "utf-8"
-
-    except requests.RequestException as e:
-        print("Kaynak okunamadı:", e)
-        print("Ana liste değiştirilmedi.")
+    if not os.path.exists(INPUT_M3U):
+        print(f"{INPUT_M3U} bulunamadı.")
         return
 
-    source_entries = read_entries(
-        response.text.splitlines()
-    )
+    with open(INPUT_M3U, "r", encoding="utf-8-sig") as f:
+        source_entries = read_entries(f.read().splitlines())
 
-    # Bütün geçerli film kayıtlarını al
-    new_entries = []
+    old_entries = []
+    if os.path.exists(OUTPUT_M3U):
+        with open(OUTPUT_M3U, "r", encoding="utf-8-sig") as f:
+            old_entries = read_entries(f.read().splitlines())
 
-    excluded_count = 0
+    seen_urls = {get_stream(e) for e in old_entries if get_stream(e)}
 
+    added = []
+    filtered = 0
     for entry in source_entries:
-
         if not get_stream(entry):
             continue
-
         if not is_movie(entry):
-            excluded_count += 1
+            filtered += 1
             continue
+        if get_stream(entry) not in seen_urls:
+            seen_urls.add(get_stream(entry))
+            added.append(entry)
 
-        new_entries.append(entry)
-
-    if not new_entries:
-        print("Kaynakta geçerli film bulunamadı.")
-        print("Ana liste değiştirilmedi.")
+    if not added:
+        print("Yeni film yok. Liste zaten güncel.")
         return
 
-    # Mevcut ana listeyi oku
-    old_lines = []
-
-    if os.path.exists(M3U_FILE):
-        with open(
-            M3U_FILE,
-            "r",
-            encoding="utf-8-sig"
-        ) as f:
-            old_lines = f.read().splitlines()
-
-    old_entries = read_entries(old_lines)
-
-    # Mevcut yayın URL'lerini koru
-    seen_urls = set()
-
-    for entry in old_entries:
-        url = get_stream(entry)
-
-        if url:
-            seen_urls.add(url)
-
-    # Sadece yeni URL'leri ekle
-    added_entries = []
-
-    for entry in new_entries:
-
-        url = get_stream(entry)
-
-        if url and url not in seen_urls:
-
-            seen_urls.add(url)
-            added_entries.append(entry)
-
-    if not added_entries:
-        print("Yeni film bulunamadı. Liste zaten güncel.")
-        return
-
-    # Mevcut listeyi aynen koru
     final_lines = []
+    for e in old_entries:
+        final_lines.extend(e)
+    for e in added:
+        final_lines.extend(e)
 
-    for entry in old_entries:
-        final_lines.extend(entry)
-
-    # Yeni filmleri kaynak gruplarıyla ekle
-    for entry in added_entries:
-        final_lines.extend(entry)
-
-    # Güvenli dosya yazımı
-    directory = os.path.dirname(
-        os.path.abspath(M3U_FILE)
-    )
-
-    fd, temp_path = tempfile.mkstemp(
-        prefix="mirti68_",
-        suffix=".m3u",
-        dir=directory
-    )
-
+    directory = os.path.dirname(os.path.abspath(OUTPUT_M3U))
+    fd, temp_path = tempfile.mkstemp(prefix="mirti68_", suffix=".m3u", dir=directory)
     try:
-        with os.fdopen(
-            fd,
-            "w",
-            encoding="utf-8"
-        ) as f:
-
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
-
             for line in final_lines:
                 f.write(line + "\n")
-
-        os.replace(temp_path, M3U_FILE)
-
+        os.replace(temp_path, OUTPUT_M3U)
     except Exception:
         if os.path.exists(temp_path):
             os.remove(temp_path)
         raise
 
-    print("=" * 55)
-    print("FİLM GÜNCELLEME TAMAMLANDI")
-    print("=" * 55)
-    print("Kaynak film:", len(new_entries))
-    print("Yeni eklenen:", len(added_entries))
-    print("Filtrelenen:", excluded_count)
-    print("Mevcut kayıt:", len(old_entries))
-    print("Ana dosya:", M3U_FILE)
-    print("=" * 55)
-
+    print(f"Yeni eklenen: {len(added)}")
+    print(f"Filtrelenen: {filtered}")
+    print(f"Toplam: {len(old_entries) + len(added)}")
 
 if __name__ == "__main__":
     main()
