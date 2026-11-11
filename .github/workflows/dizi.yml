@@ -46,7 +46,7 @@ jobs:
       - name: 4 - FİLİM
         continue-on-error: true
         timeout-minutes: 10
-        run: python filimler.py || echo "filim failed"
+        run: python gfilim.py || echo "gfilim failed"
       - name: 5 - ULUSAL 
         continue-on-error: true
         timeout-minutes: 10
