@@ -35,7 +35,7 @@ HEADERS = {
 }
 
 OUTPUT_FILENAME = "mirti68.m3u"
-BEIN_GROUP = "🟩◆  beIN SPORTS"
+BEIN_GROUP = "🟩◆  beIN SPORTS 🖥"
 SPORTS_GROUP = "🟩◆ SPORTS"
 LOGO = "https://i.imgur.com/OqdfQmw.png"
 
