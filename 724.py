@@ -40,7 +40,7 @@ def main():
 
         if line.startswith("#EXTINF:"):
             # Bu satır istenen gruptan mı?
-            if grup in KAYNAKTAKİ_GRUP_ADLARI: in line:
+            if grup in KAYNAKTAKİ_GRUP_ADLARI:
                 # Grup adını grupfilim olarak değiştir
                 new_line = re.sub(
                     r'group-title="[^"]*"',
