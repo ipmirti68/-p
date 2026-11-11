@@ -31,6 +31,10 @@ jobs:
           pip install -U pip
           pip install -U yt-dlp requests beautifulsoup4 lxml playwright
           playwright install --with-deps chromium
+          
+      - name: 1 - IPTV ULUSAL
+        continue-on-error: true
+        run: python iptv.py || echo "iptv failed"
 
       - name: 10 - LİNK
         continue-on-error: true
