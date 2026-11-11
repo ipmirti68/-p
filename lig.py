@@ -59,7 +59,7 @@ def fetch_and_parse(url_info):
                     tarih_str = str(raw_date)[:10]
             if video_url:
                 title = f"{tarih_str} - {home} {hs}-{aws} {away}" if tarih_str else f"{home} {hs}-{aws} {away}"
-                line1 = f'#EXTINF:-1 tvg-id="{mid}" tvg-logo="{logo}" group-title="⚽ GOLLER 🔴",{title}\n'
+                line1 = f'#EXTINF:-1 tvg-id="{mid}" tvg-logo="{logo}" group-title="🟩◆ GOLLER 🔴",{title}\n'
                 line2 = f"{video_url.strip()}\n"
                 # dt_obj ile birlikte döndür ki sıralayabilelim
                 result.append((dt_obj, line1, line2))
