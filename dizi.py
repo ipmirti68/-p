@@ -32,6 +32,10 @@ def main():
         line = source_lines[i].strip()
 
         if line.startswith("#EXTINF:"):
+            # Önce bu satırın grubunu bul - BU EKSİKTİ
+            m = re.search(r'group-title="([^"]*)"', line)
+            grup = m.group(1) if m else ""
+
             # Bu satır istenen gruptan mı?
             if grup in KAYNAKTAKİ_GRUP_ADLARI:
                 # Grup adını grupfilim olarak değiştir
