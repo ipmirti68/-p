@@ -37,31 +37,35 @@ def main():
     while i < len(source_lines):
         line = source_lines[i].strip()
 
-        if line.startswith("#EXTINF:"):
-            # Bu satır istenen gruptan mı?
-            if grup in KAYNAKTAKİ_GRUP_ADLARI:
-                # Grup adını grupfilim olarak değiştir
-                new_line = re.sub(
-                    r'group-title="[^"]*"',
-                    f'group-title="{FILM_GROUP}"',
-                    line
-                )
-                # group-title yoksa ekle
-                if 'group-title=' not in new_line:
-                    new_line = new_line.replace(
-                        '#EXTINF:-1',
-                        f'#EXTINF:-1 group-title="{FILM_GROUP}"'
-                    )
-                # Bir sonraki satır yayın adresi
-                if i + 1 < len(source_lines):
-                    stream = source_lines[i + 1].strip()
-                    if stream and not stream.startswith("#"):
-                        new_entries.append(new_line)
-                        new_entries.append(stream)
-                        print(f"EKLENDİ: {new_line.split(',')[-1]}")
-                i += 2
-                continue
-        i += 1
+if line.startswith("#EXTINF:"):
+    # Önce bu satırın grubunu bul
+    m = re.search(r'group-title="([^"]*)"', line)
+    grup = m.group(1) if m else ""
+
+    # Bu satır istenen gruptan mı?
+    if grup in KAYNAKTAKİ_GRUP_ADLARI:
+        # Grup adını grupfilim olarak değiştir
+        new_line = re.sub(
+            r'group-title="[^"]*"',
+            f'group-title="{FILM_GROUP}"',
+            line
+        )
+        # group-title yoksa ekle
+        if 'group-title=' not in new_line:
+            new_line = new_line.replace(
+                '#EXTINF:-1',
+                f'#EXTINF:-1 group-title="{FILM_GROUP}"'
+            )
+        # Bir sonraki satır yayın adresi
+        if i + 1 < len(source_lines):
+            stream = source_lines[i + 1].strip()
+            if stream and not stream.startswith("#"):
+                new_entries.append(new_line)
+                new_entries.append(stream)
+                print(f"EKLENDİ: {new_line.split(',')[-1]}")
+        i += 2
+        continue
+i += 1
 
     if not new_entries:
         print("\nKaynakta o grup bulunamadı.")
