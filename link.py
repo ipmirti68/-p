@@ -11,7 +11,7 @@ FILM_GROUP = "🟪◆  YERLİ FiLiM 📺"
 # www.com.m3u içindeki hangi grubu alacaksın?
 # Buraya o m3u'nun içindeki orijinal grup adını yaz
 # Örnek: "ABC" / "Filmler" / "Movies"
-KAYNAKTAKİ_GRUP_ADI = " TR/FILM ► 2026 Filmler"
+KAYNAKTAKİ_GRUP_ADI = " TR/FILM ► Yerli 2026"
 
 def main():
     print("=" * 55)
