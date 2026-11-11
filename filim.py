@@ -8,13 +8,13 @@ INPUT_M3U = "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/l
 OUTPUT_M3U = "mirti68.m3u"
 
 EXCLUDED = [
-    "【entity-adam sandler¦canonical_name=adam sandler】",
+    "【entity-adam sandler¦canonical_name=Adam Sandler】",
     "clint eastwood",
     "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
     "【entity-jackie chan¦canonical_name=jackie chan】",
     "nicolas cage",
     "【entity-steven seagal¦canonical_name=steven seagal】",
-    "【entity-jason statham¦canonical_name=jason statham】",
+    "【entity-jason statham¦canonical_name=Jason Statham】",
     "seri",
     "dizi",
     "series",
@@ -66,7 +66,6 @@ def is_movie(entry):
     return True
 
 def download_m3u(url):
-    # Önce normal link, olmazsa yedek link
     urls = [
         url,
         "https://cdn.jsdelivr.net/gh/GitLatte/patr0n@site/lists/power-sinema.m3u",
@@ -79,20 +78,19 @@ def download_m3u(url):
             if r.status_code == 200 and "#EXTM3U" in r.text[:500]:
                 return r.text
         except Exception as e:
-            print(f"Indirme hatası {u}: {e}")
+            print(f"Indirme hatasi {u}: {e}")
     return None
 
 def main():
-    # URL ise indir, yerel dosya ise dosyadan oku
     if INPUT_M3U.startswith("http://") or INPUT_M3U.startswith("https://"):
         text = download_m3u(INPUT_M3U)
         if not text:
-            print(f"{INPUT_M3U} bulunamadı / indirilemedi.")
+            print(f"{INPUT_M3U} bulunamadi / indirilemedi.")
             return
         source_entries = read_entries(text.splitlines())
     else:
         if not os.path.exists(INPUT_M3U):
-            print(f"{INPUT_M3U} bulunamadı.")
+            print(f"{INPUT_M3U} bulunamadi.")
             return
         with open(INPUT_M3U, "r", encoding="utf-8-sig") as f:
             source_entries = read_entries(f.read().splitlines())
@@ -101,6 +99,9 @@ def main():
     if os.path.exists(OUTPUT_M3U):
         with open(OUTPUT_M3U, "r", encoding="utf-8-sig") as f:
             old_entries = read_entries(f.read().splitlines())
+
+    # ESKI DOSYAYI DA FILTRELE - yoksa eskiler hic silinmez
+    old_entries = [e for e in old_entries if is_movie(e)]
 
     seen_urls = {get_stream(e) for e in old_entries if get_stream(e)}
 
@@ -116,8 +117,29 @@ def main():
             seen_urls.add(get_stream(entry))
             added.append(entry)
 
+    if not added and old_entries:
+        print("Yeni film yok. Liste zaten guncel ve temizlendi.")
+        # Eski dosyadaki copu temizlemek icin yine de yaz
+        final_lines = []
+        for e in old_entries:
+            final_lines.extend(e)
+        directory = os.path.dirname(os.path.abspath(OUTPUT_M3U))
+        fd, temp_path = tempfile.mkstemp(prefix="mirti68_", suffix=".m3u", dir=directory)
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                f.write("#EXTM3U\n")
+                for line in final_lines:
+                    f.write(line + "\n")
+            os.replace(temp_path, OUTPUT_M3U)
+        except Exception:
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
+            raise
+        print(f"Temizlenen toplam: {len(old_entries)}")
+        return
+
     if not added:
-        print("Yeni film yok. Liste zaten güncel.")
+        print("Yeni film yok. Liste zaten guncel.")
         return
 
     final_lines = []
