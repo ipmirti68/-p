@@ -58,15 +58,15 @@ jobs:
 
       - name: 5 - MAHSUN
         continue-on-error: true
-        run: python mahsun.py || echo "mahsun failed"
+        run: python mahsun.p || echo "mahsun failed"
 
       - name: 6 - IPTV ULUSAL
         continue-on-error: true
-        run: python iptv.py || echo "iptv failed"
+        run: python iptv.p || echo "iptv failed"
 
       - name: 7 - PATRON
         continue-on-error: true
-        run: python patron.py || echo "patron failed"
+        run: python patron.p || echo "patron failed"
 
           
       # DOSYALARI KAYDET
