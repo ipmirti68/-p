@@ -51,6 +51,10 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python link.py || echo "link failed"
+      - name: 6 - 724 DİZİ 2026
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python 724.py || echo "7/24 failed
 
 
 
