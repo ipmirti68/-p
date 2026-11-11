@@ -1798,18 +1798,6 @@ https://kamerayayin.ibb.istanbul/turistikcam/sultanahmet2.stream/chunklist_w2138
 https://kamerayayin.ibb.istanbul/turistikcam/taksim.stream/chunklist_w438961806.m3u8
 #EXTINF:-1 tvg-name="ULUS PARKI" tvg-logo="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784f98cee7cd-7268.jpg" tvg-country="TR" group-title="🟥🔹 CANLI KAMERA 📹",ULUS PARKI
 https://kamerayayin.ibb.istanbul/turistikcam/ulusparki.stream/chunklist_w103152354.m3u8
-#EXTINF:-1 tvg-id="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784fbad00bda-5917.jpg" tvg-name="ÜSKÜDAR" tvg-logo="https://www.canlimobese.com/wp-content/uploads/2021/11/guzelyurt-akyamac-mobese.jpg.webp" tvg-country="TR" group-title="🟥🔹 CANLI KAMERA 📹" http-user-agent="88.247.47.226" http-referrer="88.247.47.226" referrer="88.247.47.226",AKYAMAÇ
-#EXTVLCOPT:http-user-agent=88.247.47.226
-#EXTVLCOPT:http-referrer=88.247.47.226
-https://fn.rtsp.me/EcI3lKS7tTJafW5RwyiW_w/1790955831/hls/2s4tndDi.m3u8
-#EXTINF:-1 tvg-id="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784fbad00bda-5917.jpg" tvg-name="ÜSKÜDAR" tvg-logo="https://www.canlimobese.com/wp-content/uploads/2016/11/guzel-yurt-mobese-izle-canli-kamera.jpg.webp" tvg-country="TR" group-title="🟥🔹 CANLI KAMERA 📹" http-user-agent="88.247.47.226" http-referrer="88.247.47.226" referrer="88.247.47.226",GÜZELYURT
-#EXTVLCOPT:http-user-agent=88.247.47.226
-#EXTVLCOPT:http-referrer=88.247.47.226
-https://fn.rtsp.me/40bj6q7hTW8M6H9exTrG6Q/1790956267/hls/TE35FzBS.m3u8?ip=88.247.47.226
-#EXTINF:-1 tvg-id="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784fbad00bda-5917.jpg" tvg-name="ÜSKÜDAR" tvg-logo="https://www.beysehir.bel.tr/kameragorseller/1643183647544106916.jpeg" tvg-country="TR" group-title="🟥🔹 CANLI KAMERA 📹" http-user-agent="88.247.47.226" http-referrer="88.247.47.226" referrer="88.247.47.226",BEYŞEHİR
-#EXTVLCOPT:http-user-agent=88.247.47.226
-#EXTVLCOPT:http-referrer=88.247.47.226
-https://cdn-101.galata.ai/4eab089e350c40848fabdb555ce982d0/tracks-v1/mono.m3u8?token=VXE1d2JQa1A0R2pHL2k2YXo0NkRIMFQvVmJrNlFvbDhzME9iakZNUzdFaEpsK1RqZVhlV0tINFQrblhLc2ZBeWppdk9EMmF0NVdZRnN2NGxzMTA3SGc9PQ%3D%3D
 #EXTINF:-1 tvg-id="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784fbad00bda-5917.jpg" tvg-name="ÜSKÜDAR" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQte2Azz2uGAFF8KeQg0NgkhoWhMNP7tE-cRcyoilpnBA&s=10" tvg-country="TR" group-title="🟥🔹 CANLI KAMERA 📹" http-user-agent="88.247.47.226" http-referrer="88.247.47.226" referrer="88.247.47.226",NEVŞEHİR
 #EXTVLCOPT:http-user-agent=88.247.47.226
 #EXTVLCOPT:http-referrer=88.247.47.226
