@@ -47,6 +47,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python filim.py || echo "filim failed"
+       - name: 5 - FİLİM 2026
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python link.py || echo "link failed"
+
 
 
       - name: Dosyaları kaydet
