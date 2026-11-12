@@ -43,9 +43,9 @@ jobs:
         continue-on-error: true
         run: python golvar.py || echo "golvar failed"
               
-      - name: 2 - ALLSPOR
+      - name: 2 - ATOM
         continue-on-error: true
-        run: python allspor.p || echo "allspor failed"
+        run: python atom.py || echo "atomspor failed"
 
       - name: 3 - ATV
         continue-on-error: true
