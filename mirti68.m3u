@@ -1,7 +1,4 @@
 #EXTM3U
-#EXTM3U x-tvg-url="https://raw.githubusercontent.com/ipmirti68/epg/main/epg.xml"
-#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
-#EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
 #EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL 📺",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="atv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04n55YCvUX9Dgc8zHyEIQdd7ZUdbvNL5m6HjT-sbC4g&s=10" group-title="🟨◆  ULUSAL 📺" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV
@@ -314,10 +311,6 @@ https://mirti68.alwaysdata.net/yt/stream.php?c=maxipipe
 https://mirti-spor-2026.fly.dev/cam0/index.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1 Mırtıspor (copy)
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
-#EXTINF:-1 tvg-id="beinsports1" tvg-name="beIN Sports 1" tvg-logo="https://bit.ly/3f86zet" group-title="🟩◆  beIN SPORTS 🖥" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)",beIN SPORTS 1
-#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
-#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"}
-http://92.5.166.217/beinsportskutu1
 #EXTINF:-1 tvg-id="raw:webvarsports" tvg-name="Web VARSPORTS" tvg-logo="https://i.hizliresim.com/3apwt19.jpeg" group-title="🟩◆  beIN SPORTS 🖥" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)",beIN SPORTS 1
 #EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
 #EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"}
@@ -367,8 +360,6 @@ https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukbeinsports4/playlist.m3u
 #EXTINF:-1 tvg-name="beinsports 4" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥" http-referrer="https://mahsunsports80.xyz/" referrer="https://mahsunsports80.xyz/",beIN SPORTS 4 Mahsun
 #EXTVLCOPT:http-referrer=https://mahsunsports80.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamlivebs4.m3u8
-#EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 5 Zeus
-https://zeus645423.cfd/b4/index.txt
 #EXTINF:-1 tvg-id="bein-sports-5724" tvg-name="bein sports 5.tr" tvg-logo="https://i.ibb.co/mrrwmxDX/p-Lhc-Pi-Bn-400x400.jpg" group-title="🟩◆  beIN SPORTS 🖥" http-user-agent="Mozilla/5.0" http-referrer="https://www.selcuksportshd1846.xyz/" referrer="https://www.selcuksportshd1846.xyz/",beIN SPORTS 5 Selçuk
 #EXTVLCOPT:http-referrer=https://www.selcuksportshd1846.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
@@ -382,6 +373,20 @@ https://andro.evrenesoglu141.click/checklist/androstreamlivebsm1.m3u8
 #EXTINF:-1 tvg-name="beIN.SPORTS.MAX.2.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 2 HD
 #EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamlivebsm2.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥", beIN Sports 1
+https://css.d6e3eds5e065t5.help//b1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 2 -Atom 🔴
+https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 3 -Atom 🔴
+https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 4 -Atom 🔴
+https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 5 -Atom 🔴
+https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports Max 1 -Atom 🔴
+https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports Max 2 -Atom 🔴
+https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS 🔴",beIN SPORTS 1 Mırtıspor (copy)
 https://mirti-spor-2026.fly.dev/cam0/index.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
@@ -435,11 +440,11 @@ http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/223135
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 1.tr" tvg-name="beIN SPORTS MAX 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS MAX 1
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/79
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 1.tr" tvg-name="beIN SPORTS MAX 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS MAX 1
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/80
+https://79.76.50.223/live/ViP/GaraveliForum/34791.ts
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 2.tr" tvg-name="beIN SPORTS MAX 2.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS MAX 2
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/77
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 2.tr" tvg-name="beIN SPORTS MAX 2.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS MAX 2
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/78
+https://79.76.50.223/live/ViP/GaraveliForum/34792.ts
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS 1  3840x2160
 http://ekmek82.shop/live/adnan678/uBjabktvQP/1505748.m3u
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS 1 1920x1080
@@ -658,6 +663,16 @@ http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=929030&extensio
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=933108&extension=ts
 #EXTINF:-1  tvg-name="ZONE SPORT 5 FHD" group-title="🟩◆  beIN SPORTS 📡",ZONE SPORT 5 FHD
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=929029&extension=ts
+#EXTINF:-1 tvg-id="beIN SPORTS 1.tr" tvg-logo="https://79.76.50.223/HD1.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD1 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34772.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 2.tr" tvg-logo="https://79.76.50.223/HD2.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD2 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34780.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 3.tr" tvg-logo="https://79.76.50.223/HD3.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD3 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34784.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 4.tr" tvg-logo="https://79.76.50.223/HD4.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD4 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34787.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 5.tr" tvg-logo="https://79.76.50.223/HD5.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD5 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34788.ts
 #EXTINF:-1 tvg-name="ssport" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="🟩◆  S SPORTS ⚽",SSPORT
 https://zeus324232.cfd/s1/index.txt
 #EXTINF:-1 tvg-name="ssport 2" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="🟩◆  S SPORTS ⚽",SSPORT 2
@@ -1635,4 +1650,4 @@ https://kamerayayin.ibb.istanbul/turistikcam/ulusparki.stream/chunklist_w1031523
 #EXTINF:-1 tvg-id="https://istanbuluseyret.ibb.istanbul/images/cameras/fullxfull/6784fbad00bda-5917.jpg" tvg-name="ÜSKÜDAR" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQte2Azz2uGAFF8KeQg0NgkhoWhMNP7tE-cRcyoilpnBA&s=10" tvg-country="TR" group-title="🟥🔹 CANLI KAMERA 📹" http-user-agent="88.247.47.226" http-referrer="88.247.47.226" referrer="88.247.47.226",NEVŞEHİR
 #EXTVLCOPT:http-user-agent=88.247.47.226
 #EXTVLCOPT:http-referrer=88.247.47.226
-https://belsis.nevsehir.bel.tr/hls/live/X8o7aXINdylwjstgvjyPjSJn/index.m3u8
+https://79.76.50.223/live/ViP/GaraveliForum/34790.ts
