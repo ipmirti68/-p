@@ -47,9 +47,9 @@ jobs:
         continue-on-error: true
         run: python atom.py || echo "atomspor failed"
 
-      - name: 3 - ATV
+      - name: 3 - FALCON BEİN
         continue-on-error: true
-        run: python atv1.y || echo "atv1 failed"
+        run: python bein.py || echo "dein failed"
 
       - name: 4 - LIG
         continue-on-error: true
