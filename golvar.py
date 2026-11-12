@@ -15,7 +15,7 @@ SOURCE_M3U_URL = os.environ.get(
 
 M3U_FILE = "mirti68.m3u"
 
-FILM_GROUP = "🖥beINSPORTS"
+FILM_GROUP = "🟩◆  beIN SPORTS 🖥"
 
 
 # ==========================================
