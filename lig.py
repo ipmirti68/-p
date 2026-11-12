@@ -10,6 +10,27 @@ HEADERS = {
     'Origin': 'https://www.beinsports.com.tr'
 }
 
+FILM_GROUP = "🟩◆ GOLLER 🔴"
+
+def get_group(line):
+    match = re.search(r'group-title="([^"]*)"', line)
+    return match.group(1).strip() if match else ""
+
+def read_entries(lines):
+    entries = []
+    current = []
+    for line in lines:
+        line = line.strip()
+        if line.startswith("#EXTINF:"):
+            if current:
+                entries.append(current)
+            current = [line]
+        elif current and line:
+            current.append(line)
+    if current:
+        entries.append(current)
+    return entries
+
 def get_birinci_lig_urls_dynamically():
     # ... senin fonksiyonun aynı kalsın ...
     page_url = "https://www.beinsports.com.tr/mac-ozetleri-goller/tff-1-lig"
@@ -61,7 +82,6 @@ def fetch_and_parse(url_info):
                 title = f"{tarih_str} - {home} {hs}-{aws} {away}" if tarih_str else f"{home} {hs}-{aws} {away}"
                 line1 = f'#EXTINF:-1 tvg-id="{mid}" tvg-logo="{logo}" group-title="🟩◆ GOLLER 🔴",{title}\n'
                 line2 = f"{video_url.strip()}\n"
-                # dt_obj ile birlikte döndür ki sıralayabilelim
                 result.append((dt_obj, line1, line2))
         return result
     except Exception as e:
@@ -69,16 +89,22 @@ def fetch_and_parse(url_info):
 
 def main():
     dosya = "mirti68.m3u"
-    mevcut_linkler = set()
+
+    # === REVİZE: Dosyayı oku, gruplara ayır ===
+    old_entries = []
     if os.path.exists(dosya):
         with open(dosya, "r", encoding="utf-8", errors="ignore") as f:
-            for line in f:
-                line=line.strip()
-                if line and not line.startswith("#") and line.startswith("http"):
-                    mevcut_linkler.add(line)
+            old_entries = read_entries(f.read().splitlines())
     else:
         with open(dosya, "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
+
+    # Mevcut linkler - tekrar eklememek için
+    mevcut_linkler = set()
+    for entry in old_entries:
+        for line in entry[1:]:
+            if line.startswith("http"):
+                mevcut_linkler.add(line.strip())
 
     all_urls=[]
     for sid in super_lig_sezonlar.keys():
@@ -97,13 +123,38 @@ def main():
     # EN YENİ TARİH EN ÜSTE - sıralama burada
     yeni_videolar.sort(key=lambda x: x[0], reverse=True)
 
-    if yeni_videolar:
-        with open(dosya, "a", encoding="utf-8") as f:
-            for dt_obj, l1, l2 in yeni_videolar:
-                f.write(l1)
-                f.write(l2)
-        print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi (en yeni en üstte) -> {dosya}")
-    else:
+    if not yeni_videolar:
         print("Yeni gol yok")
+        return
+
+    # Yeni videoları entry formatına çevir: [line1, line2]
+    yeni_entries = [[l1.strip(), l2.strip()] for dt_obj, l1, l2 in yeni_videolar]
+
+    # === REVİZE: Mevcut GOLLER grubunun içine ekle, en sona gitmesin ===
+    final_entries = []
+    inserted = False
+
+    for entry in old_entries:
+        if get_group(entry[0]) == FILM_GROUP:
+            # Grubun ilk kanalını bulduk, yeni golleri tam buraya ekle
+            if not inserted:
+                final_entries.extend(yeni_entries)
+                inserted = True
+            # Eski golü de koru, altına ekle - silmek istersen bu satırı sil
+            final_entries.append(entry)
+            continue
+        final_entries.append(entry)
+
+    # Listede hiç GOLLER grubu yoksa, en başa ekle
+    if not inserted:
+        final_entries = yeni_entries + final_entries
+
+    with open(dosya, "w", encoding="utf-8") as f:
+        f.write("#EXTM3U\n")
+        for entry in final_entries:
+            for line in entry:
+                f.write(line + "\n")
+
+    print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi (grubun içine, en yeni en üstte) -> {dosya}")
 
 if __name__=="__main__": main()
