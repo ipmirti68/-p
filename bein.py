@@ -2,7 +2,7 @@ import os
 import re
 import requests
 
-# Kaynak adresini 【entity-GitHub¦canonical_name=GitHub】 Secrets üzerinden al
+# Kaynak adresini GitHub Secrets üzerinden al
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8")
 
 M3U_FILE = "mirti68.m3u"
@@ -17,6 +17,12 @@ def get_channel_name(line):
     if "," in line:
         return line.split(",", 1)[1].strip()
     return ""
+
+def get_stream(entry):
+    return next(
+        (x.strip() for x in entry[1:] if x.strip().startswith(("http://", "https://"))),
+        ""
+    )
 
 def read_entries(lines):
     entries = []
@@ -41,9 +47,9 @@ def read_entries(lines):
 # --- -Atom 🔴 İŞLEMLERİ ---
 def make_channel_key(extinf):
     name = get_channel_name(extinf).lower()
-    # Karşılaştırırken -A 🔴'yi yok say, yoksa her seferinde yeni sanır
+    # Karşılaştırırken -Atom 🔴'yi yok say, yoksa her seferinde yeni sanır
     name = name.replace("🔴", "")
-    name = re.sub(r'\s*-?\s*a\s*$', '', name)
+    name = re.sub(r'\s*-?\s*atom\s*$', '', name)
     name = re.sub(r'\s+', ' ', name)
     return name.strip()
 
@@ -57,15 +63,15 @@ def add_atom_suffix(extinf):
     display = display.strip()
     if display.endswith("🔴"):
         return extinf
-    return f"{head},{display} -A 🔴"
+    return f"{head},{display} -Atom 🔴"
 
 def main():
     print("=" * 55)
-    print("MIRTI68 - BEİNSPORTS")
+    print("MIRTI68 - 【entity-BEİNSPORTS¦canonical_name=beIN】")
     print("=" * 55)
 
     if not SOURCE_M3U_URL:
-        print("HATA: SOURCE_M3U_URL 🟩◆  beIN SPORTS 📡 Secret tanımlanmamış.")
+        print("HATA: SOURCE_M3U_URL GitHub Secret tanımlanmamış.")
         return
 
     try:
@@ -130,69 +136,87 @@ def main():
 
     old_entries = read_entries(old_lines)
 
-    preserved = [
-        entry for entry in old_entries
-        if get_group(entry[0]) != FILM_GROUP
-    ]
+    # === MEVCUT LİSTEYİ KORU, SİLME ===
+    # old_entries olduğu gibi kalacak, sadece üzerine ilave yapacağız
+    final_entries = [list(e) for e in old_entries]
 
-    # Eski beIN grubunu al - yeniyi anlamak için lazım
-    old_bein_group = [
-        entry for entry in old_entries
-        if get_group(entry[0]) == FILM_GROUP
-    ]
+    # Eski beIN kanallarını tanı
+    url_to_index = {}
+    name_to_index = {}
 
-    # Eski kanalları URL ve isim ile tanı
-    old_urls = set()
-    old_names = set()
-    old_atom_names = set()
-
-    for entry in old_bein_group:
-        url = next((x for x in entry[1:] if x.startswith(("http://", "https://"))), "")
+    for idx, entry in enumerate(final_entries):
+        if get_group(entry[0]) != FILM_GROUP:
+            continue
+        url = get_stream(entry)
         if url:
-            old_urls.add(url)
+            url_to_index[url] = idx
         key = make_channel_key(entry[0])
         if key:
-            old_names.add(key)
-            if has_atom_suffix(entry[0]):
-                old_atom_names.add(key)
+            name_to_index[key] = idx
 
-    # Diğer grupların yayın adreslerini koruyarak
-    # yeni kayıtların kendi içinde tekrarlanmasını önle.
-    seen_urls = set()
-    unique_entries = []
+    added = []
+    updated = 0
 
     for entry in new_entries:
-        url = entry[1]
+        url = entry[1].strip()
+        key = make_channel_key(entry[0])
 
-        if url not in seen_urls:
-            seen_urls.add(url)
+        # 1. Aynı link zaten var -> hiç dokunma
+        if url in url_to_index:
+            continue
 
-            # YENİ Mİ?
-            key = make_channel_key(entry[0])
-            is_new = url not in old_urls and key not in old_names
+        # 2. Aynı isim var ama link değişmiş -> eski kanalın linkini güncelle, isim aynen kalsın
+        if key in name_to_index:
+            idx = name_to_index[key]
+            old_entry = final_entries[idx]
+            # Link satırını bulup değiştir
+            for j in range(1, len(old_entry)):
+                if old_entry[j].strip().startswith(("http://", "https://")):
+                    old_entry[j] = url
+                    break
+            else:
+                old_entry.append(url)
+            # URL haritasını güncelle
+            url_to_index[url] = idx
+            updated += 1
+            continue
 
-            new_extinf = entry[0]
+        # 3. Gerçekten yeni -> -Atom 🔴 ile ilave listesine ekle
+        new_extinf = add_atom_suffix(entry[0])
+        new_entry = [new_extinf, url]
+        added.append(new_entry)
+        # Bir daha aynı ismi yeni sanmasın diye haritaya ekle
+        name_to_index[key] = -1
+        url_to_index[url] = -1
 
-            if is_new:
-                # Yeni kanal -> -A 🔴 ekle
-                new_extinf = add_atom_suffix(new_extinf)
-            elif key in old_atom_names:
-                # Eskiden yeni diye işaretlenmişse koru
-                new_extinf = add_atom_suffix(new_extinf)
+    # Yeni kanalları beIN grubunun sonuna ekle
+    if added:
+        # beIN grubunun sonuncu olduğu yeri bul
+        insert_at = None
+        for idx in range(len(final_entries) - 1, -1, -1):
+            if get_group(final_entries[idx][0]) == FILM_GROUP:
+                insert_at = idx + 1
+                break
 
-            unique_entries.append([new_extinf, url])
+        if insert_at is None:
+            # Grup hiç yoksa en sona ekle
+            final_entries.extend(added)
+        else:
+            for k, new_entry in enumerate(added):
+                final_entries.insert(insert_at + k, new_entry)
 
-    # Ana listeyi yeniden oluştur
+    # Ana listeyi yeniden oluştur - eskiler silinmedi, yeniler ilave edildi
     with open(M3U_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
 
-        for entry in preserved + unique_entries:
+        for entry in final_entries:
             for line in entry:
                 f.write(line + "\n")
 
     print("GÜNCELLEME TAMAMLANDI")
-    print("Yeni kayıt:", len(unique_entries))
-    print("Korunan eski kayıt:", len(preserved))
+    print("İlave edilen yeni kanal:", len(added))
+    print("Linki güncellenen kanal:", updated)
+    print("Toplam kayıt:", len(final_entries))
     print("Ana dosya:", M3U_FILE)
 
 if __name__ == "__main__":
