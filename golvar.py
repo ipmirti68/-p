@@ -14,7 +14,7 @@ SOURCE_M3U_URL = os.environ.get(
 
 M3U_FILE = "mirti68.m3u"
 
-FILM_GROUP = "🟩◆  【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 🖥"
+FILM_GROUP = "🟩◆  beIN SPORTS 🖥"
 
 # ==========================================
 # M3U YARDIMCI FONKSİYONLARI
@@ -76,17 +76,16 @@ def has_red_dot(extinf):
     return get_channel_name(extinf).strip().startswith("🔴")
 
 def add_red_dot(extinf):
-    # Sadece virgülden sonraki görünen isme ekle, tvg-name'e dokunma
     if "," not in extinf:
         return extinf
 
     head, display = extinf.split(",", 1)
     display = display.strip()
 
-    if display.startswith("🔴"):
+    if display.endswith("🔴"):
         return extinf
 
-    return f"{head},🔴 {display}"
+    return f"{head},{display} -Gol 🔴"
 
 def update_group(extinf):
 
