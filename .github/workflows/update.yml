@@ -39,9 +39,10 @@ jobs:
           playwright install --with-deps chromium
           yt-dlp --version
           deno --version
-
-      
-        
+      - name: 1 - GOLVAR
+        continue-on-error: true
+        run: python golvar.py || echo "golvar failed"
+              
       - name: 2 - ALLSPOR
         continue-on-error: true
         run: python allspor.p || echo "allspor failed"
