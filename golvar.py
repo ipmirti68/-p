@@ -1,11 +1,10 @@
-
 import os
 import re
 import requests
 import tempfile
 
 # ==========================================
-# MIRTI68 - ATOM beIN SPORTS GÜNCELLEME
+# MIRTI68 - ATOM 【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 GÜNCELLEME
 # ==========================================
 
 SOURCE_M3U_URL = os.environ.get(
@@ -15,8 +14,7 @@ SOURCE_M3U_URL = os.environ.get(
 
 M3U_FILE = "mirti68.m3u"
 
-FILM_GROUP = "🟩◆  beIN SPORTS 🖥"
-
+FILM_GROUP = "🟩◆  【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 🖥"
 
 # ==========================================
 # M3U YARDIMCI FONKSİYONLARI
@@ -26,12 +24,10 @@ def get_group(line):
     match = re.search(r'group-title="([^"]*)"', line)
     return match.group(1).strip() if match else ""
 
-
 def get_channel_name(line):
     if "," in line:
         return line.split(",", 1)[1].strip()
     return ""
-
 
 def read_entries(lines):
     entries = []
@@ -55,7 +51,6 @@ def read_entries(lines):
 
     return entries
 
-
 def get_stream(entry):
     return next(
         (
@@ -66,15 +61,32 @@ def get_stream(entry):
         ""
     )
 
-
 def make_channel_key(extinf):
 
     name = get_channel_name(extinf).lower()
+
+    # 🔴 işaretini karşılaştırmadan çıkar, yoksa her seferinde yeni sanır
+    name = name.replace("🔴", "")
 
     name = re.sub(r'\s+', ' ', name)
 
     return name.strip()
 
+def has_red_dot(extinf):
+    return get_channel_name(extinf).strip().startswith("🔴")
+
+def add_red_dot(extinf):
+    # Sadece virgülden sonraki görünen isme ekle, tvg-name'e dokunma
+    if "," not in extinf:
+        return extinf
+
+    head, display = extinf.split(",", 1)
+    display = display.strip()
+
+    if display.startswith("🔴"):
+        return extinf
+
+    return f"{head},🔴 {display}"
 
 def update_group(extinf):
 
@@ -94,7 +106,6 @@ def update_group(extinf):
 
     return extinf
 
-
 # ==========================================
 # ANA İŞLEM
 # ==========================================
@@ -102,7 +113,7 @@ def update_group(extinf):
 def main():
 
     print("=" * 55)
-    print("MIRTI68 - GOLVAR beIN SPORTS BOT")
+    print("MIRTI68 - GOLVAR 【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 BOT")
     print("=" * 55)
 
     # Kaynak listeyi indir
@@ -133,7 +144,7 @@ def main():
     new_entries = []
 
     # ==========================================
-    # SADECE beIN SPORTS KANALLARINI AL
+    # SADECE 【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 KANALLARINI AL
     # ==========================================
 
     for entry in source_entries:
@@ -254,7 +265,12 @@ def main():
 
                 old_entry = channel_map.pop(old_url)
 
-                channel_map[url] = entry
+                # Eski kanalda 🔴 varsa, güncellenen kanalda da koru
+                new_entry = entry
+                if has_red_dot(old_entry[0]):
+                    new_entry = [add_red_dot(entry[0]), entry[1]]
+
+                channel_map[url] = new_entry
 
                 name_map[name] = url
 
@@ -262,8 +278,10 @@ def main():
 
         else:
 
-            # Yeni isim ve yeni URL
-            channel_map[url] = entry
+            # Yeni isim ve yeni URL -> 🔴 ekle
+            new_entry = [add_red_dot(entry[0]), entry[1]]
+
+            channel_map[url] = new_entry
             name_map[name] = url
 
             added_count += 1
@@ -378,7 +396,6 @@ def main():
     print("Ana liste:", M3U_FILE)
 
     print("=" * 55)
-
 
 if __name__ == "__main__":
     main()
