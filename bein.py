@@ -47,7 +47,7 @@ def read_entries(lines):
 # --- -Atom 🔴 İŞLEMLERİ ---
 def make_channel_key(extinf):
     name = get_channel_name(extinf).lower()
-    # Karşılaştırırken -Atom 🔴'yi yok say, yoksa her seferinde yeni sanır
+    # Karşılaştırırken - 🔴'yi yok say, yoksa her seferinde yeni sanır
     name = name.replace("🔴", "")
     name = re.sub(r'\s*-?\s*atom\s*$', '', name)
     name = re.sub(r'\s+', ' ', name)
@@ -63,7 +63,7 @@ def add_atom_suffix(extinf):
     display = display.strip()
     if display.endswith("🔴"):
         return extinf
-    return f"{head},{display} -Atom 🔴"
+    return f"{head},{display} - 🔴"
 
 def main():
     print("=" * 55)
@@ -181,7 +181,7 @@ def main():
             updated += 1
             continue
 
-        # 3. Gerçekten yeni -> -Atom 🔴 ile ilave listesine ekle
+        # 3. Gerçekten yeni -> - 🔴 ile ilave listesine ekle
         new_extinf = add_atom_suffix(entry[0])
         new_entry = [new_extinf, url]
         added.append(new_entry)
