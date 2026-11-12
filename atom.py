@@ -76,17 +76,16 @@ def has_red_dot(extinf):
     return get_channel_name(extinf).strip().startswith("🔴")
 
 def add_red_dot(extinf):
-    # Sadece virgülden sonraki görünen isme ekle, tvg-name'e dokunma
     if "," not in extinf:
         return extinf
 
     head, display = extinf.split(",", 1)
     display = display.strip()
 
-    if display.startswith("🔴"):
+    if display.endswith("🔴"):
         return extinf
 
-    return f"{head},🔴 {display}"
+    return f"{head},{display} -Atom 🔴"
 
 def update_group(extinf):
 
