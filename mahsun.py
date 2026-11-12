@@ -83,8 +83,8 @@ channels = [
     ("androstreamlivetb7", "Tabii 7 Mahsun 🔴"),
     ("androstreamlivetb8", "Tabii 8 Mahsun 🔴"),
 
-    ("androstreamliveexn", "beIN SPORTS * 🔴"),
-    ("androstreamliveexn1", "beIN SPORTS # 🔴"),
+    ("androstreamliveexn", "beIN SPORTS * Mahsun 🔴"),
+    ("androstreamliveexn1", "beIN SPORTS # Mahsun 🔴"),
     ("androstreamliveexn2", "DAZN 1-Mahsun 🔴"),
     ("androstreamliveexn3", "S SPORT+ -Mahsun 🔴"),
     ("androstreamliveexn4", "S SPORT + -Mahsun 🔴"),
