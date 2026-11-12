@@ -2138,3 +2138,13 @@ http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/50841
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/234447
 #EXTINF:-1 tvg-id="SHOW Max" tvg-name="TR: SHOWMAX HD" tvg-logo="http://logo.unimaxapp.eu/tvlogo/showmax.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺🔴",TR: SHOWMAX HD
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/31363
+#EXTINF:-1 group-title="🟩◆  【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 🖥",🔴 beIN Sports 5
+https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="🟩◆  【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 🖥",🔴 beIN Sports 4
+https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="🟩◆  【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 🖥",🔴 beIN Sports 3
+https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="🟩◆  【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 🖥",🔴 beIN Sports Max 2
+https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="🟩◆  【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 🖥",🔴 beIN Sports Max 1
+https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
