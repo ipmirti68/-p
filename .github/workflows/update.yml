@@ -47,7 +47,7 @@ jobs:
         continue-on-error: true
         run: python atom.py || echo "atomspor failed"
 
-      - name: 3 - FALCON BEİN
+      - name: 3 - 79.76.50.223/BEİN
         continue-on-error: true
         run: python bein.py || echo "dein failed"
 
