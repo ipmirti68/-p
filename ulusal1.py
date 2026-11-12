@@ -14,7 +14,6 @@ def get_group(line):
     match = re.search(r'group-title="([^"]*)"', line)
     return match.group(1).strip() if match else ""
 
-
 def read_entries(lines):
     entries = []
     current = []
@@ -34,7 +33,6 @@ def read_entries(lines):
         entries.append(current)
 
     return entries
-
 
 def main():
     print("=" * 55)
@@ -104,12 +102,6 @@ def main():
 
     old_entries = read_entries(old_lines)
 
-    # Yalnızca hedef grubu kaldır
-    preserved = [
-        entry for entry in old_entries
-        if get_group(entry[0]) != FILM_GROUP
-    ]
-
     # Yeni kayıtları URL üzerinden tekilleştir
     seen_urls = set()
     unique_entries = []
@@ -119,18 +111,35 @@ def main():
             seen_urls.add(entry[1])
             unique_entries.append(entry)
 
+    # === REVİZE EDİLEN KISIM: MEVCUT GRUBUN İÇİNE EKLE ===
+    final_entries = []
+    inserted = False
+
+    for entry in old_entries:
+        if get_group(entry[0]) == FILM_GROUP:
+            # Grubun ilk kanalını bulduk, yenileri tam buraya ekle
+            if not inserted:
+                final_entries.extend(unique_entries)
+                inserted = True
+            # Eski grubun kanalını ekleme, yenisiyle değişmiş oluyor
+            continue
+        final_entries.append(entry)
+
+    # Listede hiç bu grup yoksa, en başa ekle
+    if not inserted:
+        final_entries = unique_entries + final_entries
+    # === REVİZE SONU ===
+
     with open(M3U_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
 
-        for entry in preserved + unique_entries:
+        for entry in final_entries:
             for line in entry:
                 f.write(line + "\n")
 
     print("ULUSAL 1 GÜNCELLENDİ")
     print("Yeni kayıt:", len(unique_entries))
-    print("Korunan diğer kayıt:", len(preserved))
     print("Ana dosya:", M3U_FILE)
-
 
 if __name__ == "__main__":
     main()
