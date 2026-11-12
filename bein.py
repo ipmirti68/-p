@@ -7,7 +7,7 @@ import requests
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8")
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "📡beIN SPORTS"
+FILM_GROUP = "🟩◆  beIN SPORTS 📡"
 SOURCE_GROUP = "Yerel / 🔴 SPOR"
 
 
