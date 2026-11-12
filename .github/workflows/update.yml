@@ -1,4 +1,3 @@
-
 name: Kanal Güncelle
 
 on:
@@ -80,7 +79,8 @@ jobs:
 
           ls -lh *.m3u *.json 2>/dev/null || true
 
-          git add -f *.m3u *.json 2>/dev/null || true
+          git add -f -- *.m3u || true
+          git add -f -- *.json || true
 
           git status --short
 
