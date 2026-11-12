@@ -309,10 +309,6 @@ https://mirti68.alwaysdata.net/yt/stream.php?c=maxipipe
 https://mirti-spor-2026.fly.dev/cam0/index.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1 Mırtıspor (copy)
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
-#EXTINF:-1 tvg-id="beinsports1" tvg-name="beIN Sports 1" tvg-logo="https://bit.ly/3f86zet" group-title="🟩◆  beIN SPORTS 🖥" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)",beIN SPORTS 1
-#EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
-#EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"}
-http://92.5.166.217/beinsportskutu1
 #EXTINF:-1 tvg-id="raw:webvarsports" tvg-name="Web VARSPORTS" tvg-logo="https://i.hizliresim.com/3apwt19.jpeg" group-title="🟩◆  beIN SPORTS 🖥" http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)",beIN SPORTS 1
 #EXTVLCOPT:http-user-agent="Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"
 #EXTHTTP:{"User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Samsung F1833B Build/TP1A.280629.015)"}
@@ -412,6 +408,10 @@ https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
 https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥", beIN Sports Max 1
 https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥", beIN Sports 1
+https://css.d6e3eds5e065t5.help//b1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥",🔴 beIN Sports 2
+https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
