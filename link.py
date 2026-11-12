@@ -80,12 +80,12 @@ def main():
             if not skip_url and line.strip() != "":
                 preserved.append(line)
 
-    # Yeni listeyi yaz
+    # Yeni listeyi yaz - ÖNCE YENİ GRUP, SONRA DİĞERLERİ
     with open(M3U_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
-        for line in preserved:
-            f.write(line + "\n")
         for line in new_entries:
+            f.write(line + "\n")
+        for line in preserved:
             f.write(line + "\n")
 
     print("\nGRUPFİLİM GÜNCELLENDİ!")
