@@ -10,10 +10,10 @@ FILM_GROUP = "🟪◆ GÜNCEL DİZİLER ⭕"
 SOURCE_GROUP = "GUNCEL DiZiLER SON BOLUM"
 
 
+
 def get_group(line):
     match = re.search(r'group-title="([^"]*)"', line)
     return match.group(1).strip() if match else ""
-
 
 def read_entries(lines):
     entries = []
@@ -34,10 +34,9 @@ def read_entries(lines):
 
     return entries
 
-
 def main():
     print("=" * 55)
-    print("MIRTI68 - CUMARTESİ DİZİ GÜNCELLEME")
+    print("MIRTI68 - GUNCEL DIZILER  GÜNCELLEME")
     print("=" * 55)
 
     if not SOURCE_M3U_URL:
@@ -91,7 +90,7 @@ def main():
         new_entries.append([new_extinf, stream])
 
     if not new_entries:
-        print("CUMARTESİ grubunda yayın bulunamadı.")
+        print("GUNCEL DIZILER  grubunda yayın bulunamadı.")
         print("Ana liste değiştirilmedi.")
         return
 
@@ -103,12 +102,6 @@ def main():
 
     old_entries = read_entries(old_lines)
 
-    # Yalnızca cumartesi grubunu yenile
-    preserved = [
-        entry for entry in old_entries
-        if get_group(entry[0]) != FILM_GROUP
-    ]
-
     seen_urls = set()
     unique_entries = []
 
@@ -117,19 +110,35 @@ def main():
             seen_urls.add(entry[1])
             unique_entries.append(entry)
 
+    # === REVİZE EDİLEN KISIM: MEVCUT GRUBA YAZ ===
+    final_entries = []
+    inserted = False
+
+    for entry in old_entries:
+        if get_group(entry[0]) == FILM_GROUP:
+            # Grubun ilk kanalını bulduk, yenileri tam buraya yaz
+            if not inserted:
+                final_entries.extend(unique_entries)
+                inserted = True
+            # Eski GUNCEL DIZILER kanalını ekleme, yenisiyle değişmiş oluyor
+            continue
+        final_entries.append(entry)
+
+    # Listede hiç GUNCEL DIZILER grubu yoksa, en başa ekle
+    if not inserted:
+        final_entries = unique_entries + final_entries
+    # === REVİZE SONU ===
+
     with open(M3U_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
 
-        for entry in preserved + unique_entries:
+        for entry in final_entries:
             for line in entry:
                 f.write(line + "\n")
 
-    print("CUMARTESİ GÜNCELLENDİ")
+    print("GUNCEL DIZILER GÜNCELLENDİ")
     print("Yeni kayıt:", len(unique_entries))
-    print("Korunan diğer kayıt:", len(preserved))
     print("Ana dosya:", M3U_FILE)
 
-
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
-        
