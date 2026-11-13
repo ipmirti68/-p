@@ -133,5 +133,5 @@ def main():
     print("Yeni kayıt:", len(unique_entries))
     print("Ana dosya:", M3U_FILE)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
