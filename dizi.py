@@ -13,6 +13,25 @@ FILM_GROUP = "🟪◆  7/24 DİZİ 📺⭕"
 # Örnek: "ABC" / "Filmler" / "Movies"
 KAYNAKTAKİ_GRUP_ADLARI = [    "Yerli 7/24"]
 
+def get_group(line):
+    m = re.search(r'group-title="([^"]*)"', line)
+    return m.group(1).strip() if m else ""
+
+def read_entries(lines):
+    entries = []
+    current = []
+    for line in lines:
+        line = line.strip()
+        if line.startswith("#EXTINF:"):
+            if current:
+                entries.append(current)
+            current = [line]
+        elif current and line:
+            current.append(line)
+    if current:
+        entries.append(current)
+    return entries
+
 def main():
     print("=" * 55)
     print("www.com.m3u DEN GRUPFİLİM ÇEKİLİYOR")
@@ -28,32 +47,23 @@ def main():
     i = 0
     while i < len(source_lines):
         line = source_lines[i].strip()
-
         if line.startswith("#EXTINF:"):
-            # Önce bu satırın grubunu bul - BU EKSİKTİ
-            m = re.search(r'group-title="([^"]*)"', line)
-            grup = m.group(1) if m else ""
-
-            # Bu satır istenen gruptan mı?
+            grup = get_group(line)
             if grup in KAYNAKTAKİ_GRUP_ADLARI:
-                # Grup adını grupfilim olarak değiştir
                 new_line = re.sub(
                     r'group-title="[^"]*"',
                     f'group-title="{FILM_GROUP}"',
                     line
                 )
-                # group-title yoksa ekle
                 if 'group-title=' not in new_line:
                     new_line = new_line.replace(
                         '#EXTINF:-1',
                         f'#EXTINF:-1 group-title="{FILM_GROUP}"'
                     )
-                # Bir sonraki satır yayın adresi
                 if i + 1 < len(source_lines):
                     stream = source_lines[i + 1].strip()
                     if stream and not stream.startswith("#"):
-                        new_entries.append(new_line)
-                        new_entries.append(stream)
+                        new_entries.append([new_line, stream])
                         print(f"EKLENDİ: {new_line.split(',')[-1]}")
                 i += 2
                 continue
@@ -70,32 +80,58 @@ def main():
         with open(M3U_FILE, "r", encoding="utf-8") as f:
             old_lines = f.read().splitlines()
 
-    # Eski grupfilim kayıtlarını sil, diğerlerini koru
-    preserved = []
-    skip_url = False
-    for line in old_lines:
-        if line.startswith("#EXTINF:"):
-            skip_url = FILM_GROUP in line
-            if not skip_url:
-                preserved.append(line)
-        elif line.startswith("#EXTM3U"):
-            continue
-        else:
-            if not skip_url and line.strip() != "":
-                preserved.append(line)
+    old_entries = read_entries(old_lines)
 
-    # Yeni listeyi yaz
+    # HATA AYIKLAMA: Dosyadaki grupları göster
+    print("\n--- DOSYADAKİ GRUPLAR ---")
+    dosya_gruplari = []
+    for e in old_entries:
+        g = get_group(e[0])
+        if g not in dosya_gruplari:
+            dosya_gruplari.append(g)
+            print(f"Bulunan grup: [{g}]")
+    print(f"Aranan grup: [{FILM_GROUP}]")
+    print(f"Eşleşti mi? {FILM_GROUP in dosya_gruplari}")
+    print("-------------------------\n")
+
+    # Tekrarlanan URL temizle
+    seen = set()
+    unique_entries = []
+    for e in new_entries:
+        if e[1] not in seen:
+            seen.add(e[1])
+            unique_entries.append(e)
+
+    # === MEVCUT GRUBUN İÇİNE YAZ - EN SONA GİTMEZ ===
+    final_entries = []
+    inserted = False
+
+    for entry in old_entries:
+        if get_group(entry[0]) == FILM_GROUP:
+            if not inserted:
+                # Grubun ilk kanalını bulduk, yenileri tam buraya yaz
+                final_entries.extend(unique_entries)
+                inserted = True
+            # Eski kanalı ekleme
+            continue
+        final_entries.append(entry)
+
+    # Grup hiç yoksa en başa ekle
+    if not inserted:
+        print("UYARI: Dosyada bu grup bulunamadı, en başa eklendi.")
+        final_entries = unique_entries + final_entries
+    else:
+        print("Grup bulundu, kendi yerine yazıldı.")
+
     with open(M3U_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
-        for line in preserved:
-            f.write(line + "\n")
-        for line in new_entries:
-            f.write(line + "\n")
+        for entry in final_entries:
+            for line in entry:
+                f.write(line + "\n")
 
     print("\nGRUPFİLİM GÜNCELLENDİ!")
-    print("Yeni kayıt:", len(new_entries) // 2)
+    print("Yeni kayıt:", len(unique_entries))
     print("Ana dosya:", M3U_FILE)
-    print("Diğer kategoriler korundu.")
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
