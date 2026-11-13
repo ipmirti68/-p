@@ -6,7 +6,7 @@ import requests
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts")
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟨◆  ULUSAL ᵁᴴᴰ⁺🔴"
+FILM_GROUP = "🟨◆  ULUSAL ᵁᴴᴰ⁺⭕"
 SOURCE_GROUP = "TR-ULUSAL"
 
 
