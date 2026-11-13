@@ -65,7 +65,7 @@ def make_channel_key(extinf):
 
     name = get_channel_name(extinf).lower()
 
-    # 🔴 işaretini karşılaştırmadan çıkar, yoksa her seferinde yeni sanır
+    # ⭕ işaretini karşılaştırmadan çıkar, yoksa her seferinde yeni sanır
     name = name.replace("🔴", "")
 
     name = re.sub(r'\s+', ' ', name)
@@ -73,7 +73,7 @@ def make_channel_key(extinf):
     return name.strip()
 
 def has_red_dot(extinf):
-    return get_channel_name(extinf).strip().startswith("🔴")
+    return get_channel_name(extinf).strip().startswith("⭕")
 
 def add_red_dot(extinf):
     if "," not in extinf:
@@ -82,10 +82,10 @@ def add_red_dot(extinf):
     head, display = extinf.split(",", 1)
     display = display.strip()
 
-    if display.endswith("🔴"):
+    if display.endswith("⭕"):
         return extinf
 
-    return f"{head},{display} -Gol 🔴"
+    return f"{head},{display} -Gol ⭕"
 
 def update_group(extinf):
 
@@ -277,7 +277,7 @@ def main():
 
         else:
 
-            # Yeni isim ve yeni URL -> 🔴 ekle
+            # Yeni isim ve yeni URL -> ⭕ ekle
             new_entry = [add_red_dot(entry[0]), entry[1]]
 
             channel_map[url] = new_entry
