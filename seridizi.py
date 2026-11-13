@@ -8,7 +8,7 @@ import requests
 # Yöntem 3: Tek URL için eski SOURCE_M3U_URL de çalışır
 def get_source_urls():
     urls = []
-    multi = os.environ.get("SOURCE_M3U_URLS", "https://raw.githubusercontent.com/yavuzelidurmaz-sketch/Now/refs/heads/main/nowtv.m3u")
+    multi = os.environ.get("SOURCE_M3U_URLS", "https://raw.githubusercontent.com/yavuzelidurmaz-sketch/Now/refs/heads/main/nowtv.m3u,https://raw.githubusercontent.com/yavuzelidurmaz-sketch/hdfilm/refs/heads/main/showtv.m3u")
     if multi:
         return [u.strip() for u in multi.split(",") if u.strip()]
     for i in range(1, 8):

@@ -469,11 +469,11 @@ http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/223135
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 1.tr" tvg-name="beIN SPORTS MAX 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS MAX 1
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/79
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 1.tr" tvg-name="beIN SPORTS MAX 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS MAX 1
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/80
+https://79.76.50.223/live/iOS/SiNETECH/34791.ts
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 2.tr" tvg-name="beIN SPORTS MAX 2.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS MAX 2
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/77
 #EXTINF:-1 tvg-id="beIN SPORTS MAX 2.tr" tvg-name="beIN SPORTS MAX 2.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS MAX 2
-http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/78
+https://79.76.50.223/live/iOS/SiNETECH/34792.ts
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS 1  3840x2160
 http://ekmek82.shop/live/adnan678/uBjabktvQP/1505748.m3u
 #EXTINF:-1 tvg-name="beinsports" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",beIN SPORTS 1 1920x1080
@@ -692,6 +692,26 @@ http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=929030&extensio
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=933108&extension=ts
 #EXTINF:-1  tvg-name="ZONE SPORT 5 FHD" group-title="🟩◆  beIN SPORTS 📡",ZONE SPORT 5 FHD
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=929029&extension=ts
+#EXTINF:-1 tvg-id="beIN SPORTS 1.tr" tvg-logo="https://79.76.50.223/HD1.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD1 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34772.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 2.tr" tvg-logo="https://79.76.50.223/HD2.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD2 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34780.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 3.tr" tvg-logo="https://79.76.50.223/HD3.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD3 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34784.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 4.tr" tvg-logo="https://79.76.50.223/HD4.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD4 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34787.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 5.tr" tvg-logo="https://79.76.50.223/HD5.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD5 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34788.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 1.tr" tvg-logo="https://79.76.50.223/HD1.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD1 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34772.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 2.tr" tvg-logo="https://79.76.50.223/HD2.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD2 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34780.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 3.tr" tvg-logo="https://79.76.50.223/HD3.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD3 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34784.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 4.tr" tvg-logo="https://79.76.50.223/HD4.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD4 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34787.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 5.tr" tvg-logo="https://79.76.50.223/HD5.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD5 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34788.ts
 #EXTINF:-1 tvg-name="ssport" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="🟩◆  S SPORTS ⚽",SSPORT
 https://zeus324232.cfd/s1/index.txt
 #EXTINF:-1 tvg-name="ssport 2" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="🟩◆  S SPORTS ⚽",SSPORT 2
