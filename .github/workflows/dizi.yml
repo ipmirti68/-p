@@ -54,7 +54,7 @@ jobs:
       - name: 6 - GÜNCEL DİZİLER 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python gdizi.py || echo "gdizi failed"
+        run: python 7gdizi.py || echo "7gdizi failed"
       - name: 7 -  7/24 DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
