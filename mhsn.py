@@ -6,7 +6,7 @@ import requests
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u") 
 
 M3U_FILE = "mirti68.m3u"
-SOURCE_GROUP = "🔴⚽ MAHSUNSPOR 🏟️⚽"
+SOURCE_GROUP = "⭕⚽ MAHSUNSPOR 🏟️⚽"
 
 
 
