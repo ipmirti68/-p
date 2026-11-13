@@ -48,7 +48,7 @@ BASE_PATTERN = "https://mahsunsports{}.xyz"
 # ============================================================
 
 channels = [
-    ("androstreamlivebiraz1", "beIN SPORTS 1 Mahsun ⭕"),
+    ("androstreamlivebiraz1", "beIN SPORTS 1ᴴᴰ Mahsun ⭕"),
     ("androstreamlivebs1", "beIN SPORTS 1 Mahsun ⭕"),
     ("androstreamlivebs2", "beIN SPORTS 2 Mahsun ⭕"),
     ("androstreamlivebs3", "beIN SPORTS 3 Mahsun ⭕"),
@@ -83,15 +83,15 @@ channels = [
     ("androstreamlivetb7", "Tabii 7 Mahsun ⭕"),
     ("androstreamlivetb8", "Tabii 8 Mahsun ⭕"),
 
-    ("androstreamliveexn", "beIN SPORTS * Mahsun ⭕"),
-    ("androstreamliveexn1", "beIN SPORTS # Mahsun ⭕"),
-    ("androstreamliveexn2", "DAZN 1-Mahsun ⭕"),
-    ("androstreamliveexn3", "S SPORT+ -Mahsun ⭕"),
-    ("androstreamliveexn4", "S SPORT + -Mahsun ⭕"),
-    ("androstreamliveexn5", "S SPORT + -Mahsun ⭕"),
-    ("androstreamliveexn6", "S SPORT 2 -Mahsun ⭕"),
-    ("androstreamliveexn7", "AZ TV-Mahsun ⭕"),
-    ("androstreamliveexn8", "TRT TÜRK HMahsun ⭕"),
+    ("androstreamliveexn", "beIN SPORTS 1ˢᴰ Mahsun ⭕"),
+    ("androstreamliveexn1", "beIN SPORTS 1ᶠᴴᴰ Mahsun ⭕"),
+    ("androstreamliveexn2", "DAZN 1 Mahsun ⭕"),
+    ("androstreamliveexn3", "S SPORT+ Mahsun ⭕"),
+    ("androstreamliveexn4", "S SPORT + Mahsun ⭕"),
+    ("androstreamliveexn5", "S SPORT + Mahsun ⭕"),
+    ("androstreamliveexn6", "S SPORT 2 Mahsun ⭕"),
+    ("androstreamliveexn7", "AZ TV Mahsun ⭕"),
+    ("androstreamliveexn8", "TRT TÜRK Mahsun ⭕"),
 ]
 
 
