@@ -55,9 +55,9 @@ jobs:
         continue-on-error: true
         run: python bein1.py || echo "bein1 failed"
 
-      - name: 5 - SLCK
+      - name: 5 - SERİDİZİ
         continue-on-error: true
-        run: python slck.p || echo "slck failed"
+        run: python seridizi.py || echo "seridizi failed"
 
       - name: 6 - MAHSUN
         continue-on-error: true
