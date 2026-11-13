@@ -4,16 +4,16 @@ import re, os
 OUTPUT_FILE = "mirti68.m3u"
 GROUP = "🟨◆  ULUSAL 📺"
 
-# İSTENEN SIRA: TRT1 - 【entity-ATV¦canonical_name=ATV】 - SHOW - KANAL D - STAR - NOW - KANAL 7 - TV8
+# İSTENEN SIRA: TRT1 - ATV - SHOW - KANAL D - STAR - NOW - KANAL 7 - TV8
 CHANNELS = {
-    "【entity-TRT 1¦canonical_name=TRT 1】 ⭕": {
+    "TRT 1 ⭕": {
         "page": "https://www.trt1.com.tr/canli-izle",
         "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png",
         "keyword": "trt",
         "marker": "# MIRTI68_TRT1_AUTO",
         "fallback": "https://tv-trt1.medya.trt.com.tr/master.m3u8"
     },
-    "【entity-ATV¦canonical_name=ATV】 ⭕": {
+    "ATV ⭕": {
         "page": "https://www.atv.com.tr/canli-yayin",
         "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png",
         "keyword": "【entity-atv¦canonical_name=ATV】",
