@@ -10,7 +10,7 @@ HEADERS = {
     'Origin': 'https://www.beinsports.com.tr'
 }
 
-FILM_GROUP = "🟩◆ GOLLER 🔴"
+FILM_GROUP = "🟩◆ GOLLER ⭕"
 
 def get_group(line):
     match = re.search(r'group-title="([^"]*)"', line)
