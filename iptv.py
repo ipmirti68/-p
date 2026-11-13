@@ -4,12 +4,14 @@ import re, os, shutil
 OUTPUT_FILE = "mirti68.m3u"
 GROUP = "🟨◆  ULUSAL 📺"
 EPG_URL = "https://raw.githubusercontent.com/iptv-org/epg/master/guides/turkey.epg.xml"
+CDN1 = "daioncdn.net"
+CDN2 = "ercdn.net"
 
 CHANNELS = {
     "TRT1": {"display": "TRT 1 ⭕", "epg": "TRT 1", "epg_id": "TRT1", "page": "https://www.trt1.com.tr/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt", "marker": "# MIRTI68_TRT1_AUTO", "fallback": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
-    " ATV": {"display": " ATV ⭕", "epg": " ATV", "epg_id": " ATV", "page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": " atv", "marker": "# MIRTI68_ATV_AUTO", "fallback": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_720p.m3u8"},
+    "ATV": {"display": "ATV ⭕", "epg": "ATV", "epg_id": "ATV", "page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "【entity-atv¦canonical_name=ATV】", "marker": "# MIRTI68_ATV_AUTO", "fallback": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_720p.m3u8"},
     "SHOW": {"display": "SHOW ⭕", "epg": "Show TV", "epg_id": "ShowTV", "page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png", "keyword": "showtv", "marker": "# MIRTI68_SHOWTV_AUTO"},
-    "KANALD": {"display": "KANAL D ⭕", "epg": "Kanal D", "epg_id": "KanalD", "page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
+    "KANALD": {"display": "KANAL D ⭕", "epg": "KANAL D", "epg_id": "KanalD", "page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
     "STAR": {"display": "STAR ⭕", "epg": "Star TV", "epg_id": "StarTV", "page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv", "marker": "# MIRTI68_STARTV_AUTO"},
     "NOW": {"display": "NOW ⭕", "epg": "NOW", "epg_id": "NOW", "page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "nowtv", "marker": "# MIRTI68_NOWTV_AUTO"},
     "KANAL7": {"display": "KANAL 7 ⭕", "epg": "Kanal 7", "epg_id": "Kanal7", "page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7", "marker": "# MIRTI68_KANAL7_AUTO"},
@@ -17,9 +19,9 @@ CHANNELS = {
 }
 
 def get_link(page_url, keyword):
-    found=[]
+    found = []
     def on_dialog(d):
-        urls=re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', d.message)
+        urls = re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', d.message)
         if urls:
             found.extend(urls)
         try:
@@ -27,6 +29,147 @@ def get_link(page_url, keyword):
         except:
             pass
     def on_response(resp):
-        url=resp.url
+        url = resp.url
         if ".m3u8" in url:
-            if keyword in url.lower() or "
+            is_kw = keyword in url.lower()
+            is_cdn1 = CDN1 in url
+            is_cdn2 = CDN2 in url
+            if is_kw or is_cdn1 or is_cdn2:
+                if url not in found:
+                    print("  [NETWORK] " + url[:120] + "...")
+                    found.append(url)
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/130.0.0.0 Safari/537.36")
+        page.on("dialog", on_dialog)
+        page.on("response", on_response)
+        print("[*] " + keyword + " -> " + page_url + " aciliyor...")
+        try:
+            page.goto(page_url, timeout=45000, wait_until="domcontentloaded")
+            page.wait_for_timeout(7000)
+            try:
+                content = page.content()
+                m = re.findall(r'https?://[^\s\'"<>]+\.m3u8[^\s\'"<>]*', content)
+                for u in m:
+                    is_kw = keyword in u.lower()
+                    is_cdn1 = CDN1 in u
+                    is_cdn2 = CDN2 in u
+                    if is_kw or is_cdn1 or is_cdn2:
+                        if u not in found:
+                            print("  [SOURCE] " + u[:120] + "...")
+                            found.append(u)
+            except:
+                pass
+            for sel in ["button", ".play-button", ".vjs-big-play-button", "[class*=play]", ".【entity-atv¦canonical_name=ATV】-player", ".ciner-player"]:
+                try:
+                    page.click(sel, timeout=1200)
+                    page.wait_for_timeout(1500)
+                except:
+                    pass
+            page.wait_for_timeout(8000)
+        except Exception as e:
+            print("  [!] hata: " + str(e))
+        browser.close()
+    for u in found:
+        if keyword in u.lower() and CDN1 in u:
+            return u
+    for u in found:
+        if CDN1 in u or CDN2 in u:
+            return u
+    return found[0] if found else None
+
+def parse_blocks(content):
+    lines = content.splitlines()
+    blocks = []
+    i = 0
+    if lines and lines[0].startswith("#EXTM3U"):
+        i = 1
+    cur_marker = None
+    while i < len(lines):
+        line = lines[i].strip()
+        if not line:
+            i += 1
+            continue
+        if line.startswith("# MIRTI68_"):
+            cur_marker = line
+            i += 1
+            continue
+        if line.startswith("#EXTINF"):
+            url = ""
+            if i + 1 < len(lines):
+                nxt = lines[i+1].strip()
+                if nxt and not nxt.startswith("#"):
+                    url = nxt
+                    i += 1
+            blocks.append({"marker": cur_marker, "extinf": line, "url": url})
+            cur_marker = None
+            i += 1
+            continue
+        i += 1
+    return blocks
+
+def build_block(info, url):
+    extinf = '#EXTINF:-1 tvg-id="' + info["epg_id"] + '" tvg-name="' + info["epg"] + '" tvg-logo="' + info["logo"] + '" group-title="' + GROUP + '",' + info["display"]
+    return {"marker": info["marker"], "extinf": extinf, "url": url}
+
+def main():
+    print("MIRTI68 ULUSAL - 8 KANAL - GUVENLI SURUM")
+    if os.path.exists(OUTPUT_FILE):
+        shutil.copy(OUTPUT_FILE, OUTPUT_FILE + ".bak")
+        print("[YEDEK] " + OUTPUT_FILE + ".bak alindi")
+        with open(OUTPUT_FILE, "r", encoding="utf-8", errors="ignore") as f:
+            old_content = f.read()
+        old_blocks = parse_blocks(old_content)
+        print("[OKUNDU] Eski dosyada " + str(len(old_blocks)) + " kanal var, hepsi korunacak")
+    else:
+        old_blocks = []
+        print("[!] " + OUTPUT_FILE + " yok, bos olusturuluyor")
+    new_blocks_map = {}
+    ok = 0
+    for name, info in CHANNELS.items():
+        url = None
+        source = ""
+        if info.get("page"):
+            url = get_link(info["page"], info["keyword"])
+            if url:
+                source = "CEKILDI"
+        if not url and info.get("fallback"):
+            url = info["fallback"]
+            source = "YEDEK"
+            print("[!] " + name + " CEKILEMEDI - yedek kullaniliyor")
+        if not url:
+            print("[!] " + name + " ALINAMADI - eski link korunuyor")
+            continue
+        print("[+] " + name + " " + source + ": " + url[:100] + "...")
+        new_blocks_map[info["marker"]] = build_block(info, url)
+        ok += 1
+    final_blocks = []
+    used_markers = set()
+    for name, info in CHANNELS.items():
+        m = info["marker"]
+        if m in new_blocks_map:
+            final_blocks.append(new_blocks_map[m])
+            used_markers.add(m)
+        else:
+            for b in old_blocks:
+                if b["marker"] == m:
+                    final_blocks.append(b)
+                    used_markers.add(m)
+                    break
+    for b in old_blocks:
+        if b["marker"] not in used_markers:
+            final_blocks.append(b)
+            if b["marker"]:
+                used_markers.add(b["marker"])
+    out = '#EXTM3U url-tvg="' + EPG_URL + '"\n\n'
+    for b in final_blocks:
+        if b["marker"]:
+            out += b["marker"] + "\n"
+        out += b["extinf"] + "\n"
+        out += b["url"] + "\n\n"
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(out.strip() + "\n")
+    print("[TAMAMLANDI] " + str(ok) + "/8 guncellendi - Toplam " + str(len(final_blocks)) + " kanal korundu")
+
+if __name__ == "__main__":
+    main()
