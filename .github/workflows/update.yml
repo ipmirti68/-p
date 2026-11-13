@@ -59,9 +59,9 @@ jobs:
         continue-on-error: true
         run: python seridizi.py || echo "seridizi failed"
 
-      - name: 6 - MAHSUN
+      - name: 6 - KADİRSENTVR24
         continue-on-error: true
-        run: python mahsun.p || echo "mahsun failed"
+        run: python allbein.py || echo "allbein  failed"
 
       - name: 7 - PATRON
         continue-on-error: true
