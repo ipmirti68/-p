@@ -901,6 +901,14 @@ https://79.76.50.223/live/iOS/SiNETECH/34782.ts
 https://79.76.50.223/live/iOS/SiNETECH/34786.ts
 #EXTINF:-1 tvg-id="beIN SPORTS 5.tr" tvg-logo="https://79.76.50.223/HD5.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD5 - ⭕
 https://79.76.50.223/live/iOS/SiNETECH/34790.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 1.tr" tvg-logo="https://79.76.50.223/HD1.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD1 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34775.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 2.tr" tvg-logo="https://79.76.50.223/HD2.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD2 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34783.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 1.tr" tvg-logo="https://79.76.50.223/HD1.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD1 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34775.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 2.tr" tvg-logo="https://79.76.50.223/HD2.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD2 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34783.ts
 #EXTINF:-1 tvg-name="ssport" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="🟩◆  S SPORTS ⚽",SSPORT
 https://zeus324232.cfd/s1/index.txt
 #EXTINF:-1 tvg-name="ssport 2" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="🟩◆  S SPORTS ⚽",SSPORT 2
