@@ -51,9 +51,9 @@ jobs:
         continue-on-error: true
         run: python bein.py || echo "dein failed"
 
-      - name: 4 - LIG
+      - name: 4 - kimbumuratyavuz
         continue-on-error: true
-        run: python lig.p || echo "lig failed"
+        run: python bein1.py || echo "bein1 failed"
 
       - name: 5 - SLCK
         continue-on-error: true
