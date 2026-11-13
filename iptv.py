@@ -268,18 +268,12 @@ def main():
         atv_info = CHANNELS["ATV"]
         final_blocks.insert(1, build_block(atv_info, ATV_FALLBACK))
 
-    out = '#EXTM3U url-tvg="' + EPG_URL + '"\n\n'
-    for b in final_blocks:
-        if b["marker"]:
-            out += b["marker"] + "\n"
-        out += b["extinf"] + "\n"
-        out += b["url"] + "\n\n"
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(out.strip() + "\n")
-    print("[TAMAMLANDI] " + str(ok) + "/8 - Toplam " + str(len(final_blocks)) + " kanal, ATV var mi: " + str(has_atv or True))
+        # --- final_blocks oluştur ---
+    final_blocks = []
+    used_markers = set()
 
-if __name__ == "__main__":
-    main()_blocks_map:
+    for m in new_blocks_map:
+        if m in new_blocks_map:
             final_blocks.append(new_blocks_map[m])
             used_markers.add(m)
         else:
@@ -288,6 +282,7 @@ if __name__ == "__main__":
                     final_blocks.append(b)
                     used_markers.add(m)
                     break
+
     for b in old_blocks:
         # Ayni ATV iki kere eklenmesin diye kontrol
         if b["marker"] in used_markers:
@@ -306,8 +301,10 @@ if __name__ == "__main__":
             out += b["marker"] + "\n"
         out += b["extinf"] + "\n"
         out += b["url"] + "\n\n"
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(out.strip() + "\n")
+
     print("[TAMAMLANDI] " + str(ok) + "/8 guncellendi - Toplam " + str(len(final_blocks)) + " kanal korundu")
 
 if __name__ == "__main__":
