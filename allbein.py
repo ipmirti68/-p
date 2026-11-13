@@ -85,7 +85,7 @@ def add_red_dot(extinf):
     if display.endswith("⭕"):
         return extinf
 
-    return f"{head},{display} -Atom ⭕"
+    return f"{head},{display} - ⭕"
 
 def update_group(extinf):
 
