@@ -847,6 +847,16 @@ https://79.76.50.223/live/iOS/SiNETECH/34784.ts
 https://79.76.50.223/live/iOS/SiNETECH/34787.ts
 #EXTINF:-1 tvg-id="beIN SPORTS 5.tr" tvg-logo="https://79.76.50.223/HD5.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD5 - ⭕
 https://79.76.50.223/live/iOS/SiNETECH/34788.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 1.tr" tvg-logo="https://79.76.50.223/HD1.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD1 - 🔴
+https://79.76.50.223/live/ViP/GaraveliForum/34777.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 1.tr" tvg-logo="https://79.76.50.223/HD1.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD1 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34773.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 2.tr" tvg-logo="https://79.76.50.223/HD2.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD2 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34781.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 3.tr" tvg-logo="https://79.76.50.223/HD3.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD3 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34785.ts
+#EXTINF:-1 tvg-id="beIN SPORTS 5.tr" tvg-logo="https://79.76.50.223/HD5.png" group-title="🟩◆  beIN SPORTS 📡" group-logo="https://79.76.50.223/Yerel.png",beIN SPORTS HD5 - ⭕
+https://79.76.50.223/live/iOS/SiNETECH/34789.ts
 #EXTINF:-1 tvg-name="ssport" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="🟩◆  S SPORTS ⚽",SSPORT
 https://zeus324232.cfd/s1/index.txt
 #EXTINF:-1 tvg-name="ssport 2" tvg-logo="https://i.imgur.com/69e8Aub.jpeg" group-title="🟩◆  S SPORTS ⚽",SSPORT 2
@@ -2484,30 +2494,6 @@ https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-843
 # MIRTI68_TRT1_AUTO
 #EXTINF:-1 tvg-name="TRT 1 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL 📺",TRT 1 ⭕
 https://tv-trt1.medya.trt.com.tr/master.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1ᴴᴰ Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamlivebiraz1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1 Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamlivebs1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 2 Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamlivebs2.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 3 Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamlivebs3.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 4 Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamlivebs4.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 5 Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamlivebs5.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS Max 1 Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamlivebsm1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS Max 2 Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamlivebsm2.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",S SPORTS 1 Mahsun ⭕
 #EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
 https://andro.evrenesoglu239.click/checklist/androstreamlivess1.m3u8
@@ -2568,12 +2554,6 @@ https://andro.evrenesoglu239.click/checklist/androstreamlivetb7.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii 8 Mahsun ⭕
 #EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
 https://andro.evrenesoglu239.click/checklist/androstreamlivetb8.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1ˢᴰ Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamliveexn.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1ᶠᴴᴰ Mahsun ⭕
-#EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamliveexn1.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",DAZN 1 Mahsun ⭕
 #EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
 https://andro.evrenesoglu239.click/checklist/androstreamliveexn2.m3u8
@@ -2591,4 +2571,4 @@ https://andro.evrenesoglu239.click/checklist/androstreamliveexn6.m3u8
 https://andro.evrenesoglu239.click/checklist/androstreamliveexn7.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",TRT TÜRK Mahsun ⭕
 #EXTVLCOPT:http-referrer=https://mahsunsports14.xyz/
-https://andro.evrenesoglu239.click/checklist/androstreamliveexn8.m3u8
+https://79.76.50.223/live/iOS/SiNETECH/34790.ts
