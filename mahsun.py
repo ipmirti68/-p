@@ -278,18 +278,16 @@ def main():
         else:
             if not skip_url and line.strip() != "":
                 final_lines.append(line)
-    # --- GUVENLIK: Eski liste yoksa / cok kucukse ASLA uzerine yazma ---
+    # --- GUVENLIK ---
     if not old_lines:
-        print("\nDURDURULDU: mirti68.m3u bulunamadi / bos. Liste silinmesin diye yazilmadi.")
+        print("DURDURULDU: mirti68.m3u bulunamadi / bos. Yazilmadi.")
         return
     if len(old_lines) < 100:
-        print(f"\nDURDURULDU: Eski liste cok kucuk ({len(old_lines)} satir). Yazilmadi.")
+        print(f"DURDURULDU: Eski liste cok kucuk ({len(old_lines)} satir). Yazilmadi.")
         return
     if len(final_lines) < len(old_lines) * 0.8:
-        print(f"\nDURDURULDU: Yeni liste eski listenin %80inden kucuk ({len(final_lines)} < {len(old_lines)}). Liste silinmesin diye yazilmadi.")
-        print("Eski liste korundu.")
+        print(f"DURDURULDU: Yeni liste eski listenin %80inden kucuk. Yazilmadi.")
         return
-    # Yedek al
     try:
         import shutil
         shutil.copy(OUTPUT_FILENAME, OUTPUT_FILENAME + ".bak")
@@ -318,50 +316,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-            if BEIN_GROUP in line:
-                if not bein_inserted:
-                    final_lines.extend(bein_results)
-                    bein_inserted = True
-                skip_url = True
-                skip_extvlcopt = True
-                continue
-            elif SPORTS_GROUP in line:
-                if not sports_inserted:
-                    final_lines.extend(sports_results)
-                    sports_inserted = True
-                skip_url = True
-                skip_extvlcopt = True
-                continue
-            else:
-                skip_url = False
-                skip_extvlcopt = False
-                final_lines.append(line)
-        elif line.startswith("#EXTVLCOPT:"):
-            if not skip_extvlcopt and line.strip() != "":
-                final_lines.append(line)
-        else:
-            if not skip_url and line.strip() != "":
-                final_lines.append(line)
-    if not bein_inserted and bein_results:
-        final_lines.extend(bein_results)
-        print("\nNot: Eski beIN grubu bulunamadi, en sona eklendi.")
-    if not sports_inserted and sports_results:
-        final_lines.extend(sports_results)
-        print("\nNot: Eski SPORTS grubu bulunamadi, en sona eklendi.")
-    try:
-        with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
-            f.write("\n".join(final_lines))
-            f.write("\n")
-        print("\n========================================")
-        print("BASARILI")
-        print(f"Kanal sayisi: {len(channels_result)}")
-        print(f"Dosya: {OUTPUT_FILENAME}")
-        print("Gruplar kendi yerinde guncellendi.")
-        print("========================================")
-    except IOError as e:
-        print(f"\nDosya yazma hatasi: {e}")
-
-if __name__ == "__main__":
-    main()
+            
