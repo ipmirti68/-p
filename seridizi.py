@@ -21,7 +21,7 @@ def get_source_urls():
     return urls
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟪◆ SERİ DİZİLER ⭕"
+FILM_GROUP = "🟪◆ SHOWTV DİZİLERİ ⭕"
 
 def get_group(line):
     match = re.search(r'group-title="([^"]*)"', line)
