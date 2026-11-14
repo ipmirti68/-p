@@ -4,8 +4,8 @@ import requests
 import tempfile
 
 # ==========================================
-# MIRTI68 - tv724【entity-beIN¦canonical_name=BEIN】 SPORTS GUNCELLEME
-# Bu listeden alir: 【entity-BEIN¦canonical_name=BEIN】 + BEİN + EXTVLCOPT + ayni URL'li farkli kanallar
+# MIRTI68 - tv724 BEIN SPORTS GUNCELLEME
+# Bu listeden alir: BEIN + BEİN + EXTVLCOPT + ayni URL'li farkli kanallar
 # ==========================================
 
 SOURCE_M3U_URL = os.environ.get(
@@ -78,7 +78,7 @@ def is_bein(entry):
     # Sadece virgülden sonraki isme degil, tum satıra bak
     # tvg-name, group-title dahil
     txt = norm_tr(entry[0])
-    return "【entity-bein¦canonical_name=BEIN】" in txt
+    return "BEIN" in txt
 
 def has_red_dot(extinf):
     return get_channel_name(extinf).strip().startswith("⭕")
