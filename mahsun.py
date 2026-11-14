@@ -278,22 +278,6 @@ def main():
         else:
             if not skip_url and line.strip() != "":
                 final_lines.append(line)
-    # --- GUVENLIK ---
-    if not old_lines:
-        print("DURDURULDU: mirti68.m3u bulunamadi / bos. Yazilmadi.")
-        return
-    if len(old_lines) < 100:
-        print(f"DURDURULDU: Eski liste cok kucuk ({len(old_lines)} satir). Yazilmadi.")
-        return
-    if len(final_lines) < len(old_lines) * 0.8:
-        print(f"DURDURULDU: Yeni liste eski listenin %80inden kucuk. Yazilmadi.")
-        return
-    try:
-        import shutil
-        shutil.copy(OUTPUT_FILENAME, OUTPUT_FILENAME + ".bak")
-        print("Yedek alindi: mirti68.m3u.bak")
-    except Exception as e:
-        print(f"Yedek alinamadi: {e}")
     if not bein_inserted and bein_results:
         final_lines.extend(bein_results)
         print("\nNot: Eski beIN grubu bulunamadi, en sona eklendi.")
@@ -316,4 +300,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-            
+                
