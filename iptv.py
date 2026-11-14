@@ -10,13 +10,13 @@ ATV_FALLBACK = "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_720p.m3u
 
 CHANNELS = {
     "TRT1": {"display": "TRT 1 ⭕", "epg": "TRT 1", "epg_id": "TRT1", "page": "https://www.trt1.com.tr/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt", "marker": "# MIRTI68_TRT1_AUTO", "fallback": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
-    " ATV": {"display": "ATV⭕", "epg": "ATV", "epg_id": "ATV", "page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "【entity-atv¦canonical_name=ATV】", "marker": "# MIRTI68_ATV_AUTO", "fallback": ATV_FALLBACK},
+    " ATV": {"display": "ATV ⭕", "epg": " ATV", "epg_id": " ATV", "page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": " 【entity-atv¦canonical_name=ATV】", "marker": "# MIRTI68_ATV_AUTO", "fallback": ATV_FALLBACK},
     "SHOW": {"display": "SHOW ⭕", "epg": "Show TV", "epg_id": "ShowTV", "page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png", "keyword": "showtv", "marker": "# MIRTI68_SHOWTV_AUTO"},
-    "KANALD": {"display": "KANAL D ⭕", "epg": "KANAL D", "epg_id": "KanalD", "page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
+    "KANALD": {"display": "KANAL D ⭕", "epg": "Kanal D", "epg_id": "KanalD", "page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
     "STAR": {"display": "STAR ⭕", "epg": "Star TV", "epg_id": "StarTV", "page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv", "marker": "# MIRTI68_STARTV_AUTO"},
     "NOW": {"display": "NOW ⭕", "epg": "NOW", "epg_id": "NOW", "page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "nowtv", "marker": "# MIRTI68_NOWTV_AUTO"},
-    "KANAL7": {"display": " KANAL 7 ⭕", "epg": " Kanal 7", "epg_id": "Kanal7", "page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7", "marker": "# MIRTI68_KANAL7_AUTO"},
-    " TV8": {"display": " TV8 ⭕", "epg": " TV8", "epg_id": " TV8", "page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": " tv8", "marker": "# MIRTI68_TV8_AUTO"},
+    "KANAL7": {"display": " KANAL 7 ⭕", "epg": " KANAL 7", "epg_id": "Kanal7", "page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7", "marker": "# MIRTI68_KANAL7_AUTO"},
+    " TV8": {"display": " TV8 ⭕", "epg": " TV8", "epg_id": " TV8", "page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": " 【entity-tv8¦canonical_name=TV8】", "marker": "# MIRTI68_TV8_AUTO"},
 }
 
 def clean_keyword(kw, fallback_kw):
@@ -81,7 +81,7 @@ def get_link(page_url, keyword, channel_key=""):
                             found.append(u)
             except:
                 pass
-            for sel in ["button", ".play-button", ".vjs-big-play-button", "[class*=play]", ".【entity-atv¦canonical_name=ATV】-player", ".ciner-player"]:
+            for sel in ["button", ".play-button", ".vjs-big-play-button", "[class*=play]", ".atv-player", ".ciner-player"]:
                 try:
                     page.click(sel, timeout=1200)
                     page.wait_for_timeout(1500)
@@ -246,72 +246,18 @@ def main():
         if b["marker"]:
             used_markers.add(b["marker"])
 
-    has_atv = False build_block(info, url)
-        ok += 1
-
-    final_blocks = []
-    used_markers = set()
-    for name, info in CHANNELS.items():
-        m = info["marker"]
-        if m in new_blocks_map:
-            final_blocks.append(new_blocks_map[m])
-            used_markers.add(m)
-        else:
-            for b in old_blocks:
-                if b["marker"] == m:
-                    final_blocks.append(b)
-                    used_markers.add(m)
-                    break
-
-    for b in old_blocks:
-        if b["marker"] in used_markers:
-            continue
-        # Eski ATV tekrar eklenmesin, yeni ATV zaten var
-        tail = b["extinf"].split(",", 1)[-1].strip().upper() if "," in b["extinf"] else ""
-        if tail.startswith("ATV"):
-            continue
-        final_blocks.append(b)
-        if b["marker"]:
-            used_markers.add(b["marker"])
-
-    # GARANTI: Listede hic ATV yoksa, yedek ATV'yi ekle - ATV bir daha silinemez
     has_atv = False
     for b in final_blocks:
-        tail = b["extinf"].split(",", 1)[-1].strip().upper() if "," in b["extinf"] else ""
-        if tail.startswith("ATV"):
+        if get_tail(b).startswith("ATV"):
             has_atv = True
             break
     if not has_atv:
         print("[GARANTI] Listede ATV yoktu, yedek ATV eklendi!")
         atv_info = CHANNELS["ATV"]
-        final_blocks.insert(1, build_block(atv_info, ATV_FALLBACK))
-
-        # --- final_blocks oluştur ---
-    final_blocks = []
-    used_markers = set()
-
-    for m in new_blocks_map:
-        if m in new_blocks_map:
-            final_blocks.append(new_blocks_map[m])
-            used_markers.add(m)
+        if len(final_blocks) >= 1:
+            final_blocks.insert(1, build_block(atv_info, ATV_FALLBACK))
         else:
-            for b in old_blocks:
-                if b["marker"] == m:
-                    final_blocks.append(b)
-                    used_markers.add(m)
-                    break
-
-    for b in old_blocks:
-        # Ayni ATV iki kere eklenmesin diye kontrol
-        if b["marker"] in used_markers:
-            continue
-        # Markersiz eski ATV varsa ve yeni ATV zaten eklendiyse onu atla, yoksa koru
-        if not b["marker"] and (",ATV" in b["extinf"] or ", ATV" in b["extinf"]):
-            if "# MIRTI68_ATV_AUTO" in [x["marker"] for x in final_blocks if x["marker"]]:
-                continue
-        final_blocks.append(b)
-        if b["marker"]:
-            used_markers.add(b["marker"])
+            final_blocks.append(build_block(atv_info, ATV_FALLBACK))
 
     out = '#EXTM3U url-tvg="' + EPG_URL + '"\n\n'
     for b in final_blocks:
