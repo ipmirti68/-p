@@ -180,12 +180,156 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315286
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315288
 #EXTINF:-1 tvg-id="360.tr" tvg-name="360.tr" tvg-logo="https://pkchtv1.xyz/logo/360.png" group-title="🟨◆  ULUSAL  4K",360 4K
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315307
-#EXTINF:-1 tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL ⭕",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
-#EXTINF:-1 tvg-id="info" tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",İNFO
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi1.mp4
-#EXTINF:-1 tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="TRT1.tr" tvg-name="TR | TRT 1 HEVC" tvg-logo="http://pkchtv1.xyz/logo/Trt1.png" group-title="🟨◆  ULUSAL ⭕",TR | TRT 1 HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315271
+#EXTINF:-1 tvg-id="ATV.tr" tvg-name="TR | ATV HEVC" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/ULUSALL/ATV.png" group-title="🟨◆  ULUSAL ⭕",TR | ATV HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315273
+#EXTINF:-1 tvg-id="ShowTV.tr" tvg-name="TR | SHOW TV HEVC" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/ULUSALL/SHOW.TV.png" group-title="🟨◆  ULUSAL ⭕",TR | SHOW TV HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315275
+#EXTINF:-1 tvg-id="StarTV.tr" tvg-name="TR | STAR TV HEVC" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/ULUSALL/STAR.YV.png" group-title="🟨◆  ULUSAL ⭕",TR | STAR TV HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315277
+#EXTINF:-1 tvg-id="KanalD.tr" tvg-name="TR | KANAL D HEVC" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/ULUSALL/KANAL.D.png" group-title="🟨◆  ULUSAL ⭕",TR | KANAL D HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315279
+#EXTINF:-1 tvg-id="NOWTV.tr" tvg-name="TR | NOW TV HEVC" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/ULUSALL/NOW.png" group-title="🟨◆  ULUSAL ⭕",TR | NOW TV HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315281
+#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR | TV 8 HEVC" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/ULUSALL/TV.8.png" group-title="🟨◆  ULUSAL ⭕",TR | TV 8 HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315283
+#EXTINF:-1 tvg-id="BEYAZTV.tr" tvg-name="TR | BEYAZ TV HEVC" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/ULUSALL/BEYAZ.TV.png" group-title="🟨◆  ULUSAL ⭕",TR | BEYAZ TV HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315287
+#EXTINF:-1 tvg-id="TRTSPOR.tr" tvg-name="TR | TRT SPOR HEVC" tvg-logo="http://pkchtv1.xyz/logo/TRT.SPOR.png" group-title="🟨◆  ULUSAL ⭕",TR | TRT SPOR HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315289
+#EXTINF:-1 tvg-id="TV100.tr" tvg-name="TR | TV 100 HEVC" tvg-logo="http://pkchtv1.xyz/logo/tv100.png" group-title="🟨◆  ULUSAL ⭕",TR | TV 100 HEVC
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315296
+#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HD" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT 1 HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/787a6f9f-0337-4634-9d49-3d2b94ce5b86.ts
+#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HD [YEDEK]" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT 1 HD [YEDEK]
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/aea62a30-956a-4c9a-a868-c4c04443cb5f.ts
+#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HQ" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT 1 HQ
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/05ef32a4-827d-4e20-87f8-37892492aec6.ts
+#EXTINF:-1 tvg-id="TRT.AVAZ.tr" tvg-name="TR:TRT AVAZ HD" tvg-logo="https://logo.cloudzone55.store/ulusal/trtavaz.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT AVAZ HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/3ea55b07-ade2-4414-b0d6-bb8982f04e38.ts
+#EXTINF:-1 tvg-id="ATV.tr" tvg-name="TR:ATV HD" tvg-logo="https://logo.cloudzone55.store/ulusal/atv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:ATV HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/c71b4e75-87a1-4048-a388-2f7fc5e5c07b.ts
+#EXTINF:-1 tvg-id="ATV.tr" tvg-name="TR:ATV HQ" tvg-logo="https://logo.cloudzone55.store/ulusal/atv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:ATV HQ
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/8f46cd5d-e996-4ba3-a71c-198480f5e288.ts
+#EXTINF:-1 tvg-id="SHOW.TV.tr" tvg-name="TR:SHOW TV HD" tvg-logo="https://logo.cloudzone55.store/ulusal/showtv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:SHOW TV HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/863ca7ee-7fa2-420f-b744-d79411dc8d02.ts
+#EXTINF:-1 tvg-id="SHOW.TV.tr" tvg-name="TR:SHOW TV HQ" tvg-logo="https://logo.cloudzone55.store/ulusal/showtv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:SHOW TV HQ
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/8967ed39-36de-4918-aab1-cd2cc89ea714.ts
+#EXTINF:-1 tvg-id="STAR.TV.tr" tvg-name="TR:STAR TV HD" tvg-logo="https://logo.cloudzone55.store/ulusal/startv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:STAR TV HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/eee14005-6d67-4c76-a51d-cfc8b6ff2748.ts
+#EXTINF:-1 tvg-id="STAR.TV.tr" tvg-name="TR:STAR TV HQ" tvg-logo="https://logo.cloudzone55.store/ulusal/startv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:STAR TV HQ
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/d4cddc47-b636-4c78-959c-d187ac7d58aa.ts
+#EXTINF:-1 tvg-id="KANAL.D.tr" tvg-name="TR:KANAL D HD" tvg-logo="https://logo.cloudzone55.store/ulusal/kanald.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL D HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/04c4ae0e-8d3f-4f03-a9b7-5cb1fa7d2380.ts
+#EXTINF:-1 tvg-id="KANAL.D.tr" tvg-name="TR:KANAL D HQ" tvg-logo="https://logo.cloudzone55.store/ulusal/kanald.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL D HQ
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/09c65780-4e4e-4139-b5f4-c77c2fc5ea96.ts
+#EXTINF:-1 tvg-id="NOW.tr" tvg-name="TR:NOW HD" tvg-logo="https://logo.cloudzone55.store/ulusal/fox.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:NOW HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/3e46da80-1a93-42cb-9828-66e3639f68b0.ts
+#EXTINF:-1 tvg-id="NOW.tr" tvg-name="TR:NOW HQ" tvg-logo="https://logo.cloudzone55.store/ulusal/fox.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:NOW HQ
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/ae1ebbbd-b523-4ea0-9a17-4abfddb1203d.ts
+#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 HD" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8 HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/91683518-cc66-4ec5-9b96-895f5ca21fd6.ts
+#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 HQ" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8 HQ
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/4ca1fee9-2ade-4e5a-87ce-945253971ed3.ts
+#EXTINF:-1 tvg-id="TV.8,5.tr" tvg-name="TR:TV 8.5 HD" tvg-logo="https://logo.cloudzone55.store/ulusal/tv85.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8.5 HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7d6b0ed1-410e-4028-a7d7-bf65b4e63345.ts
+#EXTINF:-1 tvg-id="BEYAZ.TV.tr" tvg-name="TR:BEYAZ TV HD" tvg-logo="https://logo.cloudzone55.store/ulusal/beyaz.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:BEYAZ TV HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/0933cb1e-e299-4872-aee2-8d40e6d08cf4.ts
+#EXTINF:-1 tvg-id="BEYAZ.TV.tr" tvg-name="TR:BEYAZ TV HQ" tvg-logo="https://logo.cloudzone55.store/ulusal/beyaz.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:BEYAZ TV HQ
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/37cbf863-1460-4b5b-90d3-ffdab6145a58.ts
+#EXTINF:-1 tvg-id="KANAL.7.tr" tvg-name="TR:KANAL 7 HQ" tvg-logo="https://logo.cloudzone55.store/ulusal/kanal7.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL 7 HQ
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/55520b91-9b37-4149-9254-07700b623283.ts
+#EXTINF:-1 tvg-id="KANAL.7.tr" tvg-name="TR:KANAL 7 HD" tvg-logo="https://logo.cloudzone55.store/ulusal/kanal7.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL 7 HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6a62ba0b-d7f9-4f25-9b90-2466a9c9e020.ts
+#EXTINF:-1 tvg-id="TEVE2.HD.tr" tvg-name="TR:TEVE 2 HD" tvg-logo="https://logo.cloudzone55.store/ulusal/teve2.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TEVE 2 HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/111ea128-bd26-43df-911e-e269f64d98fa.ts
+#EXTINF:-1 tvg-id="A2.tr" tvg-name="TR:A2 HD" tvg-logo="https://logo.cloudzone55.store/ulusal/a2.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:A2 HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/b20484c4-742b-4024-992c-0ecbdaad70ea.ts
+#EXTINF:-1 tvg-id="360.tr" tvg-name="TR:360 TV HD" tvg-logo="https://logo.cloudzone55.store/ulusal/360tv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:360 TV HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/d34204b7-8ccc-42b7-84c8-60446c440146.ts
+#EXTINF:-1 tvg-id="Bi.Kanal.tr" tvg-name="TR:BI KANAL HD" tvg-logo="https://logo.cloudzone55.store/ulusal/bikanal.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:BI KANAL HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/1d89fcfc-70bd-4ea2-bfd3-a22be55aaf2e.ts
+#EXTINF:-1 tvg-id="TYT.TÜRK.tr" tvg-name="TR:TYT TURK HD" tvg-logo="https://logo.cloudzone55.store/ulusal/tytturk.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TYT TURK HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/244eb57d-660d-4896-8abc-06e119f6f701.ts
+#EXTINF:-1 tvg-id="ATV.Avrupa.ch" tvg-name="TR:ATV AVRUPA HD" tvg-logo="https://logo.cloudzone55.store/ulusal/atveuro.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:ATV AVRUPA HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/30a9c801-5672-4f9b-a615-c63f00043e9f.ts
+#EXTINF:-1 tvg-id="Euro.D.ch" tvg-name="TR:EURO D HD" tvg-logo="https://logo.cloudzone55.store/ulusal/kanaldeuro.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:EURO D HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/65303807-6d5a-4400-ac78-78d643b6946f.ts
+#EXTINF:-1 tvg-id="Euro.Star.ch" tvg-name="TR:EURO STAR HD" tvg-logo="https://logo.cloudzone55.store/ulusal/eurostar.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:EURO STAR HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6874722e-dec9-4e91-a6ce-b2755a2aa0f7.ts
+#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 INT HD" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8int.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8 INT HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6b530b2d-cafe-471b-8077-a7965076dd0f.ts
+#EXTINF:-1 tvg-id="TGRT.EU.ch" tvg-name="TR:TGRT EU HD" tvg-logo="https://logo.cloudzone55.store/ulusal/tgrteu.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TGRT EU HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6db70281-f49f-40ec-8b14-4106ebaf5e66.ts
+#EXTINF:-1 tvg-id="TRT.EBA.tr" tvg-name="TR:TRT EBA HD" tvg-logo="https://logo.cloudzone55.store/ulusal/ebalise.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT EBA HD
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/b103e0bd-3997-4164-ac74-73f343cc004e.ts
+#EXTINF:-1 tvg-id="TRT 4K" tvg-name="TR: TRT 4K" tvg-logo="http://logo.unimaxapp.eu/logoslar/trt4k.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT 4K
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/51
+#EXTINF:-1 tvg-id="TRT 1" tvg-name="TR: TRT 1 FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/trt1hd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT 1 FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/337667
+#EXTINF:-1 tvg-id="TRT 1" tvg-name="TR: TRT 1 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/trt1hd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT 1 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/539941
+#EXTINF:-1 tvg-id="ATV" tvg-name="TR: ATV FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/atv.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: ATV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/46
+#EXTINF:-1 tvg-id="ATV" tvg-name="TR: ATV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/atv.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: ATV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/45
+#EXTINF:-1 tvg-id="TV8" tvg-name="TR: TV 8 FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/tv8.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TV 8 FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/31
+#EXTINF:-1 tvg-id="TV8" tvg-name="TR: TV 8 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/tv8.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TV 8 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/30
+#EXTINF:-1 tvg-id="Show TV" tvg-name="TR: SHOW TV FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/showhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: SHOW TV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/42
+#EXTINF:-1 tvg-id="Show TV" tvg-name="TR: SHOW TV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/showhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: SHOW TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/43
+#EXTINF:-1 tvg-id="Kanal D" tvg-name="TR: KANAL D FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/kanaldhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: KANAL D FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/40
+#EXTINF:-1 tvg-id="Kanal D" tvg-name="TR: KANAL D HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/kanaldhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: KANAL D HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/39
+#EXTINF:-1 tvg-id="Star TV" tvg-name="TR: STAR TV FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/star.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: STAR TV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/37
+#EXTINF:-1 tvg-id="Star TV" tvg-name="TR: STAR TV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/star.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: STAR TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/36
+#EXTINF:-1 tvg-id="NOW" tvg-name="TR: Now TV FHD" tvg-logo="https://logo.unimaxapp.eu/TVlogolar/NowTV.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: Now TV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/33
+#EXTINF:-1 tvg-id="NOW" tvg-name="TR: Now TV HD" tvg-logo="https://logo.unimaxapp.eu/TVlogolar/NowTV.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: Now TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/34
+#EXTINF:-1 tvg-id="BEYAZ TV" tvg-name="TR: BEYAZ TV FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/beyazhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: BEYAZ TV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/25
+#EXTINF:-1 tvg-id="BEYAZ TV" tvg-name="TR: BEYAZ TV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/beyazhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: BEYAZ TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/24
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: TYT TURK" tvg-logo="https://logo.unimaxapp.eu/tvlogo/TYTTurk.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TYT TURK
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/316447
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: CNBC-E" tvg-logo="https://logo.unimaxapp.eu/tvlogo/cnbc-e.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: CNBC-E
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/254694
+#EXTINF:-1 tvg-id="KANAL 7" tvg-name="TR: KANAL 7 FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/kanal7.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: KANAL 7 FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/22
+#EXTINF:-1 tvg-id="KANAL 7" tvg-name="TR: KANAL 7 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/kanal7.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: KANAL 7 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/50845
+#EXTINF:-1 tvg-id="Teve2" tvg-name="TR: TEVE 2 FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/teve2.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TEVE 2 FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/19
+#EXTINF:-1 tvg-id="Teve2" tvg-name="TR: TEVE 2 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/teve2.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TEVE 2 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/18
+#EXTINF:-1 tvg-id="A2" tvg-name="TR: A2 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/a2.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: A2 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/9
+#EXTINF:-1 tvg-id="360" tvg-name="TR: 360 TV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/360.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: 360 TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/16
+#EXTINF:-1 tvg-id="TLC" tvg-name="TR: TLC HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/tlc.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TLC HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/14
+#EXTINF:-1 tvg-id="Flash Tv" tvg-name="TR: FLASH TV HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/02/Flash-tv-yeni-logo.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: FLASH TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/99597
+#EXTINF:-1 tvg-id="TRT 2" tvg-name="TR: TRT 2 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/trt2.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT 2 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/40980
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: BeIN H&E" tvg-logo="https://logo.unimaxapp.eu/tvlogo/Bein-H&E.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: BeIN H&E
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/337662
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: TRT GENCTV" tvg-logo="https://logo.unimaxapp.eu/TVlogolar/trtGencTV.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT GENCTV
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/346536
+#EXTINF:-1 tvg-id="A Para" tvg-name="TR: APARA HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/apara.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: APARA HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/50841
+#EXTINF:-1 tvg-id="TRT TURK" tvg-name="TR: TRT TURK" tvg-logo="https://logo.unimaxapp.eu/tvlogo/trtturk.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT TURK
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/234447
+#EXTINF:-1 tvg-id="SHOW Max" tvg-name="TR: SHOWMAX HD" tvg-logo="http://logo.unimaxapp.eu/tvlogo/showmax.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: SHOWMAX HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/31363
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" tvg-logo="https://i.hizliresim.com/ljzg5ez.png" group-title="🟦◆   HABER 📰",SZC
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/144
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" group-title="🟦◆   HABER 📰",ÖZLEM GÜRSES
@@ -389,10 +533,118 @@ https://css.d6e3eds5e065t5.help//b1/tracks-v1a1/mono.m3u8
 https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports Max 2 -Atom ⭕
 https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1ᴴᴰ Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebiraz1.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebs1.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 2 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebs2.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 3 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebs3.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 4 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebs4.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 5 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebs5.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS Max 1 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebsm1.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS Max 2 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebsm2.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1ˢᴰ Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamliveexn.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1ᴳᴴᴰ Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamliveexn1.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS ⭕",beIN SPORTS 1 Mırtıspor
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
 #EXTINF:-1 tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟩◆ SPORTS ⭕",info
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",S SPORTS 1 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivess1.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",S SPORTS 2 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivess2.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tivibu SPOR Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivets.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tivibu SPOR 1 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivets1.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tivibu Sport 2 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivets2.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tivibu Sport 3 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivets3.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tivibu Sport 4 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivets4.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Smart Sport 1 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivesm1.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Smart Sport 2 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivesm2.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Euro Sport 1 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivees1.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Euro Sport 2 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivees2.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivetb.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii 1 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivetb1.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii 2 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivetb2.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii 3 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivetb3.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii 4 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivetb4.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii 5 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivetb5.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii 6 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivetb6.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii 7 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivetb7.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",Tabii 8 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivetb8.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",DAZN 1 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamliveexn2.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",S SPORT+ Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamliveexn3.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",S SPORT + Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamliveexn4.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",S SPORT 2 Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamliveexn6.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",AZ TV Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamliveexn7.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",TRT TÜRK Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports20.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamliveexn8.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
@@ -900,6 +1152,204 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/627902
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/627903
 #EXTINF:-1  tvg-name="TR | TABii SPOR 7 HD" tvg-logo="http://bluelogo8991.duckdns.org:2095/LOGO.YENI/TR/TABII/7.png" group-title="🟩◆  TABii SPOR ⚽",TR | TABii SPOR 7 HD
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/627904
+#EXTINF:-1 tvg-id="1515835" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515835.jpg" group-title="🟩◆ GOLLER ⭕",08.11.2026 - Beşiktaş 3-0 Gençlerbirliği
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_bjk_genc_8kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515834" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515834.png" group-title="🟩◆ GOLLER ⭕",08.11.2026 - Corendon Alanyaspor 0-2 Trabzonspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_ala_ts_11h_8kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515842" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515842.jpg" group-title="🟩◆ GOLLER ⭕",08.11.2026 - Arca Çorum FK 0-5 Fenerbahçe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_cor_fb_8kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515836" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515836.jpg" group-title="🟩◆ GOLLER ⭕",08.11.2026 - Çaykur Rizespor 2-1 Erzurumspor FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_rize_erz_8kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515838" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515838.jpg" group-title="🟩◆ GOLLER ⭕",07.11.2026 - Galatasaray 4-3 Amed Sportif Faaliyetler
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_gs_amed_11h_7kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515840" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515840.jpg" group-title="🟩◆ GOLLER ⭕",07.11.2026 - Göztepe 1-2 İstanbul Başakşehir
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_goz_bas_11h_7kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515841" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515841.jpg" group-title="🟩◆ GOLLER ⭕",07.11.2026 - Samsunspor 1-0 Tümosan Konyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_sam_kon_11h_7kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515837" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515837.jpg" group-title="🟩◆ GOLLER ⭕",07.11.2026 - Eyüpspor 0-2 Kocaelispor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_eyup_koca_7kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515839" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515839.jpg" group-title="🟩◆ GOLLER ⭕",06.11.2026 - Gaziantep FK 0-2 Kasımpaşa
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_11_gazi_kas_6kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515828" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515828.jpg" group-title="🟩◆ GOLLER ⭕",02.11.2026 - Gençlerbirliği 5-0 Corendon Alanyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_genc_ala_2kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515830" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515830.jpg" group-title="🟩◆ GOLLER ⭕",01.11.2026 - Kasımpaşa 2-2 Beşiktaş
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_kas_bjk_1kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515829" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515829.jpg" group-title="🟩◆ GOLLER ⭕",01.11.2026 - İstanbul Başakşehir 5-2 Samsunspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_bas_sam_1kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515833" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515833.jpg" group-title="🟩◆ GOLLER ⭕",01.11.2026 - Trabzonspor 2-0 Gaziantep FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_ts_gazi_1kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515825" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515825.jpg" group-title="🟩◆ GOLLER ⭕",01.11.2026 - Amed Sportif Faaliyetler 5-1 Eyüpspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_amed_eyup_1kas_ip&secure=1
+#EXTINF:-1 tvg-id="1515827" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515827.jpg" group-title="🟩◆ GOLLER ⭕",31.10.2026 - Fenerbahçe 1-2 Göztepe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_fb_goz_10h_31ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515831" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515831.jpg" group-title="🟩◆ GOLLER ⭕",31.10.2026 - Kocaelispor 0-0 Çaykur Rizespor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_koca_rize_10h_31ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515826" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515826.jpg" group-title="🟩◆ GOLLER ⭕",31.10.2026 - Erzurumspor FK 1-3 Arca Çorum FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_erz_cor_31ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515832" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515832.jpg" group-title="🟩◆ GOLLER ⭕",30.10.2026 - Tümosan Konyaspor 0-4 Galatasaray
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_10_kon_gs_30ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515820" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515820.jpg" group-title="🟩◆ GOLLER ⭕",26.10.2026 - Galatasaray 2-1 Fenerbahçe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_gs_fb_27ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515814" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515814.jpg" group-title="🟩◆ GOLLER ⭕",26.10.2026 - Beşiktaş 2-0 İstanbul Başakşehir
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_bjk_bas_9h_26ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515816" tvg-logo="https://media01.tr.beinsports.com/img/highlights/ozet.jpg" group-title="🟩◆ GOLLER ⭕",26.10.2026 - Çaykur Rizespor 3-4 Trabzonspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_rizee_ts_26ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515822" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515822.jpg" group-title="🟩◆ GOLLER ⭕",25.10.2026 - Göztepe 2-0 Arca Çorum FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_goz_corum_25ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515823" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515823.jpg" group-title="🟩◆ GOLLER ⭕",25.10.2026 - Tümosan Konyaspor 2-0 Gençlerbirliği
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_kon_genc_25ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515824" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515824.jpg" group-title="🟩◆ GOLLER ⭕",24.10.2026 - Samsunspor 1-2 Amed Sportif Faaliyetler
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_sam_amed_24ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515821" tvg-logo="https://media03.tr.beinsports.com/img/highlights/ozet.jpg" group-title="🟩◆ GOLLER ⭕",24.10.2026 - Gaziantep FK 1-3 Erzurumspor FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_ant_erz_24ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515818" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515818.jpg" group-title="🟩◆ GOLLER ⭕",24.10.2026 - Eyüpspor 0-1 Kasımpaşa
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_eyup_kas_9h_24ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515813" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515813.jpg" group-title="🟩◆ GOLLER ⭕",23.10.2026 - Corendon Alanyaspor 1-2 Kocaelispor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_9_ala_koca_9h_23ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515811" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515811.jpg" group-title="🟩◆ GOLLER ⭕",19.10.2026 - Trabzonspor 2-0 Beşiktaş
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_ts_bjk_19ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515808" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515808.jpg" group-title="🟩◆ GOLLER ⭕",18.10.2026 - İstanbul Başakşehir 2-1 Gaziantep FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_bas_gazi_8h_18ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515810" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515810.jpg" group-title="🟩◆ GOLLER ⭕",18.10.2026 - Kocaelispor 1-2 Göztepe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_koca_goz_8h_18ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515809" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515809.jpg" group-title="🟩◆ GOLLER ⭕",18.10.2026 - Kasımpaşa 4-1 Samsunspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_kas_sam_18ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515806" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515806.jpg" group-title="🟩◆ GOLLER ⭕",17.10.2026 - Fenerbahçe 3-0 Corendon Alanyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_fb_ala_17ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515804" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515804.jpg" group-title="🟩◆ GOLLER ⭕",17.10.2026 - Amed Sportif Faaliyetler 1-0 Tümosan Konyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_amed_kon_17ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515807" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515807.jpg" group-title="🟩◆ GOLLER ⭕",17.10.2026 - Gençlerbirliği 0-1 Galatasaray
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_genc_gs_17ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515805" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515805.jpg" group-title="🟩◆ GOLLER ⭕",17.10.2026 - Erzurumspor FK 2-0 Eyüpspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_erz_eyup_17ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515812" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515812.jpg" group-title="🟩◆ GOLLER ⭕",16.10.2026 - Arca Çorum FK 2-1 Çaykur Rizespor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_8_cor_rize_8h_16ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515797" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515797.jpg" group-title="🟩◆ GOLLER ⭕",12.10.2026 - Eyüpspor 0-4 Göztepe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_eyup_goz_12ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515794" tvg-logo="https://media03.tr.beinsports.com/img/highlights/ozet.jpg" group-title="🟩◆ GOLLER ⭕",11.10.2026 - Beşiktaş 2-1 Kocaelispor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_bjk_koca_11ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515800" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515800.jpg" group-title="🟩◆ GOLLER ⭕",11.10.2026 - Gaziantep FK 0-3 Arca Çorum FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_gazi_cor_7h_11ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515802" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515802.jpg" group-title="🟩◆ GOLLER ⭕",11.10.2026 - Tümosan Konyaspor 0-0 İstanbul Başakşehir
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_kon_bas_7h_11ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515795" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515795.jpg" group-title="🟩◆ GOLLER ⭕",10.10.2026 - Çaykur Rizespor 0-3 Fenerbahçe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_rize_fb_7h_10ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515792" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515792.jpg" group-title="🟩◆ GOLLER ⭕",10.10.2026 - Corendon Alanyaspor 0-0 Erzurumspor FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_ala_erz_10ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515803" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515803.jpg" group-title="🟩◆ GOLLER ⭕",10.10.2026 - Samsunspor 0-3 Trabzonspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_sam_ts_10ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515801" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515801.jpg" group-title="🟩◆ GOLLER ⭕",10.10.2026 - Gençlerbirliği 2-2 Amed Sportif Faaliyetler
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_genc_amed2_7h_ip&secure=1
+#EXTINF:-1 tvg-id="1515799" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515799.jpg" group-title="🟩◆ GOLLER ⭕",09.10.2026 - Galatasaray 3-1 Kasımpaşa
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_7_gs_kas_7h_9ekim_ip&secure=1
+#EXTINF:-1 tvg-id="1515778" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515778.jpg" group-title="🟩◆ GOLLER ⭕",20.09.2026 - Amed Sportif Faaliyetler 3-2 Beşiktaş
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_amed_bjk_20eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515781" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515781.jpg" group-title="🟩◆ GOLLER ⭕",20.09.2026 - Göztepe 2-2 Çaykur Rizespor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_goz_rize_20eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515779" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515779.jpg" group-title="🟩◆ GOLLER ⭕",20.09.2026 - Erzurumspor FK 1-0 Samsunspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_erz_sam_6h_20eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515780" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515780.jpg" group-title="🟩◆ GOLLER ⭕",20.09.2026 - Fenerbahçe 8-0 Eyüpspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_fb_eyup_20eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515783" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515783.jpg" group-title="🟩◆ GOLLER ⭕",19.09.2026 - İstanbul Başakşehir 4-0 Gençlerbirliği
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_bas_genc_19eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515788" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515788.jpeg" group-title="🟩◆ GOLLER ⭕",19.09.2026 - Trabzonspor 4-0 Galatasaray
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_ts_gs_6h_19eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515787" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515787.jpg" group-title="🟩◆ GOLLER ⭕",19.09.2026 - Kocaelispor 2-0 Gaziantep FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_koca_gazi_6h_19eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515790" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515790.jpg" group-title="🟩◆ GOLLER ⭕",19.09.2026 - Arca Çorum FK 1-2 Corendon Alanyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_cor_ala_6h_19eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515785" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515785.jpg" group-title="🟩◆ GOLLER ⭕",18.09.2026 - Kasımpaşa 0-0 Tümosan Konyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_6_kas_kon_18eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515774" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515774.jpg" group-title="🟩◆ GOLLER ⭕",14.09.2026 - Gaziantep FK 0-0 Fenerbahçe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_antep_fb_5h_14eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515766" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515766.jpg" group-title="🟩◆ GOLLER ⭕",13.09.2026 - Amed Sportif Faaliyetler 5-0 İstanbul Başakşehir
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_amed_bas_5h_13eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515772" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515772.jpg" group-title="🟩◆ GOLLER ⭕",13.09.2026 - Galatasaray 1-0 Kocaelispor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_gs_koca_5h_13eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515775" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515775.jpg" group-title="🟩◆ GOLLER ⭕",13.09.2026 - Gençlerbirliği 1-2 Kasımpaşa
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_genc_kas_13eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515764" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515764.jpg" group-title="🟩◆ GOLLER ⭕",12.09.2026 - Corendon Alanyaspor 2-2 Göztepe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_ala_goz_5h_12eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515776" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515776.jpg" group-title="🟩◆ GOLLER ⭕",12.09.2026 - Tümosan Konyaspor 1-0 Trabzonspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_kon_ts_5h_12eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515770" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515770.jpg" group-title="🟩◆ GOLLER ⭕",12.09.2026 - Eyüpspor 0-2 Çaykur Rizespor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_eyup_rize_5h_12eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515777" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515777.jpg" group-title="🟩◆ GOLLER ⭕",12.09.2026 - Samsunspor 1-5 Arca Çorum FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_sam_cor_5h_12eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515768" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515768.jpg" group-title="🟩◆ GOLLER ⭕",11.09.2026 - Beşiktaş 3-0 Erzurumspor FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_5_bjk_erz_5h_11eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515750" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515750.jpeg" group-title="🟩◆ GOLLER ⭕",07.09.2026 - Çaykur Rizespor 0-1 Corendon Alanyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_rize_ala_7eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515755" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515755.jpg" group-title="🟩◆ GOLLER ⭕",07.09.2026 - Göztepe 2-4 Gaziantep FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_goz_ant_7eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515758" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515758.jpg" group-title="🟩◆ GOLLER ⭕",06.09.2026 - Kocaelispor 1-0 Samsunspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_koca_sam_6eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515760" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515760.jpg" group-title="🟩◆ GOLLER ⭕",06.09.2026 - Trabzonspor 5-0 Gençlerbirliği
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_ts_genc_6eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515757" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515757.jpg" group-title="🟩◆ GOLLER ⭕",06.09.2026 - Kasımpaşa 2-2 Amed Sportif Faaliyetler
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_ppasa_amed_6eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515762" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515762.jpg" group-title="🟩◆ GOLLER ⭕",06.09.2026 - Arca Çorum FK 3-0 Eyüpspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_cor_eyup_6eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515754" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515754.jpg" group-title="🟩◆ GOLLER ⭕",05.09.2026 - Fenerbahçe 1-2 Beşiktaş
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_fb_bjk_4h_5eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515752" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515752.jpg" group-title="🟩◆ GOLLER ⭕",05.09.2026 - Erzurumspor FK 1-0 Tümosan Konyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_erz_kon_4h_5eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515756" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515756.jpg" group-title="🟩◆ GOLLER ⭕",04.09.2026 - İstanbul Başakşehir 2-3 Galatasaray
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_4_bas_gs_4h_4eyl_ip&secure=1
+#EXTINF:-1 tvg-id="1515737" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515737.jpg" group-title="🟩◆ GOLLER ⭕",31.08.2026 - Amed Sportif Faaliyetler 2-1 Trabzonspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_amed_ts_31agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515738" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515738.jpg" group-title="🟩◆ GOLLER ⭕",31.08.2026 - Beşiktaş 6-2 Arca Çorum FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_bjk_cor_31agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515745" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515745.jpg" group-title="🟩◆ GOLLER ⭕",30.08.2026 - İstanbul Başakşehir 1-1 Kasımpaşa
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_bas_kas_30agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515748" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515748.jpg" group-title="🟩◆ GOLLER ⭕",30.08.2026 - Samsunspor 0-2 Fenerbahçe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_sam_fb_30agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515740" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515740.jpg" group-title="🟩◆ GOLLER ⭕",30.08.2026 - Eyüpspor 2-1 Corendon Alanyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_eyup_ala_30agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515741" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515741.jpg" group-title="🟩◆ GOLLER ⭕",29.08.2026 - Galatasaray 3-2 Göztepe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_gs_goz_3h_29h_ip&secure=1
+#EXTINF:-1 tvg-id="1515742" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515742.jpg" group-title="🟩◆ GOLLER ⭕",29.08.2026 - Gaziantep FK 1-2 Çaykur Rizespor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_antep_rize_4h_29agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515746" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515746.png" group-title="🟩◆ GOLLER ⭕",29.08.2026 - Tümosan Konyaspor 1-2 Kocaelispor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_kon_koca_29agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515743" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515743.jpg" group-title="🟩◆ GOLLER ⭕",28.08.2026 - Gençlerbirliği 1-1 Erzurumspor FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_3_genc_erz_28agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515733" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515733.jpg" group-title="🟩◆ GOLLER ⭕",24.08.2026 - Kocaelispor 2-0 Amed Sportif Faaliyetler
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_koca_amed_2h_24agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515722" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515722.jpg" group-title="🟩◆ GOLLER ⭕",23.08.2026 - Corendon Alanyaspor 1-0 Beşiktaş
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_ala_bjk_23agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515731" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515731.jpg" group-title="🟩◆ GOLLER ⭕",23.08.2026 - Göztepe 0-1 Gençlerbirliği
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_goz_genc_2h_23agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515728" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515728.jpg" group-title="🟩◆ GOLLER ⭕",23.08.2026 - Eyüpspor 0-1 Gaziantep FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_eyup_gazi_2h_23agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515734" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515734.jpg" group-title="🟩◆ GOLLER ⭕",23.08.2026 - Trabzonspor 2-1 İstanbul Başakşehir
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_ts_bas_2h_23agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515730" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515730.jpg" group-title="🟩◆ GOLLER ⭕",22.08.2026 - Fenerbahçe 4-2 Tümosan Konyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_fb_kon_22agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515724" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515724.jpg" group-title="🟩◆ GOLLER ⭕",22.08.2026 - Çaykur Rizespor 0-2 Samsunspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_rizee_sam_22agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515735" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515735.jpg" group-title="🟩◆ GOLLER ⭕",22.08.2026 - Arca Çorum FK 0-1 Kasımpaşa
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_corun_kas_22agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515726" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515726.jpg" group-title="🟩◆ GOLLER ⭕",21.08.2026 - Erzurumspor FK 0-4 Galatasaray
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_2_erz_gs_2h_21agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515721" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515721.jpg" group-title="🟩◆ GOLLER ⭕",17.08.2026 - Samsunspor 3-3 Göztepe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_sam_goz_1h_17agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515709" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515709.jpg" group-title="🟩◆ GOLLER ⭕",16.08.2026 - Amed Sportif Faaliyetler 3-0 Erzurumspor FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_amed_erzurum_1h_15agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515711" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515711.jpg" group-title="🟩◆ GOLLER ⭕",16.08.2026 - Beşiktaş 1-0 Eyüpspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_bjk_eyup_1h_15agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515718" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515718.jpg" group-title="🟩◆ GOLLER ⭕",16.08.2026 - İstanbul Başakşehir 2-0 Kocaelispor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_bas_koca_1h_16agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515714" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515714.jpg" group-title="🟩◆ GOLLER ⭕",15.08.2026 - Gaziantep FK 1-1 Corendon Alanyaspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_ant_ala_1h_ip&secure=1
+#EXTINF:-1 tvg-id="1515716" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515716.jpg" group-title="🟩◆ GOLLER ⭕",15.08.2026 - Gençlerbirliği 2-1 Fenerbahçe
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_genc_fb_1h_15agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515719" tvg-logo="https://media03.tr.beinsports.com/img/highlights/1515719.jpg" group-title="🟩◆ GOLLER ⭕",15.08.2026 - Kasımpaşa 1-1 Trabzonspor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_kas_ts_1h_15agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515720" tvg-logo="https://media01.tr.beinsports.com/img/highlights/1515720.jpg" group-title="🟩◆ GOLLER ⭕",15.08.2026 - Tümosan Konyaspor 0-1 Çaykur Rizespor
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_kon_rize_1h_15agu_ip&secure=1
+#EXTINF:-1 tvg-id="1515712" tvg-logo="https://media02.tr.beinsports.com/img/highlights/1515712.jpg" group-title="🟩◆ GOLLER ⭕",14.08.2026 - Galatasaray 2-2 Arca Çorum FK
+https://dt-switch.akamaized.net/api/er/Get?ai=636&ak=null&switch=beinsports&customerid=1&format=4&action=redirect&ar=ligtvcomtr_tauri_ozt_20262027_1_gs_cor_15agu_v3_ip&secure=1
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ GOLLER ⭕",beIN SPORTS 1 Mırtıspor (copy)
 https://mirti-spor-2026.fly.dev/cam0/index.m3u8
 #EXTINF:-1 tvg-name="kontv" tvg-logo="https://kontv.tr/wp-content/uploads/2025/10/kontv.png" group-title="🟧◆  YEREL 🏘️",KON TV
@@ -1568,8 +2018,302 @@ http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=873689&extensio
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=873688&extension=ts
 #EXTINF:-1  tvg-name="ZEKI METIN TV" group-title="⬛◆  SİNEMA  🎬",ZEKI METIN TV
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=873687&extension=ts
-#EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Oak Caddesi'nin Sonu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Oak Caddesi'nin Sonu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595945.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Avengers Endgame: Encore (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Avengers Endgame: Encore (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595944.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Odyssey (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Odyssey (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595836.mkv
+#EXTINF:-1 tvg-id="" tvg-name="PERDE (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",PERDE (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595785.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Can Dostumun Mükemmel Noel'i (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Can Dostumun Mükemmel Noel'i (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595777.mkv
+#EXTINF:-1 tvg-id="" tvg-name="A Story of Derry (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",A Story of Derry (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595745.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Vahşinin Kalbi (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Vahşinin Kalbi (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595740.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mongoose (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mongoose (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595701.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Resident Evil (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Resident Evil (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595573.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Moda (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Moda (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595557.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ali G: Ben Kimim? (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ali G: Ben Kimim? (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595446.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Verity: Gerçeğin Diğer Kıyısı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Verity: Gerçeğin Diğer Kıyısı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595431.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Hamlet (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Hamlet (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595387.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Jackass: Sonuncusu ve En İyisi (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Jackass: Sonuncusu ve En İyisi (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595329.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Fünye (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Fünye (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595196.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Bad Apples (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Bad Apples (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595177.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yolda Kaldım (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yolda Kaldım (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595152.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Tavşan İmparatorluğu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Tavşan İmparatorluğu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595144.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Moana (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Moana (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595087.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Tenzing (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Tenzing (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594999.mkv
+#EXTINF:-1 tvg-id="" tvg-name="One Last Shot (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",One Last Shot (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594976.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Aldığımız Nefes (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Aldığımız Nefes (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594935.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Siccîn 9 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Siccîn 9 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594934.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Esas Plan (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Esas Plan (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594829.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Bir Koyun Polisiyesi (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Bir Koyun Polisiyesi (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594769.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Hayatının Aşkı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Hayatının Aşkı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594745.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Animals (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Animals (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594615.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Matchbox the Movie (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Matchbox the Movie (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594542.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Hayata Mahkûm (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Hayata Mahkûm (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594511.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Soulm8te (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Soulm8te (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594459.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Çatlı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Çatlı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594448.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yasak Meyveler (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yasak Meyveler (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594441.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Örümcek-Adam: Yepyeni Bir Gün (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Örümcek-Adam: Yepyeni Bir Gün (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594432.mkv
+#EXTINF:-1 tvg-id="" tvg-name="UNABOMBER (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",UNABOMBER (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594310.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Şeytan Çocuk (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Şeytan Çocuk (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594296.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mother Mary (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mother Mary (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594291.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Çıkış Yolu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Çıkış Yolu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594236.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Sultana (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Sultana (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594148.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Başıbozuklar (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Başıbozuklar (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594136.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Nasıl Katil Olunur? (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Nasıl Katil Olunur? (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/593609.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Keskin Nişancı: Bayraksız (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Keskin Nişancı: Bayraksız (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591970.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yalancı Komşu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yalancı Komşu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591951.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Efes'in Sırrı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Efes'in Sırrı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591945.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Drama (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Drama (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591937.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kocamın Avukatıyım (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kocamın Avukatıyım (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591881.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mayday (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mayday (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591877.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Runner (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Runner (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591864.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Night Patrol (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Night Patrol (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591816.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yellow Mirror (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yellow Mirror (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591815.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Fısıltı Adam (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Fısıltı Adam (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591801.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Öngörü (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Öngörü (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591758.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Saklambaç 2 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Saklambaç 2 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/589598.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Bana Şans Dileme (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Bana Şans Dileme (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/583253.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeşler Araştırma (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kardeşler Araştırma (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/583220.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Beast (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Beast (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/572825.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yeni Nesil: Kötülerin Harikalar Diyarı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yeni Nesil: Kötülerin Harikalar Diyarı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/572644.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Savage House (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Savage House (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/570344.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Sessiz Tepe: Dönüş (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Sessiz Tepe: Dönüş (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/539944.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Supergirl (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Supergirl (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/462984.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Last House (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Last House (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/462416.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Son Perde Aşk (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Son Perde Aşk (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/455635.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeş Takımı 3 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kardeş Takımı 3 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430858.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Devils Mouth (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Devils Mouth (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430839.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Parçalı Yıllar (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Parçalı Yıllar (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430794.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Is God Is (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Is God Is (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430714.mkv
+#EXTINF:-1 tvg-id="" tvg-name="İlk Aşkın Tohumları (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",İlk Aşkın Tohumları (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430688.mkv
+#EXTINF:-1 tvg-id="" tvg-name="72 HOURS (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",72 HOURS (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427239.mkv
+#EXTINF:-1 tvg-id="" tvg-name="In Cold Light (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",In Cold Light (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427215.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mutluyuz Mu? (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mutluyuz Mu? (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427178.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mortal Kombat II (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mortal Kombat II (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427171.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Fırtına Kız (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Fırtına Kız (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427166.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Shelter (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Shelter (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427165.mkv
+#EXTINF:-1 tvg-id="" tvg-name="İki Destan Bir Vatan (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",İki Destan Bir Vatan (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427142.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Disclosure Day (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Disclosure Day (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427120.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Obsession (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Obsession (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427117.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Masters of the Universe (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Masters of the Universe (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427019.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Star Wars: The Mandalorian and Grogu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Star Wars: The Mandalorian and Grogu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426984.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Scary Movie (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Scary Movie (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426928.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yasak Aşkın Günahı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yasak Aşkın Günahı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426922.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Breadwinner (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Breadwinner (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426869.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Send Help (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Send Help (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426861.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ip Man Kung Fu Legend (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ip Man Kung Fu Legend (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426837.mkv
+#EXTINF:-1 tvg-id="" tvg-name="One Mile: Chapter Two (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",One Mile: Chapter Two (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426831.mkv
+#EXTINF:-1 tvg-id="" tvg-name="One Mile: Chapter One (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",One Mile: Chapter One (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426830.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ice Skater (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ice Skater (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426824.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Passenger (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Passenger (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425879.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Lee Cronins The Mummy (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Lee Cronins The Mummy (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425877.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Simpsley (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Simpsley (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425827.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Moment (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Moment (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425816.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Sarı Zarflar (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Sarı Zarflar (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425804.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Enola Holmes 3 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Enola Holmes 3 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424952.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Devil Wears Prada 2 Red Carpet World Premiere (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Devil Wears Prada 2 Red Carpet World Premiere (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424901.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Cam Sehpa (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Cam Sehpa (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424836.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Drivers Ed (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Drivers Ed (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424816.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Little Brother (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Little Brother (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424668.mkv
+#EXTINF:-1 tvg-id="" tvg-name="In the Hand of Dante (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",In the Hand of Dante (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/416556.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Voicemails for Isabelle (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Voicemails for Isabelle (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/362235.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kaygısız Baş (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kaygısız Baş (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/362060.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Extreme Makeover: Homer Edition (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Extreme Makeover: Homer Edition (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/362043.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ketenpere: Dalavere (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ketenpere: Dalavere (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361584.mkv
+#EXTINF:-1 tvg-id="" tvg-name="They Will Kill You (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",They Will Kill You (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361578.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Panda Plan 2 The Magical Tribe (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Panda Plan 2 The Magical Tribe (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361528.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Over Your Dead Body (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Over Your Dead Body (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361505.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Michael (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Michael (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361464.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Propeller One-Way Night Coach (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Propeller One-Way Night Coach (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361453.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Office Romance (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Office Romance (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361239.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yaz Evi (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yaz Evi (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360972.mkv
+#EXTINF:-1 tvg-id="" tvg-name="D.I.S.C.O. (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",D.I.S.C.O. (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360689.mkv
+#EXTINF:-1 tvg-id="" tvg-name="K-Pops! (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",K-Pops! (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360617.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Outcome (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Outcome (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360409.mkv
+#EXTINF:-1 tvg-id="" tvg-name="We Bury the Dead (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",We Bury the Dead (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360288.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Bride (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Bride (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360270.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ladies First (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ladies First (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360233.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Tom Clancys Jack Ryan Ghost War (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Tom Clancys Jack Ryan Ghost War (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360074.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Punisher: One Last Kill (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Punisher: One Last Kill (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/359959.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Giant (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Giant (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/359755.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Project Hail Mary (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Project Hail Mary (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/359719.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Remarkably Bright Creatures (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Remarkably Bright Creatures (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/359690.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Wuthering Heights (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Wuthering Heights (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/354946.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Reminders of Him (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Reminders of Him (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/354849.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Apex (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Apex (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/354795.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Bu İşin Şakası Yok (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Bu İşin Şakası Yok (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/354003.mkv
+#EXTINF:-1 tvg-id="" tvg-name="180 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",180 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353961.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Balls Up (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Balls Up (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353953.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Güvercin Terbiyecisi Hammal (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Güvercin Terbiyecisi Hammal (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353827.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Thrash (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Thrash (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353607.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Crime 101 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Crime 101 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353273.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Scream 7 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Scream 7 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353263.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Sonunda Sen (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Sonunda Sen (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353183.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mike & Nick & Nick & Alice (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mike & Nick & Nick & Alice (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353148.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Pretty Lethal (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Pretty Lethal (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/352907.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Peaky Blinders The Immortal Man (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Peaky Blinders The Immortal Man (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/352032.mkv
+#EXTINF:-1 tvg-id="" tvg-name="War Machine (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",War Machine (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/351282.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yasemin Sakallıoğlu Doğru Koca Nasıl Seçilir (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yasemin Sakallıoğlu Doğru Koca Nasıl Seçilir (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/351158.mkv
+#EXTINF:-1 tvg-id="" tvg-name="28 Years Later The Bone Temple (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",28 Years Later The Bone Temple (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/351003.mkv
+#EXTINF:-1 tvg-id="" tvg-name="In the Blink of an Eye (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",In the Blink of an Eye (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/350758.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Bluff (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Bluff (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/350681.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mercy (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mercy (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/349556.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Joes College Road Trip (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Joes College Road Trip (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/349439.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Love Me Love Me (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Love Me Love Me (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/349430.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Primate (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Primate (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/349352.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Relationship Goals (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Relationship Goals (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/348813.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Greenland 2 Migration (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Greenland 2 Migration (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/348800.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Wrecking Crew (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Wrecking Crew (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/348307.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kidnapped Elizabeth Smart (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kidnapped Elizabeth Smart (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/348191.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Rip (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Rip (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/347772.mkv
+#EXTINF:-1 tvg-id="" tvg-name="One Battle After Another (2025)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",One Battle After Another (2025)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/337191.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mission Impossible The Final Reckoning (2025)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mission Impossible The Final Reckoning (2025)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/336718.mkv
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ SHOWTV DİZİLERİ ⭕",BİLGİLENDİRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 group-title="🟪◆ SHOWTV DİZİLERİ ⭕" tvg-logo="https://mo.ciner.com.tr/showtv/iu/300x300/sevdan-bir-ates.jpg",1. Bölüm - 🔴
@@ -1860,8 +2604,106 @@ https://vmcdn.ciner.com.tr/ht/2019/09/09/F303A06F70F7E7A7B0156D90D195051E.m3u8
 https://vmcdn.ciner.com.tr/ht/2024/06/24/F8DB219EEAC4EA7CD528B92AF62395BD.m3u8
 #EXTINF:-1 group-title="🟪◆ SHOWTV DİZİLERİ ⭕" tvg-logo="https://mo.ciner.com.tr/showtv/iu/300x300/bir-deli-sevda.jpg",Final HD  - Son Bölüm - 🔴
 https://vmcdn.ciner.com.tr/ht/2017/05/16/C3BC627F78D88510A0AB44458F4699B9.m3u8
-#EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆  7/24 DİZİ 📺⭕",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="" tvg-name="TR:AKASYA DURAGI 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:AKASYA DURAGI 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296185
+#EXTINF:-1 tvg-id="" tvg-name="TR:ANKARA'NIN DIKMENI 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ANKARA'NIN DIKMENI 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296186
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 ÖLÜM ZAMANI" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 ÖLÜM ZAMANI
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296187
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 VATANIM SENSİN" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 VATANIM SENSİN
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296188
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 SUCCESSION" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 SUCCESSION
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296189
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 SİHİRLİ ANNEM EXXEN" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 SİHİRLİ ANNEM EXXEN
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296190
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 SİHİRLİ ANNEM" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 SİHİRLİ ANNEM
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296191
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 SEN ANLAT KARADENİZ" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 SEN ANLAT KARADENİZ
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296192
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 SAKARYA FIRAT" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 SAKARYA FIRAT
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296193
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 MANİFEST" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 MANİFEST
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296194
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 MAHSUN J" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 MAHSUN J
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296195
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 LEYLA İLE MECNUN - EXXEN" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 LEYLA İLE MECNUN - EXXEN
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296196
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 KURTLAR VADİSİ" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 KURTLAR VADİSİ
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296197
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 KUZEY GÜNEY" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 KUZEY GÜNEY
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296198
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 KONUŞANLAR" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 KONUŞANLAR
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296199
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 KIZILCIK ŞERBETİ" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 KIZILCIK ŞERBETİ
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296200
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 KIZIL GONCALAR" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 KIZIL GONCALAR
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296201
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 KARDEŞ PAYI" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 KARDEŞ PAYI
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296202
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 KARADAYI" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 KARADAYI
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296203
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 KANIT" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 KANIT
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296204
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 İŞLER GÜÇLER" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 İŞLER GÜÇLER
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296205
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 HEKİMOĞLU" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 HEKİMOĞLU
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296206
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 GÜLDÜR GÜLDÜR" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 GÜLDÜR GÜLDÜR
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296207
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 GİBİ" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 GİBİ
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296208
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 GADDAR" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 GADDAR
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296209
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 EZEL" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 EZEL
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296210
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 ERKENCEİ KUŞ" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 ERKENCEİ KUŞ
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296211
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 DİRİLŞ ERTUĞRUL" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 DİRİLŞ ERTUĞRUL
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296212
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 ÇOCUKLAR DUYMASIN" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 ÇOCUKLAR DUYMASIN
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296213
+#EXTINF:-1 tvg-id="" tvg-name="TR:7/24 KUZEY YILDIZI" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:7/24 KUZEY YILDIZI
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296214
+#EXTINF:-1 tvg-id="" tvg-name="TR:ARKA SOKAKLAR 1 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 1 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296215
+#EXTINF:-1 tvg-id="" tvg-name="TR:ARKA SOKAKLAR 2 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 2 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296216
+#EXTINF:-1 tvg-id="" tvg-name="TR:ARKA SOKAKLAR 3 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 3 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296217
+#EXTINF:-1 tvg-id="" tvg-name="TR:ARKA SOKAKLAR 4 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 4 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296218
+#EXTINF:-1 tvg-id="" tvg-name="TR:ARKA SOKAKLAR 5 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 5 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296219
+#EXTINF:-1 tvg-id="" tvg-name="TR:ARKA SOKAKLAR 6 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 6 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296220
+#EXTINF:-1 tvg-id="" tvg-name="TR:ARKADAŞıM HOŞGELDIN 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKADAŞıM HOŞGELDIN 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296221
+#EXTINF:-1 tvg-id="" tvg-name="TR:AŞKıM AŞKıM 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:AŞKıM AŞKıM 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296222
+#EXTINF:-1 tvg-id="" tvg-name="TR:DIZIAX THE LAST OF US" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIZIAX THE LAST OF US
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296223
+#EXTINF:-1 tvg-id="" tvg-name="TR:EXXEN KATARSIS 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:EXXEN KATARSIS 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296224
+#EXTINF:-1 tvg-id="" tvg-name="TR:EŞKIYA DÜNYAYA HÜKÜMDAR OLMAZ 1" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:EŞKIYA DÜNYAYA HÜKÜMDAR OLMAZ 1
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296225
+#EXTINF:-1 tvg-id="" tvg-name="TR:EŞKIYA DÜNYAYA HÜKÜMDAR OLMAZ 2" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:EŞKIYA DÜNYAYA HÜKÜMDAR OLMAZ 2
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296226
+#EXTINF:-1 tvg-id="" tvg-name="TR:GALIP DERVIŞ 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GALIP DERVIŞ 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296227
+#EXTINF:-1 tvg-id="" tvg-name="TR:GÜLBEYAZ 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GÜLBEYAZ 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296228
+#EXTINF:-1 tvg-id="" tvg-name="TR:HZ. YUSUF 7/24" tvg-logo="https://granada.choval.xyz/tr/dini/hzyusuf.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:HZ. YUSUF 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296229
+#EXTINF:-1 tvg-id="" tvg-name="TR:KARA SEVDA 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KARA SEVDA 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296230
+#EXTINF:-1 tvg-id="" tvg-name="TR:Rambo 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:Rambo 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296231
+#EXTINF:-1 tvg-id="" tvg-name="TR:YEDI NUMARA 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:YEDI NUMARA 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296232
+#EXTINF:-1 tvg-id="" tvg-name="TR:Çukur 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:Çukur 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296233
+#EXTINF:-1 tvg-id="" tvg-name="TR:İSTANBULLU GELIN 7/24" tvg-logo="" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:İSTANBULLU GELIN 7/24
+http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/296234
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ GÜNCEL DİZİLER ⭕",BİLGİLENDİRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:0 type="video" tvg-logo="https://tvdiziler.tv/uploads/series/alti-ustu-istanbul.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Altı Üstü İstanbul (Atv) - ⭕
@@ -1918,6 +2760,8 @@ https://www.youtube.com/watch?v=dIdSyhnHZ60
 https://www.youtube.com/watch?v=GW7oh9t7DKQ
 #EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Masterchef Türkiye (Tv8) - ⭕
 https://www.youtube.com/watch?v=UJwiOzPiYHw
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Masterchef Türkiye (Tv8) - ⭕
+https://www.youtube.com/watch?v=j2yBEMsHef4
 #EXTINF:-1 tvg-id="AKSARAY IN SESI 95.1" tvg-name="AKSARAY IN SESI 95.1" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="🩷◆  RADYO 🎵 MÜZİK  📻",📻  AKSARAY IN SESI 95.1
 https://iptv-radyo.fly.dev/cam1/playlist.m3u8
 #EXTINF:-1 tvg-id="99.5" tvg-name="Aksaray FM 99.5" tvg-logo="https://i.imgur.com/CDWMgrt.jpeg" group-title="🩷◆  RADYO 🎵 MÜZİK  📻" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",📻AKSARAY FM
@@ -2083,22 +2927,22 @@ https://kamerayayin.ibb.istanbul/turistikcam/ulusparki.stream/chunklist_w1031523
 https://belsis.nevsehir.bel.tr/hls/live/X8o7aXINdylwjstgvjyPjSJn/index.m3u8
 # MIRTI68_KANAL7_AUTO
 #EXTINF:-1 tvg-name="KANAL 7 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="🟨◆  ULUSAL 📺",KANAL 7 ⭕
-https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=b69a5b9601ab71ba909be87e83ae8b65&dfp_paln=AQzzBGQENvHJq-K3lQJHu28xxHuMwLWdnCgYLzEgWbkOqr2aakk5yxLy0T_E_6nuww3gOmJF4NCYw8C7RtjBWXry8d1nrnmVh6so0yU-96VnNXUyjrkpQ4yGW7bKTCG97cHi3x0exHDtHPtaeTPwn7r0tBVk23SMJu_usSazFlhlcgfoiH_IUha92Tj4nyNwH7LqAstuzSx-StvohY5eckTVhBjz9qBLLlUmWgTpgpQG27AJNhyjC2MlBjoRJsT9gDr4YxNq2L9OKYSpkD7b5wWdPyBbHkaw5xxAziE59othLkY9UHd-wLl8SZtyVrMtSKpr7RQRomtBseOGOMi5JjVv0wDVKjgyK33BhKN2JiDlkBwyuEjZBEijzWx-lk9tE1E9BRhVhd8Ua2bAscRvNBMc_2NR-EyDWE0JhTdiIBZX90MKcKR4QrqZGdjVv6jiVKHG9ZqN8skbmDlm8xyQlThmvkZzk4AS7_P9iyByAxp1P95FEhsOZBPTYPZ00AN5NQ39dSW6wwwj0EK9p68Yh76fqkIWQ_FhYY9pHpM-_MyWMgxih2f1KK5_w5f3N8NkQ4TX5GAdXqjyh2_VxpFyPDlQHb2BVYM7IuU-kURzkQMH5Hh3P3i_Go_jLpOWGZU455v_knoLSRoyxi_08weAJ50-l-naoLADxafJuJRPTfmUrno4OK7jnWtMZQo2rvcH96x83CuSWE1FTUmkN-pNbQAtMbNcfC2ihlC8PgRTg_bQyJvE3ufsKSaXJMY789DaiO0X8shxTtWVGE9B_0YjyrMBXvIsxqlFJ21qtuJbcuJc8yshSt7sGpWBFSD8rN2T3iEcrquQFB4ozsadMl_gGbL8iFcnnh6NDBS4GDL4WLykmlZKJ9C6xtvzbSDzsJ5JxDGb2vlDd04K8_ydjwNYRd_wnzVZrdbTZpntp-ge3q2tckUT-wAage4EwXXsyyFDO-52UYJjYnN4f0XxeG-Sbn2uD545qA23tobkgRXWCh0aHg5mDP4p0MLxQJZ3aomzNwv7HtTwQw_QGQmrsZ4Yhb6_qk-Hi5p7VIxqBQ-WFMT1ug8DprO0QliJnJWs9DDA86E2dJpUfhFqjdtOKozRti8aYQy99_fXFHXTFZg6sN6RBgUfR9UC6GDMxwEN8L_V3LjtTg8NXg4iEhwnz_x6HkmYV5yTtl1DtKqykerotxjaYN3zB7CtpCiFcScp_wDLYXe4y6w3c5-d01rKIEr9YaEhnSJnUC0rjBEZlELkM6QWj7FF9M_ulEFu2XUt03KY3PgknQ1x5ONqP0mLE2sdmkZrrB4SYfRT1WNBDluTvAK-steTWs8zngd901Kx_OrhgjgNd-drM2ejydlOee5lpHgXgOlpGVg4bwfezu40SahNe1amsSYNxMeJBXuphfbjWsolhh6X0j9VOsUlxWhQxwFVAIB-StLySWth3hjkEZtPyUplXLTWpqej1Q5McT0dXzuyUjIp7TMSE5pkZrA.
+https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=b82f175f60ed61bd977e2c6ea1177bd2&dfp_paln=AQzzBGQE0r5heOS48gNd4vc0FVoZUuA-PNANs4tmIFedNcLS_WhaYzrJDReIqTIkye01_uqKTSGlEVf6zN7ZjyksunMuzWp4aLaSfjTQJpympvP_dBgmstF6hWu0SKnjzZcFpHCOOLeZ8dKvZ8NDYXOBnd8aS7-UnRvZd0k14MOHfZpDW2ari4MgAPvBF16VN5AVk-3_Ir-RVrQ7oFASW0yGv9s4VXP1V-IqINXEmhKS-WUgF2KW_Q9UMLUSs4Dhq4I9re0TTzqTsG_6-JQj4V_3Qf6-cNlVpAe1TRhkz_bN4dqHYBLu5M9tBjD0iWPFiKlOufDhqgO4RryoLwbkUqXS2zOQ9bS9y1KtDqsOChXTWjWpfXA2ZwlN95Pev8ZdOCRtaLAeSmAco0zuP7mR5Xlj5nRW_HSjRXxo8rhCF1dPS1OMX4AxJ8E06PJTza39_bhxOEzPTUwLD_0dPZsipG2PXmrKsuzcYYotG0KQDd4PLHssHRZ-tbcV4cgB7E9s7edrkPUToPQsbZBcGmIUGPxazj7Sht7iuNstnnqGR4aPhy8w8FOhIbBYfq6jw88QWFSRj5jbGD-fBwMz2Nt6fQhoUm5ycIOkmlor54uhwDbdI8YNqBrL4Tm5KwDgpJsLqlhRorvsUi0dYfOkLZ55DA1XTXidvAZxsaD5dfXSQiFZPTsr17FqPVLu5r6PEIyh1cACTfUhM5Xo33YxNU33LB7lKLK0foSxaOmZPG-BHPYcK75Gn5wwELw7MwR7NeUgoHPoYUmdGL67hAMii6OiQ0p88c8GsNf1K4z0gJUwKTBXaToekVjqo9eCU_T34AQYGE9y5d22j8t2GEInsVEIqJwoWPKKmQlmTw-IpVnsvdz-xYSNJRpOyrJdH2S4XV0sLGOS5-ea_MrxlWhC9UKkC_hUcL3OPGljdaol2W776xoiKMIJyi8BWXfdim-VGSHucF8BeH0Hz64ORVeV4OK1scqNt0jM289xIX-RKXYJDAOWWs_HOk-UMwwDyl8zVtQhRmYANC5FMUbNlUxq4Xx9e_t66FKbfFGvG3x-fxVqO6NEecfu-yVDbYpojkpJMynX1wHeY4ztqSuB2eQmRx6wsUhUBl5OBD2fjPj6Bn44NeSad0s1i4N8miUNtF3e9HIHWdkXRn9EXf7rw2yZm0vEWm-s-P6wyhSUtmDb6ukHHoo037dabdJOgbpgVCC16NQbjv_pXJ3loshoJPFF6UWwVUUs5qojQLaFVKaL30UCqcXFZy-pVjWD8v6Q9Nm0QHRD-qrbFYrNMAhOqPxUoFzkEYeHvnSpAsw5rRUI8b9Kk8-RZq5LI3FQumZNt2cK5fyt7BgTyUzFp9icpoUG5E9nB0Ae8TM7gcETMGKLfR14aWqbXg-CqcynMEIxQYEM57GeIhFXk_Qpao9votmN7W-6fsC283DllrwP9UKcszOIUM7ko-4WjzTgIsH4NqhEE44DUhMvjx2dgUm7AKej8AA.
 # MIRTI68_KANALD_AUTO
 #EXTINF:-1 tvg-name="KANAL D ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆  ULUSAL 📺",KANAL D ⭕
-https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=8ecba6ef24187d9fc3b21ceb27fa649c&dfp_paln=AQzzBGQElxnIWGcghQLJqK7ci5F1qQq71s40Z8jsVYrLPSMDhyyn5z6poSzgT4h3aPJi4HuzOx6XvnXB7_GHJvQnBLQHqvN_SnmZN-pCRNU8U-nIb9y7uKCywzsBLhyN5gLbCfOaVQGgRcfbU8ZWHgkHuUT1IE6oOqFZaPn0_MG4rwUD_Y03i4NO3HnjIAMmVqZKxEZPrAk2qBmki73x_G6MJ_1MOfEyKKL3Ywyjqb7u-JXlHLKOQQAcxqhqjTMCLKeGdZUpEYbb7FJKsV_1WACTNAaWqq2_64JRC531RCsDZsThTqkVmTpYsKzYZSGJ3--grv1FCNIklU4jy36UnujSufoSH5AGzgKu5Zm3qWNKVNt8mBkxElI51u5Z3R_UEXFxVeGDpyKNWHNwv7wqV_gBIC6jxo3TIq0F2XpgE1QBKrwO0utWsESOYbqZb67UJE0TtIi4zuUKuwVtMquUs25UtCDG5hytigQJ3RrKdV4DA8881Lmd7jbWV5ew6YIpYcJIGwwCzSFSgj84lUpBW22VlAD4G0AJqwV4VHb6JFw2Rmo4jQwJlzDNmDkpQgw6sH4OjI-q3a-MONsiQkWmkeuDjEI6Yiy4Xby5i8zjU3t74S7_2ZNg5TNS9fmzQn-liMuq8RCW1yFufTW_GgvMSfG2DKecRB3rkGkzRtNrZyS7J_e-kNEEXHpFI2Vo3Rvm9hhRnBMl1VWGAb9Qu9FNjPPMsFHaUGOF8sSQ9csJinAvO141qh_RH4UCiPQJ16VOgy9FfUB9GdP0sMn7fybr-XaldZ9B6XHRrfTNljagbyeobZXjbb6imGs7nwV-EfIQ3-OFIs9ot_r0S3e_Am3kLdL-1-hBJDREpzO755LSbool89SA_AAggOvM8PhAWWM3L1WmDhOKFXb4jyIZqB26AdN7VS1bZTYt9YfF75D36pT71TP73r62u1Y2Q-DAWQ6tFKphcQTXJGMG553PtiOXR0A760VK2bNvZowL_8rR2PQE5CMqQOzgazO-8wp391Y0DHrBs2O3U-nJn1gfJqyYXACG13LUGk0pSkAHKodD8LJw4FTT8dp2fS876I7V24h4dSD3iwSE7zMuc-_HC8lVQFiXY2BQ-2KMO2hWiFHoU4nzUwZGV-3gxxfNX2BqLM_I2gHMkdBRWTjfClauXmucFFayOuHfLxXsKoiaX4ZCDPuV5NRBQ9_OXorgkwLiGV56aWDEyu1b4XQRMg7cF7AdLaqUoh3SB1UN3tPmG_O5BmW_8VxC1TsTqhJ_vQuigzJFgGuf9NFO50OoNgUPaXDgkVPi25-PuDbvNtyUHF-9OU8lL0JyfUMgHCuBWz3EIs-4j-ZazjNAjYpSGxAQ8GO-TVt8_cfSJ0Ui6DprBR-nzCh0bEM.
+https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=c7b9c401f6e9017b8c753626bee81059&dfp_paln=AQzzBGQENwTcVdoi0_vb3JO7rfWuRr-oH7-gOqE0xHtFtjxNnuf46eOintsHOTdlwc926nB9XXJkh2-CaIsIchHlIDTO1aDf94LofmL88kUaU6UEfLLQ21VNzj4HiB5_8ZQG1HFdaB99Mbb_lq_YkzZkFbBHVDazKludjFFlmvnzpOAHr5H2SmJqaBosqh39OMQtgA-jiwdOVJ_T_jQMynCW6WaoGvO9jTyJeGPsF-MamyIfAgb7nreo7r9ZrrM9UcuZFvG928v-7H-3MKiW4Tl5EWEK6JlOOtNOXcf7S5MhNRXxBki_zQnrnA5Hxsxk4exLq063D0yf0Jo4LaLjkgN0IocH3Of_7dsEuMscvrtoqHe7AvibU0Ethqq8Q6n3pqX7Gk7rLILbt_-sVR2F-N9UuOgjp3Hjs3ltlKoUsfwgrJf3yai-brsjfCPmjB8apfhK_l5NO-nNO4V8mvx6E16HIcYcjyqGB1OYbujUXiZwithahqjaw7xM5Y01Ax6Ftw13E709vNwBPjwcYBfWI4pVmWuY7as5XLtocxO1pgy3fHWqgAWiE4BHm9uHjcWggq3Xgjh8hp0Um6C8cm5NTPRuWZuYXOCooJGtf6Yb0f1LIKspFb0XlhKI1ZYvQ71-WsBL_PS0tHoOT6bXSG8WxufKbcbQgV7ScJpKiZj4CGKTuTsofq7bgMXMXIsZgdhZDvU147d-mgpFr3PPQ-bZ1pJ9mx6kNQnxSp6rQRO0TMnAl0LJByzGoc2a0xh_OHLeNFhLxnDkgYWG7aH7l9x8n2UvNnRfqH09n3RgOnlBkWtsUZsskirI3zgrejDKKwxSay73dOd_o1ke8ERqpEqpgBCWUbB7xV2cXmFS5RnjmG_jHjjiSJXFS_KbYTNKLrToCPAK6BZYw3l-5GtmbbD5sRUDqt3lLpJ4TlFvQp9IG7L82esZPLYcDN09TPAF1lmfGj5zEkeKhfw5hoHeUepl2a-e8VDNJk9wlhIgUtzMuMAfTXy9FV3fi3B0j-UENYR-91Eqtk5UbErB9pq2-2ikn2Hk84_dHXmX1AzRmcUdcj9Kzt2iUxf_Rf-ZoonEmPxTsFpDJtZuKttCyDIFJ-lV_iAOcA-T-2ql68znZWGMoxZEt9EpbZhPRXa_K34JK-PqDo8qLQZq9qtG0Pk2mKei18wZGwRtU-LCa3a5NkgFGL2QO7AAL8BK-FUQqJ_6fjTuqvaDQeGIgbvM90bUIkFV0b2X39ho5RYEQUQaEKsJBlZoOOqEzU4Wq0iBiv2OsKFdJmSEYVXSbxXas5-3TdSGUB-H15nbIVHBEnGQqm8nObCpqKAG9bIbeXPSAO2VkHF67wnuNbtryKD4ocEe-1g7oZUWLo1Wr3O3NkWHED9yqBqtqhn9m01Qb8sPPLxWrl-6j07dyqf83Yg_tNsVZClYI4ojG-K0FtXO4Ps.
 # MIRTI68_STARTV_AUTO
 #EXTINF:-1 tvg-name="STAR  ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="🟨◆  ULUSAL 📺",STAR  ⭕
-https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=7863632e08e633865a4150e5c0157e32&dfp_paln=AQzzBGQEk8RpCPDkBLILnNcKMn5J-Q34-H1IbzRd4pCdfx5bWNlhsHi5izmuuWQJo2cI5gIGYmCSP363eW6GuLKpApGmokpyXHnuwItC2_qdMSeI99GaLDfzGPFRRqpALSoSfecqcUiSoScNk6tqxfCXDlnw9FMZ4CDaB_4SxuDdPWxUqlHACEst92L0DRb9xQ79dyfmKI_8ig_qrArRzYbcE2jOVNcbWTQMLFySGeRj18v8-3TzvPzU02eSUWmzyw09WGC3MpHGLbnJ4ElMBATjSCIkVX_kAvLFwEU-s8kGlpMdHnZFUS2KTZbLEyj8lVGG4yv-D6uOajfn-OFKzi-iBVq2FFWfTLv_LFDB525uT6Hby4W1N7FBAbIWmbdz9mZJbPHnxlZKfu-ikvqsa6atOp0eaMSSpYjHisK4FP4clF7A7Tr0RGQANtwvAleldU2IAvSuU47fimxQt-QJRxU5xOFbGKFq5mr6P_IUETtDEiaOHLsedepulmV45F3MzM-h4O5rcMjkUcMg4YsXFDPqxqzpQT-6Y1g4IKlsXE4goz7Sg07OVzAA8Dz_SR4GIirf0vzPOBltuUCkBxwjRiw9PBU57LM6GYuUId5jWHydZVBRkK61RGywEjdRTW29Gze8O5hLxwyrBjQxkwVp04ppNATFXuZEdQmaBqhdloA6bNvhILmcpxgr22cBtAZCKN2JgvQoQwsPe2T9K-Fagzdz9ExvOYhd8z3XUSZEQqeRzOZKREYtAsx2kLbYm6qH9N2d09IOrCuYJ6DAMfIw24IFOJHzmRO2bsA-6GWOffV-8JSjb1348c87hmnBusoPQwybhmauCBTIvXHXsRFzmAME4-FJs4Dj15DLzEg2s1fkyVz8TUSOjNP9EEOc3qHGMQirW5czwxL6UXY9tkWj9wbW8CsPLO3eHoqTnW9wA5weYNMzCSxaNhRFn7g0LZG0q9ZT7bSdh2vu_l8vAgUtDVWm1E7gzOlqiGOs-Bo1lv5ZE48edBwfDYLIVwr5c0KYz0guZ-yMmTpcYbgHZGWP1U5bZ6i4abAsGyvB2us3Au_0Z06l68EVXTWgVESAd3a_i179GoF5cApLWNHuyvOuALjWisgfRZtUkdk8bGJqUeICz5ozaAcJw-DqS8djUHN7DDGp_6gBcYtOfRyc3wuONRyAyd5_74BzBKC2q1XBPOirmr-4srNFVmm4ZH83LhU0VV-y_d1jWFNkDAkX13ZWksN7-jNaCXEfwq0d2385JX-KQWk0MArNTSYGcXKEnDM182GOH_R-It5K926mQPzqZnOcKlkdxH66wj_HtoANi49Apl5EC0Ys1KThHxg7CobeX2b9RMvrwfInKfkSX6pUzWZTU0n8ovHXEhrr4Ve645-1CNs07IK-JYOlXw..
+https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=28e9c66338318b24bc66e374ce7430cb&dfp_paln=AQzzBGQE2zkQ9IO-pr0vt6Ry8i_kA4pR8ON1MmhZv-E0FLRMiuvBEjDRsE8zq1pLxyaPhp0c7rvT06uU9PTVPi5BQyqZMCrdRnW5fR4ZYTfCDgtxWPhZD9Qma5S4_EaIknuSXtBhSG--vYaRu3Fjy9kCpMvoP2HU9CS-q6WVNNc5axR9vSvFaVU38bsoazM1uqGYJaNIEjTQUdTmoAWY6COAzz8HejX3zHfUeOHvCrX9HQvPssxJE38f-ADhy5PXUgDGj-JbnwdZZutU88bvMYDRU5l_BhnaFVhKMyFf7CEQmDeFtl5Ai3cQwoQO3qCbAKFa7pzPzJnfEEJIcWq56j6H7ujdcnJFvxcA1MoarX_ksgNsAu2__M6T9gLxc4cT1_dqii9dQxj-kDUs3AjnPW3P0ywML2IvagONAeNUYJ8yxa6ng4rv26Ubw3pdykKQoq_rZLVEDmFfwoFnLU3_j2LS1t4ErQY_0ha097yjrf9LUbo3QDJZZxm66_75QynI7MIAsPvTsWiFHBh3ekWtS2K2MkDVrJzu7fMTsfPahSL65XJA0TazLmnJkPbl7Dnmdo-lauS55siIIoPt8VoMpfFdFpMD0cjqvHAfd3lk5grH3DiEpxrhXAmK0ZQ1Em-tpuzNIZNVUHK42w7aYKDKKj0MKBq33PiV4v_TOwtRKm7nC25LMnlfh8HaifgnUN9_4Or6Z4haS7rQpVB6FoDEFZBg4MfAsvcox_JrBYK-fTz3iYPsc830_CmRWzrTglD16MoV51gFXVpWnZD2SHrNdmMT3MMBeA_8rkYp9cVMs-r0-advR6IE-3MMnegfh1hKtgvVRbW8y8zEY0Uq0pDQ9CNpD0xVNyIvaM4TOIKhHUKFSQ7VFXnk8Gsza2H26tkDbKen_w-4Qui-DeHQyt9HX299rOxmaSxt2eJE7grZz2e6_zHzEDNhrlaFoHX81qdt-9alb03fJYHoyriYeQdlM0uxAw_h4W0WKN1Pzb2NLNKu5dAzDonQcW812tgek-OC-O96hS9-jur5_QKYqscZnXaHvtLFjHw3X39FcQmTm_b-xpMADVOnb5OllOINXucjw7X-7uM08vrc_f_Zt6pqWBZadOdwttd9caUU9Ypt1o-XKJSJtI8ylfCOf5XTiH3aUMzNgSURc8Odm6XBRWGL_hX7R33g-SxDkVkEsB4YsFZQTd29JJx9KsdaT8WyjJGTe8zWPwEWFBIHhZwjB5Ao4zPZtyfraZGZwQw02WZWJinpfYQVqW_zumG9objA7NrVYDhDTfTGWh_3yAZtCyTteh4rB1RoDVrLQQiqFe9W_KQ3MSm13ruO7FotU6gAMQz-nwgFdXRiBpmXkKkZdDEXwB0sqiKkKjNGI2VCSV3SiZQz6C4izxuCzTplovBd2_HKlP6KO7X35ps9G--Uglf6IUUZVYhwq4vNaBDu0LhiIbKKCgig2uYH9CBQGdim
 # MIRTI68_SHOWTV_AUTO
 #EXTINF:-1 tvg-name="SHOW ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSAL 📺",SHOW ⭕
-https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=37bba0788620e8b8f49e982296721fed&dfp_paln=AQzzBGQEGeH93jQTUWrEdJmCBvCxiqx8gqhdpEDw1b0vEioF8vuehMVqGZeJdZpCwT3djfV1ziSzbDNF5Td0JvocTdmWpbozAHV5LTYe1Ej0E-b6ULBkoJwqDHrXiwbImXo2gu_aDOKlL9NGvdNZOSNoFYqWmTAwUr0gF5mdtr4uHHkrXu6NCVKYCTnOkFgXXrCo_g9K87aBktTp-g7xl-jP-A3X0Di_iaorcvhr4tD2llXD-BWj5LwLCduhA7DUGQ67FfrULPG78QWYCKTJDYKYnFuDxFqqe5fkJvUoGnfsnPerNlLYQWMPpVQVTEazQDQnsX15zWwt5HuSOF_QL2i0nVK9i-PaGsu8j0NVLc5ng2H9Jvi56HVUzY0oD8i2IOJkaF4UK0-01SenXiiVvvdTsWVzEABHVdo50QE77rRRr3CJJnL-wX1pLgmkbpk0gdsW_1Xd1fc74sZ99slnufD8kc2YOqAVrXk0TDzEF1R-KviaJgh6ZnmVgjs9h3Dp0wyYh869WgCf_HEbMg7KkONtybPUXiSQ63Pvt6mqXCkP779sdBlxbbn5r41UsDvwECgroHZAYsdBfclX-Bs3oTEFLzaYqhzdxZiFWF5CPBN1xrmZuZwAou8j3E6f5tig68xy1lg45sm0LpI3c_g0iGCZyHtjQ3JKz3Fk1f4sZ1BF3TW1B8ofd9n4Lb1h2I4Nfs3A0bklWd7Dxnrmn5QxvrXBG5QY1-poXJbxYuptQO7woC_dACkU1F8WKKN8Tq_Z3rqdMnvoYdccn063APEZJ_XhWX_mp8aNN5t9BcYcEGEudFKAI7Aaaz1ITGiT33jjE2s5s3z1ySarmrgHiaq3yHaMZBm1HJteVrGv5ZjQUMgelh9ITCM5srwbIWin0CSiVydNPPYUbLcKw4t8_24XTRrcNdNMQzDvKVc3Uv2ERoXMnXFTcdyPbQrtsCUq1oKHDD3XfvY3VbLY1il8sfto9OASh41CBhz9s-75qGizlfHffQ..
+https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=3d35df5cca6e22c2dfe2600c61e2dbab&dfp_paln=AQzzBGQEXZPIlg26QF4UZRb06N_k65oQdTFnWKT-rxP5Dd5r1LFTzqFM5ImG9g-F7x8mA6ofc7NIObnnUQW6_6u7S8KVWSWWVvYxNnSAZd0hF6UWuqibNs6P9v3HLMFGvMvEHkMsar9ou3NJH4db6ggh1c1HJf43r85PEnHwYLY3sGQD72g_WNKc0k4HVP1hzqGb9Dn5eW_X_nUJH2KFA9PN27SZArNSGfopH_4_xHYRM1zHrwBd-Lpz7X4JzYcHxqc13wAKz3YMsrrxrfnjJxkTt3NOkKvdmL7DWYAiNrSn1rQT19Tu0so6ZhGbRvse2NGVkJwcSZeDKCU4H2-6CGx-CdMytyQmPsWGlkQOWtVnIGsQ4HpAWS0ZMR8c5Zq5b7PK0NRjMK7jBFhF0wnOUwwoORBOgvJ_jvntt7ii89xYZ8egVS6fYkDGUweKPkBj6oa1usVuxFvFSZcXwHNjpUfee4Vl-VHjBHmxCG6ZY-Y2DdomJfMDjWC74iaYADsoWZ-A1_0WYpOHuKdbuzAIRAUgZAspIw5vunxbbB9SEIMyjoiQmC8M9c6gLrXYi7Qp1xT-7EthL2ONqWUIZr7Leb0EzxeKdgXVjx2Kenl4Fn3IcUxKdbBdhY6T722eIsQGh6kxIofvMNMQqFEPMmIWZ63t_ecHM55VQcz-qQazuWnPsqzqviZlRyqHShT_l7y0lBvOg3POsVSpaprML1fBeTStFA0dsP4JtPP_eHyb31aVlhROhulaacf-miPmQK86h2X6JUdSv6qw1qwNIaeeWQJVnQkoHwzwCiJw4C3PxtF3CjAT8W3EDguLNrgQndLcxspIFDaLfueWBwaHHXiDNIfFkA4ckvMHSlgrk07ePnwCk2Tm_H-8Cx7B9Rrg3S-KF53iCA_V__Eq0Gj6zRzaGz1jceQ0Nt4WK19J2yZTPn1k14PO7hqeyea-Y-Q9oCwcsUMMb9yuKXfVep0gEKTE_VSwSU46duNAf7_sMA1JPChpwIvUO6etjrjPRGm7HDqmc2czDO_dKiDsEmfkCvRWtW8utGprq4YDNUMC9oaMwiizc5f3FDTwGrisa6b-MwJu8dujJb0xLPBievW6jUU18EDt1JwKbOtEkTUKap1rLr4xdfXwe_pMlImvDN3rac9BpETIGmHJjAuj3Tv9iM2AjkxwSHiGSvl1tPuakgjztNd_WHAE9EjoWpGy8k-4B-dSHSPAr1dsByLrfQn9D31OkaIckMbRmVmS1HHOKpXMcSV5oy84jAHron443CCdGd5MdYn7uCWEpOXTD2OdyLiA_lq22J-uwEN2SdrnGZV57rr9Ap4O2e4xD6o7ZuMOOCAvdQVe6RdRtRvjcHYka02FlrrFIocfsi1_CjRzVsj8q9AZ2bNhuvnMAMjLgAEKKoGQSHRlSK7ZhRFjpJhF1Usz
 # MIRTI68_TV8_AUTO
 #EXTINF:-1 tvg-name="TV8 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="🟨◆  ULUSAL 📺",TV8 ⭕
-https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=a25f30cdd9e5436a100bb6c946794a60&dfp_paln=AQzzBGQEvoInv4KddZf7HkV1tvSbNjSoNIuZrQi0CXSqbI4H3Jx1ndxJYdnrqZba3AsbFGsbr37NwZA2tueuYnqUdnGsrdMgCPJ90cDyVMiM254HYtkRSNUwIGZRN7PyxVbz0NhSPncjx5MnR0umDq2Jkt89ZaCuUK6r9cog3f-uTmjX1oAIA9NO1Wk_vwlOmhvRRYcwpHP-H5sBKvEFbvJVs8JkLiF0mpuvtQHmLD-jNLa8w-4a2A_hYHu_2NaMQNVguoVMTokv4e4GORN5XIQmGgoidZCS_7Apu6oBCswjwmkgFwkE9TvAPNslIF7KOhSj-UM64jbnNVKbCvsVr4Cjeu9O6Zfjwwpk4ebDJYtrT3RGh4Q24ZzTzeP3zvRJTN1Li_zdvuolts3G4iPJiDW4t9bd9bc5r-G-M-om7-lZ0AHJAyGCxXTK4yKsHdsN16nzBNwH5dlhJ0QQT8UeauZNehUUQZRtTYm32S8MjCEd2w4oVDYkTJgEryQpD0w9nXK5UOxKgBf4Cih_ZTXkSB--oQJjnGeihIdgcEYcQEkEsYDu7ayjwBUuBpSFHU5kQ9TzPZawuzqqd5_ujFoEI_BkwpEETXGCxVtLTuf_lVgIf7q5Hcsadgfcs6fEZL5_qyx4y-us8o6hol2bSNzQlBKAvACAcrZ4516UsEu2nWOiNoypBm3OeCC2FT4f1ZvQm6hQRZgn5lhHYnDKQVIkSfo3twxSx_TX7BlZzRhNiAt6tEeP61hKvxH1A4qCBxv4Z1kc8urdD72xOrfvbbQKamVs6FD6Yi5qlRS7NaAD6FBGXHWm7d09vuimZaXqdjd3l8cyHazBCanTja4Me3Iva8pai6KqNuMYBrFlBwitgvr0pNZ0jIpiuZyUm3PbyTC-Oed0yaHHlDu40rzvzS3olX-npC7RfdQM6SOlDXv5pwRNFjEgnu9X_OF3BY5nKb6Xcp5NpqIrt8YfzshruZGwMHpdSfzAa_jaj9qY
+https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=e1f0689ab94a4e8d00cbe408d423f456&dfp_paln=AQzzBGQEsyJ45TC1AGCbsoZ7CH0KOwaT63Kq04oOPWusQZNAvTvNSmmYoZdCOuNUbmbKBNjWcQnzHbS2ZyGyh-CQmtTLpWAku8ql8U9w6x3E3rSiWoT7uTgC6ipCzefQNooGoodp6a_uizIYhHvXIC6KMwbl5XmSxf7pT3_Wc4vebI7-lczgZ-AbEr3BUTmVANHKhBKpcwdr9v-PjLaDgO6OgkL_LGhbXFLc5i5ZnYGRqhHnskwJipLEUHWueRVaYNkOjDZZp9siQY8xnM27hStBQHZcI6Q4NRVvDTWIfuX7OgLtjB3wLMowCe8R3eThTd1QGmCIs46gNqaQf763mZLt1yf0rdBhshAHDTFf99BBv61kL2uxOx3mowK9EmxuuSUT7kkhb2piKOD95kUVpniFxUdGgPpv9QxMszDQ9z8tywj1ceM8_GS6C3vy3VrBf1hgJGvaAHqSmxn7RjFF4LDgIUtycy5KobYKsU3edCDE_AtUnJt9V99DbnrBBVWMoP3nDVlJjTOGAiOfYsVN88aDiebT3zZte85LhUQ4MZ3zhpvdMztY563k2RcaXqJscjPhz1ARx5bPmYYUKKjx6FEguRw7Ka3p49LcwD5iGCc_h6uXmet-RosXW3DNKMDH-8pnWTgcO4NTBMYqWqzh_uqUEu3HUGyEisfKRtoIXG4G91Ssls7C8YVHO8GooCAGecsvVwoAbdMrOAFwJUvafTd5wbmGnBPK9Dnu7_9zZ2x-8RgfUNSnGdKQ8cgFGENJ9lt9g6kW8rbJrvazbkfcK3To51x2ao7vzuKkSOQqU_fYFsGJr-bhhCoRmUXpbHUKiJb3De_EgNjZEz7QjuYoCms7sCv__Oy9x_Tz_PoPmKKukMWUxZpVteP8n4fI_i1joh0-xCTA3OAsx7gM-NURflN14r8uxj1Pt2E80IHR948j8eesycdqNDdqpJyMUuGQaObSxsafu65_BAiMqTyG
 # MIRTI68_NOWTV_AUTO
 #EXTINF:-1 tvg-name="NOW ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="🟨◆  ULUSAL 📺",NOW ⭕
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=WeUa3r6u7q02R0Czyf37Jg&e=1794705969
+https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=uK-7W60wnF4bHyHAoKMApw&e=1794707390
 # MIRTI68_TRT1_AUTO
 #EXTINF:-1 tvg-name="TRT 1 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL 📺",TRT 1 ⭕
 https://tv-trt1.medya.trt.com.tr/master.m3u8
@@ -2110,4 +2954,4 @@ https://turkmedya-live.ercdn.net/tv360/tv360_720p.m3u8
 https://turkmedya-live.ercdn.net/tv4/tv4_720p.m3u8
 # MIRTI68_TV2_AUTO
 #EXTINF:-1 tvg-name="TV 2 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv2.png" group-title="🟨◆  ULUSAL 📺",TV 2 ⭕
-https://demiroren.daioncdn.net/teve2/teve2.m3u8?ce=3&app=6aab838a-437e-4a1b-bbd0-e30f79cdbbbd&ppid=d6cf9d001ed63be519df79ca0d3d895f&dfp_paln=AQzzBGQE53Thyrk_LowIVi_mXvnwobEzMiSpyQX6G3HRwwUbOIm_A8pJsUDg_eId39ZsawrVZ-jFgERSJkqSiDBF13AZ2FakXeX5_-7qltBFqP0BDhwHCJxhp-kMMRRVJsRdybhzN0vZpJh8dQnlXQCwIc48294akC1DHyx1F6WOEHV4F-k6hxXHo8yrhyHJX4R1Gs_W7slxO1PYS2QpcfraF1F-OTjWiZcNvXkpay_LRlkZN1166LK4-EBHaYseOEsw0QGk_VTA9kGcCWPLOdeYICBLEp8y8WoMvn0aEnzZhu0wpyQ510mirQcPjrzXT773_FAru1C2LnGI1ZGutrn8dDT1YsooTJrl89cwdOQhZXHu57eIyd0I7m-QoIG-V8x1b-OLK-GAsEibaahDW3eDYLKvUl-mXY12OlGWXuKHBAJAq4OXt4GGJwlvvK93K4lOYlPlrBH91c7aErY6Q00XN2CiyugOYOOYUYuKgT5-Rgh95u8LZi7qdsnI8zMU55PQRmPC76b7R58RnvOBkUhrHCGa_9bQcjk1_zOY3J9LfptGp-JYLUADEWmoklkTQIY6hG-P4tyiRUhnc0L63cFhsl1YuEmN3RA6EL2f6KvUabD9YD-9jnQd55WcZxsGoQJX1ibIQGiBdoD0hiaGStuuSoBg2_GedVOTzIS_Jb_b3K3CWIhGcKIS7Ujo4-8tUSdwV8Rkdx9pLqsD276FQqMvF3_zEw9yTnXcuh_5fB2Pc6DCxAVQT56RP5SsLY18YcR-f4O6XVlyTfH8Y_EWRbRRznQHD39tlTB5fGqMzBJmDt6QJVHDZX4faI7tmUhx5XlHMzZmmWwuGIuYcrklrZDty4k64Ckrwy_VkkWSfm-sJK09zNva41CG9Gg5imr9OKnganM0_kwin0UskrNZjikE9pR_WAOBEAY6E4RJab7nKE78oeuzGmJyarlGRPho319UFXY9kg98IDdjNFUblswnOQlBtKezCKcSt2nX3KgT8NIEgSanMkWRxp5W86uqo1C1yVLjTUbD7zqSOIrUL4XxdRC5aUc0dT6UTxri9OduWCBUfh8aQ03k6-1mCdDW41T3fzQbguxw7-gL8D9Xpxex-lmb2G3c2VI1uNy924DlEl1hrksvte-IBcxePHaBO54-9D8h5hjS3Zn8i-9oS1ORQOg69yP01JXBGqkPgDZ5EjXF9PebRadW4BVdZPUL8hC4OzbthBJeAGdAiynomjFj4JZ7y1Sc51UBs16C_RQkjuAif1InuHAgeN1yxEEqYxOSY_1R74crjAZOfnt_VovuPXXGyx0A-OSJZL562UJJ0zsWZdcLfOODx9l5WhTHKa_oTBlHve1ksNDl7ijHk5MRyFA_Tr3AWR92XGcudg5D4_UtGMczannnDSvQlU_sP-psuvmU9VOa_emlJ8sgN1jXNa7Z4KiR8qqJxz8nAAvmdesiJF9beg..
+https://www.youtube.com/watch?v=7JMlEVGAp-Q
