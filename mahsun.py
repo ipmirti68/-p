@@ -15,7 +15,6 @@ urllib3.disable_warnings(
 
 warnings.filterwarnings("ignore")
 
-
 # ============================================================
 # AYARLAR
 # ============================================================
@@ -39,24 +38,22 @@ BEIN_GROUP = "🟩◆  beIN SPORTS 🖥"
 SPORTS_GROUP = "🟩◆ SPORTS ⭕"
 LOGO = "https://i.imgur.com/OqdfQmw.png"
 
-
 BASE_PATTERN = "https://mahsunsports{}.xyz"
-
 
 # ============================================================
 # KANALLAR
 # ============================================================
 
 channels = [
-    ("androstreamlivebiraz1", "beIN SPORTS 1ᴴᴰ Mahsun ⭕"),
-    ("androstreamlivebs1", "beIN SPORTS 1 Mahsun ⭕"),
-    ("androstreamlivebs2", "beIN SPORTS 2 Mahsun ⭕"),
-    ("androstreamlivebs3", "beIN SPORTS 3 Mahsun ⭕"),
-    ("androstreamlivebs4", "beIN SPORTS 4 Mahsun ⭕"),
-    ("androstreamlivebs5", "beIN SPORTS 5 Mahsun ⭕"),
+    ("androstreamlivebiraz1", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 1ᴴᴰ Mahsun ⭕"),
+    ("androstreamlivebs1", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 1 Mahsun ⭕"),
+    ("androstreamlivebs2", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 2 Mahsun ⭕"),
+    ("androstreamlivebs3", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 3 Mahsun ⭕"),
+    ("androstreamlivebs4", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 4 Mahsun ⭕"),
+    ("androstreamlivebs5", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 5 Mahsun ⭕"),
 
-    ("androstreamlivebsm1", "beIN SPORTS Max 1 Mahsun ⭕"),
-    ("androstreamlivebsm2", "beIN SPORTS Max 2 Mahsun ⭕"),
+    ("androstreamlivebsm1", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 Max 1 Mahsun ⭕"),
+    ("androstreamlivebsm2", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 Max 2 Mahsun ⭕"),
 
     ("androstreamlivess1", "S SPORTS 1 Mahsun ⭕"),
     ("androstreamlivess2", "S SPORTS 2 Mahsun ⭕"),
@@ -83,17 +80,16 @@ channels = [
     ("androstreamlivetb7", "Tabii 7 Mahsun ⭕"),
     ("androstreamlivetb8", "Tabii 8 Mahsun ⭕"),
 
-    ("androstreamliveexn", "beIN SPORTS 1ˢᴰ Mahsun ⭕"),
-    ("androstreamliveexn1", "beIN SPORTS 1ᶠᴴᴰ Mahsun ⭕"),
+    ("androstreamliveexn", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 1ˢᴰ Mahsun ⭕"),
+    ("androstreamliveexn1", "【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 1ᶠᴴᴰ Mahsun ⭕"),
     ("androstreamliveexn2", "DAZN 1 Mahsun ⭕"),
-    ("androstreamliveexn3", "S SPORT+ Mahsun ⭕"),
-    ("androstreamliveexn4", "S SPORT + Mahsun ⭕"),
-    ("androstreamliveexn5", "S SPORT + Mahsun ⭕"),
-    ("androstreamliveexn6", "S SPORT 2 Mahsun ⭕"),
+    ("androstreamliveexn3", "【entity-S SPORT¦canonical_name=S SPORT】+ Mahsun ⭕"),
+    ("androstreamliveexn4", "【entity-S SPORT¦canonical_name=S SPORT】 + Mahsun ⭕"),
+    ("androstreamliveexn5", "【entity-S SPORT¦canonical_name=S SPORT】 + Mahsun ⭕"),
+    ("androstreamliveexn6", "【entity-S SPORT¦canonical_name=S SPORT】 2 Mahsun ⭕"),
     ("androstreamliveexn7", "AZ TV Mahsun ⭕"),
-    ("androstreamliveexn8", "TRT TÜRK Mahsun ⭕"),
+    ("androstreamliveexn8", "【entity-TRT TÜRK¦canonical_name=TRT TÜRK】 Mahsun ⭕"),
 ]
-
 
 # ============================================================
 # KANAL LİSTESİNDEKİ AYNI İSİMLERİ TEMİZLE
@@ -121,7 +117,6 @@ def remove_duplicate_channels(channel_list):
         )
 
     return unique
-
 
 # ============================================================
 # AKTİF DOMAIN BUL
@@ -178,7 +173,6 @@ def find_active_domain():
                 return result
 
     return None
-
 
 # ============================================================
 # EVENT SAYFASINDAN SERVERLARI AL
@@ -269,7 +263,6 @@ def get_servers(active_site):
 
     return servers
 
-
 # ============================================================
 # SERVER'IN ÇALIŞIP ÇALIŞMADIĞINI KONTROL ET
 # ============================================================
@@ -298,7 +291,6 @@ def build_stream_url(server, channel_id):
     )
 
     return url
-
 
 # ============================================================
 # SERVER TEST
@@ -338,7 +330,6 @@ def test_server(server, active_site):
         pass
 
     return None
-
 
 # ============================================================
 # AKTİF SERVERLARI BUL
@@ -419,7 +410,6 @@ def find_active_servers(
 
     return unique_active_servers
 
-
 # ============================================================
 # TEK KANAL İÇİN ÇALIŞAN SERVER BUL
 # ============================================================
@@ -440,6 +430,333 @@ def find_working_channel_url(
         headers = {
             "User-Agent": HEADERS["User-Agent"],
             "Referer": active_site + "/",
+            "Accept": "*/*",
+        }
+
+        try:
+
+            response = requests.get(
+                stream_url,
+                headers=headers,
+                verify=False,
+                timeout=6,
+                allow_redirects=True
+            )
+
+            if response.status_code == 200:
+
+                return stream_url
+
+        except Exception:
+
+            continue
+
+    return None
+
+# ============================================================
+# ANA KANAL TARAMASI
+# ============================================================
+
+def get_andro_content():
+
+    print(
+        "\n--- Andro Panel Taraması Başlatıldı ---"
+    )
+
+    results = []
+
+    # --------------------------------------------------------
+    # Kanal isimlerindeki duplicate kayıtları temizle
+    # --------------------------------------------------------
+
+    clean_channels = remove_duplicate_channels(
+        channels
+    )
+
+    print(
+        f"Tanımlı kanal sayısı: "
+        f"{len(channels)}"
+    )
+
+    print(
+        f"Benzersiz kanal sayısı: "
+        f"{len(clean_channels)}"
+    )
+
+    # --------------------------------------------------------
+    # Aktif domain
+    # --------------------------------------------------------
+
+    active_site = find_active_domain()
+
+    if not active_site:
+
+        print(
+            "\nAktif site bulunamadı."
+        )
+
+        return results
+
+    print(
+        f"\nBulunan Domain: "
+        f"{active_site}"
+    )
+
+    # --------------------------------------------------------
+    # Server listesini al
+    # --------------------------------------------------------
+
+    servers = get_servers(
+        active_site
+    )
+
+    if not servers:
+
+        print(
+            "Hiçbir sunucu bulunamadı."
+        )
+
+        return results
+
+    print(
+        f"Bulunan sunucu sayısı: "
+        f"{len(servers)}"
+    )
+
+    # --------------------------------------------------------
+    # Aktif serverları test et
+    # --------------------------------------------------------
+
+    active_servers = find_active_servers(
+        servers,
+        active_site
+    )
+
+    if not active_servers:
+
+        print(
+            "\nÇalışan sunucu bulunamadı."
+        )
+
+        return results
+
+    print(
+        f"\nToplam çalışan sunucu: "
+        f"{len(active_servers)}"
+    )
+
+    # --------------------------------------------------------
+    # HER KANALI SADECE 1 KEZ EKLE
+    # --------------------------------------------------------
+
+    added_names = set()
+
+    for channel_id, channel_name in clean_channels:
+
+        name_key = channel_name.strip().lower()
+
+        # Ekstra güvenlik
+        if name_key in added_names:
+
+            print(
+                f"[ATLANDI] Duplicate: "
+                f"{channel_name}"
+            )
+
+            continue
+
+        print(
+            f"\nKontrol ediliyor: "
+            f"{channel_name}"
+        )
+
+        # ----------------------------------------------------
+        # Çalışan server bul
+        # ----------------------------------------------------
+
+        final_url = find_working_channel_url(
+            channel_id,
+            active_servers,
+            active_site
+        )
+
+        if not final_url:
+
+            print(
+                f"[YOK] "
+                f"{channel_name}"
+            )
+
+            continue
+
+        # ----------------------------------------------------
+        # Kanal grubunu otomatik belirle
+        # ----------------------------------------------------
+        if "bein sport" in channel_name.lower():
+            group = BEIN_GROUP
+        else:
+            group = SPORTS_GROUP
+
+        entry = (
+            f'#EXTINF:-1 tvg-logo="{LOGO}" '
+            f'group-title="{group}",'
+            f'{channel_name}\n'
+            f'#EXTVLCOPT:http-referrer='
+            f'{active_site}/\n'
+            f'{final_url}'
+        )
+
+        results.append(
+            entry
+        )
+
+        added_names.add(
+            name_key
+        )
+
+        print(
+            f"[OK] {channel_name}"
+        )
+
+        print(
+            f"     {final_url}"
+        )
+
+    return results
+
+# ============================================================
+# M3U OLUŞTUR - YERİNDE GÜNCELLEME
+# ============================================================
+
+def main():
+
+    print(
+        "========================================"
+    )
+
+    print(
+        "        MAHSUN M3U GÜNCELLEYİCİ"
+    )
+
+    print(
+        "========================================"
+    )
+
+    print(
+        "\nİşlem Başladı..."
+    )
+
+    channels_result = get_andro_content()
+
+    if not channels_result:
+        print("\nHiç kanal bulunamadı, dosya değiştirilmedi.")
+        return
+
+    # --------------------------------------------------------
+    # Sonuçları gruba göre ayır - yerinde koymak için lazım
+    # --------------------------------------------------------
+    bein_results = []
+    sports_results = []
+
+    for entry in channels_result:
+        if BEIN_GROUP in entry:
+            bein_results.append(entry)
+        else:
+            sports_results.append(entry)
+
+    # --------------------------------------------------------
+    # Mevcut dosyayı oku
+    # --------------------------------------------------------
+    old_lines = []
+    if os.path.exists(OUTPUT_FILENAME):
+        with open(OUTPUT_FILENAME, "r", encoding="utf-8") as f:
+            old_lines = f.read().splitlines()
+
+    final_lines = []
+    bein_inserted = False
+    sports_inserted = False
+    skip_url = False
+    skip_extvlcopt = False
+
+    for line in old_lines:
+        if line.startswith("#EXTM3U"):
+            continue
+
+        if line.startswith("#EXTINF:"):
+            # Bu satır eski beIN mi?
+            if BEIN_GROUP in line:
+                if not bein_inserted:
+                    # Yeni beIN grubunu TAM ESKİ YERİNE koy
+                    final_lines.extend(bein_results)
+                    bein_inserted = True
+                skip_url = True
+                skip_extvlcopt = True
+                continue
+
+            # Bu satır eski SPORTS mu?
+            elif SPORTS_GROUP in line:
+                if not sports_inserted:
+                    # Yeni SPORTS grubunu TAM ESKİ YERİNE koy
+                    final_lines.extend(sports_results)
+                    sports_inserted = True
+                skip_url = True
+                skip_extvlcopt = True
+                continue
+
+            else:
+                skip_url = False
+                skip_extvlcopt = False
+                final_lines.append(line)
+
+        elif line.startswith("#EXTVLCOPT:"):
+            if not skip_extvlcopt and line.strip() != "":
+                final_lines.append(line)
+
+        else:
+            # URL satırı
+            if not skip_url and line.strip() != "":
+                final_lines.append(line)
+
+    # Eğer dosyada daha önce bu gruplar yoksa, en sona ekle (1. sıraya değil)
+    if not bein_inserted and bein_results:
+        final_lines.extend(bein_results)
+        print("\nNot: Eski beIN grubu bulunamadı, en sona eklendi.")
+
+    if not sports_inserted and sports_results:
+        final_lines.extend(sports_results)
+        print("\nNot: Eski SPORTS grubu bulunamadı, en sona eklendi.")
+
+    # --------------------------------------------------------
+    # Dosyaya yaz - "a" DEĞİL "w", sıralama bozulmadan
+    # --------------------------------------------------------
+    try:
+        with open(
+            OUTPUT_FILENAME,
+            "w",
+            encoding="utf-8"
+        ) as f:
+            f.write("#EXTM3U\n")
+            f.write("\n".join(final_lines))
+            f.write("\n")
+
+        print(
+            "\n========================================"
+        )
+        print("BAŞARILI")
+        print(f"Kanal sayısı: {len(channels_result)}")
+        print(f"Dosya: {OUTPUT_FILENAME}")
+        print("Gruplar kendi yerinde güncellendi.")
+        print("========================================")
+
+    except IOError as e:
+        print(f"\nDosya yazma hatası: {e}")
+
+# ============================================================
+# BAŞLAT
+# ============================================================
+
+if __name__ == "__main__":
+    main()/",
             "Accept": "*/*",
         }
 
