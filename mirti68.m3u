@@ -3,7 +3,7 @@
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL 📺",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi1.mp4
 #EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL 📺",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="atv" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04n55YCvUX9Dgc8zHyEIQdd7ZUdbvNL5m6HjT-sbC4g&s=10" group-title="🟨◆  ULUSAL 📺" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV
@@ -182,7 +182,7 @@ https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/TRT1.png" group-title="🟨◆  ULUSAL 📺",TRT 1
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196683&extension=ts&play_token=YUIm1DgYqE
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL 📺",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi1.mp4
+https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL  VİP",BİLGİLENDİRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",BİLGİLENDİRME
