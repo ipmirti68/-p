@@ -232,7 +232,6 @@ def main():
     print("\nIslem Basladi...")
     channels_result = get_andro_content()
     if not channels_result:
-        print("Eski gruplar korundu, hicbir sey silinmedi.")
         print("\nHic kanal bulunamadi, dosya degistirilmedi.")
         return
     bein_results = []
@@ -246,6 +245,17 @@ def main():
     if os.path.exists(OUTPUT_FILENAME):
         with open(OUTPUT_FILENAME, "r", encoding="utf-8") as f:
             old_lines = f.read().splitlines()
+    # Eski grupta kac kanal var? Yeni liste eskisinin yarisindan azsa eskisini koru
+    old_bein_count = sum(1 for L in old_lines if BEIN_GROUP in L and L.startswith("#EXTINF:"))
+    old_sports_count = sum(1 for L in old_lines if SPORTS_GROUP in L and L.startswith("#EXTINF:"))
+    replace_bein = bool(bein_results) and (old_bein_count == 0 or len(bein_results) >= max(1, old_bein_count // 2))
+    replace_sports = bool(sports_results) and (old_sports_count == 0 or len(sports_results) >= max(1, old_sports_count // 2))
+    if bein_results and not replace_bein:
+        print(f"UYARI: Yeni beIN cok az ({len(bein_results)} yeni / {old_bein_count} eski). Eski beIN korundu, bosaltilmadi.")
+    if sports_results and not replace_sports:
+        print(f"UYARI: Yeni SPORTS cok az ({len(sports_results)} yeni / {old_sports_count} eski). Eski SPORTS korundu.")
+    if not replace_bein and not replace_sports and bein_results and sports_results:
+        print("UYARI: Her iki yeni liste de cok az, eski gruplar korundu.")
     final_lines = []
     bein_inserted = False
     sports_inserted = False
@@ -255,14 +265,14 @@ def main():
         if line.startswith("#EXTM3U"):
             continue
         if line.startswith("#EXTINF:"):
-            if BEIN_GROUP in line and bein_results:
+            if BEIN_GROUP in line and replace_bein:
                 if not bein_inserted:
                     final_lines.extend(bein_results)
                     bein_inserted = True
                 skip_url = True
                 skip_extvlcopt = True
                 continue
-            elif SPORTS_GROUP in line and sports_results:
+            elif SPORTS_GROUP in line and replace_sports:
                 if not sports_inserted:
                     final_lines.extend(sports_results)
                     sports_inserted = True
@@ -279,13 +289,13 @@ def main():
         else:
             if not skip_url and line.strip() != "":
                 final_lines.append(line)
-    if not bein_inserted and bein_results:
+    if not bein_inserted and replace_bein:
         final_lines.extend(bein_results)
         print("\nNot: Eski beIN grubu bulunamadi, en sona eklendi.")
-    if not sports_inserted and sports_results:
+    if not sports_inserted and replace_sports:
         final_lines.extend(sports_results)
         print("\nNot: Eski SPORTS grubu bulunamadi, en sona eklendi.")
-    # --- GUVENLIK: liste silinmesin ---
+    # --- GUVENLIK ---
     if not old_lines:
         print("DURDURULDU: mirti68.m3u bulunamadi / bos. Yazilmadi.")
         return
@@ -293,7 +303,7 @@ def main():
         print(f"DURDURULDU: Eski liste cok kucuk ({len(old_lines)} satir). Yazilmadi.")
         return
     if len(final_lines) < len(old_lines) * 0.5:
-        print(f"DURDURULDU: Yeni liste eski listenin yarisindan kucuk ({len(final_lines)} < {len(old_lines)}). Yazilmadi.")
+        print(f"DURDURULDU: Yeni liste eski listenin yarisindan kucuk. Yazilmadi.")
         return
     try:
         import shutil
@@ -317,4 +327,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
+        
