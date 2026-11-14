@@ -7,7 +7,7 @@ SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://ekmek82.shop/get.php?u
 
 M3U_FILE = "mirti68.m3u"
 FILM_GROUP = "🟨◆  ULUSAL ᴴᴰ⁺ 🔴"
-SOURCE_GROUP = "TR • ULUSAL"
+SOURCE_GROUP = "TR•ULUSAL"
 
 
 def get_group(line):
