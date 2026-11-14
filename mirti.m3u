@@ -1,213 +1,493 @@
 #EXTM3U
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 1 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Portekiz - Danimarka ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
+https://g1b.d72577a9dd0ec74.cfd/taraftarium/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 2 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Avusturya - İrlanda ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
+https://g1b.d72577a9dd0ec74.cfd/ex2/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 3 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/b2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 4 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/b3/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 5 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/b4/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Max 1 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Max 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/bm1/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",S Sport ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/bm2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",S Sport 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 1 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/ss2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/t1/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 3 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/t2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 4 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/t3/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Smartspor ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/t4/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Smartspor 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT Spor ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/sms2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT Spor 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/trtspor/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT 1 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/trtspor2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",A Spor ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/trt1/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TV 8 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",İsveç - Bosna Hersek ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/as/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TV 8,5 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Kuzey İrlanda - Ukrayna ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/tv8/mono.m3u8
+https://g1b.d72577a9dd0ec74.cfd/ex3/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Euro Sport 1 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Romanya - Polonya ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/tv85/mono.m3u8
+https://g1b.d72577a9dd0ec74.cfd/ex5/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Euro Sport 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/eu1/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 1 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/eu2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 3 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/b2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 4 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/b3/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 5 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/b4/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Max 1 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Petkimspor - Türk Telekom ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Max 2 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Muşspor - Gebzespor ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/bm1/mono.m3u8
+https://g1b.d72577a9dd0ec74.cfd/t0/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",S Sport ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/bm2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",S Sport 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 1 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/ss2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 2 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Ankaraspor - Aliağa FK ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/t1/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 3 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Adana 01 FK - 1461 Trabzon ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/t2/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 4 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Kütahyaspor - Ankaragücü ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/t3/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Smartspor ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",İnegöl Kafkas - Çorluspor 1947 ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/t4/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Smartspor 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT Spor ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/sms2/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT Spor 2 ⭕
-#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
-https://g1b.d72577a9dd0ec74.cfd/trtspor/mono.m3u8
-
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT 1 ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Gebze Bld. - Ziraat Bankkart ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/trtspor2/mono.m3u8
 
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",A Spor ⭕
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tofaş - Trabzonspor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Somaspor - Arnavutköy Bld. ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Menemenspor - Isparta 32 Spor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Sakaryaspor - Ankara Demir ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t0/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",OGM Orman - TED Kolejliler ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/htspor/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Valladolid - Castellon ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Sabah BC - Neftchi IK ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ex6/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Körfez Basket - Galatasaray MCT Technic ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Galatasaray - Fenerbahçe Medicana ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Gürcistan - Macaristan ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/as/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Breogan - SP Burgos ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Bandırma Bordo - Karşıyaka ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",İsrail - Türkiye ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Real Oviedo - Girona ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Joventut Badalona - Zaragoza ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",J.Pegula - M.Andreeva ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/bm1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 1 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 3 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b3/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 4 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b4/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 5 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Max 1 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/bm1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Max 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/bm2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",S Sport ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",S Sport 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 1 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 3 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t3/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 4 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t4/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Smartspor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Smartspor 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/sms2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT Spor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT Spor 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT 1 ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/trt1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",A Spor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/as/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TV 8 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/tv8/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TV 8,5 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/tv85/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Euro Sport 1 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/eu1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Euro Sport 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/eu2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Portekiz - Danimarka ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/taraftarium/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Avusturya - İrlanda ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ex2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",İsveç - Bosna Hersek ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/as/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Kuzey İrlanda - Ukrayna ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ex3/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Romanya - Polonya ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ex5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Petkimspor - Türk Telekom ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Muşspor - Gebzespor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t0/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Ankaraspor - Aliağa FK ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Adana 01 FK - 1461 Trabzon ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Kütahyaspor - Ankaragücü ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t3/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",İnegöl Kafkas - Çorluspor 1947 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t4/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Gebze Bld. - Ziraat Bankkart ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tofaş - Trabzonspor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Somaspor - Arnavutköy Bld. ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Menemenspor - Isparta 32 Spor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Sakaryaspor - Ankara Demir ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t0/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",OGM Orman - TED Kolejliler ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/htspor/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Valladolid - Castellon ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Sabah BC - Neftchi IK ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ex6/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Körfez Basket - Galatasaray MCT Technic ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Galatasaray - Fenerbahçe Medicana ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Gürcistan - Macaristan ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/as/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Breogan - SP Burgos ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Bandırma Bordo - Karşıyaka ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",İsrail - Türkiye ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Real Oviedo - Girona ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Joventut Badalona - Zaragoza ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",J.Pegula - M.Andreeva ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/bm1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 1 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 3 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b3/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 4 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b4/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 5 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Max 1 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/bm1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Max 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/bm2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",S Sport ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",S Sport 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 1 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 3 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t3/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Tivibu 4 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/t4/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Smartspor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",Smartspor 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/sms2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT Spor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT Spor 2 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor2/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TRT 1 ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trt1/mono.m3u8
+
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",A Spor ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/as/mono.m3u8
 
 #EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TV 8 ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1088.xyz/
