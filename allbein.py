@@ -16,7 +16,7 @@ SOURCE_M3U_URL = os.environ.get(
 # Attigin listeyi kaynak.m3u diye kaydedersen ondan okur, yoksa linkten indirir
 LOCAL_SOURCE = "kaynak.m3u"
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟩◆  beIN SPORTS 🖥
+FILM_GROUP = "🟩◆  beIN SPORTS 🖥"
 # ==========================================
 # M3U YARDIMCI FONKSIYONLARI
 # ==========================================
