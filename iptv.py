@@ -15,8 +15,8 @@ CHANNELS = {
     "KANALD": {"display": "KANAL D ⭕", "epg": "Kanal D", "epg_id": "KanalD", "page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
     "STAR": {"display": "STAR ⭕", "epg": "Star TV", "epg_id": "StarTV", "page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv", "marker": "# MIRTI68_STARTV_AUTO"},
     "NOW": {"display": "NOW ⭕", "epg": "NOW", "epg_id": "NOW", "page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "nowtv", "marker": "# MIRTI68_NOWTV_AUTO"},
-    "KANAL7": {"display": "【entity-KANAL 7¦canonical_name=KANAL 7】 ⭕", "epg": "【entity-Kanal 7¦canonical_name=KANAL 7】", "epg_id": "Kanal7", "page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7", "marker": "# MIRTI68_KANAL7_AUTO"},
-    " 【entity-TV8¦canonical_name=TV8】": {"display": " 【entity-TV8¦canonical_name=TV8】 ⭕", "epg": " 【entity-TV8¦canonical_name=TV8】", "epg_id": " 【entity-TV8¦canonical_name=TV8】", "page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": " 【entity-tv8¦canonical_name=TV8】", "marker": "# MIRTI68_TV8_AUTO"},
+    "KANAL7": {"display": "KANAL 7 ⭕", "epg": "【entity-Kanal 7¦canonical_name=KANAL 7】", "epg_id": "Kanal7", "page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7", "marker": "# MIRTI68_KANAL7_AUTO"},
+    " TV8": {"display": " TV8 ⭕", "epg": " TV8", "epg_id": " 【entity-TV8¦canonical_name=TV8】", "page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": " 【entity-tv8¦canonical_name=TV8】", "marker": "# MIRTI68_TV8_AUTO"},
 }
 
 def clean_keyword(kw, fallback_kw):
@@ -258,7 +258,7 @@ def main():
 
     print("[TAMAMLANDI] " + str(ok) + "/8 guncellendi - Toplam " + str(len(final_blocks)) + " kanal korundu")
 
-if __name__ == "__main__":
+
     main()  if not b["marker"] and (",ATV" in b["extinf"] or ", ATV" in b["extinf"]):
             if "# MIRTI68_ATV_AUTO" in [x["marker"] for x in final_blocks if x["marker"]]:
                 continue
