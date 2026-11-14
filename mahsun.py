@@ -245,56 +245,72 @@ def main():
     if os.path.exists(OUTPUT_FILENAME):
         with open(OUTPUT_FILENAME, "r", encoding="utf-8") as f:
             old_lines = f.read().splitlines()
-    # Eski grupta kac kanal var? Yeni liste eskisinin yarisindan azsa eskisini koru
-    old_bein_count = sum(1 for L in old_lines if BEIN_GROUP in L and L.startswith("#EXTINF:"))
-    old_sports_count = sum(1 for L in old_lines if SPORTS_GROUP in L and L.startswith("#EXTINF:"))
-    replace_bein = bool(bein_results) and (old_bein_count == 0 or len(bein_results) >= max(1, old_bein_count // 2))
-    replace_sports = bool(sports_results) and (old_sports_count == 0 or len(sports_results) >= max(1, old_sports_count // 2))
-    if bein_results and not replace_bein:
-        print(f"UYARI: Yeni beIN cok az ({len(bein_results)} yeni / {old_bein_count} eski). Eski beIN korundu, bosaltilmadi.")
-    if sports_results and not replace_sports:
-        print(f"UYARI: Yeni SPORTS cok az ({len(sports_results)} yeni / {old_sports_count} eski). Eski SPORTS korundu.")
-    if not replace_bein and not replace_sports and bein_results and sports_results:
-        print("UYARI: Her iki yeni liste de cok az, eski gruplar korundu.")
+    # --- YENI MANTIK: SILME, SADECE ILAVE ET ---
+    # Eski 2 grup aynen korunur, yeni kanallar sadece eksikse grubun sonuna eklenir.
+    old_text = "\n".join(old_lines)
+    old_urls = set(L.strip() for L in old_lines if L.strip().startswith("http"))
+    old_names = set()
+    for L in old_lines:
+        if L.startswith("#EXTINF:") and "," in L:
+            old_names.add(L.split(",", 1)[-1].strip().lower())
+
+    def _yeni_olanlar(results):
+        yeni = []
+        for entry in results:
+            parts = entry.strip().splitlines()
+            if not parts:
+                continue
+            url = parts[-1].strip()
+            name = parts[0].split(",", 1)[-1].strip().lower() if "," in parts[0] else ""
+            if url in old_urls:
+                continue
+            if name and name in old_names:
+                continue
+            # Bu seferlik eklenenler de tekrar eklenmesin diye sete ekle
+            old_urls.add(url)
+            if name:
+                old_names.add(name)
+            yeni.append(entry)
+        return yeni
+
+    yeni_bein = _yeni_olanlar(bein_results)
+    yeni_sports = _yeni_olanlar(sports_results)
+    print(f"beIN: eski grupta olmayan {len(yeni_bein)} yeni kanal eklenecek (toplam yeni {len(bein_results)})")
+    print(f"SPORTS: eski grupta olmayan {len(yeni_sports)} yeni kanal eklenecek (toplam yeni {len(sports_results)})")
+
+    # Eski liste aynen korunur, hicbir satir silinmez
     final_lines = []
-    bein_inserted = False
-    sports_inserted = False
-    skip_url = False
-    skip_extvlcopt = False
     for line in old_lines:
         if line.startswith("#EXTM3U"):
             continue
-        if line.startswith("#EXTINF:"):
-            if BEIN_GROUP in line and replace_bein:
-                if not bein_inserted:
-                    final_lines.extend(bein_results)
-                    bein_inserted = True
-                skip_url = True
-                skip_extvlcopt = True
-                continue
-            elif SPORTS_GROUP in line and replace_sports:
-                if not sports_inserted:
-                    final_lines.extend(sports_results)
-                    sports_inserted = True
-                skip_url = True
-                skip_extvlcopt = True
-                continue
-            else:
-                skip_url = False
-                skip_extvlcopt = False
-                final_lines.append(line)
-        elif line.startswith("#EXTVLCOPT:"):
-            if not skip_extvlcopt and line.strip() != "":
-                final_lines.append(line)
-        else:
-            if not skip_url and line.strip() != "":
-                final_lines.append(line)
-    if not bein_inserted and replace_bein:
-        final_lines.extend(bein_results)
-        print("\nNot: Eski beIN grubu bulunamadi, en sona eklendi.")
-    if not sports_inserted and replace_sports:
-        final_lines.extend(sports_results)
-        print("\nNot: Eski SPORTS grubu bulunamadi, en sona eklendi.")
+        if line.strip() == "":
+            continue
+        final_lines.append(line)
+
+    def _grubun_sonuna_ekle(grup, yeniler):
+        if not yeniler:
+            return False
+        # Grubun son EXTINF satirini bul
+        last_extinf = -1
+        for idx, L in enumerate(final_lines):
+            if L.startswith("#EXTINF:") and grup in L:
+                last_extinf = idx
+        if last_extinf == -1:
+            # Grup yoksa en sona ekle
+            final_lines.extend(yeniler)
+            print(f"Not: {grup} grubu bulunamadi, en sona eklendi.")
+            return True
+        # O grubun son kanalinin URL satirinin sonrasini bul (sonraki EXTINF'e kadar)
+        j = last_extinf + 1
+        while j < len(final_lines) and not final_lines[j].startswith("#EXTINF:"):
+            j += 1
+        # j = grubun bitis yeri, yenileri buraya sok
+        for k, e in enumerate(yeniler):
+            final_lines.insert(j + k, e)
+        return True
+
+    _grubun_sonuna_ekle(BEIN_GROUP, yeni_bein)
+    _grubun_sonuna_ekle(SPORTS_GROUP, yeni_sports)
     # --- GUVENLIK ---
     if not old_lines:
         print("DURDURULDU: mirti68.m3u bulunamadi / bos. Yazilmadi.")
@@ -320,11 +336,11 @@ def main():
         print("BASARILI")
         print(f"Kanal sayisi: {len(channels_result)}")
         print(f"Dosya: {OUTPUT_FILENAME}")
-        print("Gruplar kendi yerinde guncellendi.")
+        print("Gruplar silinmedi, sadece yeni kanallar ilave edildi.")
         print("========================================")
     except IOError as e:
         print(f"\nDosya yazma hatasi: {e}")
 
 if __name__ == "__main__":
     main()
-        
+    
