@@ -1,6 +1,7 @@
 import os
 import re
 import requests
+import urllib.parse
 
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts")
 
@@ -14,7 +15,7 @@ HEADERS = {
     "Accept-Language": "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7",
     "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
-    "Referer": "http://ekmek82.shop/",
+    "Referer": "http://mekantv56.win/",
 }
 
 def get_group(line):
@@ -37,13 +38,9 @@ def read_entries(lines):
     return entries
 
 def kaynagi_oku(url):
-    # 403'e karşı 3 deneme + http -> https denemesi
-    denenecekler = [url]
-    if url.startswith("http://"):
-        denenecekler.append(url.replace("http://", "https://", 1))
     s = requests.Session()
     s.headers.update(HEADERS)
-    for link in denenecekler:
+    for link in [url, url.replace("http://", "https://", 1)]:
         for deneme in range(2):
             try:
                 print(f"[DENEME] {link} - {deneme+1}")
@@ -59,6 +56,18 @@ def kaynagi_oku(url):
             except requests.RequestException as e:
                 print(f"[!] Bağlantı hatası: {e}")
                 continue
+    # Direkt olmadıysa proxy ile dene
+    enc = urllib.parse.quote(url, safe="")
+    for plink in [f"https://api.allorigins.win/raw?url={enc}", f"https://api.codetabs.com/v1/proxy?quest={enc}"]:
+        try:
+            print(f"[PROXY] {plink[:60]}...")
+            r = s.get(plink, timeout=60, allow_redirects=True)
+            print(f"[PROXY STATUS] {r.status_code}")
+            if r.status_code == 200 and "#EXTM3U" in r.text:
+                r.encoding = "utf-8"
+                return r.text
+        except Exception as e:
+            print(f"[!] Proxy hata: {e}")
     return None
 
 def main():
@@ -85,7 +94,6 @@ def main():
         new_extinf = re.sub(r'group-title="[^"]*"', f'group-title="{FILM_GROUP}"', extinf)
         if 'group-title=' not in new_extinf:
             new_extinf = new_extinf.replace("#EXTINF:", f'#EXTINF:-1 group-title="{FILM_GROUP}"', 1)
-        # DUZELTME: EXTVLCOPT satırlarını da koru, sadece EXTINF'i değiştir
         yeni_entry = [new_extinf] + entry[1:]
         new_entries.append(yeni_entry)
     if not new_entries:
@@ -97,7 +105,6 @@ def main():
         with open(M3U_FILE, "r", encoding="utf-8") as f:
             old_lines = f.read().splitlines()
     old_entries = read_entries(old_lines)
-    preserved = [entry for entry in old_entries if get_group(entry[0]) != FILM_GROUP]
     seen_urls = set()
     unique_entries = []
     for entry in new_entries:
@@ -105,14 +112,31 @@ def main():
         if stream not in seen_urls:
             seen_urls.add(stream)
             unique_entries.append(entry)
+    # DUZELTME: Grubu en alta atma, eski yerinde tut
+    final_entries = []
+    eklendi = False
+    korunan = 0
+    for entry in old_entries:
+        if get_group(entry[0]) == FILM_GROUP:
+            if not eklendi:
+                # Eski ULUSAL grubunun olduğu yere yeniyi koy
+                final_entries.extend(unique_entries)
+                eklendi = True
+            # Eski ULUSAL kayıtlarını atla
+            continue
+        final_entries.append(entry)
+        korunan += 1
+    if not eklendi:
+        # Eski dosyada ULUSAL grubu hiç yoksa en sona ekle
+        final_entries.extend(unique_entries)
     with open(M3U_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
-        for entry in preserved + unique_entries:
+        for entry in final_entries:
             for line in entry:
                 f.write(line + "\n")
     print("ulusal GÜNCELLENDİ")
     print("Yeni kayıt:", len(unique_entries))
-    print("Korunan diğer kayıt:", len(preserved))
+    print("Korunan diğer kayıt:", korunan)
     print("Ana dosya:", M3U_FILE)
 
 if __name__ == "__main__":
