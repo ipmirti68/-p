@@ -67,7 +67,7 @@ def add_atom_suffix(extinf):
 
 def main():
     print("=" * 55)
-    print("MIRTI68 - 【entity-BEİNSPORTS¦canonical_name=beIN】")
+    print("MIRTI68 - 🟩◆  beIN SPORTS 📡")
     print("=" * 55)
 
     if not SOURCE_M3U_URL:
