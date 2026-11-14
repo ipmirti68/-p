@@ -15,8 +15,8 @@ HEADERS = {
 }
 
 OUTPUT_FILENAME = "mirti68.m3u"
-BEIN_GROUP = "\U0001F7E9\u25C6  beIN SPORTS \U0001F5A5"
-SPORTS_GROUP = "\U0001F7E9\u25C6 SPORTS \u2B55"
+BEIN_GROUP = "🟩◆  beIN SPORTS 🖥"
+SPORTS_GROUP = "🟩◆ SPORTS ⭕"
 LOGO = "https://i.imgur.com/OqdfQmw.png"
 BASE_PATTERN = "https://mahsunsports{}.xyz"
 
