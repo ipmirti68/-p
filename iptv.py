@@ -15,9 +15,9 @@ TV8_MARKER = "# MIRTI68_" + "TV" + "8" + "_AUTO"
 CHANNELS = {
     "TRT1": {"display": "TRT 1 ⭕", "epg": "TRT 1", "epg_id": "TRT1", "page": "https://www.trt1.com.tr/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt", "marker": "# MIRTI68_TRT1_AUTO", "fallback": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
     ATV_KEY: {"display": "A" + "TV" + " ⭕", "epg": "A" + "TV", "epg_id": "A" + "TV", "page": "https://www.atv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "a" + "tv", "marker": ATV_MARKER, "fallback": ATV_FALLBACK},
-    "SHOW": {"display": "SHOW ⭕", "epg": "Show TV", "epg_id": "ShowTV", "page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png", "keyword": "showtv", "marker": "# MIRTI68_SHOWTV_AUTO"},
-    "KANALD": {"display": "KANAL D ⭕", "epg": "Kanal D", "epg_id": "KanalD", "page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
-    "STAR": {"display": "STAR ⭕", "epg": "Star TV", "epg_id": "StarTV", "page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv", "marker": "# MIRTI68_STARTV_AUTO"},
+    "SHOW": {"display": "SHOW ⭕", "epg": "【entity-Show TV¦canonical_name=Show TV】", "epg_id": "ShowTV", "page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png", "keyword": "showtv", "marker": "# MIRTI68_SHOWTV_AUTO"},
+    "KANALD": {"display": "【entity-KANAL D¦canonical_name=KANAL D】 ⭕", "epg": "【entity-Kanal D¦canonical_name=KANAL D】", "epg_id": "KanalD", "page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
+    "STAR": {"display": "STAR ⭕", "epg": "【entity-Star TV¦canonical_name=Star TV】", "epg_id": "StarTV", "page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv", "marker": "# MIRTI68_STARTV_AUTO"},
     "NOW": {"display": "NOW ⭕", "epg": "NOW", "epg_id": "NOW", "page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "nowtv", "marker": "# MIRTI68_NOWTV_AUTO"},
     "KANAL7": {"display": "KANAL 7 ⭕", "epg": "KANAL 7", "epg_id": "Kanal7", "page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7", "marker": "# MIRTI68_KANAL7_AUTO"},
     TV8_KEY: {"display": "TV" + "8" + " ⭕", "epg": "TV" + "8", "epg_id": "TV" + "8", "page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": "tv" + "8", "marker": TV8_MARKER},
@@ -240,92 +240,4 @@ def main():
         out += b["url"] + "\n\n"
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(out.strip() + "\n")
-    print("[TAMAMLANDI] " + str(ok) + "/8 guncellendi - Toplam " + str(len(final_blocks)) + " kanal korundu")
-
-if __name__ == "__main__":
-    main()_blocks.append(b)
-        if b["marker"]:
-            used_markers.add(b["marker"])
-    has_atv_marker = False
-    for b in final_blocks:
-        if b["marker"] == ATV_MARKER:
-            has_atv_marker = True
-            break
-    if not has_atv_marker:
-        print("[GARANTI] MIRTI68 A-TV yoktu, yedek A-TV eklendi!")
-        atv_info = CHANNELS[ATV_KEY]
-        if len(final_blocks) >= 1:
-            final_blocks.insert(1, build_block(atv_info, ATV_FALLBACK))
-        else:
-            final_blocks.append(build_block(atv_info, ATV_FALLBACK))
-    out = '#EXTM3U url-tvg="' + EPG_URL + '"\n\n'
-    for b in final_blocks:
-        if b["marker"]:
-            out += b["marker"] + "\n"
-        out += b["extinf"] + "\n"
-        out += b["url"] + "\n\n"
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(out.strip() + "\n")
-    print("[TAMAMLANDI] " + str(ok) + "/8 guncellendi - Toplam " + str(len(final_blocks)) + " kanal korundu")
-
-if __name__ == "__main__":
-    main()marker"])
-
-    has_atv_marker = False
-    for b in final_blocks:
-        if b["marker"] == "# MIRTI68_ATV_AUTO":
-            has_atv_marker = True
-            break
-    if not has_atv_marker:
-        print("[GARANTI] MIRTI68 ATV yoktu, yedek ATV eklendi!")
-        atv_info = CHANNELS["ATV"]
-        if len(final_blocks) >= 1:
-            final_blocks.insert(1, build_block(atv_info, ATV_FALLBACK))
-        else:
-            final_blocks.append(build_block(atv_info, ATV_FALLBACK))
-
-    out = '#EXTM3U url-tvg="' + EPG_URL + '"\n\n'
-    for b in final_blocks:
-        if b["marker"]:
-            out += b["marker"] + "\n"
-        out += b["extinf"] + "\n"
-        out += b["url"] + "\n\n"
-
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(out.strip() + "\n")
-
-    print("[TAMAMLANDI] " + str(ok) + "/8 guncellendi - Toplam " + str(len(final_blocks)) + " kanal korundu")
-
-
-        main()
-        final_blocks.append(b)
-        if b["marker"]:
-            used_markers.add(b["marker"])
-
-    has_atv = False
-    for b in final_blocks:
-        if get_tail(b).startswith("ATV"):
-            has_atv = True
-            break
-    if not has_atv:
-        print("[GARANTI] Listede ATV yoktu, yedek ATV eklendi!")
-        atv_info = CHANNELS["ATV"]
-        if len(final_blocks) >= 1:
-            final_blocks.insert(1, build_block(atv_info, ATV_FALLBACK))
-        else:
-            final_blocks.append(build_block(atv_info, ATV_FALLBACK))
-
-    out = '#EXTM3U url-tvg="' + EPG_URL + '"\n\n'
-    for b in final_blocks:
-        if b["marker"]:
-            out += b["marker"] + "\n"
-        out += b["extinf"] + "\n"
-        out += b["url"] + "\n\n"
-
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(out.strip() + "\n")
-
-    print("[TAMAMLANDI] " + str(ok) + "/8 guncellendi - Toplam " + str(len(final_blocks)) + " kanal korundu")
-
-if __name__ == "__main__":
-    main()
+    print("[TAMAMLANDI] " + str(ok) + "/8 guncellendi - Toplam " + str(len(final_blocks)) + " kanal
