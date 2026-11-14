@@ -15,8 +15,8 @@ HEADERS = {
 }
 
 OUTPUT_FILENAME = "mirti68.m3u"
-BEIN_GROUP = "🟩◆  beIN SPORTS 🖥"
-SPORTS_GROUP = "🟩◆ SPORTS ⭕"
+BEIN_GROUP = "\U0001F7E9\u25C6  beIN SPORTS \U0001F5A5"
+SPORTS_GROUP = "\U0001F7E9\u25C6 SPORTS \u2B55"
 LOGO = "https://i.imgur.com/OqdfQmw.png"
 BASE_PATTERN = "https://mahsunsports{}.xyz"
 
@@ -232,6 +232,7 @@ def main():
     print("\nIslem Basladi...")
     channels_result = get_andro_content()
     if not channels_result:
+        print("Eski gruplar korundu, hicbir sey silinmedi.")
         print("\nHic kanal bulunamadi, dosya degistirilmedi.")
         return
     bein_results = []
@@ -254,14 +255,14 @@ def main():
         if line.startswith("#EXTM3U"):
             continue
         if line.startswith("#EXTINF:"):
-            if BEIN_GROUP in line:
+            if BEIN_GROUP in line and bein_results:
                 if not bein_inserted:
                     final_lines.extend(bein_results)
                     bein_inserted = True
                 skip_url = True
                 skip_extvlcopt = True
                 continue
-            elif SPORTS_GROUP in line:
+            elif SPORTS_GROUP in line and sports_results:
                 if not sports_inserted:
                     final_lines.extend(sports_results)
                     sports_inserted = True
@@ -284,6 +285,22 @@ def main():
     if not sports_inserted and sports_results:
         final_lines.extend(sports_results)
         print("\nNot: Eski SPORTS grubu bulunamadi, en sona eklendi.")
+    # --- GUVENLIK: liste silinmesin ---
+    if not old_lines:
+        print("DURDURULDU: mirti68.m3u bulunamadi / bos. Yazilmadi.")
+        return
+    if len(old_lines) < 100:
+        print(f"DURDURULDU: Eski liste cok kucuk ({len(old_lines)} satir). Yazilmadi.")
+        return
+    if len(final_lines) < len(old_lines) * 0.5:
+        print(f"DURDURULDU: Yeni liste eski listenin yarisindan kucuk ({len(final_lines)} < {len(old_lines)}). Yazilmadi.")
+        return
+    try:
+        import shutil
+        shutil.copy(OUTPUT_FILENAME, OUTPUT_FILENAME + ".bak")
+        print("Yedek alindi: mirti68.m3u.bak")
+    except Exception as e:
+        print(f"Yedek alinamadi: {e}")
     try:
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
@@ -300,4 +317,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-                
+    
