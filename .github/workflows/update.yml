@@ -10,7 +10,7 @@ permissions:
 
 concurrency:
   group: mirti68-main
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -19,6 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v6
         with:
@@ -65,7 +67,7 @@ jobs:
 
       - name: 7 - PATRON
         continue-on-error: true
-        run: python patron.p || echo "patron failed"
+        run: python patron.py || echo "patron failed"
 
           
       # DOSYALARI KAYDET
@@ -77,6 +79,10 @@ jobs:
 
           rm -rf __pycache__ .pytest_cache/
 
+          # Başta remote'daki en yeni hali al, eski kalıntı rebase varsa temizle
+          git rebase --abort || true
+          git fetch origin main || true
+
           ls -lh *.m3u *.json 2>/dev/null || true
 
           git add -f -- *.m3u || true
@@ -84,18 +90,35 @@ jobs:
 
           git status --short
 
-          if ! git diff --cached --quiet; then
-            git commit -m "MIRTI68 update $(date +'%d.%m %H:%M')"
-
-            for i in 1 2 3; do
-              if git pull --rebase --autostash origin main &&
-                 git push origin HEAD:main; then
-                break
-              fi
-
-              echo "Push çakıştı, tekrar deneniyor $i"
-              sleep 3
-            done
-          else
+          if git diff --cached --quiet; then
             echo "Değişiklik yok"
+            exit 0
           fi
+
+          git commit -m "MIRTI68 update $(date +'%d.%m %H:%M')"
+
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Push OK"
+              break
+            fi
+
+            echo "Push çakıştı, tekrar deneniyor $i"
+
+            # Yarım kalmış rebase varsa temizle, yoksa sonraki pull patlar:
+            # "Pulling is not possible because you have unmerged files"
+            git rebase --abort || true
+            git fetch origin main
+
+            # Çakışırsa generated dosyalarda BOT versiyonu kazansın (X ours)
+            # Çünkü bu .m3u / .json dosyalarını bot üretiyor, manuel edit yok
+            if git rebase -X ours origin/main; then
+              echo "Rebase OK, tekrar push deneniyor"
+              continue
+            fi
+
+            # Hâlâ olmadıysa son çare: bot commitini zorla yaz
+            git rebase --abort || true
+            git push --force-with-lease origin HEAD:main && echo "Force push OK" && break
+            sleep 3
+          done
