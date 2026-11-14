@@ -5,7 +5,7 @@ OUTPUT_FILE = "mirti68.m3u"
 GROUP = "🟨◆  ULUSAL 📺"
 
 CHANNELS = {
-        "BEYAZ ⭕": {"page": "https://m.beyaztv.com.tr/canli-yayin/, "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/beyaz.png", "keyword": "beyax tv", "marker": "# MIRTI68_BEYAZ_AUTO"},
+        "BEYAZ ⭕": {"page": "https://m.beyaztv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/beyaz.png", "keyword": "beyax tv", "marker": "# MIRTI68_BEYAZ_AUTO"},
     "360 ⭕": {"page": "https://www.tv360.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/360.png", "keyword": "360 tv, "marker": "# MIRTI68_360_AUTO"},
     "TV 4 ⭕": {"page": "https://www.tv4.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv4.png", "keyword": "tv 4", "marker": "# MIRTI68_TV4_AUTO"},
     "TV 2 ⭕": {"page": "https://www.tv2.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv2.png", "keyword": "tv2", "marker": "# MIRTI68_TV2_AUTO"},
