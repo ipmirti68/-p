@@ -7,8 +7,6 @@ EPG_URL = "https://raw.githubusercontent.com/iptv-org/epg/master/guides/turkey.e
 CDN1 = "daioncdn.net"
 CDN2 = "ercdn.net"
 ATV_FALLBACK = "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_720p.m3u8"
-
-# A-TV ve TV8 parçalı yazıldı, etiket bulaşmasın diye
 ATV_KEY = "A" + "TV"
 TV8_KEY = "TV" + "8"
 ATV_MARKER = "# MIRTI68_" + "A" + "TV" + "_AUTO"
@@ -144,11 +142,6 @@ def build_block(info, url):
     extinf = '#EXTINF:-1 tvg-id="' + info["epg_id"].strip() + '" tvg-name="' + info["epg"].strip() + '" tvg-logo="' + info["logo"] + '" group-title="' + GROUP + '",' + info["display"].strip()
     return {"marker": info["marker"], "extinf": extinf, "url": url}
 
-def get_tail(block):
-    if "," in block["extinf"]:
-        return block["extinf"].split(",", 1)[-1].strip().upper()
-    return ""
-
 def main():
     print("MIRTI68 ULUSAL - 8 KANAL - GUVENLI SURUM")
     if os.path.exists(OUTPUT_FILE):
@@ -168,7 +161,6 @@ def main():
     for b in old_blocks:
         if b["marker"]:
             old_by_marker[b["marker"]] = b
-    old_atv_block = old_by_marker.get(ATV_MARKER)
     new_blocks_map = {}
     ok = 0
     for name, info in CHANNELS.items():
@@ -226,6 +218,32 @@ def main():
         if b["marker"] in used_markers:
             continue
         final_blocks.append(b)
+        if b["marker"]:
+            used_markers.add(b["marker"])
+    has_atv_marker = False
+    for b in final_blocks:
+        if b["marker"] == ATV_MARKER:
+            has_atv_marker = True
+            break
+    if not has_atv_marker:
+        print("[GARANTI] MIRTI68 A-TV yoktu, yedek A-TV eklendi!")
+        atv_info = CHANNELS[ATV_KEY]
+        if len(final_blocks) >= 1:
+            final_blocks.insert(1, build_block(atv_info, ATV_FALLBACK))
+        else:
+            final_blocks.append(build_block(atv_info, ATV_FALLBACK))
+    out = '#EXTM3U url-tvg="' + EPG_URL + '"\n\n'
+    for b in final_blocks:
+        if b["marker"]:
+            out += b["marker"] + "\n"
+        out += b["extinf"] + "\n"
+        out += b["url"] + "\n\n"
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(out.strip() + "\n")
+    print("[TAMAMLANDI] " + str(ok) + "/8 guncellendi - Toplam " + str(len(final_blocks)) + " kanal korundu")
+
+if __name__ == "__main__":
+    main()_blocks.append(b)
         if b["marker"]:
             used_markers.add(b["marker"])
     has_atv_marker = False
