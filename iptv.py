@@ -102,7 +102,7 @@ def update_one_channel(marker, name, logo, new_url):
         f.write(final)
 
 def main():
-    print("MIRTI68 ULUSAL - 8 KANAL HEPSI atv1.py ICINDE")
+    print("MIRTI68 ULUSAL - 8 KANAL HEPSI 🟨◆  ULUSAL 📺 ICINDE")
     if not os.path.exists(OUTPUT_FILE):
         print(f"[!] {OUTPUT_FILE} yok, bos olusturuluyor")
         open(OUTPUT_FILE,"w",encoding="utf-8").write("#EXTM3U\n")
