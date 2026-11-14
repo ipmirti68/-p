@@ -2,11 +2,11 @@ import os
 import re
 import requests
 
-SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts")
+SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts")
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟨◆ ULUSAL ᴴᴰ⁺ 🔴"
-SOURCE_GROUP = "TR•ULUSAL"
+FILM_GROUP = "🟨◆ ULUSAL ᴴᴰ⁺ ⭕"
+SOURCE_GROUP = "TR | ULUSAL"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
