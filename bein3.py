@@ -5,7 +5,7 @@ import requests
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts")
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟩◆  beIN SPORTS 📡"
+FILM_GROUP = "🟩◆  【entity-beIN¦canonical_name=beIN】 SPORTS 📡"
 SOURCE_GROUP = "TR | SPOR⫷"
 
 NEW_LOGO = "https://i.imgur.com/TgW5452.png"
@@ -22,7 +22,7 @@ def get_group(line):
 
 def is_source_group(g):
     n = norm_group(g)
-    return n == norm_group(SOURCE_GROUP) or ("yerel" in n and "spor" in n)
+    return n == norm_group(SOURCE_GROUP) or ("tr" in n and "spor" in n) or ("yerel" in n and "spor" in n)
 
 def get_channel_name(line):
     if "," in line:
@@ -50,6 +50,15 @@ def read_entries(lines):
         entries.append(current)
     return entries
 
+# --- YENİ: SADECE beIN FİLTRESİ ---
+def is_bein(extinf):
+    name = get_channel_name(extinf).lower()
+    # beIN yazılışları: bein, beın, be in, be-in
+    name_clean = re.sub(r'[^a-z0-9]+', '', name)
+    # beinsports, bein, beinsport
+    return "bein" in name_clean or "beinsports" in name_clean
+# --- ---
+
 def set_logo(extinf):
     if 'tvg-logo="' in extinf:
         extinf = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{NEW_LOGO}"', extinf, count=1)
@@ -60,10 +69,9 @@ def set_logo(extinf):
     return extinf
 
 def make_channel_key(extinf):
-    # Artık sadece karşılaştırma için, eşleştirme için değil
     name = get_channel_name(extinf).lower()
     name = name.replace("🔴", "").replace("⚽", "").replace("⭕", "")
-    name = re.sub(r'\s*\(\d+\)\s*$', '', name)  # (2) (3) eklerini yok say
+    name = re.sub(r'\s*\(\d+\)\s*$', '', name)
     name = re.sub(r'\s*-?\s*atom\s*$', '', name)
     name = re.sub(r'\s+', ' ', name)
     return name.strip()
@@ -77,16 +85,14 @@ def add_group_icon(extinf, suffix=""):
     head, display = extinf.split(",", 1)
     display = display.strip()
     display = display.replace(" - 🔴", "").replace("🔴", "").strip()
-    # eski (2) varsa temizle, yeniden ekleyeceğiz
     display = re.sub(r'\s*\(\d+\)\s*$', '', display)
     if display.endswith(GROUP_ICON):
         display = display[:-len(GROUP_ICON)].strip()
-    # suffix = " (2)" gibi
     return f"{head},{display} {GROUP_ICON}{suffix}"
 
 def main():
     print("=" * 55)
-    print("MIRTI68 - 🟩◆  beIN SPORTS 📡")
+    print("MIRTI68 - 🟩◆  beIN SPORTS 📡 - SADECE beIN")
     print("=" * 55)
 
     if not SOURCE_M3U_URL:
@@ -112,6 +118,7 @@ def main():
     print("--- ---")
 
     new_entries = []
+    skipped_not_bein = 0
     for entry in source_entries:
         extinf = entry[0]
         if not is_source_group(get_group(extinf)):
@@ -121,6 +128,12 @@ def main():
         stream = next((x for x in entry[1:] if not x.startswith("#")), "")
         if not stream.startswith(("http://", "https://")):
             continue
+
+        # --- YENİ: beIN değilse atla ---
+        if not is_bein(extinf):
+            skipped_not_bein += 1
+            continue
+
         new_extinf = re.sub(r'group-title="[^"]*"', f'group-title="{FILM_GROUP}"', extinf)
         if 'group-title=' not in new_extinf:
             new_extinf = new_extinf.replace("#EXTINF:", f'#EXTINF:-1 group-title="{FILM_GROUP}"', 1)
@@ -128,8 +141,9 @@ def main():
         new_entries.append([new_extinf, stream])
 
     print(f"Kaynakta '{SOURCE_GROUP}' grubunda bulunan: {len(new_entries)}")
+    print(f"beIN olmadığı için atlanan: {skipped_not_bein}")
     if not new_entries:
-        print("Kaynak grupta yayın bulunamadı.")
+        print("Kaynak grupta beIN yayını bulunamadı.")
         return
 
     old_lines = []
@@ -140,9 +154,8 @@ def main():
     old_entries = read_entries(old_lines)
     final_entries = [list(e) for e in old_entries]
 
-    # === ARTIK SADECE URL İLE EŞLEŞTİR ===
+    # === URL BAZLI EŞLEŞTİR ===
     url_to_index = {}
-    # isim -> kaç tane var, (2) (3) vermek için
     name_count = {}
 
     for idx, entry in enumerate(final_entries):
@@ -162,14 +175,12 @@ def main():
         url = entry[1].strip()
         key = make_channel_key(entry[0])
 
-        # 1. Aynı URL zaten var -> hiç dokunma, sadece logo/ikon tazeleyelim
+        # 1. Aynı URL zaten var
         if url in url_to_index:
             idx = url_to_index[url]
             old_extinf = final_entries[idx][0]
             old_extinf = set_logo(old_extinf)
-            # ikon yoksa ekle, varsa dokunma
             if GROUP_ICON not in old_extinf:
-                # (2) varsa koru
                 m = re.search(r'\(\d+\)', get_channel_name(old_extinf))
                 suffix = f" {m.group(0)}" if m else ""
                 old_extinf = add_group_icon(old_extinf, suffix)
@@ -177,13 +188,9 @@ def main():
             already_same += 1
             continue
 
-        # 2. URL farklı -> YENİ SAY, isim aynı olsa bile üstüne yazma!
-        # Aynı isimden kaç tane var, ona göre (2), (3) ekle
+        # 2. URL farklı -> YENİ SAY, üstüne yazma
         count = name_count.get(key, 0)
-        if count == 0:
-            suffix = ""
-        else:
-            suffix = f" ({count + 1})"
+        suffix = "" if count == 0 else f" ({count + 1})"
 
         new_extinf = add_group_icon(entry[0], suffix)
         new_entry = [new_extinf, url]
@@ -210,7 +217,7 @@ def main():
                 f.write(line + "\n")
 
     print("GÜNCELLEME TAMAMLANDI")
-    print(f"Kaynakta bulunan: {len(new_entries)}")
+    print(f"Kaynakta bulunan beIN: {len(new_entries)}")
     print(f"Eklenen yeni yayın (farklı URL): {len(added)}")
     print(f"Zaten aynı URL ile var olan: {already_same}")
     print(f"Toplam kontrol: {len(added) + already_same} / {len(new_entries)}")
