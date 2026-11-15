@@ -13,7 +13,7 @@ WANTED_RAW = [
     "KEMAL SUNAL",
     "KORKU",
     "WESTERN",
-    "Yeni Eklenenler",
+    "YeniEklenenler",
     "2026",
     "2025",
     "2023 2024",
