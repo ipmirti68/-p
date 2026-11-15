@@ -23,7 +23,6 @@ WANTED_RAW = [
     "2015 2016",
     "2013 2014",
     "2011 2012",
-    "2022",
     "2001 2010",
 ]
 
@@ -35,13 +34,13 @@ def norm(s):
 WANTED = {norm(x): x for x in WANTED_RAW}
 
 EXCLUDED = [
-    " 【entity-adam sandler¦canonical_name=adam sandler】",
+    "【entity-adam sandler¦canonical_name=adam sandler】",
     "clint eastwood",
-    " 【entity-sylvester stallone¦canonical_name=sylvester stallone】",
-    " 【entity-jackie chan¦canonical_name=jackie chan】",
+    "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
+    "【entity-jackie chan¦canonical_name=jackie chan】",
     "nicolas cage",
-    " 【entity-steven seagal¦canonical_name=steven seagal】",
-    " 【entity-jason statham¦canonical_name=jason statham】",
+    "【entity-steven seagal¦canonical_name=steven seagal】",
+    "jason statham",
     "seri",
     "dizi",
     "series",
@@ -99,28 +98,23 @@ def get_name(entry):
         return header.rsplit(",", 1)[-1].strip()
     return ""
 
-# --- DÜZELTME 1: SAHTE MP4 - ARTIK ?.mp4 DEĞİL, DİREKT .mp4 ---
+# --- DÜZELTME: SAHTE .mp4 YOK, ORİJİNAL URL AYNEN KALIYOR ---
 def fix_url(url):
     url = url.strip()
-    if "vixolity.com/vs/" in url:
-        # önce eski ?.mp4 varsa temizle
-        url = url.replace("?.mp4", "").replace("?ext=.mp4", "")
-        # sondaki / yi sil, .mp4 ekle
-        url = url.rstrip("/")
-        if not url.endswith(".mp4"):
-            url = url + ".mp4"
-        return url
+    # eski sahte ekleri temizle, orijinale döndür
+    url = url.replace("?.mp4", "").replace("?ext=.mp4", "")
+    # bizim eklediğimiz .mp4 varsa sök
+    if "vixolity.com/vs/" in url and url.endswith(".mp4"):
+        url = url[:-4]
+    # sondaki / kalsın, sunucu öyle istiyor
     return url
 
-# --- DÜZELTME 2: Aynı filmi 2 kere eklememek için normalleştir ---
 def normalize_url(url):
     url = url.strip()
     url = url.replace("?.mp4", "").replace("?ext=.mp4", "")
-    url = url.rstrip("/")
-    # .mp4 li ve .mp4 siz aynı sayılsın
     if url.endswith(".mp4"):
         url = url[:-4]
-    return url
+    return url.rstrip("/")
 
 def rename_group(entry):
     g = get_group(entry)
@@ -224,7 +218,6 @@ def main():
                 old_entries.append(e)
     print(f"Eski film kaydı yeni formata çevrildi: {migrated}")
 
-    # BURASI DÜZELTİLDİ: normalize ile karşılaştır
     seen_urls = {normalize_url(get_stream(e)) for e in old_entries if get_stream(e)}
 
     added = []
