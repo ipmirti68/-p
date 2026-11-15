@@ -202,8 +202,72 @@ http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315289
 http://07falcontr.com:8080/x3ulkusinanoba43/gNR4DyD4QXsp/315296
 #EXTINF:-1 tvg-id="info" tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",İNFO
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi1.mp4
-#EXTINF:-1 tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="TRT 4K" tvg-name="TR: TRT 4K" tvg-logo="http://logo.unimaxapp.eu/logoslar/trt4k.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT 4K
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/51
+#EXTINF:-1 tvg-id="TRT 1" tvg-name="TR: TRT 1 FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/trt1hd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT 1 FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/337667
+#EXTINF:-1 tvg-id="TRT 1" tvg-name="TR: TRT 1 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/trt1hd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT 1 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/539941
+#EXTINF:-1 tvg-id="ATV" tvg-name="TR: ATV FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/atv.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: ATV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/46
+#EXTINF:-1 tvg-id="ATV" tvg-name="TR: ATV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/atv.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: ATV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/45
+#EXTINF:-1 tvg-id="TV8" tvg-name="TR: TV 8 FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/tv8.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TV 8 FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/31
+#EXTINF:-1 tvg-id="TV8" tvg-name="TR: TV 8 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/tv8.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TV 8 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/30
+#EXTINF:-1 tvg-id="Show TV" tvg-name="TR: SHOW TV FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/showhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: SHOW TV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/42
+#EXTINF:-1 tvg-id="Show TV" tvg-name="TR: SHOW TV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/showhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: SHOW TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/43
+#EXTINF:-1 tvg-id="Kanal D" tvg-name="TR: KANAL D FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/kanaldhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: KANAL D FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/40
+#EXTINF:-1 tvg-id="Kanal D" tvg-name="TR: KANAL D HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/kanaldhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: KANAL D HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/39
+#EXTINF:-1 tvg-id="Star TV" tvg-name="TR: STAR TV FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/star.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: STAR TV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/37
+#EXTINF:-1 tvg-id="Star TV" tvg-name="TR: STAR TV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/star.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: STAR TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/36
+#EXTINF:-1 tvg-id="NOW" tvg-name="TR: Now TV FHD" tvg-logo="https://logo.unimaxapp.eu/TVlogolar/NowTV.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: Now TV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/33
+#EXTINF:-1 tvg-id="NOW" tvg-name="TR: Now TV HD" tvg-logo="https://logo.unimaxapp.eu/TVlogolar/NowTV.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: Now TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/34
+#EXTINF:-1 tvg-id="BEYAZ TV" tvg-name="TR: BEYAZ TV FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/beyazhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: BEYAZ TV FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/25
+#EXTINF:-1 tvg-id="BEYAZ TV" tvg-name="TR: BEYAZ TV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/beyazhd.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: BEYAZ TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/24
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: TYT TURK" tvg-logo="https://logo.unimaxapp.eu/tvlogo/TYTTurk.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TYT TURK
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/316447
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: CNBC-E" tvg-logo="https://logo.unimaxapp.eu/tvlogo/cnbc-e.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: CNBC-E
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/254694
+#EXTINF:-1 tvg-id="KANAL 7" tvg-name="TR: KANAL 7 FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/kanal7.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: KANAL 7 FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/22
+#EXTINF:-1 tvg-id="KANAL 7" tvg-name="TR: KANAL 7 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/kanal7.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: KANAL 7 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/50845
+#EXTINF:-1 tvg-id="Teve2" tvg-name="TR: TEVE 2 FHD" tvg-logo="http://logo.unimaxapp.eu/logoslar/teve2.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TEVE 2 FHD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/19
+#EXTINF:-1 tvg-id="Teve2" tvg-name="TR: TEVE 2 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/teve2.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TEVE 2 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/18
+#EXTINF:-1 tvg-id="A2" tvg-name="TR: A2 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/a2.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: A2 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/9
+#EXTINF:-1 tvg-id="360" tvg-name="TR: 360 TV HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/360.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: 360 TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/16
+#EXTINF:-1 tvg-id="TLC" tvg-name="TR: TLC HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/tlc.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TLC HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/14
+#EXTINF:-1 tvg-id="Flash Tv" tvg-name="TR: FLASH TV HD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/02/Flash-tv-yeni-logo.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: FLASH TV HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/99597
+#EXTINF:-1 tvg-id="TRT 2" tvg-name="TR: TRT 2 HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/trt2.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT 2 HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/40980
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: BeIN H&E" tvg-logo="https://logo.unimaxapp.eu/tvlogo/Bein-H&E.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: BeIN H&E
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/337662
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: TRT GENCTV" tvg-logo="https://logo.unimaxapp.eu/TVlogolar/trtGencTV.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT GENCTV
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/346536
+#EXTINF:-1 tvg-id="A Para" tvg-name="TR: APARA HD" tvg-logo="http://logo.unimaxapp.eu/logoslar/apara.jpg" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: APARA HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/50841
+#EXTINF:-1 tvg-id="TRT TURK" tvg-name="TR: TRT TURK" tvg-logo="https://logo.unimaxapp.eu/tvlogo/trtturk.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: TRT TURK
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/234447
+#EXTINF:-1 tvg-id="SHOW Max" tvg-name="TR: SHOWMAX HD" tvg-logo="http://logo.unimaxapp.eu/tvlogo/showmax.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",TR: SHOWMAX HD
+http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/31363
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" tvg-logo="https://i.hizliresim.com/ljzg5ez.png" group-title="🟦◆   HABER 📰",SZC
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/144
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" group-title="🟦◆   HABER 📰",ÖZLEM GÜRSES
