@@ -4,7 +4,7 @@ import requests
 import tempfile
 
 # ==========================================
-# MIRTI68 - ATOM beIN Sports GÜNCELLEME
+# MIRTI68 - ATOM 【entity-beIN Sports¦canonical_name=beIN Sports】 GÜNCELLEME
 # ==========================================
 
 SOURCE_M3U_URL = os.environ.get(
@@ -13,7 +13,8 @@ SOURCE_M3U_URL = os.environ.get(
 )
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟩◆  beIN SPORTS 🖥"
+FILM_GROUP = "🟩◆  【entity-beIN SPORTS¦canonical_name=beIN Sports】 🖥"
+BEIN_LOGO = "https://i.imgur.com/71TSn0Q.jpeg"
 
 def get_group(line):
     match = re.search(r'group-title="([^"]*)"', line)
@@ -49,7 +50,6 @@ def make_channel_key(extinf):
     name = get_channel_name(extinf).lower()
     name = name.replace("⭕", "")
     name = re.sub(r'\s+', ' ', name)
-    # "-Atom" ekini de isimden çıkar, yoksa aynı kanalı farklı sanır
     name = name.replace("-atom", "").strip()
     return name.strip()
 
@@ -65,10 +65,25 @@ def add_red_dot(extinf):
         return extinf
     return f"{head},{display} -Atom ⭕"
 
+def set_logo(extinf):
+    # Varsa logoyu değiştir, yoksa ekle
+    if 'tvg-logo="' in extinf:
+        extinf = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{BEIN_LOGO}"', extinf, count=1)
+    elif extinf.startswith("#EXTINF:"):
+        # #EXTINF:-1 veya #EXTINF:0 dan sonra ekle
+        extinf = re.sub(
+            r'(#EXTINF:-?\d+)',
+            rf'\1 tvg-logo="{BEIN_LOGO}"',
+            extinf,
+            count=1
+        )
+    return extinf
+
 def update_group(extinf):
     extinf = re.sub(r'group-title="[^"]*"', lambda m: f'group-title="{FILM_GROUP}"', extinf)
     if "group-title=" not in extinf:
         extinf = extinf.replace("#EXTINF:", f'#EXTINF:-1 group-title="{FILM_GROUP}"', 1)
+    extinf = set_logo(extinf)
     return extinf
 
 def main():
@@ -114,21 +129,18 @@ def main():
         old_lines = ["#EXTM3U"]
 
     old_entries = read_entries(old_lines)
-
     existing_group = [entry for entry in old_entries if get_group(entry[0]) == FILM_GROUP]
 
-    # ==========================================
-    # ESKİ LİSTE KONTROLÜ - AYNI OLSA BİLE KAYNAĞINKİNİ EKLE / GÜNCELLE
-    # ==========================================
+    channel_map = {}
+    name_map = {}
 
-    channel_map = {}  # url -> entry
-    name_map = {}     # isim -> url
-
+    # Eski kanalları koru - ama logolarını da yeni logoyla değiştir
     for entry in existing_group:
         url = get_stream(entry)
         name = make_channel_key(entry[0])
         if not url:
             continue
+        entry = [set_logo(entry[0]), entry[1]] if len(entry) > 1 else entry
         if url not in channel_map:
             channel_map[url] = entry
         if name and name not in name_map:
@@ -136,7 +148,6 @@ def main():
 
     added_count = 0
     updated_count = 0
-    skipped_count = 0
 
     for entry in new_entries:
         url = get_stream(entry)
@@ -148,7 +159,6 @@ def main():
         if url in channel_map:
             old_entry = channel_map[url]
             new_entry = entry
-            # Eski kanalda ⭕ varsa koru
             if has_red_dot(old_entry[0]) and not has_red_dot(new_entry[0]):
                 new_entry = [add_red_dot(new_entry[0]), new_entry[1]]
             channel_map[url] = new_entry
@@ -175,10 +185,6 @@ def main():
         added_count += 1
 
     updated_group = list(channel_map.values())
-
-    # ==========================================
-    # GRUBUN ESKİ YERİNİ KORU
-    # ==========================================
 
     final_lines = []
     inserted = False
@@ -231,7 +237,8 @@ def main():
     print("Yeni kanal:", added_count)
     print("Güncellenen kanal:", updated_count)
     print("Son grup kanal:", len(updated_group))
-    print("Grup yeri korundu:", FILM_GROUP)
+    print("Grup:", FILM_GROUP)
+    print("Logo:", BEIN_LOGO)
     print("Ana liste:", M3U_FILE)
     print("=" * 55)
 
