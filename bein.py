@@ -6,12 +6,26 @@ import requests
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8")
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟩◆  beIN SPORTS 📡"
+FILM_GROUP = "🟩◆  【entity-beIN¦canonical_name=beIN】 SPORTS 📡"
 SOURCE_GROUP = "Yerel / 🔴 SPOR"
+
+# --- YENİ: LOGO + İKON ---
+NEW_LOGO = "https://i.imgur.com/TgW5452.png"
+GROUP_ICON = "⚽ ⭕"
+# --- ---
+
+def norm_group(s):
+    s = s.lower()
+    s = re.sub(r'[^a-z0-9çğıöşü]+', '', s)
+    return s
 
 def get_group(line):
     match = re.search(r'group-title="([^"]*)"', line)
     return match.group(1).strip() if match else ""
+
+def is_source_group(g):
+    n = norm_group(g)
+    return n == norm_group(SOURCE_GROUP) or ("yerel" in n and "spor" in n)
 
 def get_channel_name(line):
     if "," in line:
@@ -27,43 +41,50 @@ def get_stream(entry):
 def read_entries(lines):
     entries = []
     current = []
-
     for line in lines:
         line = line.strip()
-
         if line.startswith("#EXTINF:"):
             if current:
                 entries.append(current)
             current = [line]
-
         elif current and line:
             current.append(line)
-
     if current:
         entries.append(current)
-
     return entries
 
-# --- -Atom 🔴 İŞLEMLERİ ---
+# --- YENİ: Logo + İkon işlemleri ---
+def set_logo(extinf):
+    # varsa eski logoyu değiştir, yoksa ekle
+    if 'tvg-logo="' in extinf:
+        extinf = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{NEW_LOGO}"', extinf, count=1)
+    else:
+        extinf = extinf.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-logo="{NEW_LOGO}"', 1)
+        if 'tvg-logo="' not in extinf:
+            extinf = extinf.replace("#EXTINF:", f'#EXTINF:-1 tvg-logo="{NEW_LOGO}"', 1)
+    return extinf
+
 def make_channel_key(extinf):
     name = get_channel_name(extinf).lower()
-    # Karşılaştırırken - 🔴'yi yok say, yoksa her seferinde yeni sanır
-    name = name.replace("🔴", "")
+    name = name.replace("🔴", "").replace("⚽", "").replace("⭕", "")
     name = re.sub(r'\s*-?\s*atom\s*$', '', name)
     name = re.sub(r'\s+', ' ', name)
     return name.strip()
 
-def has_atom_suffix(extinf):
-    return get_channel_name(extinf).strip().endswith("🔴")
+def has_group_icon(extinf):
+    return get_channel_name(extinf).strip().endswith(GROUP_ICON)
 
-def add_atom_suffix(extinf):
+def add_group_icon(extinf):
     if "," not in extinf:
         return extinf
     head, display = extinf.split(",", 1)
     display = display.strip()
-    if display.endswith("🔴"):
+    # eski 🔴 varsa temizle
+    display = display.replace(" - 🔴", "").replace("🔴", "").strip()
+    if display.endswith(GROUP_ICON):
         return extinf
-    return f"{head},{display} - 🔴"
+    return f"{head},{display} {GROUP_ICON}"
+# --- ---
 
 def main():
     print("=" * 55)
@@ -82,29 +103,32 @@ def main():
         )
         response.raise_for_status()
         response.encoding = "utf-8"
-
     except requests.RequestException as e:
         print("Kaynak okunamadı:", e)
         print("Ana liste değiştirilmedi.")
         return
 
     source_entries = read_entries(response.text.splitlines())
+    print(f"Kaynakta toplam kayıt: {len(source_entries)}")
+
+    from collections import Counter
+    groups = Counter([get_group(e[0]) for e in source_entries if e])
+    print("--- KAYNAK GRUPLAR ---")
+    for g, c in groups.most_common():
+        print(f"{g}: {c} adet")
+    print("--- ---")
+
     new_entries = []
+    skipped_group = 0
 
     for entry in source_entries:
         extinf = entry[0]
-
-        if get_group(extinf) != SOURCE_GROUP:
+        if not is_source_group(get_group(extinf)):
+            skipped_group += 1
             continue
-
         if len(entry) < 2:
             continue
-
-        stream = next(
-            (x for x in entry[1:] if not x.startswith("#")),
-            ""
-        )
-
+        stream = next((x for x in entry[1:] if not x.startswith("#")), "")
         if not stream.startswith(("http://", "https://")):
             continue
 
@@ -113,7 +137,6 @@ def main():
             f'group-title="{FILM_GROUP}"',
             extinf
         )
-
         if 'group-title=' not in new_extinf:
             new_extinf = new_extinf.replace(
                 "#EXTINF:",
@@ -121,7 +144,13 @@ def main():
                 1
             )
 
+        # YENİ: Logoyu değiştir
+        new_extinf = set_logo(new_extinf)
+
         new_entries.append([new_extinf, stream])
+
+    print(f"Kaynakta '{SOURCE_GROUP}' grubunda bulunan: {len(new_entries)}")
+    print(f"Grup uymadığı için atlanan: {skipped_group}")
 
     if not new_entries:
         print("Kaynak grupta geçerli yayın bulunamadı.")
@@ -129,18 +158,13 @@ def main():
         return
 
     old_lines = []
-
     if os.path.exists(M3U_FILE):
         with open(M3U_FILE, "r", encoding="utf-8") as f:
             old_lines = f.read().splitlines()
 
     old_entries = read_entries(old_lines)
-
-    # === MEVCUT LİSTEYİ KORU, SİLME ===
-    # old_entries olduğu gibi kalacak, sadece üzerine ilave yapacağız
     final_entries = [list(e) for e in old_entries]
 
-    # Eski beIN kanallarını tanı
     url_to_index = {}
     name_to_index = {}
 
@@ -156,68 +180,76 @@ def main():
 
     added = []
     updated = 0
+    already_same = 0
 
     for entry in new_entries:
         url = entry[1].strip()
         key = make_channel_key(entry[0])
 
-        # 1. Aynı link zaten var -> hiç dokunma
+        # 1. Aynı link zaten var -> logoyu + ikonu güncelle, dokunma sayma
         if url in url_to_index:
+            idx = url_to_index[url]
+            # Eski kanalın logosunu ve ikonunu da yenile ki hepsi aynı görünsün
+            old_extinf = final_entries[idx][0]
+            old_extinf = set_logo(old_extinf)
+            if not has_group_icon(old_extinf):
+                old_extinf = add_group_icon(old_extinf)
+            final_entries[idx][0] = old_extinf
+            already_same += 1
             continue
 
-        # 2. Aynı isim var ama link değişmiş -> eski kanalın linkini güncelle, isim aynen kalsın
+        # 2. Aynı isim var ama link değişmiş -> link + logo + ikon güncelle
         if key in name_to_index:
             idx = name_to_index[key]
             old_entry = final_entries[idx]
-            # Link satırını bulup değiştir
             for j in range(1, len(old_entry)):
                 if old_entry[j].strip().startswith(("http://", "https://")):
                     old_entry[j] = url
                     break
             else:
                 old_entry.append(url)
-            # URL haritasını güncelle
+            # Logo + ikon
+            new_extinf_old = set_logo(old_entry[0])
+            if not has_group_icon(new_extinf_old):
+                new_extinf_old = add_group_icon(new_extinf_old)
+            old_entry[0] = new_extinf_old
             url_to_index[url] = idx
             updated += 1
             continue
 
-        # 3. Gerçekten yeni -> - 🔴 ile ilave listesine ekle
-        new_extinf = add_atom_suffix(entry[0])
+        # 3. Gerçekten yeni -> ⚽ ⭕ ile ekle
+        new_extinf = add_group_icon(entry[0])
         new_entry = [new_extinf, url]
         added.append(new_entry)
-        # Bir daha aynı ismi yeni sanmasın diye haritaya ekle
         name_to_index[key] = -1
         url_to_index[url] = -1
 
-    # Yeni kanalları beIN grubunun sonuna ekle
     if added:
-        # beIN grubunun sonuncu olduğu yeri bul
         insert_at = None
         for idx in range(len(final_entries) - 1, -1, -1):
             if get_group(final_entries[idx][0]) == FILM_GROUP:
                 insert_at = idx + 1
                 break
-
         if insert_at is None:
-            # Grup hiç yoksa en sona ekle
             final_entries.extend(added)
         else:
             for k, new_entry in enumerate(added):
                 final_entries.insert(insert_at + k, new_entry)
 
-    # Ana listeyi yeniden oluştur - eskiler silinmedi, yeniler ilave edildi
     with open(M3U_FILE, "w", encoding="utf-8") as f:
         f.write("#EXTM3U\n")
-
         for entry in final_entries:
             for line in entry:
                 f.write(line + "\n")
 
     print("GÜNCELLEME TAMAMLANDI")
-    print("İlave edilen yeni kanal:", len(added))
-    print("Linki güncellenen kanal:", updated)
-    print("Toplam kayıt:", len(final_entries))
-    print("Ana dosya:", M3U_FILE)
+    print(f"Kaynakta bulunan: {len(new_entries)}")
+    print(f"İlave edilen yeni kanal: {len(added)}")
+    print(f"Linki güncellenen kanal: {updated}")
+    print(f"Zaten aynı linkle var olan: {already_same}")
+    print(f"Toplam kontrol: {len(added) + updated + already_same} / {len(new_entries)}")
+    print(f"Toplam kayıt: {len(final_entries)}")
+    print(f"Ana dosya: {M3U_FILE}")
 
 if __name__ == "__main__":
     main()
