@@ -71,7 +71,7 @@ jobs:
       
       - name: 8 - PRİSON
         continue-on-error: true
-        run: python prison.py || echo "prison.py failed"
+        run: python dprison.py || echo "prison.py failed"
 
       - name: 9- RÜZGAR 
         continue-on-error: true
@@ -83,11 +83,11 @@ jobs:
 
       - name: 12- EKMEK 
         continue-on-error: true
-        run: python bein4.py || echo "dein failed"
+        run: python bein4.py || echo "bein failed"
 
-      - name: 12 - kimbumuratyavuz
+      - name: 12 - CUKUR
         continue-on-error: true
-        run: python bein5.py || echo "bein1 failed"
+        run: python dcukur.py || echo "cukur failed"
 
      
       # DOSYALARI KAYDET
