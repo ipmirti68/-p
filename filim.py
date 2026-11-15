@@ -2,11 +2,11 @@ import os
 import re
 import tempfile
 import requests
+from collections import Counter
 
 INPUT_M3U = "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"
 OUTPUT_M3U = "mirti68.m3u"
 
-# SADECE BU GRUPLAR EKLENECEK - YABANCI TR DB CIKARILDI
 WANTED_RAW = [
     "【entity-IMDb¦canonical_name=IMDb】 Top Rated",
     "YERLI FILM",
@@ -28,21 +28,23 @@ WANTED_RAW = [
 ]
 
 def norm(s):
-    s = re.sub(r"\s+", " ", s).strip().lower()
-    for e in ["✨", "💥", "💎", "🔥", "💢"]:
-        s = s.replace(e, "")
-    return re.sub(r"\s+", " ", s).strip()
+    # EMOJİYİ SİLME, BOŞLUKLA DEĞİŞTİR + BÜTÜN BOŞLUKLARI / NOKTALAMALARI AT
+    # "YeniEklenenler" ve "Yeni Eklenenler" ikisi de "yeni eklenenler" olur
+    s = s.lower()
+    # harf/rakam olmayan her şeyi at, böylece boşluk farkı kalmaz
+    s = re.sub(r'[^a-z0-9çğıöşü]+', '', s)
+    return s
 
 WANTED = {norm(x): x for x in WANTED_RAW}
 
 EXCLUDED = [
-    " 【entity-adam sandler¦canonical_name=adam sandler】",
+    "【entity-adam sandler¦canonical_name=adam sandler】",
     "clint eastwood",
-    " 【entity-sylvester stallone¦canonical_name=sylvester stallone】",
+    "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
     "【entity-jackie chan¦canonical_name=jackie chan】",
     "nicolas cage",
-    " 【entity-steven seagal¦canonical_name=steven seagal】",
-    " 【entity-jason statham¦canonical_name=jason statham】",
+    "【entity-steven seagal¦canonical_name=steven seagal】",
+    "【entity-jason statham¦canonical_name=jason statham】",
     "seri",
     "dizi",
     "series",
@@ -55,6 +57,18 @@ EXCLUDED = [
     "s02e",
     "s03e",
 ]
+
+def is_excluded(text):
+    # KELİME olarak bak, "seri" -> "serseri"yi silmesin
+    # ama s01e gibi bitişik olanları da yakala
+    t = " " + re.sub(r'[^a-z0-9çğıöşü]+', ' ', text.lower()) + " "
+    for w in EXCLUDED:
+        if w in ("s01e", "s02e", "s03e"):
+            if w in text.lower().replace(" ", ""):
+                return True
+        elif f" {w} " in t:
+            return True
+    return False
 
 def read_entries(lines):
     entries = []
@@ -84,6 +98,15 @@ def get_group(entry):
         return None
     return re.sub(r"\s+", " ", m.group(1)).strip()
 
+def get_name(entry):
+    # İsim, EXTINF bloğundaki SON virgülden sonradır, ilk virgülden değil
+    joined = "\n".join(entry)
+    # URL satırını at, kalanın son virgülünden sonrasını al
+    header = "\n".join([l for l in entry if not l.strip().startswith("http")])
+    if "," in header:
+        return header.rsplit(",", 1)[-1].strip()
+    return ""
+
 def rename_group(entry):
     g = get_group(entry)
     if not g:
@@ -91,28 +114,25 @@ def rename_group(entry):
     clean = WANTED.get(norm(g), g)
     clean = re.sub(r"\s+", " ", clean).strip()
     new_group = f"🟪◆ {clean} ⭕"
-    out = []
-    done = False
-    for line in entry:
-        if not done and 'group-title="' in line:
-            line = re.sub(r'group-title="[^"]*', f'group-title="{new_group}', line, count=1)
-            done = True
-        out.append(line)
-    return out
+    joined = "\n".join(entry)
+    # group-title çok satıra bölünmüş bile olsa tamamını değiştir
+    new_joined = re.sub(r'group-title="[^"]*"', f'group-title="{new_group}"', joined, count=1, flags=re.DOTALL)
+    # Tekrar entry'ye böl: ilk satır EXTINF, gerisi aynı
+    # Basit: yeni joined'ı satırlara böl ama EXTINF'i tek satırda tut
+    lines = new_joined.split("\n")
+    return lines
 
 def is_movie(entry):
     if not entry:
         return False
-    joined = "\n".join(entry)
-    name = joined.split(",", 1)[-1].strip() if "," in joined else ""
     g = get_group(entry)
     if not g:
         return False
     if norm(g) not in WANTED:
         return False
-    if any(word in g.casefold() for word in EXCLUDED):
+    if is_excluded(g):
         return False
-    if any(word in name.casefold() for word in EXCLUDED):
+    if is_excluded(get_name(entry)):
         return False
     return True
 
@@ -157,7 +177,17 @@ def main():
         with open(INPUT_M3U, "r", encoding="utf-8-sig") as f:
             source_entries = read_entries(f.read().splitlines())
 
-    # ESKI LISTEYE HIC DOKUNMA - OLDUGU GIBI KORU
+    # DEBUG: Kaynakta hangi gruplar var?
+    found = Counter()
+    for e in source_entries:
+        g = get_group(e)
+        if g:
+            found[norm(g)] += 1
+    print("--- KAYNAKTA BULUNAN ISTENEN GRUPLAR ---")
+    for k, v in WANTED.items():
+        print(f"{v}: {found.get(k, 0)} adet")
+    print("--- ---")
+
     old_entries = []
     if os.path.exists(OUTPUT_M3U):
         with open(OUTPUT_M3U, "r", encoding="utf-8-sig") as f:
