@@ -89,6 +89,10 @@ jobs:
         continue-on-error: true
         run: python dcukur.py || echo "cukur failed"
 
+      - name: 13 - GADDAR
+        continue-on-error: true
+        run: python dgaddar.py || echo "gaddar failed"
+        
      
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
