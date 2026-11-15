@@ -1,0 +1,30 @@
+# Yeni dizi eklemek için buraya 3 satır ekle
+# Dizi çıkarmak için buradan sil, listeden de otomatik silinir
+series:
+    - name: "Çukur"
+    group: "🟪◆ DİZİLER - ÇUKUR ⭕"
+    url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/cukur.m3u"
+
+    - name: "Gaddar"
+    group: "🟪◆ DİZİLER - GADDAR ⭕"
+    url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/gaddar.m3u"
+
+    - name: "İçerde"
+    group: "🟪◆ DİZİLER - İÇERDE ⭕"
+    url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/icerde.m3u"
+
+    - name: "Behzat Ç"
+    group: "🟪◆ DİZİLER - BEHZAT Ç ⭕"
+    url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/behzat-c.m3u"
+
+    - name: "Fi"
+    group: "🟪◆ DİZİLER - Fİ ⭕"
+    url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/fi.m3u"
+
+    - name: "Karadayı"
+    group: "🟪◆ DİZİLER - KARADAYI ⭕"
+    url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/karadayi.m3u"
+
+    - name: "Köprü"
+    group: "🟪◆ DİZİLER - KÖPRÜ ⭕"
+    url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/kopru.m3u"
