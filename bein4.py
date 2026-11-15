@@ -9,7 +9,7 @@ FILM_GROUP = "🟩◆  beIN SPORTS 📡⭕"
 SOURCE_GROUP = "TR • BeIN SPORTS"
 
 NEW_LOGO = "https://i.imgur.com/TgW5452.png"
-GROUP_ICON = "⚽⚽⚽⚽⚽ ⭕"
+GROUP_ICON = "4️⃣⭕"
 
 def norm_group(s):
     s = s.lower()
