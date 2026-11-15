@@ -13,7 +13,7 @@ SOURCE_M3U_URL = os.environ.get(
 )
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟩◆  【entity-beIN SPORTS¦canonical_name=beIN Sports】 🖥"
+FILM_GROUP = "🟩◆  beIN SPORTS 🖥"
 BEIN_LOGO = "https://i.imgur.com/71TSn0Q.jpeg"
 
 def get_group(line):
