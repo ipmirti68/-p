@@ -73,7 +73,7 @@ jobs:
         continue-on-error: true
         run: python prison.py || echo "prison.py failed"
 
-      - name: 9- 79.76.50.223/BEİN
+      - name: 9- RÜZGAR 
         continue-on-error: true
         run: python bein2.py || echo "dein failed"
 
