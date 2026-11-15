@@ -3,18 +3,47 @@ import re
 import tempfile
 import requests
 
-# KENDİ YASAL LİSTENİ BURAYA YAZ
 INPUT_M3U = "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"
 OUTPUT_M3U = "mirti68.m3u"
 
+# SADECE BU GRUPLAR ALINACAK
+WANTED_RAW = [
+    "IMDb Top Rated",
+    "YERLI FILM",
+    "KEMAL SUNAL",
+    "KORKU",
+    "WESTERN",
+    "YABANCI TR DB",
+    "Yeni Eklenenler",
+    "2026",
+    "2025",
+    "2023 2024",
+    "2021",
+    "2019 2020",
+    "2017 2018",
+    "2015 2016",
+    "2013 2014",
+    "2011 2012",
+    "2022",
+    "2001 2010",
+]
+
+def norm(s):
+    s = re.sub(r"\s+", " ", s).strip().lower()
+    for e in ["✨", "💥", "💎", "🔥", "💢"]:
+        s = s.replace(e, "")
+    return re.sub(r"\s+", " ", s).strip()
+
+WANTED = {norm(x): x for x in WANTED_RAW}
+
 EXCLUDED = [
-    "【entity-adam sandler¦canonical_name=Adam Sandler】",
+    "【entity-adam sandler¦canonical_name=adam sandler】",
     "clint eastwood",
     "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
-    "【entity-jackie chan¦canonical_name=jackie chan】",
+    "jackie chan",
     "nicolas cage",
     "【entity-steven seagal¦canonical_name=steven seagal】",
-    "【entity-jason statham¦canonical_name=Jason Statham】",
+    "【entity-jason statham¦canonical_name=jason statham】",
     "seri",
     "dizi",
     "series",
@@ -32,12 +61,12 @@ def read_entries(lines):
     entries = []
     current = []
     for line in lines:
-        line = line.strip()
-        if line.startswith("#EXTINF:"):
+        line = line.rstrip("\n")
+        if line.strip().startswith("#EXTINF:"):
             if current:
                 entries.append(current)
             current = [line]
-        elif current and line:
+        elif current and line.strip():
             current.append(line)
     if current:
         entries.append(current)
@@ -45,22 +74,50 @@ def read_entries(lines):
 
 def get_stream(entry):
     return next(
-        (line.strip() for line in entry[1:] if line.startswith(("http://", "https://"))),
+        (line.strip() for line in entry[1:] if line.strip().startswith(("http://", "https://"))),
         ""
     )
+
+def get_group(entry):
+    # EXTINF 2-3 satira bolunmus olabiliyor, hepsini birlestir
+    joined = "\n".join(entry)
+    m = re.search(r'group-title="([^"]*)"', joined, re.IGNORECASE | re.DOTALL)
+    if not m:
+        return None
+    return re.sub(r"\s+", " ", m.group(1)).strip()
+
+def rename_group(entry):
+    """group-title="..." -> group-title="🟪◆ XXXX ⭕" """
+    g = get_group(entry)
+    if not g:
+        return entry
+    clean = WANTED.get(norm(g), g)
+    clean = re.sub(r"\s+", " ", clean).strip()
+    new_group = f"🟪◆ {clean} ⭕"
+    out = []
+    done = False
+    for line in entry:
+        if not done and 'group-title="' in line:
+            # group-title satiri bolunmusse bile ilk parcada degistir, devamini temizle
+            line = re.sub(r'group-title="[^"]*', f'group-title="{new_group}', line, count=1)
+            done = True
+        out.append(line)
+    return out
 
 def is_movie(entry):
     if not entry:
         return False
-    extinf = entry[0]
-    name = extinf.split(",", 1)[-1].strip()
+    joined = "\n".join(entry)
+    name = joined.split(",", 1)[-1].strip() if "," in joined else ""
 
-    group_match = re.search(r'group-title="([^"]*)"', extinf, re.IGNORECASE)
-    if group_match:
-        group_name = group_match.group(1).casefold()
-        if any(word in group_name for word in EXCLUDED):
-            return False
-
+    g = get_group(entry)
+    if not g:
+        return False
+    # SADECE ISTENEN GRUP
+    if norm(g) not in WANTED:
+        return False
+    if any(word in g.casefold() for word in EXCLUDED):
+        return False
     if any(word in name.casefold() for word in EXCLUDED):
         return False
     return True
@@ -81,6 +138,20 @@ def download_m3u(url):
             print(f"Indirme hatasi {u}: {e}")
     return None
 
+def write_atomic(lines):
+    directory = os.path.dirname(os.path.abspath(OUTPUT_M3U)) or "."
+    fd, temp_path = tempfile.mkstemp(prefix="mirti68_", suffix=".m3u", dir=directory)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n")
+            for line in lines:
+                f.write(line + "\n")
+        os.replace(temp_path, OUTPUT_M3U)
+    except Exception:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+        raise
+
 def main():
     if INPUT_M3U.startswith("http://") or INPUT_M3U.startswith("https://"):
         text = download_m3u(INPUT_M3U)
@@ -100,8 +171,8 @@ def main():
         with open(OUTPUT_M3U, "r", encoding="utf-8-sig") as f:
             old_entries = read_entries(f.read().splitlines())
 
-    # ESKI DOSYAYI DA FILTRELE - yoksa eskiler hic silinmez
-    old_entries = [e for e in old_entries if is_movie(e)]
+    # Eski dosyayi da ayni kuralla temizle + grup ismini duzelt
+    old_entries = [rename_group(e) for e in old_entries if is_movie(e)]
 
     seen_urls = {get_stream(e) for e in old_entries if get_stream(e)}
 
@@ -115,32 +186,7 @@ def main():
             continue
         if get_stream(entry) not in seen_urls:
             seen_urls.add(get_stream(entry))
-            added.append(entry)
-
-    if not added and old_entries:
-        print("Yeni film yok. Liste zaten guncel ve temizlendi.")
-        # Eski dosyadaki copu temizlemek icin yine de yaz
-        final_lines = []
-        for e in old_entries:
-            final_lines.extend(e)
-        directory = os.path.dirname(os.path.abspath(OUTPUT_M3U))
-        fd, temp_path = tempfile.mkstemp(prefix="mirti68_", suffix=".m3u", dir=directory)
-        try:
-            with os.fdopen(fd, "w", encoding="utf-8") as f:
-                f.write("#EXTM3U\n")
-                for line in final_lines:
-                    f.write(line + "\n")
-            os.replace(temp_path, OUTPUT_M3U)
-        except Exception:
-            if os.path.exists(temp_path):
-                os.remove(temp_path)
-            raise
-        print(f"Temizlenen toplam: {len(old_entries)}")
-        return
-
-    if not added:
-        print("Yeni film yok. Liste zaten guncel.")
-        return
+            added.append(rename_group(entry))
 
     final_lines = []
     for e in old_entries:
@@ -148,22 +194,11 @@ def main():
     for e in added:
         final_lines.extend(e)
 
-    directory = os.path.dirname(os.path.abspath(OUTPUT_M3U))
-    fd, temp_path = tempfile.mkstemp(prefix="mirti68_", suffix=".m3u", dir=directory)
-    try:
-        with os.fdopen(fd, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
-            for line in final_lines:
-                f.write(line + "\n")
-        os.replace(temp_path, OUTPUT_M3U)
-    except Exception:
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
-        raise
-
+    write_atomic(final_lines)
     print(f"Yeni eklenen: {len(added)}")
-    print(f"Filtrelenen: {filtered}")
+    print(f"Filtrelenen / atlanan: {filtered}")
     print(f"Toplam: {len(old_entries) + len(added)}")
+    print(f"Yazildi: {OUTPUT_M3U}")
 
 if __name__ == "__main__":
     main()
