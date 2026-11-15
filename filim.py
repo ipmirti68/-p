@@ -35,13 +35,13 @@ def norm(s):
 WANTED = {norm(x): x for x in WANTED_RAW}
 
 EXCLUDED = [
-    "【entity-adam sandler¦canonical_name=adam sandler】",
+    " 【entity-adam sandler¦canonical_name=adam sandler】",
     "clint eastwood",
-    "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
-    "【entity-jackie chan¦canonical_name=jackie chan】",
+    " 【entity-sylvester stallone¦canonical_name=sylvester stallone】",
+    " 【entity-jackie chan¦canonical_name=jackie chan】",
     "nicolas cage",
-    "【entity-steven seagal¦canonical_name=steven seagal】",
-    "【entity-jason statham¦canonical_name=jason statham】",
+    " 【entity-steven seagal¦canonical_name=steven seagal】",
+    " 【entity-jason statham¦canonical_name=jason statham】",
     "seri",
     "dizi",
     "series",
@@ -99,18 +99,28 @@ def get_name(entry):
         return header.rsplit(",", 1)[-1].strip()
     return ""
 
-# --- YENİ EKLENEN KISIM: SAHTE MP4 ---
+# --- DÜZELTME 1: SAHTE MP4 - ARTIK ?.mp4 DEĞİL, DİREKT .mp4 ---
 def fix_url(url):
     url = url.strip()
-    # Sadece vixolity linklerine dokun, canlı yayınlara dokunma
     if "vixolity.com/vs/" in url:
-        if url.endswith("/"):
-            return url + "?.mp4"
-        # uzantı yoksa yine ekle
-        if ".mp4" not in url and ".m3u8" not in url and ".mkv" not in url and ".avi" not in url:
-            return url + "?.mp4"
+        # önce eski ?.mp4 varsa temizle
+        url = url.replace("?.mp4", "").replace("?ext=.mp4", "")
+        # sondaki / yi sil, .mp4 ekle
+        url = url.rstrip("/")
+        if not url.endswith(".mp4"):
+            url = url + ".mp4"
+        return url
     return url
-# --- YENİ KISIM BİTTİ ---
+
+# --- DÜZELTME 2: Aynı filmi 2 kere eklememek için normalleştir ---
+def normalize_url(url):
+    url = url.strip()
+    url = url.replace("?.mp4", "").replace("?ext=.mp4", "")
+    url = url.rstrip("/")
+    # .mp4 li ve .mp4 siz aynı sayılsın
+    if url.endswith(".mp4"):
+        url = url[:-4]
+    return url
 
 def rename_group(entry):
     g = get_group(entry)
@@ -118,19 +128,14 @@ def rename_group(entry):
         return entry
     clean = WANTED.get(norm(g), g)
     clean = re.sub(r"\s+", " ", clean).strip()
-    # YERLI FILM'de zaten FILM var, 2 kere yazma
     if "FILM" not in clean.upper():
         clean = f"FILM - {clean}"
     new_group = f"🟪◆ {clean} ⭕"
     joined = "\n".join(entry)
-    # 1) Grup ismini değiştir
     new_joined = re.sub(r'group-title="[^"]*"', f'group-title="{new_group}"', joined, count=1, flags=re.DOTALL)
-    # 2) TiviMate için film olduğunu söyle: #EXTINF:-1 tvg-type="movie"
-    # Önce varsa eski tvg-type'ı sil, sonra ekle
     new_joined = re.sub(r'\s*tvg-type="[^"]*"', '', new_joined, count=1)
     new_joined = re.sub(r'#EXTINF:-?\d+', '#EXTINF:-1 tvg-type="movie"', new_joined, count=1)
 
-    # 3) YENİ: Stream linkine sahte .mp4 ekle
     lines = new_joined.split("\n")
     fixed_lines = []
     for line in lines:
@@ -206,7 +211,6 @@ def main():
         print(f"{v}: {found.get(k, 0)} adet")
     print("--- ---")
 
-    # ESKİ LİSTE: Film olanları yeni FILM formatına çevir, beIN gibi diğerlerine dokunma
     old_entries = []
     migrated = 0
     if os.path.exists(OUTPUT_M3U):
@@ -220,7 +224,8 @@ def main():
                 old_entries.append(e)
     print(f"Eski film kaydı yeni formata çevrildi: {migrated}")
 
-    seen_urls = {get_stream(e) for e in old_entries if get_stream(e)}
+    # BURASI DÜZELTİLDİ: normalize ile karşılaştır
+    seen_urls = {normalize_url(get_stream(e)) for e in old_entries if get_stream(e)}
 
     added = []
     filtered = 0
@@ -230,8 +235,8 @@ def main():
         if not is_movie(entry):
             filtered += 1
             continue
-        if get_stream(entry) not in seen_urls:
-            seen_urls.add(get_stream(entry))
+        if normalize_url(get_stream(entry)) not in seen_urls:
+            seen_urls.add(normalize_url(get_stream(entry)))
             added.append(rename_group(entry))
 
     final_lines = []
