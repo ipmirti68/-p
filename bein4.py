@@ -2,11 +2,11 @@ import os
 import re
 import requests
 
-SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts")
+SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://ekmek82.shop/get.http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts")
 
 M3U_FILE = "mirti68.m3u"
 FILM_GROUP = "🟩◆  beIN SPORTS 📡⭕"
-SOURCE_GROUP = "TR • BeIN SPORTS"
+SOURCE_GROUP = "TR-SPOR"
 
 NEW_LOGO = "https://i.imgur.com/TgW5452.png"
 GROUP_ICON = "4️⃣⭕"
