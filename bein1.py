@@ -5,7 +5,7 @@ import requests
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=tsiP&password=GaraveliForum&type=m3u_plus&output=m3u8")
 
 M3U_FILE = "mirti68.m3u"
-FILM_GROUP = "🟩◆  beIN SPORTS 📡"
+FILM_GROUP = "🟩◆  beIN SPORTS 📡⭕"
 SOURCE_GROUP = "Turkiye / Bein Spor"
 
 NEW_LOGO = "https://i.imgur.com/TgW5452.png"
