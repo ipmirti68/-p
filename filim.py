@@ -28,10 +28,7 @@ WANTED_RAW = [
 ]
 
 def norm(s):
-    # EMOJİYİ SİLME, BOŞLUKLA DEĞİŞTİR + BÜTÜN BOŞLUKLARI / NOKTALAMALARI AT
-    # "YeniEklenenler" ve "Yeni Eklenenler" ikisi de "yeni eklenenler" olur
     s = s.lower()
-    # harf/rakam olmayan her şeyi at, böylece boşluk farkı kalmaz
     s = re.sub(r'[^a-z0-9çğıöşü]+', '', s)
     return s
 
@@ -40,7 +37,7 @@ WANTED = {norm(x): x for x in WANTED_RAW}
 EXCLUDED = [
     "【entity-adam sandler¦canonical_name=adam sandler】",
     "clint eastwood",
-    "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
+    "sylvester stallone",
     "【entity-jackie chan¦canonical_name=jackie chan】",
     "nicolas cage",
     "【entity-steven seagal¦canonical_name=steven seagal】",
@@ -59,8 +56,6 @@ EXCLUDED = [
 ]
 
 def is_excluded(text):
-    # KELİME olarak bak, "seri" -> "serseri"yi silmesin
-    # ama s01e gibi bitişik olanları da yakala
     t = " " + re.sub(r'[^a-z0-9çğıöşü]+', ' ', text.lower()) + " "
     for w in EXCLUDED:
         if w in ("s01e", "s02e", "s03e"):
@@ -99,9 +94,6 @@ def get_group(entry):
     return re.sub(r"\s+", " ", m.group(1)).strip()
 
 def get_name(entry):
-    # İsim, EXTINF bloğundaki SON virgülden sonradır, ilk virgülden değil
-    joined = "\n".join(entry)
-    # URL satırını at, kalanın son virgülünden sonrasını al
     header = "\n".join([l for l in entry if not l.strip().startswith("http")])
     if "," in header:
         return header.rsplit(",", 1)[-1].strip()
@@ -113,14 +105,18 @@ def rename_group(entry):
         return entry
     clean = WANTED.get(norm(g), g)
     clean = re.sub(r"\s+", " ", clean).strip()
+    # YERLI FILM'de zaten FILM var, 2 kere yazma
+    if "FILM" not in clean.upper():
+        clean = f"FILM - {clean}"
     new_group = f"🟪◆ {clean} ⭕"
     joined = "\n".join(entry)
-    # group-title çok satıra bölünmüş bile olsa tamamını değiştir
+    # 1) Grup ismini değiştir
     new_joined = re.sub(r'group-title="[^"]*"', f'group-title="{new_group}"', joined, count=1, flags=re.DOTALL)
-    # Tekrar entry'ye böl: ilk satır EXTINF, gerisi aynı
-    # Basit: yeni joined'ı satırlara böl ama EXTINF'i tek satırda tut
-    lines = new_joined.split("\n")
-    return lines
+    # 2) TiviMate için film olduğunu söyle: #EXTINF:-1 tvg-type="movie"
+    # Önce varsa eski tvg-type'ı sil, sonra ekle
+    new_joined = re.sub(r'\s*tvg-type="[^"]*"', '', new_joined, count=1)
+    new_joined = re.sub(r'#EXTINF:-?\d+', '#EXTINF:-1 tvg-type="movie"', new_joined, count=1)
+    return new_joined.split("\n")
 
 def is_movie(entry):
     if not entry:
@@ -177,7 +173,6 @@ def main():
         with open(INPUT_M3U, "r", encoding="utf-8-sig") as f:
             source_entries = read_entries(f.read().splitlines())
 
-    # DEBUG: Kaynakta hangi gruplar var?
     found = Counter()
     for e in source_entries:
         g = get_group(e)
@@ -188,10 +183,19 @@ def main():
         print(f"{v}: {found.get(k, 0)} adet")
     print("--- ---")
 
+    # ESKİ LİSTE: Film olanları yeni FILM formatına çevir, beIN gibi diğerlerine dokunma
     old_entries = []
+    migrated = 0
     if os.path.exists(OUTPUT_M3U):
         with open(OUTPUT_M3U, "r", encoding="utf-8-sig") as f:
-            old_entries = read_entries(f.read().splitlines())
+            raw_old = read_entries(f.read().splitlines())
+        for e in raw_old:
+            if is_movie(e):
+                old_entries.append(rename_group(e))
+                migrated += 1
+            else:
+                old_entries.append(e)
+    print(f"Eski film kaydı yeni formata çevrildi: {migrated}")
 
     seen_urls = {get_stream(e) for e in old_entries if get_stream(e)}
 
@@ -206,11 +210,6 @@ def main():
         if get_stream(entry) not in seen_urls:
             seen_urls.add(get_stream(entry))
             added.append(rename_group(entry))
-
-    if not added:
-        print("Yeni film yok. Eski liste aynen duruyor, hicbir sey silinmedi.")
-        print(f"Toplam (eski): {len(old_entries)}")
-        return
 
     final_lines = []
     for e in old_entries:
