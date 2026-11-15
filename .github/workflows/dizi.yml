@@ -3,7 +3,7 @@ name: GÜNCELLE İptv Mahsun Lig Gfilim gunceldizilet 724 Ulusal Ulusal1
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/20 * * * *"
+        - cron: "*/20 * * * *"
 
 permissions:
   contents: write
@@ -17,59 +17,63 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@v5
+            - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v6
+            - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Paketleri kur
+            - name: Paketleri kur
         run: |
           pip install -U pip
-          pip install -U yt-dlp requests beautifulsoup4 lxml playwright
+          pip install -U yt-dlp requests beautifulsoup4 lxml playwright pyyaml
           playwright install chromium
 
-      - name: 1 - IPTV ULUSAL
+            - name: 1 - IPTV ULUSAL
         continue-on-error: true
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
-      - name: 2 - MAHSUN
+            - name: 2 - MAHSUN
         continue-on-error: true
         timeout-minutes: 10
         run: python mahsun.py || echo "mahsun failed"
-      - name: 3 - GOLLER
+            - name: 3 - GOLLER
         continue-on-error: true
         timeout-minutes: 10
         run: python lig.py || echo "lig failed"
-      - name: 4 - FİLİM
+            - name: 4 - FİLİM
         continue-on-error: true
         timeout-minutes: 10
         run: python gfilim.py || echo "gfilim failed"
-      - name: 5 - ULUSAL 
+            - name: 5 - ULUSAL 
         continue-on-error: true
         timeout-minutes: 10
         run: python link.py || echo "link failed"
-      - name: 6 - GÜNCEL DİZİLER 2026
+            - name: 6 - GÜNCEL DİZİLER 2026
         continue-on-error: true
         timeout-minutes: 10
         run: python gunceldiziler.py || echo "gunceldiziler failed"
-      - name: 7 -  7/24 DİZİ 2026
+            - name: 7 -  7/24 DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
         run: python 724.py || echo "724 failed"
-      - name: 8 - ULUSAL 
+            - name: 8 - ULUSAL 
         continue-on-error: true
         timeout-minutes: 10
         run: python ulusal.py || echo "ulusal failed"
-      - name: 9 - ULUSAL1
+            - name: 9 - ULUSAL1
         continue-on-error: true
         timeout-minutes: 10
         run: python ulusal1.py || echo "ulusal2 failed"
+            - name: 10 - DİZİLER YAML
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python sdiziler.py || echo "sdiziler failed"
       
       
-      - name: Dosyaları kaydet
+            - name: Dosyaları kaydet
         if: always()
         run: |
           set -e
