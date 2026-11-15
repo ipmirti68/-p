@@ -41,9 +41,9 @@ jobs:
           yt-dlp --version
           deno --version
           
-      - name: 1 - GOLVAR
+      - name: 1 - FİLİM LİSTESİ 
         continue-on-error: true
-        run: python golvar.py || echo "golvar failed"
+        run: python filim.py || echo "filim failed"
               
       - name: 2 - ATOM
         continue-on-error: true
