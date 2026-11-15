@@ -68,7 +68,11 @@ jobs:
       - name: 7 - PATRON
         continue-on-error: true
         run: python patron.py || echo "patron failed"
-
+      
+      - name: 8 - PRİSON
+        continue-on-error: true
+        run: python prison.py || echo "prison.py failed"
+        
           
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
