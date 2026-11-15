@@ -5,7 +5,7 @@ import requests
 SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/cukur.m3u")
 
 M3U_FILE = "mirti68.m3u"
-TARGET_GROUP = "🟪◆ DİZİLER - 【entity-ÇUKUR¦canonical_name=Çukur】 ⭕"
+TARGET_GROUP = "🟪◆ DİZİLER - ÇUKUR ⭕"
 
 def get_group(line):
     m = re.search(r'group-title="([^"]*)"', line)
