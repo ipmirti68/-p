@@ -8,7 +8,7 @@ INPUT_M3U = "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/l
 OUTPUT_M3U = "mirti68.m3u"
 
 WANTED_RAW = [
-    "【entity-IMDb¦canonical_name=IMDb】 Top Rated",
+    "IMDb Top Rated",
     "YERLI FILM",
     "KEMAL SUNAL",
     "KORKU",
@@ -37,7 +37,7 @@ WANTED = {norm(x): x for x in WANTED_RAW}
 EXCLUDED = [
     "【entity-adam sandler¦canonical_name=adam sandler】",
     "clint eastwood",
-    "sylvester stallone",
+    "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
     "【entity-jackie chan¦canonical_name=jackie chan】",
     "nicolas cage",
     "【entity-steven seagal¦canonical_name=steven seagal】",
@@ -99,6 +99,19 @@ def get_name(entry):
         return header.rsplit(",", 1)[-1].strip()
     return ""
 
+# --- YENİ EKLENEN KISIM: SAHTE MP4 ---
+def fix_url(url):
+    url = url.strip()
+    # Sadece vixolity linklerine dokun, canlı yayınlara dokunma
+    if "vixolity.com/vs/" in url:
+        if url.endswith("/"):
+            return url + "?.mp4"
+        # uzantı yoksa yine ekle
+        if ".mp4" not in url and ".m3u8" not in url and ".mkv" not in url and ".avi" not in url:
+            return url + "?.mp4"
+    return url
+# --- YENİ KISIM BİTTİ ---
+
 def rename_group(entry):
     g = get_group(entry)
     if not g:
@@ -116,7 +129,17 @@ def rename_group(entry):
     # Önce varsa eski tvg-type'ı sil, sonra ekle
     new_joined = re.sub(r'\s*tvg-type="[^"]*"', '', new_joined, count=1)
     new_joined = re.sub(r'#EXTINF:-?\d+', '#EXTINF:-1 tvg-type="movie"', new_joined, count=1)
-    return new_joined.split("\n")
+
+    # 3) YENİ: Stream linkine sahte .mp4 ekle
+    lines = new_joined.split("\n")
+    fixed_lines = []
+    for line in lines:
+        s = line.strip()
+        if s.startswith(("http://", "https://")):
+            fixed_lines.append(fix_url(s))
+        else:
+            fixed_lines.append(line)
+    return fixed_lines
 
 def is_movie(entry):
     if not entry:
