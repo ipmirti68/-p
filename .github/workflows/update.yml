@@ -85,14 +85,7 @@ jobs:
         continue-on-error: true
         run: python bein4.py || echo "bein failed"
 
-      - name: 12 - CUKUR
-        continue-on-error: true
-        run: python dcukur.py || echo "cukur failed"
-
-      - name: 13 - GADDAR
-        continue-on-error: true
-        run: python dgaddar.py || echo "gaddar failed"
-        
+      
      
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
