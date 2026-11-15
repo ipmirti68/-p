@@ -6,9 +6,9 @@ import requests
 INPUT_M3U = "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"
 OUTPUT_M3U = "mirti68.m3u"
 
-# SADECE BU GRUPLAR ALINACAK
+# SADECE BU GRUPLAR EKLENECEK - YABANCI TR DB CIKARILDI
 WANTED_RAW = [
-    "IMDb Top Rated",
+    "【entity-IMDb¦canonical_name=IMDb】 Top Rated",
     "YERLI FILM",
     "KEMAL SUNAL",
     "KORKU",
@@ -36,13 +36,13 @@ def norm(s):
 WANTED = {norm(x): x for x in WANTED_RAW}
 
 EXCLUDED = [
-    "【entity-adam sandler¦canonical_name=adam sandler】",
+    " 【entity-adam sandler¦canonical_name=adam sandler】",
     "clint eastwood",
-    "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
-    "jackie chan",
+    " 【entity-sylvester stallone¦canonical_name=sylvester stallone】",
+    "【entity-jackie chan¦canonical_name=jackie chan】",
     "nicolas cage",
-    "【entity-steven seagal¦canonical_name=steven seagal】",
-    "【entity-jason statham¦canonical_name=jason statham】",
+    " 【entity-steven seagal¦canonical_name=steven seagal】",
+    " 【entity-jason statham¦canonical_name=jason statham】",
     "seri",
     "dizi",
     "series",
@@ -78,7 +78,6 @@ def get_stream(entry):
     )
 
 def get_group(entry):
-    # EXTINF 2-3 satira bolunmus olabiliyor, hepsini birlestir
     joined = "\n".join(entry)
     m = re.search(r'group-title="([^"]*)"', joined, re.IGNORECASE | re.DOTALL)
     if not m:
@@ -86,7 +85,6 @@ def get_group(entry):
     return re.sub(r"\s+", " ", m.group(1)).strip()
 
 def rename_group(entry):
-    """group-title="..." -> group-title="🟪◆ XXXX ⭕" """
     g = get_group(entry)
     if not g:
         return entry
@@ -97,7 +95,6 @@ def rename_group(entry):
     done = False
     for line in entry:
         if not done and 'group-title="' in line:
-            # group-title satiri bolunmusse bile ilk parcada degistir, devamini temizle
             line = re.sub(r'group-title="[^"]*', f'group-title="{new_group}', line, count=1)
             done = True
         out.append(line)
@@ -108,11 +105,9 @@ def is_movie(entry):
         return False
     joined = "\n".join(entry)
     name = joined.split(",", 1)[-1].strip() if "," in joined else ""
-
     g = get_group(entry)
     if not g:
         return False
-    # SADECE ISTENEN GRUP
     if norm(g) not in WANTED:
         return False
     if any(word in g.casefold() for word in EXCLUDED):
@@ -122,10 +117,7 @@ def is_movie(entry):
     return True
 
 def download_m3u(url):
-    urls = [
-        url,
-        "https://cdn.jsdelivr.net/gh/GitLatte/patr0n@site/lists/power-sinema.m3u",
-    ]
+    urls = [url, "https://cdn.jsdelivr.net/gh/GitLatte/patr0n@site/lists/power-sinema.m3u"]
     headers = {"User-Agent": "Mozilla/5.0"}
     for u in urls:
         try:
@@ -165,13 +157,11 @@ def main():
         with open(INPUT_M3U, "r", encoding="utf-8-sig") as f:
             source_entries = read_entries(f.read().splitlines())
 
+    # ESKI LISTEYE HIC DOKUNMA - OLDUGU GIBI KORU
     old_entries = []
     if os.path.exists(OUTPUT_M3U):
         with open(OUTPUT_M3U, "r", encoding="utf-8-sig") as f:
             old_entries = read_entries(f.read().splitlines())
-
-    # Eski dosyayi da ayni kuralla temizle + grup ismini duzelt
-    old_entries = [rename_group(e) for e in old_entries if is_movie(e)]
 
     seen_urls = {get_stream(e) for e in old_entries if get_stream(e)}
 
@@ -187,6 +177,11 @@ def main():
             seen_urls.add(get_stream(entry))
             added.append(rename_group(entry))
 
+    if not added:
+        print("Yeni film yok. Eski liste aynen duruyor, hicbir sey silinmedi.")
+        print(f"Toplam (eski): {len(old_entries)}")
+        return
+
     final_lines = []
     for e in old_entries:
         final_lines.extend(e)
@@ -194,10 +189,10 @@ def main():
         final_lines.extend(e)
 
     write_atomic(final_lines)
+    print(f"Eski liste korundu: {len(old_entries)}")
     print(f"Yeni eklenen: {len(added)}")
     print(f"Filtrelenen / atlanan: {filtered}")
     print(f"Toplam: {len(old_entries) + len(added)}")
-    print(f"Yazildi: {OUTPUT_M3U}")
 
 if __name__ == "__main__":
     main()
