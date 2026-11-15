@@ -72,8 +72,24 @@ jobs:
       - name: 8 - PRİSON
         continue-on-error: true
         run: python prison.py || echo "prison.py failed"
-        
-          
+
+      - name: 9- 79.76.50.223/BEİN
+        continue-on-error: true
+        run: python bein2.py || echo "dein failed"
+
+      - name: 10- kimbumuratyavuz
+        continue-on-error: true
+        run: python bein3.py || echo "bein1 failed"
+
+      - name: 12- 79.76.50.223/BEİN
+        continue-on-error: true
+        run: python bein4.py || echo "dein failed"
+
+      - name: 12 - kimbumuratyavuz
+        continue-on-error: true
+        run: python bein5.py || echo "bein1 failed"
+
+     
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
         if: always()
