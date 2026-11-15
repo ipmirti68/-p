@@ -4,7 +4,8 @@ import requests
 import tempfile
 
 # ==========================================
-# MIRTI68 - ATOM 【entity-beIN Sports¦canonical_name=beIN Sports】 GÜNCELLEME
+# MIRTI68 - ATOM 【entity-beIN SPORTS¦canonical_name=beIN SPORTS】 - SADECE SONA EKLE
+# Senin listene DOKUNMAZ
 # ==========================================
 
 SOURCE_M3U_URL = os.environ.get(
@@ -15,10 +16,6 @@ SOURCE_M3U_URL = os.environ.get(
 M3U_FILE = "mirti68.m3u"
 FILM_GROUP = "🟩◆  beIN SPORTS 🖥"
 BEIN_LOGO = "https://i.imgur.com/71TSn0Q.jpeg"
-
-def get_group(line):
-    match = re.search(r'group-title="([^"]*)"', line)
-    return match.group(1).strip() if match else ""
 
 def get_channel_name(line):
     if "," in line:
@@ -46,16 +43,6 @@ def get_stream(entry):
         ""
     )
 
-def make_channel_key(extinf):
-    name = get_channel_name(extinf).lower()
-    name = name.replace("⭕", "")
-    name = re.sub(r'\s+', ' ', name)
-    name = name.replace("-atom", "").strip()
-    return name.strip()
-
-def has_red_dot(extinf):
-    return get_channel_name(extinf).strip().startswith("⭕")
-
 def add_red_dot(extinf):
     if "," not in extinf:
         return extinf
@@ -66,11 +53,9 @@ def add_red_dot(extinf):
     return f"{head},{display} -Atom ⭕"
 
 def set_logo(extinf):
-    # Varsa logoyu değiştir, yoksa ekle
     if 'tvg-logo="' in extinf:
         extinf = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{BEIN_LOGO}"', extinf, count=1)
     elif extinf.startswith("#EXTINF:"):
-        # #EXTINF:-1 veya #EXTINF:0 dan sonra ekle
         extinf = re.sub(
             r'(#EXTINF:-?\d+)',
             rf'\1 tvg-logo="{BEIN_LOGO}"',
@@ -80,7 +65,8 @@ def set_logo(extinf):
     return extinf
 
 def update_group(extinf):
-    extinf = re.sub(r'group-title="[^"]*"', lambda m: f'group-title="{FILM_GROUP}"', extinf)
+    # Sadece YENİ eklenecek kanala uygulanır, eski listeye uygulanmaz
+    extinf = re.sub(r'group-title="[^"]*"', f'group-title="{FILM_GROUP}"', extinf)
     if "group-title=" not in extinf:
         extinf = extinf.replace("#EXTINF:", f'#EXTINF:-1 group-title="{FILM_GROUP}"', 1)
     extinf = set_logo(extinf)
@@ -88,7 +74,7 @@ def update_group(extinf):
 
 def main():
     print("=" * 55)
-    print("MIRTI68 - GOLVAR beIN SPORTS BOT")
+    print("MIRTI68 - beIN SPORTS - SADECE SONA EKLE")
     print("=" * 55)
 
     try:
@@ -113,117 +99,64 @@ def main():
         stream = get_stream(entry)
         if not stream:
             continue
-        new_entries.append([update_group(extinf), stream])
+        # Sadece yeni kanala grup/logo/dot uygula
+        new_entries.append([add_red_dot(update_group(extinf)), stream])
 
     if not new_entries:
         print("beIN Sports kanalı bulunamadı.")
         print("Ana liste değiştirilmedi.")
         return
 
-    print("Kaynak beIN Sports:", len(new_entries))
+    print("Kaynak 【entity-beIN Sports¦canonical_name=beIN SPORTS】:", len(new_entries))
 
+    # --- SENİN LİSTENİ OLDUĞU GİBİ OKU, HİÇ DEĞİŞTİRME ---
     if os.path.exists(M3U_FILE):
         with open(M3U_FILE, "r", encoding="utf-8-sig") as f:
-            old_lines = f.read().splitlines()
+            old_content = f.read()
+        old_lines = old_content.splitlines()
     else:
         old_lines = ["#EXTM3U"]
+        old_content = "#EXTM3U\n"
 
+    # Zaten sende olan URL'leri atla ki 2 kere eklenmesin
     old_entries = read_entries(old_lines)
-    existing_group = [entry for entry in old_entries if get_group(entry[0]) == FILM_GROUP]
-
-    channel_map = {}
-    name_map = {}
-
-    # Eski kanalları koru - ama logolarını da yeni logoyla değiştir
-    for entry in existing_group:
+    existing_urls = set()
+    for entry in old_entries:
         url = get_stream(entry)
-        name = make_channel_key(entry[0])
-        if not url:
-            continue
-        entry = [set_logo(entry[0]), entry[1]] if len(entry) > 1 else entry
-        if url not in channel_map:
-            channel_map[url] = entry
-        if name and name not in name_map:
-            name_map[name] = url
+        if url:
+            existing_urls.add(url)
 
-    added_count = 0
-    updated_count = 0
-
+    to_append = []
+    skipped = 0
     for entry in new_entries:
         url = get_stream(entry)
-        name = make_channel_key(entry[0])
-        if not url:
+        if url in existing_urls:
+            skipped += 1
             continue
+        to_append.append(entry)
+        existing_urls.add(url)
 
-        # 1) AYNI URL VARSA: Atlayıp geçme, kaynağınkiyle güncelle
-        if url in channel_map:
-            old_entry = channel_map[url]
-            new_entry = entry
-            if has_red_dot(old_entry[0]) and not has_red_dot(new_entry[0]):
-                new_entry = [add_red_dot(new_entry[0]), new_entry[1]]
-            channel_map[url] = new_entry
-            updated_count += 1
-            continue
+    print(f"Zaten sende var, atlandı: {skipped}")
+    print(f"Sona eklenecek yeni: {len(to_append)}")
 
-        # 2) AYNI İSİM, FARKLI URL VARSA: Eski URL'yi sil, kaynağın URL'siyle güncelle
-        if name in name_map:
-            old_url = name_map[name]
-            if old_url in channel_map:
-                old_entry = channel_map.pop(old_url)
-                new_entry = entry
-                if has_red_dot(old_entry[0]) and not has_red_dot(new_entry[0]):
-                    new_entry = [add_red_dot(new_entry[0]), new_entry[1]]
-                channel_map[url] = new_entry
-                name_map[name] = url
-                updated_count += 1
-            continue
+    if not to_append:
+        print("Eklenecek yeni kanal yok. Liste değiştirilmedi.")
+        return
 
-        # 3) HİÇ YOKSA: Yeni ekle
-        new_entry = [add_red_dot(entry[0]), entry[1]]
-        channel_map[url] = new_entry
-        name_map[name] = url
-        added_count += 1
-
-    updated_group = list(channel_map.values())
-
-    final_lines = []
-    inserted = False
-    i = 0
-    while i < len(old_lines):
-        line = old_lines[i].strip()
-        if line.startswith("#EXTINF:"):
-            entry = [line]
-            i += 1
-            while i < len(old_lines):
-                next_line = old_lines[i].strip()
-                if next_line.startswith("#EXTINF:"):
-                    break
-                if next_line:
-                    entry.append(next_line)
-                i += 1
-            if get_group(entry[0]) == FILM_GROUP:
-                if not inserted:
-                    for new_entry in updated_group:
-                        final_lines.extend(new_entry)
-                    inserted = True
-            else:
-                final_lines.extend(entry)
-        else:
-            if line and line != "#EXTM3U":
-                final_lines.append(line)
-            i += 1
-
-    if not inserted:
-        for entry in updated_group:
-            final_lines.extend(entry)
-
+    # --- SADECE SONA EKLE ---
     directory = os.path.dirname(os.path.abspath(M3U_FILE))
     fd, temp_path = tempfile.mkstemp(prefix="mirti68_", suffix=".m3u", dir=directory)
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
-            for line in final_lines:
-                f.write(line + "\n")
+            # Eski dosyayı aynen yaz
+            text = old_content.rstrip("\n") + "\n"
+            if not text.startswith("#EXTM3U"):
+                text = "#EXTM3U\n" + text
+            f.write(text)
+            # Yeni kanalları en sona ekle
+            for entry in to_append:
+                for line in entry:
+                    f.write(line + "\n")
         os.replace(temp_path, M3U_FILE)
     except Exception:
         if os.path.exists(temp_path):
@@ -231,16 +164,11 @@ def main():
         raise
 
     print("=" * 55)
-    print("MIRTI68 GÜNCELLEME TAMAMLANDI")
+    print("TAMAMLANDI - Eski listeye dokunulmadı")
     print("=" * 55)
-    print("Kaynak beIN Sports:", len(new_entries))
-    print("Yeni kanal:", added_count)
-    print("Güncellenen kanal:", updated_count)
-    print("Son grup kanal:", len(updated_group))
+    print("Sona eklenen:", len(to_append))
     print("Grup:", FILM_GROUP)
-    print("Logo:", BEIN_LOGO)
     print("Ana liste:", M3U_FILE)
-    print("=" * 55)
 
 if __name__ == "__main__":
     main()
