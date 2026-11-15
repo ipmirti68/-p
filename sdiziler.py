@@ -9,7 +9,7 @@ except ImportError:
     HAS_YAML = False
 
 M3U_FILE = "mirti68.m3u"
-YAML_FILE = "diziler.yaml"
+YAML_FILE = "sdiziler.yaml"
 
 def get_group(line):
     m = re.search(r'group-title="([^"]*)"', line)
