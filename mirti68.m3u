@@ -1673,14 +1673,660 @@ http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=873689&extensio
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=873688&extension=ts
 #EXTINF:-1  tvg-name="ZEKI METIN TV" group-title="⬛◆  SİNEMA  🎬",ZEKI METIN TV
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=873687&extension=ts
-#EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Amazonda Dehşet (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Amazonda Dehşet (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595976.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Allen (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Allen (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595966.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Oak Caddesi'nin Sonu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Oak Caddesi'nin Sonu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595945.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Avengers Endgame: Encore (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Avengers Endgame: Encore (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595944.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Odyssey (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Odyssey (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595836.mkv
+#EXTINF:-1 tvg-id="" tvg-name="PERDE (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",PERDE (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595785.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Can Dostumun Mükemmel Noel'i (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Can Dostumun Mükemmel Noel'i (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595777.mkv
+#EXTINF:-1 tvg-id="" tvg-name="A Story of Derry (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",A Story of Derry (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595745.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Vahşinin Kalbi (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Vahşinin Kalbi (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595740.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mongoose (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mongoose (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595701.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Resident Evil (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Resident Evil (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595573.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Moda (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Moda (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595557.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ali G: Ben Kimim? (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ali G: Ben Kimim? (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595446.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Verity: Gerçeğin Diğer Kıyısı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Verity: Gerçeğin Diğer Kıyısı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595431.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Hamlet (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Hamlet (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595387.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Jackass: Sonuncusu ve En İyisi (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Jackass: Sonuncusu ve En İyisi (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595329.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Fünye (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Fünye (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595196.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Bad Apples (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Bad Apples (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595177.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yolda Kaldım (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yolda Kaldım (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595152.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Tavşan İmparatorluğu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Tavşan İmparatorluğu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595144.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Moana (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Moana (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595087.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Tenzing (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Tenzing (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594999.mkv
+#EXTINF:-1 tvg-id="" tvg-name="One Last Shot (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",One Last Shot (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594976.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Aldığımız Nefes (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Aldığımız Nefes (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594935.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Siccîn 9 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Siccîn 9 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594934.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Esas Plan (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Esas Plan (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594829.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Bir Koyun Polisiyesi (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Bir Koyun Polisiyesi (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594769.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Hayatının Aşkı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Hayatının Aşkı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594745.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Animals (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Animals (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594615.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Matchbox the Movie (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Matchbox the Movie (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594542.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Hayata Mahkûm (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Hayata Mahkûm (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594511.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Soulm8te (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Soulm8te (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594459.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Çatlı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Çatlı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594448.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yasak Meyveler (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yasak Meyveler (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594441.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Örümcek-Adam: Yepyeni Bir Gün (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Örümcek-Adam: Yepyeni Bir Gün (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594432.mkv
+#EXTINF:-1 tvg-id="" tvg-name="UNABOMBER (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",UNABOMBER (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594310.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Şeytan Çocuk (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Şeytan Çocuk (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594296.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mother Mary (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mother Mary (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594291.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Çıkış Yolu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Çıkış Yolu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594236.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Sultana (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Sultana (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594148.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Başıbozuklar (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Başıbozuklar (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/594136.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Nasıl Katil Olunur? (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Nasıl Katil Olunur? (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/593609.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Keskin Nişancı: Bayraksız (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Keskin Nişancı: Bayraksız (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591970.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yalancı Komşu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yalancı Komşu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591951.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Efes'in Sırrı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Efes'in Sırrı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591945.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Drama (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Drama (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591937.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kocamın Avukatıyım (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kocamın Avukatıyım (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591881.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mayday (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mayday (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591877.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Runner (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Runner (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591864.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Night Patrol (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Night Patrol (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591816.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yellow Mirror (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yellow Mirror (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591815.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Fısıltı Adam (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Fısıltı Adam (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591801.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Öngörü (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Öngörü (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/591758.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Saklambaç 2 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Saklambaç 2 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/589598.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Bana Şans Dileme (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Bana Şans Dileme (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/583253.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeşler Araştırma (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kardeşler Araştırma (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/583220.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Beast (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Beast (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/572825.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yeni Nesil: Kötülerin Harikalar Diyarı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yeni Nesil: Kötülerin Harikalar Diyarı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/572644.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Savage House (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Savage House (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/570344.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Sessiz Tepe: Dönüş (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Sessiz Tepe: Dönüş (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/539944.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Supergirl (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Supergirl (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/462984.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Last House (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Last House (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/462416.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Son Perde Aşk (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Son Perde Aşk (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/455635.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kardeş Takımı 3 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kardeş Takımı 3 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430858.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Devils Mouth (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Devils Mouth (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430839.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Parçalı Yıllar (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Parçalı Yıllar (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430794.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Is God Is (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Is God Is (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430714.mkv
+#EXTINF:-1 tvg-id="" tvg-name="İlk Aşkın Tohumları (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",İlk Aşkın Tohumları (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/430688.mkv
+#EXTINF:-1 tvg-id="" tvg-name="72 HOURS (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",72 HOURS (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427239.mkv
+#EXTINF:-1 tvg-id="" tvg-name="In Cold Light (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",In Cold Light (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427215.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mutluyuz Mu? (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mutluyuz Mu? (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427178.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mortal Kombat II (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mortal Kombat II (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427171.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Fırtına Kız (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Fırtına Kız (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427166.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Shelter (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Shelter (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427165.mkv
+#EXTINF:-1 tvg-id="" tvg-name="İki Destan Bir Vatan (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",İki Destan Bir Vatan (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427142.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Disclosure Day (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Disclosure Day (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427120.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Obsession (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Obsession (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427117.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Masters of the Universe (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Masters of the Universe (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/427019.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Star Wars: The Mandalorian and Grogu (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Star Wars: The Mandalorian and Grogu (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426984.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Scary Movie (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Scary Movie (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426928.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yasak Aşkın Günahı (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yasak Aşkın Günahı (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426922.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Breadwinner (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Breadwinner (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426869.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Send Help (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Send Help (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426861.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ip Man Kung Fu Legend (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ip Man Kung Fu Legend (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426837.mkv
+#EXTINF:-1 tvg-id="" tvg-name="One Mile: Chapter Two (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",One Mile: Chapter Two (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426831.mkv
+#EXTINF:-1 tvg-id="" tvg-name="One Mile: Chapter One (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",One Mile: Chapter One (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426830.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ice Skater (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ice Skater (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/426824.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Passenger (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Passenger (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425879.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Lee Cronins The Mummy (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Lee Cronins The Mummy (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425877.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Simpsley (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Simpsley (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425827.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Moment (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Moment (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425816.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Sarı Zarflar (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Sarı Zarflar (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/425804.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Enola Holmes 3 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Enola Holmes 3 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424952.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Devil Wears Prada 2 Red Carpet World Premiere (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Devil Wears Prada 2 Red Carpet World Premiere (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424901.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Cam Sehpa (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Cam Sehpa (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424836.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Drivers Ed (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Drivers Ed (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424816.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Little Brother (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Little Brother (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/424668.mkv
+#EXTINF:-1 tvg-id="" tvg-name="In the Hand of Dante (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",In the Hand of Dante (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/416556.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Voicemails for Isabelle (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Voicemails for Isabelle (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/362235.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kaygısız Baş (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kaygısız Baş (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/362060.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Extreme Makeover: Homer Edition (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Extreme Makeover: Homer Edition (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/362043.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ketenpere: Dalavere (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ketenpere: Dalavere (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361584.mkv
+#EXTINF:-1 tvg-id="" tvg-name="They Will Kill You (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",They Will Kill You (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361578.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Panda Plan 2 The Magical Tribe (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Panda Plan 2 The Magical Tribe (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361528.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Over Your Dead Body (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Over Your Dead Body (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361505.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Michael (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Michael (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361464.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Propeller One-Way Night Coach (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Propeller One-Way Night Coach (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361453.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Office Romance (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Office Romance (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/361239.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yaz Evi (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yaz Evi (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360972.mkv
+#EXTINF:-1 tvg-id="" tvg-name="D.I.S.C.O. (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",D.I.S.C.O. (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360689.mkv
+#EXTINF:-1 tvg-id="" tvg-name="K-Pops! (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",K-Pops! (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360617.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Outcome (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Outcome (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360409.mkv
+#EXTINF:-1 tvg-id="" tvg-name="We Bury the Dead (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",We Bury the Dead (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360288.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Bride (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Bride (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360270.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Ladies First (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Ladies First (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360233.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Tom Clancys Jack Ryan Ghost War (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Tom Clancys Jack Ryan Ghost War (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/360074.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Punisher: One Last Kill (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Punisher: One Last Kill (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/359959.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Giant (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Giant (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/359755.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Project Hail Mary (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Project Hail Mary (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/359719.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Remarkably Bright Creatures (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Remarkably Bright Creatures (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/359690.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Wuthering Heights (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Wuthering Heights (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/354946.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Reminders of Him (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Reminders of Him (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/354849.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Apex (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Apex (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/354795.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Bu İşin Şakası Yok (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Bu İşin Şakası Yok (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/354003.mkv
+#EXTINF:-1 tvg-id="" tvg-name="180 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",180 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353961.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Balls Up (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Balls Up (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353953.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Güvercin Terbiyecisi Hammal (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Güvercin Terbiyecisi Hammal (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353827.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Thrash (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Thrash (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353607.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Crime 101 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Crime 101 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353273.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Scream 7 (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Scream 7 (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353263.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Sonunda Sen (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Sonunda Sen (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353183.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mike & Nick & Nick & Alice (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mike & Nick & Nick & Alice (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/353148.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Pretty Lethal (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Pretty Lethal (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/352907.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Peaky Blinders The Immortal Man (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Peaky Blinders The Immortal Man (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/352032.mkv
+#EXTINF:-1 tvg-id="" tvg-name="War Machine (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",War Machine (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/351282.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Yasemin Sakallıoğlu Doğru Koca Nasıl Seçilir (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Yasemin Sakallıoğlu Doğru Koca Nasıl Seçilir (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/351158.mkv
+#EXTINF:-1 tvg-id="" tvg-name="28 Years Later The Bone Temple (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",28 Years Later The Bone Temple (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/351003.mkv
+#EXTINF:-1 tvg-id="" tvg-name="In the Blink of an Eye (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",In the Blink of an Eye (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/350758.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Bluff (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Bluff (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/350681.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mercy (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mercy (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/349556.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Joes College Road Trip (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Joes College Road Trip (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/349439.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Love Me Love Me (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Love Me Love Me (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/349430.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Primate (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Primate (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/349352.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Relationship Goals (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Relationship Goals (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/348813.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Greenland 2 Migration (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Greenland 2 Migration (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/348800.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Wrecking Crew (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Wrecking Crew (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/348307.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Kidnapped Elizabeth Smart (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Kidnapped Elizabeth Smart (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/348191.mkv
+#EXTINF:-1 tvg-id="" tvg-name="The Rip (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",The Rip (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/347772.mkv
+#EXTINF:-1 tvg-id="" tvg-name="One Battle After Another (2025)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",One Battle After Another (2025)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/337191.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Mission Impossible The Final Reckoning (2025)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Mission Impossible The Final Reckoning (2025)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/336718.mkv
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ SHOWTV DİZİLERİ ⭕",BİLGİLENDİRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
-#EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆  7/24 DİZİ 📺⭕",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="oz.206572750aa64aa99ea6882e6600a34f" tvg-name="TR:DIZIMAX DRAMA HD" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-drama.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIZIMAX DRAMA HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/20657275-0aa6-4aa9-9ea6-882e6600a34f.ts
+#EXTINF:-1 tvg-id="oz.2ecd355a215c4f48a8e95098c8a00b2d" tvg-name="TR:DIZIMAX COMEDY HD" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-comedy.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIZIMAX COMEDY HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/2ecd355a-215c-4f48-a8e9-5098c8a00b2d.ts
+#EXTINF:-1 tvg-id="oz.997538f504554fb0bdc549c7ec243c89" tvg-name="TR:DIZIMAX VICE HD" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-vice.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIZIMAX VICE HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/997538f5-0455-4fb0-bdc5-49c7ec243c89.ts
+#EXTINF:-1 tvg-id="oz.e91d0118bffc476abcd11adcbe12fd05" tvg-name="TR:DIZIMAX ENTERTAINMENT HD" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-entertainment.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIZIMAX ENTERTAINMENT HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/e91d0118-bffc-476a-bcd1-1adcbe12fd05.ts
+#EXTINF:-1 tvg-id="oz.4a4952e52a75420d99d8041fd8ae087a" tvg-name="TR:ACI HAYAT" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ACI HAYAT ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/4a4952e5-2a75-420d-99d8-041fd8ae087a.ts
+#EXTINF:-1 tvg-id="oz.212a7ae35095422c95620c7e1b4ddc4a" tvg-name="TR:AILE SIRKETI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/aile.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:AILE SIRKETI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/212a7ae3-5095-422c-9562-0c7e1b4ddc4a.ts
+#EXTINF:-1 tvg-id="oz.b8896f52284e4d86a253ed52ef4b524f" tvg-name="TR:AKASYA DURAGI" tvg-logo="https://logo.cloudzone55.store/724/152198.png?v=1" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:AKASYA DURAGI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/b8896f52-284e-4d86-a253-ed52ef4b524f.ts
+#EXTINF:-1 tvg-id="oz.7304e06cc9e24e86972042a94d2afa0a" tvg-name="TR:ALEV ALEV" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ALEV ALEV ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7304e06c-c9e2-4e86-9720-42a94d2afa0a.ts
+#EXTINF:-1 tvg-id="oz.5dbf8023c8d54ce5b908c63e2dbc26f3" tvg-name="TR:ANKARA'NIN DIKMENI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ANKARA'NIN DIKMENI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/5dbf8023-c8d5-4ce5-b908-c63e2dbc26f3.ts
+#EXTINF:-1 tvg-id="oz.a64b851eba0c4ef3afdb8a0fa5d8c3fd" tvg-name="TR:ARIZA" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARIZA ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a64b851e-ba0c-4ef3-afdb-8a0fa5d8c3fd.ts
+#EXTINF:-1 tvg-id="oz.9373bf02b92e4f958547c628123939b1" tvg-name="TR:ARKADASIM HOSGELDIN" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKADASIM HOSGELDIN ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/9373bf02-b92e-4f95-8547-c628123939b1.ts
+#EXTINF:-1 tvg-id="oz.23dabafd19234e23bc1c9f5715b9a266" tvg-name="TR:ARKA SOKAKLAR 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/23dabafd-1923-4e23-bc1c-9f5715b9a266.ts
+#EXTINF:-1 tvg-id="oz.7fbd06f9884547d79c63e65ddaab9fb0" tvg-name="TR:ARKA SOKAKLAR 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7fbd06f9-8845-47d7-9c63-e65ddaab9fb0.ts
+#EXTINF:-1 tvg-id="oz.8bcb442fd318460986fae21114315ff3" tvg-name="TR:ARKA SOKAKLAR 3" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 3 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/8bcb442f-d318-4609-86fa-e21114315ff3.ts
+#EXTINF:-1 tvg-id="oz.a19231692f874e66bc49c7e87659f1dc" tvg-name="TR:ARKA SOKAKLAR 4" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 4 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a1923169-2f87-4e66-bc49-c7e87659f1dc.ts
+#EXTINF:-1 tvg-id="oz.5cdce433ce1b43428d038f23cd9de535" tvg-name="TR:ARKA SOKAKLAR 5" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 5 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/5cdce433-ce1b-4342-8d03-8f23cd9de535.ts
+#EXTINF:-1 tvg-id="oz.9d5c6177db8c46d0945010d9f6ae1fca" tvg-name="TR:ARKA SOKAKLAR 6" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ARKA SOKAKLAR 6 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/9d5c6177-db8c-46d0-9450-10d9f6ae1fca.ts
+#EXTINF:-1 tvg-id="oz.44f595cccd2049658b1d03c12d8b3405" tvg-name="TR:ASKIM ASKIM" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ASKIM ASKIM ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/44f595cc-cd20-4965-8b1d-03c12d8b3405.ts
+#EXTINF:-1 tvg-id="oz.c606ee24b3d04928a8bb9bf8c75c8ad7" tvg-name="TR:ASK-I MEMNU" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ASK-I MEMNU ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/c606ee24-b3d0-4928-a8bb-9bf8c75c8ad7.ts
+#EXTINF:-1 tvg-id="oz.6e94a082dbda4bd2828b706d1068b1a9" tvg-name="TR:ASKI MEMNU" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ASKI MEMNU ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6e94a082-dbda-4bd2-828b-706d1068b1a9.ts
+#EXTINF:-1 tvg-id="oz.054cad7295ce4206a608e0002aae06f5" tvg-name="TR:ASMALI KONAK" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ASMALI KONAK ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/054cad72-95ce-4206-a608-e0002aae06f5.ts
+#EXTINF:-1 tvg-id="oz.f0162ad005064a7ca128e403212eadac" tvg-name="TR:ATIYE" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ATIYE ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f0162ad0-0506-4a7c-a128-e403212eadac.ts
+#EXTINF:-1 tvg-id="oz.0ec1af7e1ebe4dc48bb379294b2140d3" tvg-name="TR:AVLU" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:AVLU ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/0ec1af7e-1ebe-4dc4-8bb3-79294b2140d3.ts
+#EXTINF:-1 tvg-id="oz.589146c963d240c18a243617304729a0" tvg-name="TR:AVRUPA YAKASI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/avrupa.yakasi.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:AVRUPA YAKASI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/589146c9-63d2-40c1-8a24-3617304729a0.ts
+#EXTINF:-1 tvg-id="oz.786d3598f0f842baa18393b41bf08277" tvg-name="TR:AYAK ISLERI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:AYAK ISLERI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/786d3598-f0f8-42ba-a183-93b41bf08277.ts
+#EXTINF:-1 tvg-id="oz.04bc61a6a7e846cfacacbda034aaaffc" tvg-name="TR:AYNEN AYNEN" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:AYNEN AYNEN ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/04bc61a6-a7e8-46cf-acac-bda034aaaffc.ts
+#EXTINF:-1 tvg-id="oz.f8dea032806c4a5cb863a668f8bffdf8" tvg-name="TR:BEHZAT C" tvg-logo="https://logo.cloudzone55.store/vod-sinema/behzat.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:BEHZAT C ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f8dea032-806c-4a5c-b863-a668f8bffdf8.ts
+#EXTINF:-1 tvg-id="oz.2eec488f579b452d94a91d066cd0485e" tvg-name="TR:BENIM ADIM MELEK" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:BENIM ADIM MELEK ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/2eec488f-579b-452d-94a9-1d066cd0485e.ts
+#EXTINF:-1 tvg-id="oz.bf5bb8ae4ad14e6dbcbd654c63e77e34" tvg-name="TR:BINBIR GECE" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:BINBIR GECE ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/bf5bb8ae-4ad1-4e6d-bcbd-654c63e77e34.ts
+#EXTINF:-1 tvg-id="oz.a10f141c0c074e26ab6ebe9fe617f787" tvg-name="TR:BIZIMKILER" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:BIZIMKILER ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a10f141c-0c07-4e26-ab6e-be9fe617f787.ts
+#EXTINF:-1 tvg-id="oz.0cd4640f8e9143118cc4b94b138f0f1a" tvg-name="TR:BREAKING BAD" tvg-logo="https://logo.cloudzone55.store/vod-sinema/breaking.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:BREAKING BAD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/0cd4640f-8e91-4311-8cc4-b94b138f0f1a.ts
+#EXTINF:-1 tvg-id="oz.afca2760538e4311890c92dac050a5a5" tvg-name="TR:BYZBOX 24" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:BYZBOX 24 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/afca2760-538e-4311-890c-92dac050a5a5.ts
+#EXTINF:-1 tvg-id="oz.42b80f34a36a4e96b5a92dd502460a6a" tvg-name="TR:CALIKUSU" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:CALIKUSU ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/42b80f34-a36a-4e96-b5a9-2dd502460a6a.ts
+#EXTINF:-1 tvg-id="oz.8e42da812b43407b90ec63d16d2126e1" tvg-name="TR:CEKIC VE GUL" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:CEKIC VE GUL ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/8e42da81-2b43-407b-90ec-63d16d2126e1.ts
+#EXTINF:-1 tvg-id="oz.29e0a19d792b473b86d515508337413c" tvg-name="TR:CENNET MAHALLESI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/cennet.mahallesi.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:CENNET MAHALLESI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/29e0a19d-792b-473b-86d5-15508337413c.ts
+#EXTINF:-1 tvg-id="oz.3522931d836249d3a42493bb963781c4" tvg-name="TR:CHICAGO PD" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:CHICAGO PD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/3522931d-8362-49d3-a424-93bb963781c4.ts
+#EXTINF:-1 tvg-id="oz.be8f4ef8bf5b4259b23a809900a926b1" tvg-name="TR:CICEK TAKSI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:CICEK TAKSI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/be8f4ef8-bf5b-4259-b23a-809900a926b1.ts
+#EXTINF:-1 tvg-id="oz.c197db89180440e593bac0abbe9f5a05" tvg-name="TR:COCUKLAR DUYMASIN 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:COCUKLAR DUYMASIN 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/c197db89-1804-40e5-93ba-c0abbe9f5a05.ts
+#EXTINF:-1 tvg-id="oz.db9bf5ad958f4408860fb4f0a2a93009" tvg-name="TR:COCUKLAR DUYMASIN 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:COCUKLAR DUYMASIN 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/db9bf5ad-958f-4408-860f-b4f0a2a93009.ts
+#EXTINF:-1 tvg-id="oz.dd1fb91d138f4ad5b88da5dbc24c03f4" tvg-name="TR:CUKUR" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:CUKUR ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/dd1fb91d-138f-4ad5-b88d-a5dbc24c03f4.ts
+#EXTINF:-1 tvg-id="oz.0bfe4baf0eb44a0282236192c06e42b1" tvg-name="TR:DAREDEVIL" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DAREDEVIL ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/0bfe4baf-0eb4-4a02-8223-6192c06e42b1.ts
+#EXTINF:-1 tvg-id="oz.098c4df6a1bc4d8180cf898f69deef7c" tvg-name="TR:DEHA" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DEHA ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/098c4df6-a1bc-4d81-80cf-898f69deef7c.ts
+#EXTINF:-1 tvg-id="oz.b480cb82483b4131a71e3c7569c3ad75" tvg-name="TR:DELI YUREK" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DELI YUREK ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/b480cb82-483b-4131-a71e-3c7569c3ad75.ts
+#EXTINF:-1 tvg-id="oz.d0be2d807e964a3f9614f51a198483c3" tvg-name="TR:DEXTER" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DEXTER ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/d0be2d80-7e96-4a3f-9614-f51a198483c3.ts
+#EXTINF:-1 tvg-id="oz.634e9c034bf94f709d8382f692ab82a2" tvg-name="TR:DIRILIS ERTUGRUL" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIRILIS ERTUGRUL ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/634e9c03-4bf9-4f70-9d83-82f692ab82a2.ts
+#EXTINF:-1 tvg-id="oz.0fba42b63f054199b96cdd0d89c8596c" tvg-name="TR:DIRILS ERTUGRUL" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIRILS ERTUGRUL ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/0fba42b6-3f05-4199-b96c-dd0d89c8596c.ts
+#EXTINF:-1 tvg-id="oz.59dff5fdda574ab0a4afb20cfa8262ef" tvg-name="TR:EKMEK TEKNESI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/ekmek.teknesi.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:EKMEK TEKNESI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/59dff5fd-da57-4ab0-a4af-b20cfa8262ef.ts
+#EXTINF:-1 tvg-id="oz.2ffe63db8f9b447f913ad3f122e2172b" tvg-name="TR:ELITE" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ELITE ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/2ffe63db-8f9b-447f-913a-d3f122e2172b.ts
+#EXTINF:-1 tvg-id="oz.3da5d75b4b4b4cc1b84880f2a9fb1dca" tvg-name="TR:ERKENCEI KUS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ERKENCEI KUS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/3da5d75b-4b4b-4cc1-b848-80f2a9fb1dca.ts
+#EXTINF:-1 tvg-id="oz.1292024dc6424acda10de1c72b76b731" tvg-name="TR:ESKIYA DUNYAYA HUKUMDAR OLMAZ 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ESKIYA DUNYAYA HUKUMDAR OLMAZ 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/1292024d-c642-4acd-a10d-e1c72b76b731.ts
+#EXTINF:-1 tvg-id="oz.cbc042973e034bafbf895e335a1bb3a6" tvg-name="TR:ESKIYA DUNYAYA HUKUMDAR OLMAZ 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ESKIYA DUNYAYA HUKUMDAR OLMAZ 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/cbc04297-3e03-4baf-bf89-5e335a1bb3a6.ts
+#EXTINF:-1 tvg-id="oz.b4e0b7b12c8f4bed956ac980f660c585" tvg-name="TR:ESREF RUYA" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ESREF RUYA ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/b4e0b7b1-2c8f-4bed-956a-c980f660c585.ts
+#EXTINF:-1 tvg-id="oz.5277ffca7bb14b7eb273ff27bfc59d68" tvg-name="TR:EXXEN KATARSIS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:EXXEN KATARSIS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/5277ffca-7bb1-4b7e-b273-ff27bfc59d68.ts
+#EXTINF:-1 tvg-id="oz.fed0bf22c5f842838152c3760ff33d34" tvg-name="TR:EZEL 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/ezel.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:EZEL 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/fed0bf22-c5f8-4283-8152-c3760ff33d34.ts
+#EXTINF:-1 tvg-id="oz.d1d28f2b5e4a45468ec6d842f024d897" tvg-name="TR:EZEL 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/ezel.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:EZEL 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/d1d28f2b-5e4a-4546-8ec6-d842f024d897.ts
+#EXTINF:-1 tvg-id="oz.af6796c5088649d9b0f43cdcc6c7aa5e" tvg-name="TR:FRIENDS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:FRIENDS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/af6796c5-0886-49d9-b0f4-3cdcc6c7aa5e.ts
+#EXTINF:-1 tvg-id="oz.9ba3c4e9d5644c8fbf43986c2806fd1d" tvg-name="TR:FRINGE" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:FRINGE ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/9ba3c4e9-d564-4c8f-bf43-986c2806fd1d.ts
+#EXTINF:-1 tvg-id="oz.79e49d3dd38443a7a30e0f1cf255f0d1" tvg-name="TR:GADDAR" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GADDAR ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/79e49d3d-d384-43a7-a30e-0f1cf255f0d1.ts
+#EXTINF:-1 tvg-id="oz.8d0c3957f6c744aaba927e11479d16ca" tvg-name="TR:GALIP DERVIS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/galip.dervis.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GALIP DERVIS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/8d0c3957-f6c7-44aa-ba92-7e11479d16ca.ts
+#EXTINF:-1 tvg-id="oz.bde823b2692c4788ba7783079fac431e" tvg-name="TR:GAME OF THRONES" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GAME OF THRONES ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/bde823b2-692c-4788-ba77-83079fac431e.ts
+#EXTINF:-1 tvg-id="oz.6a41f33430474599945176171aec7045" tvg-name="TR:GASSAL" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GASSAL ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6a41f334-3047-4599-9451-76171aec7045.ts
+#EXTINF:-1 tvg-id="oz.e8573032519b4a09933986bd9888e017" tvg-name="TR:GENIS AILE 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/aile.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GENIS AILE 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/e8573032-519b-4a09-9339-86bd9888e017.ts
+#EXTINF:-1 tvg-id="oz.c56ea1ff186a4381a97cdc5f7f2dc092" tvg-name="TR:GIBI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GIBI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/c56ea1ff-186a-4381-a97c-dc5f7f2dc092.ts
+#EXTINF:-1 tvg-id="oz.b7f816c6de0c4bbe918ab74cb18d19c4" tvg-name="TR:GULBEYAZ" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GULBEYAZ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/b7f816c6-de0c-4bbe-918a-b74cb18d19c4.ts
+#EXTINF:-1 tvg-id="oz.dabccc04a04a46d7a4d9680304b8ee39" tvg-name="TR:GULDUR GULDUR 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GULDUR GULDUR 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/dabccc04-a04a-46d7-a4d9-680304b8ee39.ts
+#EXTINF:-1 tvg-id="oz.a075701b2af44edcb7db7b3e9c6cfa39" tvg-name="TR:GULDUR GULDUR 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GULDUR GULDUR 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a075701b-2af4-4edc-b7db-7b3e9c6cfa39.ts
+#EXTINF:-1 tvg-id="oz.643d8c3055dc49e98364755cca58b51e" tvg-name="TR:GUNESIN KIZLARI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:GUNESIN KIZLARI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/643d8c30-55dc-49e9-8364-755cca58b51e.ts
+#EXTINF:-1 tvg-id="oz.574b04bd74d2481cb3aabe211c563972" tvg-name="TR:HAKAN MUHAFIZ" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:HAKAN MUHAFIZ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/574b04bd-74d2-481c-b3aa-be211c563972.ts
+#EXTINF:-1 tvg-id="oz.3028090c1c5d47e581653d2dde4dbe93" tvg-name="TR:HEKIMOGLU" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:HEKIMOGLU ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/3028090c-1c5d-47e5-8165-3d2dde4dbe93.ts
+#EXTINF:-1 tvg-id="oz.dba07692481440bd9270a3a0483b3447" tvg-name="TR:HERCAI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:HERCAI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/dba07692-4814-40bd-9270-a3a0483b3447.ts
+#EXTINF:-1 tvg-id="oz.7f2de2b3b13f4ece936be52b9fc05c57" tvg-name="TR:HOUSE OF DRAGON" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:HOUSE OF DRAGON ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7f2de2b3-b13f-4ece-936b-e52b9fc05c57.ts
+#EXTINF:-1 tvg-id="oz.58282e2ab4fb44cfbb22abf1b5dcee6b" tvg-name="TR:HZ. YUSUF" tvg-logo="https://logo.cloudzone55.store/724/152230.png?v=1" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:HZ. YUSUF ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/58282e2a-b4fb-44cf-bb22-abf1b5dcee6b.ts
+#EXTINF:-1 tvg-id="oz.7943d1e04f1c4a2aa540880642ffd2e7" tvg-name="TR:ICERDE" tvg-logo="https://logo.cloudzone55.store/vod-sinema/icerde.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ICERDE ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7943d1e0-4f1c-4a2a-a540-880642ffd2e7.ts
+#EXTINF:-1 tvg-id="oz.f2ec1e1470af48d59fe752424a31db63" tvg-name="TR:IRON FIST" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:IRON FIST ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f2ec1e14-70af-48d5-9fe7-52424a31db63.ts
+#EXTINF:-1 tvg-id="oz.0fbe28d61cb84f7abb808307bc7e0494" tvg-name="TR:ISLER GUCLER" tvg-logo="https://logo.cloudzone55.store/vod-sinema/isler.gucler.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ISLER GUCLER ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/0fbe28d6-1cb8-4f7a-bb80-8307bc7e0494.ts
+#EXTINF:-1 tvg-id="oz.f4630858efa045ef811eeaea2e22cf8d" tvg-name="TR:ISTANBULLU GELIN 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ISTANBULLU GELIN 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f4630858-efa0-45ef-811e-eaea2e22cf8d.ts
+#EXTINF:-1 tvg-id="oz.bdfc03dd96a641afadb8c1e10b142ff6" tvg-name="TR:ISTANBULLU GELIN 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ISTANBULLU GELIN 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/bdfc03dd-96a6-41af-adb8-c1e10b142ff6.ts
+#EXTINF:-1 tvg-id="oz.f585850faa014486966ca9cc713cebef" tvg-name="TR:KANIT 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/kanit.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KANIT 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f585850f-aa01-4486-966c-a9cc713cebef.ts
+#EXTINF:-1 tvg-id="oz.932a47e13985478ea7d2db0f06d04a82" tvg-name="TR:KANIT 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/kanit.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KANIT 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/932a47e1-3985-478e-a7d2-db0f06d04a82.ts
+#EXTINF:-1 tvg-id="oz.ae751c1e2d5f4b1985d759b5f5219e78" tvg-name="TR:KARA DAYI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KARA DAYI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/ae751c1e-2d5f-4b19-85d7-59b5f5219e78.ts
+#EXTINF:-1 tvg-id="oz.f4bff45f7bcd4d6390e48be1db758f63" tvg-name="TR:KARADAYI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KARADAYI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f4bff45f-7bcd-4d63-90e4-8be1db758f63.ts
+#EXTINF:-1 tvg-id="oz.30fd12fedbb8473882a7c1a8c98ff113" tvg-name="TR:KARA SEVDA 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KARA SEVDA 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/30fd12fe-dbb8-4738-82a7-c1a8c98ff113.ts
+#EXTINF:-1 tvg-id="oz.a4a290a04dec47e788a77fc0637f52b4" tvg-name="TR:KARA SEVDA 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KARA SEVDA 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a4a290a0-4dec-47e7-88a7-7fc0637f52b4.ts
+#EXTINF:-1 tvg-id="oz.30e009423832468fb2ddb24e623e2b83" tvg-name="TR:KARDES PAYI 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/kardes.payi.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KARDES PAYI 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/30e00942-3832-468f-b2dd-b24e623e2b83.ts
+#EXTINF:-1 tvg-id="oz.71cf2291912948268a4d2da938c3994f" tvg-name="TR:KARDES PAYI 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/kardes.payi.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KARDES PAYI 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/71cf2291-9129-4826-8a4d-2da938c3994f.ts
+#EXTINF:-1 tvg-id="oz.7855d17a487e4c509d9cc53b944c7c29" tvg-name="TR:KATARSIS X-TRA" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KATARSIS X-TRA ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7855d17a-487e-4c50-9d9c-c53b944c7c29.ts
+#EXTINF:-1 tvg-id="oz.52d6d938dc5a461488f5c6bbce672bda" tvg-name="TR:KIZILCIK SERBETI 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KIZILCIK SERBETI 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/52d6d938-dc5a-4614-88f5-c6bbce672bda.ts
+#EXTINF:-1 tvg-id="oz.809f533b49fa4b7f988d3d8ab310d396" tvg-name="TR:KIZILCIK SERBETI 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KIZILCIK SERBETI 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/809f533b-49fa-4b7f-988d-3d8ab310d396.ts
+#EXTINF:-1 tvg-id="oz.f5103ad3f7ad42488eeb8d46e6a30e23" tvg-name="TR:KIZIL GONCALAR" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KIZIL GONCALAR ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f5103ad3-f7ad-4248-8eeb-8d46e6a30e23.ts
+#EXTINF:-1 tvg-id="oz.a056000fe3234eaa8833711128a1d3a2" tvg-name="TR:KUBRA" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KUBRA ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a056000f-e323-4eaa-8833-711128a1d3a2.ts
+#EXTINF:-1 tvg-id="oz.ba4487d52c2842dbbef45ce8432a2089" tvg-name="TR:KURTLAR VADISI 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/kurtlar.vadisi.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KURTLAR VADISI 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/ba4487d5-2c28-42db-bef4-5ce8432a2089.ts
+#EXTINF:-1 tvg-id="oz.a5345ba5d0ad4999a1b2e8f5ab9330e5" tvg-name="TR:KURTLAR VADISI 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/kurtlar.vadisi.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KURTLAR VADISI 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a5345ba5-d0ad-4999-a1b2-e8f5ab9330e5.ts
+#EXTINF:-1 tvg-id="oz.411e00d888574e859afb8b9feecbdbfc" tvg-name="TR:KURTLAR VADISI 4" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KURTLAR VADISI 4 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/411e00d8-8857-4e85-9afb-8b9feecbdbfc.ts
+#EXTINF:-1 tvg-id="oz.95ed3a77fbe943a78d506f8f6d59430f" tvg-name="TR:KURTLAR VADISI PUSU 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/kurtlar.vadisi.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KURTLAR VADISI PUSU 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/95ed3a77-fbe9-43a7-8d50-6f8f6d59430f.ts
+#EXTINF:-1 tvg-id="oz.696ebc0eea6b4cdda8642036ac4c3b1f" tvg-name="TR:KURTLAR VADISI PUSU 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/kurtlar.vadisi.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KURTLAR VADISI PUSU 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/696ebc0e-ea6b-4cdd-a864-2036ac4c3b1f.ts
+#EXTINF:-1 tvg-id="oz.ce724476f778432c85b95c3c4137fc9a" tvg-name="TR:KUS UCUSU" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KUS UCUSU ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/ce724476-f778-432c-85b9-5c3c4137fc9a.ts
+#EXTINF:-1 tvg-id="oz.b42b354f512a45949d3618b83287cc19" tvg-name="TR:KUZEY GUNEY 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KUZEY GUNEY 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/b42b354f-512a-4594-9d36-18b83287cc19.ts
+#EXTINF:-1 tvg-id="oz.fb547a360f2145768ceee95e9e94f814" tvg-name="TR:KUZEY GUNEY 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KUZEY GUNEY 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/fb547a36-0f21-4576-8cee-e95e9e94f814.ts
+#EXTINF:-1 tvg-id="oz.6e51176e0e5f459ea55c6840531f2490" tvg-name="TR:KUZEY YILDIZI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:KUZEY YILDIZI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6e51176e-0e5f-459e-a55c-6840531f2490.ts
+#EXTINF:-1 tvg-id="oz.2bc09607b54c4cd49c5d6b22b53679d7" tvg-name="TR:LA CASA DE PAPEL" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:LA CASA DE PAPEL ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/2bc09607-b54c-4cd4-9c5d-6b22b53679d7.ts
+#EXTINF:-1 tvg-id="oz.40fee1b9e78f4add87e13b7d4513b3f8" tvg-name="TR:LEYLA ILE MECNUN EXXEN 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/leyla.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:LEYLA ILE MECNUN EXXEN 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/40fee1b9-e78f-4add-87e1-3b7d4513b3f8.ts
+#EXTINF:-1 tvg-id="oz.c7f4abc1673f4032a9b6e3b32df3e00b" tvg-name="TR:LEYLA ILE MECNUN EXXEN 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/leyla.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:LEYLA ILE MECNUN EXXEN 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/c7f4abc1-673f-4032-a9b6-e3b32df3e00b.ts
+#EXTINF:-1 tvg-id="oz.e18b8e6f2c734144a8359c6649881bc3" tvg-name="TR:LEYLA ILE MECNUN TRT" tvg-logo="https://logo.cloudzone55.store/vod-sinema/leyla.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:LEYLA ILE MECNUN TRT ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/e18b8e6f-2c73-4144-a835-9c6649881bc3.ts
+#EXTINF:-1 tvg-id="oz.91ad491191f2402ea9b0cd77a652f2fb" tvg-name="TR:LOST" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:LOST ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/91ad4911-91f2-402e-a9b0-cd77a652f2fb.ts
+#EXTINF:-1 tvg-id="oz.7a7431d6e6284d2997cc281e169b70f8" tvg-name="TR:MAGARSUS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:MAGARSUS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7a7431d6-e628-4d29-97cc-281e169b70f8.ts
+#EXTINF:-1 tvg-id="oz.215532e70ef3492284843b36b738922d" tvg-name="TR:MAHSUN J" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:MAHSUN J ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/215532e7-0ef3-4922-8484-3b36b738922d.ts
+#EXTINF:-1 tvg-id="oz.c4de37b4e7394e05be6de6dfc55a17dd" tvg-name="TR:MANIFEST" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:MANIFEST ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/c4de37b4-e739-4e05-be6d-e6dfc55a17dd.ts
+#EXTINF:-1 tvg-id="oz.1d4ae422e5bc454688a4bbce676c9940" tvg-name="TR:MEHMED FETIHLER SULTANI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:MEHMED FETIHLER SULTANI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/1d4ae422-e5bc-4546-88a4-bbce676c9940.ts
+#EXTINF:-1 tvg-id="oz.1ac19fdbce8f4e8aab5718bd5ddbe8cb" tvg-name="TR:MERLIN" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:MERLIN ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/1ac19fdb-ce8f-4e8a-ab57-18bd5ddbe8cb.ts
+#EXTINF:-1 tvg-id="oz.a88d06ddbef4416486894164a07ad628" tvg-name="TR:MUHTESEM YUZYIL" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:MUHTESEM YUZYIL ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a88d06dd-bef4-4164-8689-4164a07ad628.ts
+#EXTINF:-1 tvg-id="oz.0b75273f249e4a8d8ae882a2816d34f6" tvg-name="TR:NARCOS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:NARCOS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/0b75273f-249e-4a8d-8ae8-82a2816d34f6.ts
+#EXTINF:-1 tvg-id="oz.51b88567c26141548c7da855dcada21f" tvg-name="TR:NEMLIZADE" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:NEMLIZADE ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/51b88567-c261-4154-8c7d-a855dcada21f.ts
+#EXTINF:-1 tvg-id="oz.825fdaf077be47039361c1236e5bd2d9" tvg-name="TR:OLUM ZAMANI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:OLUM ZAMANI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/825fdaf0-77be-4703-9361-c1236e5bd2d9.ts
+#EXTINF:-1 tvg-id="oz.4df53bfc73794c91883771a5a446687f" tvg-name="TR:OYLE BIR GECER ZAMAN KI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:OYLE BIR GECER ZAMAN KI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/4df53bfc-7379-4c91-8837-71a5a446687f.ts
+#EXTINF:-1 tvg-id="oz.9ce9706bc5a4452489bea37f1b701f95" tvg-name="TR:OZARK" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:OZARK ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/9ce9706b-c5a4-4524-89be-a37f1b701f95.ts
+#EXTINF:-1 tvg-id="oz.ffa39013c2c44524b2ac78f2dceb1e2f" tvg-name="TR:POYRAZ KARAYEL" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:POYRAZ KARAYEL ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/ffa39013-c2c4-4524-b2ac-78f2dceb1e2f.ts
+#EXTINF:-1 tvg-id="oz.7ee1217178504786a9a3eac12785841e" tvg-name="TR:PRENS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:PRENS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7ee12171-7850-4786-a9a3-eac12785841e.ts
+#EXTINF:-1 tvg-id="oz.4ddb42ba54ec40d2b6f7421336612609" tvg-name="TR:PRISON BREAK" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:PRISON BREAK ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/4ddb42ba-54ec-40d2-b6f7-421336612609.ts
+#EXTINF:-1 tvg-id="oz.26d662f7b2fb46a8b40cce303b4ec848" tvg-name="TR:PUNISHER" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:PUNISHER ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/26d662f7-b2fb-46a8-b40c-ce303b4ec848.ts
+#EXTINF:-1 tvg-id="oz.f4be52bc95cd4d168e2e262520d8b7bd" tvg-name="TR:RAMBO" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:RAMBO ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f4be52bc-95cd-4d16-8e2e-262520d8b7bd.ts
+#EXTINF:-1 tvg-id="oz.8684b3d5a2614d87ae79e236c9c5e627" tvg-name="TR:RAMO" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:RAMO ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/8684b3d5-a261-4d87-ae79-e236c9c5e627.ts
+#EXTINF:-1 tvg-id="oz.505a10a4b3874e8f980aa4f48add8892" tvg-name="TR:RUHSAR" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:RUHSAR ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/505a10a4-b387-4e8f-980a-a4f48add8892.ts
+#EXTINF:-1 tvg-id="oz.5301403ca63b479099cb10e1966fde3c" tvg-name="TR:SAHMARAN" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SAHMARAN ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/5301403c-a63b-4790-99cb-10e1966fde3c.ts
+#EXTINF:-1 tvg-id="oz.b8009e6aa3a443e1af4255f9cbe134c6" tvg-name="TR:SAHSIYET" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SAHSIYET ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/b8009e6a-a3a4-43e1-af42-55f9cbe134c6.ts
+#EXTINF:-1 tvg-id="oz.6ad8706103a74077a8e7d8193d3fbf4c" tvg-name="TR:SAKARYA FIRAT" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SAKARYA FIRAT ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6ad87061-03a7-4077-a8e7-d8193d3fbf4c.ts
+#EXTINF:-1 tvg-id="oz.1ce191b9f9864e6f886ae924dfda25b1" tvg-name="TR:SEN ANLAT KARADENIZ 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SEN ANLAT KARADENIZ 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/1ce191b9-f986-4e6f-886a-e924dfda25b1.ts
+#EXTINF:-1 tvg-id="oz.5048517586c74e31af46c72f376ede70" tvg-name="TR:SEN ANLAT KARADENIZ 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SEN ANLAT KARADENIZ 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/50485175-86c7-4e31-af46-c72f376ede70.ts
+#EXTINF:-1 tvg-id="oz.df80240a44cb4504b52e957c0fa1a55b" tvg-name="TR:SIFIR BIR" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SIFIR BIR ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/df80240a-44cb-4504-b52e-957c0fa1a55b.ts
+#EXTINF:-1 tvg-id="oz.a9dd468d84b74c86859c1b97d91ce1f0" tvg-name="TR:SIHIRLI ANNEM" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SIHIRLI ANNEM ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a9dd468d-84b7-4c86-859c-1b97d91ce1f0.ts
+#EXTINF:-1 tvg-id="oz.a2c1085c3f714c29b42269b332d52006" tvg-name="TR:SIHIRLI ANNEM EXXEN" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SIHIRLI ANNEM EXXEN ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a2c1085c-3f71-4c29-b422-69b332d52006.ts
+#EXTINF:-1 tvg-id="oz.f9edc264e40f4b53a93e54cc931d8049" tvg-name="TR:SOKAGIN COCUKLARI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SOKAGIN COCUKLARI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f9edc264-e40f-4b53-a93e-54cc931d8049.ts
+#EXTINF:-1 tvg-id="oz.f435280666bb4157b4f8fa4eee02fb99" tvg-name="TR:SUCCESSION" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SUCCESSION ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/f4352806-66bb-4157-b4f8-fa4eee02fb99.ts
+#EXTINF:-1 tvg-id="oz.46ec8217372b427e9543692b229578fa" tvg-name="TR:SUITS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SUITS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/46ec8217-372b-427e-9543-692b229578fa.ts
+#EXTINF:-1 tvg-id="oz.ea549551c5a54dee84c84e188b771aa3" tvg-name="TR:SUSKUNLAR" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:SUSKUNLAR ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/ea549551-c5a5-4dee-84c8-4e188b771aa3.ts
+#EXTINF:-1 tvg-id="oz.c55839a36c434f0790e25ae3a25ab89c" tvg-name="TR:TERZI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:TERZI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/c55839a3-6c43-4f07-90e2-5ae3a25ab89c.ts
+#EXTINF:-1 tvg-id="oz.c5750aa9c2894958b49adc8cb2cee984" tvg-name="TR:THE 100" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:THE 100 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/c5750aa9-c289-4958-b49a-dc8cb2cee984.ts
+#EXTINF:-1 tvg-id="oz.276ccebb93104647b26a29b7a3b3d4e7" tvg-name="TR:THE LAST OF US 1" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:THE LAST OF US 1 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/276ccebb-9310-4647-b26a-29b7a3b3d4e7.ts
+#EXTINF:-1 tvg-id="oz.7998c7674ded4ba7af5a7b68ae469af2" tvg-name="TR:THE LAST OF US 2" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:THE LAST OF US 2 ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7998c767-4ded-4ba7-af5a-7b68ae469af2.ts
+#EXTINF:-1 tvg-id="oz.fec231dd42fb49c39f8ea09efb3f8f9e" tvg-name="TR:TURK MALI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/turk.1.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:TURK MALI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/fec231dd-42fb-49c3-9f8e-a09efb3f8f9e.ts
+#EXTINF:-1 tvg-id="oz.e89bf26617c94d9dad0576e8cab134d2" tvg-name="TR:UC KURUS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:UC KURUS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/e89bf266-17c9-4d9d-ad05-76e8cab134d2.ts
+#EXTINF:-1 tvg-id="oz.a609bd7fc8b3420e8f57b0ed04420e3e" tvg-name="TR:ULAN ISTANBUL" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ULAN ISTANBUL ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a609bd7f-c8b3-420e-8f57-b0ed04420e3e.ts
+#EXTINF:-1 tvg-id="oz.d37df3ac78594809bd7dca8b88ee7e05" tvg-name="TR:VAN HELSING" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:VAN HELSING ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/d37df3ac-7859-4809-bd7d-ca8b88ee7e05.ts
+#EXTINF:-1 tvg-id="oz.a65c8ba4e7a14046ba9be217a01380b2" tvg-name="TR:VATANIM SENSIN" tvg-logo="https://logo.cloudzone55.store/vod-sinema/vatanim.sensin.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:VATANIM SENSIN ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a65c8ba4-e7a1-4046-ba9b-e217a01380b2.ts
+#EXTINF:-1 tvg-id="oz.7854025870944e888e3f6b25b98d794b" tvg-name="TR:VIKINGS" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:VIKINGS ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/78540258-7094-4e88-8e3f-6b25b98d794b.ts
+#EXTINF:-1 tvg-id="oz.6359e57bb9c041c5ad8c98f852cde198" tvg-name="TR:YABANCI DAMAT" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:YABANCI DAMAT ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6359e57b-b9c0-41c5-ad8c-98f852cde198.ts
+#EXTINF:-1 tvg-id="oz.a28cc3c6b03a4c61bb02e6ca4f8add38" tvg-name="TR:YAHSI CAZIBE" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:YAHSI CAZIBE ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/a28cc3c6-b03a-4c61-bb02-e6ca4f8add38.ts
+#EXTINF:-1 tvg-id="oz.e05c61cc5bd6469eb9a95e7cdb4529ac" tvg-name="TR:YALANCI YARIM" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:YALANCI YARIM ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/e05c61cc-5bd6-469e-b9a9-5e7cdb4529ac.ts
+#EXTINF:-1 tvg-id="oz.aff00c3a77364223b212b2356e2ef4bd" tvg-name="TR:YAPRAK DOKUMU" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:YAPRAK DOKUMU ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/aff00c3a-7736-4223-b212-b2356e2ef4bd.ts
+#EXTINF:-1 tvg-id="oz.ff2aaf95540b4c8fa296e7c1d1adc506" tvg-name="TR:YARGI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:YARGI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/ff2aaf95-540b-4c8f-a296-e7c1d1adc506.ts
+#EXTINF:-1 tvg-id="oz.603a6939894d42c990ee5507d97a8822" tvg-name="TR:YEDI NUMARA" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:YEDI NUMARA ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/603a6939-894d-42c9-90ee-5507d97a8822.ts
+#EXTINF:-1 tvg-id="oz.92f17244c1cd4779b7218c3df3ccc122" tvg-name="TR:YILAN HIKAYESI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:YILAN HIKAYESI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/92f17244-c1cd-4779-b721-8c3df3ccc122.ts
+#EXTINF:-1 tvg-id="oz.62fd2d6a60e84deea2002f5106d58227" tvg-name="TR:ZEYTIN AGACI" tvg-logo="https://logo.cloudzone55.store/vod-sinema/boxset.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:ZEYTIN AGACI ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/62fd2d6a-60e8-4dee-a200-2f5106d58227.ts
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ GÜNCEL DİZİLER ⭕",BİLGİLENDİRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:0 type="video" tvg-logo="https://tvdiziler.tv/uploads/series/alti-ustu-istanbul.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Altı Üstü İstanbul (Atv) - ⭕
+https://video.twimg.com/amplify_video/2119901120180944896/pl/C2t958Aol7320pyz.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://cdn.sinemalar.com/images/movie/299420/poster/evlilik-guzeldir-1788522146.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Evlilik Güzeldir (Trt1) - ⭕
+https://eu1.tabii.com/apigateway/pbr/v1/media/707780/707779.m3u8
+#EXTINF:0 type="video" tvg-logo="https://static.boxofficeturkiye.com/movie/poster/full/85/2085-69525617.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Uzak şehir (Kanal D) - ⭕
+https://video.twimg.com/amplify_video/2119896514294112257/pl/yrqFLpBQMQ9dE4SU.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Masterchef Türkiye (Tv8) - ⭕
+https://www.youtube.com/watch?v=q_nKqo3Weik
+#EXTINF:0 type="video" tvg-logo="https://yapimlar.com/wp-content/uploads/Anne-Yarisi-342x513.webp" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Anne Yarısı (Now) - ⭕
+https://video.twimg.com/amplify_video/2120255487841058818/pl/2GrTJG8jQCsO0y8o.m3u8?tag=29
+#EXTINF:-1 group-title="🟪◆ GÜNCEL DİZİLER ⭕" tvg-logo="https://1001dizi.net/images2/dizi/d/haysiyet.jpg",Haysiyet (Kanal D) - ⭕
+https://www.youtube.com/watch?v=5Qagv1Fkgkk
+#EXTINF:-1 group-title="🟪◆ GÜNCEL DİZİLER ⭕" tvg-logo="https://static.boxofficeturkiye.com/movie/poster/full/48/1948-76741586.jpg",Mehmed Fetihler Sultanı (Trt1) - ⭕
+https://eu1.tabii.com/apigateway/pbr/v1/media/710206/710204.m3u8
+#EXTINF:-1 group-title="🟪◆ GÜNCEL DİZİLER ⭕" tvg-logo="https://dizihabercisi.com/wp-content/uploads/2026/07/Tuzlu-Kahve-dizisi-oyunculari-kimler.webp",Tuzlu Kahve (Star) - ⭕
+https://video.twimg.com/amplify_video/2120258054008516608/pl/Jsr8sPhkyzTHUO5d.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/sevdan-bir-ates.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Sevdan Bir Ateş (Show) - ⭕
+https://video.twimg.com/amplify_video/2120622381295132672/pl/B_D0LuVFM5dndoGU.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://www.canlidizi14.net/wp-content/uploads/2026/10/Yeralti-son-bolum-izle.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Yeraltı (Now) - ⭕
+https://video.twimg.com/amplify_video/2120617442284032000/pl/8sILg9ne4YdirgZ-.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://cdn.sinemalar.com/images/movie/299412/poster/gunesin-dogdugu-yer-1788522231.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Güneşin Doğduğu Yer (Atv) - ⭕
+https://video.twimg.com/amplify_video/2118450001558831104/pl/UeLImsD5byLpGcIU.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/halef.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Halef (Now) - ⭕
+https://video.twimg.com/amplify_video/2120995733473984512/pl/bm9583lknWWHNFP1.m3u8
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/muhtemel-ask.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Muhtemel Aşk (Show) - ⭕
+https://video.twimg.com/amplify_video/2121001740392620032/pl/8zOr3CTOcDsmZk7J.m3u8
+#EXTINF:0 type="video" tvg-logo="https://www.canlidizi14.net/wp-content/uploads/2026/02/Sevdigim-Sensin-son-bolum-izle.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Sevdiğim Sensin (Star) - ⭕
+https://video.twimg.com/amplify_video/2120994045635796992/pl/a7j940k9lSALXG9h.m3u8
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/kizilcik-serbeti.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Kızılcık Şerbeti (Show) - ⭕
+https://video.twimg.com/amplify_video/2121347084934631424/pl/Y3n8Cn43w16nLQPp.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/tasacak-bu-deniz.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Taşacak Bu Deniz (Trt1) - ⭕
+https://video.twimg.com/amplify_video/2121345020590510080/pl/NoSPmhByRyCtohCr.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/haber/baskalarinin-hayati-tarih-3.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Başkalarının Hayatı (Star) - ⭕
+https://video.twimg.com/amplify_video/2121709188279582720/pl/eqsMm7wkcESEyDg9.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/gonul-dagi.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Gönül Dağı (Trt1) - ⭕
+https://eu1.tabii.com/apigateway/pbr/v1/media/711145/711144.m3u8
+#EXTINF:0 type="video" tvg-logo="https://im.showtv.com.tr/2024/09/28/ver1727547950/3723876_a448e449f194803ef0cd5fb02497bac7.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Güldür Güldür (Show) - ⭕
+https://www.youtube.com/watch?v=UvvvJBfAeIs
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/guller-ve-gunahlar.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Güller ve Günahlar (Kanal D) - ⭕
+https://video.twimg.com/amplify_video/2121709209771270144/pl/56qnIQpafzP3OTPx.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://www.radikal.com.tr/wp-content/uploads/2026/05/17.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Daha 17 (Kanal D) - ⭕
+https://www.youtube.com/watch?v=t4BGbXWR8os
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/omur-usta.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Ömür Usta (Now) - ⭕
+https://www.canlidizi14.org/omur-usta-8-bolum-izle.html
+#EXTINF:0 type="video" tvg-logo="https://www.diziler.com/wp-content/uploads/2025/09/Afis-Post_-1.webp" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Teşkilat (Trt1) - ⭕
+https://www.canlidizi14.org/teskilat-193-bolum-izle-hd.html
 #EXTINF:-1 tvg-id="episode-4" tvg-logo="https://image.tmdb.org/t/p/w500/zQbhElwkCKV4QG6OtXmN7wResE.jpg" group-title="🟪◆ DİZİLER - PRİSON BREAK ⭕",Prison Break S01E01 - S01E01
 https://79.76.50.223/series/ViP/GaraveliForum/4.mp4
 #EXTINF:-1 tvg-id="episode-5" tvg-logo="https://image.tmdb.org/t/p/w500/cng0p8lg3dskrktVA2W9cJZePY4.jpg" group-title="🟪◆ DİZİLER - PRİSON BREAK ⭕",Prison Break S01E02 - S01E02
@@ -1859,10 +2505,6 @@ https://79.76.50.223/series/ViP/GaraveliForum/90.mp4
 https://79.76.50.223/series/ViP/GaraveliForum/91.mp4
 #EXTINF:-1 tvg-id="episode-92" tvg-logo="https://image.tmdb.org/t/p/w500/d21YkZrWDPGXzqvM4PVqWwU0vJN.jpg" group-title="🟪◆ DİZİLER - PRİSON BREAK ⭕",Prison Break S05E09 - S05E09
 https://79.76.50.223/series/ViP/GaraveliForum/92.mp4
-#EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
-#EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ DİZİLER - GADDAR ⭕",BİLGİLENDİRME
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="AKSARAY IN SESI 95.1" tvg-name="AKSARAY IN SESI 95.1" tvg-logo="https://i.imgur.com/aaclZvs.jpeg" group-title="🩷◆  RADYO 🎵 MÜZİK  📻",📻  AKSARAY IN SESI 95.1
 https://iptv-radyo.fly.dev/cam1/playlist.m3u8
 #EXTINF:-1 tvg-id="99.5" tvg-name="Aksaray FM 99.5" tvg-logo="https://i.imgur.com/CDWMgrt.jpeg" group-title="🩷◆  RADYO 🎵 MÜZİK  📻" http-referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg" referrer="https://cdn.pixabay.com/photo/2018/07/05/09/03/h-to-3517840_1280.jpg",📻AKSARAY FM
@@ -11453,4 +12095,984 @@ https://ha.vixolity.com/vs/tt0212720/
 #EXTINF:-1 tvg-type="movie" tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/d/d3/Time_machine_film_afi%C5%9Fi.jpg" group-title="🟪◆ FILM - 2001 2010 ⭕",Zaman Tüneli 2002 ⭕
 https://ha.vixolity.com/vs/tt0268695/
 #EXTINF:-1 tvg-type="movie" tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://tr.web.img4.acsta.net/c_310_420/pictures/bzp/04/44483.jpg" group-title="🟪◆ FILM - 2001 2010 ⭕",Zamanı Durduranlar ⭕
-https://ha.vixolity.com/vs/tt0157472/
+https://www.youtube.com/watch?v=HSXWrcEya44
+#EXTINF:-1 tvg-name="Çukur S01 E01" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E01
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2cf29645-9fc8-4bf5-ab2c-90fd916ab000&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E02" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E02
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_01b730b6-ef73-41fe-9b28-5ed851994842&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E03" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E03
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_bd4d9b5e-2aa3-4d56-af4e-19741c094bea&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E04" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E04
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a3bcb393-70ea-4e47-87e9-c52bb6e3ab1b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E05" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E05
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_cb1ae6f1-2581-4a5a-9fad-d7a9c97a54b0&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E06" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E06
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_9ed419b4-1d54-4888-9b7c-af867060cbf2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E07" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E07
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a2f05db6-8239-4386-812c-96043dbbff16&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E08" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E08
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6d649cc3-9991-4a98-ab6c-6bfef322dfff&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E09" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E09
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_aff77009-33fe-43f3-9011-6824c959b093&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E10" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E10
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5e2eb714-c7b6-4b8e-9548-28d22572f30a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E11" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E11
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2b7abdbe-cc19-4a23-9fdf-b5a167822bf7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E12" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E12
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_22d34565-b556-4cc5-b8bf-6a56ef445a72&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E13" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E13
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_4efd3f98-6e84-4ce7-acca-4b6fc5e2aa6c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E14" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E14
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d4a8e0dd-5500-4d88-9804-97e1d810c7e2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E15" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E15
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_7b3063a1-05be-46cb-8b9a-d12b059441a7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E16" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E16
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d5f85ae1-e407-499c-a4da-9acdd96ff3ea&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E17" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E17
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_aa3037a0-2ade-42f5-9d39-ae852cbd7cc0&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E18" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E18
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5129238f-8c59-4ac5-ad7f-8026619c5e80&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E19" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E19
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ad205036-0712-490d-80fd-18210d2e7ad7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E20" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E20
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_0e0072ee-ceb7-4882-8f91-c350468199d2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E21" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E21
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_20ae3e1f-41e3-454c-968c-f68e6839b63d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E22" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E22
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_79dcbb75-10b5-4d1e-a3b0-c4e852eb259a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E23" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E23
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_60e8c560-36b4-4c2e-81ff-527a81741eaa&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E24" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E24
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_fc36bd09-6677-43ed-9e24-6ec73efa74a1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E25" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E25
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_988fe3d7-faa7-48af-9864-cccd31c03b59&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E26" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E26
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1bc31b06-625f-4d95-9477-5b133985596e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E27" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E27
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f2dd0b9e-0843-4221-be69-2b1ad7d481f6&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E28" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E28
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f431b50e-48ab-44cf-b851-0efd3783d03e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E29" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E29
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_cb53e44d-24f7-4605-a6b9-f0f6593ff40a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E30" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E30
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5416b03d-941c-40a6-b9b8-452e2d380607&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E31" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E31
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2963d48d-482a-49ec-8c45-bd0d20608293&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E32" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E32
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_512c10a1-cd28-4781-8b25-f9ed0ce8f43f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S01 E33" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S01 E33
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_61eee205-dcb5-4c83-a10f-cd5cc2762193&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E34" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E34
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6fa84e07-af10-4f90-b110-6e3695702aa1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E35" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E35
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_982d03a5-2f15-4d8a-a91a-9ea777f9dde4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E36" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E36
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f4e28f86-70df-4f6a-a7b2-acb7d2691baa&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E37" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E37
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_07238fc2-3126-4616-a03a-e4d5d5727063&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E38" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E38
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6b501f09-a646-4d5a-a6ea-9d07c8b935af&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E39" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E39
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_63fa925c-a961-4a57-8bb7-79966e6e68e0&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E40" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E40
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1d025612-fabd-45ff-93be-a99968d6c424&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E41" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E41
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_fd1a507e-8aca-4bb3-89fb-269260799e9a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E42" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E42
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_0621320e-d2ad-4491-a2eb-0c20c2c5aa41&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E43" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E43
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_0962a88b-198a-4a60-b4c4-93f823f3470c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E44" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E44
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b6127fe0-e3b7-44de-8b09-0eb8a296e7dc&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E45" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E45
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_aef6b517-7f6d-4aaf-b03f-d664e2926b61&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E46" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E46
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_3e87716a-d159-4af9-8ec0-cb0558535231&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E47" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E47
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_e21e11aa-31b3-4215-9ebf-0b2929dc1255&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E48" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E48
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c8ded6d7-8b6e-44b1-a392-5a2dcadd1a4e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E49" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E49
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6c73fea0-e032-4d9e-bc60-322b12e2d15f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E50" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E50
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d931e648-cd6a-4f04-9cec-4b65e18cd401&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E51" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E51
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c11adc99-ef71-45fc-8659-774ac7815a01&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E52" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E52
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6e3da6a2-0e88-41b8-9955-2e84b27ec23c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E53" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E53
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f754727f-cff2-480e-a635-a5ffbd58985e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E54" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E54
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_40532ef7-202e-49c1-979e-0820dbcac6f2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E55" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E55
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_19aa6690-271f-4baa-bb2a-f36088e872ce&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E56" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E56
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_88808ce0-ee38-4ae4-bc3f-6285aae9e989&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E57" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E57
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_bbed51d1-002b-4a03-a646-3d1416f473fe&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E58" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E58
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_57e66f48-d0ea-4f19-9b43-8c359b106e60&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E59" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E59
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f2c2d691-e01c-48d5-bb0b-607e04f7dc5b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E60" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E60
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d0a1a59a-9b6b-4424-ae14-e4293ba884da&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E61" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E61
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b7bfb63b-108c-4dff-ba12-e6a733acae0a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E62" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E62
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_50a5b10f-461f-4e8c-9ff4-3febd8a6b3de&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E63" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E63
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_bec4c780-9880-4baf-b082-af693a32b818&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E64" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E64
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b298281f-ec55-469d-9e9f-6c2207f88267&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E65" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E65
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_54308676-f16d-4242-8522-b4d767fccc13&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E66" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E66
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_007960c8-3055-436f-878e-891e8be29bdc&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S02 E67" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S02 E67
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b117f97a-d625-40aa-8ed5-9693945684f2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur - 3. Sezon - Özel Bölüm" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur - 3. Sezon - Özel Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_812861&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur - 3. Sezon - Özel Bölüm #ÇukurEvde" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur - 3. Sezon - Özel Bölüm #ÇukurEvde
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815048_7EF6CC7A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E68" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E68
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_812946&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E69" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E69
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813000&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E70" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E70
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813084&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E71" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E71
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813153&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E72" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E72
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813234_EEC5916A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E73" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E73
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813267_4169A42F&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E74" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E74
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813345_A5EC7799&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E75" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E75
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813399_7B68D52A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E76" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E76
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813520_6F7CC59A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E77" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E77
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813669_695C16BC&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E78" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E78
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813794_C18354D1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E79" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E79
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813896_C5A75561&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E80" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E80
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_813957_16B43CE0&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E81" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E81
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814003_201044A7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E82" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E82
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814039_24A42F44&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E83" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E83
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814069_7A357C81&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E84" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E84
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814127_0A57F0D8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E85" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E85
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814158_827A49A8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E86" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E86
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814203_177CF726&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E87" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E87
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814235_6E0E4F7D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E88" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E88
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814269_4ABDC133&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E89" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E89
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814307_2A7845B4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E90" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E90
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814362_5EC4564C&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E91" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E91
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814438_1940F919&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S03 E92" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S03 E92
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_814832_A6EA11F7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E93" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E93
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_816387_D2419C0B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E94" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E94
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_816425_24C81261&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E95" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E95
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_816450_175397C8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E96" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E96
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_816501_0CBD94A9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E97" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E97
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_816560_472ED3BD&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E98" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E98
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_816679_61BBEE73&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E99" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E99
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_816715_EFF3A014&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E100" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E100
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_816749_0A2B08B9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E101" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E101
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_816778_266C2C7F&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E102" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E102
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_817670_C39F1396&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E103" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E103
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_817697_4DE69967&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E104" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E104
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_817887_E659758F&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E105" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E105
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818045_D352A56F&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E106" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E106
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818158_F1ADB538&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E107" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E107
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818199_B0B623D8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E108" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E108
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818321_D02C1903&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E109" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E109
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818490_2B79813D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E110" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E110
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818641_AC6BF8DF&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E111" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E111
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818682_43BFEFB7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E112" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E112
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818741_9E436C5D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E113" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E113
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818780_0CB25214&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E114" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E114
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818858_1985822A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E115" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E115
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818927_8F70B546&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E116" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E116
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_818985_107ED9CC&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E117" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E117
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_819033_5CFA302D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E118" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E118
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_819101_0D7825DB&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E119" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E119
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_819237_2269ADC2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E120" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E120
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_819488_69207278&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E121" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E121
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_819942_85C2F1D1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E122" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E122
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_819995_94D1C1ED&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E123" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E123
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_820186_7C7784CD&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E124" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E124
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_820288_8391A697&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E125" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E125
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_820315_D1B81C3D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E126" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E126
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_820466_3009D549&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E127" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E127
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_820808_34738DC3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E128" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E128
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_822079_49E51303&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E129" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E129
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_823282_99765454&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E130" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E130
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_823353_A7AAA877&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Çukur S04 E131" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",Çukur S04 E131
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_823377_591470BD&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E01" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E01
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835253_D6A2C1CA&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E02" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E02
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835293_732BB0D4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E03" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E03
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835334_FACB9933&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E04" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E04
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835364_2B1E2432&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E05" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E05
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835420_91E880E1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E06" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E06
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835452_AD31DEB6&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E07" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E07
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835489_C1092B9F&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E08" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E08
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835521_8A08E74C&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E09" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E09
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835560_711B88CB&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E10" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E10
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835595_F075C507&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E11" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E11
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835624_5722589C&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E12" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E12
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835654_7EC72D95&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E13" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E13
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835706_DEAEADD5&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E14" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E14
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835734_E8F27265&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E15" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E15
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835763_FE20EF89&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E16" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E16
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835788_3BBCFDF7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E17" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E17
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835813_57CE5F59&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E18" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E18
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835835_7B6F544B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E19" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E19
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835857_2F15F663&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Gaddar S01 E20" group-title="🟪◆ DİZİLER - GADDAR ⭕",Gaddar S01 E20
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_835877_386D7706&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E01" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E01
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c25e33e3-3fd0-4934-85b0-99469fc24f50&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E02" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E02
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c355f24a-2ffb-4749-a124-32bc6d856113&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E03" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E03
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f22c8d2c-ec26-4d48-bba0-418b799a1aa3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E04" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E04
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_9e484214-165d-4fd0-af0c-5b4c92891daa&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E05" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E05
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ebea46d7-6063-405e-968a-22e673bbaefd&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E06" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E06
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2f513e17-e1dc-4974-92fe-aca13b7cd543&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E07" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E07
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a7b8da7e-3c1f-4244-85a7-370353aa7887&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E08" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E08
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5814dbe2-7c57-479d-85cb-aacc66c100dc&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E09" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E09
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_12d02953-7a13-4a6c-99ed-1760b8b269b8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E10" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E10
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1d2cc67b-363a-4afb-885e-4459dad19555&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E11" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E11
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_546a5470-16de-4336-94af-074a27a4caa8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E12" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E12
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c4e1f738-cb03-4d04-bc1d-e2676f3cc8f6&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E13" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E13
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_06d5a4de-d5d6-49cd-8f77-2bd70c9d58ac&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E14" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E14
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c6798cac-e4c7-4e14-9cd7-7e850d9afe0f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E15" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E15
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ead4eccd-34cf-4fb0-9d25-f2ee2abb41da&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E16" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E16
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_0e0ba8b9-9c9c-462e-9733-0530be81e13d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E17" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E17
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_20ba54fa-b1d5-491d-b3cd-0bed697cd2ad&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E18" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E18
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2d10c0ac-5cad-4208-a051-d7a36622dccd&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E19" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E19
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_8a955435-f711-476f-a0c4-3e577efff87c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E20" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E20
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_22ca0a09-8644-4d36-896a-2f8e5001241a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E21" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E21
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_eaffa057-8d76-48d7-baa6-c4b5ec666f47&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E22" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E22
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_cf364304-1875-48c3-955a-58ae9bcab8e6&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E23" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E23
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_fa4d86af-e4b9-4bb0-a792-2b5db528a34c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E24" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E24
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_060c1c30-6836-44c2-ad4f-488caaf6a414&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E25" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E25
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_266834dc-115a-4bf7-ad4f-3c6eba569ce7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E26" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E26
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f18f1ea9-c9b7-4b71-ae17-8a6d522ff27b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E27" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E27
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_3f3a478e-dd4d-491e-9fb1-63f46bc5a05c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E28" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E28
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_34831f75-2da1-4106-983a-86779ed05a1c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E29" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E29
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_38f0be2e-23c0-4838-8b7c-db5a9b1e20c1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E30" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E30
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ae970417-7623-4357-8e08-8ad9c27ed27a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E31" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E31
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_cd9f56c5-b3b9-464e-a428-64531f7ef0ac&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E32" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E32
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b50296d3-c570-48d5-b2d5-0d8c1848d87a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E33" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E33
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d8f8d76b-5a19-476a-bc16-fcbc0f682456&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E34" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E34
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_8780afa9-f328-4f09-9d0d-ed48b440a3c0&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E35" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E35
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_25414e7b-603e-40c2-8d7b-78898b2a0ce4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E36" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E36
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f2eb8db5-7462-4525-9392-3e35a883507a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E37" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E37
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_89c5aa2b-b0eb-4547-9a8e-6419fa1855f2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E38" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E38
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a21d8e1a-a7e2-44eb-b83d-a04a470b3350&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="İçerde S01 E39" group-title="🟪◆ DİZİLER - İÇERDE ⭕",İçerde S01 E39
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2feda98d-91a7-4886-aa2a-684c14ef4036&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E01" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E01
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_0fce99cd-216c-4cdc-a84b-ce2820e01b4a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E02" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E02
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5b01af8d-6006-4722-a267-09616a20f801&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E03" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E03
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_4de153fd-fa9c-4dea-b322-476f7f8f6467&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E04" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E04
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_76c33e7c-56a4-447a-8661-174e05019aca&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E05" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E05
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_942a8812-1cd2-41da-8f3a-a24feba16594&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E06" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E06
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_17c084bc-dd27-484e-8d8b-3f96ede417bf&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E07" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E07
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_7ec33108-b250-4d4f-aaab-8d5e85fa08e7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E08" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E08
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_75f63f8c-1e2e-4b22-995b-0c874eea5f53&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E09" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E09
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b2e3527c-2e7d-4eeb-8954-28e29e19567f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E10" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E10
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_acbdb51e-6f85-4052-8f02-2047fef90d34&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E11" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E11
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6bb3bafb-b7c6-4909-98d4-6dda14241bcf&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E12" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E12
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f058d1fd-a2b3-4f7b-af76-fc4df50e0b84&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E13" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E13
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_7bac7c3a-4259-47ae-becf-8d2fb0eb27dd&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E14" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E14
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f7c51865-e581-4b8f-add6-b05d2793d39b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E15" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E15
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_be3e142a-1cd7-4355-b8b5-a5cb10490e2a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E16" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E16
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_78e632a1-17a9-4868-9be3-7c4bd39b5565&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E17" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E17
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_599208b8-c86c-43d7-97cd-203799d7f99a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E18" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E18
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_075f6242-e444-4474-a630-0368c91480da&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E19" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E19
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ef05df64-9836-4ae7-a857-71c744f7fb3d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E20" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E20
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f68dd815-6025-4d51-abb6-adb59d9adef8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E21" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E21
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_fc7633ef-a799-4d7c-a222-3010e4e0b693&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E22" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E22
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_58c310de-155f-4b70-9c96-1e1427b8a27b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E23" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E23
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a662bf8a-9e18-4e7d-a1e6-1ab3a6d43aba&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E24" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E24
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_923af2f9-a596-4fef-aa76-53acd3df18b6&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E25" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E25
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b6250bba-2b9a-4eba-952f-d7ca87502f41&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E26" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E26
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_45132773-de70-4ef2-885c-cf44cb62bccb&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E27" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E27
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6ba18f65-a9fb-43d2-b5be-9533977d0e7d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E28" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E28
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_65074181-3b89-46e6-8775-428af325e439&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E29" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E29
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_bd69425d-9d14-426e-afab-be160b34b083&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E30" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E30
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d50cd4cb-5073-4af3-866f-5ee4458d9793&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E31" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E31
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_589a3bed-1054-4069-b160-bb22683136bb&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E32" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E32
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a6693080-526a-489f-ba7a-9407426de816&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E33" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E33
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c9764048-3406-476a-94d4-31974806bf3c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E34" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E34
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_bab785a6-3b88-4e8e-a729-86f160924d7d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E35" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E35
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_9345cd5a-a9fa-4e77-bc9b-a4c11a399b95&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E36" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E36
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_834195c9-dcfb-4f46-b283-23028c7c9e4a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E37" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E37
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_9e297a9c-925c-4e85-8abb-9da1a655f59a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S01 E38" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S01 E38
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_953d3458-7ade-4825-a30c-7b913cb5fea7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E39" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E39
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_695c82a2-efac-4c2b-bfd1-4c5f219b4d7b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E40" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E40
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_290fc54f-3d36-4016-9763-e09f649de5a2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E41" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E41
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_332acd0b-dc31-4586-aad6-2f68bf2ecdad&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E42" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E42
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_883a9bdd-7f7c-4159-8398-013c73e3a266&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E43" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E43
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ac3bbe72-bb81-44e9-a444-824165ea2d9d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E44" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E44
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5013dc9a-2739-4796-b277-8da12c6f9b2d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E45" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E45
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b827f426-48cc-48e6-8ab0-63f1fa06509c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E46" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E46
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_8b1bb672-6bbf-4ab7-8e54-a5a015e4410a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E47" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E47
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_0c536b69-4631-4624-964b-5408b1bbeeb4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E48" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E48
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_e27951e0-55d6-4a2a-8307-88f8e8bdf74f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E49" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E49
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_86e2d8a4-d939-430a-8ed8-3baf73afbe0d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E50" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E50
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_cf3f74c6-083e-4157-94fc-570b8f0e4824&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E51" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E51
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_42b04216-4020-46ea-a58b-7a32108974d6&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E52" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E52
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1df05a37-f428-4dae-a3b2-6dff65a45cc5&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E53" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E53
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_945c2084-3deb-4cfd-b13e-c27d46d3af12&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E54" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E54
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_44ea9979-38ed-4448-b847-fca77ef0c7c1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E55" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E55
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_165687b4-9a78-4c7a-b86f-9cea4734f954&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E56" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E56
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_e4ea621e-7b21-4b7f-8dcc-4fa53169756f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E57" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E57
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_cdce90f7-e56d-46e7-85a3-905bb3fba637&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E58" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E58
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6eb8d215-2d35-4009-b8db-e60381bfa9b4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E59" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E59
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2f92530b-6fec-4b09-90e3-353d1268bdaf&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E60" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E60
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_9702e8fa-b256-4c73-83d8-e18d8dd6fbee&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E61" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E61
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_49a1dae7-bdb4-4aef-8b52-9972ee55ee1b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E62" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E62
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_97876c80-5b13-438c-ae88-8b836e8dc791&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E63" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E63
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_4cd339d2-2ff1-439d-b312-3f163cf43e3e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E64" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E64
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_002309ad-090a-4a5d-a361-884febb3dd5d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E65" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E65
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_40223427-9535-4136-9d29-c0013df1ee3b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E66" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E66
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_7387d8f0-27a1-46bb-8e43-d7d7269df335&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E67" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E67
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_3d287570-90c5-4d4c-8f0a-5729ef011f92&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E68" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E68
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_69b37055-667a-4a94-a3eb-b3ae4e9e3f75&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S02 E69" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S02 E69
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ddd46890-ab30-4494-934b-2bbdae941bae&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E70" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E70
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1cdbe989-9219-4766-b004-7f5ad05321bc&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E71" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E71
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d90f7f44-0f0b-4d42-948b-ef55bb605d77&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E72" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E72
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_fc511ba7-9962-45ff-be8f-eaacbaba062a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E73" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E73
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a1651321-8925-4f6a-bcac-e6e1d5661783&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E74" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E74
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_683e9ded-30b2-474d-9cd0-51a8d3a30b79&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E75" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E75
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5068a8a5-a7cc-4101-b458-9e39846d2b04&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E76" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E76
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_e361257b-a846-4de6-a5b3-3c7b6c2373b4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E77" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E77
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ff5fcd89-de83-422b-91cd-904b05db4b5f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E78" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E78
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c9f86a7a-ae20-4893-8ee4-b00d0bc2ca0e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E79" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E79
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_524062a2-c09f-41b6-b526-e65aabd9946f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E80" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E80
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_99cdb446-0c97-4a85-8772-0c3e4289d824&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E81" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E81
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b6a0d11a-e6bc-48ce-99e3-a038a4be06ac&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E82" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E82
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ea6dc0cd-3fac-4c91-b781-d811583a3de3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E83" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E83
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5a180326-0ed5-4758-be14-a85cf7e37647&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E84" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E84
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6aa7638e-b5a0-422e-89fa-9a4fd02ac7d1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E85" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E85
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_acb4e4ec-3172-41ac-a65c-b05d2709fcbe&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E86" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E86
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_09527ba3-09af-4082-a340-7199e53b26fb&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E87" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E87
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d55e4337-252a-4c44-ac8d-2b1430c77b51&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E88" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E88
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_e2ff2383-0b7f-4385-b91e-75c97403d9bd&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E89" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E89
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ee26bf02-8a55-4350-b9ff-6100a4fa4459&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E90" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E90
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_06565629-1292-4817-85ca-77b768a3e692&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E91" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E91
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_fcc49637-c886-4ce3-86f7-d1a9b89045f8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E92" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E92
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_0c7a65b8-1a62-4e8f-b235-752bbffa5d1f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E93" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E93
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_515f7cbf-ef82-43dc-96e5-e59747df8eb5&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E94" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E94
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_01f23513-ae9c-486b-9ebc-6eaef852665c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E95" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E95
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_bbbca690-8b73-4cc8-8d0a-91df365173ea&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Behzat Ç S03 E96" group-title="🟪◆ DİZİLER - BEHZAT Ç ⭕",Behzat Ç S03 E96
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ead87413-78a0-4c5a-a7cd-b206e007c774&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E01" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E01
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f4977323-a85d-47e5-962c-cb19066edead&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E02" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E02
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_130898da-9c8a-4ed3-8d64-058c1a4667bf&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E03" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E03
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_0941f7f6-94fa-4bbf-bd71-82767185b186&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E04" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E04
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5fe7b66a-1944-4cee-8b67-24c0a4907b18&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E05" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E05
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_076004fa-efd4-4800-a30d-10be48f2dc3b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E06" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E06
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_7f281e35-5684-4eda-9d94-7d3d4c86e391&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E07" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E07
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_dc73949b-773f-4663-b351-20029a149066&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E08" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E08
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6a001af2-9331-4fd7-87f8-a443f7bdd66f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E09" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E09
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2d48d7a3-2267-41b6-b5f3-80f96e7181a4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E10" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E10
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f977cdc1-2394-48e3-b9ea-cf750753b8cd&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E11" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E11
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_3210992d-0899-45fd-97aa-160c62ba270c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi S01 E12" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi S01 E12
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_fed850d1-683e-4ea2-bdd4-1147cdee6c7f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 1. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 1. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_86c05300-1e50-4d66-b014-90799527ed35&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 2. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 2. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_4349617e-e60c-436c-88de-417b5cafdb78&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 3. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 3. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_25b4eaaf-3486-4e28-94c7-924cb8ae0fd9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 4. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 4. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_346ca508-35f8-40e3-ab9c-f1385bc0a501&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 5. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 5. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_47f9bc57-3718-4f6e-8d61-d7fdc193cba7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 6. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 6. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5612007c-5c20-4f5d-afd9-633f97330be2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 7. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 7. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_e2ad7c95-1547-44f1-b2d0-98f36ae4fe93&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 8. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 8. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1a9c8200-f2fc-444d-9aba-2251dcf83320&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 9. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 9. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1b7f26db-deb0-4291-bca9-42f2bf539e23&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Fi - 2. Sezon - Çİ - 10. Bölüm" group-title="🟪◆ DİZİLER - Fİ ⭕",Fi - 2. Sezon - Çİ - 10. Bölüm
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f4e062ef-9ed8-46c8-ab1d-8a37b26cfb3e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E01" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E01
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815354_4C9E0756&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E02" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E02
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815355_7E93C477&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E03" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E03
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815356_CBF8DC97&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E04" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E04
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815357_32C6E98B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E05" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E05
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815358_DA93D795&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E06" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E06
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815359_47B886CA&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E07" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E07
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815360_4D2313DE&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E08" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E08
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815361_2D042FBA&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E09" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E09
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815362_016FB04C&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E10" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E10
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815363_9EC6E8B2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E11" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E11
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815364_C4401129&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E12" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E12
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815365_C152CAE7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E13" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E13
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815366_1EF29FCD&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E14" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E14
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815367_A7C0A865&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E15" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E15
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815368_8648AFB7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E16" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E16
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815369_2DDCBFFD&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E17" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E17
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815370_9BF530CF&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E18" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E18
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815371_234265AF&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E19" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E19
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815483_84E964B7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E20" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E20
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815499_FF00D6C1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E21" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E21
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815529_98DF55BF&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E22" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E22
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815530_E7F16009&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E23" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E23
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815531_B75193B2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E24" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E24
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815532_E99D893C&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E25" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E25
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815533_FBBC8D6A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E26" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E26
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815535_8D5F6137&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E27" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E27
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815536_8EB0AA6F&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E28" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E28
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815537_6B0B2AAE&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E29" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E29
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815538_CE78D943&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E30" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E30
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815540_6F1E14E9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E31" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E31
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815541_BF18C670&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E32" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E32
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815543_419150E8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E33" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E33
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815545_1D297054&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E34" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E34
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815546_0D19A954&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E35" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E35
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815547_EC2FE986&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S01 E36" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S01 E36
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815548_AA0D894B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E37" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E37
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815549_02E390CC&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E38" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E38
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815550_F937592F&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E39" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E39
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815551_F26455F3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E40" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E40
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815552_36A25DDE&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E41" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E41
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815553_0346BD0A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E42" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E42
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815554_1D23F712&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E43" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E43
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815555_4017BF7B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E44" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E44
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815556_06658B08&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E45" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E45
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815557_EF1AD65F&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E46" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E46
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815558_0FCAFF17&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E47" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E47
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815559_F299503E&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E48" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E48
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815560_646A250B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E49" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E49
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815561_C1E641F7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E50" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E50
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815562_018B05EE&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E51" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E51
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815563_78C54956&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E52" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E52
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815564_03E6E18D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E53" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E53
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815565_087362F9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E54" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E54
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815566_2A2B79A4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E55" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E55
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815567_312DA109&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E56" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E56
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815568_D0809B2A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E57" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E57
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815569_1ACB655C&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E58" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E58
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815570_89F695A3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E59" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E59
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815571_C2B1F13E&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E60" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E60
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815572_26776E90&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E61" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E61
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815573_2F345F5C&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E62" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E62
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815574_00CA1B9A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E63" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E63
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815575_86387F46&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E64" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E64
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815670_3F41031C&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E65" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E65
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815576_34DD98CF&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E66" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E66
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815577_1694D365&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E67" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E67
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815578_1720055B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E68" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E68
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815579_0E59F914&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E69" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E69
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815580_2F634A30&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E70" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E70
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815581_AF94FCE1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E71" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E71
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815582_0375A418&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E72" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E72
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815583_6B6D7AB4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E73" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E73
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815584_5DFF4DEE&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E74" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E74
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815585_C04761D1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S02 E75" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S02 E75
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815586_341093F0&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E76" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E76
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815587_163BF980&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E77" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E77
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815671_0EC31B6F&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E78" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E78
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815674_18C90F50&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E79" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E79
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815675_10D43043&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E80" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E80
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815676_65125901&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E81" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E81
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815678_893A1EBA&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E82" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E82
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815680_DBFB3623&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E83" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E83
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815681_747DD95B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E84" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E84
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815682_475AAA35&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E85" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E85
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815683_73E060D2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E86" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E86
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815684_C7CAADC2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E87" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E87
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815685_33AB6855&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E88" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E88
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815686_A1B6201D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E89" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E89
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815687_4DFB6502&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E90" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E90
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815688_7C8464BB&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E91" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E91
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815689_A3F9A19D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E92" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E92
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815690_ECE7B294&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E93" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E93
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815691_2AAF6A9D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E94" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E94
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815692_A5DF5C7B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E95" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E95
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815693_813CD87E&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E96" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E96
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815694_09C334FB&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E97" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E97
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815695_EBC61310&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E98" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E98
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815696_8F6E9B2D&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E99" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E99
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815697_53268AC3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E100" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E100
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815699_815ABC60&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E101" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E101
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815700_ED37EB17&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E102" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E102
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815704_6947F8D0&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E103" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E103
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815706_1318951A&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E104" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E104
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815708_1756E409&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E105" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E105
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815713_19B5E4E3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E106" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E106
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815716_8B615E49&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E107" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E107
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815719_F92E1E81&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E108" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E108
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815721_27367DC1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E109" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E109
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815724_051D4819&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E110" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E110
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815727_9D472C1B&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E111" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E111
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815730_02561F62&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E112" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E112
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815733_048FAEDA&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E113" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E113
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815734_12BE1C29&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E114" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E114
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815735_15447646&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Karadayı S03 E115" group-title="🟪◆ DİZİLER - KARADAYI ⭕",Karadayı S03 E115
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_815737_508108B2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E01" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E01
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_cb5f9d6f-7fc1-4b32-bb7f-c12cd5ae5d3d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E02" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E02
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_e9c9b764-2494-4090-bbf5-0e3248fa65fd&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E03" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E03
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_30806cf5-06f7-4c58-843f-c2450c4fe081&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E04" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E04
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_02cca166-395f-41e5-8c40-fd3d3b27d348&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E05" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E05
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1a27c321-555f-40d5-b9c7-67ec47280bb5&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E06" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E06
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_9d11046d-7990-41b7-8a5e-38a12496dd45&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E07" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E07
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c25c6f30-bbf7-4ab6-bb1d-3bcc3ef7a46f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E08" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E08
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_e91262a3-fff0-4ce0-b241-21e916ff2746&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E09" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E09
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a4313047-e8a7-4c9d-b050-70863d821d9d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E10" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E10
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_fbd8a743-4771-4152-9e15-482d37b36cf9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E11" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E11
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a36b0805-dbd2-4cde-82cb-66e56900b96c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E12" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E12
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_920f57b1-35a8-4b0a-8064-6159fe9dcd6b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E13" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E13
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f787cb00-5923-4364-94fd-30921ceda0bb&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E14" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E14
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f4f8449b-6a7a-4a8e-b5ee-e1abab936701&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E15" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E15
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a137e7c6-54ad-4ed1-83d7-2e002da39295&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E16" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E16
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_136e21fd-3ed1-4f0f-870f-aba42dc342ba&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E17" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E17
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d8b6b278-68fd-45d5-8655-b873301dcfc2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E18" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E18
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_936ad2d5-4542-46fb-b488-b08c695230b3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E19" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E19
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5ec9335f-4cf6-42d9-a6f3-48d5a307ca3c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E20" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E20
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5db4d870-983a-4200-866c-a2475ea94408&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E21" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E21
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f2138eba-5351-4161-a52c-e078276436c6&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E22" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E22
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_dcdd9b94-41d3-46eb-aec2-da08bd84ae07&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E23" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E23
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_7a5b5c69-da15-4d97-b39d-45ad67630be3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E24" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E24
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c76fcb87-2156-49ed-8c22-83e6a3df0e5e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E25" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E25
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2f7e74ca-990b-40df-857c-144e434465ec&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E26" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E26
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_3a36bb7f-c5a0-42a9-8865-ddb797294758&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S01 E27" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S01 E27
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b1ca0e45-052c-4cc3-8c4e-b2dee1c1dfd0&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E28" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E28
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_a66ba312-dbcd-4dff-9068-24829b477fc6&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E29" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E29
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_84cb8769-5697-4442-aefe-fe41be9899f7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E30" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E30
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_0b57be28-fbaf-4bf7-ab07-1c36dff6acdc&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E31" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E31
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_9e6d29a0-fe3e-436b-b97f-54f8b4f30c32&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E32" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E32
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_3e34ad05-2b86-47a9-9ce9-6f084456c38a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E33" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E33
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d576409d-3c6d-4463-b4ea-196367a94942&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E34" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E34
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_d199771a-9f29-4fdf-9d7b-2b3aae15d4e5&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E35" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E35
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_cf95f71b-350d-43bc-9286-98e2fc93e93c&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E36" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E36
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_9395c925-3b78-4e3f-a5a2-8c177b01edfb&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E37" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E37
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_de6f3ecf-82fa-41a4-9f34-3c0d5abb7c25&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E38" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E38
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_8b03f4bd-a8b9-4a11-b8ab-eccd60ab9185&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E39" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E39
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f0e4b545-499e-44d3-9fb2-3171c1fc861f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E40" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E40
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_883f5173-e277-4346-8c77-e42a519fdd26&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E41" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E41
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_ca5dea16-396b-4d0d-99a5-b469b2fbb90a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E42" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E42
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_5e9a183f-f384-4bb5-a3d1-8842e7308ddc&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E43" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E43
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_3f2ba8c0-36d0-4d6f-be2f-a65a785803bc&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E44" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E44
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_4c475605-d658-4759-9210-17bf8616e7ba&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E45" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E45
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_f64b6dd9-b98a-4084-9423-522b378d8257&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E46" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E46
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_842b9528-dc86-4c01-bdad-3e405a81ae48&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E47" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E47
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_119ce5a7-a93d-4374-be0f-655e8d708765&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E48" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E48
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_3f329ec2-0ae0-487f-a9ae-2252e3d180d4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E49" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E49
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_6c6a3e9c-05fd-4a7a-9d17-96f3398bff7b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E50" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E50
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c8cc4431-8bfa-4ea0-975a-b150fef8375d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E51" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E51
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_45a40282-3cfc-4d85-9b8c-9e4f56768ecd&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E52" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E52
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_687d8058-d763-4417-a853-9ff213b1c55b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E53" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E53
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_bd5109f1-a222-430f-b1e5-e6565eaeb009&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E54" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E54
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2318099f-7c59-4de5-87a0-34619d548ea1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E55" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E55
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_3c369ee5-83c7-41f5-a62a-1b435400682a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E56" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E56
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_c0fea444-fd30-40f7-b75d-b24511c1e6e0&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E57" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E57
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_755c1a51-db94-4316-bbe4-18fb20a02752&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E58" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E58
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_72ad1f03-89d6-456f-b1d3-5432186c8c6f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E59" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E59
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b350df84-64f4-435f-a4bb-aa0dedb993b3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E60" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E60
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_b0d2cd7f-3fb5-4e6a-8f76-550c198c357d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E61" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E61
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_717e9669-8f23-445f-bb27-7495fdd1f55e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E62" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E62
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1a861ae2-0cf9-41a5-b273-d21d72141a38&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E63" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E63
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_97f33680-c710-4e1f-8558-6ddfd34f3fba&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E64" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E64
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_1841653c-25e3-4c62-8071-2fd1931de3ce&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-name="Köprü S02 E65" group-title="🟪◆ DİZİLER - KÖPRÜ ⭕",Köprü S02 E65
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_20182a03-8811-454e-b032-1b237bbd8b2c&SecretKey=NtvApiSecret2014*&.m3u8
