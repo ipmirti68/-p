@@ -81,12 +81,60 @@ jobs:
         continue-on-error: true
         run: python bein3.py || echo "bein1 failed"
 
-      - name: 12- EKMEK 
+      - name: 11- EKMEK 
         continue-on-error: true
         run: python bein4.py || echo "bein failed"
 
+       - name: 12 - IPTV ULUSAL
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python iptv.py || echo "iptv failed"
+        
+      - name: 13 - MAHSUN
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python mahsun.py || echo "mahsun failed"
       
-     
+      - name: 14 - GOLLER
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python lig.py || echo "lig failed"
+      
+      - name: 15 - FİLİM
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python gfilim.py || echo "gfilim failed"
+      
+      - name: 16 - ULUSAL
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python link.py || echo "link failed"
+      
+      - name: 17 - GÜNCEL DİZİLER 2026
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python gunceldiziler.py || echo "gunceldiziler failed"
+      
+      - name: 18 - 7/24 DİZİ 2026
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python 724.py || echo "724 failed"
+      
+      - name: 19 - ULUSAL
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python ulusal.py || echo "ulusal failed"
+      
+      - name: 20 - ULUSAL1
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python ulusal1.py || echo "ulusal2 failed"
+      
+      - name: 21 - DİZİLER YAML
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python sdiziler.py || echo "sdiziler failed"
+ 
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
         if: always()
