@@ -40,7 +40,10 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python esref.py || echo "esref failed"
-
+      - name: 9 - YILAN HİKAYESİ
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python yilan.py || echo "yilan failed"
       - name: Dosyaları kaydet
         if: always()
         run: |
