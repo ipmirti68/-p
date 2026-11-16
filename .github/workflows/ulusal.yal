@@ -3,7 +3,7 @@ name: GÜNCELLE Filim Atom Bein Bein1 Seridizi Allbein Patron Mahsun Lig Gfilim 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/20 * * * *"
+    - cron: "*/30 * * * *"
 
 permissions:
   contents: write
