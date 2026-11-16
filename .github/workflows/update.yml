@@ -85,7 +85,7 @@ jobs:
         continue-on-error: true
         run: python bein4.py || echo "bein failed"
 
-       - name: 12 - IPTV ULUSAL
+      - name: 12 - IPTV ULUSAL
         continue-on-error: true
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
