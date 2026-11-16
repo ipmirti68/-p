@@ -4,10 +4,21 @@ import re
 import requests
 import urllib.parse
 
-SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://4.438069.xyz:2086/get.php?username=%40SeZR.12.11.22&password=2022xSezER.12.11%40&type=m3u_plus&output=ts")
+# ==================================================
+# KULLANICI AYARLARI
+# ==================================================
+
+SOURCE_M3U_URL = os.environ.get(
+    "SOURCE_M3U_URL",
+    "http://4.438069.xyz:2086/get.php?username=%40SeZR.12.11.22&password=2022xSezER.12.11%40&type=m3u_plus&output=ts"
+)
 
 M3U_FILE = "mirti68.m3u"
+
+# YENİ YAYINLARIN EKLENECEĞİ GRUP
 FILM_GROUP = "🟨◆ ULUSAL ᴴᴰ⁺ ⭕"
+
+# KAYNAKTAN ALINACAK GRUP
 SOURCE_GROUP = "► Ulusal"
 
 HEADERS = {
@@ -20,202 +31,403 @@ HEADERS = {
 }
 
 
+# ==================================================
+# GRUP ADINI OKU
+# ==================================================
+
 def get_group(line):
+
     match = re.search(r'group-title="([^"]*)"', line)
+
     return match.group(1).strip() if match else ""
 
 
-def read_entries(lines):
+# ==================================================
+# M3U BAŞLIK VE KANAL KAYITLARINI AYIR
+# ==================================================
+
+def parse_m3u(lines):
+
+    header = []
     entries = []
-    current = []
+    current = None
 
     for line in lines:
-        line = line.strip()
 
         if line.startswith("#EXTINF:"):
+
             if current:
                 entries.append(current)
+
             current = [line]
 
-        elif current and line:
-            current.append(line)
+        elif current is not None:
+
+            if line.strip():
+                current.append(line)
+
+        else:
+
+            # İLK EXTINF'E KADAR TÜM BAŞLIK BİLGİLERİNİ KORU
+            header.append(line)
 
     if current:
         entries.append(current)
 
-    return entries
+    return header, entries
 
+
+# ==================================================
+# KAYNAK M3U LİSTESİNİ OKU
+# ==================================================
 
 def kaynagi_oku(url):
+
     s = requests.Session()
     s.headers.update(HEADERS)
 
-    for link in [url, url.replace("http://", "https://", 1)]:
+    links = [
+        url,
+        url.replace("http://", "https://", 1)
+    ]
+
+    for link in links:
+
         for deneme in range(2):
+
             try:
-                print(f"[DENEME] {link} - {deneme+1}")
 
-                r = s.get(link, timeout=40, allow_redirects=True)
-                print(f"[STATUS] {r.status_code}")
+                print(f"[DENEME] {link} - {deneme + 1}")
 
-                if r.status_code == 200 and "#EXTM3U" in r.text:
-                    r.encoding = "utf-8"
-                    return r.text
+                r = s.get(
+                    link,
+                    timeout=40,
+                    allow_redirects=True
+                )
+
+                print("[STATUS]", r.status_code)
+
+                if r.status_code == 200:
+
+                    content = r.content.decode(
+                        "utf-8-sig",
+                        errors="replace"
+                    )
+
+                    if "#EXTM3U" in content:
+
+                        return content
 
                 if r.status_code == 403:
+
                     s.headers.update({
                         "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Version/17.0 Mobile Safari/604.1"
                     })
 
             except requests.RequestException as e:
-                print(f"[!] Bağlantı hatası: {e}")
+
+                print("[!] Bağlantı hatası:", e)
+
+    # ALTERNATİF PROXY DENEMELERİ
 
     enc = urllib.parse.quote(url, safe="")
 
-    for plink in [
+    proxies = [
         f"https://api.allorigins.win/raw?url={enc}",
         f"https://api.codetabs.com/v1/proxy?quest={enc}"
-    ]:
+    ]
+
+    for plink in proxies:
+
         try:
-            print(f"[PROXY] {plink[:60]}...")
+
+            print("[PROXY]", plink[:60], "...")
 
             r = s.get(plink, timeout=60)
 
-            if r.status_code == 200 and "#EXTM3U" in r.text:
-                r.encoding = "utf-8"
-                return r.text
+            if r.status_code == 200:
+
+                content = r.content.decode(
+                    "utf-8-sig",
+                    errors="replace"
+                )
+
+                if "#EXTM3U" in content:
+
+                    return content
 
         except Exception as e:
-            print(f"[!] Proxy hata: {e}")
+
+            print("[!] Proxy hata:", e)
 
     return None
 
 
-def main():
+# ==================================================
+# YAYIN ADRESİNİ BUL
+# ==================================================
 
-    print("=" * 55)
-    print("MIRTI68 - ULUSAL GÜNCELLEME")
-    print("=" * 55)
+def get_stream(entry):
 
-    if not SOURCE_M3U_URL:
-        print("HATA: SOURCE_M3U_URL tanımlanmamış.")
-        return
+    for line in entry[1:]:
 
-    if not os.path.exists(M3U_FILE):
-        print("HATA: Ana liste bulunamadı.")
-        return
+        line = line.strip()
 
-    # ÖNCE MEVCUT LİSTEYİ OKU
-    with open(M3U_FILE, "r", encoding="utf-8-sig") as f:
-        old_lines = f.read().splitlines()
+        if line and not line.startswith("#"):
 
-    if not old_lines or not old_lines[0].startswith("#EXTM3U"):
-        print("HATA: Ana M3U başlığı bulunamadı.")
-        print("Dosya değiştirilmedi.")
-        return
+            return line
 
-    # EPG VE DİĞER BAŞLIK BİLGİLERİNİ AYNEN KORU
-    m3u_header = old_lines[0]
+    return ""
 
-    # KAYNAĞI OKU
-    text = kaynagi_oku(SOURCE_M3U_URL)
 
-    if not text:
-        print("Kaynak okunamadı.")
-        print("Ana liste değiştirilmedi.")
-        return
+# ==================================================
+# GRUP ADINI DEĞİŞTİR
+# ==================================================
 
-    source_entries = read_entries(text.splitlines())
+def grup_degistir(extinf):
+
+    if re.search(r'group-title="[^"]*"', extinf):
+
+        return re.sub(
+            r'group-title="[^"]*"',
+            f'group-title="{FILM_GROUP}"',
+            extinf,
+            count=1
+        )
+
+    return extinf.replace(
+        "#EXTINF:",
+        f'#EXTINF:-1 group-title="{FILM_GROUP}"',
+        1
+    )
+
+
+# ==================================================
+# YENİ KAYNAK YAYINLARINI HAZIRLA
+# ==================================================
+
+def yeni_yayinlari_hazirla(text):
+
+    source_lines = text.splitlines()
+
+    _, source_entries = parse_m3u(source_lines)
 
     new_entries = []
+
+    seen_urls = set()
 
     for entry in source_entries:
 
         extinf = entry[0]
 
+        # SADECE İSTENEN KAYNAK GRUBU
         if get_group(extinf) != SOURCE_GROUP:
             continue
 
-        stream = next(
-            (x for x in entry[1:] if not x.startswith("#")),
-            ""
-        )
+        stream = get_stream(entry)
 
         if not stream.startswith(("http://", "https://")):
             continue
 
-        new_extinf = re.sub(
-            r'group-title="[^"]*"',
-            f'group-title="{FILM_GROUP}"',
-            extinf
-        )
+        # TEKRAR EDEN YAYINLARI ATLA
+        if stream in seen_urls:
+            continue
 
-        if 'group-title=' not in new_extinf:
-            new_extinf = new_extinf.replace(
-                "#EXTINF:",
-                f'#EXTINF:-1 group-title="{FILM_GROUP}"',
-                1
-            )
+        seen_urls.add(stream)
 
-        new_entries.append([new_extinf] + entry[1:])
+        # HEDEF GRUP ADINI YAZ
+        new_extinf = grup_degistir(extinf)
 
-    if not new_entries:
-        print("Kaynak grubunda yayın bulunamadı.")
-        print("Ana liste değiştirilmedi.")
+        new_entry = [new_extinf] + entry[1:]
+
+        new_entries.append(new_entry)
+
+    return new_entries
+
+
+# ==================================================
+# ANA PROGRAM
+# ==================================================
+
+def main():
+
+    print("=" * 55)
+    print("       MIRTI68 - ULUSAL GÜNCELLEME")
+    print("=" * 55)
+
+    if not SOURCE_M3U_URL:
+
+        print("[HATA] Kaynak adresi tanımlanmamış.")
         return
 
-    # YENİ KAYITLARDA TEKRARLARI TEMİZLE
-    seen_urls = set()
-    unique_entries = []
+    if not os.path.exists(M3U_FILE):
 
-    for entry in new_entries:
+        print("[HATA] Ana liste bulunamadı:", M3U_FILE)
+        return
 
-        stream = next(
-            (x for x in entry[1:] if not x.startswith("#")),
-            ""
-        )
+    # ----------------------------------------------
+    # ESKİ ANA LİSTEYİ OKU
+    # ----------------------------------------------
 
-        if stream and stream not in seen_urls:
-            seen_urls.add(stream)
-            unique_entries.append(entry)
+    try:
 
-    old_entries = read_entries(old_lines)
+        with open(
+            M3U_FILE,
+            "r",
+            encoding="utf-8-sig"
+        ) as f:
 
-    # SADECE ULUSAL GRUBUNU DEĞİŞTİR
+            old_lines = f.read().splitlines()
+
+    except Exception as e:
+
+        print("[HATA] Ana liste okunamadı:", e)
+        return
+
+    if not old_lines:
+
+        print("[HATA] Ana liste boş.")
+        return
+
+    if not old_lines[0].startswith("#EXTM3U"):
+
+        print("[HATA] M3U başlığı bulunamadı.")
+        return
+
+    # ----------------------------------------------
+    # TÜM BAŞLIK BİLGİLERİNİ KORU
+    # ----------------------------------------------
+
+    old_header, old_entries = parse_m3u(old_lines)
+
+    print("[OK] M3U başlığı bulundu.")
+    print("[OK] EPG başlık satırı:", len(old_header))
+
+    # ----------------------------------------------
+    # KAYNAĞI OKU
+    # ----------------------------------------------
+
+    text = kaynagi_oku(SOURCE_M3U_URL)
+
+    if not text:
+
+        print("[HATA] Kaynak okunamadı.")
+        print("[KORUMA] Ana liste değiştirilmedi.")
+        return
+
+    # ----------------------------------------------
+    # YENİ YAYINLARI HAZIRLA
+    # ----------------------------------------------
+
+    new_entries = yeni_yayinlari_hazirla(text)
+
+    if not new_entries:
+
+        print("[HATA] Kaynak grubunda yayın bulunamadı.")
+        print("[KORUMA] Ana liste değiştirilmedi.")
+        return
+
+    print("[OK] Yeni yayın sayısı:", len(new_entries))
+
+    # ----------------------------------------------
+    # SADECE HEDEF GRUBU DEĞİŞTİR
+    # ----------------------------------------------
+
     final_entries = []
+
     eklendi = False
     korunan = 0
+    silinen = 0
 
     for entry in old_entries:
 
-        if get_group(entry[0]) == FILM_GROUP:
+        group = get_group(entry[0])
 
+        if group == FILM_GROUP:
+
+            # YENİ YAYINLARI ESKİ GRUBUN YERİNE KOY
             if not eklendi:
-                final_entries.extend(unique_entries)
+
+                final_entries.extend(new_entries)
                 eklendi = True
+
+            silinen += 1
 
             continue
 
+        # DİĞER BÜTÜN GRUPLAR AYNEN KORUNUR
         final_entries.append(entry)
+
         korunan += 1
 
+    # HEDEF GRUP LİSTEDE YOKSA EN SONA EKLE
     if not eklendi:
-        final_entries.extend(unique_entries)
 
-    # ÖNCE GEÇİCİ DOSYAYA YAZ
+        print("[BİLGİ] Hedef grup bulunamadı, listenin sonuna ekleniyor.")
+
+        final_entries.extend(new_entries)
+
+    # ----------------------------------------------
+    # GEÇİCİ DOSYAYA YAZ
+    # ----------------------------------------------
+
     temp_file = M3U_FILE + ".tmp"
 
     try:
-        with open(temp_file, "w", encoding="utf-8", newline="\n") as f:
 
-            # ESKİ EPG BAŞLIĞI AYNEN KORUNUR
-            f.write(m3u_header + "\n")
+        with open(
+            temp_file,
+            "w",
+            encoding="utf-8",
+            newline="\n"
+        ) as f:
 
+            # ESKİ EPG VE TÜM BAŞLIK SATIRLARI
+            for line in old_header:
+
+                f.write(line + "\n")
+
+            # TÜM KANALLAR
             for entry in final_entries:
+
                 for line in entry:
+
                     f.write(line + "\n")
 
-        # BAŞARILI YAZIMDAN SONRA ANA DOSYAYI DEĞİŞTİR
+        # ------------------------------------------
+        # GEÇİCİ DOSYAYI KONTROL ET
+        # ------------------------------------------
+
+        if not os.path.exists(temp_file):
+
+            print("[HATA] Geçici dosya oluşturulamadı.")
+            return
+
+        if os.path.getsize(temp_file) == 0:
+
+            print("[HATA] Geçici dosya boş.")
+            os.remove(temp_file)
+            return
+
+        # BAŞLIK KONTROLÜ
+        with open(
+            temp_file,
+            "r",
+            encoding="utf-8"
+        ) as check:
+
+            first_line = check.readline().strip()
+
+            if not first_line.startswith("#EXTM3U"):
+
+                print("[HATA] Geçici dosya başlık kontrolünden geçemedi.")
+                os.remove(temp_file)
+                return
+
+        # ------------------------------------------
+        # ANA DOSYAYI GÜVENLİ DEĞİŞTİR
+        # ------------------------------------------
+
         os.replace(temp_file, M3U_FILE)
 
     except Exception as e:
@@ -223,19 +435,36 @@ def main():
         print("[HATA] Dosya yazılamadı:", e)
 
         if os.path.exists(temp_file):
+
             os.remove(temp_file)
 
-        print("Ana liste korunmaya çalışıldı.")
+        print("[KORUMA] Ana liste değiştirilmedi.")
         return
 
+    # ----------------------------------------------
+    # SONUÇ
+    # ----------------------------------------------
+
+    print()
     print("=" * 55)
-    print("ULUSAL GRUBU GÜNCELLENDİ")
-    print("Yeni kayıt:", len(unique_entries))
-    print("Korunan diğer kayıt:", korunan)
-    print("EPG başlığı:", "KORUNDU")
-    print("Ana dosya:", M3U_FILE)
+    print("       ULUSAL GRUBU GÜNCELLENDİ")
     print("=" * 55)
 
+    print("[OK] Yeni yayın:", len(new_entries))
+    print("[OK] Eski hedef grup kaydı:", silinen)
+    print("[OK] Korunan diğer kayıt:", korunan)
+    print("[OK] EPG başlıkları: KORUNDU")
+    print("[OK] ULUSAL INFO grubu: KORUNDU")
+    print("[OK] Diğer gruplar: KORUNDU")
+    print("[OK] Ana dosya:", M3U_FILE)
+
+    print("=" * 55)
+
+
+# ==================================================
+# ÇALIŞTIR
+# ==================================================
 
 if __name__ == "__main__":
+
     main()
