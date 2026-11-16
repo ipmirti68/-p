@@ -2,6 +2,7 @@
 import requests
 import re
 import unicodedata
+from pathlib import Path
 
 SOURCE_URL = "https://raw.githubusercontent.com/umitm0d/-mittube/refs/heads/main/Umittube/umittube.m3u"
 
@@ -9,8 +10,7 @@ OUTPUT_FILE = "mirti68.m3u"
 GROUP = "🟪◆ 7/24 DİZİ ⭕"
 
 KANALLAR = [
-    "cicek-taksi",
-    "bizimkiler",
+   
     "Kemal-sunal-1",
     "Kemal-sunal-2",
     "Trfilmler",
@@ -43,95 +43,133 @@ def normalize(text):
 
 def main():
 
-    print("GitHub listesinden güncel yayınlar alınıyor...")
+    print("Güncel kaynak indiriliyor...")
 
-    response = requests.get(
+    r = requests.get(
         SOURCE_URL,
         timeout=40,
         headers={"User-Agent": "Mozilla/5.0"}
     )
-    response.raise_for_status()
+    r.raise_for_status()
 
-    lines = response.text.splitlines()
+    lines = r.text.splitlines()
 
     hedefler = {
-        normalize(x): x for x in KANALLAR
+        normalize(x): x.upper()
+        for x in KANALLAR
     }
 
+    sonuc = []
     bulunan = set()
-    sonuc = ["#EXTM3U"]
+    kanal_sayisi = 0
 
     i = 0
 
     while i < len(lines):
 
-        line = lines[i].strip()
+        line = lines[i]
 
         if line.startswith("#EXTINF:"):
 
-            if i + 1 < len(lines):
+            kanal_sayisi += 1
 
-                url = lines[i + 1].strip()
+            isim = line.split(",", 1)[-1].strip()
+            key = normalize(isim)
 
-                if url and not url.startswith("#"):
+            if key in hedefler:
 
-                    isim = line.split(",", 1)[-1].strip()
-                    key = normalize(isim)
+                # Sonraki satır yayın adresi
+                url = (
+                    lines[i + 1].strip()
+                    if i + 1 < len(lines)
+                    else ""
+                )
 
-                    if key in hedefler:
+                # YouTube video kimliği
+                match = re.search(
+                    r"/id/([^/?]+)",
+                    url
+                )
 
-                        # YouTube video ID bul
-                        match = re.search(
-                            r"/id/([^./?]+)",
-                            url
+                logo = None
+
+                if match:
+                    video_id = match.group(1).split(".")[0]
+
+                    if re.fullmatch(
+                        r"[A-Za-z0-9_-]{11}",
+                        video_id
+                    ):
+                        logo = (
+                            "https://i.ytimg.com/vi/"
+                            + video_id
+                            + "/hqdefault.jpg"
                         )
 
-                        if match:
-                            video_id = match.group(1)
+                # Mevcut EXTINF satırını koruyarak değiştir
+                new_line = line
 
-                            # YouTube kapak resmi
-                            logo = (
-                                f"https://i.ytimg.com/vi/"
-                                f"{video_id}/hqdefault.jpg"
-                            )
-                        else:
-                            logo = ""
-
-                        yeni_isim = hedefler[key].upper()
-
-                        sonuc.append(
-                            f'#EXTINF:-1 tvg-logo="{logo}" '
-                            f'group-title="{GROUP}",'
-                            f'{yeni_isim} ⭕'
+                if logo:
+                    if re.search(r'tvg-logo="[^"]*"', new_line):
+                        new_line = re.sub(
+                            r'tvg-logo="[^"]*"',
+                            f'tvg-logo="{logo}"',
+                            new_line,
+                            count=1
+                        )
+                    else:
+                        new_line = new_line.replace(
+                            "#EXTINF:",
+                            f'#EXTINF:-1 tvg-logo="{logo}"',
+                            1
                         )
 
-                        # Güncel yayın adresini koru
-                        sonuc.append(url)
+                new_line = re.sub(
+                    r'group-title="[^"]*"',
+                    f'group-title="{GROUP}"',
+                    new_line,
+                    count=1
+                )
 
-                        bulunan.add(key)
+                new_line = re.sub(
+                    r',(.*)$',
+                    f',{hedefler[key]} ⭕',
+                    new_line
+                )
+
+                sonuc.append(new_line)
+                bulunan.add(key)
+
+            else:
+                # Diğer kanallar aynen korunur
+                sonuc.append(line)
+
+        else:
+            # Başlıklar, yorumlar ve yayın URL'leri korunur
+            sonuc.append(line)
 
         i += 1
 
-    with open(
-        OUTPUT_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
-        f.write("\n".join(sonuc) + "\n")
+    # Kaynak boş veya eksik geldiyse mevcut çıktıyı ezme
+    if kanal_sayisi == 0:
+        raise Exception("Kaynak listede kanal bulunamadı!")
 
-    eksik = set(hedefler) - bulunan
+    temp_file = OUTPUT_FILE + ".tmp"
+
+    Path(temp_file).write_text(
+        "\n".join(sonuc) + "\n",
+        encoding="utf-8"
+    )
+
+    Path(temp_file).replace(OUTPUT_FILE)
 
     print("--------------------------------")
     print("GÜNCELLEME TAMAMLANDI")
-    print("Bulunan kanal:", len(bulunan))
-    print("Eksik kanal:", len(eksik))
-    print("Afişler otomatik eklendi.")
-    print("Dosya:", OUTPUT_FILE)
-
-    if eksik:
-        print("Bulunamayanlar:")
-        for kanal in sorted(eksik):
-            print("-", hedefler[kanal])
+    print("Toplam kaynak kanalı:", kanal_sayisi)
+    print("Düzenlenen dizi:", len(bulunan))
+    print("Bulunamayan dizi:", len(hedefler) - len(bulunan))
+    print("Korunan diğer kanallar:", kanal_sayisi - len(bulunan))
+    print("Çıktı:", OUTPUT_FILE)
 
 if __name__ == "__main__":
     main()
