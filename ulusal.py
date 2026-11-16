@@ -11,7 +11,7 @@ import urllib.parse
 
 # Kaynak adresini ortam değişkeninden al.
 # SOURCE_M3U_URL ortam değişkenini tanımlayın.
-SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "").strip()
+SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts").strip()
 
 M3U_FILE = "mirti68.m3u"
 
