@@ -31,20 +31,40 @@ WANTED_RAW = [
     "2001 2010",
 ]
 
+# ==================================================
+# GRUP NORMALİZASYONU
+# ==================================================
+
 def norm(s):
+
     s = s.lower()
-    s = re.sub(r'[^a-z0-9çğıöşü]+', '', s)
+
+    s = re.sub(
+        r'[^a-z0-9çğıöşü]+',
+        '',
+        s
+    )
+
     return s
 
-WANTED = {norm(x): x for x in WANTED_RAW}
+
+WANTED = {
+    norm(x): x
+    for x in WANTED_RAW
+}
+
+
+# ==================================================
+# HARİÇ TUTULACAKLAR
+# ==================================================
 
 EXCLUDED = [
-    "【entity-adam sandler¦canonical_name=adam sandler】",
+    "adam sandler",
     "clint eastwood",
-    "【entity-sylvester stallone¦canonical_name=sylvester stallone】",
-    "【entity-jackie chan¦canonical_name=jackie chan】",
+    "sylvester stallone",
+    "jackie chan",
     "nicolas cage",
-    "【entity-steven seagal¦canonical_name=steven seagal】",
+    "steven seagal",
     "jason statham",
     "seri",
     "dizi",
@@ -72,22 +92,32 @@ def is_excluded(text):
         text.lower()
     ) + " "
 
+    compact = text.lower().replace(" ", "")
+
     for w in EXCLUDED:
 
         if w in ("s01e", "s02e", "s03e"):
 
-            if w in text.lower().replace(" ", ""):
+            if w in compact:
                 return True
 
-        elif f" {w} " in t:
-            return True
+        else:
+
+            normalized_word = re.sub(
+                r'[^a-z0-9çğıöşü]+',
+                ' ',
+                w.lower()
+            ).strip()
+
+            if f" {normalized_word} " in t:
+                return True
 
     return False
 
 
 # ==================================================
 # M3U BAŞLIK VE KANALLARI AYIR
-# EPG SATIRLARI KESİNLİKLE KORUNUR
+# EPG SATIRLARI KORUNUR
 # ==================================================
 
 def read_entries(lines):
@@ -113,11 +143,13 @@ def read_entries(lines):
 
         elif not current:
 
-            # İLK EXTINF'E KADAR TÜM BAŞLIKLARI KORU
             header.append(line)
 
     if current:
         entries.append(current)
+
+    if not header:
+        header = ["#EXTM3U"]
 
     return header, entries
 
@@ -132,7 +164,9 @@ def get_stream(entry):
         (
             line.strip()
             for line in entry[1:]
-            if line.strip().startswith(("http://", "https://"))
+            if line.strip().startswith(
+                ("http://", "https://")
+            )
         ),
         ""
     )
@@ -170,10 +204,13 @@ def get_name(entry):
 
     header = "\n".join([
         l for l in entry
-        if not l.strip().startswith("http")
+        if not l.strip().startswith(
+            ("http://", "https://")
+        )
     ])
 
     if "," in header:
+
         return header.rsplit(",", 1)[-1].strip()
 
     return ""
@@ -187,9 +224,18 @@ def fix_url(url):
 
     url = url.strip()
 
-    url = url.replace("?.mp4", "").replace("?ext=.mp4", "")
+    url = url.replace(
+        "?.mp4",
+        ""
+    ).replace(
+        "?ext=.mp4",
+        ""
+    )
 
-    if "vixolity.com/vs/" in url and url.endswith(".mp4"):
+    if (
+        "vixolity.com/vs/" in url
+        and url.endswith(".mp4")
+    ):
         url = url[:-4]
 
     return url
@@ -199,7 +245,13 @@ def normalize_url(url):
 
     url = url.strip()
 
-    url = url.replace("?.mp4", "").replace("?ext=.mp4", "")
+    url = url.replace(
+        "?.mp4",
+        ""
+    ).replace(
+        "?ext=.mp4",
+        ""
+    )
 
     if url.endswith(".mp4"):
         url = url[:-4]
@@ -208,17 +260,23 @@ def normalize_url(url):
 
 
 # ==================================================
-# GRUP YENİDEN ADLANDIRMA
+# GRUP VE FİLM ADINI YENİDEN DÜZENLE
 # ==================================================
 
 def rename_group(entry):
+
+    if not entry:
+        return entry
 
     g = get_group(entry)
 
     if not g:
         return entry
 
-    clean = WANTED.get(norm(g), g)
+    clean = WANTED.get(
+        norm(g),
+        g
+    )
 
     clean = re.sub(
         r"\s+",
@@ -229,18 +287,20 @@ def rename_group(entry):
     if "FILM" not in clean.upper():
         clean = f"FILM - {clean}"
 
+    # YENİ GRUP ADI
     new_group = f"🟪◆ {clean} ⭕"
 
     joined = "\n".join(entry)
 
+    # GRUP ADINI DEĞİŞTİR
     new_joined = re.sub(
         r'group-title="[^"]*"',
         f'group-title="{new_group}"',
         joined,
-        count=1,
-        flags=re.DOTALL
+        count=1
     )
 
+    # ESKİ TVG-TYPE BİLGİSİNİ TEMİZLE
     new_joined = re.sub(
         r'\s*tvg-type="[^"]*"',
         '',
@@ -248,6 +308,7 @@ def rename_group(entry):
         count=1
     )
 
+    # FİLM TİPİNİ EKLE
     new_joined = re.sub(
         r'#EXTINF:-?\d+',
         '#EXTINF:-1 tvg-type="movie"',
@@ -263,10 +324,34 @@ def rename_group(entry):
 
         s = line.strip()
 
-        if s.startswith(("http://", "https://")):
-            fixed_lines.append(fix_url(s))
+        # YAYIN ADRESİNİ DÜZELT
+        if s.startswith(
+            ("http://", "https://")
+        ):
+
+            fixed_lines.append(
+                fix_url(s)
+            )
+
+        # FİLM ADININ SONUNA ⭕ EKLE
+        elif (
+            s.startswith("#EXTINF:")
+            and "," in s
+        ):
+
+            prefix, name = s.rsplit(",", 1)
+
+            name = name.strip()
+
+            if not name.endswith("⭕"):
+                name += " ⭕"
+
+            fixed_lines.append(
+                prefix + "," + name
+            )
 
         else:
+
             fixed_lines.append(line)
 
     return fixed_lines
@@ -329,20 +414,25 @@ def download_m3u(url):
                 f"len: {len(r.text)}"
             )
 
-            if r.status_code == 200 and "#EXTM3U" in r.text[:500]:
+            if (
+                r.status_code == 200
+                and "#EXTM3U" in r.text[:500]
+            ):
 
                 return r.text
 
         except Exception as e:
 
-            print(f"Indirme hatasi {u}: {e}")
+            print(
+                f"Indirme hatasi {u}: {e}"
+            )
 
     return None
 
 
 # ==================================================
 # GÜVENLİ DOSYA YAZMA
-# ESKİ EPG BAŞLIKLARI AYNEN KORUNUR
+# ESKİ EPG BAŞLIKLARI KORUNUR
 # ==================================================
 
 def write_atomic(lines, header=None):
@@ -381,12 +471,17 @@ def write_atomic(lines, header=None):
 
                 f.write(line + "\n")
 
-        # DOSYA BOŞ MU KONTROL ET
         if not os.path.exists(temp_path):
-            raise Exception("Geçici dosya oluşturulamadı.")
+
+            raise Exception(
+                "Geçici dosya oluşturulamadı."
+            )
 
         if os.path.getsize(temp_path) == 0:
-            raise Exception("Geçici dosya boş.")
+
+            raise Exception(
+                "Geçici dosya boş."
+            )
 
         # M3U BAŞLIK KONTROLÜ
         with open(
@@ -398,10 +493,16 @@ def write_atomic(lines, header=None):
             first_line = check.readline().strip()
 
             if not first_line.startswith("#EXTM3U"):
-                raise Exception("M3U başlık kontrolü başarısız.")
+
+                raise Exception(
+                    "M3U başlık kontrolü başarısız."
+                )
 
         # ANA DOSYAYI DEĞİŞTİR
-        os.replace(temp_path, OUTPUT_M3U)
+        os.replace(
+            temp_path,
+            OUTPUT_M3U
+        )
 
     except Exception:
 
@@ -425,7 +526,9 @@ def main():
     # KAYNAK LİSTEYİ OKU
     # ----------------------------------------------
 
-    if INPUT_M3U.startswith(("http://", "https://")):
+    if INPUT_M3U.startswith(
+        ("http://", "https://")
+    ):
 
         text = download_m3u(INPUT_M3U)
 
@@ -433,6 +536,7 @@ def main():
 
             print("[HATA] Kaynak indirilemedi.")
             print("[KORUMA] Ana liste değiştirilmedi.")
+
             return
 
         _, source_entries = read_entries(
@@ -443,7 +547,10 @@ def main():
 
         if not os.path.exists(INPUT_M3U):
 
-            print(f"[HATA] {INPUT_M3U} bulunamadı.")
+            print(
+                f"[HATA] {INPUT_M3U} bulunamadı."
+            )
+
             return
 
         with open(
@@ -458,8 +565,14 @@ def main():
 
     if not source_entries:
 
-        print("[HATA] Kaynak listede yayın bulunamadı.")
-        print("[KORUMA] Ana liste değiştirilmedi.")
+        print(
+            "[HATA] Kaynak listede yayın bulunamadı."
+        )
+
+        print(
+            "[KORUMA] Ana liste değiştirilmedi."
+        )
+
         return
 
     # ----------------------------------------------
@@ -480,7 +593,9 @@ def main():
 
     for k, v in WANTED.items():
 
-        print(f"{v}: {found.get(k, 0)} adet")
+        print(
+            f"{v}: {found.get(k, 0)} adet"
+        )
 
     print("----------------------------------------")
 
@@ -506,7 +621,6 @@ def main():
                 f.read().splitlines()
             )
 
-        # BOŞ BAŞLIK DURUMUNDA M3U BAŞLIĞI EKLE
         if not old_header:
             old_header = ["#EXTM3U"]
 
@@ -522,6 +636,7 @@ def main():
 
             else:
 
+                # DİĞER GRUPLARA DOKUNMA
                 old_entries.append(e)
 
     print(
@@ -564,6 +679,9 @@ def main():
             get_stream(entry)
         )
 
+        if not stream:
+            continue
+
         if stream not in seen_urls:
 
             seen_urls.add(stream)
@@ -579,11 +697,9 @@ def main():
     final_lines = []
 
     for e in old_entries:
-
         final_lines.extend(e)
 
     for e in added:
-
         final_lines.extend(e)
 
     # ----------------------------------------------
@@ -599,8 +715,15 @@ def main():
 
     except Exception as e:
 
-        print("[HATA] Dosya kaydedilemedi:", e)
-        print("[KORUMA] Ana liste değiştirilmedi.")
+        print(
+            "[HATA] Dosya kaydedilemedi:",
+            e
+        )
+
+        print(
+            "[KORUMA] Ana liste değiştirilmedi."
+        )
+
         return
 
     # ----------------------------------------------
@@ -612,17 +735,33 @@ def main():
     print("       POWER SINEMA GÜNCELLENDİ")
     print("=" * 55)
 
-    print(f"Korunan eski kayıt: {len(old_entries)}")
-    print(f"Eski film kaydı dönüştürüldü: {migrated}")
-    print(f"Yeni eklenen film: {len(added)}")
-    print(f"Filtrelenen / atlanan: {filtered}")
-    print(f"Toplam kanal: {len(old_entries) + len(added)}")
+    print(
+        f"Korunan eski kayıt: {len(old_entries)}"
+    )
+
+    print(
+        f"Eski film kaydı dönüştürüldü: {migrated}"
+    )
+
+    print(
+        f"Yeni eklenen film: {len(added)}"
+    )
+
+    print(
+        f"Filtrelenen / atlanan: {filtered}"
+    )
+
+    print(
+        f"Toplam kanal: {len(old_entries) + len(added)}"
+    )
 
     print("----------------------------------------")
 
     print("EPG BAŞLIKLARI: KORUNDU")
     print("DİĞER GRUPLAR: KORUNDU")
     print("TEKRAR EDEN URL: ENGELLENDİ")
+    print("FİLM ADI SONU: ⭕")
+    print("FİLM GRUBU SONU: ⭕")
     print("ANA DOSYA:", OUTPUT_M3U)
 
     print("=" * 55)
