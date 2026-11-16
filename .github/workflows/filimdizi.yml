@@ -52,22 +52,22 @@ jobs:
       - name: 4 - FİLİM
         continue-on-error: true
         timeout-minutes: 10
-        run: python gfilim.py || echo "gfilim failed"
+        run: python gfilim.p || echo "gfilim failed"
            
       - name: 5 - GÜNCEL DİZİLER 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python gunceldiziler.py || echo "gunceldiziler failed"
+        run: python gunceldiziler.p || echo "gunceldiziler failed"
       
       - name: 6 - 7/24 DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python 724.py || echo "724 failed"
+        run: python 724.p || echo "724 failed"
            
       - name: 7 - DİZİLER YAML
         continue-on-error: true
         timeout-minutes: 10
-        run: python sdiziler.py || echo "sdiziler failed"
+        run: python sdiziler.p || echo "sdiziler failed"
  
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
