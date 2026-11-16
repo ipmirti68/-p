@@ -54,12 +54,10 @@ jobs:
         continue-on-error: true
         run: python bein1.py || echo "bein1 failed"
 
- 
       - name: 4 - KADİRSENTVR24
         continue-on-error: true
         run: python allbein.py || echo "allbein  failed"
       
-
       - name: 5- RÜZGAR 
         continue-on-error: true
         run: python bein2.py || echo "dein failed"
