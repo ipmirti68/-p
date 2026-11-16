@@ -47,31 +47,31 @@ jobs:
        
       - name: 2 - SERİDİZİ
         continue-on-error: true
-        run: python seridizi.py || echo "seridizi failed"
+        run: python seridizi.p || echo "seridizi failed"
       
       - name: 3 - PRİSON
         continue-on-error: true
-        run: python dprison.py || echo "prison.py failed"
+        run: python dprison.p || echo "prison.py failed"
         
       - name: 4 - FİLİM
         continue-on-error: true
         timeout-minutes: 10
-        run: python gfilim.py || echo "gfilim failed"
+        run: python gfilim.p || echo "gfilim failed"
            
       - name: 5 - GÜNCEL DİZİLER 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python gunceldiziler.py || echo "gunceldiziler failed"
+        run: python gunceldiziler.p || echo "gunceldiziler failed"
       
       - name: 6 - 7/24 DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python 724.py || echo "724 failed"
+        run: python 724.p || echo "724 failed"
            
       - name: 7 - DİZİLER YAML
         continue-on-error: true
         timeout-minutes: 10
-        run: python sdiziler.py || echo "sdiziler failed"
+        run: python sdiziler.p || echo "sdiziler failed"
  
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
