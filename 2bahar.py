@@ -1,192 +1,63 @@
 
-import os
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import re
-import json
-import tempfile
-from urllib.parse import urlparse
+from yt_dlp import YoutubeDL
 
-# ==========================================
-# AYARLAR
-# ==========================================
+VIDEO_URL = "https://www.youtube.com/watch?v=3o_K_m9IXCg"
+OUTPUT_FILE = "ikinci_bahar_test.m3u"
 
-JSON_DOSYASI = "ikinci_bahar_kaynaklar.json"
-CIKTI_DOSYASI = "ikinci_bahar.m3u"
+print("=" * 45)
+print("MIRTI68 - İKİNCİ BAHAR HLS TESTİ")
+print("=" * 45)
 
-GROUP = "🎬 İKİNCİ BAHAR"
+ydl_opts = {
+    "quiet": True,
+    "no_warnings": True,
+    "skip_download": True,
+}
 
-# ==========================================
-# ADRES KONTROLÜ
-# ==========================================
+try:
+    with YoutubeDL(ydl_opts) as ydl:
+        info = ydl.extract_info(VIDEO_URL, download=False)
 
-def adres_kontrol(adres):
-    if not isinstance(adres, str) or not adres.strip():
-        return False, "Adres boş"
+    formats = info.get("formats", [])
+    hls_urls = []
 
-    adres = adres.strip()
+    for fmt in formats:
+        url = fmt.get("url", "")
+        protocol = fmt.get("protocol", "")
 
-    if "BURAYA_" in adres.upper():
-        return False, "Örnek adres henüz gerçek adresle değiştirilmemiş"
+        if (
+            url.startswith("http")
+            and (
+                "m3u8" in protocol.lower()
+                or ".m3u8" in url.lower()
+            )
+        ):
+            hls_urls.append(url)
 
-    try:
-        parsed = urlparse(adres)
+    if not hls_urls:
+        print("HLS / M3U8 adresi bulunamadı.")
+        print("YouTube bu video için doğrudan HLS sunmuyor olabilir.")
+    else:
+        # En son bulunan HLS adresini test listesine yaz.
+        stream_url = hls_urls[-1]
 
-        if parsed.scheme not in ("http", "https"):
-            return False, "HTTP/HTTPS adresi değil"
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n")
+            f.write(
+                '#EXTINF:-1 group-title="🎬 İKİNCİ BAHAR",'
+                'İkinci Bahar 36. Bölüm\n'
+            )
+            f.write(stream_url + "\n")
 
-        if not parsed.netloc:
-            return False, "Adresin sunucu bölümü eksik"
+        print("M3U8 bulundu!")
+        print("Bulunan HLS adresi:", len(hls_urls))
+        print("Dosya oluşturuldu:", OUTPUT_FILE)
+        print("Not: Bağlantı geçici olabilir.")
 
-        if not parsed.path.lower().endswith(".m3u8"):
-            return False, "Adres doğrudan M3U8 uzantılı değil"
-
-        return True, "Geçerli adres biçimi"
-
-    except Exception as hata:
-        return False, f"Adres kontrol hatası: {hata}"
-
-
-# ==========================================
-# JSON OKU
-# ==========================================
-
-def kaynaklari_oku():
-    if not os.path.exists(JSON_DOSYASI):
-        print(f"❌ Kaynak dosyası bulunamadı: {JSON_DOSYASI}")
-        return []
-
-    try:
-        with open(JSON_DOSYASI, "r", encoding="utf-8") as dosya:
-            veri = json.load(dosya)
-
-        bolumler = veri.get("episodes", [])
-
-        if not isinstance(bolumler, list):
-            print("❌ JSON içindeki episodes alanı liste değil.")
-            return []
-
-        return bolumler
-
-    except json.JSONDecodeError as hata:
-        print(f"❌ JSON format hatası: {hata}")
-        return []
-
-    except Exception as hata:
-        print(f"❌ Dosya okuma hatası: {hata}")
-        return []
-
-
-# ==========================================
-# M3U OLUŞTUR
-# ==========================================
-
-def m3u_olustur():
-    print("=" * 45)
-    print("       İKİNCİ BAHAR M3U GÜNCELLEME")
-    print("=" * 45)
-
-    bolumler = kaynaklari_oku()
-
-    if not bolumler:
-        print("❌ Kaynak listesinde bölüm bulunamadı.")
-        print("⚠️ Eski M3U dosyası korundu.")
-        return
-
-    gecerli = {}
-    hatali = 0
-
-    for kayit in bolumler:
-        if not isinstance(kayit, dict):
-            print("❌ Hatalı kayıt: Bölüm bilgisi nesne değil.")
-            hatali += 1
-            continue
-
-        numara = kayit.get("episode")
-        adres = kayit.get("url", "")
-
-        try:
-            numara = int(numara)
-            if numara < 1:
-                raise ValueError
-        except (ValueError, TypeError):
-            print(f"❌ Geçersiz bölüm numarası: {numara}")
-            hatali += 1
-            continue
-
-        uygun, aciklama = adres_kontrol(adres)
-
-        if not uygun:
-            print(f"❌ {numara}. bölüm: {aciklama}")
-            hatali += 1
-            continue
-
-        if numara in gecerli:
-            print(f"⚠️ {numara}. bölüm: Tekrarlanan kayıt, atlandı.")
-            continue
-
-        gecerli[numara] = adres.strip()
-        print(f"✅ {numara}. bölüm: Adres biçimi uygun")
-
-    if not gecerli:
-        print("-" * 45)
-        print("❌ Geçerli M3U8 adresi bulunamadı.")
-        print("⚠️ Eski M3U dosyası silinmedi veya değiştirilmedi.")
-        return
-
-    # ======================================
-    # M3U SATIRLARINI HAZIRLA
-    # ======================================
-
-    satirlar = ["#EXTM3U"]
-
-    for numara in sorted(gecerli):
-        satirlar.append(
-            f'#EXTINF:-1 group-title="{GROUP}",'
-            f'İKİNCİ BAHAR S01 E{numara:02d}'
-        )
-        satirlar.append(gecerli[numara])
-
-    icerik = "\n".join(satirlar) + "\n"
-
-    # ======================================
-    # GÜVENLİ DOSYA YAZIMI
-    # ======================================
-
-    hedef = os.path.abspath(CIKTI_DOSYASI)
-    klasor = os.path.dirname(hedef)
-
-    gecici_yol = None
-
-    try:
-        with tempfile.NamedTemporaryFile(
-            mode="w",
-            encoding="utf-8",
-            newline="\n",
-            dir=klasor,
-            suffix=".tmp",
-            delete=False
-        ) as gecici:
-            gecici.write(icerik)
-            gecici_yol = gecici.name
-
-        os.replace(gecici_yol, hedef)
-
-        print("-" * 45)
-        print(f"✅ M3U başarıyla güncellendi: {CIKTI_DOSYASI}")
-        print(f"📺 Geçerli bölüm: {len(gecerli)}")
-        print(f"⚠️ Hatalı kayıt: {hatali}")
-
-    except Exception as hata:
-        print(f"❌ M3U yazma hatası: {hata}")
-
-        if gecici_yol and os.path.exists(gecici_yol):
-            os.remove(gecici_yol)
-
-        print("⚠️ Eski M3U dosyası korunmaya çalışıldı.")
-
-
-# ==========================================
-# BAŞLAT
-# ==========================================
-
-if __name__ == "__main__":
-    m3u_olustur()
+except Exception as e:
+    print("TEST HATASI:", str(e))
+    
