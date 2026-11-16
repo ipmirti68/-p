@@ -69,6 +69,11 @@ jobs:
         timeout-minutes: 10
         run: python sdiziler.py || echo "sdiziler failed"
 
+      - name: 6 - 7/24 YOUTUBE DİZİ 2026
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python 724y.py || echo "724y failed"
+           
   
  
       # DOSYALARI KAYDET
