@@ -68,6 +68,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python sdiziler.p || echo "sdiziler failed"
+
+      - name: 8 - EŞREF RÜYA
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python esref.py || echo "esref failed"
  
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
