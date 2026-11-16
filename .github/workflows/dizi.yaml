@@ -35,39 +35,31 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
-      - name: 2 - MAHSUN
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python mahsun.py || echo "mahsun failed"
-      - name: 3 - GOLLER
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python lig.py || echo "lig failed"
-      - name: 4 - FİLİM
+      - name: 2 - FİLİM
         continue-on-error: true
         timeout-minutes: 10
         run: python gfilim.py || echo "gfilim failed"
-      - name: 5 - ULUSAL
+      - name: 3 - ULUSAL
         continue-on-error: true
         timeout-minutes: 10
         run: python link.py || echo "link failed"
-      - name: 6 - GÜNCEL DİZİLER 2026
+      - name: 4 - GÜNCEL DİZİLER 2026
         continue-on-error: true
         timeout-minutes: 10
         run: python gunceldiziler.py || echo "gunceldiziler failed"
-      - name: 7 - 7/24 DİZİ 2026
+      - name: 5 - 7/24 DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
         run: python 724.py || echo "724 failed"
-      - name: 8 - ULUSAL
+      - name: 6 - ULUSAL
         continue-on-error: true
         timeout-minutes: 10
         run: python ulusal.py || echo "ulusal failed"
-      - name: 9 - ULUSAL1
+      - name: 7 - ULUSAL1
         continue-on-error: true
         timeout-minutes: 10
         run: python ulusal1.py || echo "ulusal2 failed"
-      - name: 10 - DİZİLER YAML
+      - name: 8 - DİZİLER YAML
         continue-on-error: true
         timeout-minutes: 10
         run: python sdiziler.py || echo "sdiziler failed"
