@@ -11,7 +11,7 @@ from playwright.async_api import async_playwright
 # ==========================================
 
 BASE = "https://www.kanald.com.tr"
-LIST_URL = BASE + "/kinali-kar"
+LIST_URL = BASE + "/kinali-kar/bolumler"
 OUTPUT = "kinali_kar.m3u"
 
 GROUP = "🟪◆ KINALI KAR ⭕"
@@ -22,7 +22,6 @@ HEADERS = {
         "AppleWebKit/537.36 Chrome/120 Safari/537.36"
     )
 }
-
 
 # ==========================================
 # BÖLÜM NUMARASI
@@ -35,17 +34,17 @@ def bolum_numarasi(text, href=""):
     if "ilk bölüm" in text or "ilk-bolum" in href:
         return 1
 
-    m = re.search(r"(\d+)\s*\.?\s*bölüm", text)
-    if m:
-        return int(m.group(1))
+    kaliplar = [
+        r"(\d+)\s*\.?\s*bölüm",
+        r"kinali-kar-(\d+)-bolum",
+        r"/(\d+)-bolum"
+    ]
 
-    m = re.search(r"kinali-kar-(\d+)-bolum", href)
-    if m:
-        return int(m.group(1))
+    for kalip in kaliplar:
+        m = re.search(kalip, text + " " + href)
 
-    m = re.search(r"/(\d+)-bolum", href)
-    if m:
-        return int(m.group(1))
+        if m:
+            return int(m.group(1))
 
     return None
 
@@ -62,40 +61,58 @@ def bolumleri_bul():
 
     print("KINALI KAR BÖLÜMLERİ TARANIYOR")
 
-    try:
-        r = session.get(LIST_URL, timeout=30)
-        r.raise_for_status()
+    # Üç arşiv sayfasını tara
+    sayfalar = [
+        LIST_URL,
+        LIST_URL + "?page=2",
+        LIST_URL + "?page=3"
+    ]
 
-        soup = BeautifulSoup(r.text, "html.parser")
+    for sayfa in sayfalar:
+        print("\nArşiv:", sayfa)
 
-        for a in soup.select("a[href]"):
-            href = a.get("href", "")
-            baslik = " ".join(a.get_text(" ", strip=True).split())
+        try:
+            r = session.get(sayfa, timeout=40)
+            r.raise_for_status()
 
-            if "/kinali-kar/bolumler/" not in href:
-                continue
+            soup = BeautifulSoup(r.text, "html.parser")
 
-            no = bolum_numarasi(baslik, href)
+            for a in soup.select("a[href]"):
+                href = a.get("href", "").strip()
 
-            if no is None:
-                continue
+                if "/kinali-kar/bolumler/" not in href:
+                    continue
 
-            tam_url = urljoin(BASE, href)
-            bulunan[no] = tam_url
+                baslik = " ".join(
+                    a.get_text(" ", strip=True).split()
+                )
 
-            print(f"{no}. bölüm bulundu: {tam_url}")
+                no = bolum_numarasi(baslik, href)
 
-        # İlk bölüm bağlantısını ayrıca garanti et
-        ilk_bolum = BASE + "/kinali-kar/bolumler/ilk-bolum"
+                if no is None:
+                    continue
 
-        if 1 not in bulunan:
-            bulunan[1] = ilk_bolum
-            print("İlk bölüm bağlantısı eklendi.")
+                tam_url = urljoin(BASE, href)
 
-    except Exception as e:
-        print("Bölüm listesi alınamadı:", e)
+                bulunan[no] = tam_url
 
-    return dict(sorted(bulunan.items()))
+                print(f"{no}. bölüm bulundu: {tam_url}")
+
+        except Exception as e:
+            print("Arşiv sayfası hatası:", e)
+
+    # İlk bölüm kontrolü
+    if 1 not in bulunan:
+        bulunan[1] = BASE + "/kinali-kar/bolumler/ilk-bolum"
+
+    bulunan = dict(sorted(bulunan.items()))
+
+    print("\n================================")
+    print("TOPLAM BULUNAN BÖLÜM:", len(bulunan))
+    print("BÖLÜM NUMARALARI:", list(bulunan.keys()))
+    print("================================")
+
+    return bulunan
 
 
 # ==========================================
@@ -116,7 +133,7 @@ async def m3u8_yakala(page_url, browser):
         if ".m3u8" in adres.lower():
             if adres not in yakalanan:
                 yakalanan.append(adres)
-                print("M3U8 isteği:", adres)
+                print("M3U8 isteği yakalandı.")
 
     page.on("request", istek_yakala)
 
@@ -129,7 +146,6 @@ async def m3u8_yakala(page_url, browser):
 
         await page.wait_for_timeout(12000)
 
-        # Normal oynatma düğmesini dene
         for selector in [
             "button[aria-label*='Oynat']",
             "button[aria-label*='Play']",
@@ -148,7 +164,7 @@ async def m3u8_yakala(page_url, browser):
                 pass
 
     except Exception as e:
-        print("Oynatıcı sayfası hatası:", e)
+        print("Oynatıcı hatası:", e)
 
     finally:
         await context.close()
@@ -179,8 +195,8 @@ def m3u_olustur(sonuc):
 
     print("\n================================")
     print("M3U DOSYASI OLUŞTURULDU")
-    print("Dosya:", OUTPUT)
-    print("Bulunan yayın:", len(sonuc))
+    print("DOSYA:", OUTPUT)
+    print("YAYIN SAYISI:", len(sonuc))
     print("================================")
 
 
@@ -195,32 +211,36 @@ async def main():
         print("Bölüm bulunamadı.")
         return
 
-    print("\nToplam bölüm:", len(bolumler))
-
     sonuc = {}
+    basarisiz = []
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
 
-        for no, url in bolumler.items():
+        try:
+            for no, url in bolumler.items():
 
-            print(f"\n{no}. BÖLÜM AÇILIYOR")
+                print(f"\n{no}. BÖLÜM AÇILIYOR")
 
-            adresler = await m3u8_yakala(url, browser)
+                adresler = await m3u8_yakala(url, browser)
 
-            if adresler:
-                sonuc[no] = adresler[0]
-                print("Yayın adresi bulundu.")
-            else:
-                print("Açık M3U8 isteği bulunamadı.")
+                if adresler:
+                    sonuc[no] = adresler[0]
+                    print("Yayın adresi bulundu.")
+                else:
+                    basarisiz.append(no)
+                    print("Yayın adresi bulunamadı.")
 
-        await browser.close()
+        finally:
+            await browser.close()
 
-    if not sonuc:
-        print("\nM3U8 adresi bulunamadı.")
-        return
+    if sonuc:
+        m3u_olustur(sonuc)
+    else:
+        print("Hiçbir yayın adresi bulunamadı.")
 
-    m3u_olustur(sonuc)
+    print("\nBULUNAMAYAN BÖLÜMLER:", basarisiz)
+    print("TARAMA TAMAMLANDI.")
 
 
 if __name__ == "__main__":
