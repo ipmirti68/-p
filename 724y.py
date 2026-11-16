@@ -6,7 +6,7 @@ from pathlib import Path
 
 SOURCE_URL = "https://raw.githubusercontent.com/umitm0d/-mittube/refs/heads/main/Umittube/umittube.m3u"
 
-OUTPUT_FILE = "mirti68.m3u"
+OUTPUT_FILE = "mirti.m3u"
 GROUP = "🟪◆ 7/24 DİZİ ⭕"
 
 KANALLAR = [
