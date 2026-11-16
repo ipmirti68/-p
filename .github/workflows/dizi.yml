@@ -48,6 +48,10 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python hayat.py || echo "hayat failed"
+      - name: 9 -SÜPER BABA
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python sbaba.py || echo "sbaba failed"
         
       - name: Dosyaları kaydet
         if: always()
