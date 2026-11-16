@@ -1,130 +1,105 @@
 
-import re
-import subprocess
 import json
 import os
+import re
 
 # ==========================================
 # AYARLAR
 # ==========================================
 
-KANAL_URL = "https://www.youtube.com/@%C4%B0kincibahardizi/videos"
+KAYNAK_DOSYASI = "ikinci_bahar_kaynaklar.json"
 CIKTI_DOSYASI = "ikinci_bahar.m3u"
 
-GRUP = "🎬 İKİNCİ BAHAR"
-KANAL_ADI = "İKİNCİ BAHAR"
+GROUP = "🎬 İKİNCİ BAHAR"
 
 # ==========================================
-# YOUTUBE VİDEOLARINI TARA
+# BÖLÜMLERİ OKU
 # ==========================================
 
-def videolari_getir():
-    print("YouTube videoları taranıyor...")
+def bolumleri_oku():
 
-    komut = [
-        "yt-dlp",
-        "--flat-playlist",
-        "--dump-single-json",
-        "--no-warnings",
-        KANAL_URL
-    ]
-
-    sonuc = subprocess.run(
-        komut,
-        capture_output=True,
-        text=True,
-        encoding="utf-8"
-    )
-
-    if sonuc.returncode != 0:
-        print("Hata:", sonuc.stderr)
+    if not os.path.exists(KAYNAK_DOSYASI):
+        print("Kaynak dosyası bulunamadı:", KAYNAK_DOSYASI)
         return []
 
     try:
-        veri = json.loads(sonuc.stdout)
-        return veri.get("entries", [])
+        with open(KAYNAK_DOSYASI, "r", encoding="utf-8") as f:
+            veriler = json.load(f)
+
+        return veriler.get("episodes", [])
+
     except Exception as hata:
         print("JSON okuma hatası:", hata)
         return []
 
-# ==========================================
-# BÖLÜM NUMARASINI BUL
-# ==========================================
-
-def bolum_numarasi(baslik):
-    kaliplar = [
-        r'(\d+)\s*\.?\s*bölüm',
-        r'bölüm\s*(\d+)',
-        r'episode\s*(\d+)',
-        r'ep\s*(\d+)'
-    ]
-
-    for kalip in kaliplar:
-        eslesme = re.search(kalip, baslik, re.IGNORECASE)
-        if eslesme:
-            return int(eslesme.group(1))
-
-    return None
 
 # ==========================================
 # M3U OLUŞTUR
 # ==========================================
 
-def m3u_olustur(videolar):
-    liste = []
+def m3u_olustur(bolumler):
 
-    for video in videolar:
-        video_id = video.get("id")
-        baslik = video.get("title", "")
+    liste = {}
 
-        if not video_id:
-            continue
+    for bolum in bolumler:
 
-        numara = bolum_numarasi(baslik)
+        try:
+            numara = int(bolum.get("episode", 0))
+            adres = str(bolum.get("url", "")).strip()
 
-        if numara is None:
-            continue
+            if numara < 1:
+                continue
 
-        url = "https://www.youtube.com/watch?v=" + video_id
+            if not adres.startswith(("https://", "http://")):
+                print(f"{numara}. bölüm: Geçersiz adres")
+                continue
 
-        liste.append({
-            "numara": numara,
-            "url": url
-        })
+            if not re.search(r"\.m3u8(?:$|[?#])", adres, re.I):
+                print(f"{numara}. bölüm: Doğrudan M3U8 adresi değil")
+                continue
 
-    # Bölüm numarasına göre sırala
-    liste.sort(key=lambda x: x["numara"])
+            liste[numara] = adres
 
-    # Aynı bölüm numaralarını tekrarlama
-    benzersiz = {}
-    for video in liste:
-        benzersiz[video["numara"]] = video["url"]
+        except Exception as hata:
+            print("Bölüm hatası:", hata)
 
-    with open(CIKTI_DOSYASI, "w", encoding="utf-8") as dosya:
-        dosya.write("#EXTM3U\n")
+    if not liste:
+        print("Geçerli HLS yayını bulunamadı.")
+        return False
 
-        for numara in sorted(benzersiz):
-            isim = f"{KANAL_ADI} S01 E{numara:02d}"
+    with open(CIKTI_DOSYASI, "w", encoding="utf-8") as f:
 
-            dosya.write(
-                f'#EXTINF:-1 group-title="{GRUP}",{isim}\n'
+        f.write("#EXTM3U\n")
+
+        for no, adres in sorted(liste.items()):
+
+            isim = f"İKİNCİ BAHAR S01 E{no:02d}"
+
+            f.write(
+                f'#EXTINF:-1 group-title="{GROUP}",{isim}\n'
             )
-            dosya.write(benzersiz[numara] + "\n")
 
-    print("--------------------------------")
-    print("M3U DOSYASI OLUŞTURULDU")
+            f.write(adres + "\n")
+
+    print("\n================================")
+    print("İKİNCİ BAHAR GÜNCELLENDİ")
     print("Dosya:", CIKTI_DOSYASI)
-    print("Bulunan bölüm:", len(benzersiz))
-    print("--------------------------------")
+    print("Bölüm sayısı:", len(liste))
+    print("Bölümler:", sorted(liste.keys()))
+    print("================================")
+
+    return True
+
 
 # ==========================================
-# PROGRAM
+# ANA PROGRAM
 # ==========================================
 
 if __name__ == "__main__":
-    videolar = videolari_getir()
 
-    if videolar:
-        m3u_olustur(videolar)
+    bolumler = bolumleri_oku()
+
+    if bolumler:
+        m3u_olustur(bolumler)
     else:
-        print("Video bulunamadı veya kanal taranamadı.")
+        print("Bölüm kaynağı boş.")
