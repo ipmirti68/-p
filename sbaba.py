@@ -1,9 +1,10 @@
 
 import asyncio
 import re
+import os
 import requests
 
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
@@ -18,12 +19,8 @@ OUTPUT = "super_baba.m3u"
 GROUP = "🟪◆ SÜPER BABA"
 
 TOPLAM_BOLUM = 137
-
-# Aynı anda açılacak bölüm sayısı
 ES_ZAMANLI = 6
-
-# Sayfa açılma zaman aşımı
-SAYFA_TIMEOUT = 15000
+SAYFA_TIMEOUT = 20000
 
 HEADERS = {
     "User-Agent": (
@@ -39,9 +36,7 @@ HEADERS = {
 
 def bolumleri_bul():
 
-    bulunan = {
-        1: BASE + "/super-baba/1-bolum/izle"
-    }
+    bulunan = {}
 
     session = requests.Session()
     session.headers.update(HEADERS)
@@ -52,12 +47,16 @@ def bolumleri_bul():
 
     for sayfa in range(1, 21):
 
-        url = f"{LIST_URL}?page={sayfa}"
+        url = (
+            LIST_URL
+            if sayfa == 1
+            else f"{LIST_URL}?page={sayfa}"
+        )
 
         print(f"\nListe sayfası: {sayfa}")
 
         try:
-            cevap = session.get(url, timeout=20)
+            cevap = session.get(url, timeout=25)
             cevap.raise_for_status()
 
             soup = BeautifulSoup(
@@ -69,10 +68,10 @@ def bolumleri_bul():
 
             for a in soup.select("a[href]"):
 
-                href = a.get("href", "")
+                href = a.get("href", "").strip()
 
                 match = re.search(
-                    r"/super-baba/(\d+)-bolum/izle",
+                    r"/super-baba/(\d+)-bolum/izle(?:[/?#]|$)",
                     href,
                     re.I
                 )
@@ -87,11 +86,20 @@ def bolumleri_bul():
 
                 tam_url = urljoin(BASE, href)
 
+                # Yalnızca ATV alan adındaki bağlantıları kabul et
+                parsed = urlparse(tam_url)
+
+                if parsed.netloc.lower() not in (
+                    "www.atv.com.tr",
+                    "atv.com.tr"
+                ):
+                    continue
+
                 if no not in bulunan:
                     bulunan[no] = tam_url
                     yeni += 1
 
-                    print(f"{no}. bölüm bulundu")
+                    print(f"{no}. bölüm bulundu: {tam_url}")
 
             print("Yeni bulunan:", yeni)
 
@@ -100,32 +108,28 @@ def bolumleri_bul():
             else:
                 bos_sayfa = 0
 
-            # Üç ardışık boş sayfada taramayı bitir
             if bos_sayfa >= 3:
-                print("Ardışık boş sayfalar nedeniyle liste taraması durdu.")
+                print(
+                    "Üç ardışık boş sayfa nedeniyle "
+                    "liste taraması durduruldu."
+                )
                 break
 
         except Exception as e:
             print("Liste hatası:", str(e)[:180])
 
-    # Arşivde görünmeyen numaralar için standart adresler
-    # oluşturulur; gerçekten var olup olmadıkları kontrol edilir.
-    for no in range(1, TOPLAM_BOLUM + 1):
-
-        if no not in bulunan:
-            bulunan[no] = (
-                f"{BASE}/super-baba/{no}-bolum/izle"
-            )
-
     bulunan = dict(sorted(bulunan.items()))
 
-    print("\nToplam kontrol edilecek bölüm:", len(bulunan))
+    print("\n================================")
+    print("GERÇEK BULUNAN BÖLÜM:", len(bulunan))
+    print("BÖLÜM NUMARALARI:", list(bulunan.keys()))
+    print("================================")
 
     return bulunan
 
 
 # ==========================================
-# TEK BÖLÜMDE M3U8 YAKALA
+# TEK BÖLÜMDE YAYIN ADRESİ KONTROLÜ
 # ==========================================
 
 async def m3u8_yakala(page_url, context, no):
@@ -141,6 +145,7 @@ async def m3u8_yakala(page_url, context, no):
 
             if adres not in yakalanan:
                 yakalanan.append(adres)
+                print(f"{no}. bölüm: HLS isteği görüldü.")
 
     page.on("request", istek_yakala)
 
@@ -156,8 +161,7 @@ async def m3u8_yakala(page_url, context, no):
             print(f"{no}. bölüm HTTP: {response.status}")
             return []
 
-        # Oynatıcıya kısa yüklenme süresi
-        await page.wait_for_timeout(2500)
+        await page.wait_for_timeout(3000)
 
         selectors = [
             "button[aria-label*='Oynat']",
@@ -175,20 +179,18 @@ async def m3u8_yakala(page_url, context, no):
 
                 if await button.is_visible(timeout=700):
 
-                    await button.click(timeout=1500)
-
+                    await button.click(timeout=2000)
                     await page.wait_for_timeout(3000)
 
                     break
 
             except Exception:
-                pass
+                continue
 
         if yakalanan:
             return yakalanan
 
-        # Oynatıcıdan son istekleri bekle
-        await page.wait_for_timeout(1500)
+        await page.wait_for_timeout(2000)
 
         return yakalanan
 
@@ -232,7 +234,6 @@ def m3u_olustur(sonuc):
 
             f.write(adres.strip() + "\n")
 
-    import os
     os.replace(gecici, OUTPUT)
 
     print("\n================================")
@@ -254,6 +255,11 @@ async def main():
 
     bolumler = bolumleri_bul()
 
+    if not bolumler:
+        print("Arşivden gerçek bölüm bağlantısı alınamadı.")
+        print("Eski M3U korunuyor.")
+        return
+
     sonuc = {}
     basarisiz = []
 
@@ -273,27 +279,25 @@ async def main():
 
             async with semaphore:
 
-                print(
-                    f"\n{no}. bölüm kontrol ediliyor"
-                )
+                print(f"\n{no}. bölüm kontrol ediliyor")
 
-                adresler = await m3u8_yakala(
-                    url,
-                    context,
-                    no
-                )
+                try:
+                    adresler = await m3u8_yakala(
+                        url,
+                        context,
+                        no
+                    )
 
-                if adresler:
+                    if adresler:
+                        sonuc[no] = adresler[0]
+                        print(f"{no}. bölüm: Yayın bulundu.")
+                    else:
+                        basarisiz.append(no)
+                        print(f"{no}. bölüm: Yayın bulunamadı.")
 
-                    sonuc[no] = adresler[0]
-
-                    print(f"{no}. bölüm: Yayın bulundu.")
-
-                else:
-
+                except Exception as e:
                     basarisiz.append(no)
-
-                    print(f"{no}. bölüm: Yayın bulunamadı.")
+                    print(f"{no}. bölüm görev hatası: {e}")
 
         try:
 
@@ -309,17 +313,20 @@ async def main():
             await context.close()
             await browser.close()
 
-    # Sonuçları kaydet
+    # ======================================
+    # SONUÇ
+    # ======================================
+
     m3u_olustur(sonuc)
 
     print("\n================================")
     print("TARAMA TAMAMLANDI")
+    print("Arşivden bulunan:", len(bolumler))
     print("Başarılı:", len(sonuc))
     print("Başarısız:", len(basarisiz))
-    print("Başarısız bölüm numaraları:", sorted(basarisiz))
+    print("Başarısız bölümler:", sorted(basarisiz))
     print("================================")
 
 
 if __name__ == "__main__":
-
     asyncio.run(main())
