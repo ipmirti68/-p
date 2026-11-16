@@ -57,10 +57,10 @@ jobs:
         timeout-minutes: 10
         run: python sbaba.py || echo "sbaba failed"
 
-      - name: 6 -İKİNCİ BAHAR
+      - name: 10 - İKİNCİ BAHAR
         continue-on-error: true
         timeout-minutes: 10
-        run: python 2bahar.py || echo "2 bahar failed"
+        run: python "2bahar.py"
         
       - name: Dosyaları kaydet
         if: always()
