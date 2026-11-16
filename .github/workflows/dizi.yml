@@ -68,7 +68,7 @@ jobs:
       - name: 2 - KINALI KAR
         continue-on-error: true
         timeout-minutes: 40
-        run: python kinali.p || echo "kinali failed"
+        run: python kinali.py || echo "kinali failed"
 
       # ==========================================
       # 3 - EŞREF RÜYA
@@ -77,7 +77,7 @@ jobs:
       - name: 3 - EŞREF RÜYA
         continue-on-error: true
         timeout-minutes: 30
-        run: python esref.p || echo "esref failed"
+        run: python esref.py || echo "esref failed"
 
       # ==========================================
       # 4 - YILAN HİKAYESİ
@@ -95,7 +95,7 @@ jobs:
       - name: 5 - HAYAT BİLGİSİ
         continue-on-error: true
         timeout-minutes: 30
-        run: python hayat.p || echo "hayat failed"
+        run: python hayat.py || echo "hayat failed"
 
       # ==========================================
       # 6 - SÜPER BABA
@@ -104,7 +104,7 @@ jobs:
       - name: 6 - SÜPER BABA
         continue-on-error: true
         timeout-minutes: 30
-        run: python sbaba.p || echo "sbaba failed"
+        run: python sbaba.py || echo "sbaba failed"
 
       # ==========================================
       # DOSYALARI KAYDET
