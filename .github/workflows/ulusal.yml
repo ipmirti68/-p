@@ -48,20 +48,7 @@ jobs:
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
           
-      - name: 2 - ULUSAL
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python link.py || echo "link failed"
-             
-      - name: 3 - ULUSAL
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python ulusal.py || echo "ulusal failed"
-      
-      - name: 4 - ULUSAL1
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python ulusal1.py || echo "ulusal1 failed"
+    
       
   
       # DOSYALARI KAYDET
