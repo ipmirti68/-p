@@ -39,4 +39,9 @@ series:
     group: "🟪◆ DİZİLER - YILAN HİKAYESİ ⭕"
     url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/yilan_hikayesi.m3u"
 
+    - name: "Kınalı Kar"
+    group: "🟪◆ DİZİLER - KINALI KAR ⭕"
+    url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/kinali_kar.m3u"
+    
+
 
