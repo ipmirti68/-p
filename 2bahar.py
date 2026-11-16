@@ -1,35 +1,77 @@
 
-import json
 import os
 import re
+import json
+import tempfile
+from urllib.parse import urlparse
 
 # ==========================================
 # AYARLAR
 # ==========================================
 
-KAYNAK_DOSYASI = "ikinci_bahar_kaynaklar.json"
+JSON_DOSYASI = "ikinci_bahar_kaynaklar.json"
 CIKTI_DOSYASI = "ikinci_bahar.m3u"
 
 GROUP = "🎬 İKİNCİ BAHAR"
 
 # ==========================================
-# BÖLÜMLERİ OKU
+# ADRES KONTROLÜ
 # ==========================================
 
-def bolumleri_oku():
+def adres_kontrol(adres):
+    if not isinstance(adres, str) or not adres.strip():
+        return False, "Adres boş"
 
-    if not os.path.exists(KAYNAK_DOSYASI):
-        print("Kaynak dosyası bulunamadı:", KAYNAK_DOSYASI)
+    adres = adres.strip()
+
+    if "BURAYA_" in adres.upper():
+        return False, "Örnek adres henüz gerçek adresle değiştirilmemiş"
+
+    try:
+        parsed = urlparse(adres)
+
+        if parsed.scheme not in ("http", "https"):
+            return False, "HTTP/HTTPS adresi değil"
+
+        if not parsed.netloc:
+            return False, "Adresin sunucu bölümü eksik"
+
+        if not parsed.path.lower().endswith(".m3u8"):
+            return False, "Adres doğrudan M3U8 uzantılı değil"
+
+        return True, "Geçerli adres biçimi"
+
+    except Exception as hata:
+        return False, f"Adres kontrol hatası: {hata}"
+
+
+# ==========================================
+# JSON OKU
+# ==========================================
+
+def kaynaklari_oku():
+    if not os.path.exists(JSON_DOSYASI):
+        print(f"❌ Kaynak dosyası bulunamadı: {JSON_DOSYASI}")
         return []
 
     try:
-        with open(KAYNAK_DOSYASI, "r", encoding="utf-8") as f:
-            veriler = json.load(f)
+        with open(JSON_DOSYASI, "r", encoding="utf-8") as dosya:
+            veri = json.load(dosya)
 
-        return veriler.get("episodes", [])
+        bolumler = veri.get("episodes", [])
+
+        if not isinstance(bolumler, list):
+            print("❌ JSON içindeki episodes alanı liste değil.")
+            return []
+
+        return bolumler
+
+    except json.JSONDecodeError as hata:
+        print(f"❌ JSON format hatası: {hata}")
+        return []
 
     except Exception as hata:
-        print("JSON okuma hatası:", hata)
+        print(f"❌ Dosya okuma hatası: {hata}")
         return []
 
 
@@ -37,69 +79,114 @@ def bolumleri_oku():
 # M3U OLUŞTUR
 # ==========================================
 
-def m3u_olustur(bolumler):
+def m3u_olustur():
+    print("=" * 45)
+    print("       İKİNCİ BAHAR M3U GÜNCELLEME")
+    print("=" * 45)
 
-    liste = {}
+    bolumler = kaynaklari_oku()
 
-    for bolum in bolumler:
+    if not bolumler:
+        print("❌ Kaynak listesinde bölüm bulunamadı.")
+        print("⚠️ Eski M3U dosyası korundu.")
+        return
+
+    gecerli = {}
+    hatali = 0
+
+    for kayit in bolumler:
+        if not isinstance(kayit, dict):
+            print("❌ Hatalı kayıt: Bölüm bilgisi nesne değil.")
+            hatali += 1
+            continue
+
+        numara = kayit.get("episode")
+        adres = kayit.get("url", "")
 
         try:
-            numara = int(bolum.get("episode", 0))
-            adres = str(bolum.get("url", "")).strip()
-
+            numara = int(numara)
             if numara < 1:
-                continue
+                raise ValueError
+        except (ValueError, TypeError):
+            print(f"❌ Geçersiz bölüm numarası: {numara}")
+            hatali += 1
+            continue
 
-            if not adres.startswith(("https://", "http://")):
-                print(f"{numara}. bölüm: Geçersiz adres")
-                continue
+        uygun, aciklama = adres_kontrol(adres)
 
-            if not re.search(r"\.m3u8(?:$|[?#])", adres, re.I):
-                print(f"{numara}. bölüm: Doğrudan M3U8 adresi değil")
-                continue
+        if not uygun:
+            print(f"❌ {numara}. bölüm: {aciklama}")
+            hatali += 1
+            continue
 
-            liste[numara] = adres
+        if numara in gecerli:
+            print(f"⚠️ {numara}. bölüm: Tekrarlanan kayıt, atlandı.")
+            continue
 
-        except Exception as hata:
-            print("Bölüm hatası:", hata)
+        gecerli[numara] = adres.strip()
+        print(f"✅ {numara}. bölüm: Adres biçimi uygun")
 
-    if not liste:
-        print("Geçerli HLS yayını bulunamadı.")
-        return False
+    if not gecerli:
+        print("-" * 45)
+        print("❌ Geçerli M3U8 adresi bulunamadı.")
+        print("⚠️ Eski M3U dosyası silinmedi veya değiştirilmedi.")
+        return
 
-    with open(CIKTI_DOSYASI, "w", encoding="utf-8") as f:
+    # ======================================
+    # M3U SATIRLARINI HAZIRLA
+    # ======================================
 
-        f.write("#EXTM3U\n")
+    satirlar = ["#EXTM3U"]
 
-        for no, adres in sorted(liste.items()):
+    for numara in sorted(gecerli):
+        satirlar.append(
+            f'#EXTINF:-1 group-title="{GROUP}",'
+            f'İKİNCİ BAHAR S01 E{numara:02d}'
+        )
+        satirlar.append(gecerli[numara])
 
-            isim = f"İKİNCİ BAHAR S01 E{no:02d}"
+    icerik = "\n".join(satirlar) + "\n"
 
-            f.write(
-                f'#EXTINF:-1 group-title="{GROUP}",{isim}\n'
-            )
+    # ======================================
+    # GÜVENLİ DOSYA YAZIMI
+    # ======================================
 
-            f.write(adres + "\n")
+    hedef = os.path.abspath(CIKTI_DOSYASI)
+    klasor = os.path.dirname(hedef)
 
-    print("\n================================")
-    print("İKİNCİ BAHAR GÜNCELLENDİ")
-    print("Dosya:", CIKTI_DOSYASI)
-    print("Bölüm sayısı:", len(liste))
-    print("Bölümler:", sorted(liste.keys()))
-    print("================================")
+    gecici_yol = None
 
-    return True
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            newline="\n",
+            dir=klasor,
+            suffix=".tmp",
+            delete=False
+        ) as gecici:
+            gecici.write(icerik)
+            gecici_yol = gecici.name
+
+        os.replace(gecici_yol, hedef)
+
+        print("-" * 45)
+        print(f"✅ M3U başarıyla güncellendi: {CIKTI_DOSYASI}")
+        print(f"📺 Geçerli bölüm: {len(gecerli)}")
+        print(f"⚠️ Hatalı kayıt: {hatali}")
+
+    except Exception as hata:
+        print(f"❌ M3U yazma hatası: {hata}")
+
+        if gecici_yol and os.path.exists(gecici_yol):
+            os.remove(gecici_yol)
+
+        print("⚠️ Eski M3U dosyası korunmaya çalışıldı.")
 
 
 # ==========================================
-# ANA PROGRAM
+# BAŞLAT
 # ==========================================
 
 if __name__ == "__main__":
-
-    bolumler = bolumleri_oku()
-
-    if bolumler:
-        m3u_olustur(bolumler)
-    else:
-        print("Bölüm kaynağı boş.")
+    m3u_olustur()
