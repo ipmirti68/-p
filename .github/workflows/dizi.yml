@@ -1,4 +1,4 @@
-name: GÜNCELLE  DİZİ
+name: GÜNCELLE  DİZİLER 
 
 on:
   workflow_dispatch:
@@ -35,27 +35,27 @@ jobs:
       - name: 1 -KINALI KAR
         continue-on-error: true
         timeout-minutes: 40
-        run: python kinali.py || echo "kinali failed"
+        run: python kinali.p || echo "kinali failed"
       
       - name: 2 - EŞREF RÜYA
         continue-on-error: true
         timeout-minutes: 30
-        run: python esref.py || echo "esref failed"
+        run: python esref.p || echo "esref failed"
       
       - name: 3 - YILAN HİKAYESİ
         continue-on-error: true
         timeout-minutes: 30
-        run: python yilan.py || echo "yilan failed"
+        run: python yilan.p || echo "yilan failed"
       
       - name: 4 -HAYAT BİLGİSİ
         continue-on-error: true
         timeout-minutes: 30
-        run: python hayat.py || echo "hayat failed"
+        run: python hayat.p || echo "hayat failed"
       
       - name: 5 -SÜPER BABA
         continue-on-error: true
         timeout-minutes: 30
-        run: python sbaba.py || echo "sbaba failed"
+        run: python sbaba.p || echo "sbaba failed"
 
       - name: 10 - İKİNCİ BAHAR
         continue-on-error: true
