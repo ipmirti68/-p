@@ -54,7 +54,7 @@ jobs:
       
       - name: 5 -SÜPER BABA
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 15
         run: python sbaba.py || echo "sbaba failed"
 
       - name: 10 - İKİNCİ BAHAR
