@@ -1,4 +1,4 @@
-name: GÜNCELLE KANAL DİZİ
+name: GÜNCELLE  DİZİ
 
 on:
   workflow_dispatch:
