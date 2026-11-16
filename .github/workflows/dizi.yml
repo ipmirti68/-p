@@ -86,7 +86,7 @@ jobs:
       - name: 4 - YILAN HİKAYESİ
         continue-on-error: true
         timeout-minutes: 30
-        run: python yilan.p || echo "yilan failed"
+        run: python yilan.py || echo "yilan failed"
 
       # ==========================================
       # 5 - HAYAT BİLGİSİ
