@@ -1,6 +1,7 @@
 
 import asyncio
 import re
+import os
 import requests
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
@@ -15,6 +16,10 @@ LIST_URL = BASE + "/kinali-kar/bolumler"
 OUTPUT = "kinali_kar.m3u"
 
 GROUP = "🟪◆ KINALI KAR ⭕"
+
+ES_ZAMANLI = 4
+SAYFA_TIMEOUT = 45000
+BEKLEME = 4000
 
 HEADERS = {
     "User-Agent": (
@@ -61,7 +66,6 @@ def bolumleri_bul():
 
     print("KINALI KAR BÖLÜMLERİ TARANIYOR")
 
-    # Üç arşiv sayfasını tara
     sayfalar = [
         LIST_URL,
         LIST_URL + "?page=2",
@@ -93,15 +97,11 @@ def bolumleri_bul():
                     continue
 
                 tam_url = urljoin(BASE, href)
-
                 bulunan[no] = tam_url
-
-                print(f"{no}. bölüm bulundu: {tam_url}")
 
         except Exception as e:
             print("Arşiv sayfası hatası:", e)
 
-    # İlk bölüm kontrolü
     if 1 not in bulunan:
         bulunan[1] = BASE + "/kinali-kar/bolumler/ilk-bolum"
 
@@ -116,60 +116,69 @@ def bolumleri_bul():
 
 
 # ==========================================
-# M3U8 YAKALA
+# YAYIN ADRESİ TARAMA
 # ==========================================
 
-async def m3u8_yakala(page_url, browser):
-    context = await browser.new_context(
-        user_agent=HEADERS["User-Agent"]
-    )
+async def m3u8_yakala(page_url, context, semaphore, no):
 
-    page = await context.new_page()
-    yakalanan = []
+    async with semaphore:
 
-    def istek_yakala(request):
-        adres = request.url
+        page = await context.new_page()
+        yakalanan = []
 
-        if ".m3u8" in adres.lower():
-            if adres not in yakalanan:
-                yakalanan.append(adres)
-                print("M3U8 isteği yakalandı.")
+        def istek_yakala(request):
+            adres = request.url.lower()
 
-    page.on("request", istek_yakala)
+            if ".m3u8" in adres:
+                if request.url not in yakalanan:
+                    yakalanan.append(request.url)
 
-    try:
-        await page.goto(
-            page_url,
-            wait_until="domcontentloaded",
-            timeout=60000
-        )
+        page.on("request", istek_yakala)
 
-        await page.wait_for_timeout(12000)
+        try:
+            print(f"{no}. BÖLÜM AÇILIYOR: {page_url}")
 
-        for selector in [
-            "button[aria-label*='Oynat']",
-            "button[aria-label*='Play']",
-            ".vjs-big-play-button",
-            ".jw-icon-play"
-        ]:
-            try:
-                button = page.locator(selector).first
+            await page.goto(
+                page_url,
+                wait_until="domcontentloaded",
+                timeout=SAYFA_TIMEOUT
+            )
 
-                if await button.is_visible(timeout=1500):
-                    await button.click(timeout=3000)
-                    await page.wait_for_timeout(8000)
-                    break
+            await page.wait_for_timeout(BEKLEME)
 
-            except Exception:
-                pass
+            # Oynatıcı düğmelerini kontrol et
+            selectors = [
+                "button[aria-label*='Oynat']",
+                "button[aria-label*='Play']",
+                ".vjs-big-play-button",
+                ".jw-icon-play"
+            ]
 
-    except Exception as e:
-        print("Oynatıcı hatası:", e)
+            for selector in selectors:
+                try:
+                    button = page.locator(selector).first
 
-    finally:
-        await context.close()
+                    if await button.is_visible(timeout=1000):
+                        await button.click(timeout=2500)
+                        await page.wait_for_timeout(3000)
+                        break
 
-    return yakalanan
+                except Exception:
+                    continue
+
+            if yakalanan:
+                print(f"{no}. BÖLÜM: Yayın isteği tespit edildi.")
+                return no, yakalanan[0]
+
+            print(f"{no}. BÖLÜM: Yayın isteği tespit edilemedi.")
+            return no, None
+
+        except Exception as e:
+            print(f"{no}. BÖLÜM HATASI: {str(e)[:180]}")
+            return no, None
+
+        finally:
+            await page.close()
 
 
 # ==========================================
@@ -177,7 +186,11 @@ async def m3u8_yakala(page_url, browser):
 # ==========================================
 
 def m3u_olustur(sonuc):
-    with open(OUTPUT, "w", encoding="utf-8") as f:
+
+    gecici_dosya = OUTPUT + ".tmp"
+
+    with open(gecici_dosya, "w", encoding="utf-8") as f:
+
         f.write("#EXTM3U\n")
 
         for no, adres in sorted(sonuc.items()):
@@ -193,6 +206,8 @@ def m3u_olustur(sonuc):
 
             f.write(adres + "\n")
 
+    os.replace(gecici_dosya, OUTPUT)
+
     print("\n================================")
     print("M3U DOSYASI OLUŞTURULDU")
     print("DOSYA:", OUTPUT)
@@ -205,6 +220,7 @@ def m3u_olustur(sonuc):
 # ==========================================
 
 async def main():
+
     bolumler = bolumleri_bul()
 
     if not bolumler:
@@ -214,33 +230,67 @@ async def main():
     sonuc = {}
     basarisiz = []
 
+    semaphore = asyncio.Semaphore(ES_ZAMANLI)
+
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+
+        browser = await p.chromium.launch(
+            headless=True
+        )
+
+        context = await browser.new_context(
+            user_agent=HEADERS["User-Agent"]
+        )
 
         try:
-            for no, url in bolumler.items():
 
-                print(f"\n{no}. BÖLÜM AÇILIYOR")
+            gorevler = [
+                m3u8_yakala(
+                    url,
+                    context,
+                    semaphore,
+                    no
+                )
+                for no, url in bolumler.items()
+            ]
 
-                adresler = await m3u8_yakala(url, browser)
+            tamamlanan = await asyncio.gather(
+                *gorevler,
+                return_exceptions=True
+            )
 
-                if adresler:
-                    sonuc[no] = adresler[0]
-                    print("Yayın adresi bulundu.")
+            for no, sonuc_adresi in tamamlanan:
+
+                if isinstance(sonuc_adresi, Exception):
+                    basarisiz.append(no)
+                    continue
+
+                if sonuc_adresi:
+                    sonuc[no] = sonuc_adresi
                 else:
                     basarisiz.append(no)
-                    print("Yayın adresi bulunamadı.")
 
         finally:
+            await context.close()
             await browser.close()
+
+    # ======================================
+    # SONUÇ
+    # ======================================
 
     if sonuc:
         m3u_olustur(sonuc)
     else:
         print("Hiçbir yayın adresi bulunamadı.")
+        print("Eski M3U dosyası korunuyor.")
 
-    print("\nBULUNAMAYAN BÖLÜMLER:", basarisiz)
+    print("\n================================")
+    print("TARAMA SONUCU")
+    print("Bulunan:", len(sonuc))
+    print("Bulunamayan:", len(basarisiz))
+    print("Bulunamayan bölümler:", sorted(basarisiz))
     print("TARAMA TAMAMLANDI.")
+    print("================================")
 
 
 if __name__ == "__main__":
