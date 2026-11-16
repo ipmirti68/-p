@@ -8,7 +8,7 @@ import urllib.parse
 # KULLANICI AYARLARI
 # ==================================================
 
-SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "").strip()
+SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://4.438069.xyz:2086/get.php?username=%40SeZR.12.11.22&password=2022xSezER.12.11%40&type=m3u_plus&output=ts").strip()
 
 M3U_FILE = "mirti68.m3u"
 
