@@ -1,6 +1,7 @@
 
 import os
 import re
+import tempfile
 import requests
 import urllib.parse
 
@@ -8,10 +9,9 @@ import urllib.parse
 # KULLANICI AYARLARI
 # ==================================================
 
-SOURCE_M3U_URL = os.environ.get(
-    "SOURCE_M3U_URL",
-    "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts"
-)
+# Kaynak adresini ortam değişkeninden al.
+# SOURCE_M3U_URL ortam değişkenini tanımlayın.
+SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "").strip()
 
 M3U_FILE = "mirti68.m3u"
 
@@ -22,14 +22,15 @@ FILM_GROUP = "🟨◆ ULUSAL ᴴᴰ⁺ ⭕"
 SOURCE_GROUP = "TR | ULUSAL"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36",
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36"
+    ),
     "Accept": "*/*",
     "Accept-Language": "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7",
     "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
-    "Referer": "http://4.438069.xyz/",
 }
-
 
 # ==================================================
 # GRUP ADINI OKU
@@ -37,13 +38,18 @@ HEADERS = {
 
 def get_group(line):
 
-    match = re.search(r'group-title="([^"]*)"', line)
+    match = re.search(
+        r'group-title="([^"]*)"',
+        line,
+        re.IGNORECASE
+    )
 
     return match.group(1).strip() if match else ""
 
 
 # ==================================================
 # M3U BAŞLIK VE KANAL KAYITLARINI AYIR
+# EPG SATIRLARI KORUNUR
 # ==================================================
 
 def parse_m3u(lines):
@@ -54,7 +60,7 @@ def parse_m3u(lines):
 
     for line in lines:
 
-        if line.startswith("#EXTINF:"):
+        if line.lstrip().startswith("#EXTINF:"):
 
             if current:
                 entries.append(current)
@@ -74,6 +80,9 @@ def parse_m3u(lines):
     if current:
         entries.append(current)
 
+    if not header:
+        header = ["#EXTM3U"]
+
     return header, entries
 
 
@@ -86,12 +95,12 @@ def kaynagi_oku(url):
     s = requests.Session()
     s.headers.update(HEADERS)
 
-    links = [
-        url,
-        url.replace("http://", "https://", 1)
-    ]
+    links = [url]
 
-    for link in links:
+    if url.startswith("http://"):
+        links.append(url.replace("http://", "https://", 1))
+
+    for link in dict.fromkeys(links):
 
         for deneme in range(2):
 
@@ -121,7 +130,11 @@ def kaynagi_oku(url):
                 if r.status_code == 403:
 
                     s.headers.update({
-                        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Version/17.0 Mobile Safari/604.1"
+                        "User-Agent": (
+                            "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 "
+                            "like Mac OS X) AppleWebKit/605.1.15 "
+                            "Version/17.0 Mobile Safari/604.1"
+                        )
                     })
 
             except requests.RequestException as e:
@@ -143,7 +156,10 @@ def kaynagi_oku(url):
 
             print("[PROXY]", plink[:60], "...")
 
-            r = s.get(plink, timeout=60)
+            r = s.get(
+                plink,
+                timeout=60
+            )
 
             if r.status_code == 200:
 
@@ -181,25 +197,58 @@ def get_stream(entry):
 
 
 # ==================================================
+# KANAL ADININ SONUNA ⭕ EKLE
+# ==================================================
+
+def kanal_ismini_duzenle(extinf):
+
+    if "," not in extinf:
+        return extinf
+
+    prefix, name = extinf.rsplit(",", 1)
+
+    name = name.strip()
+
+    # Zaten varsa tekrar ekleme
+    if not name.endswith("⭕"):
+
+        name += " ⭕"
+
+    return prefix + "," + name
+
+
+# ==================================================
 # GRUP ADINI DEĞİŞTİR
 # ==================================================
 
 def grup_degistir(extinf):
 
-    if re.search(r'group-title="[^"]*"', extinf):
+    if re.search(
+        r'group-title="[^"]*"',
+        extinf
+    ):
 
-        return re.sub(
+        extinf = re.sub(
             r'group-title="[^"]*"',
             f'group-title="{FILM_GROUP}"',
             extinf,
             count=1
         )
 
-    return extinf.replace(
-        "#EXTINF:",
-        f'#EXTINF:-1 group-title="{FILM_GROUP}"',
-        1
-    )
+    else:
+
+        # EXTINF süresini koruyarak grup ekle
+        extinf = re.sub(
+            r'(#EXTINF:-?\d+)',
+            rf'\1 group-title="{FILM_GROUP}"',
+            extinf,
+            count=1
+        )
+
+    # KANAL ADININ SONUNA ⭕ EKLE
+    extinf = kanal_ismini_duzenle(extinf)
+
+    return extinf
 
 
 # ==================================================
@@ -218,6 +267,9 @@ def yeni_yayinlari_hazirla(text):
 
     for entry in source_entries:
 
+        if not entry:
+            continue
+
         extinf = entry[0]
 
         # SADECE İSTENEN KAYNAK GRUBU
@@ -235,7 +287,7 @@ def yeni_yayinlari_hazirla(text):
 
         seen_urls.add(stream)
 
-        # HEDEF GRUP ADINI YAZ
+        # HEDEF GRUP VE KANAL ADINI DÜZENLE
         new_extinf = grup_degistir(extinf)
 
         new_entry = [new_extinf] + entry[1:]
@@ -257,12 +309,15 @@ def main():
 
     if not SOURCE_M3U_URL:
 
-        print("[HATA] Kaynak adresi tanımlanmamış.")
+        print("[HATA] SOURCE_M3U_URL ortam değişkeni tanımlanmamış.")
+        print("[KORUMA] Ana liste değiştirilmedi.")
+
         return
 
     if not os.path.exists(M3U_FILE):
 
         print("[HATA] Ana liste bulunamadı:", M3U_FILE)
+
         return
 
     # ----------------------------------------------
@@ -282,16 +337,19 @@ def main():
     except Exception as e:
 
         print("[HATA] Ana liste okunamadı:", e)
+
         return
 
     if not old_lines:
 
         print("[HATA] Ana liste boş.")
+
         return
 
     if not old_lines[0].startswith("#EXTM3U"):
 
         print("[HATA] M3U başlığı bulunamadı.")
+
         return
 
     # ----------------------------------------------
@@ -313,6 +371,7 @@ def main():
 
         print("[HATA] Kaynak okunamadı.")
         print("[KORUMA] Ana liste değiştirilmedi.")
+
         return
 
     # ----------------------------------------------
@@ -325,6 +384,7 @@ def main():
 
         print("[HATA] Kaynak grubunda yayın bulunamadı.")
         print("[KORUMA] Ana liste değiştirilmedi.")
+
         return
 
     print("[OK] Yeni yayın sayısı:", len(new_entries))
@@ -349,6 +409,7 @@ def main():
             if not eklendi:
 
                 final_entries.extend(new_entries)
+
                 eklendi = True
 
             silinen += 1
@@ -363,7 +424,9 @@ def main():
     # HEDEF GRUP LİSTEDE YOKSA EN SONA EKLE
     if not eklendi:
 
-        print("[BİLGİ] Hedef grup bulunamadı, listenin sonuna ekleniyor.")
+        print(
+            "[BİLGİ] Hedef grup bulunamadı, listenin sonuna ekleniyor."
+        )
 
         final_entries.extend(new_entries)
 
@@ -371,12 +434,20 @@ def main():
     # GEÇİCİ DOSYAYA YAZ
     # ----------------------------------------------
 
-    temp_file = M3U_FILE + ".tmp"
+    directory = os.path.dirname(
+        os.path.abspath(M3U_FILE)
+    )
+
+    fd, temp_file = tempfile.mkstemp(
+        prefix="mirti68_",
+        suffix=".tmp",
+        dir=directory
+    )
 
     try:
 
-        with open(
-            temp_file,
+        with os.fdopen(
+            fd,
             "w",
             encoding="utf-8",
             newline="\n"
@@ -400,14 +471,15 @@ def main():
 
         if not os.path.exists(temp_file):
 
-            print("[HATA] Geçici dosya oluşturulamadı.")
-            return
+            raise Exception(
+                "Geçici dosya oluşturulamadı."
+            )
 
         if os.path.getsize(temp_file) == 0:
 
-            print("[HATA] Geçici dosya boş.")
-            os.remove(temp_file)
-            return
+            raise Exception(
+                "Geçici dosya boş."
+            )
 
         # BAŞLIK KONTROLÜ
         with open(
@@ -420,15 +492,15 @@ def main():
 
             if not first_line.startswith("#EXTM3U"):
 
-                print("[HATA] Geçici dosya başlık kontrolünden geçemedi.")
-                os.remove(temp_file)
-                return
+                raise Exception(
+                    "Geçici dosya başlık kontrolünden geçemedi."
+                )
 
-        # ------------------------------------------
         # ANA DOSYAYI GÜVENLİ DEĞİŞTİR
-        # ------------------------------------------
-
-        os.replace(temp_file, M3U_FILE)
+        os.replace(
+            temp_file,
+            M3U_FILE
+        )
 
     except Exception as e:
 
@@ -439,6 +511,7 @@ def main():
             os.remove(temp_file)
 
         print("[KORUMA] Ana liste değiştirilmedi.")
+
         return
 
     # ----------------------------------------------
@@ -456,6 +529,7 @@ def main():
     print("[OK] EPG başlıkları: KORUNDU")
     print("[OK] ULUSAL INFO grubu: KORUNDU")
     print("[OK] Diğer gruplar: KORUNDU")
+    print("[OK] Kanal adlarının sonuna ⭕ eklendi")
     print("[OK] Ana dosya:", M3U_FILE)
 
     print("=" * 55)
