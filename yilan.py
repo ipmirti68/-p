@@ -3,52 +3,82 @@
 # -*- coding: utf-8 -*-
 
 import asyncio
+import os
 import re
-import requests
-
 from urllib.parse import urljoin
+
+import requests
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
-# ==========================================
-# MIRTI68 - YILAN HİKAYESİ
-# ==========================================
+# ==================================================
+# MIRTI68 - YILAN HIKAYESI
+# KANAL D / DAILYMOTION HLS KONTROLLU TARAMA
+# ==================================================
 
 BASE = "https://www.kanald.com.tr"
 LIST_URL = BASE + "/yilan-hikayesi/bolumler"
 
 OUTPUT = "yilan_hikayesi.m3u"
+
 GROUP = "🟪◆ YILAN HİKAYESİ"
 
 MAX_BOLUM = 90
+ES_ZAMANLI = 3
+
+SAYFA_TIMEOUT = 40000
+BEKLEME = 7000
+MANIFEST_TIMEOUT = 15000
 
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 Chrome/120 Safari/537.36"
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/131.0.0.0 Safari/537.36"
     )
 }
 
-# ==========================================
-# BÖLÜM NUMARASI
-# ==========================================
+# ==================================================
+# BOLUM ADI
+# ==================================================
+
+def bolum_adi(no):
+
+    if no <= 32:
+        sezon = 1
+        bolum = no
+
+    elif no <= 64:
+        sezon = 2
+        bolum = no - 32
+
+    else:
+        sezon = 3
+        bolum = no - 64
+
+    return f"YILAN HİKAYESİ S{sezon:02d} E{bolum:02d}"
+
+
+# ==================================================
+# BOLUM NUMARASI
+# ==================================================
 
 def bolum_numarasi(text, href=""):
 
-    text = text.lower()
-    href = href.lower()
+    metin = (text + " " + href).lower()
 
-    if "ilk bölüm" in text or "ilk-bolum" in href:
+    if "ilk-bolum" in metin or "ilk bölüm" in metin:
         return 1
 
-    patterns = [
+    kaliplar = [
         r"yilan-hikayesi-(\d+)-bolum",
-        r"(\d+)\s*\.?\s*bölüm",
-        r"(\d+)-bolum"
+        r"/(\d+)-bolum(?:/|$|\?)",
+        r"(\d+)\s*\.?\s*bölüm"
     ]
 
-    for pattern in patterns:
-        m = re.search(pattern, href if "bolum" in pattern else text)
+    for kalip in kaliplar:
+
+        m = re.search(kalip, metin)
 
         if m:
             return int(m.group(1))
@@ -56,37 +86,84 @@ def bolum_numarasi(text, href=""):
     return None
 
 
-# ==========================================
-# BÖLÜM ADI
-# ==========================================
+# ==================================================
+# ESKI M3U OKU
+# ==================================================
 
-def bolum_adi(no):
+def eski_m3u_oku():
 
-    if 1 <= no <= 34:
-        sezon = 1
-        bolum = no
+    eski = {}
 
-    elif 35 <= no <= 64:
-        sezon = 2
-        bolum = no - 34
+    if not os.path.exists(OUTPUT):
+        return eski
 
-    elif 65 <= no <= 90:
-        sezon = 3
-        bolum = no - 64
+    try:
 
-    else:
-        sezon = 1
-        bolum = no
+        with open(
+            OUTPUT,
+            "r",
+            encoding="utf-8"
+        ) as f:
 
-    return (
-        f"YILAN HİKAYESİ "
-        f"S{sezon:02d} E{bolum:02d}"
-    )
+            satirlar = f.read().splitlines()
+
+        aktif_no = None
+        secenekler = []
+
+        for satir in satirlar:
+
+            satir = satir.strip()
+
+            if satir.startswith("#EXTINF"):
+
+                aktif_no = None
+                secenekler = []
+
+                m = re.search(
+                    r"S(\d{2})\s+E(\d{2})",
+                    satir,
+                    re.IGNORECASE
+                )
+
+                if m:
+
+                    sezon = int(m.group(1))
+                    bolum = int(m.group(2))
+
+                    if sezon == 1:
+                        aktif_no = bolum
+                    elif sezon == 2:
+                        aktif_no = 32 + bolum
+                    elif sezon == 3:
+                        aktif_no = 64 + bolum
+
+            elif satir.startswith("#EXTVLCOPT"):
+
+                secenekler.append(satir)
+
+            elif satir and not satir.startswith("#"):
+
+                if aktif_no is not None:
+                    eski[aktif_no] = {
+                        "url": satir,
+                        "options": list(secenekler)
+                    }
+
+                aktif_no = None
+                secenekler = []
+
+        print("ESKI KAYIT:", len(eski))
+
+    except Exception as e:
+
+        print("Eski M3U okuma hatasi:", e)
+
+    return eski
 
 
-# ==========================================
-# BÖLÜMLERİ TARA
-# ==========================================
+# ==================================================
+# BOLUM LISTESI
+# ==================================================
 
 def bolumleri_bul():
 
@@ -95,14 +172,14 @@ def bolumleri_bul():
     session = requests.Session()
     session.headers.update(HEADERS)
 
+    print("\nKANAL D ARSIVI TARANIYOR")
+
     for sayfa in range(1, 11):
 
         url = (
-            f"{LIST_URL}"
-            f"?orderby=EpisodeNumber+asc&page={sayfa}"
+            LIST_URL
+            + f"?orderby=EpisodeNumber+asc&page={sayfa}"
         )
-
-        print("\nListe taranıyor:", url)
 
         try:
 
@@ -120,14 +197,14 @@ def bolumleri_bul():
 
             for a in soup.select("a[href]"):
 
-                href = a.get("href", "")
+                href = a.get("href", "").strip()
+
+                if "/yilan-hikayesi/bolumler/" not in href:
+                    continue
 
                 baslik = " ".join(
                     a.get_text(" ", strip=True).split()
                 )
-
-                if "/yilan-hikayesi/bolumler/" not in href:
-                    continue
 
                 no = bolum_numarasi(
                     baslik,
@@ -140,209 +217,299 @@ def bolumleri_bul():
                 if not 1 <= no <= MAX_BOLUM:
                     continue
 
-                tam_url = urljoin(
+                bulunan[no] = urljoin(
                     BASE,
                     href
                 )
 
-                if no not in bulunan:
-
-                    bulunan[no] = tam_url
-
-                    print(
-                        "Bulundu:",
-                        bolum_adi(no)
-                    )
+            print(
+                f"Arsiv sayfasi {sayfa}: "
+                f"{len(bulunan)} bolum"
+            )
 
         except Exception as e:
 
-            print("Liste hatası:", e)
+            print(
+                f"Arsiv sayfasi {sayfa} hatasi:",
+                str(e)[:150]
+            )
 
-    # İlk bölüm bağlantısı
+    # Bilinen sayfa adreslerini eksikler için dene.
+    for no in range(1, MAX_BOLUM + 1):
 
-    if 1 not in bulunan:
+        if no in bulunan:
+            continue
 
-        bulunan[1] = (
-            BASE
-            + "/yilan-hikayesi/bolumler/"
-            + "yilan-hikayesi-ilk-bolum"
-        )
+        if no == 1:
+            bulunan[no] = (
+                LIST_URL + "/yilan-hikayesi-ilk-bolum"
+            )
+        else:
+            bulunan[no] = (
+                LIST_URL + f"/yilan-hikayesi-{no}-bolum"
+            )
 
     return dict(sorted(bulunan.items()))
 
 
-# ==========================================
-# M3U8 ADRESİ YAKALA
-# ==========================================
+# ==================================================
+# HLS MANIFEST KONTROLU
+# ==================================================
 
-async def m3u8_yakala(page_url, browser):
+def manifest_gecerli(body):
 
-    context = await browser.new_context(
-        user_agent=HEADERS["User-Agent"]
+    if not body:
+        return False
+
+    metin = body.lstrip("\ufeff \r\n\t")
+
+    if not metin.startswith("#EXTM3U"):
+        return False
+
+    # HLS manifestinde beklenen etiketlerden biri olmalı.
+    etiketler = [
+        "#EXT-X-STREAM-INF",
+        "#EXT-X-TARGETDURATION",
+        "#EXT-X-MEDIA-SEQUENCE",
+        "#EXTINF",
+        "#EXT-X-PLAYLIST-TYPE",
+        "#EXT-X-MAP"
+    ]
+
+    return any(
+        etiket in metin
+        for etiket in etiketler
     )
 
-    page = await context.new_page()
 
-    yakalanan = []
+# ==================================================
+# M3U8 YAKALA VE DOGRULA
+# ==================================================
 
-    def istek_yakala(request):
+async def m3u8_yakala(
+    no,
+    page_url,
+    browser,
+    semaphore
+):
 
-        adres = request.url
+    async with semaphore:
 
-        if ".m3u8" not in adres.lower():
-            return
+        page = await browser.new_page(
+            user_agent=HEADERS["User-Agent"]
+        )
 
-        # Reklam manifestlerini mümkün olduğunca ele
-        if "adbreak" in adres.lower():
-            return
+        adaylar = []
 
-        if adres not in yakalanan:
+        def cevap_yakala(response):
 
-            yakalanan.append(adres)
+            adres = response.url
+
+            if ".m3u8" not in adres.lower():
+                return
+
+            if "adbreak" in adres.lower():
+                return
+
+            if "googleads" in adres.lower():
+                return
+
+            adaylar.append(response)
+
+        page.on(
+            "response",
+            cevap_yakala
+        )
+
+        try:
 
             print(
-                "M3U8 bulundu:",
-                adres[:150]
+                f"\n[{no}/90] "
+                f"{bolum_adi(no)}"
             )
 
-    page.on(
-        "request",
-        istek_yakala
-    )
+            await page.goto(
+                page_url,
+                wait_until="domcontentloaded",
+                timeout=SAYFA_TIMEOUT
+            )
 
-    try:
+            await page.wait_for_timeout(
+                BEKLEME
+            )
 
-        await page.goto(
-            page_url,
-            wait_until="domcontentloaded",
-            timeout=60000
-        )
+            # Oynatıcı düğmelerini dene.
+            selectors = [
+                "button[aria-label*='Oynat']",
+                "button[aria-label*='Play']",
+                ".vjs-big-play-button",
+                ".jw-icon-play",
+                ".plyr__control--overlaid"
+            ]
 
-        await page.wait_for_timeout(12000)
+            for selector in selectors:
 
-        selectors = [
-            "button[aria-label*='Oynat']",
-            "button[aria-label*='Play']",
-            ".vjs-big-play-button",
-            ".jw-icon-play"
-        ]
+                try:
 
-        for selector in selectors:
+                    button = page.locator(
+                        selector
+                    ).first
 
-            try:
+                    if await button.is_visible(
+                        timeout=1000
+                    ):
 
-                button = page.locator(
-                    selector
-                ).first
+                        await button.click(
+                            timeout=2500,
+                            force=True
+                        )
 
-                if await button.is_visible(
-                    timeout=1500
-                ):
+                        await page.wait_for_timeout(
+                            5000
+                        )
 
-                    await button.click(
-                        timeout=3000
+                        break
+
+                except Exception:
+                    continue
+
+            if not adaylar:
+
+                await page.wait_for_timeout(
+                    5000
+                )
+
+            # En son gelen manifestleri de kontrol et.
+            for response in reversed(adaylar):
+
+                try:
+
+                    if response.status != 200:
+                        continue
+
+                    body = await response.text()
+
+                    if not manifest_gecerli(body):
+                        continue
+
+                    adres = response.url
+
+                    print(
+                        f"[MANIFEST OK] "
+                        f"{bolum_adi(no)}"
                     )
 
-                    await page.wait_for_timeout(
-                        10000
-                    )
+                    return {
+                        "url": adres,
+                        "referer": page_url,
+                        "options": [
+                            "#EXTVLCOPT:http-user-agent="
+                            + HEADERS["User-Agent"],
+                            "#EXTVLCOPT:http-referrer="
+                            + page_url
+                        ]
+                    }
 
-                    break
+                except Exception:
+                    continue
 
-            except Exception:
-                pass
+            print(
+                f"[MANIFEST GECERSIZ/YOK] "
+                f"{bolum_adi(no)}"
+            )
 
-        await page.wait_for_timeout(3000)
+            return None
 
-    except Exception as e:
+        except Exception as e:
 
-        print(
-            "Sayfa hatası:",
-            e
-        )
+            print(
+                f"[SAYFA HATASI] "
+                f"{no}: {str(e)[:150]}"
+            )
 
-    finally:
+            return None
 
-        await context.close()
+        finally:
 
-    return yakalanan
+            page.remove_listener(
+                "response",
+                cevap_yakala
+            )
+
+            await page.close()
 
 
-# ==========================================
-# M3U DOSYASI OLUŞTUR
-# ==========================================
+# ==================================================
+# M3U OLUSTUR
+# ==================================================
 
-def m3u_olustur(sonuc, bolumler):
+def m3u_olustur(kayitlar):
+
+    gecici = OUTPUT + ".tmp"
 
     with open(
-        OUTPUT,
+        gecici,
         "w",
         encoding="utf-8"
     ) as f:
 
         f.write("#EXTM3U\n")
 
-        for no, adres in sorted(sonuc.items()):
+        for no, kayit in sorted(kayitlar.items()):
 
-            baslik = bolum_adi(no)
-
-            referer = bolumler.get(
-                no,
-                BASE
-            )
+            if no < 1 or no > MAX_BOLUM:
+                continue
 
             f.write(
                 f'#EXTINF:-1 group-title="{GROUP}",'
-                f'{baslik}\n'
+                f'{bolum_adi(no)}\n'
             )
 
-            f.write(
-                "#EXTVLCOPT:http-user-agent="
-                + HEADERS["User-Agent"]
-                + "\n"
-            )
+            for option in kayit.get("options", []):
+                f.write(option + "\n")
 
-            f.write(
-                "#EXTVLCOPT:http-referrer="
-                + referer
-                + "\n"
-            )
+            f.write(kayit["url"] + "\n")
 
-            f.write(
-                adres + "\n"
-            )
+    os.replace(
+        gecici,
+        OUTPUT
+    )
 
-    print("\n================================")
-    print("MIRTI68 - İŞLEM TAMAMLANDI")
-    print("================================")
-    print("Dosya:", OUTPUT)
-    print("Bulunan yayın:", len(sonuc))
-    print("================================")
+    print("\nM3U DOSYASI GUNCELLENDI")
+    print("DOSYA:", OUTPUT)
+    print("KAYIT:", len(kayitlar))
 
 
-# ==========================================
+# ==================================================
 # ANA PROGRAM
-# ==========================================
+# ==================================================
 
 async def main():
 
-    print("================================")
-    print("MIRTI68 - YILAN HİKAYESİ BOT")
-    print("================================")
+    print("====================================")
+    print("MIRTI68 - YILAN HIKAYESI")
+    print("HLS MANIFEST KONTROLLU BOT")
+    print("====================================")
+
+    eski = eski_m3u_oku()
 
     bolumler = bolumleri_bul()
 
     if not bolumler:
-
-        print("Bölüm bulunamadı.")
+        print("Bolum listesi bulunamadi.")
         return
 
     print(
-        "\nToplam bölüm:",
+        "\nTARAMA LISTESI:",
         len(bolumler)
     )
 
-    sonuc = {}
+    yeni = {}
+    basarisiz = []
+
+    semaphore = asyncio.Semaphore(
+        ES_ZAMANLI
+    )
 
     async with async_playwright() as p:
 
@@ -352,55 +519,95 @@ async def main():
 
         try:
 
-            for no, url in bolumler.items():
-
-                print(
-                    "\nTaranıyor:",
-                    bolum_adi(no)
-                )
-
-                adresler = await m3u8_yakala(
+            gorevler = [
+                m3u8_yakala(
+                    no,
                     url,
-                    browser
+                    browser,
+                    semaphore
                 )
+                for no, url in bolumler.items()
+            ]
 
-                if adresler:
+            sonuclar = await asyncio.gather(
+                *gorevler,
+                return_exceptions=True
+            )
 
-                    sonuc[no] = adresler[0]
+            for no, sonuc in zip(
+                bolumler.keys(),
+                sonuclar
+            ):
+
+                if isinstance(sonuc, Exception):
 
                     print(
-                        "Yayın adresi yakalandı."
+                        "GOREV HATASI:",
+                        no,
+                        str(sonuc)[:100]
                     )
+
+                    basarisiz.append(no)
+                    continue
+
+                if sonuc:
+
+                    yeni[no] = sonuc
 
                 else:
 
-                    print(
-                        "M3U8 bulunamadı."
-                    )
+                    basarisiz.append(no)
 
         finally:
 
             await browser.close()
 
-    if not sonuc:
+    # ==========================================
+    # ESKI + YENI KAYITLAR
+    # ==========================================
 
-        print(
-            "\nHiçbir M3U8 adresi bulunamadı."
-        )
+    birlesik = dict(eski)
+
+    for no, kayit in yeni.items():
+
+        birlesik[no] = kayit
+
+    # Yeni adres yoksa mevcut dosyaya dokunma.
+    if not yeni:
+
+        print("\nYENI GECERLI MANIFEST BULUNAMADI.")
+
+        if eski:
+            print("ESKI M3U KORUNDU.")
 
         return
 
-    m3u_olustur(
-        sonuc,
-        bolumler
-    )
+    m3u_olustur(birlesik)
 
+    # ==========================================
+    # RAPOR
+    # ==========================================
 
-# ==========================================
-# BAŞLAT
-# ==========================================
+    print("\n====================================")
+    print("YILAN HIKAYESI TARAMA RAPORU")
+    print("====================================")
+
+    print("Arsiv bolumu:", len(bolumler))
+    print("Yeni dogrulanan:", len(yeni))
+    print("Eski kayit:", len(eski))
+    print("Toplam M3U kaydi:", len(birlesik))
+    print("Dogrulanamayan:", len(basarisiz))
+
+    if basarisiz:
+        print(
+            "Dogrulanamayan bolumler:",
+            sorted(basarisiz)
+        )
+
+    print("ISLEM TAMAMLANDI.")
+    print("====================================")
+
 
 if __name__ == "__main__":
-
     asyncio.run(main())
-    
+            
