@@ -26,3 +26,17 @@ series:
     - name: "Köprü"
     group: "🟪◆ DİZİLER - KÖPRÜ ⭕"
     url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/kopru.m3u"
+
+    - name: "Eşref Rüya"
+    group: "🟪◆ DİZİLER - EŞREF RÜYA ⭕"
+    url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/esref_ruya.m3u"
+    
+    - name: "Hayat Bilgisi"
+    group: "🟪◆ DİZİLER - HAYAT BİLGİSİ ⭕"
+    url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/hayat_bilgisi.m3u"
+    
+    - name: "Yılan Hikayesi"
+    group: "🟪◆ DİZİLER - YILAN HİKAYESİ ⭕"
+    url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/yilan_hikayesi.m3u"
+
+
