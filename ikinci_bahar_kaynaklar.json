@@ -1,0 +1,25 @@
+
+{
+  "episodes": [
+    {
+      "episode": 1,
+      "url": "BURAYA_YETKILI_HLS_ADRESI"
+    },
+    {
+      "episode": 2,
+      "url": "BURAYA_YETKILI_HLS_ADRESI"
+    },
+    {
+      "episode": 3,
+      "url": "BURAYA_YETKILI_HLS_ADRESI"
+    },
+    {
+      "episode": 4,
+      "url": "BURAYA_YETKILI_HLS_ADRESI"
+    },
+    {
+      "episode": 5,
+      "url": "BURAYA_YETKILI_HLS_ADRESI"
+    }
+  ]
+}
