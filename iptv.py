@@ -2,7 +2,7 @@ from playwright.sync_api import sync_playwright
 import re, os
 
 OUTPUT_FILE = "mirti68.m3u"
-GROUP = "🟨◆  ULUSALᴴᴰ"
+GROUP = "🟨◆  ULUSALᴴᴰ ⭕"
 
 CHANNELS = {
         "BEYAZ ⭕": {"page": "https://m.beyaztv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/beyaz.png", "keyword": "beyax tv", "marker": "# MIRTI68_BEYAZ_AUTO"},
