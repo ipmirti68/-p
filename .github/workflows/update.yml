@@ -44,7 +44,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python kanalddizi.py || echo "kanalddizi failed"
-              
+        
+      - name: 2 -SHOW DİZİ SON BÖLÜM
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python showdizi.py || echo "showdizi failed"       
 
  
       # DOSYALARI KAYDET
