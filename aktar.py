@@ -49,12 +49,24 @@ def extinf_bul(rec):
     return ""
 
 def temiz_isim(ad):
-    """HAYSİYET - 1. Bölüm - 2026-11-17 -> HAYSİYET gibi karşılaştırma için sadeleştir"""
-    ad = ad.lower().strip()
-    # bölüm / tarih kısmını at
+    """Karşılaştırma için ana ismi çıkar:
+    HAYSİYET - 2. Bölüm ⭕ Atom -> HAYSİYET
+    HAYSİYET - 1. Bölüm - 2026-11-17 -> HAYSİYET
+    BEIN SPORT 1 ⭕ Atom -> BEIN SPORT 1
+    """
+    ad = (ad or "").lower().strip()
+    # 1. Son ekleri at: ⭕ Atom, ⭕, Atom gibi
+    for son_ek in ["⭕ atom", "⭕", "atom"]:
+        if ad.endswith(son_ek):
+            ad = ad[: -len(son_ek)].strip()
+    # 2. Bölüm kısmını at: " - 2. bölüm", " - 12. bolum"
     ad = re.split(r'\s*-\s*\d+\.?\s*bölüm', ad)[0]
+    ad = re.split(r'\s*-\s*\d+\.?\s*bolum', ad)[0]
+    # 3. Tarih kısmını at: " - 2026-11-17"
     ad = re.split(r'\s*-\s*\d{4}-\d{2}-\d{2}', ad)[0]
-    return ad.strip()
+    # 4. Kalan sondaki - ve boşlukları temizle
+    ad = ad.strip().rstrip("-").strip()
+    return ad
 
 def grup_baslangici(grup_adi):
     m = re.match(r'^\s*(\S+\s*◆)', grup_adi.strip())
@@ -167,35 +179,48 @@ def main():
         print(f"  [+] {len(secilen)} kayıt seçildi")
         hedef_grup = cfg["hedef_grup"]
 
-        # 1. Hedefte AYNI İSİMDE grup var mı? -> BİRLEŞTİR, SİLME
+   
+             # 1. Hedefte AYNI İSİMDE grup var mı? -> BİRLEŞTİR, SİLME, TEKRAR EKLEME
         ayni_indexler = [i for i, r in enumerate(hedef_records) if grup_bul(r) == hedef_grup]
         if ayni_indexler:
-            # Gelen kayıtların isimleri
-            gelen_isimler = {temiz_isim(kanal_adi(r)): r for r in secilen}
+            # Gelenler: ana isim -> kayıt (aynı isimden 2 tane geldiyse sonuncuyu al)
+            gelen = {}
+            for r in secilen:
+                gelen[temiz_isim(kanal_adi(r))] = r
+
             yeni_grup_kayitlari = []
-            # Eski grup kayıtlarını gez
+            gorulen = set()
+
             for idx in ayni_indexler:
                 eski = hedef_records[idx]
                 eski_isim = temiz_isim(kanal_adi(eski))
-                if eski_isim in gelen_isimler:
-                    # Aynı isim varsa YENİSİ ile değiştir (link güncellendi)
-                    yeni_grup_kayitlari.append(gelen_isimler.pop(eski_isim))
-                    print(f"    [GÜNCELLENDİ] {kanal_adi(eski)}")
+
+                # Bu grupta zaten aynı isim 2 kere varsa, ilkini atla (tekrarı sil)
+                if eski_isim in gorulen:
+                    print(f"    [TEKRAR SİLİNDİ] {kanal_adi(eski)}")
+                    continue
+                gorulen.add(eski_isim)
+
+                if eski_isim in gelen:
+                    # Aynı isim -> REVİZE ET, ekleme
+                    yeni_grup_kayitlari.append(gelen.pop(eski_isim))
+                    print(f"    [REVİZE EDİLDİ] {kanal_adi(eski)} -> yeni link")
                 else:
-                    # Aynı isim yoksa ESKİSİ KALSIN - SİLME
+                    # Gelenlerde yoksa ESKİSİ KALSIN
                     yeni_grup_kayitlari.append(eski)
                     print(f"    [KORUNDU] {kanal_adi(eski)}")
-            # Tamamen yeni isimler varsa sona ekle
-            for isim, rec in gelen_isimler.items():
-                yeni_grup_kayitlari.append(rec)
-                print(f"    [EKLENDİ] {kanal_adi(rec)}")
 
-            # Grubu eski yerinde yeniden kur
+            # Tamamen yeni isimler varsa ekle
+            for isim, rec in gelen.items():
+                if isim not in gorulen:
+                    yeni_grup_kayitlari.append(rec)
+                    print(f"    [EKLENDİ] {kanal_adi(rec)}")
+
             ilk = min(ayni_indexler)
             digerleri = [r for r in hedef_records if grup_bul(r) != hedef_grup]
             onceki = sum(1 for r in hedef_records[:ilk] if grup_bul(r) != hedef_grup)
             hedef_records = digerleri[:onceki] + yeni_grup_kayitlari + digerleri[onceki:]
-            print(f"  [YAZILDI] Aynı grup bulundu, birleştirildi: {hedef_grup}")
+            print(f"  [YAZILDI] Aynı grup birleştirildi: {hedef_grup}")
             continue
 
         # 2. Aynı isim yoksa, aynı şekil/renk başlangıcı olan grubun ALTINA ekle
