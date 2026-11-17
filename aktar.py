@@ -76,6 +76,49 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
+             {
+        "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
+        "kaynak_grup": "Yerel / 🔴 SPOR",
+        "aranacak": "",
+        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
+        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "ek_kod": "0️⃣⭕",
+    },
+         {
+        "kaynak_url": "http://31.43.191.142:8880/get.php?username=191703089055131&password=01703089055686&type=m3u_plus&output=tsoutput=m3u8",
+        "kaynak_grup": "TR | SPORT",
+        "aranacak": "",
+        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
+        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "ek_kod": "1️⃣⭕",
+    },
+    {
+        "kaynak_url": "http://ruzgarplayer.site:8080/get.php?username=KH6Rn39q4WpL&password=bnzSVts6Lner&type=m3u_plus&output=tsrd=GaraveliForum&type=m3u_plus&output=m3u8",
+        "kaynak_grup": "⫸TR SUPER LİG 1⫷",
+        "aranacak": "",
+        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
+        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "ek_kod": "2️⃣⭕",
+    },
+
+       {
+        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR | SPOR⫷",
+        "aranacak": "",
+        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
+        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "ek_kod": "3️⃣⭕",
+    },
+
+             {
+        "kaynak_url": "http://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts"",
+        "kaynak_grup": "TR-SPOR",
+        "aranacak": "",
+        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
+        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "ek_kod": "4️⃣⭕",
+    },
+
 ]
 
 
