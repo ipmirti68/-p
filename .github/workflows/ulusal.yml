@@ -58,7 +58,7 @@ jobs:
         timeout-minutes: 10
         run: python ulusal.py || echo "ulusal failed"
 
-      - name: 4 - ULUSAL1
+      - name: 4 - ULUSAL1 🟨◆ ULUSAL ᴴᴰ⁺ ⭕"
         continue-on-error: true
         timeout-minutes: 10
         run: python ulusal1.py || echo "ulusal1 failed"
