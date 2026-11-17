@@ -69,12 +69,12 @@ jobs:
         timeout-minutes: 10
         run: python sdiziler.py || echo "sdiziler failed"
 
-      - name: 6 - 7/24 YOUTUBE DİZİ 2026
+      - name: 8 - 7/24 YOUTUBE DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
         run: python 724y.py || echo "724y failed"
            
-      - name: 6 -KANAL D DİZİ SON BÖLÜM
+      - name: 8 -KANAL D DİZİ SON BÖLÜM
         continue-on-error: true
         timeout-minutes: 10
         run: python kanalddizi.py || echo "kanalddizi failed"
