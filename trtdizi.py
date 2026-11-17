@@ -11,7 +11,7 @@ from playwright.async_api import async_playwright
 # TRT1 DİZİ OTOMATİK GÜNCELLEYİCİ
 # ==================================================
 
-M3U_FILE = "mirti68.m3u"
+M3U_FILE = "trt1dizi.m3u"
 
 BASE = "https://www.trt1.com.tr"
 
