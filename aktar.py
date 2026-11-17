@@ -30,7 +30,7 @@ AKTARIMLAR = [
          {
         "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
         "kaynak_grup": "",
-        "aranacak": "",
+        "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 🖥",
         "hedef_logo": "",
         "ek_kod": "⭕",
@@ -38,7 +38,7 @@ AKTARIMLAR = [
       {
         "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ulusal.m3u",
         "kaynak_grup": "",
-        "aranacak": "beIN Sports",
+        "aranacak": "",
         "hedef_grup": "🟨◆  ULUSALᴴᴰ ⭕",
         "hedef_logo": "",
         "ek_kod": "",
