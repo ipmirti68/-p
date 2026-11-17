@@ -4,13 +4,14 @@ import time
 import html
 import codecs
 import shutil
-import cloudscraper
+import requests
 
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
 # ==========================================
 # 【entity-KANAL D¦canonical_name=KANAL D】 - OTOMATIK SON 3 BOLUM
+# cloudscraper YOK - sadece requests + yt-dlp
 # ==========================================
 
 BASE = "https://www.kanald.com.tr"
@@ -26,7 +27,7 @@ DIZILER = {
     "daha-17": "Daha 17",
     "uzak-sehir": "【entity-Uzak Şehir¦canonical_name=Uzak Şehir】",
     "haysiyet": "Haysiyet",
-    "guller-ve-gunahlar": "Güller ve Günahlar",
+    "guller-ve-gunahlar": "【entity-Güller ve Günahlar¦canonical_name=Güller ve Günahlar】",
     "susuz-yaz": "Susuz Yaz",
 }
 
@@ -36,31 +37,29 @@ HEADERS = {
         "AppleWebKit/537.36 Chrome/130.0.0.0 "
         "Safari/537.36"
     ),
-    "Referer": BASE + "/"
+    "Referer": BASE + "/",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.8",
 }
 
-scraper = cloudscraper.create_scraper(
-    browser={
-        "browser": "chrome",
-        "platform": "windows",
-        "desktop": True
-    }
-)
-scraper.headers.update(HEADERS)
+session = requests.Session()
+session.headers.update(HEADERS)
 
 # ==========================================
 # SAYFA OKU
 # ==========================================
 
 def get_page(url):
-    try:
-        r = scraper.get(url, timeout=30)
-        r.raise_for_status()
-        r.encoding = r.apparent_encoding
-        return r.text
-    except Exception as e:
-        print(f"  SAYFA HATA: {e}")
-        return None
+    for deneme in range(2):
+        try:
+            r = session.get(url, timeout=30)
+            r.raise_for_status()
+            r.encoding = r.apparent_encoding or "utf-8"
+            return r.text
+        except Exception as e:
+            print(f"  SAYFA HATA ({deneme+1}): {e}")
+            time.sleep(2)
+    return None
 
 # ==========================================
 # BOLUM NUMARASI
@@ -122,8 +121,6 @@ def get_bolum_links(slug):
     if not source:
         return []
 
-    # KanalD bazen /bolumler'i /fragmanlar'a yönlendiriyor
-    # Fragman sayfasında bölüm arama, direk atla
     low = source.lower()
     if "fragmanlar" in low[:8000] and "/bolumler/" not in low[:15000]:
         print("  UYARI: Sayfa fragmanlara yönlenmiş, bölüm yok - ATLANIYOR")
@@ -152,7 +149,6 @@ def get_bolum_links(slug):
         title = a.get_text(" ", strip=True)
         combined = (title + " " + full).lower()
 
-        # Yalnızca ilgili dizinin bölüm sayfası
         if f"/{slug}/bolumler/" not in full.lower():
             continue
         if "fragman" in full.lower():
@@ -235,7 +231,7 @@ def get_m3u8(bolum_url):
 
         if "dailymotion.com" in embed.lower():
             try:
-                response = scraper.get(WORKER, params={"url": embed}, timeout=25)
+                response = session.get(WORKER, params={"url": embed}, timeout=25)
                 response.raise_for_status()
                 result = find_m3u8(response.text)
                 if result:
@@ -296,11 +292,17 @@ def grup_bul(record_lines):
             return m.group(1) if m else ""
     return ""
 
+def kanal_adi(record_lines):
+    for line in record_lines:
+        if line.startswith("#EXTINF:"):
+            return line.split(",", 1)[-1].strip()
+    return ""
+
 # ==========================================
 # MIRTI LISTESINI KORUYARAK GÜNCELLE
 # ==========================================
 
-def update_mirti(new_entries):
+def update_mirti(new_entries, basarisiz):
     if not os.path.exists(MIRTI):
         print(f"[HATA] {MIRTI} bulunamadı!")
         return False
@@ -311,12 +313,10 @@ def update_mirti(new_entries):
     newline = "\r\n" if "\r\n" in metin else "\n"
     satirlar = metin.splitlines()
 
-    # EPG / #EXTM3U başlığı korunur
     ilk_extinf = next((i for i, s in enumerate(satirlar) if s.startswith("#EXTINF:")), len(satirlar))
     baslik = satirlar[:ilk_extinf]
     govde = satirlar[ilk_extinf:]
 
-    # Kayıtlara ayır
     records = []
     current = []
     for line in govde:
@@ -327,20 +327,28 @@ def update_mirti(new_entries):
     if current:
         records.append(current)
 
-    # Sadece eski KanalD grubunu çıkar, diğerleri aynen kalır
+    # Eski KanalD kayitlari icinden basarisiz dizilerin eski kayitlarini koru
+    korunan = []
+    for r in records:
+        if grup_bul(r) != GROUP:
+            continue
+        ad = kanal_adi(r)
+        for isim in basarisiz:
+            if isim in ad or isim.split(" ")[0] in ad:
+                korunan.append(r)
+                print(f"  KORUNDU (eski): {ad}")
+                break
+
     digerleri = [r for r in records if grup_bul(r) != GROUP]
 
-    # Yeni KanalD kayıtlarını metne çevir
     yeni_records = []
     for entry in new_entries:
         lines = [l for l in entry.strip().splitlines() if l.strip() != ""]
         yeni_records.append(lines)
 
-    # KanalD grubunu en sona ekle - diğer grupların sırası bozulmaz
-    # İstersen burayı değiştirip SHOW grubunun arkasına da alabiliriz
-    son_records = digerleri + yeni_records
+    # Yeni + korunan, en sona ekle - diger gruplarin sirasi bozulmaz
+    son_records = digerleri + yeni_records + korunan
 
-    # Yedek al
     shutil.copy2(MIRTI, MIRTI + ".bak")
 
     sonuc = list(baslik)
@@ -357,6 +365,7 @@ def update_mirti(new_entries):
     print(f"\n{MIRTI} GÜNCELLENDİ")
     print(f"Grup: {GROUP}")
     print(f"Yeni kayıt: {len(new_entries)}")
+    print(f"Korunan eski: {len(korunan)}")
     print("EPG başlığı: KORUNDU")
     print("Diğer gruplar: KORUNDU")
     print(f"Yedek: {MIRTI}.bak")
@@ -420,7 +429,7 @@ def main():
         except Exception as e:
             print(f"\n{name} HATA VERDİ, ATLANIYOR: {e}")
             basarisiz.append(name)
-            continue  # <-- BURASI ÖNEMLİ: return değil
+            continue
 
     print("\n" + "=" * 50)
     print(f"BAŞARILI: {', '.join(basarili) if basarili else 'YOK'}")
@@ -428,13 +437,18 @@ def main():
         print(f"ATLANAN: {', '.join(basarisiz)}")
     print("=" * 50)
 
-    # Hiçbir şey bulunamadıysa dosyaya DOKUNMA
-    if not entries:
+    if not entries and not basarisiz:
         print("\nHİÇ YAYIN BULUNAMADI.")
         print("MEVCUT M3U DOSYASI KORUNDU.")
         return
 
-    update_mirti(entries)
+    # Sadece korunan varsa bile dosyaya dokunma, zaten aynisi duruyor
+    if not entries:
+        print("\nYeni yayin bulunamadi, eski liste korunuyor.")
+        print("Dosya degistirilmedi.")
+        return
+
+    update_mirti(entries, basarisiz)
     print("\nTARAMA TAMAMLANDI!")
     print("=" * 50)
 
