@@ -1070,6 +1070,5 @@ def main():
     update_mirti(entries, basarisiz)
     print("\nTARAMA TAMAMLANDI!")
     print("=" * 50)
-
 if __name__ == "__main__":
     main()
