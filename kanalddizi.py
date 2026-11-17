@@ -20,14 +20,14 @@ WORKER = "https://mak.sadecenjoy.workers.dev"
 M3U = "mirti68.m3u"
 MIRTI = M3U
 
-GROUP = "KANALD Dizileri"
+GROUP = "🟪◆  KANAL D DİZİ 📺⭕"
 LIMIT = 3
 
 DIZILER = {
     "daha-17": "Daha 17",
-    "uzak-sehir": "【entity-Uzak Şehir¦canonical_name=Uzak Şehir】",
+    "uzak-sehir": "Uzak Şehir",
     "haysiyet": "Haysiyet",
-    "guller-ve-gunahlar": "【entity-Güller ve Günahlar¦canonical_name=Güller ve Günahlar】",
+    "guller-ve-gunahlar": "Güller ve Günahlar",
     "susuz-yaz": "Susuz Yaz",
 }
 
