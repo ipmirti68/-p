@@ -2047,6 +2047,8 @@ http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=873689&extensio
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=873688&extension=ts
 #EXTINF:-1  tvg-name="ZEKI METIN TV" group-title="⬛◆  SİNEMA  🎬",ZEKI METIN TV
 http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=873687&extension=ts
+#EXTINF:-1 tvg-id="" tvg-name="Being Heumann (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Being Heumann (2026)
+http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/596046.mkv
 #EXTINF:-1 tvg-id="" tvg-name="Amazonda Dehşet (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Amazonda Dehşet (2026)
 http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/595976.mkv
 #EXTINF:-1 tvg-id="" tvg-name="Allen (2026)" tvg-logo="" group-title="🟪◆ GÜNCEL FİLİMLER ⭕",Allen (2026)
@@ -2709,6 +2711,8 @@ https://www.youtube.com/watch?v=dIdSyhnHZ60
 https://www.youtube.com/watch?v=GW7oh9t7DKQ
 #EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Masterchef Türkiye (Tv8) - ⭕
 https://www.youtube.com/watch?v=UJwiOzPiYHw
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Masterchef Türkiye (Tv8) - ⭕
+https://www.youtube.com/watch?v=8FlV7cCJmP0
 #EXTINF:-1 tvg-id="episode-4" tvg-logo="https://image.tmdb.org/t/p/w500/zQbhElwkCKV4QG6OtXmN7wResE.jpg" group-title="🟪◆ DİZİLER - PRİSON BREAK ⭕",Prison Break S01E01 - S01E01
 https://79.76.50.223/series/ViP/GaraveliForum/4.mp4
 #EXTINF:-1 tvg-id="episode-5" tvg-logo="https://image.tmdb.org/t/p/w500/cng0p8lg3dskrktVA2W9cJZePY4.jpg" group-title="🟪◆ DİZİLER - PRİSON BREAK ⭕",Prison Break S01E02 - S01E02
