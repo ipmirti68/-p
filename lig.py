@@ -90,11 +90,17 @@ def fetch_and_parse(url_info):
 def main():
     dosya = "mirti68.m3u"
 
-    # === REVİZE: Dosyayı oku, gruplara ayır ===
+        # === REVİZE: Dosyayı oku, gruplara ayır ===
     old_entries = []
+    old_header = ["#EXTM3U"]
     if os.path.exists(dosya):
         with open(dosya, "r", encoding="utf-8", errors="ignore") as f:
-            old_entries = read_entries(f.read().splitlines())
+            lines = f.read().splitlines()
+            # EPG KORUMA
+            old_header = [l.strip() for l in lines if l.strip().startswith("#EXTM3U")]
+            if not old_header:
+                old_header = ["#EXTM3U"]
+            old_entries = read_entries(lines)
     else:
         with open(dosya, "w", encoding="utf-8") as f:
             f.write("#EXTM3U\n")
@@ -149,8 +155,9 @@ def main():
     if not inserted:
         final_entries = yeni_entries + final_entries
 
-    with open(dosya, "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n")
+       with open(dosya, "w", encoding="utf-8") as f:
+        for h in old_header:
+            f.write(h + "\n")
         for entry in final_entries:
             for line in entry:
                 f.write(line + "\n")
