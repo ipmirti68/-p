@@ -68,7 +68,7 @@ jobs:
       - name: 6 -TRT1  DİZİ SON BÖLÜM
         continue-on-error: true
         timeout-minutes: 10
-        run: python trtizi.py || echo "trtdizi failed"     
+        run: python trtdizi.py || echo "trtdizi failed"     
 
  
       # DOSYALARI KAYDET
