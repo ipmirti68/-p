@@ -278,7 +278,12 @@ def main():
     print(f"beIN: eski grupta olmayan {len(yeni_bein)} yeni kanal eklenecek (toplam yeni {len(bein_results)})")
     print(f"SPORTS: eski grupta olmayan {len(yeni_sports)} yeni kanal eklenecek (toplam yeni {len(sports_results)})")
 
-    # Eski liste aynen korunur, hicbir satir silinmez
+       # Eski liste aynen korunur, hicbir satir silinmez
+    # --- EPG KORUMA ---
+    old_header = [L.strip() for L in old_lines if L.strip().startswith("#EXTM3U")]
+    if not old_header:
+        old_header = ["#EXTM3U"]
+    # --- EPG KORUMA BİTTİ ---
     final_lines = []
     for line in old_lines:
         if line.startswith("#EXTM3U"):
@@ -327,9 +332,10 @@ def main():
         print("Yedek alindi: mirti68.m3u.bak")
     except Exception as e:
         print(f"Yedek alinamadi: {e}")
-    try:
+     try:
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
+            for h in old_header:
+                f.write(h + "\n")
             f.write("\n".join(final_lines))
             f.write("\n")
         print("\n========================================")
