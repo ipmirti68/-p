@@ -1,0 +1,37 @@
+name: MIRTI68 Aktar
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'  # 3 saatte bir
+  workflow_dispatch:  # Elle çalıştır butonu
+
+permissions:
+  contents: write
+
+# AYNI ANDA 2 KEZ ÇALIŞMASIN - birbirini silmesinin sebebi bu
+concurrency:
+  group: mirti68-aktar
+  cancel-in-progress: false
+
+jobs:
+  aktar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo çek
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Aktar çalıştır
+        run: python aktar.py
+
+      - name: Değişiklik varsa kaydet
+        run: |
+          git config user.name "mirti68-bot"
+          git config user.email "bot@mirti68.local"
+          git add mirti68.m3u
+          git diff --cached --quiet || git commit -m "auto aktar"
+          git push
