@@ -1,0 +1,9 @@
+#EXTM3U
+#EXTINF:-1 tvg-name="***** STAR DIZI *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆  STAR DIZI 📺⭕",BİLGİLENDİRME
+https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="" tvg-name="SAHİPSİZLER - 51. Bölüm" tvg-logo="https://media.startv.com.tr/star-tv/images/1600_445px(3).jpg" tvg-description="Sahipsizler 51. Bölüm izlemek için tıkla! Sahipsizler 51. Bölüm Full HD tek parça Star TV'de şimdi izle!" group-title="🟪◆  STAR DIZI 📺⭕",SAHİPSİZLER - 51. Bölüm
+https://startv-p3.mncdn.com/smil:sahipsizler_final_bolum_1907_smil.smil/playlist.m3u8?st=hBGA59Dhg4JwDIQ-R5bXdw&e=1795023195
+#EXTINF:-1 tvg-id="" tvg-name="BAŞKALARININ HAYATI - 7. Bölüm" tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" tvg-description="Başkalarının Hayatı 7. Bölüm izlemek için tıkla! Başkalarının Hayatı 7. Bölüm Full HD tek parça Star TV'de şimdi izle!" group-title="🟪◆  STAR DIZI 📺⭕",BAŞKALARININ HAYATI - 7. Bölüm
+https://startv-p3.mncdn.com/smil:baskalarininhayati_blm_7star_smil.smil/playlist.m3u8?st=LlUA3ninwHggCYr8uY3nFA&e=1795023293&r=2
+#EXTINF:-1 tvg-id="" tvg-name="SEVDİĞİM SENSİN - 24. Bölüm" tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" tvg-description="Sevdiğim Sensin 24. Bölüm izlemek için tıkla! Sevdiğim Sensin 24. Bölüm Full HD tek parça Star TV'de şimdi izle!" group-title="🟪◆  STAR DIZI 📺⭕",SEVDİĞİM SENSİN - 24. Bölüm
+https://startv-p3.mncdn.com/smil:sevdigimsensin_blm24_star_smil.smil/playlist.m3u8?st=ouNAwguOf0qffEX5wbHK9g&e=1795023506&r=2
