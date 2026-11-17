@@ -2,7 +2,7 @@ import os, re, json, requests, concurrent.futures
 from datetime import datetime
 
 super_lig_sezonlar = {3974: '2026/2027'}
-super_lig_haftalar = {3853: range(1,49), 3974: range(1,49)}
+super_lig_haftalar = {3853: range(1, 49), 3974: range(1, 49)}
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0',
@@ -32,21 +32,22 @@ def read_entries(lines):
     return entries
 
 def get_birinci_lig_urls_dynamically():
-    # ... senin fonksiyonun aynı kalsın ...
     page_url = "https://www.beinsports.com.tr/mac-ozetleri-goller/tff-1-lig"
     urls_to_fetch = []
     try:
         r = requests.get(page_url, timeout=20, headers=HEADERS)
         r.raise_for_status()
         match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', r.text, re.DOTALL)
-        if not match: return []
+        if not match:
+            return []
         data = json.loads(match.group(1))
         highlights_data = data.get("props", {}).get("pageProps", {}).get("initialReduxState", {}).get("highlights", {}).get("data", [])
-        if not highlights_data: return []
+        if not highlights_data:
+            return []
         for season in highlights_data[0].get("seasons", []):
             sid = season.get("id")
             for rnd in season.get("rounds", []):
-                url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=130&s={sid}&r={rnd.get('round')}&st={rnd.get('st',0)}"
+                url = f"https://beinsports.com.tr/api/highlights/events?sp=1&o=130&s={sid}&r={rnd.get('round')}&st={rnd.get('st', 0)}"
                 urls_to_fetch.append((url, sid))
         return urls_to_fetch
     except Exception as e:
@@ -90,13 +91,12 @@ def fetch_and_parse(url_info):
 def main():
     dosya = "mirti68.m3u"
 
-        # === REVİZE: Dosyayı oku, gruplara ayır ===
+    # === Dosyayı oku, gruplara ayır - EPG KORUMALI ===
     old_entries = []
     old_header = ["#EXTM3U"]
     if os.path.exists(dosya):
         with open(dosya, "r", encoding="utf-8", errors="ignore") as f:
             lines = f.read().splitlines()
-            # EPG KORUMA
             old_header = [l.strip() for l in lines if l.strip().startswith("#EXTM3U")]
             if not old_header:
                 old_header = ["#EXTM3U"]
@@ -112,14 +112,14 @@ def main():
             if line.startswith("http"):
                 mevcut_linkler.add(line.strip())
 
-    all_urls=[]
+    all_urls = []
     for sid in super_lig_sezonlar.keys():
-        for hafta in super_lig_haftalar.get(sid, range(1,39)):
+        for hafta in super_lig_haftalar.get(sid, range(1, 39)):
             all_urls.append((f"https://beinsports.com.tr/api/highlights/events?sp=1&o=18&s={sid}&r={hafta}&st=0", sid))
     all_urls.extend(get_birinci_lig_urls_dynamically())
     print(f"Toplam {len(all_urls)} hafta taranacak")
 
-    yeni_videolar=[]
+    yeni_videolar = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
         for res in ex.map(fetch_and_parse, all_urls):
             for dt_obj, l1, l2 in res:
@@ -136,7 +136,7 @@ def main():
     # Yeni videoları entry formatına çevir: [line1, line2]
     yeni_entries = [[l1.strip(), l2.strip()] for dt_obj, l1, l2 in yeni_videolar]
 
-    # === REVİZE: Mevcut GOLLER grubunun içine ekle, en sona gitmesin ===
+    # === Mevcut GOLLER grubunun içine ekle, en sona gitmesin ===
     final_entries = []
     inserted = False
 
@@ -146,7 +146,7 @@ def main():
             if not inserted:
                 final_entries.extend(yeni_entries)
                 inserted = True
-            # Eski golü de koru, altına ekle - silmek istersen bu satırı sil
+            # Eski golü de koru, altına ekle
             final_entries.append(entry)
             continue
         final_entries.append(entry)
@@ -154,13 +154,15 @@ def main():
     # Listede hiç GOLLER grubu yoksa, en başa ekle
     if not inserted:
         final_entries = yeni_entries + final_entries
-     with open(dosya, "w", encoding="utf-8") as f:
+
+    with open(dosya, "w", encoding="utf-8") as f:
         for h in old_header:
             f.write(h + "\n")
         for entry in final_entries:
             for line in entry:
                 f.write(line + "\n")
 
-    print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi (grubun içine, en yeni en üstte) -> {dosya}")    
+    print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi (grubun içine, en yeni en üstte) -> {dosya}")
 
-if __name__=="__main__": main()
+if __name__ == "__main__":
+    main()
