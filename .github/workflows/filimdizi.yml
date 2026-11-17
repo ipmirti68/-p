@@ -57,7 +57,7 @@ jobs:
       - name: 5 - GÜNCEL DİZİLER 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python gunceldiziler.py || echo "gunceldiziler failed"
+        run: python gunceldiziler.p || echo "gunceldiziler failed"
       
       - name: 6 - 7/24 DİZİ 2026
         continue-on-error: true
