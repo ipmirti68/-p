@@ -10,7 +10,7 @@ from playwright.async_api import async_playwright
 # NOW TV DIZI - DUZELTILMIS SURUM
 # ==================================================
 
-M3U_FILE = "mirti68.m3u"
+M3U_FILE = "nowdizi.m3u"
 BASE = "https://www.nowtv.com.tr"
 
 TARGET_GROUP = "🟪◆  NOW DİZİ 📺⭕"
