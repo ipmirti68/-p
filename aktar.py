@@ -43,7 +43,22 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "",
     },
-
+       {
+        "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
+        "kaynak_grup": "Diziler | Prison Break | Prison Break",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ DİZİLER - PRİSON BREAK ⭕",
+        "hedef_logo": "",
+        "ek_kod": "",
+    },
+   {
+        "kaynak_url": "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts",
+        "kaynak_grup": "SONVIZYON FILMLER",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ GÜNCEL FİLİMLER ⭕",
+        "hedef_logo": "",
+        "ek_kod": "",
+    },
 ]
 
 
