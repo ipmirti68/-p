@@ -1,17 +1,36 @@
+
 # ==================================================
-# MIRTI68 - TEK AKTARICI (Grup içi SİLMEZ, BİRLEŞTİRİR)
-# Kural:
-# - Hedefte aynı isimde grup varsa -> İÇİNE BİRLEŞTİR
-#   Aynı isimli kayıt varsa güncelle, yoksa ekle, diğerlerine DOKUNMA
-# - Yoksa aynı şekil/renk başlangıcı olan grubun ALTINA yaz
-# - Bilgilendirme YOK
+# MIRTI68 - TEK AKTARICI
+# HATALI URL ATLA - ÇALIŞANLARA DEVAM ET
+#
+# - 403 / 404 / 500 hatalarında durmaz
+# - Zaman aşımında durmaz
+# - Boş kaynakları atlar
+# - Aynı isimli grupları birleştirir
+# - Eski kanalları korur
+# - Aynı isimli kanalları yeni linkle günceller
+# - Yeni kanalları ekler
+# - Benzer renk grubunun altına ekler
+# - EPG ve diğer EXTINF bilgilerini korur
+# - İşlem sonunda yedek oluşturur
 # ==================================================
-import re, os, codecs, shutil, urllib.request
+
+import re
+import os
+import shutil
+import urllib.request
+import urllib.error
+import socket
 
 HEDEF_DOSYA = "mirti68.m3u"
 
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
+
+TIMEOUT = 30
+
 AKTARIMLAR = [
-      {
+
+    {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/atomspor/refs/heads/main/atom.m3u",
         "kaynak_grup": "Atom-Panel",
         "aranacak": "beIN Sports",
@@ -19,6 +38,7 @@ AKTARIMLAR = [
         "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
         "ek_kod": "⭕ Atom",
     },
+
     {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | ULUSAL",
@@ -27,7 +47,8 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-         {
+
+    {
         "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
         "kaynak_grup": "",
         "aranacak": "beIN Sports",
@@ -35,7 +56,8 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-      {
+
+    {
         "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ulusal.m3u",
         "kaynak_grup": "",
         "aranacak": "",
@@ -43,7 +65,8 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "",
     },
-       {
+
+    {
         "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
         "kaynak_grup": "Diziler | Prison Break | Prison Break",
         "aranacak": "",
@@ -51,7 +74,8 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "",
     },
-   {
+
+    {
         "kaynak_url": "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts",
         "kaynak_grup": "SONVIZYON FILMLER",
         "aranacak": "",
@@ -59,7 +83,8 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-        {
+
+    {
         "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
         "kaynak_grup": "SONVIZYON FILMLER",
         "aranacak": "",
@@ -68,7 +93,7 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
 
-         {
+    {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | 7/24 DIZI",
         "aranacak": "",
@@ -76,7 +101,8 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-             {
+
+    {
         "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
         "kaynak_grup": "Yerel / 🔴 SPOR",
         "aranacak": "",
@@ -84,7 +110,8 @@ AKTARIMLAR = [
         "hedef_logo": "https://i.imgur.com/TgW5452.png",
         "ek_kod": "0️⃣⭕",
     },
-         {
+
+    {
         "kaynak_url": "http://31.43.191.142:8880/get.php?username=191703089055131&password=01703089055686&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | SPORT",
         "aranacak": "",
@@ -92,6 +119,7 @@ AKTARIMLAR = [
         "hedef_logo": "https://i.imgur.com/TgW5452.png",
         "ek_kod": "1️⃣⭕",
     },
+
     {
         "kaynak_url": "http://ruzgarplayer.site:8080/get.php?username=KH6Rn39q4WpL&password=bnzSVts6Lner&type=m3u_plus&output=tsrd=GaraveliForum&type=m3u_plus&output=m3u8",
         "kaynak_grup": "⫸TR SUPER LİG 1⫷",
@@ -101,7 +129,7 @@ AKTARIMLAR = [
         "ek_kod": "2️⃣⭕",
     },
 
-       {
+    {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | SPOR⫷",
         "aranacak": "",
@@ -110,7 +138,7 @@ AKTARIMLAR = [
         "ek_kod": "3️⃣⭕",
     },
 
-             {
+    {
         "kaynak_url": "http://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts",
         "kaynak_grup": "TR-SPOR",
         "aranacak": "",
@@ -122,220 +150,600 @@ AKTARIMLAR = [
 ]
 
 
+# ==================================================
+# YARDIMCI FONKSİYONLAR
+# ==================================================
+
 def grup_bul(rec):
+
     for l in rec:
         if l.startswith("#EXTINF:"):
             m = re.search(r'group-title="([^"]*)"', l)
             return m.group(1) if m else ""
+
     return ""
 
+
 def kanal_adi(rec):
+
     for l in rec:
         if l.startswith("#EXTINF:"):
             return l.split(",", 1)[-1].strip()
+
     return ""
 
+
 def extinf_bul(rec):
+
     for l in rec:
         if l.startswith("#EXTINF:"):
             return l
+
     return ""
 
+
 def temiz_isim(ad):
-    """Karşılaştırma için ana ismi çıkar:
-    HAYSİYET - 2. Bölüm ⭕ Atom -> HAYSİYET
-    HAYSİYET - 1. Bölüm - 2026-11-17 -> HAYSİYET
-    BEIN SPORT 1 ⭕ Atom -> BEIN SPORT 1
-    """
+
     ad = (ad or "").lower().strip()
-    # 1. Son ekleri at: ⭕ Atom, ⭕, Atom gibi
+
     for son_ek in ["⭕ atom", "⭕", "atom"]:
         if ad.endswith(son_ek):
-            ad = ad[: -len(son_ek)].strip()
-    # 2. Bölüm kısmını at: " - 2. bölüm", " - 12. bolum"
+            ad = ad[:-len(son_ek)].strip()
+
     ad = re.split(r'\s*-\s*\d+\.?\s*bölüm', ad)[0]
     ad = re.split(r'\s*-\s*\d+\.?\s*bolum', ad)[0]
-    # 3. Tarih kısmını at: " - 2026-11-17"
     ad = re.split(r'\s*-\s*\d{4}-\d{2}-\d{2}', ad)[0]
-    # 4. Kalan sondaki - ve boşlukları temizle
-    ad = ad.strip().rstrip("-").strip()
-    return ad
+
+    return ad.strip().rstrip("-").strip()
+
 
 def grup_baslangici(grup_adi):
+
     m = re.match(r'^\s*(\S+\s*◆)', grup_adi.strip())
+
     if m:
         return m.group(1).strip()
+
     return grup_adi.strip().split()[0] if grup_adi.strip() else ""
 
+
+# ==================================================
+# M3U OKUMA
+# ==================================================
+
 def oku_m3u(path_or_url):
+
     if path_or_url.startswith("http"):
-        req = urllib.request.Request(path_or_url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            metin = r.read().decode("utf-8-sig", errors="ignore")
+
+        req = urllib.request.Request(
+            path_or_url,
+            headers={
+                "User-Agent": USER_AGENT,
+                "Accept": "*/*",
+                "Connection": "close",
+            }
+        )
+
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+            veri = r.read()
+
+        metin = veri.decode("utf-8-sig", errors="ignore")
+
     else:
+
         if not os.path.exists(path_or_url):
-            print(f"  [!] Kaynak bulunamadı: {path_or_url}")
-            return [], [], "\n", "utf-8"
-        metin = open(path_or_url, "rb").read().decode("utf-8-sig", errors="ignore")
+            raise FileNotFoundError(path_or_url)
+
+        with open(path_or_url, "rb") as f:
+            metin = f.read().decode("utf-8-sig", errors="ignore")
+
     newline = "\r\n" if "\r\n" in metin else "\n"
+
     satirlar = metin.splitlines()
-    ilk = next((i for i, s in enumerate(satirlar) if s.startswith("#EXTINF:")), len(satirlar))
+
+    ilk = next(
+        (i for i, s in enumerate(satirlar) if s.startswith("#EXTINF:")),
+        len(satirlar)
+    )
+
     baslik = satirlar[:ilk]
     govde = satirlar[ilk:]
-    records, cur = [], []
+
+    records = []
+    cur = []
+
     for line in govde:
+
         if line.startswith("#EXTINF:") and cur:
-            records.append(cur); cur = []
+            records.append(cur)
+            cur = []
+
         cur.append(line)
-    if cur: records.append(cur)
+
+    if cur:
+        records.append(cur)
+
     return baslik, records, newline, "utf-8"
 
+
+# ==================================================
+# KAYIT DÜZENLEME
+# ==================================================
+
 def hedefe_uyarla(rec, cfg):
-    extinf = extinf_bul(rec)
-    url = rec[-1] if rec else ""
-    ad = kanal_adi(rec)
 
-    # 1. Hedef grup
+    yeni_rec = list(rec)
+
+    extinf_index = next(
+        (i for i, x in enumerate(yeni_rec) if x.startswith("#EXTINF:")),
+        None
+    )
+
+    if extinf_index is None:
+        return yeni_rec
+
+    extinf = yeni_rec[extinf_index]
+
+    ad = extinf.split(",", 1)[-1].strip()
+
+    hedef_grup = cfg["hedef_grup"]
+
+    # HEDEF GRUP
+
     if 'group-title="' in extinf:
-        extinf = re.sub(r'group-title="[^"]*"', f'group-title="{cfg["hedef_grup"]}"', extinf)
+
+        extinf = re.sub(
+            r'group-title="[^"]*"',
+            lambda m: f'group-title="{hedef_grup}"',
+            extinf,
+            count=1
+        )
+
     else:
-        extinf = extinf.replace("#EXTINF:-1", f'#EXTINF:-1 group-title="{cfg["hedef_grup"]}"')
 
-    # 2. Hedef logo
-    if cfg.get("hedef_logo"):
+        extinf = re.sub(
+            r'(#EXTINF:-?\d+)',
+            lambda m: m.group(1) + f' group-title="{hedef_grup}"',
+            extinf,
+            count=1
+        )
+
+    # HEDEF LOGO
+
+    logo = cfg.get("hedef_logo", "")
+
+    if logo:
+
         if 'tvg-logo="' in extinf:
-            extinf = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{cfg["hedef_logo"]}"', extinf)
-        else:
-            extinf = extinf.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-logo="{cfg["hedef_logo"]}"')
 
-    # 3. ek_kod - İKİ TİPİ DE DESTEKLER
-    ek = (cfg.get("ek_kod") or "").strip()
-    if ek:
-        if "=" in ek:
-            # Tip 1: EXTINF özelliği -> #EXTINF:-1 tvg-id="..." gibi
-            # Zaten varsa tekrar ekleme
-            anahtar = ek.split("=")[0].strip()
-            if anahtar not in extinf:
-                extinf = extinf.replace("#EXTINF:-1", f"#EXTINF:-1 {ek}")
+            extinf = re.sub(
+                r'tvg-logo="[^"]*"',
+                lambda m: f'tvg-logo="{logo}"',
+                extinf,
+                count=1
+            )
+
         else:
-            # Tip 2: İSİM SONUNA ekle -> "HAYSİYET" -> "HAYSİYET ⭕ Atom"
-            # Zaten sonda varsa tekrar ekleme
+
+            extinf = re.sub(
+                r'(#EXTINF:-?\d+)',
+                lambda m: m.group(1) + f' tvg-logo="{logo}"',
+                extinf,
+                count=1
+            )
+
+    # EK KOD
+
+    ek = (cfg.get("ek_kod") or "").strip()
+
+    if ek:
+
+        if "=" in ek:
+
+            anahtar = ek.split("=")[0].strip()
+
+            if anahtar not in extinf:
+
+                extinf = re.sub(
+                    r'(#EXTINF:-?\d+)',
+                    lambda m: m.group(1) + f' {ek}',
+                    extinf,
+                    count=1
+                )
+
+        else:
+
             if not ad.endswith(ek) and ek not in ad:
+
                 yeni_ad = f"{ad} {ek}"
-                # tvg-name="..." içini de değiştir
-                extinf = re.sub(
-                    r'tvg-name="[^"]*"',
-                    f'tvg-name="{yeni_ad}"',
-                    extinf,
-                    count=1
-                )
-                # virgülden sonraki görünen adı da değiştir
-                # #EXTINF:-1 ...,GÖRÜNEN AD
-                extinf = re.sub(
-                    r',([^,]*)$',
-                    f',{yeni_ad}',
-                    extinf,
-                    count=1
-                )
-    return [extinf, url]
+
+                if 'tvg-name="' in extinf:
+
+                    extinf = re.sub(
+                        r'tvg-name="[^"]*"',
+                        lambda m: f'tvg-name="{yeni_ad}"',
+                        extinf,
+                        count=1
+                    )
+
+                extinf = extinf.rsplit(",", 1)[0] + "," + yeni_ad
+
+    yeni_rec[extinf_index] = extinf
+
+    return yeni_rec
+
+
+# ==================================================
+# KAYNAK FİLTRELEME
+# ==================================================
+
+def kaynak_sec(kaynak_records, cfg):
+
+    aranacak = cfg.get("aranacak", "").strip().lower()
+
+    kaynak_grup = cfg.get("kaynak_grup", "").strip()
+
+    secilen = []
+
+    for r in kaynak_records:
+
+        if kaynak_grup and grup_bul(r) != kaynak_grup:
+            continue
+
+        if aranacak:
+
+            ad = kanal_adi(r).lower()
+            url = " ".join(r).lower()
+
+            if aranacak not in ad and aranacak not in url:
+                continue
+
+        if "bilgilendirme" in kanal_adi(r).lower():
+            continue
+
+        secilen.append(hedefe_uyarla(r, cfg))
+
+    return secilen
+
+
+# ==================================================
+# GRUP BİRLEŞTİRME
+# ==================================================
+
+def grubu_birlestir(hedef_records, secilen, hedef_grup):
+
+    gelen = {}
+
+    for r in secilen:
+
+        isim = temiz_isim(kanal_adi(r))
+
+        if isim:
+            gelen[isim] = r
+
+    yeni_kayitlar = []
+    gorulen = set()
+    ilk = None
+    son = None
+
+    # Eski kayıtların tamamını koru.
+    # Aynı isim varsa yeni bağlantıyı uygula.
+
+    for r in hedef_records:
+
+        if grup_bul(r) != hedef_grup:
+
+            yeni_kayitlar.append(r)
+            continue
+
+        if ilk is None:
+            ilk = len(yeni_kayitlar)
+
+        isim = temiz_isim(kanal_adi(r))
+
+        if isim in gelen:
+
+            yeni_kayitlar.append(gelen[isim])
+            gorulen.add(isim)
+
+            print(f"    [REVİZE] {kanal_adi(r)}")
+
+        else:
+
+            yeni_kayitlar.append(r)
+
+            print(f"    [KORUNDU] {kanal_adi(r)}")
+
+        son = len(yeni_kayitlar)
+
+    # Yeni kanalları grubun sonuna ekle.
+
+    eklenecek = []
+
+    for isim, rec in gelen.items():
+
+        if isim not in gorulen:
+
+            eklenecek.append(rec)
+
+            print(f"    [EKLENDİ] {kanal_adi(rec)}")
+
+    if eklenecek:
+
+        if son is not None:
+
+            yeni_kayitlar[son:son] = eklenecek
+
+        else:
+
+            yeni_kayitlar.extend(eklenecek)
+
+    return yeni_kayitlar
+
+
+# ==================================================
+# ANA İŞLEM
+# ==================================================
 
 def main():
+
     if not os.path.exists(HEDEF_DOSYA):
-        print(f"[HATA] {HEDEF_DOSYA} yok!")
+
+        print(f"[HATA] {HEDEF_DOSYA} bulunamadı!")
+
         return
 
-    baslik, hedef_records, newline, enc = oku_m3u(HEDEF_DOSYA)
+    print("\n====================================")
+    print(" MIRTI68 - TEK AKTARICI BAŞLADI")
+    print(" HATALI URL ATLANACAK")
+    print("====================================")
 
-    for cfg in AKTARIMLAR:
-        print(f"\n[*] {cfg['kaynak_url']} | aranacak='{cfg['aranacak']}' -> hedef='{cfg['hedef_grup']}'")
-        _, kaynak_records, _, _ = oku_m3u(cfg["kaynak_url"])
-        aranacak = cfg.get("aranacak", "").strip().lower()
-        kaynak_grup = cfg.get("kaynak_grup", "").strip()
+    # HEDEF DOSYAYI OKU
 
-        secilen = []
-        for r in kaynak_records:
-            if kaynak_grup and grup_bul(r) != kaynak_grup:
-                continue
-            if aranacak:
-                ad = kanal_adi(r).lower()
-                url = " ".join(r).lower()
-                if aranacak not in ad and aranacak not in url:
-                    continue
-            if "bilgilendirme" in kanal_adi(r).lower():
-                continue
-            secilen.append(hedefe_uyarla(r, cfg))
+    try:
+
+        baslik, hedef_records, newline, enc = oku_m3u(HEDEF_DOSYA)
+
+    except Exception as hata:
+
+        print(f"[HATA] Hedef dosya okunamadı: {hata}")
+
+        return
+
+    basarili = 0
+    hatali = 0
+    eklenen_toplam = 0
+
+    # TÜM KAYNAKLARI TEK TEK DENE
+
+    for sira, cfg in enumerate(AKTARIMLAR, 1):
+
+        url = cfg["kaynak_url"]
+
+        print(f"\n[{sira}/{len(AKTARIMLAR)}] KAYNAK:")
+        print(url.split("?")[0])
+
+        print(f"HEDEF GRUP: {cfg['hedef_grup']}")
+
+        # URL OKUMA - HATA OLURSA DİĞERİNE GEÇ
+
+        try:
+
+            _, kaynak_records, _, _ = oku_m3u(url)
+
+        except urllib.error.HTTPError as hata:
+
+            hatali += 1
+
+            print(f"  [ATLANDI] HTTP {hata.code}")
+
+            print("  [DEVAM] Sonraki kaynağa geçiliyor.")
+
+            continue
+
+        except urllib.error.URLError as hata:
+
+            hatali += 1
+
+            print(f"  [ATLANDI] Bağlantı hatası: {hata.reason}")
+
+            print("  [DEVAM] Sonraki kaynağa geçiliyor.")
+
+            continue
+
+        except (TimeoutError, socket.timeout) as hata:
+
+            hatali += 1
+
+            print(f"  [ATLANDI] Zaman aşımı: {hata}")
+
+            continue
+
+        except Exception as hata:
+
+            hatali += 1
+
+            print(f"  [ATLANDI] {type(hata).__name__}: {hata}")
+
+            continue
+
+        # BOŞ KAYNAK KONTROLÜ
+
+        if not kaynak_records:
+
+            hatali += 1
+
+            print("  [ATLANDI] Kaynakta M3U kaydı bulunamadı.")
+
+            continue
+
+        # KAYNAK FİLTRELEME
+
+        try:
+
+            secilen = kaynak_sec(kaynak_records, cfg)
+
+        except Exception as hata:
+
+            hatali += 1
+
+            print(f"  [ATLANDI] Filtreleme hatası: {hata}")
+
+            continue
 
         if not secilen:
-            print(f"  [!] Kayıt yok, bu grup atlandı, hedefe DOKUNULMADI")
+
+            print("  [BOŞ] Uygun kanal bulunamadı.")
+
+            print("  [DEVAM] Hedef gruba dokunulmadı.")
+
+            basarili += 1
+
             continue
 
-        print(f"  [+] {len(secilen)} kayıt seçildi")
+        print(f"  [OKUNDU] {len(secilen)} kanal bulundu.")
+
         hedef_grup = cfg["hedef_grup"]
 
-   
-             # 1. Hedefte AYNI İSİMDE grup var mı? -> BİRLEŞTİR, SİLME, TEKRAR EKLEME
-        ayni_indexler = [i for i, r in enumerate(hedef_records) if grup_bul(r) == hedef_grup]
-        if ayni_indexler:
-            # Gelenler: ana isim -> kayıt (aynı isimden 2 tane geldiyse sonuncuyu al)
-            gelen = {}
-            for r in secilen:
-                gelen[temiz_isim(kanal_adi(r))] = r
+        # AYNI İSİMLİ GRUP VAR MI?
 
-            yeni_grup_kayitlari = []
-            gorulen = set()
+        ayni_grup_var = any(
+            grup_bul(r) == hedef_grup
+            for r in hedef_records
+        )
 
-            for idx in ayni_indexler:
-                eski = hedef_records[idx]
-                eski_isim = temiz_isim(kanal_adi(eski))
+        if ayni_grup_var:
 
-                # Bu grupta zaten aynı isim 2 kere varsa, ilkini atla (tekrarı sil)
-                if eski_isim in gorulen:
-                    print(f"    [TEKRAR SİLİNDİ] {kanal_adi(eski)}")
-                    continue
-                gorulen.add(eski_isim)
+            # AYNI GRUBU BİRLEŞTİR
 
-                if eski_isim in gelen:
-                    # Aynı isim -> REVİZE ET, ekleme
-                    yeni_grup_kayitlari.append(gelen.pop(eski_isim))
-                    print(f"    [REVİZE EDİLDİ] {kanal_adi(eski)} -> yeni link")
-                else:
-                    # Gelenlerde yoksa ESKİSİ KALSIN
-                    yeni_grup_kayitlari.append(eski)
-                    print(f"    [KORUNDU] {kanal_adi(eski)}")
+            onceki_sayi = len(hedef_records)
 
-            # Tamamen yeni isimler varsa ekle
-            for isim, rec in gelen.items():
-                if isim not in gorulen:
-                    yeni_grup_kayitlari.append(rec)
-                    print(f"    [EKLENDİ] {kanal_adi(rec)}")
+            hedef_records = grubu_birlestir(
+                hedef_records,
+                secilen,
+                hedef_grup
+            )
 
-            ilk = min(ayni_indexler)
-            digerleri = [r for r in hedef_records if grup_bul(r) != hedef_grup]
-            onceki = sum(1 for r in hedef_records[:ilk] if grup_bul(r) != hedef_grup)
-            hedef_records = digerleri[:onceki] + yeni_grup_kayitlari + digerleri[onceki:]
-            print(f"  [YAZILDI] Aynı grup birleştirildi: {hedef_grup}")
+            fark = len(hedef_records) - onceki_sayi
+
+            eklenen_toplam += max(0, fark)
+
+            print(f"  [YAZILDI] Grup birleştirildi: {hedef_grup}")
+
+            basarili += 1
+
             continue
 
-        # 2. Aynı isim yoksa, aynı şekil/renk başlangıcı olan grubun ALTINA ekle
+        # AYNI İSİMLİ GRUP YOKSA BENZER RENK GRUBUNU BUL
+
         hedef_baslangic = grup_baslangici(hedef_grup)
-        benzer = [i for i, r in enumerate(hedef_records) if grup_baslangici(grup_bul(r)) == hedef_baslangic and grup_bul(r)]
+
+        benzer = [
+
+            i for i, r in enumerate(hedef_records)
+
+            if grup_baslangici(grup_bul(r)) == hedef_baslangic
+            and grup_bul(r)
+
+        ]
+
         if benzer:
+
             son_benzer = max(benzer)
-            hedef_records = hedef_records[:son_benzer+1] + secilen + hedef_records[son_benzer+1:]
-            print(f"  [YAZILDI] Aynı isim yok, '{hedef_baslangic}' grubunun altına eklendi")
-            continue
 
-        # 3. Hiç benzer yoksa en sona ekle
-        hedef_records = hedef_records + secilen
-        print(f"  [YAZILDI] Benzer yok, en sona eklendi")
+            hedef_records = (
+                hedef_records[:son_benzer + 1]
+                + secilen
+                + hedef_records[son_benzer + 1:]
+            )
 
-    shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA + ".bak")
+            print(
+                f"  [YAZILDI] Benzer grubun altına eklendi: "
+                f"{hedef_baslangic}"
+            )
+
+        else:
+
+            # BENZER GRUP YOKSA EN SONA EKLE
+
+            hedef_records.extend(secilen)
+
+            print("  [YAZILDI] Yeni grup en sona eklendi.")
+
+        eklenen_toplam += len(secilen)
+
+        basarili += 1
+
+    # ==================================================
+    # SONUÇ DOSYASINI KAYDET
+    # ==================================================
+
+    print("\n====================================")
+    print(" MIRTI68 - DOSYA KAYDEDİLİYOR")
+    print("====================================")
+
+    # YAZMADAN ÖNCE YEDEKLE
+
+    try:
+
+        shutil.copy2(
+            HEDEF_DOSYA,
+            HEDEF_DOSYA + ".bak"
+        )
+
+        print("[YEDEK] mirti68.m3u.bak oluşturuldu.")
+
+    except Exception as hata:
+
+        print(f"[UYARI] Yedek oluşturulamadı: {hata}")
+
+    # M3U OLUŞTUR
+
     sonuc = list(baslik)
+
     for r in hedef_records:
+
         sonuc.extend(r)
-    with open(HEDEF_DOSYA, "w", encoding=enc, newline="") as f:
-        f.write(newline.join(sonuc) + newline)
-    print(f"\n[TAMAM] {HEDEF_DOSYA} güncellendi | Grup içi silinmedi, birleştirildi | EPG korundu")
+
+    # DOSYAYA YAZ
+
+    try:
+
+        with open(
+            HEDEF_DOSYA,
+            "w",
+            encoding=enc,
+            newline=""
+        ) as f:
+
+            f.write(newline.join(sonuc) + newline)
+
+    except Exception as hata:
+
+        print(f"[HATA] Dosya yazılamadı: {hata}")
+
+        return
+
+    # ==================================================
+    # RAPOR
+    # ==================================================
+
+    print("\n====================================")
+    print(" MIRTI68 - AKTARIM TAMAMLANDI")
+    print("====================================")
+
+    print(f"[BAŞARILI] {basarili}")
+    print(f"[HATALI / ATLANAN] {hatali}")
+    print(f"[EKLENEN KAYIT] {eklenen_toplam}")
+    print(f"[TOPLAM KANAL] {len(hedef_records)}")
+    print(f"[DOSYA] {HEDEF_DOSYA}")
+
+    print("====================================")
+    print("[TAMAM] ÇALIŞAN KAYNAKLAR AKTARILDI")
+    print("[TAMAM] Hatalı URL'ler işlemi durdurmadı")
+    print("[TAMAM] Eski grup kayıtları korundu")
+    print("====================================")
+
 
 if __name__ == "__main__":
     main()
