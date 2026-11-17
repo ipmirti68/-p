@@ -7,7 +7,7 @@ from html import unescape
 from playwright.async_api import async_playwright
 
 # ==================================================
-# 【entity-STAR TV¦canonical_name=STAR TV】 DIZI OTOMATIK GUNCELLEYICI
+# STAR TV DIZI OTOMATIK GUNCELLEYICI - REVIZE
 # ==================================================
 
 M3U_FILE = "mirti68.m3u"
@@ -28,9 +28,9 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0 
 DIZILER = [
     {"slug": "sahipsizler", "name": "SAHIPSIZLER"},
     {"slug": "kral-kaybederse", "name": "KRAL KAYBEDERSE"},
-    {"slug": "ruya-gibi", "name": "RUYA GIBI"},
-    {"slug": "carsı-pazarı", "name": "CARSI PAZARI"},
-    {"slug": "asik-kral", "name": "ASIK KRAL"},
+    {"slug": "baskalarinin-hayati", "name": "BASKALARININ HAYATI"},
+    {"slug": "tuzlu-kahve", "name": "TUZLU KAHVE"},
+    {"slug": "sevdigim-sensin", "name": "SEVDIGIM SENSIN"},
 ]
 
 # ==================================================
@@ -91,7 +91,8 @@ async def dizi_bul(browser, dizi):
     hls_urls = []
 
     def yakala(adres):
-        adres = temizle(adres).replace("\\/", "/").replace("\\u0026", "&")
+        # &amp; -> &  cok onemli, yoksa link calismiyor
+        adres = unescape(str(adres or "")).replace("\\/", "/").replace("\\u0026", "&").replace("&amp;", "&").strip()
         if ".m3u8" in adres.lower() and adres.startswith("http"):
             if adres not in hls_urls:
                 hls_urls.append(adres)
@@ -104,7 +105,6 @@ async def dizi_bul(browser, dizi):
 
         denenecek = [
             f"{BASE}/dizi/{dizi['slug']}",
-            f"{BASE}/diziler/{dizi['slug']}",
             f"{BASE}/dizi/{dizi['slug']}/bolumler",
         ]
 
@@ -154,18 +154,25 @@ async def dizi_bul(browser, dizi):
                     continue
                 if link.rstrip("/") == url.rstrip("/"):
                     continue
+
                 bolum_no = None
+                # 1) Yazida "24. Bolum" varsa
                 m = re.search(r'(\d+)\s*\.?\s*bölüm', text, re.I)
                 if m:
                     bolum_no = int(m.group(1))
+                # 2) URL'de /bolumler/51-bolum veya /bolumler/30-bolum-final
                 if bolum_no is None:
-                    m3 = re.search(rf"{re.escape(dizi['slug'])}[^0-9]*(\d+)", low_link)
-                    if m3:
-                        if "/bolum" in low_link or "-bolum" in low_link or re.search(r'/\d+/?$', low_link):
-                            bolum_no = int(m3.group(1))
+                    m2 = re.search(r'/bolumler/(\d+)[-\w]*', low_link)
+                    if m2:
+                        bolum_no = int(m2.group(1))
+                # 3) Son bolum butonu: "Son Bolum" yazan link
+                if bolum_no is None and ("son bölüm" in low_text or "son bolum" in low_text):
+                    # Numara yoksa 999 ver, en uste ciksin
+                    bolum_no = 999
+
                 if bolum_no is None:
                     continue
-                if bolum_no <= 0 or bolum_no > 500:
+                if bolum_no <= 0 or bolum_no > 999:
                     continue
                 if bolum_no not in adaylar:
                     adaylar[bolum_no] = {"url": link, "text": text or f"{bolum_no}. Bolum"}
@@ -181,13 +188,15 @@ async def dizi_bul(browser, dizi):
         son_bolum = max(adaylar)
         hedef = adaylar[son_bolum]["url"]
         episode = adaylar[son_bolum]["text"]
-        if not re.search(r'bölüm', episode, re.I):
+        if son_bolum == 999:
+            episode = "Son Bolum"
+        elif not re.search(r'bölüm', episode, re.I):
             episode = f"{son_bolum}. Bolum"
 
         print(f"[SON BOLUM] {son_bolum} - {hedef}")
 
         await page.goto(hedef, wait_until="domcontentloaded", timeout=60000)
-        await page.wait_for_timeout(5000)
+        await page.wait_for_timeout(6000)
 
         description = await meta(page, 'meta[name="description"]') or description
         date = await meta(page, 'meta[property="article:published_time"]')
@@ -196,33 +205,44 @@ async def dizi_bul(browser, dizi):
         if date:
             date = date[:10]
 
-        html = (await page.content()).replace("\\/", "/").replace("\\u0026", "&").replace("&amp;", "&")
-        for url in re.findall(r'https://[^\s"\'<>]+?\.m3u8(?:\?[^\s"\'<>]*)?', html, re.I):
-            yakala(url)
-
-        for selector in [".jw-icon-play", ".vjs-big-play-button", ".plyr__control--overlaid", "button[aria-label*='Oynat']"]:
+        # HTML icinde de ara
+        for _ in range(2):
+            html = (await page.content()).replace("\\/", "/").replace("\\u0026", "&").replace("&amp;", "&")
+            html = unescape(html)
+            for u in re.findall(r'https://[^\s"\'<>]+?\.m3u8(?:\?[^\s"\'<>]*)?', html, re.I):
+                yakala(u)
+            for selector in [".jw-icon-play", ".vjs-big-play-button", ".plyr__control--overlaid", "button[aria-label*='Oynat']"]:
+                try:
+                    el = page.locator(selector).first
+                    if await el.count():
+                        await el.click(timeout=2500, force=True)
+                        await page.wait_for_timeout(7000)
+                        break
+                except Exception:
+                    pass
             try:
-                el = page.locator(selector).first
-                if await el.count():
-                    await el.click(timeout=2500, force=True)
-                    await page.wait_for_timeout(7000)
-                    break
+                await page.locator("video").first.evaluate("(v) => v.play()")
+                await page.wait_for_timeout(7000)
             except Exception:
                 pass
-        try:
-            await page.locator("video").first.evaluate("(v) => v.play()")
-            await page.wait_for_timeout(7000)
-        except Exception:
-            pass
-
-        html = (await page.content()).replace("\\/", "/").replace("\\u0026", "&").replace("&amp;", "&")
-        for url in re.findall(r'https://[^\s"\'<>]+?\.m3u8(?:\?[^\s"\'<>]*)?', html, re.I):
-            yakala(url)
 
         if not hls_urls:
             print("[HLS BULUNAMADI] Sayfa acik bir M3U8 adresi sunmadi; bu kayit atlandi.")
             return {"unavailable": True, "name": dizi["name"]}
 
+        # En iyisi: mncdn + smil + playlist olan
+        def skor(u):
+            u = u.lower()
+            s = 0
+            if "mncdn.com" in u:
+                s += 10
+            if "smil" in u:
+                s += 10
+            if "playlist.m3u8" in u:
+                s += 10
+            return -s
+
+        hls_urls.sort(key=skor)
         stream_url = hls_urls[0]
         print("[HLS BULUNDU]", stream_url)
         print("[LOGO]", logo or "Bulunamadi")
@@ -284,7 +304,9 @@ def listeyi_guncelle(yeni_diziler, bulunamayan_isimler):
         ad = kanal_adi(r)
         koru = False
         for isim in bulunamayan_isimler:
-            if isim in ad:
+            # Eski kayitta isim farkli yazilmis olabilir, ilk kelimeye bak
+            ana = isim.split(" ")[0]
+            if ana in ad or isim in ad:
                 koru = True
                 break
         if koru:
