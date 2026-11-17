@@ -62,7 +62,7 @@ jobs:
       - name: 6 - 7/24 DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
-        run: python 724.py || echo "724 failed"
+        run: python 724.p || echo "724 failed"
            
       - name: 7 - DİZİLER YAML
         continue-on-error: true
