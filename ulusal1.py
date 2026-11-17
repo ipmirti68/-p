@@ -12,7 +12,7 @@ SOURCE_M3U_URL = os.environ.get("SOURCE_M3U_URL", "http://4.438069.xyz:2086/get.
 
 M3U_FILE = "mirti68.m3u"
 
-FILM_GROUP = "🟨◆ ULUSAL ᴴᴰ⁺ ⭕"
+FILM_GROUP = "🟨◆ ULUSAL ᴴᴰ ⭕"
 SOURCE_GROUP = "► Ulusal"
 
 HEADERS = {
