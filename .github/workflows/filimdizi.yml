@@ -74,7 +74,11 @@ jobs:
         timeout-minutes: 10
         run: python 724y.py || echo "724y failed"
            
-  
+      - name: 6 -KANAL D DİZİ SON BÖLÜM
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python kanalddizi.py || echo "kanalddizi failed"
+           
  
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
