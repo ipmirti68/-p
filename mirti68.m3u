@@ -262,70 +262,6 @@ http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=56&extension=ts
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="info" tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",İNFO
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi1.mp4
-#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT 1 HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/787a6f9f-0337-4634-9d49-3d2b94ce5b86.ts
-#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HD [YEDEK] ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT 1 HD [YEDEK] ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/aea62a30-956a-4c9a-a868-c4c04443cb5f.ts
-#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT 1 HQ ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/05ef32a4-827d-4e20-87f8-37892492aec6.ts
-#EXTINF:-1 tvg-id="TRT.AVAZ.tr" tvg-name="TR:TRT AVAZ HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/trtavaz.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT AVAZ HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/3ea55b07-ade2-4414-b0d6-bb8982f04e38.ts
-#EXTINF:-1 tvg-id="ATV.tr" tvg-name="TR:ATV HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/atv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:ATV HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/c71b4e75-87a1-4048-a388-2f7fc5e5c07b.ts
-#EXTINF:-1 tvg-id="ATV.tr" tvg-name="TR:ATV HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/atv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:ATV HQ ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/8f46cd5d-e996-4ba3-a71c-198480f5e288.ts
-#EXTINF:-1 tvg-id="SHOW.TV.tr" tvg-name="TR:SHOW TV HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/showtv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:SHOW TV HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/863ca7ee-7fa2-420f-b744-d79411dc8d02.ts
-#EXTINF:-1 tvg-id="SHOW.TV.tr" tvg-name="TR:SHOW TV HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/showtv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:SHOW TV HQ ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/8967ed39-36de-4918-aab1-cd2cc89ea714.ts
-#EXTINF:-1 tvg-id="STAR.TV.tr" tvg-name="TR:STAR TV HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/startv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:STAR TV HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/eee14005-6d67-4c76-a51d-cfc8b6ff2748.ts
-#EXTINF:-1 tvg-id="STAR.TV.tr" tvg-name="TR:STAR TV HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/startv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:STAR TV HQ ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/d4cddc47-b636-4c78-959c-d187ac7d58aa.ts
-#EXTINF:-1 tvg-id="KANAL.D.tr" tvg-name="TR:KANAL D HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanald.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL D HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/04c4ae0e-8d3f-4f03-a9b7-5cb1fa7d2380.ts
-#EXTINF:-1 tvg-id="KANAL.D.tr" tvg-name="TR:KANAL D HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanald.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL D HQ ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/09c65780-4e4e-4139-b5f4-c77c2fc5ea96.ts
-#EXTINF:-1 tvg-id="NOW.tr" tvg-name="TR:NOW HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/fox.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:NOW HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/3e46da80-1a93-42cb-9828-66e3639f68b0.ts
-#EXTINF:-1 tvg-id="NOW.tr" tvg-name="TR:NOW HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/fox.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:NOW HQ ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/ae1ebbbd-b523-4ea0-9a17-4abfddb1203d.ts
-#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8 HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/91683518-cc66-4ec5-9b96-895f5ca21fd6.ts
-#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8 HQ ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/4ca1fee9-2ade-4e5a-87ce-945253971ed3.ts
-#EXTINF:-1 tvg-id="TV.8,5.tr" tvg-name="5.tr" tvg-name="TR:TV 8.5 HD" tvg-logo="https://logo.cloudzone55.store/ulusal/tv85.png" group-title="TR | ULUSAL",TR:TV 8.5 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv85.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",5.tr" tvg-name="TR:TV 8.5 HD" tvg-logo="https://logo.cloudzone55.store/ulusal/tv85.png" group-title="TR | ULUSAL",TR:TV 8.5 HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/7d6b0ed1-410e-4028-a7d7-bf65b4e63345.ts
-#EXTINF:-1 tvg-id="BEYAZ.TV.tr" tvg-name="TR:BEYAZ TV HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/beyaz.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:BEYAZ TV HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/0933cb1e-e299-4872-aee2-8d40e6d08cf4.ts
-#EXTINF:-1 tvg-id="BEYAZ.TV.tr" tvg-name="TR:BEYAZ TV HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/beyaz.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:BEYAZ TV HQ ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/37cbf863-1460-4b5b-90d3-ffdab6145a58.ts
-#EXTINF:-1 tvg-id="KANAL.7.tr" tvg-name="TR:KANAL 7 HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanal7.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL 7 HQ ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/55520b91-9b37-4149-9254-07700b623283.ts
-#EXTINF:-1 tvg-id="KANAL.7.tr" tvg-name="TR:KANAL 7 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanal7.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL 7 HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/6a62ba0b-d7f9-4f25-9b90-2466a9c9e020.ts
-#EXTINF:-1 tvg-id="TEVE2.HD.tr" tvg-name="TR:TEVE 2 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/teve2.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TEVE 2 HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/111ea128-bd26-43df-911e-e269f64d98fa.ts
-#EXTINF:-1 tvg-id="A2.tr" tvg-name="TR:A2 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/a2.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:A2 HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/b20484c4-742b-4024-992c-0ecbdaad70ea.ts
-#EXTINF:-1 tvg-id="360.tr" tvg-name="TR:360 TV HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/360tv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:360 TV HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/d34204b7-8ccc-42b7-84c8-60446c440146.ts
-#EXTINF:-1 tvg-id="Bi.Kanal.tr" tvg-name="TR:BI KANAL HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/bikanal.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:BI KANAL HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/1d89fcfc-70bd-4ea2-bfd3-a22be55aaf2e.ts
-#EXTINF:-1 tvg-id="TYT.TÜRK.tr" tvg-name="TR:TYT TURK HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tytturk.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TYT TURK HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/244eb57d-660d-4896-8abc-06e119f6f701.ts
-#EXTINF:-1 tvg-id="ATV.Avrupa.ch" tvg-name="TR:ATV AVRUPA HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/atveuro.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:ATV AVRUPA HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/30a9c801-5672-4f9b-a615-c63f00043e9f.ts
-#EXTINF:-1 tvg-id="Euro.D.ch" tvg-name="TR:EURO D HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanaldeuro.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:EURO D HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/65303807-6d5a-4400-ac78-78d643b6946f.ts
-#EXTINF:-1 tvg-id="Euro.Star.ch" tvg-name="TR:EURO STAR HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/eurostar.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:EURO STAR HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/6874722e-dec9-4e91-a6ce-b2755a2aa0f7.ts
-#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 INT HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8int.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8 INT HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/6b530b2d-cafe-471b-8077-a7965076dd0f.ts
-#EXTINF:-1 tvg-id="TGRT.EU.ch" tvg-name="TR:TGRT EU HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tgrteu.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TGRT EU HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/6db70281-f49f-40ec-8b14-4106ebaf5e66.ts
-#EXTINF:-1 tvg-id="TRT.EBA.tr" tvg-name="TR:TRT EBA HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/ebalise.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT EBA HD ⭕
-http://mekantv56.win/live/akifalioglu33/33akifalioglu/b103e0bd-3997-4164-ac74-73f343cc004e.ts
 #EXTINF:-1 tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",BİLGİLENDİRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" tvg-logo="https://i.hizliresim.com/ljzg5ez.png" group-title="🟦◆   HABER 📰",SZC
@@ -521,34 +457,6 @@ https://andro.evrenesoglu141.click/checklist/androstreamlivebsm1.m3u8
 #EXTINF:-1 tvg-name="beIN.SPORTS.MAX.2.tr" tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥" http-referrer="https://mahsunsports38.xyz/" referrer="https://mahsunsports38.xyz/",beIN SPORTS MAX 2 HD
 #EXTVLCOPT:http-referrer=https://mahsunsports38.xyz/
 https://andro.evrenesoglu141.click/checklist/androstreamlivebsm2.m3u8
-#EXTINF:-1 ⭕ Atom tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN Sports 1
-https://css.d6e3eds5e065t5.help//hls/b1.m3u8
-#EXTINF:-1 ⭕ Atom tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN Sports 2
-https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
-#EXTINF:-1 ⭕ Atom tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN Sports 3
-https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
-#EXTINF:-1 ⭕ Atom tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN Sports 4
-https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
-#EXTINF:-1 ⭕ Atom tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN Sports 5
-https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
-#EXTINF:-1 ⭕ Atom tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN Sports Max 1
-https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 ⭕ Atom tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN Sports Max 2
-https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 1 ⭕ Atom
-https://css.d6e3eds5e065t5.help//hls/b1.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 2 ⭕ Atom
-https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 3 ⭕ Atom
-https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 4 ⭕ Atom
-https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 5 ⭕ Atom
-https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports Max 1 ⭕ Atom
-https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports Max 2 ⭕ Atom
-https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS ⭕",beIN SPORTS 1 Mırtıspor
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
 #EXTINF:-1 tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟩◆ SPORTS ⭕",info
