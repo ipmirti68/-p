@@ -4,30 +4,31 @@ import re
 import shutil
 import codecs
 from html import unescape
-from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 
 # ==================================================
-# NOW TV DIZI OTOMATIK GUNCELLEYICI
+# NOW TV DIZI - DUZELTILMIS SURUM
 # ==================================================
 
 M3U_FILE = "mirti68.m3u"
 BASE = "https://www.nowtv.com.tr"
 
-NOW_GROUP = "🟪◆ NOWTV DIZILERI ⭕"
-TARGET_GROUP = "🟪◆  NOW DIZI 📺⭕"
+TARGET_GROUP = "🟪◆  NOW DİZİ 📺⭕"
+# NOW ana kanalının olduğu grup - diziler bunun hemen altına eklenir
+NOW_GROUP = "🟪◆  NOW DİZİ 📺⭕"
 
 INFO_URL = "https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4"
 INFO_LOGO = "https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png"
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0 Safari/537.36"
 
+# SENIN VERDIGIN DOGRU SAYFALAR - slug ile arama yok, direkt /izle
 DIZILER = [
-    {"slug": "kiskanmak", "name": "KISKANMAK"},
-    {"slug": "ben-leman", "name": "BEN LEMAN"},
-    {"slug": "halef", "name": "HALEF"},
-    {"slug": "cift-kisilik", "name": "CIFT KISILIK"},
-    {"slug": "kizil-goncalar", "name": "KIZIL GONCALAR"},
+    {"page": "https://www.nowtv.com.tr/Halef-Koklerin-Cagrisi/izle", "name": "HALEF"},
+    {"page": "https://www.nowtv.com.tr/Yeralti/izle", "name": "YERALTİ"},
+    {"page": "https://www.nowtv.com.tr/Sevdam-Karadeniz/izle", "name": "SEVDAM KARADENİZ"},
+    {"page": "https://www.nowtv.com.tr/Omur-Usta/izle", "name": "ÖMÜR USTA"},
+    {"page": "https://www.nowtv.com.tr/Adana-Ayazi/izle", "name": "ADANA AYAZI"},
 ]
 
 # ==================================================
@@ -73,7 +74,7 @@ def dizi_kaydi(d):
     return [extinf, d["url"]]
 
 # ==================================================
-# DIZI SAYFASINDAN SON BOLUMU BUL
+# /izle SAYFASINDAN SON BOLUMU BUL
 # ==================================================
 
 async def dizi_bul(browser, dizi):
@@ -82,165 +83,159 @@ async def dizi_bul(browser, dizi):
 
     def adres_yakala(adres):
         adres = temizle(adres).replace("\\/", "/").replace("\\u0026", "&")
+        # Senin örneğin: ...smil/playlist.m3u8?st=...
+        # Önce smil/playlist olanı tercih et, sonra diğer m3u8'leri al
         if ".m3u8" in adres.lower() and adres.startswith("http"):
+            # reklam / fragman / teaser ele
+            low = adres.lower()
+            if "fragman" in low or "teaser" in low or "tanitim" in low:
+                return
             hls_adresleri.add(adres)
 
     page.on("request", lambda r: adres_yakala(r.url))
     page.on("response", lambda r: adres_yakala(r.url))
 
     try:
-        print(f"\n[DIZI] {dizi['name']}")
+        print(f"\n[DIZI] {dizi['name']} -> {dizi['page']}")
 
-        denenecek = [
-            f"{BASE}/dizi/{dizi['slug']}",
-            f"{BASE}/diziler/{dizi['slug']}",
-            f"{BASE}/dizi/{dizi['slug']}/bolumler",
-        ]
+        await page.goto(dizi["page"], wait_until="domcontentloaded", timeout=60000)
+        await page.wait_for_timeout(4000)
 
+        # LOGO + ACIKLAMA - dizi sayfasından al
         logo = ""
         aciklama = ""
-        adaylar = {}
-
-        for url in denenecek:
+        try:
+            logo = await page.locator('meta[property="og:image"]').first.get_attribute("content") or ""
+        except: pass
+        try:
+            aciklama = await page.locator('meta[name="description"]').first.get_attribute("content") or ""
+        except: pass
+        if not logo:
             try:
-                await page.goto(url, wait_until="domcontentloaded", timeout=60000)
-                await page.wait_for_timeout(4000)
-                try:
-                    await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-                    await page.wait_for_timeout(2500)
-                    await page.evaluate("window.scrollTo(0, 0)")
-                    await page.wait_for_timeout(1500)
-                except Exception:
-                    pass
-            except Exception as e:
-                print(f"  Sayfa acilmadi {url}: {e}")
-                continue
+                logo = await page.locator('meta[name="twitter:image"]').first.get_attribute("content") or ""
+            except: pass
 
-            if not logo:
-                for sel in ['meta[property="og:image"]', 'meta[name="twitter:image"]']:
-                    try:
-                        v = await page.locator(sel).first.get_attribute("content")
-                        if v:
-                            logo = v
-                            break
-                    except Exception:
-                        pass
-            if not aciklama:
-                try:
-                    aciklama = await page.locator('meta[name="description"]').first.get_attribute("content") or ""
-                except Exception:
-                    pass
-
-            try:
-                links = await page.locator("a[href]").evaluate_all(
-                    """els => els.map(a => ({
-                        url: a.href,
-                        text: (a.innerText || a.textContent || '').trim()
-                    }))"""
-                )
-            except Exception:
-                links = []
-
-            for item in links:
-                link = item["url"] or ""
-                text = item["text"] or ""
-                low_link = link.lower()
-                low_text = text.lower()
-                if "fragman" in low_text or "fragman" in low_link:
-                    continue
-                if dizi["slug"] not in low_link:
-                    continue
-                if link.rstrip("/") == url.rstrip("/"):
-                    continue
-
-                bolum_no = None
-                m = re.search(r'(\d+)\s*\.?\s*bölüm', text, re.I)
-                if m:
-                    bolum_no = int(m.group(1))
-                if bolum_no is None:
-                    m3 = re.search(rf"{re.escape(dizi['slug'])}[^0-9]*(\d+)", low_link)
-                    if m3:
-                        if "/bolum" in low_link or "-bolum" in low_link or re.search(r'/\d+/?$', low_link):
-                            bolum_no = int(m3.group(1))
-                if bolum_no is None:
-                    continue
-                if bolum_no <= 0 or bolum_no > 500:
-                    continue
-                if bolum_no not in adaylar:
-                    adaylar[bolum_no] = {"url": link, "text": text or f"{bolum_no}. Bolum"}
-
-            if adaylar:
-                print(f"  {len(adaylar)} aday bulundu, kaynak: {url}")
-                break
-
-        if not adaylar:
-            print(f"[BOLUM BEKLENIYOR] {dizi['name']} - link bulunamadi, eski kayit korunacak")
-            return {"unavailable": True, "name": dizi["name"]}
-
-        son_bolum = max(adaylar)
-        hedef = adaylar[son_bolum]["url"]
-        bolum_adi = adaylar[son_bolum]["text"]
-        if not re.search(r'bölüm', bolum_adi, re.I):
-            bolum_adi = f"{son_bolum}. Bolum"
-
-        print(f"[SON BOLUM] {son_bolum} - {hedef}")
-
-        await page.goto(hedef, wait_until="domcontentloaded", timeout=60000)
-        await page.wait_for_timeout(5000)
+        # 1. SON BOLUM LINKINI BUL - sayfadaki "Son Bölüm İzle" / "Bölüm" linkleri
+        son_bolum_url = None
+        son_bolum_no = 0
+        son_bolum_text = ""
 
         try:
-            desc = await page.locator('meta[name="description"]').first.get_attribute("content")
-            if desc:
-                aciklama = desc
-        except Exception:
-            pass
+            links = await page.locator("a[href]").evaluate_all(
+                """els => els.map(a => ({
+                    url: a.href,
+                    text: (a.innerText || a.textContent || '').trim()
+                }))"""
+            )
+        except:
+            links = []
 
-        if not logo:
-            logo = BASE + "/favicon.ico"
+        for item in links:
+            link = item["url"] or ""
+            text = item["text"] or ""
+            low_link = link.lower()
+            low_text = text.lower()
+            if "fragman" in low_text or "fragman" in low_link:
+                continue
+            # sadece /bolumler/ içeren linkler = gerçek bölüm
+            if "/bolumler/" not in low_link:
+                continue
+            # bölüm no çıkar: /bolumler/4/ veya 4. Bölüm
+            m = re.search(r'/bolumler/(\d+)', low_link)
+            if not m:
+                continue
+            no = int(m.group(1))
+            if no > son_bolum_no:
+                son_bolum_no = no
+                son_bolum_url = link
+                son_bolum_text = text
+
+        # Eğer link bulunamadıysa, sayfadaki butonlara tıkla
+        if not son_bolum_url:
+            print("  Link listede bulunamadi, buton deneniyor...")
+            for sel in ["text=Son Bölüm İzle", "text=Son Bölümü İzle", "text=Bölümleri İzle", "a:has-text('İzle')"]:
+                try:
+                    await page.locator(sel).first.click(timeout=3000)
+                    await page.wait_for_timeout(4000)
+                    break
+                except: pass
+            # tıkladıktan sonra URL değiştiyse o URL bölüm sayfasıdır
+            cur = page.url
+            if "/bolumler/" in cur:
+                son_bolum_url = cur
+                m = re.search(r'/bolumler/(\d+)', cur)
+                son_bolum_no = int(m.group(1)) if m else 0
+        else:
+            print(f"  [SON BOLUM] {son_bolum_no}. Bölüm -> {son_bolum_url}")
+
+        if not son_bolum_url:
+            print(f"[BOLUM BULUNAMADI] {dizi['name']} - eski kayit korunacak")
+            return {"unavailable": True, "name": dizi["name"]}
+
+        # 2. BÖLÜM SAYFASINA GİT VE m3u8 YAKALA
+        await page.goto(son_bolum_url, wait_until="domcontentloaded", timeout=60000)
+        await page.wait_for_timeout(5000)
+
+        # bölüm sayfasından daha iyi açıklama / tarih al
+        try:
+            desc = await page.locator('meta[name="description"]').first.get_attribute("content")
+            if desc: aciklama = desc
+        except: pass
+        try:
+            og_img = await page.locator('meta[property="og:image"]').first.get_attribute("content")
+            if og_img: logo = og_img
+        except: pass
 
         tarih = ""
-        for sel in ['meta[property="article:published_time"]', 'meta[property="og:updated_time"]']:
+        for sel in ['meta[property="article:published_time"]', 'meta[property="og:updated_time"]', 'meta[name="date"]']:
             try:
                 tarih = await page.locator(sel).first.get_attribute("content") or ""
-                if tarih:
-                    break
-            except Exception:
-                pass
+                if tarih: break
+            except: pass
         if tarih:
-            tarih = tarih[:10]
+            tarih = tarih[:10]  # 2026-11-17
 
+        # Play'e bas + HTML tara
         for _ in range(2):
             html = await page.content()
             html = unescape(html).replace("\\/", "/").replace("\\u0026", "&")
             for adres in re.findall(r'https?://[^\s"\'<>]+?\.m3u8(?:\?[^\s"\'<>]*)?', html, re.I):
                 adres_yakala(adres)
-            for selector in [".jw-icon-play", ".vjs-big-play-button", ".plyr__control--overlaid", "button[aria-label*='Oynat']"]:
+            for selector in [".jw-icon-play", ".vjs-big-play-button", ".plyr__control--overlaid", "button[aria-label*='Oynat']", "text=Oynat"]:
                 try:
                     el = page.locator(selector).first
                     if await el.count():
                         await el.click(timeout=2500, force=True)
                         await page.wait_for_timeout(7000)
                         break
-                except Exception:
-                    pass
+                except: pass
             try:
                 await page.locator("video").first.evaluate("(v) => v.play()")
                 await page.wait_for_timeout(7000)
-            except Exception:
-                pass
+            except: pass
 
         if not hls_adresleri:
             print(f"[HLS BULUNAMADI] {dizi['name']} - eski kayit korunacak")
             return {"unavailable": True, "name": dizi["name"]}
 
-        sirali = sorted(hls_adresleri, key=lambda x: ("master.m3u8" not in x.lower(), len(x)))
-        print("[HLS BULUNDU]", sirali[0])
+        # EN İYİ LİNKİ SEÇ: önce smil/playlist.m3u8 olanı, sonra master.m3u8
+        def skor(u):
+            u_low = u.lower()
+            if "smil/playlist.m3u8" in u_low:
+                return 0
+            if "master.m3u8" in u_low:
+                return 1
+            return 2
+        sirali = sorted(hls_adresleri, key=lambda x: (skor(x), len(x)))
+        print("[HLS BULUNDU]", sirali[0][:120])
+
+        episode = f"{son_bolum_no}. Bölüm" if son_bolum_no else son_bolum_text
 
         return {
             "name": dizi["name"],
-            "logo": logo,
+            "logo": logo or BASE + "/favicon.ico",
             "description": aciklama,
-            "episode": bolum_adi,
+            "episode": episode,
             "date": tarih,
             "url": sirali[0]
         }
@@ -252,7 +247,7 @@ async def dizi_bul(browser, dizi):
         await page.close()
 
 # ==================================================
-# M3U KAYITLARINI KORUYARAK YERLESTIR
+# M3U - DIGER GRUPLARA DOKUNMADAN YERLESTIR
 # ==================================================
 
 def listeyi_guncelle(yeni_diziler, bulunamayan_isimler):
@@ -266,6 +261,7 @@ def listeyi_guncelle(yeni_diziler, bulunamayan_isimler):
     newline = "\r\n" if "\r\n" in metin else "\n"
     satirlar = metin.splitlines()
 
+    # EPG + BASLIK KORU: ilk #EXTINF'e kadar her şey aynen kalır
     ilk_extinf = next((i for i, s in enumerate(satirlar) if s.startswith("#EXTINF:")), len(satirlar))
     baslik = satirlar[:ilk_extinf]
     govde = satirlar[ilk_extinf:]
@@ -280,16 +276,7 @@ def listeyi_guncelle(yeni_diziler, bulunamayan_isimler):
     if current:
         records.append(current)
 
-    anchor = None
-    for i, record in enumerate(records):
-        if grup_bul(record) == NOW_GROUP and "BILGILENDIRME" in kanal_adi(record).upper():
-            anchor = i
-            break
-    if anchor is None:
-        print("[HATA] NOWTV bilgilendirme kaydi bulunamadi!")
-        print("Dosya degistirilmedi.")
-        return False
-
+    # Eski NOW DİZİ grubunu ayır
     eski_show = [r for r in records if grup_bul(r) == TARGET_GROUP]
     eski_info = None
     eski_diziler = []
@@ -304,31 +291,35 @@ def listeyi_guncelle(yeni_diziler, bulunamayan_isimler):
     korunan = []
     for r in eski_diziler:
         ad = kanal_adi(r)
-        koru = False
-        for isim in bulunamayan_isimler:
-            if isim in ad:
-                koru = True
-                break
-        if koru:
+        if any(isim in ad for isim in bulunamayan_isimler):
             korunan.append(r)
             print(f"  KORUNDU (eski): {ad}")
 
     digerleri = [r for r in records if grup_bul(r) != TARGET_GROUP]
 
+    # DİZİLER NEREYE EKLENECEK? NOW ana kanalının olduğu grubun sonuna
+    # Yoksa en başa - ama diğer gruplar asla bozulmaz
     anchor = None
     for i, record in enumerate(digerleri):
-        if grup_bul(record) == NOW_GROUP and "BILGILENDIRME" in kanal_adi(record).upper():
-            anchor = i
-            break
-    if anchor is None:
-        return False
+        if grup_bul(record) == NOW_GROUP:
+            anchor = i  # sonuncuyu bulmak için devam et, üzerine yazacağız
+    # NOW_GROUP'un son kaydını bul
+    if anchor is not None:
+        last_now = max(i for i, r in enumerate(digerleri) if grup_bul(r) == NOW_GROUP)
+        anchor = last_now
+    else:
+        # NOW grubu yoksa, ilk kaydın önüne koy
+        anchor = -1
 
     yeni_kayitlar = [eski_info]
     for dizi in yeni_diziler:
         yeni_kayitlar.append(dizi_kaydi(dizi))
     yeni_kayitlar.extend(korunan)
 
-    son_records = digerleri[:anchor + 1] + yeni_kayitlar + digerleri[anchor + 1:]
+    if anchor == -1:
+        son_records = yeni_kayitlar + digerleri
+    else:
+        son_records = digerleri[:anchor + 1] + yeni_kayitlar + digerleri[anchor + 1:]
 
     shutil.copy2(M3U_FILE, M3U_FILE + ".bak")
     sonuc = list(baslik)
@@ -353,39 +344,26 @@ def listeyi_guncelle(yeni_diziler, bulunamayan_isimler):
     print("===================================")
     return True
 
-# ==================================================
-# ANA PROGRAM
-# ==================================================
-
 async def main():
     if not os.path.exists(M3U_FILE):
         print("[HATA] M3U dosyasi bulunamadi!")
         return
-
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         yeni_diziler = []
         bulunamayan = []
-
         try:
             for dizi in DIZILER:
                 sonuc = await dizi_bul(browser, dizi)
-                if sonuc is None:
-                    print(f"{dizi['name']} atlandi, digerine geciliyor")
-                    bulunamayan.append(dizi["name"])
-                    continue
                 if sonuc.get("unavailable"):
                     bulunamayan.append(dizi["name"])
                     continue
                 yeni_diziler.append(sonuc)
         finally:
             await browser.close()
-
         if not yeni_diziler:
-            print("Henuz yayinlanmis yeni bolum bulunamadi.")
-            print("Eski liste aynen korunuyor, dosya degistirilmedi.")
+            print("Yeni bolum bulunamadi. Dosya degistirilmedi.")
             return
-
         listeyi_guncelle(yeni_diziler, bulunamayan)
 
 if __name__ == "__main__":
