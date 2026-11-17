@@ -2327,6 +2327,22 @@ http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/337191.mkv
 http://190502.tomtv.eu:80/movie/MustafaozdemR7808/z189b8mv2r/336718.mkv
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ SHOWTV DİZİLERİ ⭕",BİLGİLENDİRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-name="***** SHOW TV DİZİ *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆ SHOW DİZİ 📺⭕",BİLGİLENDİRME
+https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="" tvg-name="KIZILCIK ŞERBETİ - Kızılcık Şerbeti 146. Bölüm" tvg-logo="https://www.showtv.com.tr/assets/images/other/showtv_social_media.jpg" tvg-description="Kızılcık Şerbeti'nin 146. Bölümünde; Lider’in Cemo’nun babası olduğunun ortaya çıkması, Başak ve Fatih’in evliliğinde büyük bir krize yol açar. Başak’ın kendisinden sakladığı gerçekler karşısında güveni sarsılan Fatih, boşanmaya karar verir. Bu sırrın Eli" group-title="🟪◆ SHOW DİZİ 📺⭕",KIZILCIK ŞERBETİ - Kızılcık Şerbeti 146. Bölüm
+https://vmcdn.ciner.com.tr/vodhls/ht/2026/11/13/B681699ECAE5DC6AD033948F1DBFEA89/index-f3-v1-a1.m3u8
+#EXTINF:-1 tvg-name="***** ATV DİZİ *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆  ATV DİZİ 📺⭕",BİLGİLENDİRME
+https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="" tvg-name="ALTI ÜSTÜ İSTANBUL - 21. BÖLÜM" tvg-logo="https://www.atv.com.tr/favicon.ico" tvg-description="Altı Üstü İstanbul 21. bölümü izlemek için tıkla. Altı Üstü İstanbul tüm bölümleri full HD ve kesintisiz! Tıkla Altı Üstü İstanbul yeni bölümü hemen izle!" group-title="🟪◆  ATV DİZİ 📺⭕",ALTI ÜSTÜ İSTANBUL - 21. BÖLÜM
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="GÜNEŞİN DOĞDUĞU YER - 8. BÖLÜM" tvg-logo="https://www.atv.com.tr/favicon.ico" tvg-description="Güneşin Doğduğu Yer 8. bölümü izlemek için tıkla. Güneşin Doğduğu Yer tüm bölümleri full HD ve kesintisiz! Tıkla Güneşin Doğduğu Yer yeni bölümü hemen izle!" group-title="🟪◆  ATV DİZİ 📺⭕",GÜNEŞİN DOĞDUĞU YER - 8. BÖLÜM
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8
+#EXTINF:-1 tvg-name="***** STAR DIZI *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆  STAR DIZI 📺⭕",BILGILENDIRME
+https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:-1 tvg-id="" tvg-name="SAHIPSIZLER - 51. Bolum" tvg-logo="https://media.startv.com.tr/star-tv/images/1600_445px(3).jpg" tvg-description="Sahipsizler 51. Bölüm izlemek için tıkla! Sahipsizler 51. Bölüm Full HD tek parça Star TV'de şimdi izle!" group-title="🟪◆  STAR DIZI 📺⭕",SAHIPSIZLER - 51. Bolum
+https://startv-p3.mncdn.com/smil:sahipsizler_final_bolum_1907_smil.smil/playlist.m3u8?st=3L2QoCP9TIaf5wk2fA3MHA&e=1794992808
+#EXTINF:-1 tvg-id="" tvg-name="KRAL KAYBEDERSE - 30. Bolum" tvg-logo="https://media.startv.com.tr/star-tv/images/kapak(53).jpg" tvg-description="Kral Kaybederse 30. Bölüm (Final) izlemek için tıkla! Kral Kaybederse 30. Bölüm (Final) Full HD tek parça Star TV'de şimdi izle!" group-title="🟪◆  STAR DIZI 📺⭕",KRAL KAYBEDERSE - 30. Bolum
+https://startv-p3.mncdn.com/smil:kralkaybederse_bolum30_star_1907_rev_smil.smil/playlist.m3u8?st=XzjQ4CVT8hTi_MLk1vTUQA&e=1794992898
 #EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆  KANAL D DİZİ 📺⭕",BİLGİLENDİRME (copy)
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="oz.206572750aa64aa99ea6882e6600a34f" tvg-name="TR:DIZIMAX DRAMA HD" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-drama.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIZIMAX DRAMA HD ⭕
