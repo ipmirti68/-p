@@ -17,15 +17,15 @@ https://kanaldvod.duhnet.tv/hls/d/nL/us_72blm/us_72blm.smil/playlist.m3u8
 #EXTINF:-1 tvg-name="TR: Uzak Şehir - 71. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Uzak Şehir - 71. Bölüm
 #EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
 https://kanaldvod.duhnet.tv/hls/B/sI/uzaksehir_bolum_71/uzaksehir_bolum_71.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 10. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Haysiyet - 10. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/N/49/haysiyet_bolum_10/haysiyet_bolum_10.smil/playlist.m3u8
 #EXTINF:-1 tvg-name="TR: Haysiyet - 9. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Haysiyet - 9. Bölüm
 #EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
 https://kanaldvod.duhnet.tv/hls/D/TI/h_9blm/h_9blm.smil/playlist.m3u8
 #EXTINF:-1 tvg-name="TR: Haysiyet - 8. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Haysiyet - 8. Bölüm
 #EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
 https://kanaldvod.duhnet.tv/hls/t/gU/haysiyet_bolum_8/haysiyet_bolum_8.smil/playlist.m3u8
-#EXTINF:-1 tvg-name="TR: Haysiyet - 7. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Haysiyet - 7. Bölüm
-#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
-https://kanaldvod.duhnet.tv/hls/N/kS/haysiyet_bolum_7/haysiyet_bolum_7.smil/playlist.m3u8
 #EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 41. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Güller ve Günahlar - 41. Bölüm
 #EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
 https://kanaldvod.duhnet.tv/hls/k/0G/gg_bolum_41/gg_bolum_41.smil/playlist.m3u8
