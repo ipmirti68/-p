@@ -49,6 +49,15 @@ AKTARIMLAR = [
     },
 
     {
+        "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
+        "kaynak_grup": "",
+        "aranacak": "Korea",
+        "hedef_grup": "🟨◆ YABANCI 🇰🇷⭕",
+        "hedef_logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg?utm_source=tr.wikipedia.org&utm_campaign=index&utm_content=original",
+        "ek_kod": "⭕",
+    },
+
+    {
         "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
         "kaynak_grup": "",
         "aranacak": "beIN Sports",
