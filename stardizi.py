@@ -27,7 +27,6 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0 
 
 DIZILER = [
     {"slug": "sahipsizler", "name": "SAHIPSIZLER"},
-    {"slug": "kral-kaybederse", "name": "KRAL KAYBEDERSE"},
     {"slug": "baskalarinin-hayati", "name": "BASKALARININ HAYATI"},
     {"slug": "tuzlu-kahve", "name": "TUZLU KAHVE"},
     {"slug": "sevdigim-sensin", "name": "SEVDIGIM SENSIN"},
