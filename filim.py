@@ -603,11 +603,24 @@ def main():
     # ESKİ LİSTEYİ OKU
     # ----------------------------------------------
 
+      # ----------------------------------------------
+    # ESKİ LİSTEYİ OKU
+    # ----------------------------------------------
+
     old_entries = []
 
     old_header = ["#EXTM3U"]
 
     migrated = 0
+
+    # --- EPG KORUMA - BURAYA EKLE ---
+    EPG_SATIRLARI = []
+    if os.path.exists(OUTPUT_M3U):
+        with open(OUTPUT_M3U, "r", encoding="utf-8-sig") as _epg_f:
+            for _line in _epg_f:
+                if _line.strip().startswith("#EXTM3U"):
+                    EPG_SATIRLARI.append(_line.rstrip("\r\n"))
+    # --- EPG KORUMA BİTTİ ---
 
     if os.path.exists(OUTPUT_M3U):
 
