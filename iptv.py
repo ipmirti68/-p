@@ -4,7 +4,7 @@ import re, os, codecs, shutil
 OUTPUT_FILE = "mirti68.m3u"
 GROUP = "🟨◆  ULUSALᴴᴰ ⭕"
 
-# SIRALAMA: TRT1 - 【entity-ATV¦canonical_name=ATV】 - 【entity-SHOW¦canonical_name=SHOW TV】 - 【entity-KANAL D¦canonical_name=KANAL D】 - 【entity-STAR¦canonical_name=Star TV】 - NOW - KANAL7 - TV8 - 360 - TV4 - TV2 - BEYAZ
+# SIRALAMA: TRT1 - ATV- SHOW TV - KANAL D - Star TV - NOW - KANAL7 - TV8 - 360 - TV4 - TV2 - BEYAZ
 CHANNELS = {
     "TRT 1 ⭕": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt-1", "marker": "# MIRTI68_TRT1_AUTO", "direct": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
     "ATV ⭕": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "ATV", "marker": "# MIRTI68_ATV_AUTO", "direct": "http://80.253.255.35:8000/play/a00g"},
