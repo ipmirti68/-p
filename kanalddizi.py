@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 BASE = "https://www.kanald.com.tr"
 WORKER = "https://mak.sadecenjoy.workers.dev"
 
-M3U = "mirti68.m3u"
+M3U = "kanalddizi.m3u"
 MIRTI = M3U
 
 GROUP = "🟪◆  KANAL D DİZİ 📺⭕"
