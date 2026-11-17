@@ -57,7 +57,15 @@ AKTARIMLAR = [
         "aranacak": "",
         "hedef_grup": "🟪◆ GÜNCEL FİLİMLER ⭕",
         "hedef_logo": "",
-        "ek_kod": "",
+        "ek_kod": "⭕",
+    },
+        {
+        "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
+        "kaynak_grup": "SONVIZYON FILMLER",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ GÜNCEL DİZİLER ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
     },
 ]
 
