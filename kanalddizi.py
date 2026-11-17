@@ -1,230 +1,370 @@
 
+import asyncio
 import os
 import re
-import asyncio
-import tempfile
-from urllib.parse import urljoin
+import shutil
+import codecs
+from html import unescape
+from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 
 # ==================================================
-# AYARLAR
+# KANAL D DİZİ OTOMATİK GÜNCELLEYİCİ
 # ==================================================
 
 BASE = "https://www.kanald.com.tr"
 M3U_FILE = "mirti68.m3u"
-GROUP = "🟪◆  KANAL D DİZİ 📺⭕"
+
+SHOW_GROUP = "🟪◆ SHOWTV DİZİLERİ ⭕"
+KANAL_GROUP = "🟪◆  KANAL D DİZİ 📺⭕"
+
+INFO_URL = "https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4"
+INFO_LOGO = "https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png"
+
+UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 Chrome/130.0 Safari/537.36"
+)
 
 DIZILER = [
     {
-        "name": "Susuz Yaz - Fragman",
-        "url": BASE + "/susuz-yaz/fragmanlar",
-        "kind": "fragman",
-        "slug": "susuz-yaz"
+        "slug": "susuz-yaz",
+        "name": "SUSUZ YAZ",
+        "type": "fragman",
+        "description": "Susuz Yaz dizisinin en yeni fragmanı."
     },
     {
-        "name": "Karakuyu - Fragman",
-        "url": BASE + "/karakuyu/fragmanlar",
-        "kind": "fragman",
-        "slug": "karakuyu"
+        "slug": "karakuyu",
+        "name": "KARAKUYU",
+        "type": "fragman",
+        "description": "Karakuyu dizisinin en yeni fragmanı."
     },
     {
-        "name": "Uzak Şehir - Son Bölüm",
-        "url": BASE + "/uzak-sehir",
-        "kind": "bolum",
-        "slug": "uzak-sehir"
+        "slug": "uzak-sehir",
+        "name": "UZAK ŞEHİR",
+        "type": "bolum",
+        "description": "Uzak Şehir dizisinin en son yayınlanan bölümü."
     },
     {
-        "name": "Haysiyet - Son Bölüm",
-        "url": BASE + "/haysiyet",
-        "kind": "bolum",
-        "slug": "haysiyet"
+        "slug": "haysiyet",
+        "name": "HAYSİYET",
+        "type": "bolum",
+        "description": "Haysiyet dizisinin en son yayınlanan bölümü."
     },
     {
-        "name": "Güller ve Günahlar - Son Bölüm",
-        "url": BASE + "/guller-ve-gunahlar",
-        "kind": "bolum",
-        "slug": "guller-ve-gunahlar"
+        "slug": "guller-ve-gunahlar",
+        "name": "GÜLLER VE GÜNAHLAR",
+        "type": "bolum",
+        "description": "Güller ve Günahlar dizisinin en son yayınlanan bölümü."
     },
     {
-        "name": "Daha 17 - Son Bölüm",
-        "url": BASE + "/daha-17",
-        "kind": "bolum",
-        "slug": "daha-17"
+        "slug": "daha-17",
+        "name": "DAHA 17",
+        "type": "bolum",
+        "description": "Daha 17 dizisinin en son yayınlanan bölümü."
     }
 ]
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 Chrome/130.0 Safari/537.36"
-    )
-}
+
+# ==================================================
+# YARDIMCI FONKSİYONLAR
+# ==================================================
+
+def attr(value):
+    return str(value or "").replace('"', "%22").replace("\n", " ").strip()
+
+
+def get_group(record):
+    for line in record:
+        if line.startswith("#EXTINF:"):
+            m = re.search(r'group-title="([^"]*)"', line)
+            return m.group(1) if m else ""
+    return ""
+
+
+def get_channel_name(record):
+    for line in record:
+        if line.startswith("#EXTINF:"):
+            return line.split(",", 1)[-1].strip()
+    return ""
+
+
+def make_info_record():
+    return [
+        f'#EXTINF:-1 tvg-name="***** TURKIYE 4K *****" '
+        f'tvg-logo="{INFO_LOGO}" '
+        f'group-title="{KANAL_GROUP}",BİLGİLENDİRME',
+        INFO_URL
+    ]
+
+
+def make_dizi_record(dizi):
+    return [
+        f'#EXTINF:-1 tvg-id="" '
+        f'tvg-name="{attr(dizi["name"])}" '
+        f'tvg-logo="{attr(dizi["logo"])}" '
+        f'tvg-description="{attr(dizi["description"])}" '
+        f'group-title="{KANAL_GROUP}",'
+        f'{attr(dizi["name"])} - '
+        f'{"FRAGMAN" if dizi["type"] == "fragman" else "SON BÖLÜM"}',
+        dizi["url"]
+    ]
 
 
 # ==================================================
-# VİDEO ADRESİ BULMA
+# VİDEO VE LOGO ADRESLERİNİ BUL
 # ==================================================
 
-async def video_adresi_bul(browser, dizi):
+async def video_bul(browser, dizi):
 
-    page = await browser.new_page(
-        user_agent=HEADERS["User-Agent"]
+    context = await browser.new_context(
+        user_agent=UA,
+        ignore_https_errors=True
     )
 
-    bulunanlar = set()
+    page = await context.new_page()
+    bulunan = set()
 
-    def adres_yakala(url):
-        url = url.replace("&amp;", "&")
+    def yakala(url):
+        url = unescape(url).replace("\\/", "/")
+        url = url.replace("\\u0026", "&")
 
         if (
             "kanaldvod.duhnet.tv" in url
-            and (
-                ".m3u8" in url.lower()
-                or ".smil/playlist.m3u8" in url.lower()
-            )
+            and ".m3u8" in url.lower()
         ):
-            bulunanlar.add(url)
+            bulunan.add(url)
 
-    page.on(
-        "request",
-        lambda request: adres_yakala(request.url)
-    )
+    page.on("request", lambda r: yakala(r.url))
+    page.on("response", lambda r: yakala(r.url))
 
-    page.on(
-        "response",
-        lambda response: adres_yakala(response.url)
-    )
+    slug = dizi["slug"]
+    tip = dizi["type"]
+
+    sayfalar = [
+        f"{BASE}/{slug}/{ 'fragmanlar' if tip == 'fragman' else 'bolumler'}",
+        f"{BASE}/{slug}"
+    ]
+
+    hedef = None
+    logo = ""
+    aciklama = dizi["description"]
 
     try:
-        print(f"\n[AÇILIYOR] {dizi['name']}")
+        for liste_url in sayfalar:
+
+            print("\n[SAYFA]", liste_url)
+
+            try:
+                await page.goto(
+                    liste_url,
+                    wait_until="domcontentloaded",
+                    timeout=60000
+                )
+                await page.wait_for_timeout(3000)
+
+            except Exception:
+                continue
+
+            links = await page.locator("a[href]").evaluate_all(
+                """els => els.map(a => a.href).filter(Boolean)"""
+            )
+
+            adaylar = []
+
+            for link in links:
+                path = urlparse(link).path.lower()
+
+                if slug not in path:
+                    continue
+
+                if tip == "fragman" and "fragman" not in path:
+                    continue
+
+                if tip == "bolum" and "bolum" not in path:
+                    continue
+
+                if link.rstrip("/") != liste_url.rstrip("/"):
+                    if link not in adaylar:
+                        adaylar.append(link)
+
+            if adaylar:
+                # Bölümlerde numarası en yüksek olanı önceliklendir.
+                if tip == "bolum":
+                    def bolum_no(url):
+                        nums = re.findall(r'\d+', url)
+                        return int(nums[-1]) if nums else 0
+
+                    adaylar.sort(
+                        key=bolum_no,
+                        reverse=True
+                    )
+
+                hedef = adaylar[0]
+                break
+
+            # Sayfanın kendisinde video bulunabilir.
+            hedef = liste_url
+
+        if not hedef:
+            print("[HATA] Video sayfası bulunamadı:", dizi["name"])
+            return None
+
+        print("[VİDEO SAYFASI]", hedef)
 
         await page.goto(
-            dizi["url"],
+            hedef,
             wait_until="domcontentloaded",
             timeout=60000
         )
 
-        await page.wait_for_timeout(5000)
+        await page.wait_for_timeout(6000)
 
-        # Son fragman veya bölüm sayfasına geç
-        if dizi["kind"] == "fragman":
-            selector = "a[href*='/fragmanlar/']"
-        else:
-            selector = "a[href*='/bolumler/']"
+        # Logo ve açıklama
+        for selector in [
+            'meta[property="og:image"]',
+            'meta[name="twitter:image"]'
+        ]:
+            try:
+                value = await page.locator(selector).first.get_attribute("content")
+                if value:
+                    logo = value
+                    break
+            except Exception:
+                pass
 
-        links = await page.locator(selector).evaluate_all(
-            """els => els.map(a => a.href).filter(Boolean)"""
-        )
+        try:
+            value = await page.locator(
+                'meta[name="description"]'
+            ).first.get_attribute("content")
 
-        hedef = None
+            if value:
+                aciklama = value.strip()
+        except Exception:
+            pass
 
-        for link in links:
-            if (
-                dizi["slug"] in link
-                and link.rstrip("/") != dizi["url"].rstrip("/")
-            ):
-                hedef = link
-                break
-
-        if hedef:
-            print("[VİDEO SAYFASI]", hedef)
-
-            await page.goto(
-                hedef,
-                wait_until="domcontentloaded",
-                timeout=60000
-            )
-
-            await page.wait_for_timeout(5000)
-
-        # Sayfadaki olası doğrudan adresleri tara
+        # Sayfadaki gömülü HLS adreslerini tara
         html = await page.content()
 
-        for match in re.findall(
-            r'https?://[^"\'\s<>]+',
-            html
-        ):
-            adres_yakala(match)
+        html = (
+            unescape(html)
+            .replace("\\/", "/")
+            .replace("\\u0026", "&")
+        )
+
+        matches = re.findall(
+            r'https?://[^\s"\'<>]+?\.m3u8(?:\?[^\s"\'<>]*)?',
+            html,
+            re.I
+        )
+
+        for url in matches:
+            yakala(url)
 
         # Video oynatmayı tetikle
         for selector in [
             ".jw-icon-play",
             ".vjs-big-play-button",
             ".plyr__control--overlaid",
-            "button[aria-label*='Oynat']",
-            "video"
+            "button[aria-label*='Oynat']"
         ]:
             try:
-                element = page.locator(selector).first
+                button = page.locator(selector).first
 
-                if await element.count():
-                    await element.click(
-                        timeout=2000,
+                if await button.count():
+                    await button.click(
+                        timeout=2500,
                         force=True
                     )
                     await page.wait_for_timeout(7000)
                     break
-
             except Exception:
                 pass
 
+        # Video elementini de oynatmayı dene
+        try:
+            await page.locator("video").first.evaluate(
+                "(v) => v.play()"
+            )
+            await page.wait_for_timeout(7000)
+        except Exception:
+            pass
+
+        # Son ağ isteklerini tara
         html = await page.content()
 
-        for match in re.findall(
-            r'https?://[^"\'\s<>]+',
-            html
-        ):
-            adres_yakala(match)
+        html = (
+            unescape(html)
+            .replace("\\/", "/")
+            .replace("\\u0026", "&")
+        )
 
-        if not bulunanlar:
+        for url in re.findall(
+            r'https?://[^\s"\'<>]+?\.m3u8(?:\?[^\s"\'<>]*)?',
+            html,
+            re.I
+        ):
+            yakala(url)
+
+        if not bulunan:
             print("[BULUNAMADI]", dizi["name"])
             return None
 
-        # Öncelik doğrudan HLS playlist adresinde
-        sirali = sorted(
-            bulunanlar,
+        adresler = sorted(
+            bulunan,
             key=lambda x: (
                 "playlist.m3u8" not in x.lower(),
                 len(x)
             )
         )
 
-        sonuc = sirali[0]
+        sonuc = adresler[0]
 
-        print("[BULUNDU]", sonuc)
+        if not logo:
+            logo = BASE + "/favicon.ico"
 
-        return sonuc
+        print("[HLS BULUNDU]", dizi["name"])
+        print(sonuc)
+
+        return {
+            "name": dizi["name"],
+            "type": dizi["type"],
+            "description": aciklama,
+            "logo": logo,
+            "url": sonuc
+        }
 
     except Exception as e:
         print("[HATA]", dizi["name"], str(e))
         return None
 
     finally:
-        await page.close()
+        await context.close()
 
 
 # ==================================================
-# M3U DOSYASINI KORUYARAK GÜNCELLE
+# M3U DOSYASINI KORUYARAK DÜZENLE
 # ==================================================
 
-def listeyi_guncelle(yeni_kayitlar):
+def listeyi_guncelle(yeni_diziler):
 
     if not os.path.exists(M3U_FILE):
-        print("[HATA] mirti68.m3u bulunamadı!")
+        print("[HATA] M3U dosyası bulunamadı!")
         return False
 
-    with open(
-        M3U_FILE,
-        "r",
-        encoding="utf-8-sig"
-    ) as f:
-        satirlar = f.read().splitlines()
+    raw = open(M3U_FILE, "rb").read()
+    bom = raw.startswith(codecs.BOM_UTF8)
 
-    # EPG ve üst başlık satırlarını koru
+    metin = raw.decode("utf-8-sig")
+
+    newline = "\r\n" if "\r\n" in metin else "\n"
+    satirlar = metin.splitlines()
+
+    # EPG ve ana başlık korunur
     ilk_extinf = next(
         (
-            i for i, line in enumerate(satirlar)
-            if line.startswith("#EXTINF:")
+            i for i, s in enumerate(satirlar)
+            if s.startswith("#EXTINF:")
         ),
         len(satirlar)
     )
@@ -232,102 +372,132 @@ def listeyi_guncelle(yeni_kayitlar):
     baslik = satirlar[:ilk_extinf]
     govde = satirlar[ilk_extinf:]
 
-    # Her EXTINF kaydını kendi URL ve metadata satırlarıyla tut
-    kayitlar = []
-    mevcut = []
+    # M3U kayıtlarını ayır
+    records = []
+    current = []
 
     for line in govde:
 
-        if line.startswith("#EXTINF:") and mevcut:
-            kayitlar.append(mevcut)
-            mevcut = []
+        if line.startswith("#EXTINF:") and current:
+            records.append(current)
+            current = []
 
-        mevcut.append(line)
+        current.append(line)
 
-    if mevcut:
-        kayitlar.append(mevcut)
+    if current:
+        records.append(current)
 
-    # Yalnızca bizim grubumuzu kaldır.
-    # Diğer grupların tüm satırları aynen kalır.
-    grup_regex = re.compile(
-        r'group-title="([^"]*)"'
+    # SHOWTV bilgilendirme kaydını bul
+    show_index = None
+
+    for i, record in enumerate(records):
+
+        if (
+            get_group(record) == SHOW_GROUP
+            and "BİLGİLENDİRME" in get_channel_name(record).upper()
+        ):
+            show_index = i
+            break
+
+    if show_index is None:
+        print("[HATA] SHOWTV bilgilendirme grubu bulunamadı.")
+        print("Dosya değiştirilmedi.")
+        return False
+
+    # Mevcut Kanal D bilgilendirme kaydını koru
+    info_record = None
+
+    for record in records:
+
+        if (
+            get_group(record) == KANAL_GROUP
+            and "BİLGİLENDİRME" in get_channel_name(record).upper()
+        ):
+            info_record = record
+            break
+
+    if info_record is None:
+        info_record = make_info_record()
+
+    # Yalnızca Kanal D grubunun eski kayıtlarını çıkar
+    diger_gruplar = [
+        record for record in records
+        if get_group(record) != KANAL_GROUP
+    ]
+
+    # SHOWTV bilgilendirme kaydının yeni konumunu bul
+    show_index = None
+
+    for i, record in enumerate(diger_gruplar):
+
+        if (
+            get_group(record) == SHOW_GROUP
+            and "BİLGİLENDİRME" in get_channel_name(record).upper()
+        ):
+            show_index = i
+            break
+
+    if show_index is None:
+        print("[HATA] Yerleştirme noktası kayboldu.")
+        return False
+
+    # Yeni Kanal D grubu
+    kanal_d_records = [info_record]
+
+    for dizi in yeni_diziler:
+        kanal_d_records.append(make_dizi_record(dizi))
+
+    # SHOWTV bilgilendirmesinden hemen sonra yerleştir
+    yeni_records = (
+        diger_gruplar[:show_index + 1]
+        + kanal_d_records
+        + diger_gruplar[show_index + 1:]
     )
 
-    korunan = []
-
-    for kayit in kayitlar:
-
-        extinf = next(
-            (
-                x for x in kayit
-                if x.startswith("#EXTINF:")
-            ),
-            ""
-        )
-
-        match = grup_regex.search(extinf)
-
-        if match and match.group(1) == GROUP:
-            continue
-
-        korunan.extend(kayit)
-
-    # Yeni kayıtlar
-    yeni_satirlar = []
-
-    for dizi in yeni_kayitlar:
-
-        yeni_satirlar.append(
-            f'#EXTINF:-1 tvg-id="" tvg-name="{dizi["name"]}" '
-            f'tvg-logo="" group-title="{GROUP}",{dizi["name"]}'
-        )
-
-        yeni_satirlar.append(dizi["url"])
-
-    # Yeni grubu en üstte tut
-    sonuc = (
-        baslik
-        + yeni_satirlar
-        + korunan
+    # Dosya yedeği al
+    shutil.copy2(
+        M3U_FILE,
+        M3U_FILE + ".bak"
     )
 
-    # Önce geçici dosyaya yaz, sonra atomik değiştir
-    fd, temp_path = tempfile.mkstemp(
-        suffix=".m3u",
-        dir=os.path.dirname(os.path.abspath(M3U_FILE))
-    )
+    sonuc = list(baslik)
 
-    try:
-        with os.fdopen(
-            fd,
-            "w",
-            encoding="utf-8",
-            newline="\n"
-        ) as f:
-            f.write("\n".join(sonuc) + "\n")
+    for record in yeni_records:
+        sonuc.extend(record)
 
-        os.replace(temp_path, M3U_FILE)
+    yeni_metin = newline.join(sonuc) + newline
 
-    except Exception:
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
-        raise
+    temp_file = M3U_FILE + ".tmp"
 
-    print("\n================================")
-    print("KANAL D GRUBU GÜNCELLENDİ")
-    print("Diğer gruplar korundu.")
-    print("EPG başlığı korundu.")
-    print("Toplam kayıt:", len(yeni_kayitlar))
-    print("================================")
+    with open(temp_file, "wb") as f:
+        encoding = "utf-8-sig" if bom else "utf-8"
+        f.write(yeni_metin.encode(encoding))
+
+    os.replace(temp_file, M3U_FILE)
+
+    print("\n====================================")
+    print("KANAL D DİZİ GÜNCELLEMESİ TAMAMLANDI")
+    print("====================================")
+    print("Konum: SHOWTV bilgilendirmesinin hemen sonrası")
+    print("Bilgilendirme videosu: KORUNDU")
+    print("EPG başlığı: KORUNDU")
+    print("Diğer gruplar: KORUNDU")
+    print("Dizi sayısı:", len(yeni_diziler))
+    print("Yedek:", M3U_FILE + ".bak")
+    print("====================================")
 
     return True
 
 
 # ==================================================
-# ANA İŞLEM
+# ANA PROGRAM
 # ==================================================
 
 async def main():
+
+    if not os.path.exists(M3U_FILE):
+        print("[HATA] mirti68.m3u bulunamadı!")
+        return
 
     async with async_playwright() as p:
 
@@ -335,33 +505,28 @@ async def main():
             headless=True
         )
 
-        yeni_kayitlar = []
+        yeni_diziler = []
 
         try:
             for dizi in DIZILER:
 
-                adres = await video_adresi_bul(
+                sonuc = await video_bul(
                     browser,
                     dizi
                 )
 
-                if not adres:
-                    print(
-                        "\n[GÜNCELLEME İPTAL] "
-                        "Eksik adres var. Mevcut liste korunuyor."
-                    )
+                if sonuc is None:
+                    print("\nGÜNCELLEME İPTAL EDİLDİ!")
+                    print("Mevcut M3U dosyasına dokunulmadı.")
                     return
 
-                yeni_kayitlar.append({
-                    "name": dizi["name"],
-                    "url": adres
-                })
+                yeni_diziler.append(sonuc)
 
         finally:
             await browser.close()
 
-        if len(yeni_kayitlar) == len(DIZILER):
-            listeyi_guncelle(yeni_kayitlar)
+        if len(yeni_diziler) == len(DIZILER):
+            listeyi_guncelle(yeni_diziler)
 
 
 if __name__ == "__main__":
