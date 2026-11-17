@@ -12,7 +12,7 @@ from playwright.async_api import async_playwright
 # ATV DİZİ OTOMATİK GÜNCELLEYİCİ
 # ==================================================
 
-M3U_FILE = "mirti68.m3u"
+M3U_FILE = "atvdizi.m3u"
 
 BASE = "https://www.atv.com.tr"
 
