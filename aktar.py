@@ -21,12 +21,12 @@ HEDEF_DOSYA = "mirti68.m3u"
 # ==================================================
 AKTARIMLAR = [
     {
-        "kaynak_url": "【entity-atv¦canonical_name=ATV】.m3u",
-        "kaynak_grup": "🟪◆  【entity-ATV¦canonical_name=ATV】 DİZİ 📺⭕",
-        "aranacak": "",
-        "hedef_grup": "🟪◆  【entity-ATV¦canonical_name=ATV】 DİZİ 📺⭕",
-        "hedef_logo": "",
-        "ek_kod": "",
+        "kaynak_url": "https://raw.githubusercontent.com/smtv62/atomspor/refs/heads/main/atom.m3u",
+        "kaynak_grup": "Atom-Panel",
+        "aranacak": "beIN Sports",
+        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
+        "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
+        "ek_kod": "⭕ Atom",
     },
     {
         "kaynak_url": "【entity-atv¦canonical_name=ATV】.m3u",
