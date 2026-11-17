@@ -28,22 +28,7 @@ AKTARIMLAR = [
         "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
         "ek_kod": "⭕ Atom",
     },
-    {
-        "kaynak_url": "【entity-atv¦canonical_name=ATV】.m3u",
-        "kaynak_grup": "🟪◆  【entity-ATV¦canonical_name=ATV】 DİZİ 📺⭕",
-        "aranacak": "haysiyet",
-        "hedef_grup": "🟪◆ HAYSİYET 📺⭕",
-        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/haysiyet.png",
-        "ek_kod": "",
-    },
-    {
-        "kaynak_url": "https://ornek.com/liste.m3u",
-        "kaynak_grup": "",
-        "aranacak": "beinsport",
-        "hedef_grup": "🟦◆ BEIN SPORT ⭕",
-        "hedef_logo": "",
-        "ek_kod": "",
-    },
+
 ]
 
 # ==================================================
