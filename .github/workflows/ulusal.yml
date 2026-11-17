@@ -48,7 +48,7 @@ jobs:
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
 
-      - name: 2 - ULUSAL
+      - name: 2 - ULUSAL 🟨◆  ULUSAL ⭕
         continue-on-error: true
         timeout-minutes: 10
         run: python link.py || echo "link failed"
