@@ -52,7 +52,7 @@ jobs:
       - name: 4 - FİLİM
         continue-on-error: true
         timeout-minutes: 10
-        run: python gfilim.py || echo "gfilim failed"
+        run: python gfilim.p || echo "gfilim failed"
            
       - name: 5 - GÜNCEL DİZİLER 2026
         continue-on-error: true
