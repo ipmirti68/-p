@@ -111,7 +111,7 @@ AKTARIMLAR = [
     },
 
              {
-        "kaynak_url": "http://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts"",
+        "kaynak_url": "http://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts",
         "kaynak_grup": "TR-SPOR",
         "aranacak": "",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
