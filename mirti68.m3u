@@ -3148,3 +3148,5 @@ https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-843
 # MIRTI68_TRT1_AUTO
 #EXTINF:-1 tvg-name="TRT 1 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ",TRT 1 ⭕
 https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 1 -Atom ⭕
+https://css.d6e3eds5e065t5.help//hls/b1.m3u8
