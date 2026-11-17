@@ -53,7 +53,7 @@ jobs:
         timeout-minutes: 10
         run: python link.py || echo "link failed"
 
-      - name: 3 - ULUSAL
+      - name: 3 - ULUSAL 🟨◆ ULUSAL ᴴᴰ⁺ ⭕
         continue-on-error: true
         timeout-minutes: 10
         run: python ulusal.py || echo "ulusal failed"
