@@ -4,19 +4,19 @@ import os
 import re
 import shutil
 import codecs
+import time
 from html import unescape
 from urllib.parse import urlparse
 from playwright.async_api import async_playwright
 
 # ==================================================
-# ATV DİZİ OTOMATİK GÜNCELLEYİCİ
+# MIRTI68 - ATV DİZİ OTOMATİK GÜNCELLEYİCİ
+# BAĞIMSIZ SÜRÜM
 # ==================================================
 
 M3U_FILE = "atvdizi.m3u"
-
 BASE = "https://www.atv.com.tr"
 
-SHOW_GROUP = "🟪◆ SHOW DİZİ 📺⭕"
 TARGET_GROUP = "🟪◆  ATV DİZİ 📺⭕"
 
 INFO_URL = (
@@ -35,10 +35,12 @@ UA = (
     "AppleWebKit/537.36 Chrome/130.0 Safari/537.36"
 )
 
+MAX_EPISODES = 3
+
 DIZILER = [
     {
         "slug": "alti-ustu-istanbul",
-        "name": "ALTI ÜSTÜ İSTANBUL",
+        "name": "ALTı ÜSTÜ İSTANBUL",
         "url": BASE + "/alti-ustu-istanbul"
     },
     {
@@ -66,48 +68,47 @@ def guvenli(value):
     )
 
 
+def hls_duzelt(url):
+    return (
+        temizle(url)
+        .replace("\\/", "/")
+        .replace("\\u0026", "&")
+        .replace("&amp;", "&")
+        .strip(" \t\r\n\"'")
+    )
+
+
 def grup_bul(record):
-
     for line in record:
-
         if line.startswith("#EXTINF:"):
-
             m = re.search(
                 r'group-title="([^"]*)"',
                 line
             )
-
             return m.group(1) if m else ""
-
     return ""
 
 
 def kanal_adi(record):
-
     for line in record:
-
         if line.startswith("#EXTINF:"):
             return line.split(",", 1)[-1].strip()
-
     return ""
 
 
 def info_kaydi():
-
     return [
-        f'#EXTINF:-1 tvg-name="***** ATV DİZİ *****" '
-        f'tvg-logo="{INFO_LOGO}" '
-        f'group-title="{TARGET_GROUP}",BİLGİLENDİRME',
+        (
+            f'#EXTINF:-1 tvg-name="***** ATV DİZİ *****" '
+            f'tvg-logo="{INFO_LOGO}" '
+            f'group-title="{TARGET_GROUP}",BİLGİLENDİRME'
+        ),
         INFO_URL
     ]
 
 
 def dizi_kaydi(d):
-
-    ad = d["name"]
-
-    if d.get("episode"):
-        ad += " - " + d["episode"]
+    ad = d["name"] + " - " + d["episode"]
 
     if d.get("date"):
         ad += " - " + d["date"]
@@ -116,65 +117,159 @@ def dizi_kaydi(d):
         f'#EXTINF:-1 '
         f'tvg-id="" '
         f'tvg-name="{guvenli(ad)}" '
-        f'tvg-logo="{guvenli(d["logo"])}" '
-        f'tvg-description="{guvenli(d["description"])}" '
+        f'tvg-logo="{guvenli(d.get("logo", ""))}" '
+        f'tvg-description="{guvenli(d.get("description", ""))}" '
         f'group-title="{TARGET_GROUP}",'
         f'{guvenli(ad)}'
     )
 
+    return [extinf, d["url"]]
+
+
+def html_hls_bul(html):
+    html = (
+        temizle(html)
+        .replace("\\/", "/")
+        .replace("\\u0026", "&")
+        .replace("&amp;", "&")
+    )
+
+    adresler = re.findall(
+        r'https?://[^"\'<>\s\\]+?\.m3u8'
+        r'(?:\?[^"\'<>\s\\]*)?',
+        html,
+        re.I
+    )
+
     return [
-        extinf,
-        d["url"]
+        hls_duzelt(x)
+        for x in adresler
+        if ".m3u8" in x.lower()
     ]
 
 
-# ==================================================
-# EN GÜNCEL BÖLÜMÜ BUL
-# ==================================================
+def en_iyi_hls(adresler):
+    adresler = list(set(adresler))
 
-async def dizi_bul(browser, dizi):
+    if not adresler:
+        return None
 
-    page = await browser.new_page(
-        user_agent=UA
-    )
-
-    hls_adresleri = set()
-
-    def yakala(url):
-
-        url = (
-            temizle(url)
-            .replace("\\/", "/")
-            .replace("\\u0026", "&")
+    adresler.sort(
+        key=lambda x: (
+            "master.m3u8" not in x.lower(),
+            -len(x)
         )
-
-        if (
-            url.startswith("http")
-            and ".m3u8" in url.lower()
-        ):
-            hls_adresleri.add(url)
-
-    page.on(
-        "request",
-        lambda r: yakala(r.url)
     )
 
-    page.on(
-        "response",
-        lambda r: yakala(r.url)
+    return adresler[0]
+
+
+# ==================================================
+# ESKİ M3U KAYITLARINI OKU
+# ==================================================
+
+def eski_listeyi_oku():
+
+    if not os.path.exists(M3U_FILE):
+        return ["#EXTM3U"], [], False, "\n"
+
+    with open(M3U_FILE, "rb") as f:
+        raw = f.read()
+
+    bom = raw.startswith(codecs.BOM_UTF8)
+
+    metin = raw.decode(
+        "utf-8-sig",
+        errors="replace"
     )
+
+    newline = "\r\n" if "\r\n" in metin else "\n"
+
+    satirlar = metin.splitlines()
+
+    ilk_extinf = next(
+        (
+            i for i, s in enumerate(satirlar)
+            if s.startswith("#EXTINF:")
+        ),
+        len(satirlar)
+    )
+
+    baslik = satirlar[:ilk_extinf]
+
+    if not baslik:
+        baslik = ["#EXTM3U"]
+
+    govde = satirlar[ilk_extinf:]
+
+    records = []
+    current = []
+
+    for line in govde:
+        if line.startswith("#EXTINF:") and current:
+            records.append(current)
+            current = []
+
+        current.append(line)
+
+    if current:
+        records.append(current)
+
+    return baslik, records, bom, newline
+
+
+# ==================================================
+# DİZİ KAYDINI ESKİ KAYITLA EŞLEŞTİR
+# ==================================================
+
+def dizi_eslesiyor(record, dizi):
+
+    if grup_bul(record) != TARGET_GROUP:
+        return False
+
+    ad = kanal_adi(record).lower()
+    hedef = dizi["name"].lower()
+
+    ad = ad.replace("ı", "i")
+    hedef = hedef.replace("ı", "i")
+
+    return hedef in ad
+
+
+def eski_dizi_kayitlari(records, dizi):
+    return [
+        r for r in records
+        if dizi_eslesiyor(r, dizi)
+    ]
+
+
+def eski_bolum_no(record):
+
+    ad = kanal_adi(record)
+
+    m = re.search(
+        r'(\d+)\s*\.?\s*BÖLÜM',
+        ad,
+        re.I
+    )
+
+    if m:
+        return int(m.group(1))
+
+    return None
+
+
+# ==================================================
+# BÖLÜM LİNKLERİNİ BUL
+# ==================================================
+
+async def bolumleri_bul(page, dizi):
+
+    liste_url = dizi["url"].rstrip("/") + "/bolumler"
+
+    print("[BÖLÜM LİSTESİ]", liste_url)
 
     try:
-
-        print("\n================================")
-        print("[DİZİ]", dizi["name"])
-        print("================================")
-
-        # Bölümler sayfası
-        liste_url = (
-            dizi["url"] + "/bolumler"
-        )
-
         await page.goto(
             liste_url,
             wait_until="domcontentloaded",
@@ -183,7 +278,11 @@ async def dizi_bul(browser, dizi):
 
         await page.wait_for_timeout(3000)
 
-        # Bölüm bağlantılarını topla
+    except Exception as e:
+        print("[LİSTE HATASI]", str(e))
+        return []
+
+    try:
         links = await page.locator(
             "a[href]"
         ).evaluate_all(
@@ -193,214 +292,205 @@ async def dizi_bul(browser, dizi):
             }))"""
         )
 
-        adaylar = {}
+    except Exception as e:
+        print("[LINK HATASI]", str(e))
+        return []
 
-        for item in links:
+    adaylar = {}
 
-            link = item["url"]
-            text = item["text"]
+    for item in links:
 
-            path = urlparse(link).path.lower()
+        link = item.get("url", "")
 
-            if dizi["slug"] not in path:
-                continue
+        if not link:
+            continue
 
-            match = re.search(
-                r'/(\d+)-bolum(?:/izle)?/?$',
-                path
-            )
+        path = urlparse(link).path.lower()
 
-            if not match:
-                continue
+        if dizi["slug"] not in path:
+            continue
 
-            bolum_no = int(match.group(1))
+        match = re.search(
+            r'/(\d+)-bolum(?:/izle)?/?$',
+            path
+        )
 
-            if bolum_no not in adaylar:
-                adaylar[bolum_no] = link
+        if not match:
+            continue
 
-        if not adaylar:
+        bolum_no = int(match.group(1))
+        adaylar[bolum_no] = link
 
-            print(
-                "[HATA] Bölüm bağlantısı bulunamadı:",
-                dizi["name"]
-            )
+    sirali = sorted(
+        adaylar.items(),
+        key=lambda x: x[0],
+        reverse=True
+    )
 
-            return None
+    return sirali[:MAX_EPISODES]
 
-        # En yüksek bölüm numarasını seç
-        son_bolum = max(adaylar)
 
-        hedef = adaylar[son_bolum]
+# ==================================================
+# BÖLÜM SAYFASINDAN HLS BUL
+# ==================================================
 
-        print("[SON BÖLÜM]", son_bolum)
-        print("[SAYFA]", hedef)
+async def bolum_tara(browser, dizi, bolum_no, bolum_url):
 
-        # Son bölüm sayfası
+    page = await browser.new_page(
+        user_agent=UA
+    )
+
+    hls_adresleri = set()
+
+    def yakala(url):
+        url = hls_duzelt(url)
+
+        if (
+            url.startswith("http")
+            and ".m3u8" in url.lower()
+        ):
+            hls_adresleri.add(url)
+
+    def request_yakala(request):
+        try:
+            yakala(request.url)
+        except Exception:
+            pass
+
+    def response_yakala(response):
+        try:
+            yakala(response.url)
+        except Exception:
+            pass
+
+    page.on("request", request_yakala)
+    page.on("response", response_yakala)
+
+    logo = ""
+    description = ""
+    tarih = ""
+
+    try:
+
+        print(
+            "\n[BÖLÜM]",
+            dizi["name"],
+            bolum_no
+        )
+
         await page.goto(
-            hedef,
+            bolum_url,
             wait_until="domcontentloaded",
             timeout=60000
         )
 
-        await page.wait_for_timeout(6000)
+        await page.wait_for_timeout(5000)
 
-        # Logo
-        logo = ""
-
+        # LOGO
         for selector in [
             'meta[property="og:image"]',
             'meta[name="twitter:image"]'
         ]:
-
             try:
-
                 logo = await page.locator(
                     selector
                 ).first.get_attribute("content")
 
                 if logo:
                     break
-
             except Exception:
                 pass
 
         if not logo:
             logo = BASE + "/favicon.ico"
 
-        # Açıklama
-        description = ""
-
+        # AÇIKLAMA
         try:
-
             description = await page.locator(
                 'meta[name="description"]'
             ).first.get_attribute("content") or ""
-
         except Exception:
             pass
 
-        # Yayın tarihi
-        tarih = ""
-
+        # TARİH
         for selector in [
             'meta[property="article:published_time"]',
             'meta[property="og:updated_time"]'
         ]:
-
             try:
-
                 tarih = await page.locator(
                     selector
                 ).first.get_attribute("content") or ""
 
                 if tarih:
                     break
-
             except Exception:
                 pass
 
         if tarih:
             tarih = tarih[:10]
 
-        # Sayfadaki HLS adreslerini tara
+        # İLK HTML TARAMASI
         html = await page.content()
 
-        html = (
-            temizle(html)
-            .replace("\\/", "/")
-            .replace("\\u0026", "&")
-        )
-
-        for adres in re.findall(
-            r'https?://[^\s"\'<>]+?\.m3u8(?:\?[^\s"\'<>]*)?',
-            html,
-            re.I
-        ):
+        for adres in html_hls_bul(html):
             yakala(adres)
 
-        # Oynatmayı dene
+        # OYNATMA DENEMESİ
         for selector in [
             ".jw-icon-play",
             ".vjs-big-play-button",
             ".plyr__control--overlaid",
             "button[aria-label*='Oynat']"
         ]:
-
             try:
-
                 button = page.locator(
                     selector
                 ).first
 
                 if await button.count():
-
                     await button.click(
-                        timeout=2500,
+                        timeout=3000,
                         force=True
                     )
 
-                    await page.wait_for_timeout(7000)
+                    await page.wait_for_timeout(6000)
                     break
 
             except Exception:
                 pass
 
+        # VIDEO PLAY
         try:
-
             await page.locator(
                 "video"
             ).first.evaluate(
                 "(v) => v.play()"
             )
 
-            await page.wait_for_timeout(7000)
+            await page.wait_for_timeout(6000)
 
         except Exception:
             pass
 
-        # Son istekleri tekrar kontrol et
+        # SON HTML TARAMASI
         html = await page.content()
 
-        html = (
-            temizle(html)
-            .replace("\\/", "/")
-            .replace("\\u0026", "&")
-        )
-
-        for adres in re.findall(
-            r'https?://[^\s"\'<>]+?\.m3u8(?:\?[^\s"\'<>]*)?',
-            html,
-            re.I
-        ):
+        for adres in html_hls_bul(html):
             yakala(adres)
 
-        if not hls_adresleri:
+        sonuc = en_iyi_hls(hls_adresleri)
 
-            print(
-                "[HLS BULUNAMADI]",
-                dizi["name"]
-            )
-
+        if not sonuc:
+            print("[HLS BULUNAMADI]", bolum_no)
             return None
 
-        # Master playlist öncelikli
-        sirali = sorted(
-            hls_adresleri,
-            key=lambda x: (
-                "master.m3u8" not in x.lower(),
-                len(x)
-            )
-        )
-
-        sonuc = sirali[0]
-
         print("[HLS BULUNDU]", sonuc)
-        print("[LOGO]", logo)
-        print("[TARİH]", tarih)
 
         return {
             "name": dizi["name"],
-            "episode": f"{son_bolum}. BÖLÜM",
+            "episode": f"{bolum_no}. BÖLÜM",
+            "episode_no": bolum_no,
             "date": tarih,
             "logo": logo,
             "description": description,
@@ -410,8 +500,8 @@ async def dizi_bul(browser, dizi):
     except Exception as e:
 
         print(
-            "[HATA]",
-            dizi["name"],
+            "[BÖLÜM HATASI]",
+            bolum_no,
             str(e)
         )
 
@@ -422,161 +512,180 @@ async def dizi_bul(browser, dizi):
 
 
 # ==================================================
-# M3U DOSYASINI KORUYARAK GÜNCELLE
+# DİZİNİN SON 3 BÖLÜMÜNÜ TARA
 # ==================================================
 
-def listeyi_guncelle(yeni_diziler):
+async def dizi_bul(browser, dizi):
 
-    if not os.path.exists(M3U_FILE):
+    print("\n====================================")
+    print("[ATV DİZİ]", dizi["name"])
+    print("====================================")
 
-        print("[HATA] mirti68.m3u bulunamadı!")
-        return False
-
-    raw = open(M3U_FILE, "rb").read()
-
-    bom = raw.startswith(codecs.BOM_UTF8)
-
-    metin = raw.decode("utf-8-sig")
-
-    newline = (
-        "\r\n" if "\r\n" in metin else "\n"
+    page = await browser.new_page(
+        user_agent=UA
     )
 
-    satirlar = metin.splitlines()
-
-    # EPG başlığı korunur
-    ilk_extinf = next(
-        (
-            i for i, s in enumerate(satirlar)
-            if s.startswith("#EXTINF:")
-        ),
-        len(satirlar)
-    )
-
-    baslik = satirlar[:ilk_extinf]
-    govde = satirlar[ilk_extinf:]
-
-    # M3U kayıtlarını ayır
-    records = []
-    current = []
-
-    for line in govde:
-
-        if line.startswith("#EXTINF:") and current:
-
-            records.append(current)
-            current = []
-
-        current.append(line)
-
-    if current:
-        records.append(current)
-
-    # SHOW DİZİ grubunun son kaydını bul
-    anchor = None
-
-    for i, record in enumerate(records):
-
-        if grup_bul(record) == SHOW_GROUP:
-            anchor = i
-
-    if anchor is None:
-
-        print(
-            "[HATA] SHOW DİZİ grubu bulunamadı!"
+    try:
+        bolumler = await bolumleri_bul(
+            page,
+            dizi
         )
 
-        print("Dosya değiştirilmedi.")
+    finally:
+        await page.close()
+
+    if not bolumler:
+        print("[BÖLÜM BULUNAMADI]", dizi["name"])
+        return []
+
+    print(
+        "[SON BÖLÜMLER]",
+        [no for no, url in bolumler]
+    )
+
+    sonuclar = []
+
+    for bolum_no, bolum_url in bolumler:
+
+        sonuc = await bolum_tara(
+            browser,
+            dizi,
+            bolum_no,
+            bolum_url
+        )
+
+        if sonuc:
+            sonuclar.append(sonuc)
+
+        await asyncio.sleep(1)
+
+    sonuclar.sort(
+        key=lambda x: x["episode_no"],
+        reverse=True
+    )
+
+    return sonuclar[:MAX_EPISODES]
+
+
+# ==================================================
+# M3U DOSYASINI GÜNCELLE
+# ==================================================
+
+def listeyi_guncelle(yeni_sonuclar):
+
+    baslik, records, bom, newline = eski_listeyi_oku()
+
+    # Yeni sonuç bulunan dizileri belirle
+    basarili = {
+        dizi["slug"]: yeni_sonuclar.get(dizi["slug"], [])
+        for dizi in DIZILER
+    }
+
+    if not any(basarili.values()):
+        print("\n[İPTAL] Yeni HLS bulunamadı.")
+        print("Mevcut dosya değiştirilmedi.")
         return False
 
-    # Önceki ATV bilgilendirme kaydını koru
+    # Eski ATV kayıtları dışındaki kayıtlar korunur
+    diger_kayitlar = [
+        r for r in records
+        if grup_bul(r) != TARGET_GROUP
+    ]
+
+    # Eski ATV kayıtlarını topla
+    eski_atv = [
+        r for r in records
+        if grup_bul(r) == TARGET_GROUP
+    ]
+
+    # Bilgilendirme kaydını koru
     info = None
 
-    for record in records:
-
-        if (
-            grup_bul(record) == TARGET_GROUP
-            and "BİLGİLENDİRME" in kanal_adi(record).upper()
-        ):
-
+    for record in eski_atv:
+        if "BİLGİLENDİRME" in kanal_adi(record).upper():
             info = record
             break
 
     if info is None:
         info = info_kaydi()
 
-    # Sadece eski ATV grubunu kaldır
-    digerleri = [
-        r for r in records
-        if grup_bul(r) != TARGET_GROUP
-    ]
+    yeni_atv = [info]
 
-    # SHOW DİZİ grubunun son konumunu tekrar bul
-    anchor = None
+    for dizi in DIZILER:
 
-    for i, record in enumerate(digerleri):
+        slug = dizi["slug"]
+        yeni = basarili[slug]
 
-        if grup_bul(record) == SHOW_GROUP:
-            anchor = i
+        if yeni:
 
-    if anchor is None:
-        return False
+            # Başarılı taranan dizinin yeni bölümlerini ekle
+            for sonuc in yeni:
+                yeni_atv.append(
+                    dizi_kaydi(sonuc)
+                )
 
-    # Yeni ATV kayıtları
-    yeni_kayitlar = [info]
+            print(
+                "[GÜNCELLENDİ]",
+                dizi["name"],
+                len(yeni),
+                "bölüm"
+            )
 
-    for dizi in yeni_diziler:
+        else:
 
-        yeni_kayitlar.append(
-            dizi_kaydi(dizi)
-        )
+            # Başarısız dizinin eski kayıtlarını koru
+            eski = eski_dizi_kayitlari(
+                records,
+                dizi
+            )
 
-    # SHOW DİZİ grubunun hemen arkasına ekle
-    son_records = (
-        digerleri[:anchor + 1]
-        + yeni_kayitlar
-        + digerleri[anchor + 1:]
-    )
+            yeni_atv.extend(eski)
+
+            print(
+                "[ESKİ KAYIT KORUNDU]",
+                dizi["name"],
+                len(eski),
+                "kayıt"
+            )
 
     # Yedek al
-    shutil.copy2(
-        M3U_FILE,
-        M3U_FILE + ".bak"
-    )
+    if os.path.exists(M3U_FILE):
+        shutil.copy2(
+            M3U_FILE,
+            M3U_FILE + ".bak"
+        )
 
-    sonuc = list(baslik)
+    # Bağımsız dosya: sadece ATV kayıtları
+    son_records = yeni_atv
+
+    sonuc_satirlari = list(baslik)
 
     for record in son_records:
-        sonuc.extend(record)
+        sonuc_satirlari.extend(record)
 
-    yeni_metin = (
-        newline.join(sonuc) + newline
-    )
+    yeni_metin = newline.join(sonuc_satirlari) + newline
+
+    encoding = "utf-8-sig" if bom else "utf-8"
 
     temp = M3U_FILE + ".tmp"
 
-    encoding = (
-        "utf-8-sig" if bom else "utf-8"
-    )
-
     with open(temp, "wb") as f:
-        f.write(yeni_metin.encode(encoding))
+        f.write(
+            yeni_metin.encode(encoding)
+        )
 
     os.replace(temp, M3U_FILE)
 
-    print("\n===================================")
+    print("\n====================================")
     print("ATV DİZİ GÜNCELLEME TAMAMLANDI")
-    print("===================================")
+    print("====================================")
+    print("Dosya:", M3U_FILE)
     print("Grup:", TARGET_GROUP)
-    print("Konum: SHOW DİZİ grubunun hemen sonrası")
-    print("Dizi sayısı:", len(yeni_diziler))
-    print("Logo: EKLENDİ")
-    print("Açıklama: EKLENDİ")
-    print("Tarih: BULUNDUĞUNDA EKLENDİ")
-    print("EPG başlığı: KORUNDU")
-    print("Diğer gruplar: KORUNDU")
+    print("Dizi sayısı:", len(DIZILER))
+    print("Son bölüm limiti:", MAX_EPISODES)
+    print("Bilgilendirme: KORUNDU")
     print("Yedek:", M3U_FILE + ".bak")
-    print("===================================")
+    print("====================================")
 
     return True
 
@@ -587,18 +696,18 @@ def listeyi_guncelle(yeni_diziler):
 
 async def main():
 
-    if not os.path.exists(M3U_FILE):
+    print("====================================")
+    print("MIRTI68 - ATV DİZİ BOTU")
+    print("====================================")
 
-        print("[HATA] M3U dosyası bulunamadı!")
-        return
+    yeni_sonuclar = {}
 
     async with async_playwright() as p:
 
         browser = await p.chromium.launch(
-            headless=True
+            headless=True,
+            args=["--no-sandbox"]
         )
-
-        yeni_diziler = []
 
         try:
 
@@ -609,23 +718,23 @@ async def main():
                     dizi
                 )
 
-                if sonuc is None:
-
-                    print("\nGÜNCELLEME İPTAL EDİLDİ!")
-                    print("Mevcut liste korunuyor.")
-                    return
-
-                yeni_diziler.append(sonuc)
+                yeni_sonuclar[dizi["slug"]] = sonuc
 
         finally:
             await browser.close()
 
-        if len(yeni_diziler) == len(DIZILER):
+    toplam = sum(
+        len(x)
+        for x in yeni_sonuclar.values()
+    )
 
-            listeyi_guncelle(
-                yeni_diziler
-            )
+    print("\nTOPLAM BULUNAN BÖLÜM:", toplam)
+
+    listeyi_guncelle(
+        yeni_sonuclar
+    )
 
 
 if __name__ == "__main__":
     asyncio.run(main())
+    
