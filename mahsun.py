@@ -316,7 +316,7 @@ def main():
 
     _grubun_sonuna_ekle(BEIN_GROUP, yeni_bein)
     _grubun_sonuna_ekle(SPORTS_GROUP, yeni_sports)
-    # --- GUVENLIK ---
+      # --- GUVENLIK ---
     if not old_lines:
         print("DURDURULDU: mirti68.m3u bulunamadi / bos. Yazilmadi.")
         return
@@ -332,7 +332,7 @@ def main():
         print("Yedek alindi: mirti68.m3u.bak")
     except Exception as e:
         print(f"Yedek alinamadi: {e}")
-     try:
+    try:
         with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
             for h in old_header:
                 f.write(h + "\n")
