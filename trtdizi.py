@@ -17,7 +17,7 @@ BASE = "https://www.trt1.com.tr"
 
 SHOW_GROUP = "🟪◆ SHOW DİZİ 📺⭕"
 ATV_GROUP = "🟪◆  ATV DİZİ 📺⭕"
-TARGET_GROUP = "🟪◆  【entity-TRT¦canonical_name=TRT】 DİZİ 📺⭕"
+TARGET_GROUP = "🟪◆  TRT DİZİ 📺⭕"
 
 INFO_URL = (
     "https://raw.githubusercontent.com/"
