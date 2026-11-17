@@ -47,7 +47,7 @@ jobs:
          
       - name: 3 - PRİSON
         continue-on-error: true
-        run: python dprison.py || echo "prison.py failed"
+        run: python dprison.p || echo "prison.py failed"
         
       - name: 4 - FİLİM
         continue-on-error: true
