@@ -27,6 +27,14 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
+         {
+        "kaynak_url": "http://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=ts",
+        "kaynak_grup": "Turkiye / HEVC",
+        "aranacak": "",
+        "hedef_grup": "🟨◆  ULUSAL ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
 ]
 
 def grup_bul(rec):
