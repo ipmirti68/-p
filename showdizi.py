@@ -12,7 +12,7 @@ from playwright.async_api import async_playwright
 # SHOW TV DİZİ OTOMATİK GÜNCELLEYİCİ
 # ==================================================
 
-M3U_FILE = "mirti68.m3u"
+M3U_FILE = "showdizi.m3u"
 BASE = "https://www.showtv.com.tr"
 
 SHOW_GROUP = "🟪◆ SHOWTV DİZİLERİ ⭕"
