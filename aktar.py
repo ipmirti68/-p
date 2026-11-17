@@ -1,26 +1,17 @@
 # ==================================================
-# MIRTI68 - TEK AKTARICI (Bilgilendirme YOK)
+# MIRTI68 - TEK AKTARICI (Grup içi SİLMEZ, BİRLEŞTİRİR)
 # Kural:
-# - Hedefte aynı isimde grup varsa -> ONUN İÇİNE yaz
+# - Hedefte aynı isimde grup varsa -> İÇİNE BİRLEŞTİR
+#   Aynı isimli kayıt varsa güncelle, yoksa ekle, diğerlerine DOKUNMA
 # - Yoksa aynı şekil/renk başlangıcı olan grubun ALTINA yaz
-#   Örn: 🟪◆ ... -> 🟪◆ grubunun altına
-#        🟨◆ ... -> 🟨◆ grubunun altına
+# - Bilgilendirme YOK
 # ==================================================
 import re, os, codecs, shutil, urllib.request
 
 HEDEF_DOSYA = "mirti68.m3u"
 
-# ==================================================
-# BURAYI DOLDUR
-# kaynak_url:  nereden alınacak? .m3u linki veya yerel dosya
-# kaynak_grup: kaynakta hangi grupta arayayım? "" = tümünde ara
-# aranacak:    kanal / dizi adı filtresi. "" = hepsini al
-# hedef_grup:  ana listede hangi gruba yazılacak?
-# hedef_logo:  yazılırken logo değişsin mi? "" = kaynak logosu kalsın
-# ek_kod:      EXTINF'e eklenecek ekstra kod. "" = ekleme
-# ==================================================
 AKTARIMLAR = [
-    {
+      {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/atomspor/refs/heads/main/atom.m3u",
         "kaynak_grup": "Atom-Panel",
         "aranacak": "beIN Sports",
@@ -28,12 +19,7 @@ AKTARIMLAR = [
         "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
         "ek_kod": "⭕ Atom",
     },
-
 ]
-
-# ==================================================
-# ALTA DOKUNMA
-# ==================================================
 
 def grup_bul(rec):
     for l in rec:
@@ -54,13 +40,18 @@ def extinf_bul(rec):
             return l
     return ""
 
+def temiz_isim(ad):
+    """HAYSİYET - 1. Bölüm - 2026-11-17 -> HAYSİYET gibi karşılaştırma için sadeleştir"""
+    ad = ad.lower().strip()
+    # bölüm / tarih kısmını at
+    ad = re.split(r'\s*-\s*\d+\.?\s*bölüm', ad)[0]
+    ad = re.split(r'\s*-\s*\d{4}-\d{2}-\d{2}', ad)[0]
+    return ad.strip()
+
 def grup_baslangici(grup_adi):
-    """Aynı şekil/renk başlangıcını bul: örn '🟪◆' , '🟨◆' , '🟦◆'"""
-    # İlk 2 karakter genelde emoji + ◆ oluyor, boşluğa kadar al
     m = re.match(r'^\s*(\S+\s*◆)', grup_adi.strip())
     if m:
         return m.group(1).strip()
-    # ◆ yoksa ilk kelimeyi al
     return grup_adi.strip().split()[0] if grup_adi.strip() else ""
 
 def oku_m3u(path_or_url):
@@ -111,9 +102,8 @@ def main():
 
     baslik, hedef_records, newline, enc = oku_m3u(HEDEF_DOSYA)
 
-    # Her aktarım için ayrı ayrı uygula - biri diğerini bozmasın
     for cfg in AKTARIMLAR:
-        print(f"\n[*] {cfg['kaynak_url']} | kaynak_grup='{cfg['kaynak_grup']}' | aranacak='{cfg['aranacak']}' -> hedef='{cfg['hedef_grup']}'")
+        print(f"\n[*] {cfg['kaynak_url']} | aranacak='{cfg['aranacak']}' -> hedef='{cfg['hedef_grup']}'")
         _, kaynak_records, _, _ = oku_m3u(cfg["kaynak_url"])
         aranacak = cfg.get("aranacak", "").strip().lower()
         kaynak_grup = cfg.get("kaynak_grup", "").strip()
@@ -127,45 +117,60 @@ def main():
                 url = " ".join(r).lower()
                 if aranacak not in ad and aranacak not in url:
                     continue
-            # BİLGİLENDİRME kayıtlarını alma
             if "bilgilendirme" in kanal_adi(r).lower():
                 continue
             secilen.append(hedefe_uyarla(r, cfg))
 
         if not secilen:
-            print(f"  [!] Kayıt yok, bu grup atlandı, hedef bozulmadı")
+            print(f"  [!] Kayıt yok, bu grup atlandı, hedefe DOKUNULMADI")
             continue
 
         print(f"  [+] {len(secilen)} kayıt seçildi")
-
         hedef_grup = cfg["hedef_grup"]
-        hedef_baslangic = grup_baslangici(hedef_grup)
 
-        # 1. Hedefte AYNI İSİMDE grup var mı?
-        ayni_grup_indexleri = [i for i, r in enumerate(hedef_records) if grup_bul(r) == hedef_grup]
-        if ayni_grup_indexleri:
-            # Aynı gruptaki eski kayıtları sil, yerine yenilerini koy (aynı yere)
-            ilk = min(ayni_grup_indexleri)
-            # Aynı grup dışındaki kayıtlar
+        # 1. Hedefte AYNI İSİMDE grup var mı? -> BİRLEŞTİR, SİLME
+        ayni_indexler = [i for i, r in enumerate(hedef_records) if grup_bul(r) == hedef_grup]
+        if ayni_indexler:
+            # Gelen kayıtların isimleri
+            gelen_isimler = {temiz_isim(kanal_adi(r)): r for r in secilen}
+            yeni_grup_kayitlari = []
+            # Eski grup kayıtlarını gez
+            for idx in ayni_indexler:
+                eski = hedef_records[idx]
+                eski_isim = temiz_isim(kanal_adi(eski))
+                if eski_isim in gelen_isimler:
+                    # Aynı isim varsa YENİSİ ile değiştir (link güncellendi)
+                    yeni_grup_kayitlari.append(gelen_isimler.pop(eski_isim))
+                    print(f"    [GÜNCELLENDİ] {kanal_adi(eski)}")
+                else:
+                    # Aynı isim yoksa ESKİSİ KALSIN - SİLME
+                    yeni_grup_kayitlari.append(eski)
+                    print(f"    [KORUNDU] {kanal_adi(eski)}")
+            # Tamamen yeni isimler varsa sona ekle
+            for isim, rec in gelen_isimler.items():
+                yeni_grup_kayitlari.append(rec)
+                print(f"    [EKLENDİ] {kanal_adi(rec)}")
+
+            # Grubu eski yerinde yeniden kur
+            ilk = min(ayni_indexler)
             digerleri = [r for r in hedef_records if grup_bul(r) != hedef_grup]
-            # Aynı grubun eski konumunu bul: ondan önce kaç tane diğer kayıt var?
             onceki = sum(1 for r in hedef_records[:ilk] if grup_bul(r) != hedef_grup)
-            hedef_records = digerleri[:onceki] + secilen + digerleri[onceki:]
-            print(f"  [YAZILDI] Aynı grup bulundu, içine yazıldı: {hedef_grup}")
+            hedef_records = digerleri[:onceki] + yeni_grup_kayitlari + digerleri[onceki:]
+            print(f"  [YAZILDI] Aynı grup bulundu, birleştirildi: {hedef_grup}")
             continue
 
-        # 2. Aynı isim yoksa, AYNI ŞEKİL/RENK başlangıcı olan grubu bul
-        # Örn: hedef 🟪◆ HAYSİYET ise, 🟪◆ ile başlayan son grubun altına yaz
-        benzer_indexleri = [i for i, r in enumerate(hedef_records) if grup_baslangici(grup_bul(r)) == hedef_baslangic and grup_bul(r)]
-        if benzer_indexleri:
-            son_benzer = max(benzer_indexleri)
+        # 2. Aynı isim yoksa, aynı şekil/renk başlangıcı olan grubun ALTINA ekle
+        hedef_baslangic = grup_baslangici(hedef_grup)
+        benzer = [i for i, r in enumerate(hedef_records) if grup_baslangici(grup_bul(r)) == hedef_baslangic and grup_bul(r)]
+        if benzer:
+            son_benzer = max(benzer)
             hedef_records = hedef_records[:son_benzer+1] + secilen + hedef_records[son_benzer+1:]
-            print(f"  [YAZILDI] Aynı isim yok, aynı başlangıç '{hedef_baslangic}' grubunun altına yazıldı")
+            print(f"  [YAZILDI] Aynı isim yok, '{hedef_baslangic}' grubunun altına eklendi")
             continue
 
-        # 3. Hiç benzer de yoksa en sona ekle
+        # 3. Hiç benzer yoksa en sona ekle
         hedef_records = hedef_records + secilen
-        print(f"  [YAZILDI] Benzer grup yok, en sona eklendi")
+        print(f"  [YAZILDI] Benzer yok, en sona eklendi")
 
     shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA + ".bak")
     sonuc = list(baslik)
@@ -173,7 +178,7 @@ def main():
         sonuc.extend(r)
     with open(HEDEF_DOSYA, "w", encoding=enc, newline="") as f:
         f.write(newline.join(sonuc) + newline)
-    print(f"\n[TAMAM] {HEDEF_DOSYA} güncellendi | Bilgilendirme: YOK | EPG: KORUNDU | Diğer gruplar: KORUNDU")
+    print(f"\n[TAMAM] {HEDEF_DOSYA} güncellendi | Grup içi silinmedi, birleştirildi | EPG korundu")
 
 if __name__ == "__main__":
     main()
