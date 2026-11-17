@@ -42,32 +42,32 @@ jobs:
            
       - name: 1 -KANAL D DİZİ SON BÖLÜM
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: python kanalddizi.py || echo "kanalddizi failed"
         
       - name: 2 -SHOW DİZİ SON BÖLÜM
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: python showdizi.py || echo "showdizi failed"     
         
       - name: 3 -ATV DİZİ SON BÖLÜM
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: python atvdizi.py || echo "atvdizi failed"
         
       - name: 4 NOW DİZİ SON BÖLÜM
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: python nowdizi.py || echo "nowdizi failed"    
 
       - name: 5 -STAR DİZİ SON BÖLÜM
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: python stardizi.py || echo "stardizi failed"
         
       - name: 6 -TRT1  DİZİ SON BÖLÜM
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 20
         run: python trtdizi.py || echo "trtdizi failed"     
 
  
