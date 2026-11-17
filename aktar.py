@@ -28,10 +28,10 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
          {
-        "kaynak_url": "http://07falcontr.com:8080/get.php?username=x3ulkusinanoba43&password=gNR4DyD4QXsp&type=m3u_plus&output=ts",
-        "kaynak_grup": "Turkiye / HEVC",
+        "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
+        "kaynak_grup": "",
         "aranacak": "",
-        "hedef_grup": "🟨◆  ULUSAL ⭕",
+        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
