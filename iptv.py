@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 import re, os, codecs, shutil
 
-OUTPUT_FILE = "mirti68.m3u"
+OUTPUT_FILE = "ulusal.m3u"
 GROUP = "🟨◆  ULUSALᴴᴰ ⭕"
 
 # SIRALAMA: TRT1 - ATV- SHOW TV - KANAL D - Star TV - NOW - KANAL7 - TV8 - 360 - TV4 - TV2 - BEYAZ
