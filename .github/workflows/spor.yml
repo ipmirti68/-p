@@ -44,40 +44,17 @@ jobs:
 
           python -c "from Crypto.Cipher import AES; print('CRYPTO AES OK')"
 
-      - name: 1 - ATOM
-        continue-on-error: true
-        run: python atom.p || echo "atomspor failed"
-
-      - name: 2 - 79.76.50.223/BEİN
-        continue-on-error: true
-        run: python bein.py || echo "dein failed"
-
-      - name: 3 - 07FALKON
-        continue-on-error: true
-        run: python bein1.py || echo "bein1 failed"
-
-      - name: 4 - KADİRSENTVR24
+     
+      - name: 1 - KADİRSENTVR24
         continue-on-error: true
         run: python allspor.py || echo "allbein failed"
-
-      - name: 5 - RÜZGAR
-        continue-on-error: true
-        run: python bein2.py || echo "dein failed"
-
-      - name: 6 - MEKAN
-        continue-on-error: true
-        run: python bein3.py || echo "bein1 failed"
-
-      - name: 7 - EKMEK
-        continue-on-error: true
-        run: python bein4.py || echo "bein failed"
-
-      - name: 8 - MAHSUN
+ 
+      - name: 2 - MAHSUN
         continue-on-error: true
         timeout-minutes: 10
         run: python mahsun.py || echo "mahsun failed"
 
-      - name: 9 - GOLLER
+      - name: 3 - GOLLER
         continue-on-error: true
         timeout-minutes: 10
         run: python lig.py || echo "lig failed"
