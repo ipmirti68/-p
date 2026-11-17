@@ -80,19 +80,50 @@ def oku_m3u(path_or_url):
 def hedefe_uyarla(rec, cfg):
     extinf = extinf_bul(rec)
     url = rec[-1] if rec else ""
+    ad = kanal_adi(rec)
+
+    # 1. Hedef grup
     if 'group-title="' in extinf:
         extinf = re.sub(r'group-title="[^"]*"', f'group-title="{cfg["hedef_grup"]}"', extinf)
     else:
         extinf = extinf.replace("#EXTINF:-1", f'#EXTINF:-1 group-title="{cfg["hedef_grup"]}"')
+
+    # 2. Hedef logo
     if cfg.get("hedef_logo"):
         if 'tvg-logo="' in extinf:
             extinf = re.sub(r'tvg-logo="[^"]*"', f'tvg-logo="{cfg["hedef_logo"]}"', extinf)
         else:
             extinf = extinf.replace("#EXTINF:-1", f'#EXTINF:-1 tvg-logo="{cfg["hedef_logo"]}"')
-    if cfg.get("ek_kod"):
-        ek = cfg["ek_kod"].strip()
-        if ek and ek.split("=")[0] not in extinf:
-            extinf = extinf.replace("#EXTINF:-1", f"#EXTINF:-1 {ek}")
+
+    # 3. ek_kod - İKİ TİPİ DE DESTEKLER
+    ek = (cfg.get("ek_kod") or "").strip()
+    if ek:
+        if "=" in ek:
+            # Tip 1: EXTINF özelliği -> #EXTINF:-1 tvg-id="..." gibi
+            # Zaten varsa tekrar ekleme
+            anahtar = ek.split("=")[0].strip()
+            if anahtar not in extinf:
+                extinf = extinf.replace("#EXTINF:-1", f"#EXTINF:-1 {ek}")
+        else:
+            # Tip 2: İSİM SONUNA ekle -> "HAYSİYET" -> "HAYSİYET ⭕ Atom"
+            # Zaten sonda varsa tekrar ekleme
+            if not ad.endswith(ek) and ek not in ad:
+                yeni_ad = f"{ad} {ek}"
+                # tvg-name="..." içini de değiştir
+                extinf = re.sub(
+                    r'tvg-name="[^"]*"',
+                    f'tvg-name="{yeni_ad}"',
+                    extinf,
+                    count=1
+                )
+                # virgülden sonraki görünen adı da değiştir
+                # #EXTINF:-1 ...,GÖRÜNEN AD
+                extinf = re.sub(
+                    r',([^,]*)$',
+                    f',{yeni_ad}',
+                    extinf,
+                    count=1
+                )
     return [extinf, url]
 
 def main():
