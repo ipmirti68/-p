@@ -154,14 +154,13 @@ def main():
     # Listede hiç GOLLER grubu yoksa, en başa ekle
     if not inserted:
         final_entries = yeni_entries + final_entries
-
-       with open(dosya, "w", encoding="utf-8") as f:
+     with open(dosya, "w", encoding="utf-8") as f:
         for h in old_header:
             f.write(h + "\n")
         for entry in final_entries:
             for line in entry:
                 f.write(line + "\n")
 
-    print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi (grubun içine, en yeni en üstte) -> {dosya}")
+    print(f"BİTTİ: {len(yeni_videolar)} yeni gol eklendi (grubun içine, en yeni en üstte) -> {dosya}")    
 
 if __name__=="__main__": main()
