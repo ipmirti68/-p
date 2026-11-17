@@ -111,7 +111,7 @@ def main():
     target_groups = set(s["group"] for s in series_list)
     lines = clean_old_groups(lines, target_groups)
 
-    if not lines or lines[0].strip() != "#EXTM3U":
+    if not lines or lines[0].strip().startswith("#EXTM3U")
         lines.insert(0, "#EXTM3U")
 
     for s in series_list:
