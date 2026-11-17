@@ -85,7 +85,7 @@ AKTARIMLAR = [
         "ek_kod": "0️⃣⭕",
     },
          {
-        "kaynak_url": "http://31.43.191.142:8880/get.php?username=191703089055131&password=01703089055686&type=m3u_plus&output=tsoutput=m3u8",
+        "kaynak_url": "http://31.43.191.142:8880/get.php?username=191703089055131&password=01703089055686&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | SPORT",
         "aranacak": "",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
