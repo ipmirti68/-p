@@ -45,9 +45,6 @@ jobs:
           python -c "from Crypto.Cipher import AES; print('CRYPTO AES OK')"
 
      
-      - name: 1 - KADİRSENTVR24
-        continue-on-error: true
-        run: python allspor.py || echo "allbein failed"
  
       - name: 2 - MAHSUN
         continue-on-error: true
