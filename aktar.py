@@ -35,7 +35,17 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
+      {
+        "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ulusal.m3u",
+        "kaynak_grup": "",
+        "aranacak": "",
+        "hedef_grup": "🟨◆  ULUSALᴴᴰ ⭕",
+        "hedef_logo": "",
+        "ek_kod": "",
+    },
+
 ]
+
 
 def grup_bul(rec):
     for l in rec:
