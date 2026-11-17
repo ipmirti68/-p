@@ -2340,11 +2340,11 @@ https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_exam
 #EXTINF:-1 tvg-name="***** STAR DIZI *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆  STAR DIZI 📺⭕",BILGILENDIRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="" tvg-name="SAHIPSIZLER - 51. Bolum" tvg-logo="https://media.startv.com.tr/star-tv/images/1600_445px(3).jpg" tvg-description="Sahipsizler 51. Bölüm izlemek için tıkla! Sahipsizler 51. Bölüm Full HD tek parça Star TV'de şimdi izle!" group-title="🟪◆  STAR DIZI 📺⭕",SAHIPSIZLER - 51. Bolum
-https://startv-p3.mncdn.com/smil:sahipsizler_final_bolum_1907_smil.smil/playlist.m3u8?st=3L2QoCP9TIaf5wk2fA3MHA&e=1794992808
-#EXTINF:-1 tvg-id="" tvg-name="KRAL KAYBEDERSE - 30. Bolum" tvg-logo="https://media.startv.com.tr/star-tv/images/kapak(53).jpg" tvg-description="Kral Kaybederse 30. Bölüm (Final) izlemek için tıkla! Kral Kaybederse 30. Bölüm (Final) Full HD tek parça Star TV'de şimdi izle!" group-title="🟪◆  STAR DIZI 📺⭕",KRAL KAYBEDERSE - 30. Bolum
-https://startv-p3.mncdn.com/smil:kralkaybederse_bolum30_star_1907_rev_smil.smil/playlist.m3u8?st=XzjQ4CVT8hTi_MLk1vTUQA&e=1794992898
-#EXTINF:-1 tvg-name="***** TURKIYE 4K *****" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟪◆  KANAL D DİZİ 📺⭕",BİLGİLENDİRME (copy)
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+https://startv-p3.mncdn.com/smil:sahipsizler_final_bolum_1907_smil.smil/playlist.m3u8?st=YX8xpeEnj2SBn5C3XK4GKw&e=1794998026
+#EXTINF:-1 tvg-id="" tvg-name="BASKALARININ HAYATI - 7. Bolum" tvg-logo="https://media.startv.com.tr/star-tv/images/bh_web_1600x445(2).jpg" tvg-description="Başkalarının Hayatı 7. Bölüm izlemek için tıkla! Başkalarının Hayatı 7. Bölüm Full HD tek parça Star TV'de şimdi izle!" group-title="🟪◆  STAR DIZI 📺⭕",BASKALARININ HAYATI - 7. Bolum
+https://startv-p3.mncdn.com/smil:baskalarininhayati_blm_7star_smil.smil/playlist.m3u8?st=o70A8194p6f3AWjHRxtOww&e=1794998124&r=2
+#EXTINF:-1 tvg-id="" tvg-name="SEVDIGIM SENSIN - 24. Bolum" tvg-logo="https://media.startv.com.tr/star-tv/images/d(6).jpg" tvg-description="Sevdiğim Sensin 24. Bölüm izlemek için tıkla! Sevdiğim Sensin 24. Bölüm Full HD tek parça Star TV'de şimdi izle!" group-title="🟪◆  STAR DIZI 📺⭕",SEVDIGIM SENSIN - 24. Bolum
+https://startv-p3.mncdn.com/smil:sevdigimsensin_blm24_star_smil.smil/playlist.m3u8?st=r0G0_2r0lrUnod2tYHxlxw&e=1794998303&r=2
 #EXTINF:-1 tvg-id="oz.206572750aa64aa99ea6882e6600a34f" tvg-name="TR:DIZIMAX DRAMA HD" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-drama.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIZIMAX DRAMA HD ⭕
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/20657275-0aa6-4aa9-9ea6-882e6600a34f.ts
 #EXTINF:-1 tvg-id="oz.2ecd355a215c4f48a8e95098c8a00b2d" tvg-name="TR:DIZIMAX COMEDY HD" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-comedy.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIZIMAX COMEDY HD ⭕
@@ -13882,5 +13882,41 @@ https://kanaldvod.duhnet.tv/hls/k/0G/gg_bolum_41/gg_bolum_41.smil/playlist.m3u8
 #EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
 https://kanaldvod.duhnet.tv/hls/0/UY/gvg_bolum40/gvg_bolum40.smil/playlist.m3u8
 #EXTINF:-1 tvg-name="TR: 【entity-Güller ve Günahlar¦canonical_name=Güller ve Günahlar】 - 39. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="KANALD Dizileri",TR: 【entity-Güller ve Günahlar¦canonical_name=Güller ve Günahlar】 - 39. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/A/-O/gvg_39blm/gvg_39blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Daha 17 - 25. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a0b708b6857e013a393b8de.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Daha 17 - 25. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/V/Bd/daha17_bolum_25/daha17_bolum_25.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Daha 17 - 24. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a0b708b6857e013a393b8de.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Daha 17 - 24. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/I/z9/doy_bolum24/doy_bolum24.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Daha 17 - 23. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a0b708b6857e013a393b8de.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Daha 17 - 23. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/E/Q1/daha17_23blm/daha17_23blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Uzak Şehir - 73. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Uzak Şehir - 73. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/6/MV/us_73blm/us_73blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Uzak Şehir - 72. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Uzak Şehir - 72. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/d/nL/us_72blm/us_72blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Uzak Şehir - 71. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a904307b91dc8a83ebb63fc.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Uzak Şehir - 71. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/B/sI/uzaksehir_bolum_71/uzaksehir_bolum_71.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 9. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Haysiyet - 9. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/D/TI/h_9blm/h_9blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 8. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Haysiyet - 8. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/t/gU/haysiyet_bolum_8/haysiyet_bolum_8.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Haysiyet - 7. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/6a7c7e6a800655e3162c7e58.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Haysiyet - 7. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/N/kS/haysiyet_bolum_7/haysiyet_bolum_7.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 41. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Güller ve Günahlar - 41. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/k/0G/gg_bolum_41/gg_bolum_41.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 40. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Güller ve Günahlar - 40. Bölüm
+#EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
+https://kanaldvod.duhnet.tv/hls/0/UY/gvg_bolum40/gvg_bolum40.smil/playlist.m3u8
+#EXTINF:-1 tvg-name="TR: Güller ve Günahlar - 39. Bölüm" tvg-logo="https://image.kanald.com.tr/i/kanald/100/1200x630/68cab7ffeb665959b9b4a895.jpg" group-title="🟪◆  KANAL D DİZİ 📺⭕",TR: Güller ve Günahlar - 39. Bölüm
 #EXTVLCOPT:http-referrer=https://www.kanald.com.tr/
 https://kanaldvod.duhnet.tv/hls/A/-O/gvg_39blm/gvg_39blm.smil/playlist.m3u8
