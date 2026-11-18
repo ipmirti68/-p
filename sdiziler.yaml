@@ -1,17 +1,17 @@
 series:
-    - name: "Çukur"
+    - name: "ÇUKUR"
     group: "🟪◆ DİZİLER - ÇUKUR ⭕"
     url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/cukur.m3u"
 
-    - name: "Gaddar"
+    - name: "GADDAR"
     group: "🟪◆ DİZİLER - GADDAR ⭕"
     url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/gaddar.m3u"
 
-    - name: "İçerde"
+    - name: "İÇERDE"
     group: "🟪◆ DİZİLER - İÇERDE ⭕"
     url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/icerde.m3u"
 
-    - name: "Behzat Ç"
+    - name: "BEHZAT Ç"
     group: "🟪◆ DİZİLER - BEHZAT Ç ⭕"
     url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/behzat-c.m3u"
 
@@ -19,31 +19,31 @@ series:
     group: "🟪◆ DİZİLER - Fİ ⭕"
     url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/fi.m3u"
 
-    - name: "Karadayı"
+    - name: "KARADAYI"
     group: "🟪◆ DİZİLER - KARADAYI ⭕"
     url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/karadayi.m3u"
 
-    - name: "Köprü"
+    - name: "KÖPRÜ"
     group: "🟪◆ DİZİLER - KÖPRÜ ⭕"
     url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/kopru.m3u"
 
-    - name: "Eşref Rüya"
+    - name: "EŞREF RÜYA"
     group: "🟪◆ DİZİLER - EŞREF RÜYA ⭕"
     url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/esref_ruya.m3u"
     
-    - name: "Hayat Bilgisi"
+    - name: "HAYAT BİLGİSİ"
     group: "🟪◆ DİZİLER - HAYAT BİLGİSİ ⭕"
     url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/hayat_bilgisi.m3u"
     
-    - name: "Yılan Hikayesi"
+    - name: "YILAN HİKAYESİ"
     group: "🟪◆ DİZİLER - YILAN HİKAYESİ ⭕"
     url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/yilan_hikayesi.m3u"
 
-    - name: "Kınalı Kar"
+    - name: "KINALI KAR"
     group: "🟪◆ DİZİLER - KINALI KAR ⭕"
     url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/kinali_kar.m3u"
 
-    - name: "İKİNCİ BAHAR Kar"
+    - name: "İKİNCİ BAHAR "
     group: "🟪◆ DİZİLER - İKİNCİ BAHAR ⭕"
     url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ikincibhr.m3u"
     
