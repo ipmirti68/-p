@@ -1,530 +1,350 @@
 
 import os
 import re
-import json
-import shutil
 import time
 import html
+import shutil
+import requests
 
-from urllib.parse import urljoin, urlparse
-from playwright.sync_api import sync_playwright
-from bs4 import BeautifulSoup
+from datetime import datetime
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
-# ==================================================
-# HANIM KORE DIZILERI
-# ==================================================
+# =====================================================
+# HANIM KORE DIZILERI - TVMAZE API
+# =====================================================
 
-BASE_URL = "https://asyawatch.com"
-LIST_URL = BASE_URL + "/dizi/ulke/guney-kore"
+API = "https://api.tvmaze.com"
 
 M3U_FILE = "mirti68.m3u"
 BACKUP_FILE = "mirti68_yedek.m3u"
 
 GROUP = "🩷◆ HANIM KORE DİZİLERİ ⭕"
 
-MAX_PAGES = 40
-WAIT_SECONDS = 5
+# TVmaze ücretsiz API sınırlarına uygun hız
+BEKLEME = 0.55
 
-USER_AGENT = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/130.0.0.0 Safari/537.36"
+# Güvenlik sınırı. 1000 sayfaya ulaşılması beklenmez.
+MAX_PAGES = 1000
+
+HEADERS = {
+    "User-Agent": "HanımKoreCatalog/1.0"
+}
+
+session = requests.Session()
+session.headers.update(HEADERS)
+
+retry = Retry(
+    total=4,
+    backoff_factor=2,
+    status_forcelist=[429, 500, 502, 503, 504],
+    allowed_methods=["GET"]
+)
+
+session.mount(
+    "https://",
+    HTTPAdapter(max_retries=retry)
 )
 
 
-# ==================================================
+# =====================================================
 # YARDIMCI FONKSIYONLAR
-# ==================================================
+# =====================================================
 
-def temizle(text):
-    if not text:
+def temizle(metin):
+
+    if not metin:
         return ""
 
-    return re.sub(
-        r"\s+",
-        " ",
-        html.unescape(str(text))
-    ).strip()
+    metin = html.unescape(str(metin))
+    metin = re.sub(r"<[^>]+>", " ", metin)
+    metin = re.sub(r"\s+", " ", metin)
+
+    return metin.strip()
 
 
-def mutlak_url(url, base):
-    if not url:
-        return ""
+def m3u_guvenli(metin):
 
-    return urljoin(base, url.strip())
+    metin = temizle(metin)
 
-
-def guvenli(text):
     return (
-        temizle(text)
+        metin
         .replace('"', "'")
-        .replace("\n", " ")
         .replace("\r", " ")
+        .replace("\n", " ")
     )
 
 
-def dizi_linki(url):
-    p = urlparse(url)
+def kore_dizisi(show):
+
+    dil = (show.get("language") or "").lower()
+
+    turler = show.get("genres") or []
+
+    network = show.get("network") or {}
+    webchannel = show.get("webChannel") or {}
+
+    network_country = network.get("country") or {}
+    web_country = webchannel.get("country") or {}
+
+    ulke = (
+        network_country.get("code")
+        or web_country.get("code")
+        or ""
+    ).upper()
+
+    # Korece ve drama türü şartı
+    if "Drama" not in turler:
+        return False
+
+    # Dil bilgisi Korece veya yayın ülkesi Güney Kore
+    return (
+        dil == "korean"
+        or ulke == "KR"
+    )
+
+
+def poster_al(show):
+
+    image = show.get("image") or {}
 
     return (
-        p.netloc == urlparse(BASE_URL).netloc
-        and "/dizi/" in p.path
-        and "/dizi/ulke/" not in p.path
+        image.get("original")
+        or image.get("medium")
+        or ""
     )
 
 
-def poster_bul(img, base):
+def yil_al(show):
 
-    if not img:
-        return ""
+    premiered = show.get("premiered") or ""
 
-    for attr in [
-        "data-src",
-        "data-lazy-src",
-        "data-original",
-        "data-image",
-        "src"
-    ]:
-
-        value = img.get(attr)
-
-        if value and not value.startswith("data:image"):
-            return mutlak_url(value, base)
+    if len(premiered) >= 4:
+        return premiered[:4]
 
     return ""
 
 
-# ==================================================
-# SAYFA TARAMA
-# ==================================================
+# =====================================================
+# TVMAZE VERILERINI TARA
+# =====================================================
 
-def listeyi_tara(page):
+def dizileri_cek():
 
     diziler = {}
-    ziyaret_edilen = set()
-    siradaki = [LIST_URL]
 
-    print("\n[BAŞLANGIÇ] ASYAWATCH KORE TARAMASI")
+    print("=" * 55)
+    print("HANIM KORE DİZİLERİ - TVMAZE")
+    print("=" * 55)
 
-    while siradaki and len(ziyaret_edilen) < MAX_PAGES:
+    sayfa = 0
 
-        liste_url = siradaki.pop(0)
+    while sayfa < MAX_PAGES:
 
-        if liste_url in ziyaret_edilen:
-            continue
+        url = f"{API}/shows?page={sayfa}"
 
-        ziyaret_edilen.add(liste_url)
-
-        print("\n[SAYFA]", liste_url)
+        print(f"\n[SAYFA] {sayfa}")
 
         try:
 
-            response = page.goto(
-                liste_url,
-                wait_until="domcontentloaded",
-                timeout=90000
+            response = session.get(
+                url,
+                timeout=60
             )
 
-            status = response.status if response else 0
+            if response.status_code == 404:
+                print("[BİLGİ] API son sayfasına ulaşıldı.")
+                break
 
-            print("[HTTP DURUMU]", status)
+            response.raise_for_status()
 
-            if status in (403, 429):
-                print("[ENGEL] Site erişimi reddetti.")
-                continue
+            veriler = response.json()
 
-            page.wait_for_timeout(WAIT_SECONDS * 1000)
+            if not isinstance(veriler, list) or not veriler:
+                print("[BİLGİ] Yeni kayıt bulunamadı.")
+                break
 
-            # JavaScript yüklenmesini bekle
-            try:
-                page.wait_for_load_state(
-                    "networkidle",
-                    timeout=12000
-                )
-            except Exception:
-                pass
+            for show in veriler:
 
-            # Sayfayı aşağı kaydır
-            for _ in range(4):
-
-                page.evaluate(
-                    "window.scrollTo(0, document.body.scrollHeight)"
-                )
-
-                page.wait_for_timeout(1000)
-
-            soup = BeautifulSoup(
-                page.content(),
-                "html.parser"
-            )
-
-            print("[HTML UZUNLUK]", len(str(soup)))
-
-            if soup.title:
-                print(
-                    "[SAYFA BAŞLIĞI]",
-                    temizle(soup.title.get_text())
-                )
-
-            # Dizi kartları
-            for a in soup.select("a[href]"):
-
-                href = mutlak_url(
-                    a.get("href"),
-                    liste_url
-                )
-
-                if not dizi_linki(href):
+                if not isinstance(show, dict):
                     continue
 
-                if href in diziler:
+                if not kore_dizisi(show):
                     continue
 
-                kart = a
+                show_id = show.get("id")
 
-                for _ in range(6):
+                if not show_id:
+                    continue
 
-                    if kart.parent:
-                        kart = kart.parent
-
-                    if kart.find("img"):
-                        break
-
-                img = kart.find("img")
-
-                isim = (
-                    a.get("title")
-                    or a.get_text(" ", strip=True)
-                )
-
-                if not isim and img:
-                    isim = img.get("alt", "")
+                isim = temizle(show.get("name"))
 
                 if not isim:
                     continue
 
-                poster = poster_bul(img, liste_url)
+                ozet = temizle(show.get("summary"))
 
-                diziler[href] = {
-                    "isim": temizle(isim),
-                    "url": href,
-                    "poster": poster,
-                    "aciklama": "",
-                    "yil": "",
-                    "tur": ""
+                genres = show.get("genres") or []
+
+                diziler[str(show_id)] = {
+                    "id": show_id,
+                    "isim": isim,
+                    "poster": poster_al(show),
+                    "aciklama": ozet,
+                    "yil": yil_al(show),
+                    "tur": ", ".join(genres),
+                    "durum": show.get("status") or "",
+                    "url": show.get("url") or ""
                 }
 
-                print("[DİZİ BULUNDU]", temizle(isim))
+                print("[KORE DİZİ]", isim)
 
-            # Sayfalama
-            for a in soup.select("a[href]"):
-
-                href = mutlak_url(
-                    a.get("href"),
-                    liste_url
-                )
-
-                yazi = temizle(
-                    a.get_text(" ", strip=True)
-                ).lower()
-
-                rel = a.get("rel", [])
-
-                if isinstance(rel, str):
-                    rel = [rel]
-
-                if (
-                    "next" in rel
-                    or yazi in [
-                        "sonraki",
-                        "next",
-                        "›",
-                        "»",
-                        "→"
-                    ]
-                ):
-
-                    if (
-                        href not in ziyaret_edilen
-                        and href not in siradaki
-                    ):
-                        siradaki.append(href)
-
-            # Sayfa numaraları
-            for a in soup.select("a[href]"):
-
-                href = mutlak_url(
-                    a.get("href"),
-                    liste_url
-                )
-
-                parsed = urlparse(href)
-
-                if (
-                    parsed.path == urlparse(LIST_URL).path
-                    and href != liste_url
-                    and href not in ziyaret_edilen
-                    and href not in siradaki
-                ):
-                    siradaki.append(href)
-
-            print("[BU SAYFADA TOPLAM]", len(diziler))
-
-        except Exception as e:
-
-            print("[SAYFA HATASI]", repr(e))
-
-    # Hiçbir şey bulunamazsa teşhis bilgisi
-    if not diziler:
-
-        print("\n[DEBUG] Dizi bulunamadı.")
-
-        try:
-
-            page.goto(
-                LIST_URL,
-                wait_until="domcontentloaded",
-                timeout=60000
-            )
-
-            page.wait_for_timeout(5000)
-
-            soup = BeautifulSoup(
-                page.content(),
-                "html.parser"
-            )
-
-            print("[DEBUG] Sayfa metni:")
             print(
-                soup.get_text(" ", strip=True)[:3000]
+                "[TOPLAM KORE DİZİSİ]",
+                len(diziler)
             )
 
-            print("[DEBUG] İlk bağlantılar:")
+            sayfa += 1
 
-            for a in soup.select("a[href]")[:30]:
+            time.sleep(BEKLEME)
 
-                print(
-                    a.get("href"),
-                    temizle(a.get_text(" ", strip=True))[:100]
-                )
+        except requests.RequestException as e:
+
+            print("[API HATASI]", str(e))
+            print("[UYARI] Tarama tamamlanamadı.")
+            return None
 
         except Exception as e:
-            print("[DEBUG HATASI]", e)
 
-    return diziler
+            print("[VERİ HATASI]", str(e))
+            return None
 
+    if sayfa >= MAX_PAGES:
+        print("[UYARI] Güvenlik sayfa sınırına ulaşıldı.")
+        return None
 
-# ==================================================
-# DIZI DETAYLARI
-# ==================================================
-
-def meta_bul(soup, *names):
-
-    for name in names:
-
-        tag = soup.find(
-            "meta",
-            attrs={"property": name}
-        )
-
-        if not tag:
-
-            tag = soup.find(
-                "meta",
-                attrs={"name": name}
-            )
-
-        if tag and tag.get("content"):
-            return temizle(tag["content"])
-
-    return ""
+    return list(diziler.values())
 
 
-def detaylari_al(page, dizi):
-
-    try:
-
-        print("[DETAY]", dizi["isim"])
-
-        response = page.goto(
-            dizi["url"],
-            wait_until="domcontentloaded",
-            timeout=60000
-        )
-
-        if response and response.status in (403, 429):
-            print("[DETAY ENGELİ]", dizi["isim"])
-            return dizi
-
-        page.wait_for_timeout(1500)
-
-        soup = BeautifulSoup(
-            page.content(),
-            "html.parser"
-        )
-
-        baslik = meta_bul(
-            soup,
-            "og:title",
-            "twitter:title"
-        )
-
-        if baslik:
-            dizi["isim"] = baslik
-
-        aciklama = meta_bul(
-            soup,
-            "og:description",
-            "description",
-            "twitter:description"
-        )
-
-        if aciklama:
-            dizi["aciklama"] = aciklama
-
-        poster = meta_bul(
-            soup,
-            "og:image",
-            "twitter:image"
-        )
-
-        if poster:
-            dizi["poster"] = mutlak_url(
-                poster,
-                dizi["url"]
-            )
-
-        # JSON-LD
-        for script in soup.select(
-            'script[type="application/ld+json"]'
-        ):
-
-            try:
-
-                data = json.loads(
-                    script.string or script.get_text()
-                )
-
-                items = data if isinstance(data, list) else [data]
-
-                for item in items:
-
-                    if not isinstance(item, dict):
-                        continue
-
-                    tarih = item.get("datePublished", "")
-
-                    if tarih:
-                        dizi["yil"] = str(tarih)[:4]
-
-                    tur = item.get("genre", "")
-
-                    if isinstance(tur, list):
-                        tur = ", ".join(tur)
-
-                    if tur:
-                        dizi["tur"] = temizle(tur)
-
-            except Exception:
-                pass
-
-        # Alternatif açıklama alanları
-        if not dizi["aciklama"]:
-
-            for selector in [
-                ".description",
-                ".content-description",
-                ".detail-content",
-                ".summary",
-                ".story",
-                ".entry-content"
-            ]:
-
-                el = soup.select_one(selector)
-
-                if el:
-
-                    dizi["aciklama"] = temizle(
-                        el.get_text(" ", strip=True)
-                    )
-
-                    break
-
-        print(
-            "[TAMAM]",
-            dizi["isim"],
-            "| POSTER:",
-            bool(dizi["poster"]),
-            "| AÇIKLAMA:",
-            bool(dizi["aciklama"])
-        )
-
-    except Exception as e:
-
-        print("[DETAY HATASI]", repr(e))
-
-    return dizi
-
-
-# ==================================================
-# M3U OLUŞTUR
-# ==================================================
+# =====================================================
+# M3U KAYITLARINI HAZIRLA
+# =====================================================
 
 def m3u_olustur(diziler):
 
     satirlar = []
 
+    # Yeni ve eski diziler birlikte sıralanır
+    diziler.sort(
+        key=lambda x: (
+            x["yil"],
+            x["isim"].lower()
+        ),
+        reverse=True
+    )
+
     for d in diziler:
 
-        isim = guvenli(d["isim"])
+        isim = m3u_guvenli(d["isim"])
 
-        poster = guvenli(d["poster"])
+        poster = m3u_guvenli(d["poster"])
 
-        aciklama = guvenli(d["aciklama"])
+        aciklama = m3u_guvenli(d["aciklama"])
 
-        bilgiler = []
+        yil = d["yil"] or "Bilinmiyor"
 
-        if d["yil"]:
-            bilgiler.append("Yıl: " + d["yil"])
+        tur = m3u_guvenli(d["tur"])
 
-        if d["tur"]:
-            bilgiler.append("Tür: " + d["tur"])
+        durum = m3u_guvenli(d["durum"])
 
-        if bilgiler:
+        aciklama_parcalari = [
+            "Ülke: Güney Kore",
+            "Yıl: " + yil
+        ]
 
-            aciklama = (
-                " | ".join(bilgiler)
-                + " | "
-                + aciklama
-            )
+        if tur:
+            aciklama_parcalari.append("Tür: " + tur)
 
-        aciklama = guvenli(aciklama)
+        if durum:
+            aciklama_parcalari.append("Durum: " + durum)
+
+        if aciklama:
+            aciklama_parcalari.append(aciklama)
+
+        aciklama_parcalari.append(
+            "Bilgi kaynağı: TVmaze"
+        )
+
+        tam_aciklama = m3u_guvenli(
+            " | ".join(aciklama_parcalari)
+        )
+
+        dizi_url = d["url"]
+
+        if not dizi_url:
+            continue
 
         satirlar.append(
-            f'#EXTINF:-1 tvg-name="{isim}" '
+            f'#EXTINF:-1 '
+            f'tvg-name="{isim}" '
             f'tvg-logo="{poster}" '
             f'tvg-country="KR" '
-            f'tvg-description="{aciklama}" '
+            f'tvg-description="{tam_aciklama}" '
             f'group-title="{GROUP}",{isim}'
         )
 
-        # Dizi bilgi sayfası.
-        # Gerçek video adresi bulunmadığında sahte akış eklenmez.
-        satirlar.append(d["url"])
+        # Bu bağlantı dizi bilgi sayfasıdır, canlı yayın değildir.
+        satirlar.append(dizi_url)
 
     return satirlar
 
 
-# ==================================================
-# MEVCUT M3U KORUMA
-# ==================================================
+# =====================================================
+# ESKI KORE GRUBUNU GUVENLI TEMIZLE
+# =====================================================
 
-def listeye_ekle(yeni_satirlar):
+def eski_grubu_temizle(satirlar):
 
-    if not os.path.exists(M3U_FILE):
+    sonuc = []
+
+    kore_kaydi = False
+
+    for line in satirlar:
+
+        satir = line.strip()
+
+        if satir.startswith("#EXTINF:"):
+
+            kore_kaydi = (
+                f'group-title="{GROUP}"' in satir
+            )
+
+            if kore_kaydi:
+                continue
+
+        if kore_kaydi:
+            continue
+
+        sonuc.append(line)
+
+    return sonuc
+
+
+# =====================================================
+# MEVCUT M3U'YA EKLE
+# =====================================================
+
+def listeyi_guncelle(yeni_satirlar):
+
+    if not os.path.isfile(M3U_FILE):
 
         print("[HATA] mirti68.m3u bulunamadı!")
-        return
+        return False
+
+    if not yeni_satirlar:
+
+        print("[UYARI] Yeni kayıtlar boş. Eski liste korunuyor.")
+        return False
 
     with open(
         M3U_FILE,
@@ -532,51 +352,28 @@ def listeye_ekle(yeni_satirlar):
         encoding="utf-8-sig"
     ) as f:
 
-        eski = f.readlines()
+        eski_satirlar = f.readlines()
 
-    # Önce yedek
+    # Yedek
     shutil.copy2(
         M3U_FILE,
         BACKUP_FILE
     )
 
-    temiz_eski = []
+    # Sadece kendi grubumuzu kaldır
+    temiz_liste = eski_grubu_temizle(
+        eski_satirlar
+    )
 
-    atla = False
-
-    for line in eski:
-
-        satir = line.strip()
-
-        if satir.startswith("#EXTINF:"):
-
-            if f'group-title="{GROUP}"' in satir:
-
-                atla = True
-                continue
-
-            atla = False
-
-        elif atla:
-
-            if not satir or satir.startswith("#"):
-                continue
-
-            atla = False
-            continue
-
-        temiz_eski.append(line)
-
-    # Mevcut dosya korunur, yeni grup eklenir
     with open(
         M3U_FILE,
         "w",
         encoding="utf-8"
     ) as f:
 
-        f.writelines(temiz_eski)
+        f.writelines(temiz_liste)
 
-        if temiz_eski and not temiz_eski[-1].endswith("\n"):
+        if temiz_liste and not temiz_liste[-1].endswith("\n"):
             f.write("\n")
 
         f.write("\n")
@@ -587,94 +384,48 @@ def listeye_ekle(yeni_satirlar):
 
         f.write("\n")
 
-    print("[YEDEK]", BACKUP_FILE)
-    print("[OK] M3U GÜNCELLENDİ")
+    print("\n[YEDEK]", BACKUP_FILE)
+    print("[OK] Kore dizileri grubu yenilendi.")
+
+    return True
 
 
-# ==================================================
+# =====================================================
 # ANA PROGRAM
-# ==================================================
+# =====================================================
 
 def main():
-
-    print("=" * 55)
-    print("HANIM KORE DİZİLERİ")
-    print("=" * 55)
 
     if not os.path.exists(M3U_FILE):
 
         print("[HATA] M3U dosyası bulunamadı.")
         return
 
-    with sync_playwright() as p:
+    diziler = dizileri_cek()
 
-        browser = p.chromium.launch(
-            headless=True
-        )
+    # API hatasında mevcut listeye dokunma
+    if diziler is None:
 
-        context = browser.new_context(
-            user_agent=USER_AGENT,
-            viewport={
-                "width": 1366,
-                "height": 900
-            },
-            locale="tr-TR"
-        )
+        print("[HATA] Tarama başarısız. M3U korunuyor.")
+        return
 
-        page = context.new_page()
+    if len(diziler) == 0:
 
-        diziler = listeyi_tara(page)
+        print("[UYARI] Kore dizisi bulunamadı.")
+        print("[UYARI] Mevcut liste korunuyor.")
+        return
 
-        print("\n[BULUNAN DİZİ]", len(diziler))
+    yeni_satirlar = m3u_olustur(diziler)
 
-        if not diziler:
+    if listeyi_guncelle(yeni_satirlar):
 
-            print(
-                "[UYARI] Dizi bulunamadı. "
-                "Mevcut M3U DEĞİŞTİRİLMEDİ."
-            )
-
-            browser.close()
-            return
-
-        tamamlanan = []
-
-        for i, dizi in enumerate(
-            diziler.values(),
-            start=1
-        ):
-
-            print(
-                f"\n[DETAY {i}/{len(diziler)}]"
-            )
-
-            detay = detaylari_al(
-                page,
-                dizi
-            )
-
-            tamamlanan.append(detay)
-
-            time.sleep(0.5)
-
-        browser.close()
-
-    yeni_satirlar = m3u_olustur(
-        tamamlanan
-    )
-
-    if yeni_satirlar:
-
-        listeye_ekle(
-            yeni_satirlar
-        )
-
-    print("\n" + "=" * 55)
-    print("TARAMA TAMAMLANDI")
-    print("DİZİ:", len(tamamlanan))
-    print("GRUP:", GROUP)
-    print("DOSYA:", M3U_FILE)
-    print("=" * 55)
+        print("\n" + "=" * 55)
+        print("HANIM KORE DİZİLERİ GÜNCELLENDİ")
+        print("DİZİ SAYISI:", len(diziler))
+        print("GRUP:", GROUP)
+        print("DOSYA:", M3U_FILE)
+        print("YEDEK:", BACKUP_FILE)
+        print("=" * 55)
 
 
 if __name__ == "__main__":
