@@ -27,41 +27,44 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Sistem paketlerini kur
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libnss3 \
-            libatk1.0-0 \
-            libatk-bridge2.0-0 \
-            libgbm1 \
-            libasound2t64 \
-            libxkbcommon0
-
       - name: Python paketlerini kur
         run: |
-          pip install --upgrade pip
-          pip install requests beautifulsoup4 playwright
-
-      - name: Chromium kur
-        run: |
-          playwright install chromium
-          playwright install-deps chromium
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
 
       - name: Kore dizilerini tara
         run: |
           python asyawatch_kore.py
 
-      - name: M3U değişikliklerini GitHub'a kaydet
+      - name: M3U dosyalarını kontrol et
+        run: |
+          echo "Oluşturulan dosyalar:"
+          ls -lh
+
+          test -s hanim_kore_test.m3u
+          test -s hanim_kore_rapor.txt
+
+          echo "M3U ve rapor dosyaları başarıyla oluşturuldu."
+
+      - name: M3U dosyalarını indirilebilir yap
+        uses: actions/upload-artifact@v4
+        with:
+          name: HANIM-KORE-LISTESI
+          path: |
+            hanim_kore_test.m3u
+            hanim_kore_rapor.txt
+          if-no-files-found: error
+
+      - name: Kore dosyalarını GitHub'a kaydet
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add mirti68.m3u
+          git add -f hanim_kore_test.m3u hanim_kore_rapor.txt
 
           if ! git diff --cached --quiet; then
-            git commit -m "Hanım Kore dizileri güncellendi"
-            git push
+            git commit -m "Hanım Kore listesi güncellendi"
+            git push origin HEAD:main
           else
-            echo "Yeni değişiklik yok."
+            echo "Kore dosyaları zaten güncel."
           fi
