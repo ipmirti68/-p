@@ -27,10 +27,15 @@ series:
     group: "🟪◆ DİZİLER - KÖPRÜ ⭕"
     url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/kopru.m3u"
 
-    - name: "EŞREF RÜYA"
-    group: "🟪◆ DİZİLER - EŞREF RÜYA ⭕"
-    url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/esref_ruya.m3u"
-    
+    - name: "SUMMER STRİKE"
+    group: "🟪◆ DİZİLER - SUMMERSTRİKE  🇰🇷"
+    url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/summerstrike.m3u"
+
+      - name: "YABAN ÇİÇEGİ "
+    group: "🟪◆ DİZİLER - YABAN ÇİÇEĞİ 🇰🇷"
+    url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/yabancicegi.m3u"
+
+        
     - name: "HAYAT BİLGİSİ"
     group: "🟪◆ DİZİLER - HAYAT BİLGİSİ ⭕"
     url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/hayat_bilgisi.m3u"
