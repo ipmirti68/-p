@@ -1,0 +1,67 @@
+
+name: HANIM KORE DIZILERI
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 5 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: asyawatch-kore
+  cancel-in-progress: false
+
+jobs:
+  kore-dizileri:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Depoyu indir
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Sistem paketlerini kur
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libgbm1 \
+            libasound2t64 \
+            libxkbcommon0
+
+      - name: Python paketlerini kur
+        run: |
+          pip install --upgrade pip
+          pip install requests beautifulsoup4 playwright
+
+      - name: Chromium kur
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Kore dizilerini tara
+        run: |
+          python asyawatch_kore.py
+
+      - name: M3U değişikliklerini GitHub'a kaydet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add mirti68.m3u
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Hanım Kore dizileri güncellendi"
+            git push
+          else
+            echo "Yeni değişiklik yok."
+          fi
