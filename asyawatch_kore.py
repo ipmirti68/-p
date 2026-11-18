@@ -1,4 +1,77 @@
 
+import re
+import time
+import html
+from urllib.parse import urljoin, urlparse
+
+import requests
+from bs4 import BeautifulSoup
+
+# ==========================================
+# HANIM KORE DİZİLERİ AYARLARI
+# ==========================================
+
+BASE = "https://dizican.cc"
+CATEGORY = "https://dizican.cc/ulke/kore-dizileri-izle-hd/"
+
+OUTPUT = "hanim_kore_test.m3u"
+GROUP = "🩷◆ HANIM KORE DİZİLERİ ⭕"
+
+MAX_CATEGORY_PAGES = 8
+MAX_SHOWS = 250
+DELAY = 0.6
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/125.0 Safari/537.36",
+    "Accept-Language": "tr-TR,tr;q=0.9,en;q=0.8"
+}
+
+session = requests.Session()
+session.headers.update(HEADERS)
+
+
+def get_soup(url):
+    response = session.get(url, timeout=25)
+    response.raise_for_status()
+    response.encoding = response.apparent_encoding or "utf-8"
+    return BeautifulSoup(response.text, "html.parser")
+
+
+def clean(value):
+    return re.sub(
+        r"\s+", " ",
+        html.unescape(value or "")
+    ).strip()
+
+
+def abs_url(href, base):
+    url = urljoin(base, href or "")
+    parsed = urlparse(url)
+
+    if parsed.scheme not in ("http", "https"):
+        return ""
+
+    if parsed.netloc.lower() not in (
+        "dizican.cc", "www.dizican.cc"
+    ):
+        return ""
+
+    return url.split("#")[0]
+
+
+def is_episode_anchor(a):
+    text = clean(a.get_text(" ", strip=True)).lower()
+    href = a.get("href") or ""
+
+    return (
+        ("bölüm" in text or "bolum" in text
+         or re.search(r"\b\d+\s*[x.]\s*\d+\b", text))
+        and bool(href)
+    )
+
+
+
+
 def get_show_links():
     found = {}
 
