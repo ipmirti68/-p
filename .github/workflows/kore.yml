@@ -54,7 +54,6 @@ jobs:
             hanim_kore_test.m3u
             hanim_kore_rapor.txt
           if-no-files-found: error
-
     
       - name: Kore dosyalarını GitHub'a kaydet
         run: |
@@ -69,5 +68,6 @@ jobs:
             echo "Kore dosyaları zaten güncel."
           fi
 
-          git pull --rebase origin main
+          git fetch origin main
+          git rebase origin/main
           git push origin HEAD:main
