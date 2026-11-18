@@ -27,9 +27,12 @@ BEKLEME = 0.55
 # Güvenlik sınırı. 1000 sayfaya ulaşılması beklenmez.
 MAX_PAGES = 1000
 
-HEADERS = {
-    "User-Agent": "HanımKoreCatalog/1.0"
+
+
+    HEADERS = {
+    "User-Agent": "HanimKoreCatalog/1.0"
 }
+
 
 session = requests.Session()
 session.headers.update(HEADERS)
