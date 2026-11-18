@@ -16,8 +16,8 @@ from urllib3.util.retry import Retry
 
 API = "https://api.tvmaze.com"
 
-M3U_FILE = "mirti68.m3u"
-BACKUP_FILE = "mirti68_yedek.m3u"
+M3U_FILE = "mirti.m3u"
+BACKUP_FILE = "mirti_yedek.m3u"
 
 GROUP = "🩷◆ HANIM KORE DİZİLERİ ⭕"
 
