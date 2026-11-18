@@ -49,6 +49,10 @@ jobs:
         run: python iptv.py || echo "iptv failed"
 
  
+      - name: 1 - ASYA
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python asyawatch_kore.py || echo "asyawatch_kore. failed"
 
       
   
