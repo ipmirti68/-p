@@ -28,8 +28,7 @@ BEKLEME = 0.55
 MAX_PAGES = 1000
 
 
-
-    HEADERS = {
+HEADERS = {
     "User-Agent": "HanimKoreCatalog/1.0"
 }
 
