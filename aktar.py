@@ -158,7 +158,7 @@ AKTARIMLAR = [
 
     {
         "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
-        "kaynak_grup": "Spor Vavoo"",
+        "kaynak_grup": "Spor Vavoo",
         "aranacak": "beIN SPORTS",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
         "hedef_logo": "https://i.imgur.com/TgW5452.png",
