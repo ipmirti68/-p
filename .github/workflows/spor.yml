@@ -43,7 +43,10 @@ jobs:
           deno --version
 
           python -c "from Crypto.Cipher import AES; print('CRYPTO AES OK')"
-
+      - name: 2 - PATRO 
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python patron.py || echo "mahsun failed"
      
  
       - name: 2 - MAHSUN
