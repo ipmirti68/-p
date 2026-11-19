@@ -176,9 +176,9 @@ AKTARIMLAR = [
     },
 
      {
-        "kaynak_url": "http://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR • TABII DIZILERI",
-        "aranacak": "",
+        "kaynak_url": "http://190502.tomtv.eu/get.php?username=GokmenS947&password=5rr53m3b8c&type=m3u_plus&output=ts",
+        "kaynak_grup": "TABii DIZILER",
+        "aranacak": "gassal",
         "hedef_grup": "🟪◆  TABİİ DİZİLERİ ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
