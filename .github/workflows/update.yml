@@ -1,4 +1,4 @@
-name: GÜNCELLE TV DİZİLERİ
+name: TV DİZİLERİ KANAL D ATV STAR SHOW NOW TRT1
 on:
   workflow_dispatch:
   schedule:
