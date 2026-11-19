@@ -176,8 +176,8 @@ AKTARIMLAR = [
     },
 
      {
-        "kaynak_url": "https://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts",
-        "kaynak_grup": "TABII",
+        "kaynak_url": "http://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR • TABII DIZILERI",
         "aranacak": "",
         "hedef_grup": "🟪◆  TABİİ DİZİLERİ ⭕",
         "hedef_logo": "",
