@@ -176,8 +176,8 @@ AKTARIMLAR = [
     },
 
      {
-        "kaynak_url": "http://190502.tomtv.eu/get.php?username=GokmenS947&password=5rr53m3b8c&type=m3u_plus&output=ts",
-        "kaynak_grup": "TABii DIZILER",
+        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR | TABii",
         "aranacak": "gassal",
         "hedef_grup": "🟪◆  TABİİ DİZİLERİ ⭕",
         "hedef_logo": "",
