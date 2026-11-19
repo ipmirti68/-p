@@ -34,7 +34,7 @@ jobs:
 
       - name: Kore dizilerini tara
         run: |
-          python asyawatch_kore.py
+          python patron.py
 
       - name: M3U dosyalarını kontrol et
         run: |
