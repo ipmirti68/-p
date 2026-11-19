@@ -148,18 +148,18 @@ AKTARIMLAR = [
     },
 
     {
-        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR | SPOR⫷",
-        "aranacak": "",
+        "kaynak_url": "http://190502.tomtv.eu/get.php?username=GokmenS947&password=5rr53m3b8c&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR-SPOR",
+        "aranacak": "beIN SPORTS",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
         "hedef_logo": "https://i.imgur.com/TgW5452.png",
         "ek_kod": "3️⃣⭕",
     },
 
     {
-        "kaynak_url": "http://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts",
+        "kaynak_url": "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts",
         "kaynak_grup": "TR-SPOR",
-        "aranacak": "",
+        "aranacak": "beIN SPORTS",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
         "hedef_logo": "https://i.imgur.com/TgW5452.png",
         "ek_kod": "4️⃣⭕",
