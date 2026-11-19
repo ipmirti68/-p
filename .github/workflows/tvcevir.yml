@@ -43,20 +43,12 @@ jobs:
           
    
    
-      - name: 1 - ATV DİZİ
+      - name: 1 - json  DİZİ
         continue-on-error: true
         timeout-minutes: 10
-        run: python atvdizic.py || echo "atvdizi failed"
+        run: python dizicevir.py || echo "atvdizi failed"
       
-      - name: 2 - KANAL D DİZİ
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python kanalddizic.py || echo "kanalddizi failed"
-  
-      - name: 3 -STAR DİZİ
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python stardizic.py || echo "stardizi failed"
+      
     
 
       
