@@ -10,6 +10,7 @@ from playwright.async_api import async_playwright
 # ==========================================
 
 channelsMap = {
+    "Bein Sports 1-SS": "https://main.uxsyplayer6859599e6c.click/index.php?id=beinsports1",
     "Bein Sports 1-BS": "https://elif.eromaxe.com/zeynep/bein1tr",
     "Bein Sports 2-BS": "https://elif.eromaxe.com/zeynep/bein2tr",
     "Bein Sports 3-BS": "https://elif.eromaxe.com/zeynep/bein3tr",
