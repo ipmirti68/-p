@@ -29,7 +29,16 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrom
 TIMEOUT = 30
 
 AKTARIMLAR = [
+     {
+        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
+        "kaynak_grup": "Spor-Avva",
+        "aranacak": "beIN Sports",
+        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
+        "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
+        "ek_kod": "⭕ Avva",
+    },
 
+    
     {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/atomspor/refs/heads/main/atom.m3u",
         "kaynak_grup": "Atom-Panel",
