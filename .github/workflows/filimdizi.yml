@@ -1,4 +1,4 @@
-name: GÜNCELLE FİLİM SDİZİLER Y24
+name: GÜNCELLE FİLİM SDİZİLER YUTUBE7/24 GDİZİ
 
 on:
   workflow_dispatch:
@@ -45,15 +45,20 @@ jobs:
         continue-on-error: true
         run: python filim.py || echo "filim failed"
                 
-      - name: 7 - DİZİLER YAML
+      - name: 2 - DİZİLER YAML
         continue-on-error: true
         timeout-minutes: 10
         run: python sdiziler.py || echo "sdiziler failed"
 
-      - name: 8 - 7/24 YOUTUBE DİZİ 2026
+      - name: 3 - 7/24 YOUTUBE DİZİ 2026
         continue-on-error: true
         timeout-minutes: 10
         run: python 724y.py || echo "724y failed"
+
+      - name: 4 - GÜNCEL DİZİ 2026
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python gdizi.py || echo "gdizi failed"
 
            
  
