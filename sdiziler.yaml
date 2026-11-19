@@ -43,5 +43,13 @@ series:
     group: "🟪◆ DİZİLER - İKİNCİ BAHAR ⭕"
     url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ikincibhr.m3u"
     
+   - name: ""
+    group: "🟪◆ DİZİLER - SUMMER STRİKE 🇰🇷"
+    url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/summerstrike.m3u"
+
+    - name: ""
+    group: "🟪◆ DİZİLER - YABAN ÇİÇEĞİ 🇰🇷"
+    url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/yabancicegi.m3u"
+
 
 
