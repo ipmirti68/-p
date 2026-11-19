@@ -1,132 +1,29 @@
-
 name: GÜNCEL ULUSAL
 
 on:
-  workflow_dispatch:
-
   schedule:
-    - cron: "*/30 * * * *"
-
-permissions:
-  contents: write
-
-concurrency:
-  group: mirti68-main
-  cancel-in-progress: false
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-
     steps:
-      # REPO İNDİR
-      - name: Depoyu indir
-        uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # PYTHON
-      - name: Python kur
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-
-      # DENO
-      - name: Deno kur
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
-
-      # PAKETLER
-      - name: Paketleri kur
+      - name: Dosyaları Güncelle
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install --upgrade --pre "yt-dlp[default]" requests beautifulsoup4 lxml playwright
-          playwright install --with-deps chromium
-          yt-dlp --version
-          deno --version
+          # Buraya senin m3u güncelleyen scriptin gelecek
+          # Örnek: python main.py
 
-      # ULUSAL IPTV
-      - name: 1 - IPTV ULUSAL
-        continue-on-error: true
-        timeout-minutes: 10
+      - name: GitHub'a Gönder
         run: |
-          python iptv.py || echo "iptv.py başarısız"
-
-      # SPOR
-      - name: 2 - SPOR
-        continue-on-error: true
-        timeout-minutes: 10
-        run: |
-          python test.py || echo "test.py başarısız"
-
-      # OLUŞAN DOSYALARI KONTROL ET
-      - name: 3 - Dosyaları kontrol et
-        if: always()
-        run: |
-          echo "========== M3U DOSYALARI =========="
-          find . -type f -name "*.m3u" -not -path "./.git/*" -print
-
-          echo "========== JSON DOSYALARI =========="
-          find . -type f -name "*.json" -not -path "./.git/*" -print
-
-          echo "========== SPOR.M3U KONTROL =========="
-          find . -type f -name "spor.m3u" -not -path "./.git/*" -exec ls -lh {} \;
-
-          echo "========== TABII SPOR 4 KONTROL =========="
-          find . -type f -name "*.m3u" -not -path "./.git/*" \
-            -exec grep -in "Tabii Spor 4" {} \; || true
-
-      # DOSYALARI GITHUB'A KAYDET
-      - name: 4 - Dosyaları kaydet
-        if: always()
-        run: |
-          git config user.name "MIRTI68 Bot"
-          git config user.email "bot@users.noreply.github.com"
-
-          rm -rf __pycache__ .pytest_cache/
-
-          git rebase --abort || true
-
-          echo "========== DOSYALAR GIT'E EKLENİYOR =========="
-
-          find . -type f \( -name "*.m3u" -o -name "*.json" \) \
-            -not -path "./.git/*" -print0 | xargs -0 -r git add -f --
-
-          git status --short
-
-          if git diff --cached --quiet; then
-            echo "Değişiklik yok."
-            exit 0
-          fi
-
-          git commit -m "MIRTI68 update $(date +'%d.%m.%Y %H:%M')"
-
-          echo "========== GITHUB PUSH =========="
-
-          for i in 1 2 3; do
-
-            git fetch origin main
-
-            if git rebase -X ours origin/main; then
-              echo "Rebase başarılı."
-            else
-              echo "Rebase başarısız."
-              git rebase --abort || true
-              sleep 3
-              continue
-            fi
-
-            if git push origin HEAD:main; then
-              echo "GITHUB PUSH BAŞARILI"
-              exit 0
-            fi
-
-            echo "Push başarısız. Tekrar deneniyor: $i"
-            sleep 3
-
-          done
-
-          echo "HATA: GitHub'a gönderilemedi."
-          exit 1
+          git config user.name "ipmirti68"
+          git config user.email "ipmirti68@users.noreply.github.com"
+          git add -A
+          git commit -m "MIRTI68 update $(date +'%d.%m.%Y %H:%M')" || echo "Değişiklik yok"
+          git pull --rebase --autostash
+          git push
