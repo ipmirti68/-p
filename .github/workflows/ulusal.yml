@@ -1,29 +1,110 @@
 name: GÜNCEL ULUSAL
 
 on:
-  schedule:
-    - cron: '*/30 * * * *'
   workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mirti68-main
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - name: Dosyaları Güncelle
-        run: |
-          # Buraya senin m3u güncelleyen scriptin gelecek
-          # Örnek: python main.py
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
 
-      - name: GitHub'a Gönder
+      # YOUTUBE JAVASCRIPT DESTEĞİ
+      - name: Deno kur
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      # PAKETLER
+      - name: Paketleri kur
         run: |
-          git config user.name "ipmirti68"
-          git config user.email "ipmirti68@users.noreply.github.com"
-          git add -A
-          git commit -m "MIRTI68 update $(date +'%d.%m.%Y %H:%M')" || echo "Değişiklik yok"
-          git pull --rebase --autostash
-          git push
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade --pre "yt-dlp[default]" requests beautifulsoup4 lxml playwright
+          playwright install --with-deps chromium
+          yt-dlp --version
+          deno --version
+          
+   
+   
+      - name: 1 - IPTV ULUSAL
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python iptv.py || echo "iptv failed"
+      - name: 1 SPOR
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python test.py || echo "iptv failed"
+ 
+    
+
+      
+  
+      # DOSYALARI KAYDET
+      - name: Dosyaları kaydet
+        if: always()
+        run: |
+          git config user.name "MIRTI68 Bot"
+          git config user.email "bot@users.noreply.github.com"
+
+          rm -rf __pycache__ .pytest_cache/
+
+          # Başta remote'daki en yeni hali al, eski kalıntı rebase varsa temizle
+          git rebase --abort || true
+          git fetch origin main || true
+
+          ls -lh *.m3u *.json 2>/dev/null || true
+
+          git add -f -- *.m3u || true
+          git add -f -- *.json || true
+
+          git status --short
+
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok"
+            exit 0
+          fi
+
+          git commit -m "MIRTI68 update $(date +'%d.%m %H:%M')"
+
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Push OK"
+              break
+            fi
+
+            echo "Push çakıştı, tekrar deneniyor $i"
+
+            # Yarım kalmış rebase varsa temizle, yoksa sonraki pull patlar:
+            # "Pulling is not possible because you have unmerged files"
+            git rebase --abort || true
+            git fetch origin main
+
+            # Çakışırsa generated dosyalarda BOT versiyonu kazansın (X ours)
+            # Çünkü bu .m3u / .json dosyalarını bot üretiyor, manuel edit yok
+            if git rebase -X ours origin/main; then
+              echo "Rebase OK, tekrar push deneniyor"
+              continue
+            fi
+
+            # Hâlâ olmadıysa son çare: bot commitini zorla yaz
+            git rebase --abort || true
+            git push --force-with-lease origin HEAD:main && echo "Force push OK" && break
+            sleep 3
+          don
