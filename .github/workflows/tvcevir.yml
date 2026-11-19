@@ -1,4 +1,4 @@
-name: İPTV ULUSAL TEST
+name: TV JSON ÇEVİR
 
 on:
   workflow_dispatch:
