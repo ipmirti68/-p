@@ -164,6 +164,14 @@ AKTARIMLAR = [
         "hedef_logo": "https://i.imgur.com/TgW5452.png",
         "ek_kod": "4️⃣⭕",
     },
+         {
+        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/selcuk/refs/heads/main/5.m3u",
+        "kaynak_grup": "SPOR",
+        "aranacak": "beIN SPORTS",
+        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
+        "hedef_logo": "https://avatars.mds.yandex.net/i?id=24b2712ebe4929ec4517dca04f79d71fc5a0ec2e-8178604-images-thumbs&n=13",
+        "ek_kod": "⭕SELÇUK ",
+    },
 
 ]
 
