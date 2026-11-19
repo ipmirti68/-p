@@ -178,7 +178,7 @@ AKTARIMLAR = [
      {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | TABii",
-        "aranacak": "gassal",
+        "aranacak": "",
         "hedef_grup": "🟪◆  TABİİ DİZİLERİ ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
