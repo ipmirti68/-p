@@ -157,8 +157,8 @@ AKTARIMLAR = [
     },
 
     {
-        "kaynak_url": "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR-SPOR",
+        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
+        "kaynak_grup": "Spor Vavoo"",
         "aranacak": "beIN SPORTS",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
         "hedef_logo": "https://i.imgur.com/TgW5452.png",
