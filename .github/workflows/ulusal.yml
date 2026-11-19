@@ -1,7 +1,9 @@
+
 name: GÜNCEL ULUSAL
 
 on:
   workflow_dispatch:
+
   schedule:
     - cron: "*/30 * * * *"
 
@@ -10,7 +12,7 @@ permissions:
 
 concurrency:
   group: mirti68-main
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -18,15 +20,19 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - uses: actions/checkout@v5
+      # REPO İNDİR
+      - name: Depoyu indir
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v6
+      # PYTHON
+      - name: Python kur
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      # YOUTUBE JAVASCRIPT DESTEĞİ
+      # DENO
       - name: Deno kur
         uses: denoland/setup-deno@v2
         with:
@@ -40,24 +46,40 @@ jobs:
           playwright install --with-deps chromium
           yt-dlp --version
           deno --version
-          
-   
-   
+
+      # ULUSAL IPTV
       - name: 1 - IPTV ULUSAL
         continue-on-error: true
         timeout-minutes: 10
-        run: python iptv.py || echo "iptv failed"
-      - name: 1 SPOR
+        run: |
+          python iptv.py || echo "iptv.py başarısız"
+
+      # SPOR
+      - name: 2 - SPOR
         continue-on-error: true
         timeout-minutes: 10
-        run: python test.py || echo "iptv failed"
- 
-    
+        run: |
+          python test.py || echo "test.py başarısız"
 
-      
-  
-      # DOSYALARI KAYDET
-      - name: Dosyaları kaydet
+      # OLUŞAN DOSYALARI KONTROL ET
+      - name: 3 - Dosyaları kontrol et
+        if: always()
+        run: |
+          echo "========== M3U DOSYALARI =========="
+          find . -type f -name "*.m3u" -not -path "./.git/*" -print
+
+          echo "========== JSON DOSYALARI =========="
+          find . -type f -name "*.json" -not -path "./.git/*" -print
+
+          echo "========== SPOR.M3U KONTROL =========="
+          find . -type f -name "spor.m3u" -not -path "./.git/*" -exec ls -lh {} \;
+
+          echo "========== TABII SPOR 4 KONTROL =========="
+          find . -type f -name "*.m3u" -not -path "./.git/*" \
+            -exec grep -in "Tabii Spor 4" {} \; || true
+
+      # DOSYALARI GITHUB'A KAYDET
+      - name: 4 - Dosyaları kaydet
         if: always()
         run: |
           git config user.name "MIRTI68 Bot"
@@ -65,46 +87,46 @@ jobs:
 
           rm -rf __pycache__ .pytest_cache/
 
-          # Başta remote'daki en yeni hali al, eski kalıntı rebase varsa temizle
           git rebase --abort || true
-          git fetch origin main || true
 
-          ls -lh *.m3u *.json 2>/dev/null || true
+          echo "========== DOSYALAR GIT'E EKLENİYOR =========="
 
-          git add -f -- *.m3u || true
-          git add -f -- *.json || true
+          find . -type f \( -name "*.m3u" -o -name "*.json" \) \
+            -not -path "./.git/*" -print0 | xargs -0 -r git add -f --
 
           git status --short
 
           if git diff --cached --quiet; then
-            echo "Değişiklik yok"
+            echo "Değişiklik yok."
             exit 0
           fi
 
-          git commit -m "MIRTI68 update $(date +'%d.%m %H:%M')"
+          git commit -m "MIRTI68 update $(date +'%d.%m.%Y %H:%M')"
+
+          echo "========== GITHUB PUSH =========="
 
           for i in 1 2 3; do
-            if git push origin HEAD:main; then
-              echo "Push OK"
-              break
-            fi
 
-            echo "Push çakıştı, tekrar deneniyor $i"
-
-            # Yarım kalmış rebase varsa temizle, yoksa sonraki pull patlar:
-            # "Pulling is not possible because you have unmerged files"
-            git rebase --abort || true
             git fetch origin main
 
-            # Çakışırsa generated dosyalarda BOT versiyonu kazansın (X ours)
-            # Çünkü bu .m3u / .json dosyalarını bot üretiyor, manuel edit yok
             if git rebase -X ours origin/main; then
-              echo "Rebase OK, tekrar push deneniyor"
+              echo "Rebase başarılı."
+            else
+              echo "Rebase başarısız."
+              git rebase --abort || true
+              sleep 3
               continue
             fi
 
-            # Hâlâ olmadıysa son çare: bot commitini zorla yaz
-            git rebase --abort || true
-            git push --force-with-lease origin HEAD:main && echo "Force push OK" && break
+            if git push origin HEAD:main; then
+              echo "GITHUB PUSH BAŞARILI"
+              exit 0
+            fi
+
+            echo "Push başarısız. Tekrar deneniyor: $i"
             sleep 3
+
           done
+
+          echo "HATA: GitHub'a gönderilemedi."
+          exit 1
