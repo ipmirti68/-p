@@ -53,7 +53,10 @@ jobs:
         timeout-minutes: 10
         run: python kanalddizic.py || echo "kanalddizi failed"
   
- 
+      - name: 3 -STAR DİZİ
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python stardizic.py || echo "stardizi failed"
     
 
       
