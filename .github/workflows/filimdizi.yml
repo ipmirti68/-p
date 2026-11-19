@@ -1,4 +1,4 @@
-name: GÜNCELLE FİLİM DİZİ
+name: GÜNCELLE FİLİM SDİZİLER Y24
 
 on:
   workflow_dispatch:
