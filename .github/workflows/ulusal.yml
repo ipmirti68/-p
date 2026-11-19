@@ -47,7 +47,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
-    
+      
+      - name: 2 - TEST
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python test.py || echo "iptv failed"
   
  
     
@@ -105,4 +109,4 @@ jobs:
             git rebase --abort || true
             git push --force-with-lease origin HEAD:main && echo "Force push OK" && break
             sleep 3
-          don
+          done
