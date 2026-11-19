@@ -1,4 +1,4 @@
-name: GÜNCEL ULUSAL
+name: İPTV ULUSAL TEST
 
 on:
   workflow_dispatch:
