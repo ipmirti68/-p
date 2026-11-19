@@ -165,7 +165,16 @@ AKTARIMLAR = [
         "hedef_logo": "https://i.imgur.com/TgW5452.png",
         "ek_kod": "4️⃣⭕",
     },
-         {
+     
+    {
+        "kaynak_url": "https://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR • BeIN SPORTS",
+        "aranacak": "beIN SPORTS",
+        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
+        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "ek_kod": "5️⃣⭕",
+    },
+     {
         "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/selcuk/refs/heads/main/5.m3u",
         "kaynak_grup": "SPOR",
         "aranacak": "beIN SPORTS",
