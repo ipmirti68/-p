@@ -47,7 +47,10 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
-
+      - name: 1 SPOR
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python test.py || echo "iptv failed"
  
     
 
