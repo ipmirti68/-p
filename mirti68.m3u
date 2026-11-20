@@ -370,8 +370,8 @@ http://mekantv56.win/live/akifalioglu33/33akifalioglu/37cbf863-1460-4b5b-90d3-ff
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/55520b91-9b37-4149-9254-07700b623283.ts
 #EXTINF:-1 tvg-id="KANAL.7.tr" tvg-name="TR:KANAL 7 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanal7.png" group-title="🟨◆ ULUSALᴴᴰ⁺⭕",TR:KANAL 7 HD ⭕
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/6a62ba0b-d7f9-4f25-9b90-2466a9c9e020.ts
-#EXTINF:0 tvg-id="TRT.1.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/trt-1-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
-https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
+https://css.d6e3eds5e065t5.help//hls/arda.m3u8
 #EXTINF:0 tvg-id="KANAL.D.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/kanal-d-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",Kanal D ⭕
 https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3
 #EXTINF:0 tvg-id="ATV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/atv-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",ATV ⭕
@@ -380,6 +380,8 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
 https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
 #EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
 https://css.d6e3eds5e065t5.help//hls/arda.m3u8
+#EXTINF:0 tvg-id="SHOW.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/show-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",SHOW TV ⭕
+https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_720p.m3u8
 #EXTINF:-1 tvg-name="TRT 1 HD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/trt1.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 1 HD ⭕
 http://92.5.166.217/trt1
 
@@ -389,6 +391,121 @@ http://hdlocal.de:8080/group-sky.ddns.net22/sH6JbvQNHVVD/10153
 https://ackaxsqacw.turknet.ercdn.net/ozfkfbbjba/kanald/kanald_1080p.m3u8
 #EXTINF:-1 tvg-name="KANAL D HD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/kk/kanal_d_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL D HD ⭕
 https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=7te08khb0uxy&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
+#EXTINF:-1 tvg-name="TRT 4K HEVC ⭕" tvg-logo="https://i.hizliresim.com/lezd6k8.png" tvg-id="TRT4K.TR" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 4K HEVC ⭕
+http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/HW7DHBZQE4ZYG9/4001/index.m3u8
+#EXTINF:-1 tvg-name="TRT 4K UHD ⭕" tvg-logo="https://i.hizliresim.com/lezd6k8.png" tvg-id="TRT4K.TR" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 4K UHD ⭕
+http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/HW7DHBZQE4ZYG9/4001/index.m3u8
+#EXTINF:-1 tvg-name="TRT 4K FHD ⭕" tvg-logo="https://i.hizliresim.com/lezd6k8.png" tvg-id="TRT4K.TR" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 4K FHD ⭕
+http://c3921155.edmonst.net/iptv/DVHP2VB5QXL7UC/4001/index.m3u8
+#EXTINF:-1 tvg-name="TRT 1 HEVC ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/trt1.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 1 HEVC ⭕
+http://89.187.191.41/TRT-1-HD-TR/tracks-v1a1/mono.ts.m3u8
+#EXTINF:-1 tvg-name="TRT 1 UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/trt1.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 1 UHD ⭕
+http://80.82.64.16:8080/live/iptv.kosiptv.comNEW/gJUP3KsM2ENEW/172cb6d9-ed1a-4038-abb6-e3a26dcb0bb6.m3u
+#EXTINF:-1 tvg-name="ATV HEVC ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/aa/atv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",ATV HEVC ⭕
+http://hdlocal.de:8080/maveniptv.tv/e8yvmG8um2yhhgsjhgdd22/10153
+#EXTINF:-1 tvg-name="ATV UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/aa/atv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",ATV UHD ⭕
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
+#EXTINF:-1 tvg-name="STAR TV HEVC ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/star_tv_tr.png" tvg-id="Start.tr" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",STAR TV HEVC ⭕
+https://dogus.daioncdn.net/startv/startv.m3u8?app=startv_web
+#EXTINF:-1 tvg-name="STAR TV UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/star_tv_tr.png" tvg-id="Start.tr" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",STAR TV UHD ⭕
+http://dygvideo.dygdigital.com/live/hls/startv4puhu?m3u8
+#EXTINF:-1 tvg-name="STAR TV FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/star_tv_tr.png" tvg-id="Start.tr" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",STAR TV FHD ⭕
+https://dogus.daioncdn.net/startv/startv_720p.m3u8?&app=startv_web&ce=3
+#EXTINF:-1 tvg-name="STAR TV HD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/star_tv_tr.png" tvg-id="Start.tr" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",STAR TV HD ⭕
+http://dygvideo.dygdigital.com/live/hls/startv4puhu?m3u8
+#EXTINF:-1 tvg-name="KANAL D HEVC ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/kk/kanal_d_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL D HEVC ⭕
+http://hdlocal.de:8080/live/iptv.kosiptv.comNEW/gJUP3KsM2ENEW/10147.ts
+#EXTINF:-1 tvg-name="KANAL D UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/kk/kanal_d_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL D UHD ⭕
+https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?app=kanald_web&ce=3
+#EXTINF:-1 tvg-name="SHOW TV HEVC ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/show_tv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW TV HEVC ⭕
+http://176.65.153.12:6002/play/a05m/index.m3u8
+#EXTINF:-1 tvg-name="SHOW TV UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/show_tv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW TV UHD ⭕
+https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?app=showtv_web&ce=3
+#EXTINF:-1 tvg-name="SHOW TV FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/show_tv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW TV FHD ⭕
+https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv.m3u8
+#EXTINF:-1 tvg-name="SHOW TV HD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/show_tv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW TV HD ⭕
+https://ciner.daioncdn.net/showtv/showtv.m3u8?app=showtv_web
+
+#EXTINF:-1 tvg-name="FOX TV HEVC ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ff/fox_global.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",FOX TV HEVC ⭕
+http://hdlocal.de:8080/live/iptv.kosiptv.comNEW/gJUP3KsM2ENEW/10156.ts
+#EXTINF:-1 tvg-name="FOX TV UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ff/fox_global.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",FOX TV UHD ⭕
+http://92.5.166.217/nowtv
+#EXTINF:-1 tvg-name="FOX TV FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ff/fox_global.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",FOX TV FHD ⭕
+http://hdlocal.de:8080/maveniptv.tv/e8yvmG8um2yhhgsjhgdd22/10156
+#EXTINF:-1 tvg-id="" tvg-name="TV8 HEVC ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/tv8_tr.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TV8 HEVC ⭕
+http://hdlocal.de:8080/live/iptv.kosiptv.comNEW/gJUP3KsM2ENEW/10145.ts
+#EXTINF:-1 tvg-id="" tvg-name="TV8 UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/tv8_tr.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TV8 UHD ⭕
+https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8/tv8_1080p.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="TV8 FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/tv8_tr.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TV8 FHD ⭕
+http://89.187.191.41/TV8-HD-TR/tracks-v1a1/mono.ts.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="TV8 HD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/tv8_tr.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TV8 HD ⭕
+https://tv8.daioncdn.net/tv8/tv8_1080p.m3u8?app=tv8_web
+
+#EXTINF:-1 tvg-name="TV8.5 HEVC ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/tv85_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TV8.5 HEVC ⭕
+http://hdlocal.de:8080/live/iptv.kosiptv.comNEW/gJUP3KsM2ENEW/10144.ts
+#EXTINF:-1 tvg-name="TV8.5 UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/tv85_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TV8.5 UHD ⭕
+https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8bucuk/tv8bucuk_1080p.m3u8
+#EXTINF:-1 tvg-name="TV8.5 FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/tv85_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TV8.5 FHD ⭕
+http://116.202.238.88/TV8.5_TR/tracks-v1a1/index.m3u8
+#EXTINF:-1 tvg-logo="https://i.ibb.co/pXncfpb/tv422.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TV 4 ⭕
+https://turkmedya-live.ercdn.net/tv4/tv4.m3u8
+
+#EXTINF:-1 tvg-name="TEVE2 UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/teve_2_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TEVE2 UHD ⭕
+https://ackaxsqacw.turknet.ercdn.net/ozfkfbbjba/teve2/teve2_1080p.m3u8
+#EXTINF:-1 tvg-name="TEVE2 FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/teve_2_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TEVE2 FHD ⭕
+https://demiroren.daioncdn.net/teve2/teve2_1080p.m3u8?&sid=7uxeo0kx44nq&app=6aab838a-437e-4a1b-bbd0-e30f79cdbbbd&ce=3
+#EXTINF:-1 tvg-name="A2 UHD ⭕" tvg-language="Turkish" tvg-country="TR" tvg-id="Genel_A2" tvg-logo="https://i.hizliresim.com/17g158f.jpg" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",A2 UHD ⭕
+http://89.187.191.41/A2-HD-TR/video.m3u8
+#EXTINF:-1 tvg-name="A2 FHD ⭕" tvg-language="Turkish" tvg-country="TR" tvg-id="Genel_A2" tvg-logo="https://i.hizliresim.com/17g158f.jpg" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",A2 FHD ⭕
+http://116.202.238.88/A2_TR/tracks-v1a1/index.m3u8
+#EXTINF:-1 tvg-name="ATV Avrupa ⭕" tvg-logo="https://i.imgur.com/8t5aAVx.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",ATV Avrupa ⭕
+http://162.212.179.33/dvrfl05/gin-atvavrupa/playlist.m3u8
+#EXTINF:-1 tvg-name="EUROSTAR televizyon ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/star_tv_tr.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",EUROSTAR televizyon ⭕
+https://raw.githubusercontent.com/ipstreet312/freeiptv/master/ressources/tur/estar.m3u8
+#EXTINF:-1 tvg-name="SHOW TÜRK UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/show_turk.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW TÜRK UHD ⭕
+https://raw.githubusercontent.com/ipstreet312/freeiptv/master/ressources/tur/shturk.m3u8
+#EXTINF:-1 tvg-name="EURO D ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ee/eurod.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",EURO D ⭕
+http://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8
+#EXTINF:-1 tvg-name="TV8 INT ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/tv8_tr_international.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TV8 INT ⭕
+http://apx-me.com:8880/live:persian_share/Hs6guU9ziF/48861
+#EXTINF:-1 tvg-name="TGRT EU ⭕" tvg-logo="https://i.hizliresim.com/g3yj3yx.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TGRT EU ⭕
+https://tgrt-live.ercdn.net/tgrteu/tgrteu.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="360 TV UHD ⭕" tvg-logo="https://i.imgur.com/DDj2Edt.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",360 TV UHD ⭕
+https://turkmedya-live.ercdn.net/tv360/tv360_1080p.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="360 TV FHD ⭕" tvg-logo="https://i.imgur.com/DDj2Edt.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",360 TV FHD ⭕
+https://turkmedya-live.ercdn.net/tv360/tv360.m3u8
+#EXTINF:-1 tvg-name="KANAL 7 UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/kk/kanal7_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL 7 UHD ⭕
+https://kanal7-live.daioncdn.net/kanal7/kanal7_1080p.m3u8
+#EXTINF:-1 tvg-name="KANAL 7 FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/kk/kanal7_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL 7 FHD ⭕
+https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
+#EXTINF:-1 tvg-name="BEYAZ TV UHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/bb/beyaz_tv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",BEYAZ TV UHD ⭕
+https://beyaztv-live.daioncdn.net/beyaztv/beyaztv_1080p.m3u8
+#EXTINF:-1 tvg-name="BEYAZ TV FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/bb/beyaz_tv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",BEYAZ TV FHD ⭕
+http://origi-jw-5.ravenclaw-house.com:80/TR-BEYAZ/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://picon-13398.kxcdn.com/showmaxtr.jpg" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW MAX UHD ⭕
+https://raw.githubusercontent.com/ipstreet312/freeiptv/master/ressources/tur/shmax.m3u8
+#EXTINF:-1 group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 2 ⭕
+http://95.174.71.114/TR-TRT2/index.m3u8
+#EXTINF:-1 group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT TÜRK ⭕
+https://tv-trtturk.medya.trt.com.tr/master_720.m3u8
+#EXTINF:-1 group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT AVAZ ⭕
+http://tv-trtavaz.medya.trt.com.tr/master_720.m3u8
+#EXTINF:-1 tvg-id="tabii TV.tr" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Tabii_logo.svg/1024px-Tabii_logo.svg.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TABII TV ⭕
+https://ceokzokgtd.erbvr.com/tabiitv/tabiitv_1080p.m3u8
+#EXTINF:-1 tvg-logo="https://i.hizliresim.com/cfkfvpw.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",CINE 1 ⭕
+https://live.artidijitalmedya.com/artidijital_cine1/cine1/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.hizliresim.com/ix9o2pn.jpeg" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",CINE 5 ⭕
+https://cdn-cine5tv.yayin.com.tr/cine5tv/cine5tv/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.hizliresim.com/c2uwvk5.jpeg" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",CINE 6 ⭕
+https://canli.cine6tv.com.tr:3614/stream/play.m3u8
+#EXTINF:-1 tvg-logo="https://i.hizliresim.com/rkptvcq.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TİVİTÜRK ⭕
+https://stream.tiviturk.de/live/tiviturk.m3u8
+#EXTINF:-1 tvg-logo="https://i.hizliresim.com/l6wxkv6.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SÜPERTÜRK TV ⭕
+http://75.119.144.48/SUPERTURK_TV_STREAM/index.m3u8
+#EXTINF:-1 tvg-logo="https://i.hizliresim.com/qhhd4hp.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SÜPERTÜRK MAX ⭕
+http://75.119.144.48/SUPERTURK_MAX_HD/index.m3u8
+
+#EXTM3U
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" tvg-logo="https://i.hizliresim.com/ljzg5ez.png" group-title="🟦◆   HABER 📰",SZC
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/144
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" group-title="🟦◆   HABER 📰",ÖZLEM GÜRSES
