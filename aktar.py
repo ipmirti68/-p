@@ -84,14 +84,17 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
 
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
-        "kaynak_grup": "",
-        "aranacak": "",
-        "hedef_grup": "🟪◆ GÜNCEL DİZİLER ⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
+     {
+    "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
+    "kaynak_grup": "",
+    "aranacak": "",
+    "hedef_grup": "🟪◆ GÜNCEL DİZİLER ⭕",
+    "hedef_logo": "",
+    "ek_kod": "⭕",
+    "grup_onek": True,  # <-- YENİ
+},
+
+
 
     {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
