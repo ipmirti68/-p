@@ -1,4 +1,4 @@
-# MIRTI68 - TEK AKTARICI
+# MIRTI68 - TEK AKTARICI - TAM DUZELTILMIS HALI
 import re, os, shutil, urllib.request, urllib.error, socket
 HEDEF_DOSYA = "mirti68.m3u"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
@@ -8,23 +8,23 @@ AKTARIMLAR = [
     {
         "kaynak_url": "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u",
         "kaynak_gruplar": ["IMDb Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"],
-        "kaynak_grup": "", 
-        "aranacak": "", 
-        "hedef_grup": "", 
-        "hedef_logo": "", 
+        "kaynak_grup": "",
+        "aranacak": "",
+        "hedef_grup": "",
+        "hedef_logo": "",
         "ek_kod": "⭕",
         "grup_onek": False, "sinema_modu": True,
     },
     {
         "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
         "kaynak_grup": "",
-        "aranacak": "", 
+        "aranacak": "",
         "hedef_grup": "🟪◆ GÜNCEL DİZİLERᴴᴰ ⭕",
-        "hedef_logo": "", 
-        "ek_kod": "⭕", 
+        "hedef_logo": "",
+        "ek_kod": "⭕",
         "grup_onek": True,
     },
-       {
+    {
         "kaynak_url": "http://190502.tomtv.eu/get.php?username=GokmenS947&password=5rr53m3b8c&type=m3u_plus&output=ts",
         "kaynak_grup": "GUNCEL DiZiLER SON BOLUM",
         "aranacak": "",
@@ -40,10 +40,6 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-
- 
-
-    
     {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/atomspor/refs/heads/main/atom.m3u",
         "kaynak_grup": "",
@@ -52,16 +48,15 @@ AKTARIMLAR = [
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "⭕ Atom",
     },
-  {
+    {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
         "kaynak_grup": "",
-        "aranacak": "trt 1, atv, show tv, kanal d, star, now, kanal 7. tv 8",
+        "aranacak": "trt 1, atv, show tv, kanal d, star, now, kanal 7, tv 8",
         "hedef_grup": "🟨◆ ULUSALᴴᴰ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-
-{
+    {
         "kaynak_url": "https://raw.githubusercontent.com/Kral-Turk/Kral-Turk-TV/refs/heads/main/TURK_TV.m3u_plus",
         "kaynak_grup": "TR ULUSAL-UHD",
         "aranacak": "",
@@ -69,27 +64,22 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-    
-  
     {
         "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
         "kaynak_grup": "",
         "aranacak": "Korea",
         "hedef_grup": "🟨◆ YABANCI 🇰🇷⭕",
-        "hedef_logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg?utm_source=tr.wikipedia.org&utm_campaign=index&utm_content=original",
+        "hedef_logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",
         "ek_kod": "⭕",
     },
-
     {
         "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
         "kaynak_grup": "",
-        "aranacak": "TR:beIN Sports",
+        "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 🖥",
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "⭕",
     },
-
-      
     {
         "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
         "kaynak_grup": "Diziler | Prison Break | Prison Break",
@@ -98,7 +88,6 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "",
     },
-
     {
         "kaynak_url": "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts",
         "kaynak_grup": "SONVIZYON FILMLER",
@@ -107,7 +96,6 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-
     {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | 7/24 DIZI",
@@ -116,9 +104,6 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕ᴴᴰ",
     },
-
-
-
     {
         "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
         "kaynak_grup": "Yerel / 🔴 SPOR",
@@ -127,7 +112,6 @@ AKTARIMLAR = [
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "0️⃣⭕",
     },
-
     {
         "kaynak_url": "http://31.43.191.142:8880/get.php?username=191703089055131&password=01703089055686&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | SPORT",
@@ -136,16 +120,14 @@ AKTARIMLAR = [
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "1️⃣⭕",
     },
-
     {
-        "kaynak_url": "http://ruzgarplayer.site:8080/get.php?username=KH6Rn39q4WpL&password=bnzSVts6Lner&type=m3u_plus&output=tsrd=GaraveliForum&type=m3u_plus&output=m3u8",
+        "kaynak_url": "http://ruzgarplayer.site:8080/get.php?username=KH6Rn39q4WpL&password=bnzSVts6Lner&type=m3u_plus&output=ts",
         "kaynak_grup": "⫸TR SUPER LİG 1⫷",
         "aranacak": "",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "2️⃣⭕",
     },
-
     {
         "kaynak_url": "http://190502.tomtv.eu/get.php?username=GokmenS947&password=5rr53m3b8c&type=m3u_plus&output=ts",
         "kaynak_grup": "TR-SPOR",
@@ -154,7 +136,6 @@ AKTARIMLAR = [
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "3️⃣⭕",
     },
-
     {
         "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
         "kaynak_grup": "Spor Vavoo",
@@ -163,7 +144,6 @@ AKTARIMLAR = [
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "4️⃣⭕",
     },
-     
     {
         "kaynak_url": "https://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts",
         "kaynak_grup": "TR • BeIN SPORTS",
@@ -172,8 +152,7 @@ AKTARIMLAR = [
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "5️⃣⭕",
     },
-
-     {
+    {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | TABii",
         "aranacak": "",
@@ -181,9 +160,7 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-     
-
-     {
+    {
         "kaynak_url": "https://raw.githubusercontent.com/PRoDi79/Deneme/refs/heads/main/ibb_cams.m3u",
         "kaynak_grup": "",
         "aranacak": "",
@@ -191,7 +168,6 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-    
 ]
 
 def normalize(s):
@@ -256,6 +232,7 @@ def grup_eslesiyor_mu(a,b):
     if not b: return True
     if not normalize(a): return False
     return normalize(a)==normalize(b)
+
 def oku_m3u(p):
     if p.startswith("http"):
         req = urllib.request.Request(p, headers={"User-Agent":USER_AGENT,"Accept":"*/*","Connection":"close"})
@@ -265,21 +242,16 @@ def oku_m3u(p):
         with open(p,"rb") as f: metin = f.read().decode("utf-8-sig", errors="ignore")
     newline = "\r\n" if "\r\n" in metin else "\n"
     satirlar = metin.splitlines()
-
-    # --- YENİ: Bölünmüş EXTINF satırlarını birleştir ---
     birlesik = []
     for line in satirlar:
         s = line.strip()
         if not s:
             continue
-        # Hala EXTINF devamıysa (URL değil, yeni EXTINF değil, # ile başlamıyor)
         if birlesik and birlesik[-1].startswith("#EXTINF:") and not s.startswith("#EXTINF:") and not s.startswith("http") and not s.startswith("#"):
             birlesik[-1] += " " + s
             continue
         birlesik.append(s)
     satirlar = birlesik
-    # --- BİTİŞ ---
-
     ilk = next((i for i,s in enumerate(satirlar) if s.startswith("#EXTINF:")), len(satirlar))
     baslik, govde = satirlar[:ilk], satirlar[ilk:]
     records, cur = [], []
@@ -288,7 +260,6 @@ def oku_m3u(p):
         cur.append(line)
     if cur: records.append(cur)
     return baslik, records, newline, "utf-8"
-    
 
 def hedefe_uyarla(rec,cfg):
     yeni_rec = list(rec)
@@ -297,7 +268,6 @@ def hedefe_uyarla(rec,cfg):
     extinf = yeni_rec[idx]
     m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
     ad = extinf.rsplit(",",1)[-1].strip() if "," in extinf else ""
-    # Bozuk satırda adın içinde tvg-name kalmışsa temizle
     if 'tvg-name="' in ad:
         mm = re.search(r'tvg-name="([^"]*)"', ad)
         if mm: ad = mm.group(1).strip()
@@ -326,37 +296,48 @@ def hedefe_uyarla(rec,cfg):
             if l.strip().startswith(("http://","https://")): yeni_rec[i]=sinema_fix_url(l.strip())
     return yeni_rec
 
+# --- FINAL: aranacak_parcala ---
 def aranacak_parcala(raw):
-    s=(raw or "").strip()
+    s = (raw or "").strip()
     if not s: return []
-    s_low=s.lower()
-    for ik in ["kanal d","kanal 7","show tv","star tv","beyaz tv","tv 8","tv 8.5","a2 tv","trt 1"]:
-        if ik in s_low: s_low=s_low.replace(ik, ik.replace(" ","_"))
+    s_low = s.lower()
+    # TR: on eki varsa at, Mahsun tarafinda "TR:beIN Sports" -> "beIN Sports"
+    s_low = re.sub(r"\btr\s*:\s*", "", s_low)
+    # kanal 7. tv 8 -> kanal 7, tv 8
+    s_low = s_low.replace("kanal 7. tv", "kanal 7, tv")
+    s_low = s_low.replace("kanal 7.tv", "kanal 7, tv")
+    for ik in ["kanal d","kanal 7","show tv","star tv","beyaz tv","tv 8","tv 8.5","a2 tv","trt 1","bein sports","bein sport","s sport"]:
+        if ik in s_low: s_low = s_low.replace(ik, ik.replace(" ","_"))
     if any(x in s_low for x in [",",";","|","\n"]):
-        par=re.split(r"[,;|\n]+", s_low)
+        par = re.split(r"[,;|\n]+", s_low)
     else:
-        par=[s_low]  # <-- ESKİSİ: s_low.split() idi, BUNU DEĞİŞTİR
-    return [normalize(p.strip().replace("_"," ")) for p in par if p.strip()]
+        par = [s_low]
+    out = []
+    for p in par:
+        p = normalize(p.strip().replace("_"," "))
+        if p:
+            p = p.replace("sports","sport")
+            # aranacak tarafinda da tr: kalmissa temizle
+            p = re.sub(r"^tr[:\s]+","",p).strip()
+            if p: out.append(p)
+    return out
 
+# --- FINAL: kanal_kok ---
 def kanal_kok(ad_n):
-    # "tr:atv hd" -> "atv", "tr:tv 8.5 hd" -> "tv 8.5", "tr:atv avrupa hd" -> "atv avrupa"
-    a = ad_n.strip()
+    a = (ad_n or "").strip()
     a = re.sub(r"^tr[:\s\-]+","",a)
     a = re.sub(r"^tr\s+","",a)
-
-    # --- YENİ: Mahsun / Atom gibi son ekleri ve HD'yi temizle ---
-    a = a.replace("sports","sport")  # Sports -> Sport, ikisi de aynı sayılsın
-    a = re.sub(r"\s*-\s*mahsun.*$","",a)  # -Mahsun
-    a = re.sub(r"\s+mahsun.*$","",a)      # Mahsun (normalize - yi boşluğa çevirdiği için)
-    a = re.sub(r"\s+hd.*$","",a)          # HD'den sonrasını at: "bein sport 1 hd mahsun" -> "bein sport 1"
+    a = a.replace("sports","sport")
+    a = re.sub(r"\s*-\s*mahsun.*$","",a)
+    a = re.sub(r"\s+mahsun.*$","",a)
     a = re.sub(r"\s*-\s*atom.*$","",a)
     a = re.sub(r"\s+atom.*$","",a)
-    # --- BİTİŞ ---
-
-    a = re.sub(r"\s+(hd|hq|fhd|4k)$","",a)
-    a = re.sub(r"\s+\[yedek\]$","",a)
+    a = re.sub(r"\s+(hd|hq|fhd|uhd|4k)\b.*$","",a)
+    a = re.sub(r"\s+\[yedek\].*$","",a)
     a = re.sub(r"\s+yedek$","",a)
     return a.strip()
+
+# --- FINAL: kaynak_sec - kelime bazli, hepsi icin tek mantik ---
 def kaynak_sec(records,cfg):
     liste = aranacak_parcala(cfg.get("aranacak",""))
     kg = (cfg.get("kaynak_grup","") or "").strip()
@@ -376,19 +357,17 @@ def kaynak_sec(records,cfg):
             kok_nospace = kok.replace(" ","")
             ok=False
             for ana in liste:
-                ana = ana.replace("sports","sport")
                 ana_nospace = ana.replace(" ","")
                 if kok == ana or kok_nospace == ana_nospace:
                     ok=True; break
-                if re.match(rf"^{re.escape(ana)}(\s+(max\s+)?\d+)?$", kok):
-                    ok=True; break
-                if re.match(rf"^{re.escape(ana_nospace)}(max\d+|\d+)?$", kok_nospace):
+                # Kelime bazli: " star " in " star tv ", " bein sport " in " bein sport 1 "
+                # " bein sport " in " s sport 1 " YOK -> S Sport giremez
+                if f" {ana} " in f" {kok} ":
                     ok=True; break
             if not ok: continue
         if "bilgilendirme" in kanal_adi(r).lower(): continue
         out.append(hedefe_uyarla(r,cfg))
     return out
-    
 
 def grubu_birlestir(hedef_records, secilen, hedef_grup):
     gelen={}
@@ -429,7 +408,7 @@ def main():
         if cfg.get("kaynak_grup"): print(f"ARANAN KAYNAK GRUP: {cfg['kaynak_grup']}")
         try: _,kaynak_records,_,_ = oku_m3u(url)
         except urllib.error.HTTPError as e: hatali+=1; hata_ekle(cfg,f"HTTP {e.code} - {e.reason}"); print(f"  [ATLANDI] HTTP {e.code}"); continue
-        except urllib.error.URLError as e: hatali+=1; hata_ekle(cfg,f"Bağlantı hatası: {e.reason}"); print(f"  [ATLANDI] {e.reason}"); continue
+        except urllib.error.URLError as e: hatali+=1; hata_ekle(cfg,f"Bağlantı hatası: {e.reason}"); print(f"  [ATLANDI] Bağlantı {e.reason}"); continue
         except (TimeoutError,socket.timeout) as e: hatali+=1; hata_ekle(cfg,f"Zaman aşımı: {e}"); print(f"  [ATLANDI] Zaman aşımı"); continue
         except Exception as e: hatali+=1; hata_ekle(cfg,f"{type(e).__name__}: {e}"); print(f"  [ATLANDI] {e}"); continue
         if not kaynak_records: hatali+=1; hata_ekle(cfg,"Kaynakta M3U kaydı bulunamadı"); print("  [ATLANDI] Boş kaynak"); continue
@@ -470,21 +449,14 @@ def main():
     sonuc=list(baslik)
     for r in hedef_records: sonuc.extend(r)
     try:
-        with open(HEDEF_DOSYA,"w",encoding=enc,newline="") as f: f.write(newline.join(sonuc)+newline)
-    except Exception as e: print(f"[HATA] Dosya yazılamadı: {e}"); return
-    print(f"\n====================================\n MIRTI68 - AKTARIM TAMAMLANDI\n====================================\n[BAŞARILI] {basarili}\n[HATALI / ATLANAN] {hatali}\n[EKLENEN KAYIT] {eklenen_toplam}\n[TOPLAM KANAL] {len(hedef_records)}\n[DOSYA] {HEDEF_DOSYA}")
-    try:
-        with open("hatali_url_listesi.txt","w",encoding="utf-8") as f:
-            f.write("MIRTI68 - HATALI URL LİSTESİ\n"+"="*50+"\n")
-            if not hatali_list: f.write("\n[TEMİZ] Hata yok\n")
-            for h in hatali_list: f.write(f"\nHEDEF GRUP: {h['hedef_grup']}\nKAYNAK GRUP: {h['kaynak_grup']}\nURL: {h['url']}\nSEBEP: {h['sebep']}\n")
-        print("[DOSYA] hatali_url_listesi.txt yazıldı.")
-    except Exception as e: print(f"[UYARI] Hatalı liste yazılamadı: {e}")
-    print("\n====================================\n HATALI URL LİSTESİ\n====================================")
-    if not hatali_list: print("[TEMİZ] Hata veren URL yok")
-    else:
-        for i,h in enumerate(hatali_list,1): print(f"\n[{i}] HEDEF GRUP: {h['hedef_grup']}\n    URL: {h['url']}\n    SEBEP: {h['sebep']}")
-    print("====================================\n[TAMAM] ÇALIŞAN KAYNAKLAR AKTARILDI\n[TAMAM] Hatalı URL'ler işlemi durdurmadı\n====================================")
+        with open(HEDEF_DOSYA,"w",encoding="utf-8",newline="") as f:
+            f.write("\n".join(sonuc))
+        print(f"[KAYDEDİLDİ] {HEDEF_DOSYA} - Toplam {len(hedef_records)} kayıt, {eklenen_toplam} yeni/revize")
+    except Exception as e: print(f"[HATA] Kaydetme: {e}")
+    print(f"\nÖZET: Başarılı {basarili} / Hatalı {hatali}")
+    for h in hatali_list: print(f"  - {h['hedef_grup']} | {h['url']} | {h['sebep']}")
 
 if __name__ == "__main__":
     main()
+
+            
