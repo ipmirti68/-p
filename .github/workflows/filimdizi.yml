@@ -53,11 +53,7 @@ jobs:
         timeout-minutes: 10
         run: python 724y.py || echo "724y failed"
 
-      - name: 4 - GÜNCEL DİZİ 2026
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python gdizi.py || echo "gdizi failed"
-
+     
            
  
       # DOSYALARI KAYDET
