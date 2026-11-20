@@ -41,9 +41,7 @@ jobs:
           yt-dlp --version
           deno --version
           
-      - name: 1 - FİLİM LİSTESİ 
-        continue-on-error: true
-        run: python filim.py || echo "filim failed"
+   
                 
       - name: 2 - DİZİLER YAML
         continue-on-error: true
