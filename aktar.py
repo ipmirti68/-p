@@ -36,7 +36,7 @@ AKTARIMLAR = [
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | ULUSAL",
         "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
-        "hedef_grup": "🟨◆ ULUSAL ᴴᴰ⁺ ⭕",
+        "hedef_grup": "🟨◆ ULUSALᴴᴰ⁺⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
@@ -56,10 +56,20 @@ AKTARIMLAR = [
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
         "kaynak_grup": "",
         "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
-        "hedef_grup": "🟨◆ ULUSAL ᴴᴰ ⭕",
+        "hedef_grup": "🟨◆ ULUSALᴴᴰ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
+
+{
+        "kaynak_url": "https://raw.githubusercontent.com/Kral-Turk/Kral-Turk-TV/refs/heads/main/TURK_TV.m3u_plus",
+        "kaynak_grup": "TR ULUSAL-UHD",
+        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
+        "hedef_grup": "🟨◆ ULUSALᶠᴴᴰ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
+    
   
     {
         "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
