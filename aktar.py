@@ -24,6 +24,14 @@ AKTARIMLAR = [
         "ek_kod": "⭕", 
         "grup_onek": True,
     },
+       {
+        "kaynak_url": "http://190502.tomtv.eu/get.php?username=GokmenS947&password=5rr53m3b8c&type=m3u_plus&output=ts",
+        "kaynak_grup": "GUNCEL DiZiLER SON BOLUM",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ GÜNCEL DİZİLER ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
     {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | ULUSAL",
