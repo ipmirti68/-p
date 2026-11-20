@@ -62,15 +62,8 @@ AKTARIMLAR = [
         "grup_onek": True,
     },
 
-    {
-        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR | ULUSAL",
-        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
-        "hedef_grup": "🟨◆ ULUSAL ᴴᴰ⁺ ⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
-{
+
+      {
         "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
         "kaynak_grup": "Spor-Avva",
         "aranacak": "beIN Sports",
@@ -96,7 +89,14 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
- 
+    {
+        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR | ULUSAL",
+        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
+        "hedef_grup": "🟨◆ ULUSAL ᴴᴰ⁺ ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
 
     {
         "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
@@ -135,9 +135,7 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
 
-
-
-
+  
 
     {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
@@ -212,12 +210,6 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-     
-
-
-     
-
-
      
 ]
 
@@ -431,13 +423,19 @@ def kaynak_sec(kaynak_records, cfg):
     kaynak_grup = cfg.get("kaynak_grup", "").strip()
     # YENİ: birden fazla kaynak grup (SİNEMA WANTED_RAW gibi)
     kaynak_gruplar = cfg.get("kaynak_gruplar", []) or []
-    kaynak_gruplar_n = [normalize(g) for g in kaynak_gruplar if g.strip()]
+    # SİNEMA: norm_sinema kullan - boşluk / - farkını yok say
+    # "YeniEklenenler" == "Yeni Eklenenler" == "yeni-eklenenler"
+    if cfg.get("sinema_modu"):
+        kaynak_gruplar_n = [norm_sinema(g) for g in kaynak_gruplar if g.strip()]
+    else:
+        kaynak_gruplar_n = [normalize(g) for g in kaynak_gruplar if g.strip()]
     secilen = []
     for r in kaynak_records:
         g = grup_bul(r)
         # Tek grup varsa onu, liste varsa listeden birini kontrol et
         if kaynak_gruplar_n:
-            if normalize(g) not in kaynak_gruplar_n:
+            _g_norm = norm_sinema(g) if cfg.get("sinema_modu") else normalize(g)
+            if _g_norm not in kaynak_gruplar_n:
                 continue
         elif kaynak_grup and not grup_eslesiyor_mu(g, kaynak_grup):
             continue
@@ -601,6 +599,13 @@ def main():
 
         if not secilen:
             print("  [BOŞ] Uygun kanal bulunamadı.")
+            # DEBUG: Kaynakta gerçekte hangi gruplar var?
+            _gruplar = sorted(set(grup_bul(r) for r in kaynak_records if grup_bul(r)))
+            print(f"  [DEBUG] Kaynakta {len(_gruplar)} grup var, ilk 30:")
+            for _gg in _gruplar[:30]:
+                print(f"    - '{_gg}' -> norm_sinema: '{norm_sinema(_gg)}' | normalize: '{normalize(_gg)}'")
+            if cfg.get("kaynak_gruplar"):
+                print(f"  [DEBUG] Aranan kaynak_gruplar (norm_sinema): {[norm_sinema(x) for x in cfg['kaynak_gruplar']]}")
             print("  [DEVAM] Hedef gruba dokunulmadı.")
             # BOŞ da bir hata sayılsın istiyorsan bunu aç:
             # hata_ekle(cfg, "Eşleşen kanal bulunamadı (grup adı / aranacak yanlış olabilir)")
