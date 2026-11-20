@@ -41,7 +41,7 @@ AKTARIMLAR = [
     {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | ULUSAL",
-        "aranacak": "",
+        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
         "hedef_grup": "🟨◆ ULUSAL ᴴᴰ⁺ ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
