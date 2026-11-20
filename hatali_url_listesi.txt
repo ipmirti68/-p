@@ -17,6 +17,11 @@ URL: https://79.76.50.223/get.php
 SEBEP: Bağlantı hatası: timed out
 
 HEDEF GRUP: 🟩◆  beIN SPORTS 📡⭕
+KAYNAK GRUP: TR | SPORT
+URL: http://31.43.191.142:8880/get.php
+SEBEP: HTTP 404 - Not Found
+
+HEDEF GRUP: 🟩◆  beIN SPORTS 📡⭕
 KAYNAK GRUP: TR • BeIN SPORTS
 URL: https://ekmek82.shop/get.php
 SEBEP: HTTP 403 - Forbidden
