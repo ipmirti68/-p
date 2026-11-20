@@ -142,7 +142,7 @@ AKTARIMLAR = [
         "kaynak_grup": "⫸TR SUPER LİG 1⫷",
         "aranacak": "",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "2️⃣⭕",
     },
 
