@@ -46,7 +46,7 @@ AKTARIMLAR = [
     
     {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/atomspor/refs/heads/main/atom.m3u",
-        "kaynak_grup": "Atom-Panel",
+        "kaynak_grup": "",
         "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 🖥",
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
