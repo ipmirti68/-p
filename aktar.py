@@ -46,7 +46,7 @@ AKTARIMLAR = [
         "kaynak_grup": "Spor-Avva",
         "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "⭕ Avva",
     },
 
@@ -56,7 +56,7 @@ AKTARIMLAR = [
         "kaynak_grup": "Atom-Panel",
         "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "⭕ Atom",
     },
   {
@@ -82,7 +82,7 @@ AKTARIMLAR = [
         "kaynak_grup": "",
         "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "⭕",
     },
 
@@ -121,7 +121,7 @@ AKTARIMLAR = [
         "kaynak_grup": "Yerel / 🔴 SPOR",
         "aranacak": "",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "0️⃣⭕",
     },
 
@@ -130,7 +130,7 @@ AKTARIMLAR = [
         "kaynak_grup": "TR | SPORT",
         "aranacak": "",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "1️⃣⭕",
     },
 
@@ -139,7 +139,7 @@ AKTARIMLAR = [
         "kaynak_grup": "⫸TR SUPER LİG 1⫷",
         "aranacak": "",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "2️⃣⭕",
     },
 
@@ -148,7 +148,7 @@ AKTARIMLAR = [
         "kaynak_grup": "TR-SPOR",
         "aranacak": "beIN SPORTS",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "3️⃣⭕",
     },
 
@@ -157,7 +157,7 @@ AKTARIMLAR = [
         "kaynak_grup": "Spor Vavoo",
         "aranacak": "beIN SPORTS",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "4️⃣⭕",
     },
      
@@ -166,7 +166,7 @@ AKTARIMLAR = [
         "kaynak_grup": "TR • BeIN SPORTS",
         "aranacak": "beIN SPORTS",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "5️⃣⭕",
     },
 
