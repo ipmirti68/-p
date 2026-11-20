@@ -18,7 +18,6 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrom
 TIMEOUT = 30
 
 AKTARIMLAR = [
-
      {
         "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
         "kaynak_grup": "Spor-Avva",
@@ -40,7 +39,7 @@ AKTARIMLAR = [
   {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
         "kaynak_grup": "",
-        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
+        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
         "hedef_grup": "🟨◆ ULUSAL ᴴᴰ ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
@@ -48,7 +47,7 @@ AKTARIMLAR = [
     {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | ULUSAL",
-        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
+        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
         "hedef_grup": "🟨◆ ULUSAL ᴴᴰ⁺ ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
@@ -176,7 +175,6 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-     
 ]
 
 # ==================================================
@@ -270,52 +268,77 @@ def oku_m3u(path_or_url):
     return baslik, records, newline, "utf-8"
 
 def hedefe_uyarla(rec, cfg):
+    # BOZUK SATIR DUZELTME: EXTINF'i sifirdan kur, cift tvg-name / group-title kalmasin
     yeni_rec = list(rec)
     extinf_index = next((i for i, x in enumerate(yeni_rec) if x.startswith("#EXTINF:")), None)
     if extinf_index is None:
         return yeni_rec
     extinf = yeni_rec[extinf_index]
-    ad = extinf.split(",", 1)[-1].strip()
-    hedef_grup = cfg["hedef_grup"]
-    if 'group-title="' in extinf:
-        extinf = re.sub(r'group-title="[^"]*"', lambda m: f'group-title="{hedef_grup}"', extinf, count=1)
+    m_sure = re.match(r"#EXTINF:(-?\d+)", extinf)
+    sure = m_sure.group(1) if m_sure else "-1"
+    if "," in extinf:
+        ad = extinf.rsplit(",", 1)[-1].strip()
     else:
-        extinf = re.sub(r'(#EXTINF:-?\d+)', lambda m: m.group(1) + f' group-title="{hedef_grup}"', extinf, count=1)
+        ad = ""
+    ozellikler = {}
+    for k, v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf):
+        ozellikler[k] = v
+    # YENİ: Kaynak grup adını kanal adının önüne yaz
+    if cfg.get("grup_onek"):
+        kaynak_grup_adi = grup_bul(rec).strip()
+        if kaynak_grup_adi and not ad.lower().startswith(kaynak_grup_adi.lower()):
+            ad = f"{kaynak_grup_adi} - {ad}"
+    ozellikler["group-title"] = cfg["hedef_grup"]
     logo = cfg.get("hedef_logo", "")
     if logo:
-        if 'tvg-logo="' in extinf:
-            extinf = re.sub(r'tvg-logo="[^"]*"', lambda m: f'tvg-logo="{logo}"', extinf, count=1)
-        else:
-            extinf = re.sub(r'(#EXTINF:-?\d+)', lambda m: m.group(1) + f' tvg-logo="{logo}"', extinf, count=1)
+        ozellikler["tvg-logo"] = logo
     ek = (cfg.get("ek_kod") or "").strip()
-    if ek:
-        if "=" in ek:
-            anahtar = ek.split("=")[0].strip()
-            if anahtar not in extinf:
-                extinf = re.sub(r'(#EXTINF:-?\d+)', lambda m: m.group(1) + f' {ek}', extinf, count=1)
-        else:
-            if not ad.endswith(ek) and ek not in ad:
-                yeni_ad = f"{ad} {ek}"
-                if 'tvg-name="' in extinf:
-                    extinf = re.sub(r'tvg-name="[^"]*"', lambda m: f'tvg-name="{yeni_ad}"', extinf, count=1)
-                extinf = extinf.rsplit(",", 1)[0] + "," + yeni_ad
-    yeni_rec[extinf_index] = extinf
+    if ek and "=" not in ek:
+        if not ad.endswith(ek) and ek not in ad:
+            ad = f"{ad} {ek}"
+    if "tvg-name" in ozellikler:
+        ozellikler["tvg-name"] = ad
+    oz_str = " ".join(f'{k}="{v}"' for k, v in ozellikler.items())
+    yeni_rec[extinf_index] = f"#EXTINF:{sure} {oz_str},{ad}"
     return yeni_rec
 
+def aranacak_parcala(aranacak_raw):
+    s = (aranacak_raw or "").strip()
+    if not s:
+        return []
+    s_low = s.lower()
+    for ikili in ["kanal d", "kanal 7", "show tv", "tv 8", "tv 8.5", "a2 tv"]:
+        if ikili in s_low:
+            s_low = s_low.replace(ikili, ikili.replace(" ", "_"))
+    if any(x in s_low for x in [",", ";", "|", "\n"]):
+        parcalar = re.split(r"[,;|\n]+", s_low)
+    else:
+        parcalar = s_low.split()
+    out = []
+    for p in parcalar:
+        p = p.strip().replace("_", " ").strip()
+        if p:
+            out.append(normalize(p))
+    return out
+
 def kaynak_sec(kaynak_records, cfg):
-    aranacak = cfg.get("aranacak", "").strip().lower()
+    aranacak_liste = aranacak_parcala(cfg.get("aranacak", ""))
     kaynak_grup = cfg.get("kaynak_grup", "").strip()
     secilen = []
     for r in kaynak_records:
         g = grup_bul(r)
         if kaynak_grup and not grup_eslesiyor_mu(g, kaynak_grup):
             continue
-        if aranacak:
-            ad = kanal_adi(r).lower()
-            url = " ".join(r).lower()
-            if normalize(aranacak) not in normalize(ad) and normalize(aranacak) not in normalize(url):
-                if aranacak not in ad and aranacak not in url:
-                    continue
+        if aranacak_liste:
+            ad_n = normalize(kanal_adi(r))
+            ad_n_bosluksuz = ad_n.replace(" ", "")
+            eslesti = False
+            for anahtar in aranacak_liste:
+                if anahtar in ad_n or anahtar.replace(" ", "") in ad_n_bosluksuz:
+                    eslesti = True
+                    break
+            if not eslesti:
+                continue
         if "bilgilendirme" in kanal_adi(r).lower():
             continue
         secilen.append(hedefe_uyarla(r, cfg))
