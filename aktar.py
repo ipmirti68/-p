@@ -536,28 +536,23 @@ def main():
             print("  [ATLANDI] Kaynakta M3U kaydı bulunamadı.")
             continue
 
-       # DEBUG: Kaynakta hangi gruplar var?
         if cfg.get("kaynak_grup"):
-           kaynak_gruplar = sorted(set(grup_bul(r) for r in kaynak_records if grup_bul(r)))
-    print(f"  [DEBUG] Kaynakta {len(kaynak_gruplar)} grup var")
-
-         # 1. Önce eşleşenleri göster - bu en önemlisi
-         eslesen = [gg for gg in kaynak_gruplar if grup_eslesiyor_mu(gg, cfg["kaynak_grup"])]
-        if eslesen:
-        print(f"  [DEBUG] Eşleşen kaynak grupları: {eslesen}")
-       else:
-        print(f"  [UYARI] '{cfg['kaynak_grup']}' ile eşleşen grup bulunamadı!")
-
-        # Eşleşme yoksa, içinde aranan kelime geçenleri göster
-        # Örn: Spor-Avva arıyorsan Spor geçen hepsini listele
-        anahtar = normalize(cfg["kaynak_grup"]).split()[0] if normalize(cfg["kaynak_grup"]) else ""
-        if anahtar:
-            benzerler = [gg for gg in kaynak_gruplar if anahtar in normalize(gg)]
-            print(f"  [DEBUG] '{anahtar}' içeren gruplar (hepsi):")
-            for gg in benzerler:
-                print(f"    - {gg}  -> normalize: '{normalize(gg)}'")
-            print(f"  [DEBUG] Aranan normalize: '{normalize(cfg['kaynak_grup'])}'")
-
+            kaynak_gruplar = sorted(set(grup_bul(r) for r in kaynak_records if grup_bul(r)))
+            print(f"  [DEBUG] Kaynakta {len(kaynak_gruplar)} grup var")
+            eslesen = [gg for gg in kaynak_gruplar if grup_eslesiyor_mu(gg, cfg["kaynak_grup"])]
+            if eslesen:
+                print(f"  [DEBUG] Eşleşen kaynak grupları: {eslesen}")
+            else:
+                print(f"  [UYARI] '{cfg['kaynak_grup']}' ile eşleşen grup bulunamadı!")
+                anahtar = normalize(cfg["kaynak_grup"]).split()[0] if normalize(cfg["kaynak_grup"]) else ""
+                if anahtar:
+                    benzerler = [gg for gg in kaynak_gruplar if anahtar in normalize(gg)]
+                    print(f"  [DEBUG] '{anahtar}' içeren gruplar (hepsi):")
+                    for gg in benzerler:
+                        print(f"    - {gg}  -> normalize: '{normalize(gg)}'")
+                    print(f"  [DEBUG] Aranan normalize: '{normalize(cfg['kaynak_grup'])}'")
+              
+         
         try:
             secilen = kaynak_sec(kaynak_records, cfg)
         except Exception as hata:
