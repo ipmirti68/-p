@@ -370,6 +370,14 @@ http://mekantv56.win/live/akifalioglu33/33akifalioglu/37cbf863-1460-4b5b-90d3-ff
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/55520b91-9b37-4149-9254-07700b623283.ts
 #EXTINF:-1 tvg-id="KANAL.7.tr" tvg-name="TR:KANAL 7 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanal7.png" group-title="🟨◆ ULUSALᴴᴰ⁺⭕",TR:KANAL 7 HD ⭕
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/6a62ba0b-d7f9-4f25-9b90-2466a9c9e020.ts
+#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HD [YEDEK] ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSALᴴᴰ⁺⭕",TR:TRT 1 HD [YEDEK] ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/aea62a30-956a-4c9a-a868-c4c04443cb5f.ts
+#EXTINF:-1 tvg-id="TV.8,5.tr" tvg-name="TR:TV 8.5 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv85.png" group-title="🟨◆ ULUSALᴴᴰ⁺⭕",TR:TV 8.5 HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7d6b0ed1-410e-4028-a7d7-bf65b4e63345.ts
+#EXTINF:-1 tvg-id="ATV.Avrupa.ch" tvg-name="TR:ATV AVRUPA HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/atveuro.png" group-title="🟨◆ ULUSALᴴᴰ⁺⭕",TR:ATV AVRUPA HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/30a9c801-5672-4f9b-a615-c63f00043e9f.ts
+#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 INT HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8int.png" group-title="🟨◆ ULUSALᴴᴰ⁺⭕",TR:TV 8 INT HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6b530b2d-cafe-471b-8077-a7965076dd0f.ts
 #EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
 https://css.d6e3eds5e065t5.help//hls/arda.m3u8
 #EXTINF:0 tvg-id="KANAL.D.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/kanal-d-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",Kanal D ⭕
@@ -382,6 +390,8 @@ https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
 https://css.d6e3eds5e065t5.help//hls/arda.m3u8
 #EXTINF:0 tvg-id="SHOW.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/show-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",SHOW TV ⭕
 https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_720p.m3u8
+#EXTINF:0 tvg-id="STAR.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/star-tv-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",Star TV ⭕
+https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8laoxi44qj2k&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
 #EXTINF:-1 tvg-name="TRT 1 HD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/trt1.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 1 HD ⭕
 http://92.5.166.217/trt1
 #EXTINF:-1 tvg-name="ATV FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/aa/atv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",ATV FHD ⭕
@@ -683,6 +693,20 @@ https://andro.evrenesoglu237.click/checklist/androstreamliveexn.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1ᴳᴴᴰ Mahsun ⭕
 #EXTVLCOPT:http-referrer=https://mahsunsports22.xyz/
 https://andro.evrenesoglu237.click/checklist/androstreamliveexn1.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 1 ⭕ Atom
+https://css.d6e3eds5e065t5.help//hls/b1.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 2 ⭕ Atom
+https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 3 ⭕ Atom
+https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 4 ⭕ Atom
+https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports 5 ⭕ Atom
+https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports Max 1 ⭕ Atom
+https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports Max 2 ⭕ Atom
+https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS ⭕",beIN SPORTS 1 Mırtıspor
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",S SPORTS 1 Mahsun ⭕
@@ -907,34 +931,110 @@ http://31.43.191.142:8080/191703089055131/01703089055686/62810
 http://31.43.191.142:8080/191703089055131/01703089055686/62811
 #EXTINF:-1 tvg-id="" tvg-name="TR: BEIN CONNECT HD 5 1️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN CONNECT HD 5 1️⃣⭕
 http://31.43.191.142:8080/191703089055131/01703089055686/62812
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 1 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 1 FHD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 1 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 1 FHD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529214.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 1 FHD 50 FPS 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 1 FHD 50 FPS 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 1 FHD 50 FPS 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 1 FHD 50 FPS 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529215.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 2 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 2 FHD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 2 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 2 FHD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529216.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 2 HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 2 HD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 2 HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 2 HD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529217.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 3 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 3 FHD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 3 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 3 FHD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529218.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 3 HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 3 HD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 3 HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 3 HD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529219.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 4 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 4 FHD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 4 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 4 FHD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529220.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 4 HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 4 HD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 4 HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 4 HD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529221.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 5 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 5 FHD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 5 FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 5 FHD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529222.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 5 HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 5 HD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 5 HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 5 HD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529223.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="BEİNSPORT MAX 1 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEİNSPORT MAX 1 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="BEİNSPORT MAX 1 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEİNSPORT MAX 1 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529224.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="BEİN SPORT MAX 2 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEİN SPORT MAX 2 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="BEİN SPORT MAX 2 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEİN SPORT MAX 2 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529225.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS HABER FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS HABER FHD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS HABER FHD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS HABER FHD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529226.m3u8
-#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS HABER HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.pnghttps://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS HABER HD 2️⃣⭕
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS HABER HD 2️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS HABER HD 2️⃣⭕
 http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529227.m3u8
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: beIN SPORTS 1 SD/MOBIL 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 1 SD/MOBIL 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/84
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: beIN SPORTS 1 HD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 1 HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/89
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: beIN SPORTS 1 FHD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 1 FHD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/77238
+#EXTINF:-1 tvg-id="beIN SPORTS" tvg-name="TR: Bein Sports 1 (Yuksek Kalite) Mac Zamani 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: Bein Sports 1 (Yuksek Kalite) Mac Zamani 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/237081
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: BEIN SPORTS 2 SD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 2 SD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/116675
+#EXTINF:-1 tvg-id="beIN SPORTS 2" tvg-name="TR: BEIN SPORTS 2 HD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 2 HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/31408
+#EXTINF:-1 tvg-id="beIN SPORTS 2" tvg-name="TR: beIN SPORTS 2 FHD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 2 FHD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/87
+#EXTINF:-1 tvg-id="beIN SPORTS 2" tvg-name="TR: Bein Sports 2 (Yuksek Kalite) Mac Zamani 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: Bein Sports 2 (Yuksek Kalite) Mac Zamani 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/223132
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: BEIN SPORTS 3 SD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 3 SD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/116676
+#EXTINF:-1 tvg-id="beIN SPORTS 3" tvg-name="TR: BEIN SPORTS 3 HD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 3 HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/31409
+#EXTINF:-1 tvg-id="beIN SPORTS 3" tvg-name="TR: beIN SPORTS 3 FHD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 3 FHD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/31407
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: BEIN SPORTS 4 SD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 4 SD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/116677
+#EXTINF:-1 tvg-id="beIN SPORTS 4" tvg-name="TR: beIN SPORTS 4 HD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 4 HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/81
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: beIN SPORTS 4 FHD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 4 FHD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/353187
+#EXTINF:-1 tvg-id="beIN SPORTS 4" tvg-name="TR: Bein Sports 4 (Yuksek Kalite) Mac Zamani 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: Bein Sports 4 (Yuksek Kalite) Mac Zamani 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/223134
+#EXTINF:-1 tvg-id="" tvg-name="TR: beIN SPORTS 5 SD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 5 SD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/353211
+#EXTINF:-1 tvg-id="beIN SPORTS 5" tvg-name="TR: beIN SPORTS 5 HD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 5 HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/172690
+#EXTINF:-1 tvg-id="" tvg-name="TR: beIN SPORTS 5 FHD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS 5 FHD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/353212
+#EXTINF:-1 tvg-id="beIN SPORTS 5" tvg-name="TR: Bein Sports 5 (Yuksek Kalite) Mac Zamani 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: Bein Sports 5 (Yuksek Kalite) Mac Zamani 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/223135
+#EXTINF:-1 tvg-id="beIN SPORTS MAX 1" tvg-name="TR: beIN SPORTS MAX 1 HD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS MAX 1 HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/79
+#EXTINF:-1 tvg-id="beIN SPORTS MAX 1" tvg-name="TR: beIN SPORTS MAX 1 FHD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS MAX 1 FHD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/80
+#EXTINF:-1 tvg-id="beIN SPORTS MAX 2" tvg-name="TR: beIN SPORTS MAX 2 HD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS MAX 2 HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/77
+#EXTINF:-1 tvg-id="beIN SPORTS MAX 2" tvg-name="TR: beIN SPORTS MAX 2 FHD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS MAX 2 FHD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/78
+#EXTINF:-1 tvg-id="beIN SPORTS HABER" tvg-name="TR: beIN SPORTS HABER HD 3️⃣⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN SPORTS HABER HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/76
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 1 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports1
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 1 (720P) 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports1720p
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 1 (720PFEED) 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports1720pfeed
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 1 [LIVE DURING EVENTS ONLY] 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports1liveduringeventsonly
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 1 + 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports1plus
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 1 50 FPS 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports150fps
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 1 FEED 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports1feed
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 1 H265 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports1h265
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 1 HD (TURKEY) 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports1hdturkey
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 720P FEED 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports720pfeed
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 8K FEED 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports8kfeed
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS FEED (OZEL FEED YAYIN) 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsportsfeedozelfeedyayin
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 4K FEED(KUTU) 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports4kfeedkutu
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 4K FEED(UYDU) 4️⃣⭕
+https://aktif-q65v.onrender.com/play/beinsports4kfeeduydu
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
