@@ -55,7 +55,7 @@ AKTARIMLAR = [
   {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
         "kaynak_grup": "",
-        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
+        "aranacak": "trt 1, atv, show tv, kanal d, star, now, kanal 7. tv 8",
         "hedef_grup": "🟨◆ ULUSALᴴᴰ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
@@ -64,7 +64,7 @@ AKTARIMLAR = [
 {
         "kaynak_url": "https://raw.githubusercontent.com/Kral-Turk/Kral-Turk-TV/refs/heads/main/TURK_TV.m3u_plus",
         "kaynak_grup": "TR ULUSAL-UHD",
-        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
+        "aranacak": "",
         "hedef_grup": "🟨◆ ULUSALᶠᴴᴰ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
