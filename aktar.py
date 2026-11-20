@@ -332,8 +332,10 @@ def aranacak_parcala(raw):
     s_low=s.lower()
     for ik in ["kanal d","kanal 7","show tv","star tv","beyaz tv","tv 8","tv 8.5","a2 tv","trt 1"]:
         if ik in s_low: s_low=s_low.replace(ik, ik.replace(" ","_"))
-    if any(x in s_low for x in [",",";","|","\n"]): par=re.split(r"[,;|\n]+", s_low)
-    else: par=s_low.split()
+    if any(x in s_low for x in [",",";","|","\n"]):
+        par=re.split(r"[,;|\n]+", s_low)
+    else:
+        par=[s_low]  # <-- ESKİSİ: s_low.split() idi, BUNU DEĞİŞTİR
     return [normalize(p.strip().replace("_"," ")) for p in par if p.strip()]
 
 def kanal_kok(ad_n):
@@ -365,11 +367,14 @@ def kaynak_sec(records,cfg):
             kok_nospace = kok.replace(" ","")
             ok=False
             for ana in liste:
-                if kok==ana or kok_nospace==ana.replace(" ",""): ok=True; break
+                ana_nospace = ana.replace(" ","")
+                if kok==ana or kok_nospace==ana_nospace or kok.startswith(ana+" ") or kok_nospace.startswith(ana_nospace):
+                    ok=True; break
             if not ok: continue
         if "bilgilendirme" in kanal_adi(r).lower(): continue
         out.append(hedefe_uyarla(r,cfg))
     return out
+    
 
 def grubu_birlestir(hedef_records, secilen, hedef_grup):
     gelen={}
