@@ -264,15 +264,19 @@ def grup_baslangici(grup_adi):
     return g.split()[0] if g.split() else ""
 
 def grup_eslesiyor_mu(kaynak_grup, hedef_kaynak_grup):
-    """Esnek eşleşme: birebir değil, içinde geçiyor mu?"""
+    """KATİ eşleşme: Spor != Spor-Avva"""
     if not hedef_kaynak_grup:
         return True
     n_kaynak = normalize(kaynak_grup)
     n_hedef = normalize(hedef_kaynak_grup)
     if not n_kaynak:
         return False
-    # İki yönlü kontrol: biri diğerinin içindeyse kabul et
-    return n_hedef in n_kaynak or n_kaynak in n_hedef
+    # Sadece normalize edilmiş hali birebir aynıysa kabul et
+    # Spor -> "spor"
+    # Spor-Avva -> "spor avva"  -> EŞİT DEĞİL, almaz
+    # Spor - Avva -> "spor avva" -> EŞİT, alır
+    # TR | ULUSAL -> "tr ulusal" -> EŞİT, alır
+    return n_kaynak == n_hedef
 
 # ==================================================
 # M3U OKUMA
