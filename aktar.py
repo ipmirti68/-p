@@ -208,8 +208,6 @@ def normalize(s):
     """Grup / isim karşılaştırması için normalize et."""
     s = (s or "").lower().strip()
     # Türkçe karakterleri sadeleştir
-    tr_map = str.maketrans("ıi̇öüçğş", "iiou cgs".replace(" ", ""))  # dikkat: aşağıda manuel yapıyoruz
-    # Daha güvenli manuel çevrim:
     cevir = {
         "ı": "i", "İ": "i", "i": "i",
         "ö": "o", "Ö": "o",
