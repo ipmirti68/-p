@@ -104,7 +104,7 @@ AKTARIMLAR = [
         "aranacak": "",
         "hedef_grup": "🟪◆  7/24 DİZİ ⭕",
         "hedef_logo": "",
-        "ek_kod": "⭕",
+        "ek_kod": "⭕ᴴᴰ",
     },
 
 
