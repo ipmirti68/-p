@@ -105,14 +105,7 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
 
-    {
-        "kaynak_url":  "https://tinyurl.com/24lt9aqs",
-        "kaynak_grup": "",
-        "aranacak": "",
-        "hedef_grup": "🟪◆  YABANCI DİZİLER 📺⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
+
 
     {
         "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
