@@ -296,6 +296,16 @@ http://mekantv56.win/live/akifalioglu33/33akifalioglu/55520b91-9b37-4149-9254-07
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/6a62ba0b-d7f9-4f25-9b90-2466a9c9e020.ts
 #EXTINF:-1 tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",BİLGİLENDİRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
+#EXTINF:0 tvg-id="TRT.1.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/trt-1-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",TRT 1 ⭕
+https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:0 tvg-id="KANAL.D.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/kanal-d-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",Kanal D ⭕
+https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3
+#EXTINF:0 tvg-id="ATV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/atv-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",ATV ⭕
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
+#EXTINF:0 tvg-id="NOW.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/now-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",NOW ⭕
+https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",TRT 1 ⭕
+https://css.d6e3eds5e065t5.help//hls/arda.m3u8
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" tvg-logo="https://i.hizliresim.com/ljzg5ez.png" group-title="🟦◆   HABER 📰",SZC
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/144
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" group-title="🟦◆   HABER 📰",ÖZLEM GÜRSES
@@ -452,6 +462,176 @@ https://zeus645423.cfd/b4/index.txt
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 1 Mırtıspor (copy)
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS 1 SD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 1 SD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62813
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS 1 HD* 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 1 HD* 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62815
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS 1 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 1 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62817
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS 2 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 2 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62819
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS 3 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 3 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62821
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS 4 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 4 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62823
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS 5 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS 5 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62814
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS HABER HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS HABER HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62827
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS MAX 1 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS MAX 1 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62829
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN SPORTS MAX 2 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN SPORTS MAX 2 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62832
+#EXTINF:-1 tvg-id="" tvg-name="TR: BURSA SPOR TV 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BURSA SPOR TV 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62833
+#EXTINF:-1 tvg-id="" tvg-name="TR: EUROSPORT 1 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EUROSPORT 1 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62834
+#EXTINF:-1 tvg-id="" tvg-name="TR: EUROSPORT 2 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EUROSPORT 2 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62835
+#EXTINF:-1 tvg-id="" tvg-name="TR: EXXEN SPOR 2 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EXXEN SPOR 2 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62836
+#EXTINF:-1 tvg-id="" tvg-name="TR: EXXEN SPOR 3 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EXXEN SPOR 3 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62837
+#EXTINF:-1 tvg-id="" tvg-name="TR: EXXEN SPOR 4 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EXXEN SPOR 4 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62838
+#EXTINF:-1 tvg-id="" tvg-name="TR: EXXEN SPOR 5 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EXXEN SPOR 5 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62839
+#EXTINF:-1 tvg-id="" tvg-name="TR: EXXEN SPOR 6 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EXXEN SPOR 6 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62840
+#EXTINF:-1 tvg-id="" tvg-name="TR: EXXEN SPOR 7 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EXXEN SPOR 7 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62841
+#EXTINF:-1 tvg-id="" tvg-name="TR: EXXEN SPOR 8 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EXXEN SPOR 8 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62842
+#EXTINF:-1 tvg-id="" tvg-name="TR: FENERBAHCE TV 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: FENERBAHCE TV 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62851
+#EXTINF:-1 tvg-id="" tvg-name="TR: GALATASARAY ( GS ) TV HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: GALATASARAY ( GS ) TV HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62852
+#EXTINF:-1 tvg-id="" tvg-name="TR: HT SPOR HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: HT SPOR HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62853
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT +6 MAC SAATI AKTIF 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT +6 MAC SAATI AKTIF 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62854
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT 2 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT 2 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62856
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62858
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT PLUS+ 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT PLUS+ 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62859
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT PLUS+7 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT PLUS+7 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62860
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT PLUS+8 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT PLUS+8 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62861
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT PLUS+9 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT PLUS+9 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62862
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT+1 MAC SAATI 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT+1 MAC SAATI 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62869
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT+2 MAC SAATI 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT+2 MAC SAATI 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62870
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT+3 MAC SAATI 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT+3 MAC SAATI 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62871
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT+4 MAC SAATI 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT+4 MAC SAATI 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62872
+#EXTINF:-1 tvg-id="" tvg-name="TR: S SPORT+5 MAC SAATI 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: S SPORT+5 MAC SAATI 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62873
+#EXTINF:-1 tvg-id="" tvg-name="TR: SMART SPORT HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SMART SPORT HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62874
+#EXTINF:-1 tvg-id="" tvg-name="TR: SPOR SMART HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SPOR SMART HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62876
+#EXTINF:-1 tvg-id="" tvg-name="TR: SPOR SMART HEVC 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SPOR SMART HEVC 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62877
+#EXTINF:-1 tvg-id="" tvg-name="TR: SPORT SMART 2 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SPORT SMART 2 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62878
+#EXTINF:-1 tvg-id="" tvg-name="TR: SPORTS TV 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SPORTS TV 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62879
+#EXTINF:-1 tvg-id="" tvg-name="TR: SUPER TV 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SUPER TV 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62880
+#EXTINF:-1 tvg-id="" tvg-name="TR: SUPERLIG TV 1 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SUPERLIG TV 1 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62881
+#EXTINF:-1 tvg-id="" tvg-name="TR: SUPERLIG TV 2 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SUPERLIG TV 2 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62882
+#EXTINF:-1 tvg-id="" tvg-name="TR: SUPERLIG TV 3  ) 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SUPERLIG TV 3  ) 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62883
+#EXTINF:-1 tvg-id="" tvg-name="TR: SUPERLIG TV 4 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SUPERLIG TV 4 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62884
+#EXTINF:-1 tvg-id="" tvg-name="TR: TIVIBU SPOR 1 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: TIVIBU SPOR 1 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62893
+#EXTINF:-1 tvg-id="" tvg-name="TR: TIVIBU SPOR 2 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: TIVIBU SPOR 2 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62896
+#EXTINF:-1 tvg-id="" tvg-name="TR: TIVIBU SPOR 3 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: TIVIBU SPOR 3 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62899
+#EXTINF:-1 tvg-id="" tvg-name="TR: TIVIBU SPOR HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: TIVIBU SPOR HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62900
+#EXTINF:-1 tvg-id="" tvg-name="TR: TIVIBU SPOR-4 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: TIVIBU SPOR-4 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62901
+#EXTINF:-1 tvg-id="" tvg-name="TR: TRT 3 SPOR / TBMM TV 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: TRT 3 SPOR / TBMM TV 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62902
+#EXTINF:-1 tvg-id="" tvg-name="TR: TRT SPOR 2 HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: TRT SPOR 2 HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62904
+#EXTINF:-1 tvg-id="" tvg-name="TR: TRT SPOR HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: TRT SPOR HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62905
+#EXTINF:-1 tvg-id="" tvg-name="TR: TRT SPOR YILDIZ HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: TRT SPOR YILDIZ HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62908
+#EXTINF:-1 tvg-id="" tvg-name="TR: FILSPOR 1 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: FILSPOR 1 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62795
+#EXTINF:-1 tvg-id="" tvg-name="TR: FILSPOR 2 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: FILSPOR 2 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62796
+#EXTINF:-1 tvg-id="" tvg-name="TR: FILSPOR 3 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: FILSPOR 3 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62797
+#EXTINF:-1 tvg-id="" tvg-name="TR: FILSPOR 4 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: FILSPOR 4 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62798
+#EXTINF:-1 tvg-id="" tvg-name="TR: FILSPOR 5 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: FILSPOR 5 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62799
+#EXTINF:-1 tvg-id="" tvg-name="TR: FILSPOR 6 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: FILSPOR 6 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62800
+#EXTINF:-1 tvg-id="" tvg-name="TR: FILSPOR 7 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: FILSPOR 7 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62801
+#EXTINF:-1 tvg-id="" tvg-name="TR: - TRT SPOR 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: - TRT SPOR 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62802
+#EXTINF:-1 tvg-id="" tvg-name="TR: A SPOR 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: A SPOR 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62803
+#EXTINF:-1 tvg-id="" tvg-name="TR: A SPOR HD 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: A SPOR HD 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62805
+#EXTINF:-1 tvg-id="" tvg-name="TR: A SPOR HEVC 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: A SPOR HEVC 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62806
+#EXTINF:-1 tvg-id="" tvg-name="TR: BBEIN CONNECT HD 6 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BBEIN CONNECT HD 6 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62807
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN CONNECT HD 1 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN CONNECT HD 1 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62808
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN CONNECT HD 2 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN CONNECT HD 2 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62809
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN CONNECT HD 3 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN CONNECT HD 3 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62810
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN CONNECT HD 4 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN CONNECT HD 4 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62811
+#EXTINF:-1 tvg-id="" tvg-name="TR: BEIN CONNECT HD 5 1️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: BEIN CONNECT HD 5 1️⃣⭕
+http://31.43.191.142:8080/191703089055131/01703089055686/62812
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 1 FHD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 1 FHD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529214.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 1 FHD 50 FPS 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 1 FHD 50 FPS 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529215.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 2 FHD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 2 FHD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529216.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 2 HD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 2 HD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529217.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 3 FHD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 3 FHD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529218.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 3 HD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 3 HD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529219.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 4 FHD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 4 FHD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529220.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 4 HD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 4 HD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529221.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 5 FHD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 5 FHD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529222.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS 5 HD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 5 HD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529223.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="BEİNSPORT MAX 1 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEİNSPORT MAX 1 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529224.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="BEİN SPORT MAX 2 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEİN SPORT MAX 2 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529225.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS HABER FHD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS HABER FHD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529226.m3u8
+#EXTINF:-1 tvg-id="" tvg-name="beIN SPORTS HABER HD 2️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS HABER HD 2️⃣⭕
+http://ruzgarplayer.site:8080/live/KH6Rn39q4WpL/bnzSVts6Lner/529227.m3u8
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
