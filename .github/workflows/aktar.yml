@@ -28,10 +28,12 @@ jobs:
       - name: Aktar çalıştır
         run: python aktar.py
 
-      - name: Değişiklik varsa kaydet
+          - name: Degisikligi kaydet
         run: |
           git config user.name "mirti68-bot"
-          git config user.email "bot@mirti68.local"
-          git add mirti68.m3u
-          git diff --cached --quiet || git commit -m "auto aktar"
+          git config user.email "mirti68-bot@users.noreply.github.com"
+          git pull --rebase || true
+          git add mirti68.m3u hatali_url_listesi.txt || true
+          git diff --cached --quiet || git commit -m "Otomatik aktarim" || true
+          git push || echo "Push atlandi, sonraki calismada denenecek"
           git push
