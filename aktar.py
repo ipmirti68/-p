@@ -376,10 +376,17 @@ def kaynak_sec(records,cfg):
             kok = kanal_kok(normalize(kanal_adi(r)))
             kok_nospace = kok.replace(" ","")
             ok=False
-        for ana in liste:
-            ana = ana.replace("sports","sport")  # <-- bunu ekle
+         for ana in liste:
+            ana = ana.replace("sports","sport")
             ana_nospace = ana.replace(" ","")
-            if kok==ana or kok_nospace==ana_nospace or kok.startswith(ana+" ") or kok_nospace.startswith(ana_nospace):
+            # SIKI: ya tam eşit, ya ana + sayı, ya ana + max + sayı
+            # bein sport -> bein sport 1, bein sport max 1 OK
+            # bein sport -> s sport 1, tivibu sport 1 ASLA OLMAZ
+            if kok == ana or kok_nospace == ana_nospace:
+                ok=True; break
+                if re.match(rf"^{re.escape(ana)}(\s+(max\s+)?\d+)?$", kok):
+                    ok=True; break
+                if re.match(rf"^{re.escape(ana_nospace)}(max\d+|\d+)?$", kok_nospace):
                     ok=True; break
             if not ok: continue
         if "bilgilendirme" in kanal_adi(r).lower(): continue
