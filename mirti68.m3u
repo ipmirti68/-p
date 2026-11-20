@@ -414,8 +414,6 @@ https://zeus645423.cfd/b4/index.txt
 https://zeus645423.cfd/b4/index.txt
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS ⭕",beIN SPORTS 1 Mırtıspor
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
-#EXTINF:-1 tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟩◆ SPORTS ⭕",info
-https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 1 Mırtıspor (copy)
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
@@ -1706,3 +1704,131 @@ https://hls.ibb.gov.tr/tkm2/hls/399.stream/chunklist.m3u8
 #EXTVLCOPT:http-referrer=https://uym.ibb.gov.tr/
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/120.0.0.0 Safari/537.36"
 https://hls.ibb.gov.tr/ls/cam_turistik/b_taksim_meydan.stream/playlist.m3u8
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAEe_uV3D6uJDdj-LCpGpasZGqJOEZXmZBU1fsU0b3Hw&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",MUCİZE DOKTOR
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401707.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2bf2hBeXrbt09RSkXnTgOI-XpsXV_IuKqiAmNqAgVUw&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KURULUŞ OSMAN
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401704.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD-YBedG_wybeMvXL5amtT2QBtMLcLd_d5vN5mijwap31UO_pWjvNmo2I&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KURTLAR VADİSİ PUSU
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401703.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHYVjDOo8k5KCEd3wQSbLUG8rVgRk0XNrdbNSzMEsxLQ&s" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KURTLAR VADİSİ
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401702.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyXFKvQ2aGb3I2xlFgNeG20tYYIQaKKS-ljywNJheb9g&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KUDÜS FATİH SELAHATTİN EYYUBİ
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401701.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShIGfuai1yW9QcNJbBW9nTlxf67hcSqcbdSf5mh5ncpg&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KRAL KAYBEDERSE
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401700.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg69PGtG-t6WlBWRcv8Dxas1Nsp9ESDsXS2P1FDDshGQ&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KUZEY GÜNEY
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401705.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBt3JMdTz72r10Ifm_GLsksIZR7kdOI_MtAJXIpeIjXA&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KUZEY YILDIZI İLK AŞK
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401706.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqHRpL0tSW1k-wEXYQL_SxTn3riY-1c4UvGL3xTUegeA&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",MUHTEŞEM YÜZYIL
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401708.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnL7JkUc97l01u6da6W_225mamlkGGvh0JxF1G6fyd7w&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",POYRAZ KARAYEL
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401709.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZrcQbzobdVVnK7eHExJ63rR5ZT4TcD891bY40lcTq5A&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",RUHSAR
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401711.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMzVGEPd-gS3Fi4oRvg0aunTKZtwYRiYT7J3O8BugVeA&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",SEKSENLER
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401712.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBcKCgnhW16Af42RyMwTEm4mQgzqEXv3G7dM9J4fajtw&s" group-title="🟪◆ DİZİLER - 7/24 DİZİ",SIRLAR DÜNYASI
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401713.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNy2TndU4FIER45WCXY1zk67qEcrS0Rt92acUh8zitPg&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",SUSKUNLAR
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401714.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIyw7YJ77niuB3gdzczFcCe1QgiwJBbCnOECIbYTjizg&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",TATAR RAMAZAN
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401715.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg8ZKx3z0AEni-6eknio-EHrE2w-S2RiRpoq60ozF8dQ&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",ÜÇ KURUŞ
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401716.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWd5IJkfxsDyjL-1f0jGIR7GqCIpb5-TUoRwrwnQMR-A&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",VATANIM SENSİN
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401717.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5mKja1XAwdQkPZZGmcDaJfDdC5PFjvJXuydQF9VO_rw&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",YAHŞİ CAZİBE
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401718.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjW4S7yc1SsZdmxPgMMGM9RwaI2yQDF2CBh7wxiGX5WQ&s" group-title="🟪◆ DİZİLER - 7/24 DİZİ",YALAN DÜNYA
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401719.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJISvnRS3bknwMujMPL2Hy1e6kDwbgvyyfA3t97h1zg&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",YALI CAPKINI
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401720.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-zvmyMwomf1bKVsBIeoqdj7pKryn6zSIKhd7xhnT45t13PcVakJHUT4o-&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",YASAK ELMA
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401721.ts
+#EXTINF:-1 tvg-name="Dizi✦ Mucize Doktor" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-pLq_DfwM2qP6_1zmtVPDclJ1lJlebuFBkliDRz_EVQ&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",ZENGİN KIZ FAKİR OĞLAN
+http://4.438069.xyz:2086/live/@SeZR.12.11.22/2022xSezER.12.11@/401722.ts
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIXToIPQiXtNKYirCF25Pr8Hpjg8yOX2kRmA2oDUXydA&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",GADDAR
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/118197
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD-YBedG_wybeMvXL5amtT2QBtMLcLd_d5vN5mijwap31UO_pWjvNmo2I&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KURTLAR VADİSİ PUSU ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/85735
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHYVjDOo8k5KCEd3wQSbLUG8rVgRk0XNrdbNSzMEsxLQ&s" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KURTLAR VADİSİ ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/22167
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrE05pWJCiGFfTkWZSFzc3lxxYhUK4WRASmgnmLPF6kg&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",ÇUKUR ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/71883
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb4QfU_HYk0-IxiLGREJMQiNuJYBfVWh197qfAijCV3Q&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",İÇERDE ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/157782
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa-8A15XM2CidgyfxXFrrAHndDBj2xsAO-rfuojrFUMw&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",EZEL HD
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/101342
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_YwvLcTW_hr4yxWzYoltJUKciNL_-_Qna7SbRUGlgvg&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",AŞK-I MEMNU ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/67608
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK2FvQ42g4v0slFP4mq5iyIpNkYcDMBUGzx53TfoHSdA&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KUZEY & GÜNEY ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/162655
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1h5hg4glk2hP8KrG6vyHFvJXrdoU9Wu6fCm4i96LYqA&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",LEYLA ile MECNUN ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/162927
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwSWNLqamaoh_ndy-pG_Ob1oxA3rS-2cwNNs42ogl_Bg&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",AKASYA DURAĞI HD
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/19614
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4q0OixYnRLiG_0PZfDVD5AEycW03zZTnBiW-DP-lZ_w&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",GÜLDÜR GÜLDÜR  ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/16026
+#EXTINF:-1 tvg-logo="https://b6s54eznn8xq.merlincdn.net/Uploads/Films/cok-guzel-hareketler-2-202511214138177fabe52644475d81f489545ba718eb.png" group-title="🟪◆ DİZİLER - 7/24 DİZİ",ÇOK GÜZEL HAREKET BUNLAR 2 ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/80576
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSN1hUhkUea4tBbFo4GUzJIKq-YyKFYTtoUWLqNkWiXw&s" group-title="🟪◆ DİZİLER - 7/24 DİZİ",KARDEŞ PAYI
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/125836
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKZy4sHOCLMeEaHEPQNBb93rslLpP7yHfRSOcMbfiXjw&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",EDHO ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/75079
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQjdT5FYp-thjtqgt9oAr4Edhg-GJHYwhPujmIT-x-dQS-6rxBgUY8AZbO&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",CENNET MAHALLESİ ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/19108
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf-ksPUNH5UpiRKd1KtgfHvR2vwb1aqgYvuVEmFCNYfw&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",BİZİMKİLER HD
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/137561
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgB44FInziU4lbNCtCGq0PXrenhOnsuuJNCHJuUxTjXw&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",7 NUMARA HD
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/69784
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFKDuJVAgQL-SvS0Dx2atexX6xMBGVnODaFOTkb3HQ-A&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",SIFIR 1 ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/113875
+#EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZ1w1K2opW5-KtDj5uNquQE20sQJtDfQX2tsSX3OSpQ&s=10" group-title="🟪◆ DİZİLER - 7/24 DİZİ",SOKAĞIN COCUKLARI ʜᴅ
+http://sanslm0707pan.com:2095/cgdm4141/29012025cg41/58949
+#EXTINF:-1  tvg-name="Dizi | Gönül Dağı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/lZL5RSSgLSewP0pi8rK4znb9FYZ.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Gönül Dağı
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/211258.mp4
+#EXTINF:-1  tvg-name="Dizi | Mercan Köşk" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/AlrYhbKaN2QeETRpN6LavXIr9FE.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Mercan Köşk
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/224899.mp4
+#EXTINF:-1  tvg-name="Dizi | Teşkilat" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9fV7UwkvyxpNFeFe9HQqjY7Idzj.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Teşkilat
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/226996.mp4
+#EXTINF:-1  tvg-name="Dizi | Çirkin" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/aQQBZoC6PFaVuKksTdJiF2NPPMc.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Çirkin
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/234103.mp4
+#EXTINF:-1  tvg-name="Dizi | Altı Üstü İstanbul" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/qnImGr6hA1GJb0IBxulxoOswF6D.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Altı Üstü İstanbul
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/304435.mp4
+#EXTINF:-1  tvg-name="Dizi | Evlilik Güzeldir" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/kMEUr1CH5fGmeae3rVP4xDfD9t3.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Evlilik Güzeldir
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/312455.mp4
+#EXTINF:-1  tvg-name="Dizi | Muhtemel Aşk" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/9dWX56kVLJ47MG6axiTAFdf035k.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Muhtemel Aşk
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/319366.mp4
+#EXTINF:-1  tvg-name="Dizi | Aşk ve Taht" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/7ffVYsJZKXTRE3CSdu53PnHOhat.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Aşk ve Taht
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/357694.mp4
+#EXTINF:-1  tvg-name="Dizi | Kızılcık Şerbeti" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/fXATVTtJDNizWjKpHgJEZegr6R2.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Kızılcık Şerbeti
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390213.mp4
+#EXTINF:-1  tvg-name="Dizi | Uzak Şehir" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/E8tR39iX2XNZdqeDA5REFDquU6.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Uzak Şehir
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390397.mp4
+#EXTINF:-1  tvg-name="Dizi | Tuzlu Kahve" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/iXgalcTI4nBc4Dw0Ef4LevCz1Qp.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Tuzlu Kahve
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390664.mp4
+#EXTINF:-1  tvg-name="Dizi | Mehmed: Fetihler Sultanı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/gLGXHS3o0BuJhd3wDTTYddrRsxZ.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Mehmed: Fetihler Sultanı
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390665.mp4
+#EXTINF:-1  tvg-name="Dizi | Halef: Köklerin Çağrısı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/sQTx2hiwi9CmRYyt6CAV5sf8C1T.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Halef: Köklerin Çağrısı
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390913.mp4
+#EXTINF:-1  tvg-name="Dizi | A.B.İ." tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/mGnrjWWi6ZeXlt0U3Ky8gzpOhO3.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | A.B.İ.
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/390935.mp4
+#EXTINF:-1  tvg-name="Dizi | Güller ve Günahlar" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/3Qwhs7xxf9LILllWLnxbSaCBNDf.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Güller ve Günahlar
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392022.mp4
+#EXTINF:-1  tvg-name="Dizi | Daha 17" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/erd75Gon5bXL38kngnH6DCrOUj2.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Daha 17
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392075.mp4
+#EXTINF:-1  tvg-name="Dizi | Haysiyet" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/1N3EctW7cweMUbq3aQZyV0GEEZH.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Haysiyet
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392708.mp4
+#EXTINF:-1  tvg-name="Dizi | Anne Yarısı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/kSTdVwURCDjqIQmYrVeTZIFXxzE.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Anne Yarısı
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/392762.mp4
+#EXTINF:-1  tvg-name="Dizi | Yeraltı SEZON FINALI" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/bu8ks983hBPEzyAH8gSATW5aPJ7.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Yeraltı SEZON FINALI
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/401936.mp4
+#EXTINF:-1  tvg-name="Dizi | Sevdan Bir Ateş" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/pmHRDFAZukHw089H58c6b6EUilQ.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Sevdan Bir Ateş
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/402292.mp4
+#EXTINF:-1  tvg-name="Dizi | Sevdiğim Sensin" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/eVMb930nCNRYGhPlAVRI5hsMdAz.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Sevdiğim Sensin
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/410378.mp4
+#EXTINF:-1  tvg-name="Başkalarının Hayatı" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/hjeB5dW5QKdBtlzS3FZrqqDHXNi.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Başkalarının Hayatı
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/450972.mp4
+#EXTINF:-1  tvg-name="Dizi | Güneşin Doğduğu Yer" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/9SBRjlJd6ntwY4fe0yVhLHzvztR.jpg" group-title="🟪◆ DİZİLER - GÜNCEL DİZİLER",Dizi | Güneşin Doğduğu Yer
+http://4.438069.xyz:2086/movie/@SeZR.12.11.22/2022xSezER.12.11@/410099.mp4
