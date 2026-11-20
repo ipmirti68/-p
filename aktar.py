@@ -1,18 +1,7 @@
 # ==================================================
 # MIRTI68 - TEK AKTARICI - KOMPLE DÜZELTİLMİŞ
 # HATALI URL ATLA - ÇALIŞANLARA DEVAM ET
-#
-# - 403 / 404 / 500 hatalarında durmaz
-# - Zaman aşımında durmaz
-# - Boş kaynakları atlar
-# - Aynı isimli grupları birleştirir
-# - Eski kanalları korur
-# - Aynı isimli kanalları yeni linkle günceller
-# - Yeni kanalları ekler
-# - Benzer renk grubunun altına ekler
-# - EPG ve diğer EXTINF bilgilerini korur
-# - İşlem sonunda yedek oluşturur
-# - Grup ismi esnek eşleşir (büyük/küçük, boşluk, | farkı önemsemez)
+# HATALI URL'LERİ EN SONDA LİSTELE
 # ==================================================
 
 import re
@@ -29,7 +18,6 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrom
 TIMEOUT = 30
 
 AKTARIMLAR = [
-
 
      {
         "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
@@ -186,10 +174,6 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
      
-
-
-
-
 ]
 
 # ==================================================
@@ -197,9 +181,7 @@ AKTARIMLAR = [
 # ==================================================
 
 def normalize(s):
-    """Grup / isim karşılaştırması için normalize et."""
     s = (s or "").lower().strip()
-    # Türkçe karakterleri sadeleştir
     cevir = {
         "ı": "i", "İ": "i", "i": "i",
         "ö": "o", "Ö": "o",
@@ -226,12 +208,6 @@ def kanal_adi(rec):
             return l.split(",", 1)[-1].strip()
     return ""
 
-def extinf_bul(rec):
-    for l in rec:
-        if l.startswith("#EXTINF:"):
-            return l
-    return ""
-
 def temiz_isim(ad):
     ad = (ad or "").lower().strip()
     for son_ek in ["⭕ atom", "⭕", "atom"]:
@@ -243,46 +219,28 @@ def temiz_isim(ad):
     return ad.strip().rstrip("-").strip()
 
 def grup_baslangici(grup_adi):
-    """Örn: 🟨◆ ULUSAL -> 🟨◆  |  🟪◆ DİZİLER -> 🟪◆"""
     g = (grup_adi or "").strip()
     if not g:
         return ""
-    # İlk 2 karakter genelde renk + ◆ oluyor: 🟨◆ / 🟪◆
-    # Emoji 1 karakter sayılmayabilir, bu yüzden ◆'ya kadar al
     if "◆" in g:
         idx = g.find("◆")
         return g[:idx + 1].strip()
-    # ◆ yoksa ilk kelime
     return g.split()[0] if g.split() else ""
 
 def grup_eslesiyor_mu(kaynak_grup, hedef_kaynak_grup):
-    """KATİ eşleşme: Spor != Spor-Avva"""
     if not hedef_kaynak_grup:
         return True
     n_kaynak = normalize(kaynak_grup)
     n_hedef = normalize(hedef_kaynak_grup)
     if not n_kaynak:
         return False
-    # Sadece normalize edilmiş hali birebir aynıysa kabul et
-    # Spor -> "spor"
-    # Spor-Avva -> "spor avva"  -> EŞİT DEĞİL, almaz
-    # Spor - Avva -> "spor avva" -> EŞİT, alır
-    # TR | ULUSAL -> "tr ulusal" -> EŞİT, alır
     return n_kaynak == n_hedef
-
-# ==================================================
-# M3U OKUMA
-# ==================================================
 
 def oku_m3u(path_or_url):
     if path_or_url.startswith("http"):
         req = urllib.request.Request(
             path_or_url,
-            headers={
-                "User-Agent": USER_AGENT,
-                "Accept": "*/*",
-                "Connection": "close",
-            }
+            headers={"User-Agent": USER_AGENT, "Accept": "*/*", "Connection": "close"}
         )
         with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
             veri = r.read()
@@ -292,13 +250,9 @@ def oku_m3u(path_or_url):
             raise FileNotFoundError(path_or_url)
         with open(path_or_url, "rb") as f:
             metin = f.read().decode("utf-8-sig", errors="ignore")
-
     newline = "\r\n" if "\r\n" in metin else "\n"
     satirlar = metin.splitlines()
-    ilk = next(
-        (i for i, s in enumerate(satirlar) if s.startswith("#EXTINF:")),
-        len(satirlar)
-    )
+    ilk = next((i for i, s in enumerate(satirlar) if s.startswith("#EXTINF:")), len(satirlar))
     baslik = satirlar[:ilk]
     govde = satirlar[ilk:]
     records = []
@@ -312,86 +266,38 @@ def oku_m3u(path_or_url):
         records.append(cur)
     return baslik, records, newline, "utf-8"
 
-# ==================================================
-# KAYIT DÜZENLEME
-# ==================================================
-
 def hedefe_uyarla(rec, cfg):
     yeni_rec = list(rec)
-    extinf_index = next(
-        (i for i, x in enumerate(yeni_rec) if x.startswith("#EXTINF:")),
-        None
-    )
+    extinf_index = next((i for i, x in enumerate(yeni_rec) if x.startswith("#EXTINF:")), None)
     if extinf_index is None:
         return yeni_rec
     extinf = yeni_rec[extinf_index]
     ad = extinf.split(",", 1)[-1].strip()
     hedef_grup = cfg["hedef_grup"]
-
-    # HEDEF GRUP
     if 'group-title="' in extinf:
-        extinf = re.sub(
-            r'group-title="[^"]*"',
-            lambda m: f'group-title="{hedef_grup}"',
-            extinf,
-            count=1
-        )
+        extinf = re.sub(r'group-title="[^"]*"', lambda m: f'group-title="{hedef_grup}"', extinf, count=1)
     else:
-        extinf = re.sub(
-            r'(#EXTINF:-?\d+)',
-            lambda m: m.group(1) + f' group-title="{hedef_grup}"',
-            extinf,
-            count=1
-        )
-
-    # HEDEF LOGO
+        extinf = re.sub(r'(#EXTINF:-?\d+)', lambda m: m.group(1) + f' group-title="{hedef_grup}"', extinf, count=1)
     logo = cfg.get("hedef_logo", "")
     if logo:
         if 'tvg-logo="' in extinf:
-            extinf = re.sub(
-                r'tvg-logo="[^"]*"',
-                lambda m: f'tvg-logo="{logo}"',
-                extinf,
-                count=1
-            )
+            extinf = re.sub(r'tvg-logo="[^"]*"', lambda m: f'tvg-logo="{logo}"', extinf, count=1)
         else:
-            extinf = re.sub(
-                r'(#EXTINF:-?\d+)',
-                lambda m: m.group(1) + f' tvg-logo="{logo}"',
-                extinf,
-                count=1
-            )
-
-    # EK KOD
+            extinf = re.sub(r'(#EXTINF:-?\d+)', lambda m: m.group(1) + f' tvg-logo="{logo}"', extinf, count=1)
     ek = (cfg.get("ek_kod") or "").strip()
     if ek:
         if "=" in ek:
             anahtar = ek.split("=")[0].strip()
             if anahtar not in extinf:
-                extinf = re.sub(
-                    r'(#EXTINF:-?\d+)',
-                    lambda m: m.group(1) + f' {ek}',
-                    extinf,
-                    count=1
-                )
+                extinf = re.sub(r'(#EXTINF:-?\d+)', lambda m: m.group(1) + f' {ek}', extinf, count=1)
         else:
             if not ad.endswith(ek) and ek not in ad:
                 yeni_ad = f"{ad} {ek}"
                 if 'tvg-name="' in extinf:
-                    extinf = re.sub(
-                        r'tvg-name="[^"]*"',
-                        lambda m: f'tvg-name="{yeni_ad}"',
-                        extinf,
-                        count=1
-                    )
+                    extinf = re.sub(r'tvg-name="[^"]*"', lambda m: f'tvg-name="{yeni_ad}"', extinf, count=1)
                 extinf = extinf.rsplit(",", 1)[0] + "," + yeni_ad
-
     yeni_rec[extinf_index] = extinf
     return yeni_rec
-
-# ==================================================
-# KAYNAK FİLTRELEME
-# ==================================================
 
 def kaynak_sec(kaynak_records, cfg):
     aranacak = cfg.get("aranacak", "").strip().lower()
@@ -399,25 +305,18 @@ def kaynak_sec(kaynak_records, cfg):
     secilen = []
     for r in kaynak_records:
         g = grup_bul(r)
-        # DÜZELTME: birebir yerine esnek eşleşme
         if kaynak_grup and not grup_eslesiyor_mu(g, kaynak_grup):
             continue
         if aranacak:
             ad = kanal_adi(r).lower()
             url = " ".join(r).lower()
-            # aranacak için de normalize + esnek bak
             if normalize(aranacak) not in normalize(ad) and normalize(aranacak) not in normalize(url):
-                # Eski davranışa da bak (Korea -> korea gibi)
                 if aranacak not in ad and aranacak not in url:
                     continue
         if "bilgilendirme" in kanal_adi(r).lower():
             continue
         secilen.append(hedefe_uyarla(r, cfg))
     return secilen
-
-# ==================================================
-# GRUP BİRLEŞTİRME
-# ==================================================
 
 def grubu_birlestir(hedef_records, secilen, hedef_grup):
     gelen = {}
@@ -427,14 +326,11 @@ def grubu_birlestir(hedef_records, secilen, hedef_grup):
             gelen[isim] = r
     yeni_kayitlar = []
     gorulen = set()
-    ilk = None
     son = None
     for r in hedef_records:
         if grup_bul(r) != hedef_grup:
             yeni_kayitlar.append(r)
             continue
-        if ilk is None:
-            ilk = len(yeni_kayitlar)
         isim = temiz_isim(kanal_adi(r))
         if isim in gelen:
             yeni_kayitlar.append(gelen[isim])
@@ -457,18 +353,10 @@ def grubu_birlestir(hedef_records, secilen, hedef_grup):
     return yeni_kayitlar
 
 def benzer_grubun_bitisini_bul(hedef_records, hedef_baslangic):
-    """Benzer renk grubunun bittiği indexi bul. Dağınık gruplarda en son benzeri bulur."""
-    benzer_indexler = [
-        i for i, r in enumerate(hedef_records)
-        if grup_baslangici(grup_bul(r)) == hedef_baslangic and grup_bul(r)
-    ]
+    benzer_indexler = [i for i, r in enumerate(hedef_records) if grup_baslangici(grup_bul(r)) == hedef_baslangic and grup_bul(r)]
     if not benzer_indexler:
         return None
-    # En son benzer grubun indexi
-    son_benzer = max(benzer_indexler)
-    # O gruptan sonra aynı prefix devam ediyorsa ilerle, yoksa orada bitir
-    # Basit ve güvenli: en son benzer kaydın hemen sonrası
-    return son_benzer
+    return max(benzer_indexler)
 
 # ==================================================
 # ANA İŞLEM
@@ -494,6 +382,20 @@ def main():
     hatali = 0
     eklenen_toplam = 0
 
+    # YENİ EKLENDİ: Hatalı URL'leri burada toplayacağız
+    hatali_url_listesi = []
+
+    def hata_ekle(cfg, sebep):
+        # Şifreyi logda gizle, sadece domain + hedef grup göster
+        ham_url = cfg.get("kaynak_url", "")
+        temiz_url = ham_url.split("?")[0]
+        hatali_url_listesi.append({
+            "hedef_grup": cfg.get("hedef_grup", "?"),
+            "kaynak_grup": cfg.get("kaynak_grup", ""),
+            "url": temiz_url,
+            "sebep": str(sebep),
+        })
+
     for sira, cfg in enumerate(AKTARIMLAR, 1):
         url = cfg["kaynak_url"]
         print(f"\n[{sira}/{len(AKTARIMLAR)}] KAYNAK:")
@@ -506,26 +408,35 @@ def main():
             _, kaynak_records, _, _ = oku_m3u(url)
         except urllib.error.HTTPError as hata:
             hatali += 1
-            print(f"  [ATLANDI] HTTP {hata.code}")
+            sebep = f"HTTP {hata.code} - {hata.reason}"
+            hata_ekle(cfg, sebep)
+            print(f"  [ATLANDI] {sebep}")
             print("  [DEVAM] Sonraki kaynağa geçiliyor.")
             continue
         except urllib.error.URLError as hata:
             hatali += 1
-            print(f"  [ATLANDI] Bağlantı hatası: {hata.reason}")
-            print("  [DEVAM] Sonraki kaynağa geçiliyor.")
+            sebep = f"Bağlantı hatası: {hata.reason}"
+            hata_ekle(cfg, sebep)
+            print(f"  [ATLANDI] {sebep}")
             continue
         except (TimeoutError, socket.timeout) as hata:
             hatali += 1
-            print(f"  [ATLANDI] Zaman aşımı: {hata}")
+            sebep = f"Zaman aşımı: {hata}"
+            hata_ekle(cfg, sebep)
+            print(f"  [ATLANDI] {sebep}")
             continue
         except Exception as hata:
             hatali += 1
-            print(f"  [ATLANDI] {type(hata).__name__}: {hata}")
+            sebep = f"{type(hata).__name__}: {hata}"
+            hata_ekle(cfg, sebep)
+            print(f"  [ATLANDI] {sebep}")
             continue
 
         if not kaynak_records:
             hatali += 1
-            print("  [ATLANDI] Kaynakta M3U kaydı bulunamadı.")
+            sebep = "Kaynakta M3U kaydı bulunamadı (boş dosya)"
+            hata_ekle(cfg, sebep)
+            print(f"  [ATLANDI] {sebep}")
             continue
 
         if cfg.get("kaynak_grup"):
@@ -536,85 +447,56 @@ def main():
                 print(f"  [DEBUG] Eşleşen kaynak grupları: {eslesen}")
             else:
                 print(f"  [UYARI] '{cfg['kaynak_grup']}' ile eşleşen grup bulunamadı!")
-                anahtar = normalize(cfg["kaynak_grup"]).split()[0] if normalize(cfg["kaynak_grup"]) else ""
-                if anahtar:
-                    benzerler = [gg for gg in kaynak_gruplar if anahtar in normalize(gg)]
-                    print(f"  [DEBUG] '{anahtar}' içeren gruplar (hepsi):")
-                    for gg in benzerler:
-                        print(f"    - {gg}  -> normalize: '{normalize(gg)}'")
-                    print(f"  [DEBUG] Aranan normalize: '{normalize(cfg['kaynak_grup'])}'")
-              
-         
+
         try:
             secilen = kaynak_sec(kaynak_records, cfg)
         except Exception as hata:
             hatali += 1
-            print(f"  [ATLANDI] Filtreleme hatası: {hata}")
+            sebep = f"Filtreleme hatası: {hata}"
+            hata_ekle(cfg, sebep)
+            print(f"  [ATLANDI] {sebep}")
             continue
 
         if not secilen:
             print("  [BOŞ] Uygun kanal bulunamadı.")
             print("  [DEVAM] Hedef gruba dokunulmadı.")
+            # BOŞ da bir hata sayılsın istiyorsan bunu aç:
+            # hata_ekle(cfg, "Eşleşen kanal bulunamadı (grup adı / aranacak yanlış olabilir)")
             basarili += 1
             continue
 
         print(f"  [OKUNDU] {len(secilen)} kanal bulundu.")
         hedef_grup = cfg["hedef_grup"]
 
-        ayni_grup_var = any(
-            grup_bul(r) == hedef_grup
-            for r in hedef_records
-        )
+        ayni_grup_var = any(grup_bul(r) == hedef_grup for r in hedef_records)
 
         if ayni_grup_var:
             onceki_sayi = len(hedef_records)
-            hedef_records = grubu_birlestir(
-                hedef_records,
-                secilen,
-                hedef_grup
-            )
+            hedef_records = grubu_birlestir(hedef_records, secilen, hedef_grup)
             fark = len(hedef_records) - onceki_sayi
             eklenen_toplam += max(0, fark)
             print(f"  [YAZILDI] Grup birleştirildi: {hedef_grup}")
             basarili += 1
             continue
 
-        # AYNI İSİMLİ GRUP YOKSA BENZER RENK GRUBUNU BUL - DÜZELTİLDİ
         hedef_baslangic = grup_baslangici(hedef_grup)
         print(f"  [DEBUG] Hedef başlangıç: '{hedef_baslangic}'")
-
         son_benzer_idx = benzer_grubun_bitisini_bul(hedef_records, hedef_baslangic)
-
         if son_benzer_idx is not None:
-            hedef_records = (
-                hedef_records[:son_benzer_idx + 1]
-                + secilen
-                + hedef_records[son_benzer_idx + 1:]
-            )
-            print(
-                f"  [YAZILDI] Benzer grubun altına eklendi: "
-                f"{hedef_baslangic} (son benzer: {grup_bul(hedef_records[son_benzer_idx]) if son_benzer_idx < len(hedef_records) else ''})"
-            )
+            hedef_records = hedef_records[:son_benzer_idx + 1] + secilen + hedef_records[son_benzer_idx + 1:]
+            print(f"  [YAZILDI] Benzer grubun altına eklendi: {hedef_baslangic}")
         else:
             hedef_records.extend(secilen)
             print("  [YAZILDI] Yeni grup en sona eklendi.")
-
         eklenen_toplam += len(secilen)
         basarili += 1
-
-    # ==================================================
-    # SONUÇ DOSYASINI KAYDET
-    # ==================================================
 
     print("\n====================================")
     print(" MIRTI68 - DOSYA KAYDEDİLİYOR")
     print("====================================")
 
     try:
-        shutil.copy2(
-            HEDEF_DOSYA,
-            HEDEF_DOSYA + ".bak"
-        )
+        shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA + ".bak")
         print("[YEDEK] mirti68.m3u.bak oluşturuldu.")
     except Exception as hata:
         print(f"[UYARI] Yedek oluşturulamadı: {hata}")
@@ -624,12 +506,7 @@ def main():
         sonuc.extend(r)
 
     try:
-        with open(
-            HEDEF_DOSYA,
-            "w",
-            encoding=enc,
-            newline=""
-        ) as f:
+        with open(HEDEF_DOSYA, "w", encoding=enc, newline="") as f:
             f.write(newline.join(sonuc) + newline)
     except Exception as hata:
         print(f"[HATA] Dosya yazılamadı: {hata}")
@@ -643,10 +520,36 @@ def main():
     print(f"[EKLENEN KAYIT] {eklenen_toplam}")
     print(f"[TOPLAM KANAL] {len(hedef_records)}")
     print(f"[DOSYA] {HEDEF_DOSYA}")
+
+    # YENİ EKLENDİ: Hatalı URL listesi - en sonda toplu göster
+    print("\n====================================")
+    print(" HATALI URL LİSTESİ")
+    print("====================================")
+    if not hatali_url_listesi:
+        print("[TEMİZ] Hata veren URL yok, hepsi çalıştı.")
+    else:
+        for i, h in enumerate(hatali_url_listesi, 1):
+            print(f"\n[{i}] HEDEF GRUP: {h['hedef_grup']}")
+            print(f"    KAYNAK GRUP: {h['kaynak_grup']}")
+            print(f"    URL: {h['url']}")
+            print(f"    SEBEP: {h['sebep']}")
+        # Ayrıca dosyaya da yaz - GitHub Actions logundan kaybolmasın
+        try:
+            with open("hatali_url_listesi.txt", "w", encoding="utf-8") as f:
+                f.write("MIRTI68 - HATALI URL LİSTESİ\n")
+                f.write("="*50 + "\n")
+                for h in hatali_url_listesi:
+                    f.write(f"\nHEDEF GRUP: {h['hedef_grup']}\n")
+                    f.write(f"KAYNAK GRUP: {h['kaynak_grup']}\n")
+                    f.write(f"URL: {h['url']}\n")
+                    f.write(f"SEBEP: {h['sebep']}\n")
+            print("\n[DOSYA] hatali_url_listesi.txt dosyasına da yazıldı.")
+        except Exception as e:
+            print(f"[UYARI] Hatalı liste dosyaya yazılamadı: {e}")
+
     print("====================================")
     print("[TAMAM] ÇALIŞAN KAYNAKLAR AKTARILDI")
     print("[TAMAM] Hatalı URL'ler işlemi durdurmadı")
-    print("[TAMAM] Eski grup kayıtları korundu")
     print("====================================")
 
 if __name__ == "__main__":
