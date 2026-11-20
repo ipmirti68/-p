@@ -265,6 +265,21 @@ def oku_m3u(p):
         with open(p,"rb") as f: metin = f.read().decode("utf-8-sig", errors="ignore")
     newline = "\r\n" if "\r\n" in metin else "\n"
     satirlar = metin.splitlines()
+
+    # --- YENİ: Bölünmüş EXTINF satırlarını birleştir ---
+    birlesik = []
+    for line in satirlar:
+        s = line.strip()
+        if not s:
+            continue
+        # Hala EXTINF devamıysa (URL değil, yeni EXTINF değil, # ile başlamıyor)
+        if birlesik and birlesik[-1].startswith("#EXTINF:") and not s.startswith("#EXTINF:") and not s.startswith("http") and not s.startswith("#"):
+            birlesik[-1] += " " + s
+            continue
+        birlesik.append(s)
+    satirlar = birlesik
+    # --- BİTİŞ ---
+
     ilk = next((i for i,s in enumerate(satirlar) if s.startswith("#EXTINF:")), len(satirlar))
     baslik, govde = satirlar[:ilk], satirlar[ilk:]
     records, cur = [], []
@@ -273,6 +288,7 @@ def oku_m3u(p):
         cur.append(line)
     if cur: records.append(cur)
     return baslik, records, newline, "utf-8"
+    
 
 def hedefe_uyarla(rec,cfg):
     yeni_rec = list(rec)
