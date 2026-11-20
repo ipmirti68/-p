@@ -19,7 +19,7 @@ AKTARIMLAR = [
         "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
         "kaynak_grup": "",
         "aranacak": "", 
-        "hedef_grup": "🟪◆ GÜNCEL DİZİLER ⭕",
+        "hedef_grup": "🟪◆ GÜNCEL DİZİLERᴴᴰ ⭕",
         "hedef_logo": "", 
         "ek_kod": "⭕", 
         "grup_onek": True,
