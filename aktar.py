@@ -41,14 +41,7 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
 
-  {
-        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
-        "kaynak_grup": "Spor-Avva",
-        "aranacak": "beIN Sports",
-        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
-        "ek_kod": "⭕ Avva",
-    },
+ 
 
     
     {
