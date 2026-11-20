@@ -102,7 +102,7 @@ AKTARIMLAR = [
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | 7/24 DIZI",
         "aranacak": "",
-        "hedef_grup": "🟪◆  7/24 DİZİ 📺⭕",
+        "hedef_grup": "🟪◆  7/24 DİZİ ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
