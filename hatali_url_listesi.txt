@@ -11,11 +11,6 @@ KAYNAK GRUP: SONVIZYON FILMLER
 URL: http://190502.tomtv.eu:80/get.php
 SEBEP: HTTP 401 - Unauthorized
 
-HEDEF GRUP: 🟪◆  7/24 DİZİ 📺⭕
-KAYNAK GRUP: TR | 7/24 DIZI
-URL: http://mekantv56.win/get.php
-SEBEP: Bağlantı hatası: timed out
-
 HEDEF GRUP: 🟩◆  beIN SPORTS 📡⭕
 KAYNAK GRUP: Yerel / 🔴 SPOR
 URL: https://79.76.50.223/get.php
@@ -25,8 +20,3 @@ HEDEF GRUP: 🟩◆  beIN SPORTS 📡⭕
 KAYNAK GRUP: TR • BeIN SPORTS
 URL: https://ekmek82.shop/get.php
 SEBEP: HTTP 403 - Forbidden
-
-HEDEF GRUP: 🟪◆  TABİİ DİZİLERİ ⭕
-KAYNAK GRUP: TR | TABii
-URL: http://mekantv56.win/get.php
-SEBEP: Bağlantı hatası: timed out
