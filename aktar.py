@@ -18,7 +18,59 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrom
 TIMEOUT = 30
 
 AKTARIMLAR = [
-     {
+    {
+        # SİNEMA - power-sinema.m3u - istediğin gruplar aynen kalsın
+        "kaynak_url": "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u",
+        # Birden fazla kaynak grup - bunlardan biri ise al
+        "kaynak_gruplar": [
+            "IMDb Top Rated",
+            "YERLI FILM",
+            "KEMAL SUNAL",
+            "KORKU",
+            "WESTERN",
+            "YeniEklenenler",
+            "2026",
+            "2025",
+            "2023 2024",
+            "2021 2022",
+            "2019 2020",
+            "2017 2018",
+            "2015 2016",
+            "2013 2014",
+            "2011 2012",
+            "2001 2010",
+        ],
+        "kaynak_grup": "",
+        "aranacak": "",
+        # hedef_grup boş = kaynak grup adı aynen kalsın, değiştirme
+        "hedef_grup": "",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+        "grup_onek": False,
+        "sinema_modu": True,
+    },
+
+    {
+        "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
+        "kaynak_grup": "",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ GÜNCEL DİZİLER ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+        # YENİ: Kaynak grup adını kanal adının önüne yaz
+        # Örnek: Kaynak grup "Yalı Çapkını" ise -> "Yalı Çapkını - 1.Bölüm ⭕"
+        "grup_onek": True,
+    },
+
+    {
+        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR | ULUSAL",
+        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
+        "hedef_grup": "🟨◆ ULUSAL ᴴᴰ⁺ ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
+{
         "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
         "kaynak_grup": "Spor-Avva",
         "aranacak": "beIN Sports",
@@ -39,19 +91,12 @@ AKTARIMLAR = [
   {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
         "kaynak_grup": "",
-        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
+        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
         "hedef_grup": "🟨◆ ULUSAL ᴴᴰ ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-    {
-        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR | ULUSAL",
-        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
-        "hedef_grup": "🟨◆ ULUSAL ᴴᴰ⁺ ⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
+ 
 
     {
         "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
@@ -90,15 +135,7 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
 
-     {
-    "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
-    "kaynak_grup": "",
-    "aranacak": "",
-    "hedef_grup": "🟪◆ GÜNCEL DİZİLER ⭕",
-    "hedef_logo": "",
-    "ek_kod": "⭕",
-    "grup_onek": True,  # <-- YENİ
-},
+
 
 
 
@@ -175,6 +212,13 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
+     
+
+
+     
+
+
+     
 ]
 
 # ==================================================
@@ -195,6 +239,47 @@ def normalize(s):
     s = s.replace("|", " ").replace("-", " ").replace("_", " ")
     s = re.sub(r"\s+", " ", s).strip()
     return s
+
+
+# ==================================================
+# SİNEMA ÖZEL - EKSİK GÖNDERİLEN KISIM
+# Grup adı değişmeli: "IMDb Top Rated" -> "🟪◆ FILM - IMDb Top Rated ⭕"
+# + tvg-type="movie" + EXCLUDED filtresi + URL düzeltme
+# ==================================================
+SINEMA_WANTED_RAW = [
+    "IMDb Top Rated", "YERLI FILM", "KEMAL SUNAL", "KORKU", "WESTERN",
+    "YeniEklenenler", "2026", "2025", "2023 2024", "2021 2022",
+    "2019 2020", "2017 2018", "2015 2016", "2013 2014",
+    "2011 2012", "2001 2010",
+]
+def norm_sinema(s):
+    s = (s or "").lower()
+    s = re.sub(r'[^a-z0-9çğıöşü]+', '', s)
+    return s
+SINEMA_WANTED = {norm_sinema(x): x for x in SINEMA_WANTED_RAW}
+SINEMA_EXCLUDED = [
+    "adam sandler", "clint eastwood", "sylvester stallone", "jackie chan",
+    "nicolas cage", "steven seagal", "jason statham",
+    "seri", "dizi", "series", "sezon", "season", "episode",
+    "bölüm", "bolum", "s01e", "s02e", "s03e",
+]
+def sinema_excluded(text):
+    t = " " + re.sub(r'[^a-z0-9çğıöşü]+', ' ', (text or "").lower()) + " "
+    compact = (text or "").lower().replace(" ", "")
+    for w in SINEMA_EXCLUDED:
+        if w in ("s01e", "s02e", "s03e"):
+            if w in compact:
+                return True
+        else:
+            nw = re.sub(r'[^a-z0-9çğıöşü]+', ' ', w.lower()).strip()
+            if f" {nw} " in t:
+                return True
+    return False
+def sinema_fix_url(url):
+    url = (url or "").strip().replace("?.mp4", "").replace("?ext=.mp4", "")
+    if "vixolity.com/vs/" in url and url.endswith(".mp4"):
+        url = url[:-4]
+    return url
 
 def grup_bul(rec):
     for l in rec:
@@ -283,12 +368,24 @@ def hedefe_uyarla(rec, cfg):
     ozellikler = {}
     for k, v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf):
         ozellikler[k] = v
+    # SINEMA MODU: Grup adi degismeli - IMDb Top Rated -> 🟪◆ FILM - IMDb Top Rated ⭕
+    if cfg.get("sinema_modu"):
+        _g = grup_bul(rec).strip()
+        _clean = SINEMA_WANTED.get(norm_sinema(_g), _g)
+        _clean = re.sub(r"\s+", " ", _clean).strip()
+        if "FILM" not in _clean.upper():
+            _clean = f"FILM - {_clean}"
+        cfg = dict(cfg)
+        cfg["hedef_grup"] = f"🟪◆ {_clean} ⭕"
+        cfg["_sinema_tvg_type"] = True
     # YENİ: Kaynak grup adını kanal adının önüne yaz
     if cfg.get("grup_onek"):
         kaynak_grup_adi = grup_bul(rec).strip()
         if kaynak_grup_adi and not ad.lower().startswith(kaynak_grup_adi.lower()):
             ad = f"{kaynak_grup_adi} - {ad}"
-    ozellikler["group-title"] = cfg["hedef_grup"]
+    # hedef_grup boşsa kaynak grup adını aynen koru (SİNEMA gibi)
+    if cfg.get("hedef_grup"):
+        ozellikler["group-title"] = cfg["hedef_grup"]
     logo = cfg.get("hedef_logo", "")
     if logo:
         ozellikler["tvg-logo"] = logo
@@ -298,8 +395,16 @@ def hedefe_uyarla(rec, cfg):
             ad = f"{ad} {ek}"
     if "tvg-name" in ozellikler:
         ozellikler["tvg-name"] = ad
+    if cfg.get("_sinema_tvg_type"):
+        ozellikler["tvg-type"] = "movie"
     oz_str = " ".join(f'{k}="{v}"' for k, v in ozellikler.items())
     yeni_rec[extinf_index] = f"#EXTINF:{sure} {oz_str},{ad}"
+    # SİNEMA: URL'deki ?.mp4 / ?ext=.mp4 temizle
+    if cfg.get("sinema_modu"):
+        for _i, _line in enumerate(yeni_rec):
+            _s = _line.strip()
+            if _s.startswith(("http://", "https://")):
+                yeni_rec[_i] = sinema_fix_url(_s)
     return yeni_rec
 
 def aranacak_parcala(aranacak_raw):
@@ -307,7 +412,7 @@ def aranacak_parcala(aranacak_raw):
     if not s:
         return []
     s_low = s.lower()
-    for ikili in ["kanal d", "kanal 7", "show tv", "tv 8", "tv 8.5", "a2 tv"]:
+    for ikili in ["kanal d", "kanal 7", "show tv", "star tv", "beyaz tv", "tv 8", "tv 8.5", "a2 tv", "trt 1"]:
         if ikili in s_low:
             s_low = s_low.replace(ikili, ikili.replace(" ", "_"))
     if any(x in s_low for x in [",", ";", "|", "\n"]):
@@ -324,11 +429,22 @@ def aranacak_parcala(aranacak_raw):
 def kaynak_sec(kaynak_records, cfg):
     aranacak_liste = aranacak_parcala(cfg.get("aranacak", ""))
     kaynak_grup = cfg.get("kaynak_grup", "").strip()
+    # YENİ: birden fazla kaynak grup (SİNEMA WANTED_RAW gibi)
+    kaynak_gruplar = cfg.get("kaynak_gruplar", []) or []
+    kaynak_gruplar_n = [normalize(g) for g in kaynak_gruplar if g.strip()]
     secilen = []
     for r in kaynak_records:
         g = grup_bul(r)
-        if kaynak_grup and not grup_eslesiyor_mu(g, kaynak_grup):
+        # Tek grup varsa onu, liste varsa listeden birini kontrol et
+        if kaynak_gruplar_n:
+            if normalize(g) not in kaynak_gruplar_n:
+                continue
+        elif kaynak_grup and not grup_eslesiyor_mu(g, kaynak_grup):
             continue
+        # SİNEMA: hariç tutulanları atla (dizi/seri/bölüm/sezon vs.)
+        if cfg.get("sinema_modu"):
+            if sinema_excluded(g) or sinema_excluded(kanal_adi(r)):
+                continue
         if aranacak_liste:
             ad_n = normalize(kanal_adi(r))
             ad_n_bosluksuz = ad_n.replace(" ", "")
@@ -505,6 +621,13 @@ def main():
             basarili += 1
             continue
 
+        # hedef_grup boşsa (SİNEMA) kendi grubuyla sona ekle, benzer grup arama
+        if not hedef_grup:
+            hedef_records.extend(secilen)
+            print(f"  [YAZILDI] Kaynak grupları aynen eklendi: {len(secilen)} kanal")
+            eklenen_toplam += len(secilen)
+            basarili += 1
+            continue
         hedef_baslangic = grup_baslangici(hedef_grup)
         print(f"  [DEBUG] Hedef başlangıç: '{hedef_baslangic}'")
         son_benzer_idx = benzer_grubun_bitisini_bul(hedef_records, hedef_baslangic)
@@ -579,4 +702,13 @@ def main():
     print("====================================")
 
 if __name__ == "__main__":
-    main()
+    main()    # SINEMA MODU: Grup adı değişmeli - IMDb Top Rated -> 🟪◆ FILM - IMDb Top Rated ⭕
+    if cfg.get("sinema_modu"):
+        _g = grup_bul(rec).strip()
+        _clean = SINEMA_WANTED.get(norm_sinema(_g), _g)
+        _clean = re.sub(r"\s+", " ", _clean).strip()
+        if "FILM" not in _clean.upper():
+            _clean = f"FILM - {_clean}"
+        cfg = dict(cfg)
+        cfg["hedef_grup"] = f"🟪◆ {_clean} ⭕"
+        cfg["_sinema_tvg_type"] = True
