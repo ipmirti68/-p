@@ -37,7 +37,14 @@ AKTARIMLAR = [
         "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
         "ek_kod": "⭕ Atom",
     },
-
+  {
+        "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
+        "kaynak_grup": "",
+        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
+        "hedef_grup": "🟨◆ ULUSAL ᴴᴰ ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
     {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | ULUSAL",
