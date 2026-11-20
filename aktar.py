@@ -343,6 +343,16 @@ def kanal_kok(ad_n):
     a = ad_n.strip()
     a = re.sub(r"^tr[:\s\-]+","",a)
     a = re.sub(r"^tr\s+","",a)
+
+    # --- YENİ: Mahsun / Atom gibi son ekleri ve HD'yi temizle ---
+    a = a.replace("sports","sport")  # Sports -> Sport, ikisi de aynı sayılsın
+    a = re.sub(r"\s*-\s*mahsun.*$","",a)  # -Mahsun
+    a = re.sub(r"\s+mahsun.*$","",a)      # Mahsun (normalize - yi boşluğa çevirdiği için)
+    a = re.sub(r"\s+hd.*$","",a)          # HD'den sonrasını at: "bein sport 1 hd mahsun" -> "bein sport 1"
+    a = re.sub(r"\s*-\s*atom.*$","",a)
+    a = re.sub(r"\s+atom.*$","",a)
+    # --- BİTİŞ ---
+
     a = re.sub(r"\s+(hd|hq|fhd|4k)$","",a)
     a = re.sub(r"\s+\[yedek\]$","",a)
     a = re.sub(r"\s+yedek$","",a)
@@ -366,9 +376,10 @@ def kaynak_sec(records,cfg):
             kok = kanal_kok(normalize(kanal_adi(r)))
             kok_nospace = kok.replace(" ","")
             ok=False
-            for ana in liste:
-                ana_nospace = ana.replace(" ","")
-                if kok==ana or kok_nospace==ana_nospace or kok.startswith(ana+" ") or kok_nospace.startswith(ana_nospace):
+        for ana in liste:
+            ana = ana.replace("sports","sport")  # <-- bunu ekle
+            ana_nospace = ana.replace(" ","")
+            if kok==ana or kok_nospace==ana_nospace or kok.startswith(ana+" ") or kok_nospace.startswith(ana_nospace):
                     ok=True; break
             if not ok: continue
         if "bilgilendirme" in kanal_adi(r).lower(): continue
