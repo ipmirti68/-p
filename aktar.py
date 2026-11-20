@@ -173,6 +173,14 @@ AKTARIMLAR = [
     },
      
 
+     {
+        "kaynak_url": "https://raw.githubusercontent.com/PRoDi79/Deneme/refs/heads/main/ibb_cams.m3u",
+        "kaynak_grup": "",
+        "aranacak": "",
+        "hedef_grup": "🟥🔹 CANLI KAMERA 📹⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
     
 ]
 
