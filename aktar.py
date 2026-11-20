@@ -83,7 +83,7 @@ AKTARIMLAR = [
     {
         "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
         "kaynak_grup": "",
-        "aranacak": "beIN Sports",
+        "aranacak": "TR:beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 🖥",
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "⭕",
