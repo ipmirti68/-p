@@ -62,155 +62,14 @@ AKTARIMLAR = [
         "grup_onek": True,
     },
 
-
-      {
-        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
-        "kaynak_grup": "Spor-Avva",
-        "aranacak": "beIN Sports",
-        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
-        "ek_kod": "⭕ Avva",
-    },
-
-    
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/smtv62/atomspor/refs/heads/main/atom.m3u",
-        "kaynak_grup": "Atom-Panel",
-        "aranacak": "beIN Sports",
-        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "https://i.imgur.com/71TSn0Q.jpeg",
-        "ek_kod": "⭕ Atom",
-    },
-  {
-        "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
-        "kaynak_grup": "",
-        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
-        "hedef_grup": "🟨◆ ULUSAL ᴴᴰ ⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
     {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | ULUSAL",
-        "aranacak": "trt1, atv, show, kanal d, star, now, kanal7. tv8",
+        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
         "hedef_grup": "🟨◆ ULUSAL ᴴᴰ⁺ ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
-        "kaynak_grup": "",
-        "aranacak": "Korea",
-        "hedef_grup": "🟨◆ YABANCI 🇰🇷⭕",
-        "hedef_logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg?utm_source=tr.wikipedia.org&utm_campaign=index&utm_content=original",
-        "ek_kod": "⭕",
-    },
-
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
-        "kaynak_grup": "",
-        "aranacak": "beIN Sports",
-        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
-
-      
-    {
-        "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
-        "kaynak_grup": "Diziler | Prison Break | Prison Break",
-        "aranacak": "",
-        "hedef_grup": "🟪◆ DİZİLER - PRİSON BREAK ⭕",
-        "hedef_logo": "",
-        "ek_kod": "",
-    },
-
-    {
-        "kaynak_url": "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts",
-        "kaynak_grup": "SONVIZYON FILMLER",
-        "aranacak": "",
-        "hedef_grup": "🟪◆ GÜNCEL FİLİMLER ⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
-
-  
-
-    {
-        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR | 7/24 DIZI",
-        "aranacak": "",
-        "hedef_grup": "🟪◆  7/24 DİZİ 📺⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
-
-
-
-    {
-        "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
-        "kaynak_grup": "Yerel / 🔴 SPOR",
-        "aranacak": "",
-        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
-        "ek_kod": "0️⃣⭕",
-    },
-
-    {
-        "kaynak_url": "http://31.43.191.142:8880/get.php?username=191703089055131&password=01703089055686&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR | SPORT",
-        "aranacak": "",
-        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
-        "ek_kod": "1️⃣⭕",
-    },
-
-    {
-        "kaynak_url": "http://ruzgarplayer.site:8080/get.php?username=KH6Rn39q4WpL&password=bnzSVts6Lner&type=m3u_plus&output=tsrd=GaraveliForum&type=m3u_plus&output=m3u8",
-        "kaynak_grup": "⫸TR SUPER LİG 1⫷",
-        "aranacak": "",
-        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
-        "ek_kod": "2️⃣⭕",
-    },
-
-    {
-        "kaynak_url": "http://190502.tomtv.eu/get.php?username=GokmenS947&password=5rr53m3b8c&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR-SPOR",
-        "aranacak": "beIN SPORTS",
-        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
-        "ek_kod": "3️⃣⭕",
-    },
-
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/dc73a3a52d0d5be4ba926d7b40a759fb9d5777a3/tv247tr.m3u",
-        "kaynak_grup": "Spor Vavoo",
-        "aranacak": "beIN SPORTS",
-        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
-        "ek_kod": "4️⃣⭕",
-    },
-     
-    {
-        "kaynak_url": "https://ekmek82.shop/get.php?username=adnan678&password=uBjabktvQP&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR • BeIN SPORTS",
-        "aranacak": "beIN SPORTS",
-        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://i.imgur.com/TgW5452.png",
-        "ek_kod": "5️⃣⭕",
-    },
-
-     {
-        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR | TABii",
-        "aranacak": "",
-        "hedef_grup": "🟪◆  TABİİ DİZİLERİ ⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
-     
 ]
 
 # ==================================================
@@ -628,9 +487,18 @@ def main():
 
         # hedef_grup boşsa (SİNEMA) kendi grubuyla sona ekle, benzer grup arama
         if not hedef_grup:
-            hedef_records.extend(secilen)
-            print(f"  [YAZILDI] Kaynak grupları aynen eklendi: {len(secilen)} kanal")
-            eklenen_toplam += len(secilen)
+            # Tekrar eklemeyi engelle: zaten hedefte olan URL'yi tekrar ekleme
+            def _url_of(r):
+                for _l in r:
+                    if _l.strip().startswith(("http://", "https://")):
+                        return _l.strip()
+                return ""
+            _mevcut = {_url_of(r) for r in hedef_records if _url_of(r)}
+            _yeni = [r for r in secilen if _url_of(r) not in _mevcut]
+            print(f"  [BİLGİ] Sinema: {len(secilen)} bulundu, {len(_yeni)} yeni, {len(secilen)-len(_yeni)} zaten var")
+            hedef_records.extend(_yeni)
+            print(f"  [YAZILDI] Kaynak grupları aynen eklendi: {len(_yeni)} kanal")
+            eklenen_toplam += len(_yeni)
             basarili += 1
             continue
         hedef_baslangic = grup_baslangici(hedef_grup)
@@ -707,13 +575,4 @@ def main():
     print("====================================")
 
 if __name__ == "__main__":
-    main()    # SINEMA MODU: Grup adı değişmeli - IMDb Top Rated -> 🟪◆ FILM - IMDb Top Rated ⭕
-    if cfg.get("sinema_modu"):
-        _g = grup_bul(rec).strip()
-        _clean = SINEMA_WANTED.get(norm_sinema(_g), _g)
-        _clean = re.sub(r"\s+", " ", _clean).strip()
-        if "FILM" not in _clean.upper():
-            _clean = f"FILM - {_clean}"
-        cfg = dict(cfg)
-        cfg["hedef_grup"] = f"🟪◆ {_clean} ⭕"
-        cfg["_sinema_tvg_type"] = True
+    main()
