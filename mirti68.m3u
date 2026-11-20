@@ -285,6 +285,50 @@ http://zerotv.eu:8080/play/live.php?mac=00:1A:79:CF:20:DE&stream=56&extension=ts
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="info" tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",İNFO
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi1.mp4
+#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT 1 HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/787a6f9f-0337-4634-9d49-3d2b94ce5b86.ts
+#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HD [YEDEK] ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT 1 HD [YEDEK] ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/aea62a30-956a-4c9a-a868-c4c04443cb5f.ts
+#EXTINF:-1 tvg-id="TRT.1.tr" tvg-name="TR:TRT 1 HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/trt1.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TRT 1 HQ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/05ef32a4-827d-4e20-87f8-37892492aec6.ts
+#EXTINF:-1 tvg-id="ATV.tr" tvg-name="TR:ATV HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/atv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:ATV HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/c71b4e75-87a1-4048-a388-2f7fc5e5c07b.ts
+#EXTINF:-1 tvg-id="ATV.tr" tvg-name="TR:ATV HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/atv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:ATV HQ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/8f46cd5d-e996-4ba3-a71c-198480f5e288.ts
+#EXTINF:-1 tvg-id="SHOW.TV.tr" tvg-name="TR:SHOW TV HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/showtv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:SHOW TV HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/863ca7ee-7fa2-420f-b744-d79411dc8d02.ts
+#EXTINF:-1 tvg-id="SHOW.TV.tr" tvg-name="TR:SHOW TV HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/showtv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:SHOW TV HQ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/8967ed39-36de-4918-aab1-cd2cc89ea714.ts
+#EXTINF:-1 tvg-id="STAR.TV.tr" tvg-name="TR:STAR TV HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/startv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:STAR TV HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/eee14005-6d67-4c76-a51d-cfc8b6ff2748.ts
+#EXTINF:-1 tvg-id="STAR.TV.tr" tvg-name="TR:STAR TV HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/startv.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:STAR TV HQ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/d4cddc47-b636-4c78-959c-d187ac7d58aa.ts
+#EXTINF:-1 tvg-id="KANAL.D.tr" tvg-name="TR:KANAL D HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanald.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL D HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/04c4ae0e-8d3f-4f03-a9b7-5cb1fa7d2380.ts
+#EXTINF:-1 tvg-id="KANAL.D.tr" tvg-name="TR:KANAL D HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanald.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL D HQ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/09c65780-4e4e-4139-b5f4-c77c2fc5ea96.ts
+#EXTINF:-1 tvg-id="NOW.tr" tvg-name="TR:NOW HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/fox.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:NOW HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/3e46da80-1a93-42cb-9828-66e3639f68b0.ts
+#EXTINF:-1 tvg-id="NOW.tr" tvg-name="TR:NOW HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/fox.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:NOW HQ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/ae1ebbbd-b523-4ea0-9a17-4abfddb1203d.ts
+#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8 HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/91683518-cc66-4ec5-9b96-895f5ca21fd6.ts
+#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8 HQ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/4ca1fee9-2ade-4e5a-87ce-945253971ed3.ts
+#EXTINF:-1 tvg-id="TV.8,5.tr" tvg-name="TR:TV 8.5 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv85.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8.5 HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/7d6b0ed1-410e-4028-a7d7-bf65b4e63345.ts
+#EXTINF:-1 tvg-id="BEYAZ.TV.tr" tvg-name="TR:BEYAZ TV HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/beyaz.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:BEYAZ TV HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/0933cb1e-e299-4872-aee2-8d40e6d08cf4.ts
+#EXTINF:-1 tvg-id="BEYAZ.TV.tr" tvg-name="TR:BEYAZ TV HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/beyaz.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:BEYAZ TV HQ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/37cbf863-1460-4b5b-90d3-ffdab6145a58.ts
+#EXTINF:-1 tvg-id="KANAL.7.tr" tvg-name="TR:KANAL 7 HQ ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanal7.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL 7 HQ ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/55520b91-9b37-4149-9254-07700b623283.ts
+#EXTINF:-1 tvg-id="KANAL.7.tr" tvg-name="TR:KANAL 7 HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/kanal7.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:KANAL 7 HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6a62ba0b-d7f9-4f25-9b90-2466a9c9e020.ts
+#EXTINF:-1 tvg-id="ATV.Avrupa.ch" tvg-name="TR:ATV AVRUPA HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/atveuro.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:ATV AVRUPA HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/30a9c801-5672-4f9b-a615-c63f00043e9f.ts
+#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TR:TV 8 INT HD ⭕" tvg-logo="https://logo.cloudzone55.store/ulusal/tv8int.png" group-title="🟨◆ ULUSAL ᴴᴰ⁺ ⭕",TR:TV 8 INT HD ⭕
+http://mekantv56.win/live/akifalioglu33/33akifalioglu/6b530b2d-cafe-471b-8077-a7965076dd0f.ts
 #EXTINF:-1 tvg-name="bilgi" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL ᵁᴴᴰ⁺⭕",BİLGİLENDİRME
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg?utm_source=tr.wikipedia.org&utm_campaign=index&utm_content=original" tvg-id="TheIndonesiaChannel.id" group-title="🟨◆ YABANCI 🇰🇷⭕",The Indonesia Channel ⭕
@@ -302,7 +346,7 @@ https://ebsonair.ebs.co.kr/plus1familypc/familypc1m/playlist.m3u8
 https://ebsonair.ebs.co.kr/plus2familypc/familypc1m/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg?utm_source=tr.wikipedia.org&utm_campaign=index&utm_content=original" tvg-id="GugakTV.kr" group-title="🟨◆ YABANCI 🇰🇷⭕",GugakTV ⭕
 https://mgugaklive.nowcdn.co.kr/gugakvideo/gugakvideo.stream/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg?utm_source=tr.wikipedia.org&utm_campaign=index&utm_content=original" tvg-id="GCN.kr" group-title="🟨◆ YABANCI 🇰🇷⭕",GCN24 Korean ⭕
+#EXTINF:-1 tvg-id="GCN.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg?utm_source=tr.wikipedia.org&utm_campaign=index&utm_content=original",GCN24 Korean ⭕
 http://liveko24-manminglobal3.ktcdn.co.kr/liveko24/gcnko_1300k.stream/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg?utm_source=tr.wikipedia.org&utm_campaign=index&utm_content=original" tvg-id="GoodTV.kr" group-title="🟨◆ YABANCI 🇰🇷⭕",GoodTV ⭕
 http://mobliestream.c3tv.com:1935/live/goodtv.sdp/playlist.m3u8
@@ -331,6 +375,30 @@ https://gstv-myshop.gsshop.com/myshop_hd/myshop_hd.stream/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg?utm_source=tr.wikipedia.org&utm_campaign=index&utm_content=original" tvg-id="GSShop.kr" group-title="🟨◆ YABANCI 🇰🇷⭕",GS Shop ⭕
 https://gstv-gsshop.gsshop.com/gsshop_hd/gsshop_hd.stream/playlist.m3u8
 # ===== 🇨🇳 CHINA — KNOWLEDGE / ENTERTAINMENT =====
+#EXTINF:0 tvg-id="TRT.1.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/trt-1-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",TRT 1 ⭕
+https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:0 tvg-id="STAR.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/star-tv-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",Star TV ⭕
+https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8laoxi44qj2k&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
+#EXTINF:0 tvg-id="KANAL.D.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/kanal-d-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",Kanal D ⭕
+https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3
+#EXTINF:0 tvg-id="SHOW.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/show-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",SHOW TV ⭕
+https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_720p.m3u8
+#EXTINF:0 tvg-id="ATV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/atv-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",ATV ⭕
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
+#EXTINF:0 tvg-id="NOW.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/now-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",NOW ⭕
+https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
+#EXTINF:0 tvg-id="BEYAZ.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/beyaz-tv-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",Beyaz TV ⭕
+https://beyaztv-live.daioncdn.net/beyaztv/beyaztv_1080p.m3u8
+#EXTINF:0 tvg-id="FX.HD.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/greece/fx-gr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",FX ⭕
+https://saran-live.ercdn.net/fx/index.m3u8
+#EXTINF:0 tvg-id="KANAL.7.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/kanal-7-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",Kanal 7 ⭕
+https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
+#EXTINF:0 tvg-id="TV8.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/tv8-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",TV 8 ⭕
+https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788
+#EXTINF:0 tvg-id="TV8,5 HD.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/tv85-tr.png?raw=true" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",TV 8.5 ⭕
+https://tv8.daioncdn.net/tv8bucuk/tv8bucuk.m3u8?app=tv8bucuk_web
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟨◆ ULUSAL ᴴᴰ ⭕",TRT 1 ⭕
+https://css.d6e3eds5e065t5.help//hls/arda.m3u8
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" tvg-logo="https://i.hizliresim.com/ljzg5ez.png" group-title="🟦◆   HABER 📰",SZC
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/144
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" group-title="🟦◆   HABER 📰",ÖZLEM GÜRSES
@@ -511,6 +579,27 @@ https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
 https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥",beIN Sports Max 2 ⭕ Atom
 https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TR:beIN Sport 1 HD-Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebiraz1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TR:beIN Sport 2 HD-Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebs2.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TR:beIN Sport 3 HD-Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebs3.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TR:beIN Sport 4 HD-Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebs4.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TR:beIN Sport 5 HD-Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebs5.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TR:beIN Sport Max 1 HD-Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebsm1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",TR:beIN Sport Max 2 HD-Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
+https://andro.evrenesoglu237.click/checklist/androstreamlivebsm2.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS ⭕",beIN SPORTS 1 Mırtıspor
 https://germanyservers2.net/live/mahmut2021/2021mahmut/83fef809-135f-4ee5-9e13-5eb6f5d5231e.ts
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆  beIN SPORTS 📡⭕",beIN SPORTS 1 Mırtıspor (copy)
@@ -761,6 +850,32 @@ https://aktif-q65v.onrender.com/play/beinsportsfeedozelfeedyayin
 https://aktif-q65v.onrender.com/play/beinsports4kfeedkutu
 #EXTINF:-1 tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN SPORTS 4K FEED(UYDU) 4️⃣⭕
 https://aktif-q65v.onrender.com/play/beinsports4kfeeduydu
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: MAXSPORTS 1 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: MAXSPORTS 1 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/61351
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: MAXSPORTS 2 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: MAXSPORTS 2 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/97877
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: MAXSPORTS 3 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: MAXSPORTS 3 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/106027
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: MAXSPORTS 4 Formula 1 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: MAXSPORTS 4 Formula 1 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/232435
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: MAXSPORTS 5 Formula 1 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: MAXSPORTS 5 Formula 1 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/247370
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: MAXSPORTS 6 UFC 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: MAXSPORTS 6 UFC 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/272922
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: beIN PLUS 1 FHD 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN PLUS 1 FHD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/337958
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: beIN PLUS 2 HD 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: beIN PLUS 2 HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/337959
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: Bein Xtra 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: Bein Xtra 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/256065
+#EXTINF:-1 tvg-id="NULL" tvg-name="TR: EKOL SPORTS 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: EKOL SPORTS 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/314140
+#EXTINF:-1 tvg-id="SPORTS TV" tvg-name="TR: SPORTS TV HD 3️⃣⭕" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",TR: SPORTS TV HD 3️⃣⭕
+http://190502.tomtv.eu:80/GokmenS947/5rr53m3b8c/59
+#EXTINF:-1 tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN 1 FEED (720P) 4️⃣⭕
+https://aktif-q65v.onrender.com/play/bein1feed720p
+#EXTINF:-1 tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡⭕",BEIN 1 SD (360P) 4️⃣⭕
+https://aktif-q65v.onrender.com/play/bein1sd360p
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
 http://nexusconnects.org:80/play/live.php?mac=00:1B:79:47:72:00&stream=988851&extension=ts&play_token=i9P5KZaJhe
 #EXTINF:-1 tvg-name="beIN SPORTS 1.tr" tvg-logo="https://i.imgur.com/TgW5452.png" group-title="🟩◆  beIN SPORTS 📡",BEİN SPORTS 1
@@ -3048,6 +3163,64 @@ https://www.canlidizi14.org/omur-usta-8-bolum-izle.html
 #EXTINF:0 type="video" tvg-logo="https://www.diziler.com/wp-content/uploads/2025/09/Afis-Post_-1.webp" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Teşkilat (Trt1) ⭕
 https://www.canlidizi14.org/teskilat-193-bolum-izle-hd.html
 #EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",Masterchef Türkiye (Tv8) ⭕
+https://www.youtube.com/watch?v=HSXWrcEya44
+#EXTINF:0 type="video" tvg-logo="https://tvdiziler.tv/uploads/series/alti-ustu-istanbul.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PAZARTESİ DİZİLERİ - Altı Üstü İstanbul (Atv) ⭕
+https://video.twimg.com/amplify_video/2122436013557522432/pl/yRwSOBy2ijk-T4dw.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://cdn.sinemalar.com/images/movie/299420/poster/evlilik-guzeldir-1788522146.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PAZARTESİ DİZİLERİ - Evlilik Güzeldir (Trt1) ⭕
+https://eu1.tabii.com/apigateway/pbr/v1/media/710211/710210.m3u8
+#EXTINF:0 type="video" tvg-logo="https://static.boxofficeturkiye.com/movie/poster/full/85/2085-69525617.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PAZARTESİ DİZİLERİ - Uzak şehir (Kanal D) ⭕
+https://video.twimg.com/amplify_video/2122432785008701440/pl/LKJPFscGN6oi2zi7.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PAZARTESİ DİZİLERİ - Masterchef Türkiye (Tv8) ⭕
+https://www.youtube.com/watch?v=L5bCSUYNp_Q
+#EXTINF:0 type="video" tvg-logo="https://yapimlar.com/wp-content/uploads/Anne-Yarisi-342x513.webp" group-title="🟪◆ GÜNCEL DİZİLER ⭕",SALI DİZİLERİ - Anne Yarısı (Now) ⭕
+https://video.twimg.com/amplify_video/2122794388996644864/pl/r0XAE7hcxtlAfA-E.m3u8?tag=29
+#EXTINF:-1 group-title="🟪◆ GÜNCEL DİZİLER ⭕" tvg-logo="https://1001dizi.net/images2/dizi/d/haysiyet.jpg",SALI DİZİLERİ - Haysiyet (Kanal D) ⭕
+https://www.youtube.com/watch?v=UCARN60bu6s
+#EXTINF:-1 group-title="🟪◆ GÜNCEL DİZİLER ⭕" tvg-logo="https://static.boxofficeturkiye.com/movie/poster/full/48/1948-76741586.jpg",SALI DİZİLERİ - Mehmed Fetihler Sultanı (Trt1) ⭕
+https://eu1.tabii.com/apigateway/pbr/v1/media/711826/711824.m3u8
+#EXTINF:-1 group-title="🟪◆ GÜNCEL DİZİLER ⭕" tvg-logo="https://dizihabercisi.com/wp-content/uploads/2026/07/Tuzlu-Kahve-dizisi-oyunculari-kimler.webp",SALI DİZİLERİ - Tuzlu Kahve (Star) ⭕
+https://video.twimg.com/amplify_video/2122798324575072256/pl/MbVEaJW5oIRAl6d0.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",SALI DİZİLERİ - Masterchef Türkiye (Tv8) ⭕
+https://www.youtube.com/watch?v=NaK7mj6bcas
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/sevdan-bir-ates.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",ÇARŞAMBA DİZİLERİ - Sevdan Bir Ateş (Show) ⭕
+https://video.twimg.com/amplify_video/2123156684885360640/pl/Xs54g9_kaK0650Fb.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://www.canlidizi14.net/wp-content/uploads/2026/10/Yeralti-son-bolum-izle.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",ÇARŞAMBA DİZİLERİ - Yeraltı (Now) ⭕
+https://video.twimg.com/amplify_video/2123153429560238081/pl/TaDMcclSATEGqYjj.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",ÇARŞAMBA DİZİLERİ - Masterchef Türkiye (Tv8) ⭕
+https://www.youtube.com/watch?v=1SLVpVLfSbs
+#EXTINF:0 type="video" tvg-logo="https://cdn.sinemalar.com/images/movie/299412/poster/gunesin-dogdugu-yer-1788522231.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PERŞEMBE DİZİLERİ - Güneşin Doğduğu Yer (Atv) ⭕
+https://video.twimg.com/amplify_video/2123523360592175105/pl/-e_bPNa9WIw-cwBb.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/halef.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PERŞEMBE DİZİLERİ - Halef Final(Now) ⭕
+https://video.twimg.com/amplify_video/2123516411972624384/pl/HMaXcS9Mclm8Hqqk.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/muhtemel-ask.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PERŞEMBE DİZİLERİ - Muhtemel Aşk (Show) ⭕
+https://video.twimg.com/amplify_video/2123521197946081280/pl/Up_UtvqcbkR5yHqJ.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://www.canlidizi14.net/wp-content/uploads/2026/02/Sevdigim-Sensin-son-bolum-izle.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PERŞEMBE DİZİLERİ - Sevdiğim Sensin (Star) ⭕
+https://video.twimg.com/amplify_video/2123521186118225920/pl/69rMWPujLZrIN8OI.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PERŞEMBE DİZİLERİ - Masterchef Türkiye (Tv8) ⭕
+https://www.youtube.com/watch?v=rAmQaf8nve4
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/kizilcik-serbeti.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",CUMA DİZİLERİ - Kızılcık Şerbeti (Show) ⭕
+https://video.twimg.com/amplify_video/2121347084934631424/pl/Y3n8Cn43w16nLQPp.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/tasacak-bu-deniz.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",CUMA DİZİLERİ - Taşacak Bu Deniz (Trt1) ⭕
+https://video.twimg.com/amplify_video/2121345020590510080/pl/NoSPmhByRyCtohCr.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",CUMA DİZİLERİ - Masterchef Türkiye (Tv8) ⭕
+https://www.youtube.com/watch?v=UJwiOzPiYHw
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/haber/baskalarinin-hayati-tarih-3.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",CUMARTESİ DİZİLERİ - Başkalarının Hayatı (Star) ⭕
+https://video.twimg.com/amplify_video/2121709188279582720/pl/eqsMm7wkcESEyDg9.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/gonul-dagi.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",CUMARTESİ DİZİLERİ - Gönül Dağı (Trt1) ⭕
+https://eu1.tabii.com/apigateway/pbr/v1/media/711145/711144.m3u8
+#EXTINF:0 type="video" tvg-logo="https://im.showtv.com.tr/2024/09/28/ver1727547950/3723876_a448e449f194803ef0cd5fb02497bac7.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",CUMARTESİ DİZİLERİ - Güldür Güldür (Show) ⭕
+https://www.youtube.com/watch?v=UvvvJBfAeIs
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/guller-ve-gunahlar.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",CUMARTESİ DİZİLERİ - Güller ve Günahlar (Kanal D) ⭕
+https://video.twimg.com/amplify_video/2121709209771270144/pl/56qnIQpafzP3OTPx.m3u8?tag=29
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",CUMARTESİ DİZİLERİ - Masterchef Türkiye (Tv8) ⭕
+https://www.youtube.com/watch?v=8FlV7cCJmP0
+#EXTINF:0 type="video" tvg-logo="https://www.radikal.com.tr/wp-content/uploads/2026/05/17.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PAZAR DİZİLERİ - Daha 17 (Kanal D) ⭕
+https://www.youtube.com/watch?v=t4BGbXWR8os
+#EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/omur-usta.jpg" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PAZAR DİZİLERİ - Ömür Usta (Now) ⭕
+https://www.canlidizi14.org/omur-usta-8-bolum-izle.html
+#EXTINF:0 type="video" tvg-logo="https://www.diziler.com/wp-content/uploads/2025/09/Afis-Post_-1.webp" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PAZAR DİZİLERİ - Teşkilat (Trt1) ⭕
+https://www.canlidizi14.org/teskilat-193-bolum-izle-hd.html
+#EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ GÜNCEL DİZİLER ⭕",PAZAR DİZİLERİ - Masterchef Türkiye (Tv8) ⭕
 https://www.youtube.com/watch?v=HSXWrcEya44
 #EXTINF:-1 tvg-id="oz.206572750aa64aa99ea6882e6600a34f" tvg-name="TR:DIZIMAX DRAMA HD ⭕" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-drama.png" group-title="🟪◆  7/24 DİZİ 📺⭕",TR:DIZIMAX DRAMA HD ⭕
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/20657275-0aa6-4aa9-9ea6-882e6600a34f.ts
