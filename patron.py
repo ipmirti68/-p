@@ -56,7 +56,7 @@ def kanal_adi_duzenle(kanal_adi):
     kanal_adi = kanal_adi.strip()
 
     if "⭕" not in kanal_adi:
-        kanal_adi += " ⭕"
+        kanal_adi += " ᴴᴰ⭕"
 
     return kanal_adi
 
