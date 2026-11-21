@@ -48,6 +48,10 @@ jobs:
         timeout-minutes: 10
         run: python dizicevir.py || echo "atvdizi failed"
       
+      - name: 1 - test  DİZİ
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python ceviri.py || echo "atvdizi failed"
       
     
 
