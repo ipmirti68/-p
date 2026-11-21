@@ -16,6 +16,16 @@ AKTARIMLAR = [
         "grup_onek": False, "sinema_modu": True,
     },
     {
+        "kaynak_url": "http://kobra47.xyz:8080/get.php?username=welBox34jTwo&password=MLNt1MiZQe&type=m3u_plus&output=ts",
+        "kaynak_grup": "(TR-S) Amazon Prime Diziler",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ AMAZON PRİME DİZİLER ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+        "grup_onek": True,
+    },
+
+    {
         "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
         "kaynak_grup": "",
         "aranacak": "",
@@ -24,6 +34,10 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
         "grup_onek": True,
     },
+
+
+
+    
     {
         "kaynak_url": "http://190502.tomtv.eu/get.php?username=GokmenS947&password=5rr53m3b8c&type=m3u_plus&output=ts",
         "kaynak_grup": "GUNCEL DiZiLER SON BOLUM",
