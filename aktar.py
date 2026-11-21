@@ -87,7 +87,7 @@ AKTARIMLAR = [
         "hedef_grup": "🟪◆ DİZİLER - TOD ⭕",
         "hedef_logo": "",
         "ek_kod": "",
-    },
+    }, 
     {
         "kaynak_url": "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts",
         "kaynak_grup": "SONVIZYON FILMLER",
