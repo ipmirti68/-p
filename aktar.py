@@ -107,7 +107,7 @@ AKTARIMLAR = [
     {
         "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
         "kaynak_grup": "Yerel / 🔴 SPOR",
-        "aranacak": "",
+        "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "0️⃣⭕",
@@ -115,7 +115,7 @@ AKTARIMLAR = [
     {
         "kaynak_url": "http://31.43.191.142:8880/get.php?username=191703089055131&password=01703089055686&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | SPORT",
-        "aranacak": "",
+        "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "1️⃣⭕",
@@ -123,7 +123,7 @@ AKTARIMLAR = [
     {
         "kaynak_url": "http://ruzgarplayer.site:8080/get.php?username=KH6Rn39q4WpL&password=bnzSVts6Lner&type=m3u_plus&output=ts",
         "kaynak_grup": "⫸TR SUPER LİG 1⫷",
-        "aranacak": "",
+        "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "2️⃣⭕",
