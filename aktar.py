@@ -81,10 +81,10 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
     {
-        "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
-        "kaynak_grup": "Diziler | Prison Break | Prison Break",
+        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR | TOD",
         "aranacak": "",
-        "hedef_grup": "🟪◆ DİZİLER - PRİSON BREAK ⭕",
+        "hedef_grup": "🟪◆ DİZİLER - TOD ⭕",
         "hedef_logo": "",
         "ek_kod": "",
     },
