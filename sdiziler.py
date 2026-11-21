@@ -12,7 +12,7 @@ except ImportError:
 
 
 # ==================================================
-# MIRTI68 - DİZİLER YAML TOPLU ÇEKİM
+# MIRTI68 - DİZİLER YAML TOPLU ÇEKİM + LOGO
 # ==================================================
 
 M3U_FILE = "mirti68.m3u"
@@ -93,6 +93,13 @@ def load_yaml_manual():
 
                 cur["group"] = v
 
+            elif line.startswith("logo:"):
+
+                v = line.split(":", 1)[1].strip()
+                v = v.strip('"').strip("'")
+
+                cur["logo"] = v
+
             elif line.startswith("url:"):
 
                 v = line.split(":", 1)[1].strip()
@@ -105,6 +112,10 @@ def load_yaml_manual():
 
     return series
 
+
+# ==================================================
+# YAML OKUMA
+# ==================================================
 
 def load_yaml():
 
@@ -176,10 +187,10 @@ def clean_old_groups(lines, target_groups):
 
 
 # ==================================================
-# M3U KAYIT OLUŞTURMA
+# M3U KAYIT OLUŞTURMA + LOGO
 # ==================================================
 
-def make_records(src_lines, name, group):
+def make_records(src_lines, name, group, logo=""):
 
     records = []
     count = 0
@@ -200,24 +211,23 @@ def make_records(src_lines, name, group):
 
         if sezon is not None:
 
-            new_name = (
-                f"{name} S{sezon:02d} E{bolum:02d}"
-            )
+            new_name = f"{name} S{sezon:02d} E{bolum:02d}"
 
         else:
 
             new_name = f"{name} - {raw_name}"
 
-        # EXTINF satırını oluştur
+        # EXTINF SATIRI + LOGO
 
         new_inf = (
             f'#EXTINF:-1 '
             f'tvg-name="{new_name}" '
+            f'tvg-logo="{logo}" '
             f'group-title="{group}",'
             f'{new_name}'
         )
 
-        # Sonraki URL satırını bul
+        # SONRAKİ URL SATIRINI BUL
 
         url = ""
 
@@ -255,7 +265,7 @@ def make_records(src_lines, name, group):
 def main():
 
     print("=======================================================")
-    print("MIRTI68 - DİZİLER YAML TOPLU ÇEKİM")
+    print("MIRTI68 - DİZİLER YAML TOPLU ÇEKİM + LOGO")
     print("=======================================================")
 
     if not os.path.exists(YAML_FILE):
@@ -284,7 +294,7 @@ def main():
         print("[HATA] YAML içerisinde dizi bulunamadı!")
         return
 
-    # Eksik alanları kontrol et
+    # EKSİK ALANLARI KONTROL ET
 
     series_list = [
         s for s in series_list
@@ -293,6 +303,11 @@ def main():
         and s.get("group")
         and s.get("url")
     ]
+
+    if not series_list:
+
+        print("[HATA] Geçerli dizi kaydı bulunamadı!")
+        return
 
     print(f"[BİLGİ] {len(series_list)} dizi bulundu.")
 
@@ -308,7 +323,7 @@ def main():
         print(f"[HATA] M3U okunamadı: {e}")
         return
 
-    # YEDEK
+    # YEDEK OLUŞTUR
 
     try:
 
@@ -347,11 +362,17 @@ def main():
 
     for sira, s in enumerate(series_list, 1):
 
-        name = s["name"]
-        group = s["group"]
-        url = s["url"]
+        name = str(s["name"]).strip()
+        group = str(s["group"]).strip()
+        url = str(s["url"]).strip()
+        logo = str(s.get("logo", "") or "").strip()
 
         print(f"\n[{sira}/{len(series_list)}] -> {name}")
+
+        if logo:
+            print("  [LOGO] Logo adresi mevcut.")
+        else:
+            print("  [LOGO] Logo adresi boş.")
 
         try:
 
@@ -392,7 +413,8 @@ def main():
             records, count = make_records(
                 src_lines,
                 name,
-                group
+                group,
+                logo
             )
 
         except Exception as e:
