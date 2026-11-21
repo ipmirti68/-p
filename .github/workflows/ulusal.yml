@@ -48,7 +48,17 @@ jobs:
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
       
-      
+      - name: 2 - DİZİLER YAML
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python sdiziler.py || echo "sdiziler failed"
+
+      - name: 3 - 7/24 YOUTUBE DİZİ 2026
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python 724y.py || echo "724y failed"
+
+     
   
   
  
