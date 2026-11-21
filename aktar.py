@@ -66,7 +66,7 @@ AKTARIMLAR = [
     },
     {
         "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
-        "kaynak_grup": "",
+        "kaynak_grup": ["🇰🇷 Korea | Drama","🇰🇷 Korea | Education","🇰🇷 Korea | Entertainment","🇰🇷 Korea | Knowledge","🇰🇷 Korea | Movies","🇰🇷 Korea | Music","🇰🇷 Korea | Variety"],
         "aranacak": "Korea",
         "hedef_grup": "🟨◆ YABANCI 🇰🇷⭕",
         "hedef_logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",
