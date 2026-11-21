@@ -6,8 +6,8 @@ GROUP = "🟨◆  ULUSALᴴᴰ ⭕"
 
 # SIRALAMA: TRT1 - ATV- SHOW TV - KANAL D - Star TV - NOW - KANAL7 - TV8 - 360 - TV4 - TV2 - BEYAZ
 CHANNELS = {
-    "TRT 1 ⭕": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt-1", "marker": "# MIRTI68_TRT1_AUTO", "direct": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
-    "ATV ⭕": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "ATV", "marker": "# MIRTI68_ATV_AUTO", "direct": "http://80.253.255.35:8000/play/a00g"},
+    "TRT 1 ": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt-1", "marker": "# MIRTI68_TRT1_AUTO", "direct": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
+    "ATV ": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "ATV", "marker": "# MIRTI68_ATV_AUTO", "direct": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8"},
     "SHOW TV ⭕": {"page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png", "keyword": "showtv", "marker": "# MIRTI68_SHOWTV_AUTO"},
     "KANAL D ⭕": {"page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
     "Star TV  ⭕": {"page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv", "marker": "# MIRTI68_STARTV_AUTO"},
