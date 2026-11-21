@@ -297,6 +297,44 @@ http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/HW7DHBZQE4ZYG9/6897/inde
 https://kanal7-live.daioncdn.net/kanal7/kanal7_1080p.m3u8
 #EXTINF:-1 tvg-name="KANAL 7 FHD ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/kk/kanal7_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL 7 FHD ⭕
 https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
+#EXTINF:-1 tvg-id="ArirangTV.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",Arirang TV ⭕
+https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="KDrama.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",K-DRAMA+ ⭕
+https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=425
+#EXTINF:-1 tvg-id="KMovies.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",NEW KMOVIES ⭕
+https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=7737
+#EXTINF:-1 tvg-id="EBSPlus1.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",EBS+ 1 ⭕
+https://ebsonair.ebs.co.kr/plus1familypc/familypc1m/playlist.m3u8
+#EXTINF:-1 tvg-id="EBSPlus2.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",EBS+ 2 ⭕
+https://ebsonair.ebs.co.kr/plus2familypc/familypc1m/playlist.m3u8
+#EXTINF:-1 tvg-id="GugakTV.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",GugakTV ⭕
+https://mgugaklive.nowcdn.co.kr/gugakvideo/gugakvideo.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="GCN.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",GCN24 Korean ⭕
+http://liveko24-manminglobal3.ktcdn.co.kr/liveko24/gcnko_1300k.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="GoodTV.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",GoodTV ⭕
+http://mobliestream.c3tv.com:1935/live/goodtv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="CJOnStyle.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",CJ OnStyle ⭕
+https://live-ch1.cjonstyle.net/cjmalllive/stream2/playlist.m3u8
+# ===== 🇨🇳 CHINA — NEWS / ENTERTAINMENT / DOCUMENTARY =====
+#EXTINF:-1 tvg-id="ABN.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",ABN TV ⭕
+https://vod2.abn.co.kr/IPHONE/abn.m3u8
+#EXTINF:-1 tvg-id="BBS.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",BBS Buddhist Broadcasting ⭕
+http://bbstv.clouducs.com:1935/bbstv-live/livestream/playlist.m3u8
+#EXTINF:-1 tvg-id="BTN.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",BTN TV ⭕
+https://btn.nowcdn.co.kr/btn/btnlive2m/playlist.m3u8
+#EXTINF:-1 tvg-id="EBSPlus1.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",EBS+ 1 ⭕
+https://ebsonair.ebs.co.kr/plus1familypc/familypc1m/playlist.m3u8
+#EXTINF:-1 tvg-id="EBSPlus2.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",EBS+ 2 ⭕
+https://ebsonair.ebs.co.kr/plus2familypc/familypc1m/playlist.m3u8
+#EXTINF:-1 tvg-id="FGTV.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",FGTV ⭕
+https://fgtvlive.fgtv.com/smil:fgtv.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="CJOnStylePlus.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",CJ OnStyle Plus ⭕
+https://live-ch2.cjonstyle.net/cjosplus/live2/playlist.m3u8
+#EXTINF:-1 tvg-id="GSMyShop.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",GS My Shop ⭕
+https://gstv-myshop.gsshop.com/myshop_hd/myshop_hd.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="GSShop.kr" group-title="🟨◆ YABANCI 🇰🇷⭕" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",GS Shop ⭕
+https://gstv-gsshop.gsshop.com/gsshop_hd/gsshop_hd.stream/playlist.m3u8
+# ===== 🇨🇳 CHINA — KNOWLEDGE / ENTERTAINMENT =====
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" tvg-logo="https://i.hizliresim.com/ljzg5ez.png" group-title="🟦◆   HABER 📰",SZC
 http://190502.tomtv.eu:80/LiudmilaSheremet/233v9m9kjc/144
 #EXTINF:-1 tvg-id="SÖZCÜ TV" tvg-name="SZC TV" group-title="🟦◆   HABER 📰",ÖZLEM GÜRSES
