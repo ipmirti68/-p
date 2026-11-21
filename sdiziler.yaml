@@ -1,7 +1,7 @@
 series:
     - name: "ÇUKUR"
       group: "🟪◆ DİZİLER - ÇUKUR ⭕"
-      logo: ""
+      logo: "logo: "https://24smi.org/public/media/movie/2021/12/24/ciitfhfdxudc-chukur.jpg"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/cukur.m3u"
 
     - name: "GADDAR"
@@ -11,32 +11,32 @@ series:
 
     - name: "İÇERDE"
       group: "🟪◆ DİZİLER - İÇERDE ⭕"
-      logo: ""
+      logo:  "https://m.media-amazon.com/images/M/MV5BMTQ1YjA0OTQtYjU2NC00YTI1LTkzMGQtOTAwNjRiMWE1MzExXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/icerde.m3u"
 
     - name: "BEHZAT Ç"
       group: "🟪◆ DİZİLER - BEHZAT Ç ⭕"
-      logo: ""
+      logo: "logo: "https://m.media-amazon.com/images/M/MV5BZDZjY2I5ZjEtZGE2MS00ZjRmLTlmMGEtMDQ5ZmZhZWJjYzk3XkEyXkFqcGdeQXVyNDg4MjkzNDk%40._V1_.jpg"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/behzat-c.m3u"
 
     - name: "Fİ"
       group: "🟪◆ DİZİLER - Fİ ⭕"
-      logo: ""
+      logo: "https://seriesturkish.com/uploads/2020/07/fi-dizi-y1234.jpg"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/fi.m3u"
 
     - name: "KARADAYI"
       group: "🟪◆ DİZİLER - KARADAYI ⭕"
-      logo: ""
+      logo: "https://www.ayyapim.com/media/images/posterler/karadayi-789312454-b.jpg"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/karadayi.m3u"
 
     - name: "KÖPRÜ"
       group: "🟪◆ DİZİLER - KÖPRÜ ⭕"
-      logo: ""
+      logo: "https://m.media-amazon.com/images/M/MV5BZTM3YzhmOGItNGViOC00YjYxLTg3MTktODVjMmZiZThjNTdiXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/kopru.m3u"
 
     - name: "HAYAT BİLGİSİ"
       group: "🟪◆ DİZİLER - HAYAT BİLGİSİ ⭕"
-      logo: ""
+      logo: "https://image.tmdb.org/t/p/w780/jKOQ2offOH9dSQ1gRjSC8GUTQXB.jpg"
       url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/hayat_bilgisi.m3u"
 
     - name: "YILAN HİKAYESİ"
@@ -51,7 +51,7 @@ series:
 
     - name: "İKİNCİ BAHAR"
       group: "🟪◆ DİZİLER - İKİNCİ BAHAR ⭕"
-      logo: ""
+      logo: "https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg"
       url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ikincibhr.m3u"
 
     - name: "SUMMER STRIKE"
