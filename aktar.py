@@ -25,9 +25,9 @@ AKTARIMLAR = [
         "grup_onek": True,
     },
 
-{
+     {
         "kaynak_url": "https://raw.githubusercontent.com/getkino/depo/refs/heads/main/denen/rectv/rectv_series.m3u",
-        "kaynak_grup": "(",
+        "kaynak_grup": "",
         "aranacak": "",
         "hedef_grup": "🟪◆ YABANCI DİZİLER ⭕",
         "hedef_logo": "",
