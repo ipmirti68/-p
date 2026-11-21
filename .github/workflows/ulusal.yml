@@ -48,10 +48,8 @@ jobs:
         timeout-minutes: 10
         run: python iptv.py || echo "iptv failed"
       
-      - name: 2 - TEST
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python test.py || echo "iptv failed"
+      
+  
   
  
     
