@@ -6,7 +6,7 @@ series:
 
     - name: "GADDAR"
       group: "🟪◆ DİZİLER - GADDAR ⭕"
-      logo: ""
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQijqeTjDgWuNaWMQjgUNjqdzbXnSTUVdc-KOMhp1rKDHQLjxw9HH5IQ5iz&s=10"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/gaddar.m3u"
 
     - name: "İÇERDE"
@@ -41,7 +41,7 @@ series:
 
     - name: "YILAN HİKAYESİ"
       group: "🟪◆ DİZİLER - YILAN HİKAYESİ ⭕"
-      logo: ""
+      logo: "https://m.media-amazon.com/images/M/MV5BOTQwMTBiNTMtOTE3ZS00NjIxLWEyYWUtMjUxNzgzYzk4NjBlXkEyXkFqcGc@._V1_.jpg"
       url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/yilan_hikayesi.m3u"
 
     - name: "KINALI KAR"
