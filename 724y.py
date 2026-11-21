@@ -17,7 +17,7 @@ SOURCE_URL = (
 
 OUTPUT_FILE = Path("mirti68.m3u")
 
-GROUP = "🟪◆ 7/24 DİZİ ⭕"
+GROUP = "🟪◆ 7/24 DİZİ ⭕▶️"
 
 KANALLAR = [
     "Kemal-sunal-1",
@@ -291,7 +291,7 @@ def main():
 
         new_line = re.sub(
             r",(.*)$",
-            f",{hedef} ⭕",
+            f",{hedef} ⭕▶️",
             new_line
         )
 
