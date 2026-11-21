@@ -4,7 +4,7 @@ import json, urllib.request, re, os
 EK_KOD = "⭕"
 FILTRELER = {
     "atv.m3u": {
-        "aranacak": ["Altı Üstü İstanbul", "Eşkıya Dünyaya Hükümdar Olmaz", "Güneşin Doğduğu Yer"],
+        "aranacak": ["Altı Üstü İstanbul",  "Güneşin Doğduğu Yer"],
         "hedef_grup": "🟪◆ ATV DİZİLER 📺⭕",
     },
     "kanalddizi.m3u": {
