@@ -16,7 +16,7 @@ from playwright.async_api import async_playwright
 M3U_FILE = "atvdizi.m3u"
 BASE = "https://www.atv.com.tr"
 
-TARGET_GROUP = "🟪◆  ATV DİZİ 📺⭕"
+TARGET_GROUP = "🟪◆ DİZİ - ATV 📺⭕"
 
 INFO_URL = (
     "https://raw.githubusercontent.com/"
