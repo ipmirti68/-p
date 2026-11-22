@@ -1,4 +1,4 @@
-name: İPTV ULUSAL TEST
+name: ULUSAL MAHSON ATOM LİG SDİZİLER 
 
 on:
   workflow_dispatch:
@@ -58,23 +58,27 @@ jobs:
         timeout-minutes: 10
         run: python 724y.py || echo "724y failed"
 
-      - name: 2 - PATRO 
+      - name: 4 - PATRO 
         continue-on-error: true
         timeout-minutes: 10
         run: python patron.py || echo "mahsun failed"
      
  
-      - name: 2 - MAHSUN
+      - name: 5 - MAHSUN
         continue-on-error: true
         timeout-minutes: 10
         run: python mahsun.py || echo "mahsun failed"
 
-      - name: 3 - GOLLER
+      - name: 6 - GOLLER
         continue-on-error: true
         timeout-minutes: 10
         run: python lig.py || echo "lig failed"
 
-
+      - name: 7 - ATOM
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python atom1.py || echo "atom1 failed"
+     
   
   
  
