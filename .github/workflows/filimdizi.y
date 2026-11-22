@@ -43,15 +43,12 @@ jobs:
           
    
                 
-      - name: 2 - DİZİLER YAML
+      - name: 2 - ATOM 1
         continue-on-error: true
         timeout-minutes: 10
-        run: python sdiziler.py || echo "sdiziler failed"
+        run: python atom1.py || echo "sdiziler failed"
 
-      - name: 3 - 7/24 YOUTUBE DİZİ 2026
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python 724y.py || echo "724y failed"
+
 
      
            
