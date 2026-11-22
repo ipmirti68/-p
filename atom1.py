@@ -26,13 +26,13 @@ FALLBACK_API = "https://teletv15.top/load/yayinlink.php"
 
 # Kanal adlari sitesiden gelir; bilinen id'ler icin daha duzgun gosterim
 PRETTY_NAMES = {
-    "bein-sports-1": "beIN SPORTS 1",
-    "bein-sports-2": "beIN SPORTS 2",
-    "bein-sports-3": "beIN SPORTS 3",
-    "bein-sports-4": "beIN SPORTS 4",
-    "bein-sports-5": "beIN SPORTS 5",
-    "bein-sports-max-1": "beIN SPORTS Max 1",
-    "bein-sports-max-2": "beIN SPORTS Max 2",
+    "bein-sports-1": "beIN SPORTS 1 - Atom ⭕",
+    "bein-sports-2": "beIN SPORTS 2 - Atom ⭕",
+    "bein-sports-3": "beIN SPORTS 3 - Atom ⭕",
+    "bein-sports-4": "beIN SPORTS 4 - Atom ⭕",
+    "bein-sports-5": "beIN SPORTS 5 - Atom ⭕",
+    "bein-sports-max-1": "beIN SPORTS Max 1 - Atom ⭕",
+    "bein-sports-max-2": "beIN SPORTS Max 2 - Atom ⭕",
 }
 
 FALLBACK_IDS = list(PRETTY_NAMES.keys())
