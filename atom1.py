@@ -196,12 +196,13 @@ def main():
         print("❌ Grup güncellenemedi.")
         sys.exit(1)
         
-    def m3u_grup_guncelle(yeni_kayitlar):
-        dosya = OUTPUT_FILENAME
-        gecici = dosya + ".tmp"
-        yedek = dosya + ".bak"
+ def m3u_grup_guncelle(yeni_kayitlar):
 
-    if not entries:
+    dosya = OUTPUT_FILENAME
+    gecici = dosya + ".tmp"
+    yedek = dosya + ".bak"
+
+    if not yeni_kayitlar:
         print("HATA: Yeni kayıt yok. Mevcut liste korunuyor.")
         return False
 
@@ -211,7 +212,7 @@ def main():
         with open(dosya, "r", encoding="utf-8") as f:
             eski_satirlar = f.read().splitlines()
 
-    # Mevcut dosyayı yedekle
+    # Yedek al
     if eski_satirlar and not os.path.exists(yedek):
         with open(yedek, "w", encoding="utf-8") as f:
             f.write("\n".join(eski_satirlar) + "\n")
@@ -231,11 +232,9 @@ def main():
         korunan.append(satir)
         i += 1
 
-    # Başlık yoksa ekle
     if not korunan or korunan[0].strip() != "#EXTM3U":
         korunan.insert(0, "#EXTM3U")
 
-    # Yalnızca hedef grubu ekle
     son_icerik = korunan + yeni_kayitlar
 
     with open(gecici, "w", encoding="utf-8") as f:
@@ -249,10 +248,15 @@ def main():
 
     return True
     
-    print(f"\n✅ İŞLEM TAMAMLANDI!")
-    print(f"💾 Dosya Adı: {OUTPUT_FILENAME}")
-    print(f"📝 Toplam Kanal: {len(entries)}")
-    print(f"📍 Kayıt Yeri: {os.path.abspath(OUTPUT_FILENAME)}")
+        if not entries:
+        print("Yeni kanal yok. Eski liste korunuyor.")
+        sys.exit(1)
+
+    if not m3u_grup_guncelle(entries):
+        sys.exit(1)
+
+    print(f"✅ İŞLEM TAMAMLANDI: {len(entries)} kanal")
+    print(f"💾 Dosya: {OUTPUT_FILENAME}")
 
 
 if __name__ == "__main__":
