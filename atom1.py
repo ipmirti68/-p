@@ -13,7 +13,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
 }
 
-OUTPUT_FILENAME = "a.m3u"
+OUTPUT_FILENAME = "mirti68.m3u"
 STATIC_LOGO = "https://i.imgur.com/71TSn0Q.jpeg"
 GROUP = "🟩◆  beIN SPORTS 🖥"
 
