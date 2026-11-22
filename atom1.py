@@ -197,51 +197,70 @@ def main():
         sys.exit(1)
         
 def m3u_grup_guncelle(yeni_kayitlar):
+
     dosya = OUTPUT_FILENAME
     gecici = dosya + ".tmp"
     yedek = dosya + ".bak"
 
     if not yeni_kayitlar:
-        print("Yeni kayıt yok. Mevcut liste korunuyor.")
+        print("Yeni kanal yok. Liste korunuyor.")
         return False
 
-    eski_satirlar = []
+    if not os.path.exists(dosya):
+        print("M3U dosyası bulunamadı.")
+        return False
 
-    if os.path.exists(dosya):
-        with open(dosya, "r", encoding="utf-8") as f:
-            eski_satirlar = f.read().splitlines()
+    with open(dosya, "r", encoding="utf-8") as f:
+        satirlar = f.read().splitlines()
 
-    if eski_satirlar and not os.path.exists(yedek):
+    if not os.path.exists(yedek):
         with open(yedek, "w", encoding="utf-8") as f:
-            f.write("\n".join(eski_satirlar) + "\n")
+            f.write("\n".join(satirlar) + "\n")
 
-    korunan = []
+    sonuc = []
+    grup_bulundu = False
+    grup_eklendi = False
     i = 0
 
-    while i < len(eski_satirlar):
-        satir = eski_satirlar[i]
+    while i < len(satirlar):
+
+        satir = satirlar[i]
 
         if satir.startswith("#EXTINF:") and f'group-title="{GROUP}"' in satir:
+
+            if not grup_bulundu:
+                grup_bulundu = True
+
+                # Yeni kanalları eski grubun bulunduğu yere ekle
+                for kayit in yeni_kayitlar:
+                    sonuc.extend(kayit.splitlines())
+
+                grup_eklendi = True
+
+            # Eski grubun kanalını atla
             i += 1
-            if i < len(eski_satirlar):
+
+            if i < len(satirlar):
                 i += 1
+
             continue
 
-        korunan.append(satir)
+        sonuc.append(satir)
         i += 1
 
-    if not korunan or korunan[0].strip() != "#EXTM3U":
-        korunan.insert(0, "#EXTM3U")
-
-    son_icerik = korunan + yeni_kayitlar
+    # Grup daha önce yoksa en sona ekle
+    if not grup_bulundu:
+        sonuc.extend(yeni_kayitlar)
 
     with open(gecici, "w", encoding="utf-8") as f:
-        f.write("\n".join(son_icerik) + "\n")
+        f.write("\n".join(sonuc) + "\n")
 
     os.replace(gecici, dosya)
 
-    print("Diğer gruplar korundu.")
-    print("beIN SPORTS grubu güncellendi.")
+    print("✅ beIN SPORTS grubu güncellendi.")
+    print("✅ Eski grup konumu korundu.")
+    print("✅ Diğer gruplar korundu.")
+
     return True
 
 
