@@ -1566,8 +1566,8 @@ http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/140860
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/140900
 #EXTINF:-1  tvg-name="TR: DISCOVERY IDX HD"  group-title="🟫◆  BELGESEL 🏔️",TR: DISCOVERY IDX HD
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/140916
-#EXTINF:-1 tvg-name="trtbelgesel" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da862" group-title="🟫◆  BELGESEL 🏔️",TRT BELGESEL
-https://tv-trtbelgesel.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",TRT BELGESEL ⭕
+https://tv-trtbelgesel.medya.trt.com.tr/master_1080.m3u8
 #EXTINF:-1 tvg-logo="https://i.postimg.cc/jdG5XG2v/37698818-ico.png" group-title="🟫◆  BELGESEL 🏔️",MMN CHANNEL
 http://mmn.mypsx.net:1935/live/mmnhdradioturky/chunklist_w1571985729.m3u8
 #EXTINF:-1 tvg-id="NatureTime.tr@HD" tvg-name="Nature Time" tvg-logo="https://vipotv.com/wp-content/uploads/2025/06/Nature-Time.png" group-title="🟫◆  BELGESEL 🏔️",Nature Time
@@ -1621,6 +1621,46 @@ https://travelxp-travelxp-1-nz.samsung.wurl.tv/playlist.m3u8
 #EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",BELGESEL TV ⭕
 https://playlist.fasttvcdn.com/pl/rfrk9821hdy9dayo8wfyha/belgesel-tv/playlist.m3u8
 #EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - Fanatik Prime Ed Stafford ⭕
+https://raw.githubusercontent.com/kadirsener1/catcast/refs/heads/main/catcast/fanatikprimeEdStafford.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",NATIONAL GEOGRAPHIC-V ⭕
+https://aktif-q65v.onrender.com/play/natgeo
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",NATIONAL GEOGRAPHIC WILD-V ⭕
+https://aktif-q65v.onrender.com/play/natgeowild
+#EXTINF:-1 group-title="🟫◆  BELGESEL 🏔️",DİSCOVERY CHANNEL-V ⭕
+https://aktif-q65v.onrender.com/play/discovery
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",INVESTIGATION DISCOVERY ⭕
+http://65.108.239.207/discs/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",INVESTIGATION DISCOVERY-V ⭕
+https://aktif-q65v.onrender.com/play/id
+#EXTINF:-1 group-title="🟫◆  BELGESEL 🏔️",BBC EARTH-V ⭕
+https://aktif-q65v.onrender.com/play/bbcearth
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",VİASAT HİSTORY-V ⭕
+https://aktif-q65v.onrender.com/play/viasathistory
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",LOVE NATURE-V ⭕
+https://aktif-q65v.onrender.com/play/lovenature
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",TARİH TV-V ⭕
+https://aktif-q65v.onrender.com/play/tarihtv
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/xTTxc9G3/Bein-gurme-removebg-preview.png" group-title="🟫◆  BELGESEL 🏔️",beIN GURME-V ⭕
+https://aktif-q65v.onrender.com/play/gurme
+#EXTINF:-1 group-title="🟫◆  BELGESEL 🏔️",BEİN İZ-V ⭕
+https://aktif-q65v.onrender.com/play/beiniz
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",ÇİFTÇİ TV ⭕
+https://live.artidijitalmedya.com/artidijital_ciftcitv/ciftcitv/playlist.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",YABAN TV-V ⭕
+https://aktif-q65v.onrender.com/play/yabantv
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",KÖY TV-V ⭕
+https://aktif-q65v.onrender.com/play/koytv
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",TARIM TV ⭕
+https://aktif-q65v.onrender.com/play/tarımtv
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",TOPRAK TV ⭕
+https://streams.uzunmuhalefet.com/stream/54fd8806-0142-4839-930e-aa1d662ad866.m3u8
+#EXTINF:-1 tvg-logo="https://agrotvcomtr.teimg.com/agrotv-com-tr/uploads/2024/09/100x400-1.png" group-title="🟫◆  BELGESEL 🏔️",AGRO TV ⭕
+https://agro.fatihdemirsoy.com:8181/memfs/efe70a0b-aea8-48f3-bfda-72fff7f48a7b_output_0.m3u8?session=WiBL6q6PzoRV7DTJZaMvmo
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Nature Time FR ⭕
+https://bamusa-naturetime-emea-fra-rakuten.amagi.tv/playlist1080_pl.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",TRAVELXP EN ⭕
+https://travelxp-travelxp-1-nz.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Fanatik Prime Ed Stafford ⭕
 https://raw.githubusercontent.com/kadirsener1/catcast/refs/heads/main/catcast/fanatikprimeEdStafford.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdGh-OvEhjBHFCx9up5zb00hlU41scCPQVUuV7U3y0Og&s=10" group-title="⬛◆  SİNEMA  🎬",SDM
 https://host.onlineradyotv.net:8081/sdmtv/tracks-v1a1/mono.m3u8
@@ -13641,15 +13681,15 @@ https://eu1.tabii.com/apigateway/pbr/v1/media/712369/712368.m3u8
 #EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",CUMA DİZİLERİ - Masterchef Türkiye (Tv8) ⭕
 https://www.youtube.com/watch?v=p0kOBE7KyJA
 #EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/haber/baskalarinin-hayati-tarih-3.jpg" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",CUMARTESİ DİZİLERİ - Başkalarının Hayatı (Star) ⭕
-https://video.twimg.com/amplify_video/2121709188279582720/pl/eqsMm7wkcESEyDg9.m3u8?tag=29
+https://www.canlidizi14.org/baskalarinin-hayati-8-bolum-izle.html
 #EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/gonul-dagi.jpg" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",CUMARTESİ DİZİLERİ - Gönül Dağı (Trt1) ⭕
-https://eu1.tabii.com/apigateway/pbr/v1/media/711145/711144.m3u8
+https://www.canlidizi14.org/gonul-dagi-232-bolum-izle.html
 #EXTINF:0 type="video" tvg-logo="https://im.showtv.com.tr/2024/09/28/ver1727547950/3723876_a448e449f194803ef0cd5fb02497bac7.jpg" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",CUMARTESİ DİZİLERİ - Güldür Güldür (Show) ⭕
-https://www.youtube.com/watch?v=UvvvJBfAeIs
+https://www.youtube.com/watch?v=EerTvUODypY
 #EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/guller-ve-gunahlar.jpg" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",CUMARTESİ DİZİLERİ - Güller ve Günahlar (Kanal D) ⭕
-https://video.twimg.com/amplify_video/2121709209771270144/pl/56qnIQpafzP3OTPx.m3u8?tag=29
+https://www.canlidizi14.org/guller-ve-gunahlar-42-bolum-izle-hd.html
 #EXTINF:0 type="video" tvg-logo="https://images.justwatch.com/poster/327332468/s332/masterchef-turkiye.avif" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",CUMARTESİ DİZİLERİ - Masterchef Türkiye (Tv8) ⭕
-https://www.youtube.com/watch?v=8FlV7cCJmP0
+https://www.youtube.com/watch?v=sr4lC13HiHQ
 #EXTINF:0 type="video" tvg-logo="https://www.radikal.com.tr/wp-content/uploads/2026/05/17.jpg" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",PAZAR DİZİLERİ - Daha 17 (Kanal D) ⭕
 https://www.youtube.com/watch?v=t4BGbXWR8os
 #EXTINF:0 type="video" tvg-logo="https://1001dizi.net/images2/dizi/d/omur-usta.jpg" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",PAZAR DİZİLERİ - Ömür Usta (Now) ⭕
