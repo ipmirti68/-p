@@ -32,7 +32,7 @@ AKTARIMLAR = [
         "hedef_grup": "🟫◆  BELGESEL 🏔️",
         "hedef_logo": "",
         "ek_kod": "⭕",
-        "grup_onek": True,
+        "grup_onek": False,
     },
 
 
