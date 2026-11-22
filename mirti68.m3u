@@ -1578,6 +1578,50 @@ https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg00684-accuweather-accuweather-plex/
 http://stream.mcquack.net/116/index.m3u8
 #EXTINF:-1 tvg-id="Yaban TV" tvg-name="yabantv" tvg-logo="http://logo.multicms.info/tvlogo/yaban.png" group-title="🟫◆  BELGESEL 🏔️",YABAN TV
 http://190502.tomtv.eu:80/MustafaozdemR7808/z189b8mv2r/15018
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - NATIONAL GEOGRAPHIC-V ⭕
+https://aktif-q65v.onrender.com/play/natgeo
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - NATIONAL GEOGRAPHIC WILD-V ⭕
+https://aktif-q65v.onrender.com/play/natgeowild
+#EXTINF:-1 group-title="🟫◆  BELGESEL 🏔️",Belgesel - DİSCOVERY CHANNEL-V ⭕
+https://aktif-q65v.onrender.com/play/discovery
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - INVESTIGATION DISCOVERY ⭕
+http://65.108.239.207/discs/index.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - INVESTIGATION DISCOVERY-V ⭕
+https://aktif-q65v.onrender.com/play/id
+#EXTINF:-1 group-title="🟫◆  BELGESEL 🏔️",Belgesel - BBC EARTH-V ⭕
+https://aktif-q65v.onrender.com/play/bbcearth
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - VİASAT HİSTORY-V ⭕
+https://aktif-q65v.onrender.com/play/viasathistory
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - LOVE NATURE-V ⭕
+https://aktif-q65v.onrender.com/play/lovenature
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - TARİH TV-V ⭕
+https://aktif-q65v.onrender.com/play/tarihtv
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - TRT BELGESEL ⭕
+https://tv-trtbelgesel.medya.trt.com.tr/master_1080.m3u8
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/xTTxc9G3/Bein-gurme-removebg-preview.png" group-title="🟫◆  BELGESEL 🏔️",Belgesel - beIN GURME-V ⭕
+https://aktif-q65v.onrender.com/play/gurme
+#EXTINF:-1 group-title="🟫◆  BELGESEL 🏔️",Belgesel - BEİN İZ-V ⭕
+https://aktif-q65v.onrender.com/play/beiniz
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - ÇİFTÇİ TV ⭕
+https://live.artidijitalmedya.com/artidijital_ciftcitv/ciftcitv/playlist.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - YABAN TV-V ⭕
+https://aktif-q65v.onrender.com/play/yabantv
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - KÖY TV-V ⭕
+https://aktif-q65v.onrender.com/play/koytv
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - TARIM TV ⭕
+https://aktif-q65v.onrender.com/play/tarımtv
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - TOPRAK TV ⭕
+https://streams.uzunmuhalefet.com/stream/54fd8806-0142-4839-930e-aa1d662ad866.m3u8
+#EXTINF:-1 tvg-logo="https://agrotvcomtr.teimg.com/agrotv-com-tr/uploads/2024/09/100x400-1.png" group-title="🟫◆  BELGESEL 🏔️",Belgesel - AGRO TV ⭕
+https://agro.fatihdemirsoy.com:8181/memfs/efe70a0b-aea8-48f3-bfda-72fff7f48a7b_output_0.m3u8?session=WiBL6q6PzoRV7DTJZaMvmo
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - Nature Time FR ⭕
+https://bamusa-naturetime-emea-fra-rakuten.amagi.tv/playlist1080_pl.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - TRAVELXP EN ⭕
+https://travelxp-travelxp-1-nz.samsung.wurl.tv/playlist.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",BELGESEL TV ⭕
+https://playlist.fasttvcdn.com/pl/rfrk9821hdy9dayo8wfyha/belgesel-tv/playlist.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟫◆  BELGESEL 🏔️",Belgesel - Fanatik Prime Ed Stafford ⭕
+https://raw.githubusercontent.com/kadirsener1/catcast/refs/heads/main/catcast/fanatikprimeEdStafford.m3u8
 #EXTINF:-1 tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdGh-OvEhjBHFCx9up5zb00hlU41scCPQVUuV7U3y0Og&s=10" group-title="⬛◆  SİNEMA  🎬",SDM
 https://host.onlineradyotv.net:8081/sdmtv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-name="FX" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/5d9dc96ccfef0b5db33df65a" group-title="⬛◆  SİNEMA  🎬",FX
