@@ -3,35 +3,36 @@
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR1.xml"
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
 # MIRTI68_TRT1_AUTO
-#EXTINF:-1 tvg-name="TRT 1 " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TRT 1
+# MIRTI68_TRT1_AUTO
+#EXTINF:-1 tvg-name="TRT 1 " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TRT 1 
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 # MIRTI68_ATV_AUTO
-#EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
+#EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV 
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
 # MIRTI68_SHOWTV_AUTO
 #EXTINF:-1 tvg-name="SHOW TV ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",SHOW TV ⭕
-https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=09964a2129b151bfa07fde5d9700038b&dfp_paln=AQzzBGQESSf2Vj6URRhOqX4NK7ogRlYEG_D6BZyoCazuIsbkPHi1LLX0JiAnndF7kaPWQXM-2fupWZXKEBug3y8on7KAwcyozrPkDWRxB4VTVYzwzwNaXGG4YtF4xQdx4WAgYSEwhqed43aa9EHycifM83cbG2QFPMkmla_7EmAuDjLIglwogUw840WU9Hc6WQc9vb_Ije2-ZR5AarcdCs8w79u84NV8f-LDsdpDwUMDP-OE1CooY_zRzIdT-BuMIdfNuINMEAD3qVVhEiRixn_OaHTMcvsJyUt3JoI_40e5Qbzmu_NU2KduypI0RL_T3YqWXso2fuYpWK_ft9fpDOQ-jpUBxfyFvXwC8HJ2X8aYLj_3r_AvNWRzADa2q00baWqMVmtUCQOjFkivQJSLA6IBzRQhOhqvGuZl-RiRWEiZNvLFnibuNMBXuCEL3IB5mAp7ywZOr8u7IZpnH4tkEUPHKrwP2QI9jwFgyiSuN-nq3WWJ1gUyoYfh7iYmTvHKa5HwvDPQz1nEmbYXAUnOXgBiNhBs6sEnAcemIPSPb3zclyCQb5ZTCYIqPo7qlEQ3L5ah3UiG7gG6WVHBZeOFc3atqXSnmA1kQS6C3N3mFIYPhVnqpV_KV6NTkYzdk9uvE_UwdSUN2KU9mwec-G2IHMwTBzOu8lIZtLiDNBSCFNmpjFL8nyPtJZamYpq0uTd-SkfxlC-DqX9BReH848VVi8fk-lRAP3hjKr5UW2BKK70jjlwEtfRFBRJRz4EifrLItCocDglVhYBuLxR4mJ-4pzGgRlACeZsvKjvTJcT1jVxHkJGkS9dHoXt6Lzl7roks2uh_0JaU07tF5Z6csKHAozgzi-5Sg3i4dCwZj6YmoIL68tg-9cqFGQzphRgqDQoVUmDWAXbF7M6LHeBUuN8Jlp0iGf6H-PBnq5bExBMp3wnhYzGl4g9iIBVGtRQn8y1AnmENS2Hl_XKs2bFjWgmMtWrwC-YwfXeiXxPw7LC7930d26yUrGB6y2z3O1XGt2URxU_XsBe0eICReyMTF9HMbqO6EZUO3kMcjkdb8QWsLzY2SacaFKcoVc1nzDmsj6rR21ZbpzFHDgbPCmfvrTzRsMz7ZhHk3Z9hrP37qh7EJM28r0uSjeUof3EA_4u-7jRTjM8Nbf6WZFM86mK-2TsC5szUeqJaSnIDXzSIkINmKZ1YN-YlQ3YMUJHJPgxVdYb0nKjTkitMC16UnLDgWM3nvEZ5bkE58dbtxCT_G3_9yKIIcet8277HsZapg-nP4mzH4iSjvIrxOrgQA26m3zueeRGSmVlNhd-Ny9lwATw8W7ZF
+https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=9206f30e855408929582b952bc54fd7b&dfp_paln=AQzzBGQE_wmzdBDT6xf33SdVjJiI3kuBy7L6gUBDyiE2TpX5lbzTPO4YW_22WRs6OK00gVCf6NmwRM9UkoKcyx0im1sCUfgPiLaFFIjq8CYj7Eu3Zk7P_dXSed45GY1C165LeUvHeCcpCzPb36PLHAJYWp6_TjEXiDmNA670JBuDEcNHyyVW6SY_lWAmPVSrU1QBpvieHhfIXUvbWmfNamKaEk6Ag7lPjBnk-8BUESZkz0vKjRrQejF8P459L1q6e6CnFKuH7wDY8YAWILQoq6N46hWjNLxA3Dxbv_BxfYMpBZbTWUqO2W8rLjPSz7eLnMY6O2jx5Cq3jXwC7UyOTwl56LYLOTOwOPb9y_bLkZ5YtCtP_eeW42sNJq1hsTO__qWhxr6PwVxjZ_cG7_7xj45uqIikPghBtVnSQ3Bk2TXpUVpyegmRMCWCv_73ANYGgVIsIoWGJ4qa8QlDencezXMSwhMDvcNaDk4hbDGEPGEG-kA_KNtGNITQd_CWRzWAjMdk9d8vR0mqVNXbLZ3fhWI8BJS5cADFHNgRoQ_zxJk-Sn1N-FETYnjpkLMJ3E1ZXrTx99wEZB5Cz7fiVQDzFO3YIHnB5kwbJZtP4_7YhqAdYgk74oNG55Ism_1dKSFlWCoDhqauac6fYYQdprwLCsXP5VsyTX5zTsyGWCyYwvKTUmBlOyicRW4yda4D94DkW7ta6fGRjvw8r07JeMqCCjqg6d0dDB3uO9353c2XYPbsU-aSMXxtPyI8c2uNAFbHVqkQfV8aOc_CfUTNLzwaRx-6AKcJ9dBfMnGRjH4_GCVROAdC5WajrPLgEMm56RI7uhmEBj0RfAGiGxEXvdLZ3peufCz-sSiK9viebpdNIwPav1_xSOm_h_epYMzJMn0BcPT2rgoCJXx_L1auE_NY9nxlUFoziMdu95d8PFqZM7go56xA_YS6pKGqTgJ0QkCwfIkdlB1rVCjGHdjV5kH4CXLvpkRfHeJJ0pScXn_94CwMOL8Nb1RI782sIlp_T7-TIBXW1v27PFVo3v6wn3wVxiHEYYFyKQbDutnS_ZdQs4resZq3O8rxQV21WRb20o0DHmFYj5atnS05f03UWrtX2ZCJJPirdKB0ELj9RSp-U6nM8UW1STuio_sVTNu9UIiKY3Mcb-8yo-w_sTms1s3jiccpii5N-YWvM4BIIOaYmciBFc5Y8i01A3MArkj97VDJR1gmQEUjKsrsjyGsBktXna9EZ8B4S2eOCEdeLavilZwgHSkLSlOwgxyM-hOK2CEfYygBLpdPdo5_zeWtlaK8-WaMoRNWApYAbKxcnyRQ77NJ7_5IiGVcXYxakehIs2IcoQCcqgj182a4WqU9Z-xMtlwPcIBYqjMDLY2DgoMJg6nlg-EPLdzmfDvTJWdwbaULEcbp4cRWk-QybOZDZGtb9dzBKuYtBJjrvaNA
 # MIRTI68_KANALD_AUTO
 #EXTINF:-1 tvg-name="KANAL D ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",KANAL D ⭕
-https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=0753e25b8e42596864eef426bde73b41&dfp_paln=AQzzBGQERbqDVI7xHOUxVpTAioanu9OXAOSZ7684hE3cJudpmRtF8OBgmtFF08rOaJoceknEYz3uObqYNGf4JlGPwj2Q7s1qROeQpG5VPeyZJW_WY8DIs03rLyS0rN3CsyudapGT2OvUBPmxrEYtZcFJJ6YGapOhCzLeL0OwMd1ldXJAlaD2T4rFb391MBdNyJLBMNr4L1BuNmW6_8JTXuVO4sDOZf5hP4kVGOp2lZ4QkBmTRvH8zKZUEqUV7z5KEllSbemZLcBgyt6fckGdFxmrBjDzgJ8TBQEtNPJTtOTZqE0UXAi3I3P2k28TXYAak_rhtM2eprgOsRnF69FsJ2ABLV_AkV6jlq3Ht1ZUKv8lQ-JCAjOQXNF8mvzv7-aYi5EaQoEHSY7QAgBruv2Ntn_76ghFgO5UG11-LNQndoHehERH7Z9WKjFhoyr9vHvEpbicYRIi3a5J2XfBVuExMmIDI3TxHuudtTBiy0BYyrFNn_FhlSgssKbCMyd1mMd8BMCBSiQYQJyL-LEfHS4xZCbTSTTWryFOyqje55XameHWKfr2BbK7K00HtIHXZXBb-vINt-s3Zr_eO__Ae_Su43G1zabizUBH02c1jRvCJZQIxB50nm2eyMQWNThX6ZKZMpP4AKOgKU3bebZ8zRAplHta_UKijWwsRjmf0DC48mCSG8ByjlP_yYLIMC-NnQCLgI39Xl-c2C7ZtvN2NDHtoBJ2tQHw4hIBCryXwgltnLIr2iz8UebbWhySQb9w01HTNZsv67M4l-x1B5kp0yk7AVyxgj_oTBmT9ldjZu-FnMTpJM-_aDIKwT8CRuFYMQ988dHBVZS9wSxCmz9BrY4IhlKevGzM3vF5eW2rx5_vodMRW38npEdz6zC5DMMRJKBJRW2q0YFzfss5zssnTZUbw1xX9H2nKRvdR0pWejnv3NaSdWr9_3eBIlEBeKy95Gz9jx8eX7cLbsyY5HFKC2V9AIiX9SNUF8TfGncYcSkIK_iYlWBMKj9LXJJpI4QSx4tO8tp9ClEr6zsg41fCSlCqOEcMA9o8RnSZ81jLvwKWb7s5sYxBJuby4wY9fkIVY0JOwkf0yBF7st2sC6Z-NwG_85sp8yaHh048n58apvth3udqAP4jiCVbX8H-ZX_CDOMRRmfN9Xe38fPy6OAA5Cn6Yohxelv-lU8DlK1jsxuAAEPpPkUf_ivy0eh7SxPjYjmVGQOwu0bQnuPbySAgkY6uqORgCbbFnSHkIxMYlRoEgc-P2Tx3qjxDoFwFX9cGrx_aIGryvbwQCsa2rPDX816P98CaFiuvE-S9kDgG6Ga2Yg..
+https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=f32e2c17ffb6bf27f5bb9a719bd4e7a3&dfp_paln=AQzzBGQEIybqMfjLsWjZCNs7aS3tAH6xytJGlhilCTNyDyTT_ElHmjJpT8buDJBUAUz-oKg57M_nkYb1mmZTSbJs-KbpO1WfsWl4kB7MvDhX1cN9A-2jz6N3cjxyABrtDABrA5nvnRcKDSCxvpWUytK2h-X6qkQh31CgXcSO6fNITi2uEszCGqIl2YX8QZgX9SE5bbFKkrrqcHYAJ1Bu6rQDrEYXPyMj53f0RJDiX8-8pMKYvnsuNALLmPMvBFw92asv-FBRdcrKiyeqAEwbQfEHAlccaW9rcGEDcaP5uy2YjzOhqOc72JyJDRklsyYynGDDs6gXFMa3-hVcevtfFzAZuimpzb3lVOos8Kvvztk0TKdqSakBZx82vpbfTaq7ZwU8lGf3IwwGl404tIJ2qXkAv5PfldJfy42mFd9hyrNfHCLiggjPzEQmShij2TnD_Ev3T6iL9bNOyLovckuNxywVhL4eWhgyc_4HLTu39Z7uQAvzr1roEo7kjjvfLpsf_R91Y8NT5CGODojLhPREulj5ss87VhhzRui2q1tvumFcbYNnT6OfXSXR35xBgiIHkBb-AFkS4ZszuxcPYRSevGHOP86eWtf2ucGKwZbxQUijra_8Jzk9DU8b5wRvvVNKsdBm6VtrSyWer__dm1fr9cgmkdHL5FGOedj74IBtBWpE3VYUf4fwP54VS91dXHzs8_TmjyFgvGS3mV94Pw-inMtTD67WLRMkRfP9enZI5mtUggLYrqEEUltFL5MkipwTMbNKRdSaicRHwszNmc8YsQDUApqt3Qg0QAuZtPSBtimxYv0-3kqIYzhBxh_QhdcV7WslDB04ps538Y7Qy7g9WZMXQrLAs5kBjay9_84w8MLiCLqSyMCBUYy5FSzchz5nQabX-u3-j6sAOaqYg9URJKPDdad1TSiJeJUisYRjiR73HzF8O4wLd2JHNF7oFYnQ41kV7xjWNObTkALqGZwvtSDjx1JvQbT03cNfQzQL2ZZsNcTVn4XBoZLRjG9pex6qczBC6g2II2EfansMWpezRVQw_BbvDZEpeJEmvjLd3kfcTwSw6N1GFBOuwTBjRSVALm-WhStnD6JjKzppNdDBGB4PSH1BckEbpjwpXwLW5s9-aVc6lXks-tp8uSGxl_S-OjEaFyh-9DstnSzjSsFJoy78czOPa2mTbMi6itCUFFCLk5jjckcVcsLs4gWhGAu74dtv4CIpxPFVBNKHrf4xMPFvvvUeTh4WSqu1CfMh8Qd-hxb5QxmqlQgHgAHy_KizLyjpjebajwAuXTQH4hIZTSuDA1c2QuR8obVSCBKqoi6fwfCSrItiW4dpRMfS7_y_kRTz8I5cGllUCRki0hsOAd5cmVRAfKlPW8adO_7CdoFvLELIN4YvtIIhseET59bx21IqdQXdAGDE2Q..
 # MIRTI68_STARTV_AUTO
 #EXTINF:-1 tvg-name="Star TV  ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",Star TV  ⭕
-https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=1319b76d871e31ef6464956751afd615&dfp_paln=AQzzBGQEagvfDg49wC_uD06wZC7UO8Kexi87UAP6WcsTKOab9RB87es7Cw0TYc7PkgsTp7GIcX0L54yMnM8LjFRxbSQZIq9PsVl45DkzeDj4K8yLRdUe25m0aJD5U38NUZc9kTSTv4iG_KidW2aZ2USQuYBvumSuB2tlp2GU2y7BdJmlpmt2P_wV3Gl5E8V2Dz7o2TGcZ8Koiqp3O_2FpCD-WCoj7tQWa2zCXND2kYSlzAZC7YhjfemYnTm34nKW4kX3wBbCNnM-kDYU-gJsieEznvfRlFcVOLi8lkah91nCVlOYd6xidHQPNE9SWDssLcK7iwN2xuKmwgfRojxuxoP17kaOHc51bvDrESnMvXIwbvp32ZgrOlURGojaziieOEO4Mh0Cu47ciSmy2jzNUZuJlRbMff8kQaZ64No8vfvjau4muqk7k5GQJ_GqLDWShEOCYZ-T1aoTQJBgborZgGmmQb6sBpieP1r_MIRi71laVlmdi0m7bEt7h6Bwm_MB1RcRULOTrF_Px_tY982TvqqMDxEPPCTp64MFdJEX5j1SuyoB1NjDs4NVytlrOZkhKQJJV5h2KW423-oGhfCuRO310reuGesTlRu76Q6PJxSw4kRXzP85Zskca9iHHxexi8SuDKohx4nhBXGd73eir23ZlLewWJxyKXDdklRowYiZ201gvBTAZdOZCk4UaW0xuc3qlChBdskGNeecr2lbNKibPFLV61gjrAWkEbXLvrNFhY1U68GzA97pGa6F4LfLtoEVlg1hAJJeJomxmSoRyIpE8Y8xdA0JzZBvvFhAb3vkdbO-iu_Er2-FC2C7TSiTEH1fHO5_dC_WAkCHkPcxTmEh7N_dLVELxuwXP3Ai1Z2PTSEdkFgjhO2QOWZ1xSgdCaunTgjl6DQdYNdU__6CzB8u_hF7yfxSIey7Fj6BbUmUUbPb1HxzmtOcLv86lvg62H2lS2OyoPKroSBEpanIfQZW18fCnSbCoVi_UuaPFNN6LXMLfBiPqVkcWWGWZWSFPM-XO-MpuYb4wGwon7sn4r-EVAiipn9Dp7PC49SC3JV_Nz_y_sA-IxEN7Lwt7THa7qe8xVvzIksBfY_9wprVvEAo_HYyfDgPee0DUdVTaAJhDxPdiaEsnvmZHDQeookP_omxXaL6gs3X0ReOt2cNr4YIDXQt66hLDCjaLogY4TXbTFbTPKHb-JJVnrC2ZPDGWkNiTvyL-hcmQX2_6EJorPH7hdB60_gcwEhL0ysELsaNR8bd6jqJuSB1NdjO6YQnr-o8joFgUSBLil4qH2-TqqlHwo08GH_8r0UYbwO5PYKLJl-9FS6wxCoxgkYO_Qmb1Kr0Wpqw1B1lGKPslDpF7Dvu2d77u0WYnsKi6JknJRy-mGJYjVpH0h7sMta5g7BB6Vb9tQpREZLm-shuEbRFjlowc8GE4VzjDhz2kVfRVldM-ppgbWw9liEJjCc.
+https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=1e866defbc21da467501effe55c75ff8&dfp_paln=AQzzBGQE8ywuCaD1saZ-vEJNV5J7C2POy3kqkNv4KDjXUONuhuapHopNBGnEEjue5rvR4hiBvYCYrAPBIwPPxV-OE5L2kbNRRo8md-KVmpOK8V_C1T_FTs3BxZRer8nnkc98gV5hwRHc_zZk2N2MK8OLOz-klXYiAtaaJ6ihben0KGBQ13MdBFyQ4-gpx2b_M1xaCfJ_cw6cwll1bwF2SDXL28HbkHfrQr8bNL-n7Z8g4BJ4GnzxeU-FgCWNBGK2J6GwuZB97bSBTDuQByv3XLi_zCj3GwWz4ILX6r_P-Np_BG8-Zpmdn3hx1ZC-IWeNlnSuaCx6TDw1_wCKPju9pMOPvAUCuy1b5v_m_9l7c06T8cQNgBFjKlK1rPqwJk0dJdOLKxZObwfNaP5Klmc__gXP7VTEZ9qWzKbL4Y0xt8BOLnN4Z8OByymqdXWUhiqSsIU_3QWluzFn-M32foezd8uM8wDcLrhnYsyGEauDYU0d64cag_UkM4NS-33_kkTjZcOLo9CvloxmKmgyhX2e4rtQZEF62qi1vFOgKSHoljMRkkUkjEcWDMGn60-TKqDKkHE0RAamBQFA_8kMNs5B5OYGtxKCQJRbDEiTE9mHWtg7YCKzAArZVZcPk2LrE3zT6z-086JTktj0-xWvuKoIhzqpOQxeh4usnFN7-ixZGA57iJV-CrJEsss0uMbw-iaQdFBEqvNSrX9RDhfE2PH6N2x7ClcJtc4MEP8xIIr5SJB4YLXBoJgtU30wlDygVem7BnvCJ3ut3FJmiXSDlVrqUjtTKAM0o8ooXnrqbIrX4sN_5o5lXf_WGHqORKWHMoz3Hk59v0RP63ThbCu4Xb2Kca4mkOcLPrxXAStYBb9gmfQY2hWSckl8QLDvfSiEvWHGJdanV5xc1NJP1FWYwXMnLhTXNMUzexCVT-Of8_jXlwa3_e_PRBzUQ47_68265HlYoGT_0c-DA-vMaJlyt3LR3b6I-dkWtCoLX3zShH8hXeZqjo8Z-Nsby8Q9_uIDIBxT4kIDofosXkN5X_C2jFnG7oMC4hfUOuwl8761MsbNcBdHUsgk-Tb-LZJHQ4Fln7_Ep1-w_3pg_koVNxM8EtHdk58Jwh2218ZMFcWBFWUnwXR6-7O8UHcC0scltpNnFrQg9Dnw7o4PT53vcbZ8zELrQ_7tv4RaMuEFLejW4tcJogO9d5xguo27AOtLxzv8A3Ma82wV1SH0rRmWIioE2dKqlRJ2wTUR39pkSqEicN5VvL8AI5izVzouvHnCbgHaPrIJVMg1ow5DOafuQHwQ2PT0NTD_HOW8d_bhrkjcbGjH2cAH7z_58eTLqS2tVDout78i_YKnJqzsbyQRCE3wASbg69shv7Gokc0ZoqPw80UQ4FPqLFn0_xZpUkai7W113fcyv8Dem9jCjVDd5TtvZU4kp0502f_vUWeAjAZTokRCf6_ReEzRAPEoB3P_Xk2e5wMX6gyhOOU.
 # MIRTI68_NOWTV_AUTO
 #EXTINF:-1 tvg-name="NOW ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",NOW ⭕
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=Um9smFPrcjryF2LgoDGmew&e=1795318929
+https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=yvBIPLZ_UM8q2PPeUjyICA&e=1795336442
 # MIRTI68_KANAL7_AUTO
 #EXTINF:-1 tvg-name="KANAL 7 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",KANAL 7 ⭕
-https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=5fff753f6d6f7f260b4df7ead1914658&dfp_paln=AQzzBGQEEcCU16xtkKPJTKyqtyj808uxIBPP3dFNsQmqRtIBC_tW-clNW5JV13Va4r_OvhKUbQYqcwIrxwMQQox2aUbd5e1f09EB4-1YdmrQ5P9KXiiNELFGKwXwM15Woayd0tkE4AxKeX7SbdIn7w-FDL3bD2QXpsp47yWF_TM1d7SpVIX8WIpPq8zxVKOXHYwuSP-UrFool6j5iW5hxRRbv3Awhvyyaay7mb_3dfZJMkVlj_LCiuVHAj_sGX9oaLgV0mZItHAFGlTYrsWT1I6dw9B-2gePzE3vlcfxImjTSU1BNrtXNu-aX0RODjbfhXSSstXDuIJ4GoaZTvQkMhNApZIQw-KvcdQfQQCkG3PNOVUih01oIop9XnsGJUYUkQrRqkXUQDOkKctJIYxbMY3SS0DCq0oOBg3XcJFlE8mnBDfSFgDFyaaGh2qL931SelJyjNjHgxuiOwvYLL3u5W8Qtk6lzfioNoHApStYRqAaVvRxneXCd5oLceJd1AmvbY34K10f2fzyEnxF3WQ_NTCTvg2bC0o5Otbsbv_4YgOMrIPKpcFxTH1JuuFLQXw3F5XC4WXmFl461IJZdZzZg72UUb1K5NGgor9otaXfQdyfS4jMB-BRN2K8nvqEGB_Yksl07LBkjmNT2Z4Xq223JaUQ-j-3PPtE1xbb7LxSvSg9BIYtUak35P8kd3zMauhTGGWFJzRwu6HD7O9JcJebvQpf3hCX2kR9SfGENU14XFMoMASs8o8jqE7ufcIF-dZ7e23pyB1311N6ufaLpxotI713DVQKcY2um9M24nILiRTssB4sIFzye3A_ifIqrVBRa5GE3vDl4r8nLCw4-jqxrG0G5k0DfTXApplNDOcwFoIcdqOWexnlQ5pty9NPEh8xIkWyD0fLJUoTTtu8hHYcNo1YDvmSAJoyLVocwEb-fklsO0LJ-iRc3gHmkxACRVhLPl_5yOi5ym2bhPO6NSYa8fQdhBns1oVuBctSaZtegW3e0575OqYYXuaN4PMouLzCwkjNokpvc7nqJe07Z2TdxhrR35_RJ5B_bRTpR1mnxpxyGpBccD4lO1LAxsCHEBNQu6nJfkg0ow4lgWsx6QOpdEc7oZRnjwpRJPTExtuP5WBtoqkZF96trbpFsMO2E0wNxmXQJEezRD4raDQPonDjxy2s1RBsYfPPsmm2F5rLEyIAZNuALZlF6OvpFC-nbjd8ywmdJpxrUztLr3OUw5Ks5VHauK7ZVeyF6P5Q01qb-mBSbioYaaQqwHHO2yHpYsXrmeqhDHZFXPJoHi7zI4bARLqkpU4V8w-Xby3JXxtPzlFtqXdmKZlVYldKDg6GtqmKgIenOsMAvq7NrND-WA-_s0TvCJ-B4pdbU5ru7fXieFwHLXhi1vkZms5oAgkqGsT8gv0tFGn8ZPQyqbvMc6Oo7FQeBtdTwgrXlO7J33SWb78C9gzpIoYFs0cDG5lccD-MDFHGrhN-FOZbwDzDQmqc4VHUDVHrCYcBcg7XoVyZRKYEx9nrfSgYX7StVQxXWKI.
+https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=b05268c09d8954484c42be1e486b82b2&dfp_paln=AQzzBGQEKzR5Z8n1GaZO3iv5KCcT7jyBEOwZOXJj-wq_WOmVJib7LFk4dH3NzBmKWzGI8ug6DRCCJtEFkQqvBVv20SbRqfu1GbyMjGE5PdSuC0sv8BSTExr4Nok0oP1PcZNQik2XNbFzHobpGoJvfNUxQIOclxpAVFbnj4Uwry2Bw2o3pTPogfmV_DZdbAZ7slxy5rdq4jaGpc1VQ1o4avxF0DHmC1FbeGYFFtvmsYSHtmJ4HGkmn61rR8dRwDG1rIGYKizbR3VJKWf3iTxB7eVe6VXCDL8fBR-SYrfAgGpgu-_aPpDgMlWi2OmYFKZKB0gE3h-Z66IvcIueC1nD6eHkC-KHIN8A-rM0r5r0zDq72HfW9QH39P0sPjKK_LHaocKginq6x9lyJ7UAwQZdf5nCCstwXBPuPdXXqnX60cZo4k7Z2t0Jzc-TKak1mWC2tJb5QJmnj1IxmSs-0yfmrmTvW4-_IeMn-oA2TqNIM7ppN2QfFv6DkLG8OxzCtmAlgyUYVYRRLqUzdq70CFSTmOJfK2FuqCQrIAI41aFtsUAZgnxq3tibh6Yq-1H0GHaCCvvIzHPoBolPEUIbHRivI8eoXS45N8nqzf-Q7YZBjbZQWjkVuMGIRL-SaspavmFM3dOJdSTCkMzGHKNHygkRZ6inFG-kBGnkn5XIZIphh9EaQC9MlpubR5LnJVlhmZO6AAhdH6GJCEa-VDl9GSKTkB9kVgCX7df7Ol6DZZQiHzCsyIJMs49uGgFxPklaomK-Muc2LBg5p5W942RCSc_R7ggxmjZagaKd9VG9FUt8qcXDoMUTzsE_2oCpwc7x-HOuuJCAJNIQFiYiZacUV2WbuKSu8UBpcUnBD18Q7t4jBk4k42qK388NH-514J-YXiXlvg-PM5LwnjDE7X2D_S8kEkBPxK28Jjrsrxr5EleHwK3As94gfkrFk1WWVVhaj94QEfthQbtHIFwMayQ8KJs-AKPdA6vqRDK0tnmZJKUwQ4UNm_qbSBTzjnR3ytgAqHTcl78Afvuf7ugu9qLmIHDLUfSl1bgXs15Kb1A0cxLJwxc1Z6aPuMCDhgA8x_uAAMj8i3avVRWB5RxW3U_8g56FDL0LlDQlEV_W8TwTOXgJ60ZRQZxL0B-ch6UYTN_TkCq4sZj_IOSV9I7hDX7g4jZ_tQhwtpzE7hz-yxNwp3DN-eRsRIlNugW0K91QS0sMPz1S5e_j5VICLRWI_WbAltLUdi1jU_KXgLKPI9YNFQVrHRYeSeScy49TnYhmhNHjMSd4m8ERMU8gcS4ar4NmANIGJZszXpxVWH-68fhUMV8b0hG9k7hTR66mlOAgtHLYEtaRa0LMxPAdHIrYMsP72wUUbVzWJqItHzhnbW4gfja-apTGQsyhA3qDHrSPNYepZPWE1XduEZuawxypUxCuuJIiPU5Dnqa_G33Yb5-kAtP_ODwVIcSa47fsEnRcBgu3OVUtsxAJSyJzaHzBkgtaFLjpITk6pimy-AK5-H2rkNxW0oybAjEgyVTkZ7IY8Q..
 # MIRTI68_TV8_AUTO
 #EXTINF:-1 tvg-name="TV8 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TV8 ⭕
-https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=550d546292c7d8f370fb7bd4617c1077&dfp_paln=AQzzBGQEItjU_ik_cm-s6c8Zsv_z3_ECQKLB--sTNkKczX__vFAej-JxkvU412TXBNkSlQ4S85Yqaad_OHKJZx3By-dJWR6sACDIx5QcvqN5mp0kZmBB5DJ4LIhTf0PVGQofjObnGu5wsywY0JKEEU8rGd6hI40WoGEdNGIRj-B0gHPh4lhsPcCifvv0xJOvkQCfux0Y3LnrusOJaPygZCDuQ1U1SwRqstnHVYBK9tfsKcqBFE4RjiwlVAWjkpHtuSoM1KjlvQ5LoXW-IMgcann4eBFEngwqgsPvibTsSR6QL5kUnKL60-ZgA7Eta-FPnfTjzgSdmEftROgu7nzd617woVyOdmilU7URUhAF4WLM-YcAjId-gU8QOqjiESDrSCoZIBkWk8EAkfiP8dVvOxi3UQLIKwgUH93WrbnpdETE9Bna0t5c9x6cwJ0ZXxcyfoZz17hAAFpDBVu8LCzyCgCQ96AdA7RUATfJm1E3-fvN5-46aiJF4dr3iHBRVPOayvcEvpfMV0zvw9TXafUZ7O1IXtkNsADHhatG7YQZLioGkfDUIb9xqR0Qg7odvoWZOi5nmO2iPBJ3fPa3-ETrMGJkLS_H7eOCiKZbcLrGg3OH92vZETLtMVuyVp210JH67TQpcEfrwd_840JcmHYwQ1hnL1Sy0tbDmWp38SE5C_vOMhCugdd35P-R_Jh_el5iJPBoHt5HXaLfW-L9N6jKnbr4lbnD9O987PLAbUEY36Xw4XpJ7GsnoDexhDyaLa2ehM6dbDRsJR4bhf3csiT-KnmrJctupK1M3bVOIv6rBxTD0vbBaJpqNs2vFM6hHt9tNjazNvh3hk_-eSx3jip14iue90qrkGn-HCcUFxSMMzjGyakzed2ififQAs92gLpRhOktaxow1MwhXJepCg0yFyXAtaItg2q5v87fEgnoqUZHB11sRPWc0Ucpbm2sGE6Tqytt6_PdMhYxUNA7TTYVfalfYvKs5jFjIwRoXiG-P1iTNpTLNvJBH8zbibaP4OW7jqo9vCgFDAQFOh_XpghLjOlGTf7K3UqnkcioAOTUIVIpSA8zQ2iiqemHzpNWnQ86spySzuadX5fc9T-AbrZSb4nK3mdzjt-LcnSJvkd5js27w5co75MKmHMitpOXoNWjgqjTSqg4IUesuv5oCLEaQ7pvmORIAmZZhtlKlZciGOVivqmVyGVKVr_BJXoTOxxCmc8o2m5a85iA1FsondroIrY8CqNmN9jW-nrzVqEWRw8f6nEgyw..
+https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=48fc6793f9f7fbcde21a62f44393d1a0&dfp_paln=AQzzBGQEZ2wRUWspkj1PgVkHkcXCxVfJc1Gl2BVf-5GO-5VpdET7AgmjHBGQroXy2oUNbnqph7iK9Nk37Hfoi-EFI4WiZbUblrA62WcViz68tdxPkchVqVn4hzoYLIDVAaILm0SWSXDdK4Ne0GzPppJG_VeOrP4X-a7AErT_O-zH_f6208dHHniUMBy3NhQTO1vj9M7ND3BbznBLe9oX3SoPgYu2zHwChVwqq5lZaBLwbvo2hMnZvlKKdT9zA2YdC_6aUM4leIM-MY5gAwKAMGRDzBlcXh17bhmc_V-vSGrcmT5UaWF3DnLWamSoTqktyJvSeTE78K7rpZBfx-dasufflOK9hz99R4Vy02KkyuiGasHxF063jzvF9I1FaeRRbdOVP1yzKKGWd1TP0IJwjsO5C5fnd2XGUxRFLRJ6KdNAt_xa7L1rKEuVvdA8iM1NBV9akeoRu0yLfLsmc7qxaxuzpVa1tS7Fwo8-VgUajKkZkD7U6zri3GL_4Vic-ahnSgiFEksNYc_DGNk19Q__-QT1nc889Z7TwDMPzHIARokj2-i3ztc7fnc2XS2Q3v0TV4JA2wtIzaeDvUoBkE4oDW7v2JOT5kD6katHzwE_WAYwyXQm3NpXsLsLj28q7fNF1xSIXCe80CX2XiSGfGMYHjqgoJ1ASC9y4-02MLsUeBc1w6ctgNCB-Pu-YtocYJ9Nqr9ubf9H8gqnz-X27ssFSrscEwThEtEYLdwZAv5F_PsHATjUglgdxVRI0yVeA1bkoPCHGdrIAHGsKnFzs4BcRjCwiJUBCLt7y4zak-yUR252Pli_4utA9yNCdnW-mNJFjpUTiMKKxpKyKaT3xIAv7LVTKWRE8lolDt4XWmKAOW-Q1KXUn7g7q1GTojOU9q1EyMBM9bdu-MIKfRDdHiQR0fEqPnTDTYtWuoq5bIUwU9Db2RiKW9QeLLr_r7XA-RzotI_qsepnSAwaewDRs1uYpRZO_cU3ZCQtaJfBZ98QNDDd96Ar6ArqAzxqntzHU-Z__J8GhpbGsNk69yKTfY5IHHj01fMBdFDH_aE7EWb3RGA7BrHrIj-L0jDPavSdAb8xsGGRPPMWhhmcEy_CyLxxFcK05Ez9WHYtQI5QnjEaNCP-xmQMLMM61kHMYf5WdPHNdBv8fHfYT8q_S4esD3OpnkZL6abd2DTuY6-PvoxTxnfl-Yg7-dqu159k5EL2zc2tgQ6Crj446PdhohzCY6J2uCs8468SXXSkwhp865e73TWRaWbB
 # MIRTI68_360_AUTO
 #EXTINF:-1 tvg-name="360 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/360.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",360 ⭕
 https://turkmedya-live.ercdn.net/tv360/tv360_720p.m3u8
 # MIRTI68_TV2_AUTO
 #EXTINF:-1 tvg-name="TV 2 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv2.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TV 2 ⭕
-https://demiroren.daioncdn.net/teve2/teve2.m3u8?ce=3&app=6aab838a-437e-4a1b-bbd0-e30f79cdbbbd&ppid=1966503ed3f678cb67a3d694b89d493f&dfp_paln=AQzzBGQECqZApEW8or88IWbEwewC-HvRg6iqeWKdrM6SOtG6JEmyau2xsxty1nim7ARYEKSzNkSdIWtJGPFmLquZgOca7WnP4fcv_7zww1wIs7pqT1Qqbt9bqHHRw2NVzdcSXPpFxuPIegffjJYfxkDjHRkcFcxSnw9NKah6DIJahKbEVkhUXuLqMoVNyFz1j4AvymTzTRzM6Q4xTY35vDk2iBNskltjca80aJ2SBgY0ikEGsPjEzu4zJLvOOiN7A3tl60RAcEaHY1hcP30MnOFQi5YwU-s8l3zrMANGIceVfnpoHvpRrZkzHYWzcJmSP9tW5KMI0hBFylTSR8Wxwwtgp3DGwtfPwwKkKiT-xdaYNdXEpQ94Ji5SYdhJVSfbbTVqBuqz5ZAQsQJ2LIz30vJLt7f0g__HYEYwVFmSxZu9lV4lPd5wzsihazIvef1CvK7qQf595R-WHlejoMdjIgofDuXeHwpAAzXnxc_QZYS3Ilubio8EJAVMFCdU1qQFnsAf5bJaojXQbr3PPefxhrFFj7raO6t_n-wVHUN0Bgvz6Siw5Phrw_-sNUKcDX1HrsmyIB7nC5thsF-NwZnnxMXII0qUnFMKnamhEiA_CxG-T12MafnYO-5IiNhwPl24xgvFSpwt3J3dIFDxahk4aCUEQCfKmDHjHW1OBpDedDRc0seLQ4WHIiyYzlhX2Eomq5zBjDlaz7iSMAZddi42bOTjZiCSbPDsXKHHYTm6C4JkqT4kkgiKOTh9LhZmYuT-_rQKaowe9EU7VrfQyI7YDR2YGZrq_OTi0FwZdXs-O3j47_qBPN7jALMNYZNaQWN2BeufzyE27N_0-jhlsLG8VP6wlfxm1GNIgt3EZEjRDtaGxTBTXle66DcQLqU9ZIWG7x9CwsLCCGVNP62fv7xpxoMUUuwNovu47eGmbIMzgr6EX25JsWuZxWomKbeUkAuBe22eV_8jc3MbNttRvFSlOXOAIXx55Zeon2K1ZO5teNA6voGhEo7dH1x4KYnUtweCHBevCtdvhRg_M8JhFjR5j1coP37WWZtNTqgXm7EwkDslLAIpL73ImCM7HJi9o44R68uEQ_2BL61cv2FIFfIF9K-OEXusV2LX0Vxg90hrqIizELRoH-7CpBHUDpmyZg0OrXvCGOQ0ejqingrFcq0Es9lyHR0KqryM4hwG2r3I1uXnHp5-0mXbVEB6umoWHzs9PbbUOJLLelgkDmG7puXENxSjLj9TVu2AIHIkt7210LQqjeM0hVkk5_EiDLszhNzUUx-ZuuUq0rlANcCpIl4tpVZH3DTWXZ0lNHqXf-Crvsz8ZxvEkB7bdvtArEWjbvWCjrvycvJVJ_poBBavdnzGUpu5dzrkktdH66JHYmJUkzkr6q1Il8W_NPHoj1WjOxz68JaZOkq-r7p1Ls4Xq8qWfYCQ887Xgnp7z68QjHcx-wK1kHWG9XoenRZpHWhfqemeOqhmLZfoWR61_KPL
+https://demiroren.daioncdn.net/teve2/teve2.m3u8?ce=3&app=6aab838a-437e-4a1b-bbd0-e30f79cdbbbd&ppid=38c027350b195c2cc24ba726c998e9cb&dfp_paln=AQzzBGQE_BdypQihAauOi1mCSUGVp1qIUUjqO-DXU2NtllCAqQ5EYPNtwBydbqjOr8RP3HeDTjMZoV3ivkvwZ5z5BUEl7pzODtpZQOzIWIwdYc6058zoL89S9FX68NaNwI7LB4xXxFCm3RX13NgPElrmbkOehOLy_RQyGK2pbPke7Dktmsr29aYSEfX50o4UaHOkFB2YMuzwrtZAFtlrrRLJuJ93GHkcyAVUHTisRI3lLIxCjcU5eeVZvjQxA38sE1GiMwk9ijyl5nFoH1L3rIMH1OjzNGujdjZ6ShsaTTsJVS7YHEc6hVC1hfIdCAe-WQ6kcomD2BMH1nz5O9klwcN1lkA2vK6t33IePv4QBPL-otuRvtY26lcs-WuVGBioy-x-Gt0ZzuWvmWGfGLV8MN5k_v4XQKblE2bUQmtnaIDPzCdvtvvaaa0hWjRrhWnBAxGk0IQhOD4iBwCTMfO8AdzID1M9xPvdpgFZoZRqU04tM7VJky6UKHEl3kCgoAm8PJzmaIjVq3CGDt4Y9Bu98-uz01RQGnKrN51KGAw8phAIqQ51_31Iqvn20zYbzIutqWvR2sHjlH55xZKGuNyxZaVU1bz9o_QIupLnagHz8etu5ma3zQxszYMyaiKZ7YKsWifD0Ch1GXyvlV4qBLVnone11OjDa7D-i3qPpVPoc1o4SecGXymdI6P_BNQUKz0UmsjPv0egUB3jlAMItiwS-zcBIvI1TeNEconqz7keZV4iI7tPDYls41h1bzTDJtnZxmQrtomm7I7FUmUkKgi7q1fLYfshHJQK7rwsSLX6IwIl5Nawc7sQkYJ35abqJXsxxs3e2wmKo2hX7mQcoVR-ZGjVBbY_s9MXfbHlRMk4ksQGq7F1j5Jgdy7wXZtoqeRr1DVchxvZid0gQprpeZtKZAlnUPtP1Vj877-7ag5hnHaFVHngMmvqwZgy2HHlEGPb2LwDIjk0IAPRB2lM4cJxvehv2Zm6RWKRtvAE2WsVQJcduJlC62ICi_g6hczi3C5HK-y1rY-I6Ntnp5hytYVf8O78cBtmwzURO0jDv4TRJ1FAqVdg1mj0tHroYG6OeqqCLvis0Jpw8VUBXZVHIAs97gzuseTHLgenoB4fKS9pvgXPeVzgaraxVjM7rZRaipzQ49N1KEuhxY-_0VT1LCbX80DhwSwMQnKbTkImytcDKDLlRRdzGJzkkLolRp1Q2Qk7Lcod5eY8AHnTl27Y57vSOboTOo2vY6H24rRMT80VrFaU6a4JMogA7JQQ7xfVDrfCffrWzpVTAorrxxjSZy3R96c_d3YsrI58OzveS2udkoxrHSg.
 #EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL",İNFO
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL",TRT 1
@@ -17503,6 +17504,438 @@ http://mekantv56.win/series/akifalioglu33/33akifalioglu/1b0798cc-6cd3-4258-912d-
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/eeb3d04b-9b8a-48f3-bc06-fbe4346e680a.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Desperately Seeking Soulmate: Escaping Twin Flames Universe S1 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/rS5Cw1VxqUmeIR0mNsTla9AXCNe.jpg" group-title="🟪◆  TABİİ DİZİLERİ ⭕",Desperately Seeking Soulmate: Escaping Twin Flames Universe S1 E3 ⭕
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/79ecb1a6-5682-4f23-84cf-6134572be852.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 1. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/c/8c/65/c8c65e4b-900b-4e68-976f-c46b1af6db16/c8c65e4b-900b-4e68-976f-c46b1af6db16_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 2. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/7/82/f9/782f9d5a-f68d-43d2-8549-305817333674/782f9d5a-f68d-43d2-8549-305817333674_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 3. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/9/bd/8f/9bd8f1c6-cab0-4b30-9558-2bec3e8a2c7d/9bd8f1c6-cab0-4b30-9558-2bec3e8a2c7d_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 4. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/e/cb/83/ecb83539-8ea3-49fe-ac92-7296c118e930/ecb83539-8ea3-49fe-ac92-7296c118e930_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 5. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/c/12/c3/c12c375b-ab2f-4662-bd85-b30a980604d6/c12c375b-ab2f-4662-bd85-b30a980604d6_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 6. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/d/8c/f7/d8cf7845-3843-4673-b154-4795162686f3/d8cf7845-3843-4673-b154-4795162686f3_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 7. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/7/d6/3d/7d63d0b7-7098-4747-8979-6fb8df83fba1/7d63d0b7-7098-4747-8979-6fb8df83fba1_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 8. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/9/b7/95/9b795344-0bda-45b9-b09d-eb6a56cbcf9c/9b795344-0bda-45b9-b09d-eb6a56cbcf9c_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 9. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/6/29/f9/629f975f-d516-4b07-8ea8-2acca3bf2cc3/629f975f-d516-4b07-8ea8-2acca3bf2cc3_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 10. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/f/02/4a/f024abc8-f29d-43ba-96c3-e2c7f6e5fb83/f024abc8-f29d-43ba-96c3-e2c7f6e5fb83_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 11. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/6/0a/85/60a85a8d-bc20-4e9d-a794-05c2ba77ff27/60a85a8d-bc20-4e9d-a794-05c2ba77ff27_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 12. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/a/0d/a4/a0da4a48-e5d4-4b7a-851a-ca7595b2b63a/a0da4a48-e5d4-4b7a-851a-ca7595b2b63a_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 13. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/2/b3/8c/2b38c96b-30ef-47af-958a-6af048f46d1c/2b38c96b-30ef-47af-958a-6af048f46d1c_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 14. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/3/57/f3/357f34ff-81a7-4e5f-87cc-9be39e054869/357f34ff-81a7-4e5f-87cc-9be39e054869_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 15. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/e/43/3b/e433b071-62ed-4af3-9369-b95c350b3698/e433b071-62ed-4af3-9369-b95c350b3698_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 16. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/a/7e/ac/a7eac313-4bae-4225-be49-58d2caf4fd16/a7eac313-4bae-4225-be49-58d2caf4fd16_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 17. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/d/f1/fe/df1fefd1-acfa-4ff5-89cd-97ec3030fb5c/df1fefd1-acfa-4ff5-89cd-97ec3030fb5c_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 18. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/b/ed/37/bed370e4-9d69-4e43-9f14-a0f06d76deda/bed370e4-9d69-4e43-9f14-a0f06d76deda_720p_2000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 19. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/c/5e/e1/c5ee15db-c166-4c4a-ac66-4c1562d59e6c/c5ee15db-c166-4c4a-ac66-4c1562d59e6c_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 20. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/7/40/05/74005cd5-29c5-4130-8d06-86a1b6b6dee6/74005cd5-29c5-4130-8d06-86a1b6b6dee6_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 21. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/d/32/aa/d32aad5e-8514-4dfa-8da8-097b8c18ba4c/d32aad5e-8514-4dfa-8da8-097b8c18ba4c_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 1. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/9/64/b7/964b7e8f-50c6-4dd7-bc3d-b8d1ac008b4c/964b7e8f-50c6-4dd7-bc3d-b8d1ac008b4c_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 2. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/f/cc/1b/fcc1bb3f-c231-4c6c-a28e-a3b15d4577e1/fcc1bb3f-c231-4c6c-a28e-a3b15d4577e1_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 3. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/1/71/35/17135eb7-cb27-4f34-9079-268b0a51a426/17135eb7-cb27-4f34-9079-268b0a51a426_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 4. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/9/18/0e/9180e65b-4c1e-4670-97a9-8e70c2572daa/9180e65b-4c1e-4670-97a9-8e70c2572daa_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 5. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/d/23/bb/d23bbeee-22bd-474e-9434-dac003b06b39/d23bbeee-22bd-474e-9434-dac003b06b39_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 6. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/c/34/9d/c349d3b1-2e13-4810-ae5a-77aefb67e244/c349d3b1-2e13-4810-ae5a-77aefb67e244_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 7. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/5/5f/aa/55faa449-9cfb-4461-8099-eca9b7aced6e/55faa449-9cfb-4461-8099-eca9b7aced6e_720p_2000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 8. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/d/c3/e2/dc3e22b8-d4e0-46b7-bd1e-342e7652698b/dc3e22b8-d4e0-46b7-bd1e-342e7652698b_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 9. Bölüm ⭕
+https://httxxkbiqd.erbvr.com/vms/8/da/98/8da9896a-fcc0-43bd-9c05-7268f533a3b6/8da9896a-fcc0-43bd-9c05-7268f533a3b6_1080p_3000k.mp4
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet İlk Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/T/7k/haysiyet1_bolum/haysiyet1_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 2. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/Y/sR/hay_2blm/hay_2blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 3. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/4/lZ/haysiyet_3_bolum/haysiyet_3_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 4. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/m/Hv/hay4blm/hay4blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 5. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/H/kr/haysiyet_bolum5/haysiyet_bolum5.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 6. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/e/6u/h6_blm/h6_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 7. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/N/kS/haysiyet_bolum_7/haysiyet_bolum_7.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 8. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/t/gU/haysiyet_bolum_8/haysiyet_bolum_8.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 9. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/D/TI/h_9blm/h_9blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir İlk Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/f/sn/us_1_blms/us_1_blms.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 2. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/m/j7/us_2_bolum/us_2_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 3. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/z/Au/us_3_blm_rev/us_3_blm_rev.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 4. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/e/qG/us_4_bolum/us_4_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 5. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/l/9Z/us_5_blm/us_5_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 6. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/t/QW/us_6blm_rev/us_6blm_rev.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 7. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/q/S2/us_7_blm/us_7_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 8. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/m/LV/us_8_bolumm/us_8_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 9. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/z/ET/us_9_bolumm/us_9_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 10. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/X/pM/us_10_blm/us_10_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 11. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/3/pt/us_11_bolumm/us_11_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 12. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/L/xD/us_12_blm/us_12_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 13. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/_/ht/us_13_blm/us_13_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 14. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/G/kV/us_14_blm/us_14_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 15. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/o/8S/us_15_bolum_rev/us_15_bolum_rev.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 16. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/W/ta/us_16_blm/us_16_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 17. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/F/cC/us_17_bolumm/us_17_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 18. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/S/Xi/us_18_blm/us_18_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 19. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/t/yW/us_19_bolumm/us_19_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 20. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/I/XT/us_20_bolumm/us_20_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 21. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/b/Jn/us_21_blm/us_21_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 22. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/U/9F/us_22_bolumm/us_22_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 23. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/6/DH/us_23_blm/us_23_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 24. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/e/dN/us_24_bolumm/us_24_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 25. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/M/Il/us_25_bolumm/us_25_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 26. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/Q/2b/us_26_bolum/us_26_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 27. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/q/Uq/us_27_blm/us_27_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 28. Bölüm - Sezon Finali ⭕
+https://kanaldvod.duhnet.tv/hls/B/5I/us28_sf_blm/us28_sf_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 29. Bölüm - Yeni Sezon ⭕
+https://kanaldvod.duhnet.tv/hls/u/s5/us_29_bolum/us_29_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 30. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/2/we/us_30_bolum/us_30_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 31. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/-/Ik/us_31_bolum/us_31_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 32. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/p/mi/us_32bolum/us_32bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 33. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/3/tx/uzaksehir_33_bolum/uzaksehir_33_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 34. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/Q/uS/us_34_bolum_altbantvers/us_34_bolum_altbantvers.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 35. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/r/OD/us_35_bolum_altbantvers2/us_35_bolum_altbantvers2.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 36. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/O/31/us_36_bolum_altbantvers/us_36_bolum_altbantvers.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 37. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/g/NE/us_37_bolum/us_37_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 38. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/h/no/us_38blm/us_38blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 39. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/i/Mc/us_39_bolum_entegrasyonlu/us_39_bolum_entegrasyonlu.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 40. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/j/BE/us_40_bolum_altbant_vers/us_40_bolum_altbant_vers.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 41. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/e/NC/us_41_bolum_antbantvers/us_41_bolum_antbantvers.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 42. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/j/68/us_42blm/us_42blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 43. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/W/gG/us_43_bolum/us_43_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 44. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/i/ez/us_44_bolum/us_44_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 45. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/I/E8/us_45_bolum/us_45_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 46. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/k/G4/uzaksehir_46_bolum/uzaksehir_46_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 47. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/_/E7/us_47blm/us_47blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 48. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/C/zz/us_48_bolum/us_48_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 49. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/K/Wj/us49_bolum/us49_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 50. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/B/bu/us_50_bolum/us_50_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 51. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/b/qN/us_51bolum/us_51bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 52. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/8/0J/us_52blm/us_52blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 53. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/c/Cl/us_53_bolum/us_53_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 54. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/F/DK/us_54blm/us_54blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 55. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/6/J_/us_55bolum/us_55bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 56. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/y/Gn/us_56bolum/us_56bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 57. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/n/it/us_57_bolum/us_57_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 58. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/o/2m/us_58_bolum/us_58_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 59. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/U/NE/us_59bolum/us_59bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 60. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/w/IJ/us_60_bolum_entegrasyon/us_60_bolum_entegrasyon.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 61. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/Y/XM/us_61_bolum/us_61_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 62. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/R/25/us_62blm/us_62blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 63. Bölüm - SEZON FİNALİ ⭕
+https://kanaldvod.duhnet.tv/hls/d/Fm/us_63_bolum/us_63_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 64. Bölüm - YENİ SEZON ⭕
+https://kanaldvod.duhnet.tv/hls/U/W4/us_64blm/us_64blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 65. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/y/mp/us65_blm/us65_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 66. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/i/gO/us_66_bolum/us_66_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 67. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/d/bx/us_67_bolum/us_67_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 68. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/E/h-/us_68blm/us_68blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 69. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/p/lm/us_bolum_69/us_bolum_69.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 70. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/5/Zx/us_70blm/us_70blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 71. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/B/sI/uzaksehir_bolum_71/uzaksehir_bolum_71.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 72. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/d/nL/us_72blm/us_72blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar İlk Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/_/OS/gvg_1_blm/gvg_1_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 2. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/Z/rZ/gg_2_bolum_rev/gg_2_bolum_rev.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 3. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/e/4d/gg_3_bolum_rev/gg_3_bolum_rev.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 4. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/W/1S/gvg_bol4_altbantli/gvg_bol4_altbantli.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 5. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/B/ND/gg_5blm/gg_5blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 6. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/o/G3/gg_6_bolum/gg_6_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 7. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/8/L4/gvg_7blm/gvg_7blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 8. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/S/yf/gg_8_bolum/gg_8_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 9. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/9/Um/gvg_9bolum/gvg_9bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 10. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/_/gB/gvg_10blm_altbantli/gvg_10blm_altbantli.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 11. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/p/F3/gg_11_bolum_rev/gg_11_bolum_rev.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 12. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/W/rs/gg_12_bolum/gg_12_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 13. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/2/Ai/gvg13/gvg13.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 14. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/w/hW/gg_14_bolum/gg_14_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 15. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/q/A7/gg_15blmbant/gg_15blmbant.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 16. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/8/IZ/gvg_16bolum/gvg_16bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 17. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/I/Pj/gvg17/gvg17.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 18. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/8/lu/gg_18blm/gg_18blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 19. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/l/AW/gg_19_bolum/gg_19_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 20. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/d/ad/gvg_20bolum_rev/gvg_20bolum_rev.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 21. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/X/_D/gvg_bol21/gvg_bol21.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 22. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/z/PI/gg_22_bolum/gg_22_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 23. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/x/Fw/gg_23blm/gg_23blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 24. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/7/oH/gvg24/gvg24.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 25. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/K/hd/gvg_25blm/gvg_25blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 26. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/C/oo/gg_26_bolum/gg_26_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 27. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/2/r7/gg_27blm/gg_27blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 28. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/I/l8/gvgbol28_tntsiz/gvgbol28_tntsiz.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 29. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/r/8p/gvg_29_bolum/gvg_29_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 30. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/h/LW/gg_30_seb/gg_30_seb.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 31. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/q/Iu/gvg_bolum31_tntsiz/gvg_bolum31_tntsiz.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 32. Bölüm - Sezon Finali ⭕
+https://kanaldvod.duhnet.tv/hls/W/0c/gvg32_sf/gvg32_sf.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 33. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/Z/KG/gvg_bol33/gvg_bol33.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 34. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/p/Xb/gg_34_bolumm/gg_34_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 35. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/o/Jj/gg_35blmrev/gg_35blmrev.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 36. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/U/jU/gg_36blm/gg_36blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 37. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/r/fg/gvg_bolum37/gvg_bolum37.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 38. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/A/-0/gg_38_bolumm/gg_38_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 39. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/A/-O/gvg_39blm/gvg_39blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 40. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/0/UY/gvg_bolum40/gvg_bolum40.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 41. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/k/0G/gg_bolum_41/gg_bolum_41.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 İlk Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/e/3a/d17_1_bolum/d17_1_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 2. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/n/sX/daha17_bolum2/daha17_bolum2.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 3. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/Q/NT/daha17_3blm/daha17_3blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 4. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/E/iy/daha17_4blm/daha17_4blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 5. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/2/6x/d17_bolum_5/d17_bolum_5.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 6. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/N/Ud/daha17_bol6/daha17_bol6.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 7. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/f/jj/daha17_7blm/daha17_7blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 8. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/P/SS/daha17_8blm/daha17_8blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 9. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/V/qm/daha17_9_bolum/daha17_9_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 10. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/y/i_/doy_bol10/doy_bol10.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 11. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/u/sx/d17_11blm/d17_11blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 12. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/t/pX/daha17_12blm/daha17_12blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 13. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/d/nC/doy_bolum17/doy_bolum17.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 14. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/x/n6/d17_14_bolumm/d17_14_bolumm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 15. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/N/aU/doy17_blm/doy17_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 16. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/Y/Px/doy_bolum16/doy_bolum16.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 17. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/c/1H/daha17_17_bolum/daha17_17_bolum.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 18. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/q/dn/doy18_blm/doy18_blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 19. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/j/7M/doy_19blm/doy_19blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 20. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/H/Nw/doy_bol20/doy_bol20.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 21. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/K/IC/daha17_21_bolum_rev/daha17_21_bolum_rev.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 22. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/i/QK/doy_22blm/doy_22blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 23. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/E/Q1/daha17_23blm/daha17_23blm.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 24. Bölüm ⭕
+https://kanaldvod.duhnet.tv/hls/I/z9/doy_bolum24/doy_bolum24.smil/playlist.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 1. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ab60ccad3270c47b7873be4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 2. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abf8eebd3270c47b7874193&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 3. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac8a9dc147366462aad1563&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 4. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad1dbbfef431c557785daf9&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 5. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6adb1c31ef431c557785ddc4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 6. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ae451d1817b40855bbfa50e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 7. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6af6f3a142746daf396f27ab&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Tuzlu Kahve 1. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a97c234a46e38b3a3925061&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Tuzlu Kahve 2. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aa03ca6755f87153f61dc6a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Tuzlu Kahve 3. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abf5758d3270c47b787413e&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 1. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_698d68bc3754260b3ea63df3&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 2. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6996a26c3460ad999fb90bf4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 3. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_699fdd37604a1fbc5d83e724&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 4. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69a9a62a604a1fbc5d83eb36&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 5. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69b24c41033a4bd9042cbb34&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 6. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69ba5973033a4bd9042cbe4f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 7. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69c533a0c51e175df4aedf2f&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 8. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69ce4540c51e175df4aee2d1&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 9. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69d74eecca7813cfbb2bfa1d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 10. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69ea30faf761bdbde6006496&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 11. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69f2ee33f761bdbde60067a2&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 12. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69fc914e5c4541d52e367d9b&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 13. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a0585f55c4541d52e368037&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 14. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a0eea585b789bbe9ae3b1d7&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 15. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a2117c6f101adbc6e2a5979&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 16. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aa2f1a8755f87153f61dd5a&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 17. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aabd6fe604b4ef9bac6f918&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 18. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ab4be6dd3270c47b78738d8&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 19. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abdfce0d3270c47b7874059&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 20. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac80622147366462aad14f4&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 21. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6acf70cf147366462aad1883&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 22. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad9e5c3ef431c557785dd62&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 23. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ae1b637817b40855bbfa456&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 24. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6af6135842746daf396f26ef&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 25. Bölüm ⭕
+https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6afe91a2d048d568da67701d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BYzMzZGNkYmMtZjAxMi00MjQ3LThkMGMtOWY3NTlhMzQ0NmJiXkEyXkFqcGc@._V1_QL75_UY281_CR18,0,190,281_.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Son Yemek-Last Meal (2026) (Romantik-Dram--Özcan Deniz-Öykü Karayel-Tilbe Saran) ⭕
+https://ha.vixolity.com/vs/tt50016818/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNWM0MGRmOWMtMWNjMi00YzRlLTk4YzItZmJkZTQxNWY2YThiXkEyXkFqcGc@._V1_.jpg" group-title="🟪◆ FILM - YeniEklenenler ⭕" tvg-type="movie",On Behalf of My Son (2026)(Dram--Rejane Faria-Maíra Azevedo-Giovanna Heliodora) ⭕
+https://ha.vixolity.com/vs/tt33402927/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BOTM4ZWUwODYtMDVlNC00Njc3LThkZDAtZDA4NTU5YzliYWZjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" group-title="🟪◆ FILM - YeniEklenenler ⭕" tvg-type="movie",Perfect Liars (2026)(Dram-Romantik-Gerilim--Irene Balmes-Gleb Abrosimov-Pau Simon) ⭕
+https://ha.vixolity.com/vs/tt18351090/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BZTQyNjk2NmUtZWZlYi00ZDY4LWExYzgtNDY1ZGY3YTA2NDhlXkEyXkFqcGc@._V1_.jpg" group-title="🟪◆ FILM - YeniEklenenler ⭕" tvg-type="movie",Steps (2026) (Animasyon-Fantastik-Komedi--Amanda Seyfried-Daniel Radcliffe-Peter Dinklage) ⭕
+https://ha.vixolity.com/vs/tt14413964/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BODcwOTdjZTItZDA5Zi00YzgwLTkwMmQtNTk2Zjc2ZDc1ZjlkXkEyXkFqcGc@._V1_QL75_UY281_CR18,0,190,281_.jpg" group-title="🟪◆ FILM - YeniEklenenler ⭕" tvg-type="movie",Guarding Stars (2026)(Komedi-Romantik--Leighton Meester-Jared Padalecki-Andie MacDowell) ⭕
+https://ha.vixolity.com/vs/tt6611324/
 #EXTINF:-1 tvg-name="ÇUKUR S01 E01" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFfoXV4zJgA1hy2pUeJHhuG-bG3KA3HHggd5icGoOXg157iLfyyRbQCaQW&s=10" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",ÇUKUR S01 E01
 https://dygvideo.dygdigital.com/api/redirect?PublisherId=29&ReferenceId=PUHU_2cf29645-9fc8-4bf5-ab2c-90fd916ab000&SecretKey=NtvApiSecret2014*&.m3u8
 #EXTINF:-1 tvg-name="ÇUKUR S01 E02" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFfoXV4zJgA1hy2pUeJHhuG-bG3KA3HHggd5icGoOXg157iLfyyRbQCaQW&s=10" group-title="🟪◆ DİZİLER - ÇUKUR ⭕",ÇUKUR S01 E02
@@ -18828,7 +19261,7 @@ https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/i/Yd/0N/iYd0NwWYabof7pqY3pQQ6w/iYd
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 63. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 63. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/T/H4/CM/TH4CMdR1UT04F3zwHQQLOA/TH4CMdR1UT04F3zwHQQLOA.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 64. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 64. BÖLÜM
-https://dmxleo.dailymotion.com/cdn/manifest/video/k2X8SoJWGaOR1zEYb5o.m3u8?auth=1795477047-2562-l2qyprx2-ba8cbca093aa6f682012ca5dd127e84ey5pdCx9EzVkdb8pLpAEkjiOZ4FFE7llvdGQKEvY8WBMKKbvfAsYfmMvTCuG7tW0GF9N6Hkhr9v9sH1zzKYvHSBpxdVCtQlHKgwupsS4dWay5fNGhcHdOPGllNdp1jXOE0jUSeof8zYhz1FjIsEUbWKl080F2_tpjb-bwa4wdrpBrVFsko9BLk2rMKppVmTbvM50YPLL2wx6716DA0grI5LEz1mXaBn-ZICqE4C4La5RvPjbm8xHhQxBnRqQnfeiLd8HEWgNQnuUHAwd62UeQNibLI0eQIIQ5hFJvfqIqEVgvYo_yBckZNgZnbGZqTPnwMkJLGwG1jRr5ctgWUAFv3zb5C6KqhgQGJvUM6dgvXGIYoNI6fk0vr0aDqhhk11m4KDwzmbeI223Kwj97mFT0ng1ZR2hkFfQYYmtDT307cJOb3NoUDsj28PTBLvQXF4neYl84SSRkhw7IgOv0aK6L5_xoqgjW4WwJkuiz2OgF2EjuRkj6XMPRaatg06T98UfLRAaoCEb-rDCTXOzLLFMe5cvcjUST90UDJA3jWgqS8UlfVLDgf0n-oqeGBN3LrwlCQ8tEpaUrrlPBN2Efl6Dk11qpWLwgwVI0nl3DAntDRrdNjX3sULH-U0hHal4ENSaI7FWnMEda9Kpr5r1zEIHd7Fl8oRJucto51K5OqGWlyoDpX22Su52M0_JomANLYebM0HaNm7nEMZ8DqO5MROiB5Kff_mDpUbUodL-k76yqUcjQ0Im1QeCPeCUBrIum6Bp8IqPVN5AtUNXoZkouSwgY-7augeGmsot46hPt7RFIo2IHAdviVAU8ek3gk8Uv00bNYRXk-GE40pXSdlYhu3qg4xBazzGbzyFjsNJrKelYm8MBW4Dn0mJt_PJIaqoCPNQ1Zb75hKnfjGRwXTNfV-aVtaH_1kk9qeWzunA8vF2thRmP7ShsX7z0MnbzpHgz0Hv2_Y95CvuiVp0jy8YraU_y5ELLX89d0Q2knTuxTa0zrM2WdcHu0Y1zdhKDxedZ15tIb1tvWC79ors8Ew7OK8PaKxXveSAdXy7EuO59NYBXmnvO0UknCYsbThn9NpHRApmLMrIETTbOQtQD7jJWbefyM7TtCoXm8CkxylPeFjWTx7Submbayp1tZbKmrgK0u5Vz8YRsPCbgsutOi5dnaRBckfGiNuVkctvxB9H46sjnFUNF3xQKH9I92PC0y5X3GTz1Kfq8YQ-MXYyB8IyCkLLU0U-aDH0QRvWCJAbro1JUdk-f8cXwbbMcE4drj7qxiOfed-fH3NsD0pSBiR-0ZX8JyYxEWoARjXA14kFv04BPvuFfrW6ON0oh7yeqtzetQrk36eqrgwTO_wDNFIR2dVqd4JPU8NTF7ceyczNN-DbO5S6-1TuDGHFBe71MEsnxfXapI_nF2-kUuEhQQmhGuYHgVfKi4lAHZjsc5_nMbqAeeW3y8XUNWJsl5IGfGjqWtBE278oGFYwmxn8r_3Ddb0sbL_Tv8wZboX49itdnIar-kIwr40NODmq6aXHQ8YVceA5pWFaxWRfdo94x5pSawxt9j6jFPxF6GRe0a3dh4H99w430wAJurhk-4GX9iAmyVI7AMSt00ffcLbH_un-aq4uNh3xV6WUq41iEYGhQDfL6Y4Q0zzewS9H2gnBnx87E3-t5JY4hzBiQ_aftNFF9EuG_lmBK-1LfpVB3y84qkDKX5dXaL_RLDGuQeLRMpAKOBafROgpAnxxu8L-o40UspzkXPRh3CEZJJhhjV0LyRXGJDHsRPAcK25crtfiuZosjT0hlTObyXrAKicpXlcsEbYuq98PjUuzrVSYzCiLtv1c80eLmbImEmJN5BKVOo7ZL-EAewaXz0apMr4wzIRctBzhw9aXoRsREPAq_iXbZHjaWZ0xQnSSJwDQmuTBzK3Tf6VnfLAqa6aW7Vgef0DnwSEXcwm-vjStOFt2usZPDqRIkt30X5--yIU-VZvjpg_AGzQd8ciWRv9iYMjlBGguYkK2fqa9OvoLAnQv639qSGhK189--k2s2ggbM6uz-kZvP1BcqiXy6IyCqO5KV2aLs6-7WUx1FhdVhUxF-tfb4X3p8gGql423axgsoJ1oJg5PiWvcwDaoK1uCHmJ0NtkzqlApMt_9AC87KhgfgasLp_whdodptXdGg906hy1Va7WEDdVvpyI1bKacwq_oCJQAYPvehVo7ByXm9YSOG4yodEZuQ4AUMX1jXsLl9QYzCO7VxkhII9cTUbeoKeTB3eP8G5F8cdjauPjpK6VzQJDyeIdfGp_CpwxYSUog6y0N_X7T6Sk8Yw89MqGL1_HMZY4z-2TYpplx0KYYl8aGxawaI0wuJfpfswRq8PhvQ2llzeMAinizJVs5w41Jo-tExki_SwtlCTY-5RCHReSezVNASawTD1ix6qZPRwCC5sLsKCGbI_j0Wu-08n4psSNEixs7RSZHd-NQslbpYdQNQupcavCxGurO8Tr6nMddt3II6nycIpjvWeH6ngoS6sS4x-c4V7pvPUpcPgeQ4mGrDIOjjZTtC1FOhd_0jJFzzUhl31-WX-bVlDjVJWvlxzusy_1IIL_f9nybXNRqJs7h6vzrxme5XI-Vs92sTJhVNK6jltfVZOThs1GNbIv11hFlAgOuYJmVuZJgjLt4lHR72bRZOjIIhF8jGsWnUOKL7VhI-9mZrY14ulXLszx0XKuRHFJ7ui0MLSRkIzRvOEUtAAFcT2b5ff_P1imb88Z5TxZHa1hUThiUJ5rTqlVuG18pHrlhTGuARJ9eQeL098K5J-e0O5wtHJ9TZ-bXdIAD5_63fKjovyvdPIVpGuMkyQH_cIPyfeOEH4Kl3TdoVG_Hgursey8mx6rKO3z2X-tMFuZ6VZkmrnVABeiysQnvjqwCeG2QMr2GV3vi4EjsBFIMYZ8duWPEKP-H0LDweyeNPqhFheVKT7277JWgCsFP3jUem99cXBGOjrtSODbAn0aEj5Oq7FaslwkhAYuUm_Phj72P82tbSxcbaM2a_P6wmPtvjQqSzOk5UEIjHlMJey_Iun1aeKhrmMjxmnIdz4YbKaoVD_e-hy-x7tVsrZJKIWCqoawMK2U5mVNkpE-y-ihb_6QzmtUymnv_VQRoQ9Y9KQVxZAfq1ulfa6mzuYTp6xoOUi_xKTSbdFcCRONPJC3EF_9sjCacs4cI0&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=405970&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F64-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k807hjn9d33b53acae&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k807hjn9d33b53acae_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
+https://dmxleo.dailymotion.com/cdn/manifest/video/k2X8SoJWGaOR1zEYb5o.m3u8?auth=1795491019-2562-b4xbhf8p-2a8703dbad5adc52453015fe3a46b57eZo8O61WEsUogXD8EzcnYr2-51OdZ8OLv7ThuMWn0jALyOsfVWizrqMut5ZqXOjf45nKK-f-9eVYwff4xjR_cOtC0NggkHh9A1uSt1dPpJgOOVvgZKZdYseO6j1Y_RewW3vBZKu37U7Lhc7wembu8lizWR3t1lCrm_6Bhq_REROaQAZcvVGWPHwmwTqpHaCXO_eP-2fAHAEzN1-JjZ73MyGzSlxzKmUsh_RFenNUeo_AUSGdw4G1p7e5MJWJ_FNl2F3vEFfCzXDa5rtqLYOZkr9CiBLxWsBDHUlY-56P60c5mnLnkpjWqDH2bKRf_-3XZwG8fTLDW3XnzUWR6GywPUiNsGz06SqG1JNAFhClVUkp-L11Uizc08A92Ee1iBMrpiFxcurCmq3eu0KzYi-ukaqYrLIt0ZRz6qVneLBQvJO89udMbqY4o93EVWiKiJLPySTxLiyuv-sAaY5NHNmbYQIiLLhfxmgz7wV67zaR-NYBmzyUMGZ_rRCfEoN-L4jiU70zUhbe_fgBnGOvaJFxgrhg6JfAT4P1yham2xaxpxLSjk9Krv69nqGt4yWQuM4td2K1fOyR4mzOOEAzQsTSiNM_za4bZwXTjJBknanQtpD0jKmWu8K7Rwolm9GjFcwpqpJbALNDU5FB8xdgU5BQyhPtP8msxzpPTvYrQOBaTtWbwgYCPxQfOSfELUF1SB2wF_SXw-ep2YT34NmpAVCxkCqp5XE18iHZkLyHSeeK5hCLBp5sH2AQ9ptczmWAF3i243x9V5eMXh2HiEdMEcWxslrIDHlkjlOYjwqVvU4dvWhWpuQgWKaE8RsS1BfxIAoT17DaVmiyFHnRhnqABfVHw4_sF5RNK_1H_g4zC3VM_Y2a8UM7W4HgPjHxB2Iy7C7KGdB00NDIqgCP4XeedNv5p6uF44t-afn91AKo3C35jgZQcIPMf440jZ9cVDHpDwTaYwzFW8H4swxYBW4znGLIlGor04_0uUFYRKp3g8BbdiEIOVjz103cABresDWmR12XX3bTueFT-SV_5_8pXpSnWrvun7WmcfNnrvjZpklakwPQSjrAbYrEb4O-QUc0aKLfRg500A_Lq6y8mfTT4LLevwG3JBpWsCql9caPOj6PvgSodwLi40wKAc9jH09NH_LJ1D9bRfGzC2mnhiQsbxg3N37eVkow7qTSZiJSAUaH75s7hj_eT3iKjTBNoFbw6mt0ILMFNt8r6-3FpdjY9zkfhZygtPdwzEqugC0gjCpNSsOOIIGTbLakIlNgH9hLZAdkHKzs1kD4Ca_op-jpNgMgrohfOBWTOyjVY2YfoP7tBq4IMZXJXf-QuGyr5drY8uAqjzfhSw2JG4EFIcc_R9EXh1CtAvKsFretG6agmcw-bjhge0K5p8Cz3HHSbu0qGxhYuOV39pFQ0S9X2RLj7m5UsraagBocENBVMQmWBZh-CLfUmo2zFOFjR1dP1iICmuv_IEAq3MUu-3X60SLBA3jvi96C5tY3EQxYn4rRz0jxPegensidTqLiM8xEn8JOWKcXUE-Bcfkx3DyeWp8M_IqlDHR2RZD8H2KkKz3vIhN0TYUafTi7GFbxx11ffJND6awi2stEfPxuq5dLI9YVGmTSaDGzNkRx43PAXiMYwYMElGnSONLJ0dpQtOK7O1gOpmSZSqMI4k2z2L2nBmkWGK00ShcknIoKWex2LiPCZhdosm7sgMl3Ha8w0ZWLDzn4k4ePgbw3-RvPu4IxxLaeVYS16soz5F4aNqceLGCSWsW60dW-1iMXnxSZciBiq_5A-dMKk_7qF9LCMN_BLEwFSKD4SZ2XoGjwUtqlKG2o7D-3wJVA_RQwfCVSjN69wJkToWz8ynC8ohNXYtZcxiPugQXkZ3z3rSbMCTSkG2qrrfm_BEd1vUhWkjzHO9od3g9KeK29kM9ALT72e3qWozeIEzDprBSmtGf1P_YRmmh-plVa1CEV5XI-z2mAHThuAb_65d0CIxPGM64QkCYyLe2ty1mMBXfwAIGKn8mP5ugIt0U5Ml0_mUagaVuqBKSFtqaHvyhFV27U-rcNwzG0W7PxpEvrWXHKHmd3nJuD998HVtoE-lpZcp6Ox8Cc0cRF8QSyFOdPzDifg32aX-c2YMbZXm-wITQYFr3IhYlsxxJhOHc_bnOIImLxXFsNPQmS-uE8QxwPRFsgD9recZDxY_2naq4nMH5iPbZ5vM8T2eamaMJdEtQ_Q30m0h0U-mJF0Jq20IGl7NEkcElZ01pAEQhdoeh7HA5uqtGEcq-TpV-QHbCqRkBDsuwguTAGQpGD00FPx4EBx7jmgEwfn5yQPaVDZ2Oub6RmU2-zM19nm2XXABYTfawI6l9BuBH7k-bKjf01_M7_iSAUB59dSp9vp0fV9WChSmV7JS9bICCjV04VofBq5hltsddakJx7KluGz2dDvcVKbW6CBC-I0Dz2LmmCRRkM0923pw-dbE8-wThS0BAEE4Hndqkdb-vEX4nni6xU87mrkFfMUT9ghvZ8SZc7Xm4pDQ_oJscSquqH4NyItUDIt-d73LW3FR7mJq78HcP9wFWa5HCkJNIoEcYLp3nkHlPbeh_JxncHTlqofianIWyw9qjC1_5QLtJYF89re21BLAFG7m6gTNnf-uHbHv-Rvv3TYGlx0-OyKrxRD0WGFyuC79baGbiguHIMVa2tgMifT9GMw7Qmz9DBCx5ne9M4igq6tisCKjaTyNO4n_6N9E5NxsEV-zyNPaMRdv89Oa5MXtP8cmA3ZBkkqn-RQq6CdH5yXXZMkSS5F2wzvWXYkKtxa5INFGlXVM8OgP2xSKprq7C22gYIFIZPG6-nbymdsbaXe39J1nQuFie0_SYOSjzfUIVkwLuZQpy7rbw1fGieG6Cd1-zmhwbWqY-gwQkT9ZfO4GuJST0U62mp4N6g59Hp5bKMsFWyYLvQfMzu4wRDbvA1yvWh2Fy9nobdHf_4SebXuq7Ht2tKwGPl3Gmha-6W0NuPk-5i1LwjIo3zkBFOFaOjbAgJLwnwoefoLOD8JKwq7r5sN4UJEKrJ0wj64-BDRJ2pd3B9p09ukImrH1ChZL_jboLJsnkX-ubbR0tYrXl_7oUvFvvvECfAX0dIVKA4MhYBsgmNOubD2D5pxbadvK8fooumI-yF_RRiyLSLdE7azn1I_Z4Zzz-E9OtUm9LHMie6Y&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=530401&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F64-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k80krvvv2aa3c7f56d&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k80krvvv2aa3c7f56d_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 65. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 65. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/Y/Vu/4d/YVu4dln0mH7Q8pCM-H7SKw/YVu4dln0mH7Q8pCM-H7SKw.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 66. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 66. BÖLÜM
@@ -18844,17 +19277,17 @@ https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/1/hZ/wb/1hZwbBSkv3rllHtuNVj4ig/1hZ
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 71. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 71. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/q/FI/g-/qFIg-Cw37Q0YWMxGJrvlAA/qFIg-Cw37Q0YWMxGJrvlAA.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 72. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 72. BÖLÜM
-https://dmxleo.dailymotion.com/cdn/manifest/video/k4zh6dddN7bwtqEYbao.m3u8?auth=1795477073-2562-055mh4lz-1ea683a1e254b9a406d4ca8df196f440KXMPNXQdCPU_OPE95wgTiqi2kTJKayNzDh08rEUrbsUtDK_2i2dlRpvkViBfArekCU1vH-UVj7ukYHb75VZjDmDWipuCpKS6IHxLZXxNK8qLli7xWPsCyaJFH0Af8EE82EbbvVj-Ed_CeDGLObH7uw4QhkXAfQAAjMMGS1gu4Dh91Ng0dOPJQNLL7Sa0xcvl2PYWy82WT9ya47aErMUxPfIpPucpMEAyrSoWL0K-6Iu8UX2wBxrnYTG10brI_e0ZyXZWnFyTqbIqp-tFlhfINldCmiRIrE_6TIAke1w1ka9sUA3ArpNYBJngSa_o-LPKyHkvYUAXH_Trya9ebPbNPUxwveSv1fbtj1ZTu_JWzGxENYBlWSCTNjbBq3NOenKxTlYj5ade02DpNT2gr8rKZGyYgxtbo4U2jA_QuiPxqh7WZvVtlH19JcFmuCCFa29zIw13jIkD8Asq0uFgpCH7WheKu_14EqNdw-fCT2_o7CpeFMER19qb5PkHHhqgj1ednv4nWLebD9VLpxhDeP44T6WI76aMkHefSvEJhwEsgnmso0xg-HCPEx7MClQW01e-a5i5TE6zLLYuRSr3uwhDW8viF8TkXEqLp1fDppV8or77iKiWC_INSXgbN--ixmUgMwHP68lyuA5u-yZspPRd-s-BMZLmUp0DhtgsVmCFDCufhR294BddZmhO920wSLCFx6JoBxn0-1w5q_bN1LltQq_pWMXuAW1DFuIbCm6oz-Q8Zf5Umnqnjuhxa9u4HAVEAm8VByPaVJ36P9xfQxt1GH7JG9ewkXMxeGrBhagiQrxTA25ppqnc2sp8dHcVvlMkL0j8tE6cCTiNnzpz9GH6Hp4L4lB4RVuKiY-Mfuh54fJDXxroWu0P3xD31phvGVMDrB169KWAlx2tbQrVtj91akRueZ5FHJClE_3Nyr3cOW4YRmv5VfwroZfNNuaxsVOQOdvwVUNZcgItQ6hLn5b6FoVvwz2nBKbW-JzmF6OlwqHxAB786fHrLAzG3hDLzBzzb_i_nRbASVAe9hu9wwKXI6rE3b_6YmMA3a12QzBCeo5EGlUvFg15HkOKDlG2Zk2TATfZhBZKLP9EWDGt2pUXN_KHvCGg76ZKh8IyfXw0G4zKoljKItcf26XV6UqUJA0JBybIfKVdg3J-AeFYr7ziosIvBUg5JTjdAIrRGGt7-INFLwlDuUttDeVEQIJ72Q0XfQmcTDGSwZCGQmQy2PlwkeMSILSYx5w3xNGtknk1CB1ZIvwD_jnQ3IdbkJoZOTTPHEmFXYqv8_IDppHGrw_ar7ZfHXpfMBEB-PFU7vanFcR_0QdGQzMDxo03Yr8BgUiB2283hV8AWnSp3sHwIaY-ZnUZ55zdWt0yNgHzUe8l0Hjpb7QNavvHfrCCiVH-pdVMvGBHv2bgUfyA0gINLtnWBKsO98mOQIk6ixPE9sWtuAPi-wxBNTs2a57XAJx6mCF-AwY_MQs6_qZglQQNeem8LUVD4x7Cz3-9VEtRwMHnhos-u8ERZ2OQHUyA1fdryTvtvwtwhgLNmi8caGpoDBspI8O4fFiinSP1M7y5vxU-Dsq2mf0Z6aYA2R-yyYZFc-h421TnmUSBGGivPPTapEs847savh40CPpRX3WPbLfiutCoePuinBGeD7XudKoQgEcix6tUqnb1s-GE491yJrSoQkVnlfvUW7ZgDzm40tkXUq_7TA-mFaMVTatGIYugu-HWdWmDi9KxBBsRO80eHGhbD5JjxBI23TGMVQiFWTO-cUplfmMX2ZBOleXJ-K50XMsj18A-kXFJj6MQQr_cGxL95qgyr0IntlqFUZ487WOuOk-3tOUnEu5LujEph8L_NLhWkXLMXslLmiMb09PEY6hnWNFwC6Zhv8IcXJNZ12TYt40Q8NBxy396I6-ZynECzCeaE_uwQLQJKHq1iyVdZUKRxNm7oOcxZ_booUrhRPQw_4DKgVM2YiWZKu4z8W6gHxU4Pw39UPILnOrevhHF360Vv4qJb9N1ECVRkDtF6xKoks_uLsCN7KLe2lD4a3GbdhFh4MYDPMNLpQKusNTEp6SZR9gsR5Jx8NAX6JyHIfFsDHlb8KpLWLHJEYQnJlBy39Q8s4GKlP1xB-e7ZsoejNd75uYl4u5vs-9S4MiyhzoVlQx8QyMQ3HH7MftumJdwFfcdlHz3hgaFh8pwkh3ACekyjVkOyb3gXVyVIN2v3bqdYsPYlbp5B6enfBPXL3vmukeuXPxtoQirF2ANOA0xHkGlMNM_uy4XbdIqT5wAQdEqEdc37FE59zh8WZzuSUD1Cdn9f2MTdDBJz7-2408TNWyC9F0tCBJVQ9s9nj2XUtysP8OM5lCZwaauLpHCvLufJPoFhTdZldH-UemYfkLOO1Ei7cDn9WGdXRAJ0Ks5LrvSXUV0xU2zIL-h10dOXAFrIDe_sgBnY73OHqC8dbCnNVm80g5-O04xZ0tHx-D4j6Wz50ZJFMUNzMmn51xhj6UC7pqveEWHs7qIjXu6TJilRXtKa8gv69Ndqq_LDjI23b39GTYb7Uys8f3Mu1Efmlg1nz57ZmYvzVpAKhauDSAfuAbgEYOaV7d5pCkq-VuBwf-lnI42RyAuZARJ371KUh_PXn3Q2_Pj5zFKywXVNX9pzmEDkx9EXniQiyr--zWMZOFo68H11XiVonXv_N-BqNtm4VUaulfFnoqMiVK_h86FSkx7FDDohzKFFYNTwdM8OIIBMSLQaaYRjA-hXivSiy3FloC5phHpn_mPyTkbhc6wTUpkF-2qGvGFAHtFN_fC437mgdkCWfmpD3KBpteLxfWIgOx0iU2-dk7eHcecCOt3-LqDFAvb3TU04Dn9vI2nord5ISgWBAx0TvivulLdRwdDgl_ZnlNvb-0i-5gQwvQziYv9POEgAJupEWp5Nw1Lyv1YFbGypJIM6KWh5xMYky48X0lqPa8X5BB3Ng0XQxBuTtBS1Dhxn4vAeVKoBI2Lpk4TkycPvThsNvP38-3yF45_owaBUOXxrNawVkSyAHXmHbQxTOwHY4OzvnQU6GMHtp4fuZ4B_aIJ_00_x5EMDNoIKw16L0OVi39bjOXpoIac5S81kSfpgdhbhgzteVAbaWyJfQJRHsPTaCCbcxmRP9i0iSmddwXFPmwoXSafYpQdkmW3cur59Uzr55fR6KW1NdSI2fv8&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=957141&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F72-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&cse=1k807id9labcb77364d&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k807id9labcb77364d_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&pbm=2
+https://dmxleo.dailymotion.com/cdn/manifest/video/k4zh6dddN7bwtqEYbao.m3u8?auth=1795491039-2562-1cswxub6-b89436831da6ca92f8a293fa5fd0bad6lu0xAuPs0SNlnoh_hsw_NkUpxKpu8A-Gcb_SQIsoBLoctJatETCO2RRjUj3vo5auuRQC9qw_nn6ce2LStQnhlOHX2FiJiZItdLdFaol01L30dD6nQ7SxUg_Ir--lCFrRgi8NJFQaml_0WLZFN4JOXKJfyHFzO8-IpiiyB7syQQQdcFQBwYWfXZYQaLwdZ0sXAqoAmTwVhG4Nd2IkeZneNcBzoEYLyCh95ffqgPXLl7zJJLAyQqkNbyXERtVe3KmR6amxnQ7H4UDH54GFYCZ6zbEaJb4Eir_IPvEdxgTRdUA8d_Sb9HaD5kfPpcyjRy0TrEsSbGQmS4xrr9ufApHkBEnTNVPSa5qyyG_PeHZNQ6Q1k6PAjodR7GLtwULaoDWjaWb8Ii4yrCN77yk2iq1Saf3A1bkew_WQuuJn3grKlqpa_qaxTmcsEMOLWU9TxUmSzar0NXbVdcoyDd3nljrvAXP3h6o_vc68RD2TrbF22DgJEblQQMcUa4FXx2Bs-jLViNdNiIw-G-ztPyhIkDk9UYQKC0or_OYS2flqQdi6GwYTPpjveIbveW6qyQPgxCB9SYeboMl2X0WJ6gF1tygGo3CulRBsOlyaoRBMXhgOZP3fAitoRUYZm05Lfnuo1KdIC3DpOg8mhEGV0HQ7G6RlcugG5Al7-MLELgtNuk6zGCdzxHhddBO9PApoinkutPlaNksDlwgNsecHuxB7cH_n3RzRZyMlQXquHCLGc_8UhhCSiiYfKVcdPlotQPnuU6ZjMSNTDt31CaT3fI_wR9-GYd1A7CcPZaVJFa0txrXUvvgyTZHWtSaoeifZmssSlI8ZurkmVFHtVQ1rDEfFoLf6qer4alTlfFb2wd3oIZgVx8NAEzCJUufVUolESEXv1BGznyXQR55GNVQ5m1dGYvEqe-OOqrLypNGNSw6R0Jey-RdsV-aGZWakElL3B89gFCTm6_oAiyhfVk7_pWew9GRlqWuRxyNPq-tJMXNeh9jjqMS3R4z2hffXBSA1qFeATTdHUB7QguwbNQphzMkAyrXkyEE9WvNMyUdDI9oQ4ChqtkTHhHLCkFFs4V_3ixxe-9VqsaMpXQoi9OuGZisctYIPXSFvsbUCiGFgSlEpGk--XRfF4Tk33sLhdBGnnZJWO5qsoj1pScleCrCgYW-oPCV4T0CieQYE6NMqQgEvZ_1eELPmpd1j2KU5fbJQe_6cvCudzgankVQuiWD_0Am5eZHUQ3DQpgRFI-M0LVwGLafOkl2donEzSgvtVDsDmInfuz6W4NoCtBk0IB2Qp_qesv_JDIJ6bQ-X2a9CKpL-7_BC0t_o84YY3cIhMEhBXC6PyPKb6n1BqbDkp04XpQzov05cu4xHItl3WX02bn_h6nwswk54wbh5QiiuE2W53hVwU_0-ueux-l8NSuSxNXRlyucUZX8VH8pWdh_nIC5eIRfmS2YarXJm-GHDXmsNbwxZqkmfrZyOvjhNhOy6sfuNjE2sPoH6ps4e09nVVrGrogH_8m5QWdP_86eEK0DWaYpmc7ZV2Hn2WJ37FyBYub1qkEI2zAcCejxYml4zwmfDncLkezaQVhbsHSr2GF72SugvCxC0nIBK6E8TMp2YPFLnqN9A7n167HFuN4vkhHV352S8tsZC6IlLs7rXjG0JyzxawjVHeEcX5YZO8ZIZM_4h3ew7lGTQbAOcdxZRbYJ8uioTlJ-DZ7P0KwY37DoUA_v8JwJ28VUF7PtxWqh_pGnsDMpXSCvkXppXg2Bv_78a6H_KEjn1CZ0Pmg0FEQJbblv4uUdG_6J04rNVQPVWA7Wmnf9NsS7PDA4hItRV19Zx0Ed2pF6CA73JNdDhvaE28l8_FnM9mmD46NnWvU4SGEQkk9jJdOB36borwPsXOtLD6v17-jh8S5w8dw1omrIjQR8XDPBb4Q-bYCRT5mLQlUDX34QZsHgkJdegG7Zb7JDs576RqAr4keP6lSYF9xEtpOkyhjfCY90A8eyWfuxMctcy5SKp3WXoi4aQ8RQyFlkNrDbkvFhpvKrA6-tP0q1SBmaMy0z9xM37jwwgVrj7W2UxopSTGoa6IUsVDtG34GfoeNPeUOkOUnUQ1HDKz4cAloN_iyMj6RaiwhHqQ2JATCdh2lKTFcxNeuD2GsN_itbV9R2x4ggSja7shVK1kTzHHP-bwXgpNzZRkCdVKliKbfM0o4OiH98Xm771fOVVZ1EFssCgfX6mzOzL2xylsNwQdpRPNIwParDr7XhL2rnS0plvQC9lrG9nXvK2jD2BrGHb9GeyC0sUs3RAlD9ZsZa5nNEleVyGtAnT6jkm_U9kGloVrZJN__53N6vg6UP6uwFAYJ1qRwY1aPqvJmi4Ky2Lw9fXves-MLPWDynLjFQRwOJeJkfQcQjFssh9uz_hxWcctTpxVYIilmsiJc6cPvY5YZo5KfY2oUYlGyQZHAsVdwMcd4cjZebFWEZ5BEZSlCDH-Y6oQ_WGaMSCfje6aGjrX7mYXE51qER_yV7oLKPyQHA91Oi0I8cAXI3s2C-KLRdkOEHiylSsTs7JO8USJpkzZ85KuKtKwKR0qtrGv-nZgcNApMH1JbNwq8FGTdsLjgZWtqJK4IHVRARFuVVdEYW26Xkhz90kuumoklV6JXZgINCiyDWKdjeEqF36ppjr4qLa5sevQ-kR3NQnoLTQXE7wGx9hb759W8Kt1LkCrVQgau9AP_F0qQ6X751ok_AM-ViDfFLPxe4WwR0Z9cyvyqrlp9i7TH7Hg1jrARxivZUNqaM5ysrhIZ2Z7S8XakOQXDy362qNPo9BWYgWFvKX1jhr9E6Iv5PJ9Xa9Ek7ROjrehukeWbtMYxbT3DeJI6boMPE_YZ-wpxS8OvG1HNypgFD7AMduU48rMPVomDmEvKA-PlluASSn3Kp_kXE-wtla8TBNlBRF3ehOLMg0nc3FBWkDNOlqL_anIeFotLA1wzvaR6gfCHj0aTqVPyXgS7rgEMSgapb5-2neIl-JEPeJWZpyZsCd36afJMRKJlWC9M5JANVKJ6VvJZ2KTRl7nNrfefsF3xxbgg83FImr_oMcNqBMBsj9B470MftY958bYmVXP8mUHemN53N8wZXQRPvEVZAV16C0eafmrn-zcnqKDblhXlWBfu_ZgE0KLAIVVEnEGzZxa8DJ9kqIOWfTuElRvbe-OAc5VuYI&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=221006&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F72-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k80ksjvg99e3abcd65&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k80ksjvg99e3abcd65_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 73. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 73. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/m/vv/-t/mvv-tCZz9xSc74d1OsLhpg/mvv-tCZz9xSc74d1OsLhpg.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 74. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 74. BÖLÜM
-https://dmxleo.dailymotion.com/cdn/manifest/video/k6YEn4NlLz80yFEYbbE.m3u8?auth=1795477080-2688-47dywrxq-ab8b56223977ace318d08e1464c56fe4jviT6Zhla_RM3ituKnUzqYeZkYKiMv55wBd-uClJVl9BtTEyHCm28jEzBF_XTtvgzHT16B4H1edHtEyJeoQR5NexOPozvh21_1C-U1iJHhvHmu6oNpCl6KmRbrWXlZXAa069hfTV8Xce7Ijmjy-vJDkIswyTv_KtAd1PIKG3RqpZZxWE_0X3oc3EPnXJ38V7AnB30Afsym3dHV2eC7wxUjiATNROA5G2QIUjye-XY12-riXFNFx-0kYWnAlAuGGY2iurx1c3pIyJIHekhaPi360zwo-w9_OySc6XUJWQvBXk_PsXWpJfJJkEHIASrnOc322GFkVq7ikx-l4n_rwa-Y4T8TdEn9q8n-dPO_TBGy60eEw8n8dBMxByjimPJEOw-tIqvfEfSEDHHceiWusZ6djSNG7AqjCvH8yOd3L8fYpseeBbp10Svk38OUFStyRzpVTjl3QW_285o-yUX4dWcOEp73KOd7uSrOglxBwzvrXFTx5h5rj8fmiPaEpNqZKRh8t5YmPL-v_xOKGpCSIsQRSUaXBj39gnGDkSPhp4GaKLUqzT1q1zCS7lN6bH_uhhPV2f7_gZV4k0TPVxMogX9x85cmm4S9zHFIwsI9eOpeyzxYT4saiA_hsvd8eu_aCXnfpwSO5DdJI0Cppyb99NhC-iSs9Kqd6N-QhIt7IZxa8YpT37xHzfcRqOJwO4oRzghtUJ1P3Rcsp_Beivhi22WHKShTEvMkdv-Qgzg9zPogsLqFlWLGlcHXn78Ttg-cpY6K1OF9gisrxT-LstdTUZY8FV2sXKvz1oLjcfV6kjcItKljJWHi8b5vW8ENeHHQUIwQgo5VX2VRbcGIVEVJ_lswIG7ez49ZMPbYJZYp37-Hn7AvInkqBYbMXPuRIk1KwnytO8Knf3CXc2dsmtGMpRbRXwAlSOHumSC1G3vyP8VP_tDqUGFedreWGKElZ5HECvNZaPCRMr3affoil_PcjGDkz4B9EJYKpOIEp9MkA-y-fxGq6stSuim4W9WysObAnct8V5-MHYCFRLEjh16ZJuBcd8v5V3dO532dCwVMgffiDGIDxyEXo2gO_S9JzBqgkZ8H1KywxdNz18UBNxkbxAo4-cZ72Abkq-2mjXNIsaGCRbf24s69tFRGzuqgFxuVthiaDZxUC76hYWvS6ix_vWuvb8NmrW1gRNr1pp7cYuVGc6bDI65l9xQItHjLjs3obphxTj2dn-LHHH6d9pyzM30rZvQ3A_OPWm_PDXfDal8gHYKc1YF7myeVwEqF54-72ySfKpdKUPyAbdtEmzZxYKbVcAHkVmKURqg9Wa_MyjNAOpOIA9d1qXDrDZpDW1CP3til2ShsyCh5Ch17lq-T5oEUlq8ALOKiXQY-nnW2xuoHJDnLNVcPP7QvMytERdmQ4q69phY0o4Rikw5-H9sgUYPMJZBD4vDzX-KA9no7MsT0QN0qw1bNGvOfQazyGYSIIVYS9hAX_kGZlTq5LqpdglCu48jP4El4G3W318RBNYg_ayma6RgVayNlF3TFB3X579W38KNsvRK2QsvfclPtvGTDT9Pc-sCplxBhk85-41TFLec3wE87KA2J6LPdVERATOm0RD6QkQRlEi84wHD8A3Ao-9Zj-cI2Kl_2sCOi_qsg1o6gIwW9WW5n-LSX_L0nuCSeF1NUWv80a3GK7yoyzwxf7-aSAwjWh8LUNcP5kCoPh1s_k4gxHZPjG50zGHAMxUp4TE0hltZ3nGv51v9zFUjxrdQdxM0b8fSi9N0cUbdv7nArNtfnMvyZdYeHClEmn2aNvSwmafkx2mIb33o4c3NpZL7bqdjGTX7RvwTxVukrXRHSQ4-vL_LY7CS0dJDxs4t_wGWkF7GcotY-2hEdn5HAXy4tK4Kaq-L7J9UBlO0SsBuEdHRx-C-y0qTHbhrEbn8i3-DmZircsnjYXtwYikFrIHsj8QSZn-HdFUUZ1cTXOb7pAwmFDlRBrmYKCe1oFtTxxf2_DyLdD-SZkIb7VhcUEydDSj06UyKNY_JUGlPk_TjiEyjvln48xp50xA1vGQlMtJGiXSJJ8dr6K3EHCDKihApFZCKWeCXax6MdCKZ7G7wcDeYEGPFAPwtGK2MYrmIezj3sDynxJLQTB3nViDXLOT8-s0Prssv9jlFcflqWYHSND1v0EgJBrUOYWQmofcOO6MdB_5kx-Zl46_bo7B9iOqK3OWp6lsbX3DRQ7b-142pwlf7KdqEanJtcfqkZJRY6YkuU5ysVzXpMqHAEkVxx0Hys0hG9Tmdj47ELjok9pkSw28z75_qK3e6KoYyGisLBE23jHEiFpE0_cN9-aVIgVDwAwkzF2eJzy9YCzX4Nno21GxeP6yDu6KiJ5lN9Xx1zWmKe3Fp2xOUtL-ow8LsuKFTtSLbzvON1X3QAwm-MmUBNtdu97DsGLTDN7F5rK6fwC_2sEuqURNdsghAVgxRPVkPT1fBMwdPhvQUkLbjwmjkap8QXYrC0O-KHjNrNSoyAFFpipaApdJSaIC-a-OtxLwXAqq3n5-csEXkJHXERS_VeX0QKfkFQN6clM49HyVevDy3voKjbD6LaS2vnAJRrOqQ0XANDuWRaNUSXPKjm5Zpkmr-XNclj7qw9C1pighl3sowdGa11yIerbLfhIFZ0SQ0eGYjlTG4QFKMGRpHywr36BqcSdfmeWpG5No8b-0yunHzx6As1iwIcoCgMUsqbFXAy092Lgos8hhLDFnkdGaKM38iZe41x4EPHCB70r2Kfz7nsL-4_SVF8IqOncmRZtaaU6uGEzkzwDnhqzeDmv7xYtoEiDjOL8oQHQq3iA88e7D26d-eItV5VlcFUXR5I-WlYsCGyIOfO2pQoSgLcZvkx_a0C7m45nmBg36L3MHp_rfI0E7tvfroIz6dp0WVYvNC6pYusfwemZtqgbpTkcFF-fIwjGZW_gNw_8tM7RVN0DeaRGzHNhCXRvCS_nv23B7tUTt2zBzTCs-h1xwPiT52Qg7Ecd2qDb7oLCe_PvOfEZ2T4nH1DSqPoC5ZCeRrLdfVVGnGjE3yxOjMVrc_bIkN_H0IsEY1Xvu7_wgkgFtaFr_u8G_KcIAuq-ZaaYx4Vlptd98Qzn3JMVzngjhosVmC933QMPQZ9miFekgJmcnv_XjNZyXHJIEN_3C-JqZECcZLe6lFhJ_ZuoeMJmDsJMU&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=370852&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F74-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k807ijrr498711d8d9&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k807ijrr498711d8d9_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
+https://dmxleo.dailymotion.com/cdn/manifest/video/k6YEn4NlLz80yFEYbbE.m3u8?auth=1795491046-2688-vbr9115c-a635fedccda328d6c48aa56f646314c3pN2F7J7MR5xZtShuTUFIrzUsKYAECEbYEsv-8zT4Okzr_JdjCHD6GZMWUp8i2WvHdtrFw4i-P_AZLUKrf_xlYHnEp1udBoy0-10dqq7U1RDS3JtfFhrJkgZJ-k1KV84nhezHZK_kqHwFFq51qQfqAzLHFH5qPSW-1sRB1oik5U7zQDR14Tc42nmAPNWDXXFqyfFGMtrlS9MFz_Wn5EmFEjAHesCCHFFDNyagUKGeycSo8MYaU-xYuvgXO3pjVy7ZhHczbmxKzIe8STiNjCsbXiYhO5gJUhBHCtmkab5MjYH_y9zW6BL_ten1zM_0Jey_Sd8WF5Dp27sRBHGUCatC7s8Yst7xSCAeTgpKc62BWshy1PVu4UWAKzViMeNe_Ow2hpGZxaS9rYQTKXKZMvMmSX_DeTiphZp9mbk1G6fLcDqtUQFbi9G6zOt3Wugk_Qj3S4azrjrVMrHjNN-1ZDCn2KBTkm78xQEurEWv4cD0SuDfEAp1rOQWxwGs9JNyx9WKrl8qOyOlr2r9aBKeN7bj_6mmK2Cz-wW6qqnT0iW1BsURSgTxyRvmNYP5ShX-pNbGlk7GJjGnYSQEJvCHsDVJjGvYK0dmmeDuIbn9a3ON3-kZqOr22BiT1b79q5cAKE_Bn_Xm62nRBMVnU5a7tR-HqzZlR9VsFOTsyRTYiSyWhFQ3g7WqUtoTH4buB30GBtvsTi-VUMsf7gSAupz33oavAlmYpEs2hLITURHxAeFSqShjaee0gv6ThRQotcNRfNAotnM_M9pSrLFTHcu4L4iYHXz8ycA0YHLp9DFs7x08hsAKkE204KIVicbM8xePPyVBpnf-lZ4gCDESLMxV_tRNDphhhSWXj2-cwfoj4AbAPTDOcfzJK0mjKaZm_9EazA1hNb1Z0Xg3U80XF0NaT0J68Bt48mMV31-1q6Izms3TbWsHInkvXtIEduO-Pq57ldaUqg9hbE85jI8LYyRmCA3fkSSK-iDMs3KE8bKr6yR0iQ5o9nQ6MeS-lSxA4kNVvjgIMq_MWQ4Hw_qLY-puLzubcWDL1s_h4bJ21gXEpyloHotWkdHm-LdgLjzS3W0FZC8sOls6-AkooHVLwQeT27grs2-4UkLi35izkfnNEYKntrLMG3of3p70BKl9EKV6ahrPicfmnMIfcCx89YiR7unyq3TQpS33cOmy4x3rV5dDxepINRBzQl-mVU0MqeNwuhv0prR1iVWw0WNjT77G43fZ3QhFiHyoZVlR01ZRZqkzpOh0qKbWhr8KSIRyPbjXSfKWFbtnfRdBCc3WtIEMqnduu6h72mRpmStSefXCc87v90XxInj9g9mTmUFZCZe1KpVmZJtbs8Pd0xUEMi-K_bpkF4SlMWp7SZo6YzZUA_2ZyW1eyfVDMJzEGfHjbF4gL27ZGBn5JO1c-_a3WzeqpEkrxNsOPakyqkpwdBK6QR6fTnLnF6qirr28nE0dqLswiiBpxJI6mhgqoBtXz_cC43ei567LJqrbsYwPRIo5d0Nf-HCF_zRaOr4OkLWDwjP1VW9Ng98VakKVm-xCZ85AJ5QAw_wGScm-JGCdI4iNNGXVf2tUbeEfCHaCyeIfU8OgozEpM_JlrejomMzJ-uGOmg_5tutw6XaJyN1ebGH_JhbPQ0ei6UFhQgaxewbiJj6a3ExIRU87Xvvnw0d90AXJSeBUHJQEkWelZqPmBTE1t6UdxOQQ3n52RFDSRyEXl3nOT3YfcQEs-CYEstoIxcToey46E4tI3hv8_2g4iXNXdc8X1yUvN5vjTVL5SJ-IgNRFEPmIa5htFV_2k5u1mI76oFW4036LfF0N1ADt9p0nEt4Al3GVka3K_-mfOmFCetFZKOP5oV5t0IZcryVH0KnjOR1-he8u35z7H1yWQAKvQC9i8L-pjZ8meAX0T2JdcMIq1THaWH35W9xCJTKOnWGUM7I7XlLDUA7Df6IFh1rbMzcvbhkK3XzGVuHsZQxKUU5NVr4CxruO0EttPfirriC2-mD4YrZ0hJ1XksOVOiGKpAAA57cCNwOo6uq903oy0KVxq6YHrfzG51KPyCpt8H3ZpycVvJeDRxIAVg-UvCoaetjAJ8Gykpcac-QOzNW4Sac96396phGD3GoixyuxggQ-JGtQ39Grp9TZsd5t3LtZBt0DcponLgm8x0gTnXwtZJTscRzuxNdy7zF8ZFhoHhbFNnWmeCLuOrXk7sp1rrvf0iEINfjq06ObieAIotajLZPu5iR8L9VZBP3DFe6mKKhBhn7QOtjoKz0OOjq2a7jB6dqJCHQ3tx83jUq-eloCDE0mAMqy5j5KOuYiTNPTznaiMREjnz9VaeqR_F6ZyGD8UmcJdktnCUNJk863N1H3EYn71x3yrnYsEuKEaYZwswDqroYGU4FPFM_KdYGaOqj7qygTuTEgIv14foUeVTSnmo1YIu3BxBuo7f4yf-47zehikZ7sy3z6-3K0atlVkiuTIYloJz9P-uFzv4AHQhLF0eER994vpUO0dueqp6f0DEUIsHggPVxLJnfKi5erBBy9uxNP6ynVY3zpsbYtGI60Gn_jQK-kRBP1pMqrofN0aFT5spmty5IkrpZQeETkhgQJhXy2IlCqwxGSVm-zcVLuqlHzO1vsuQMc6vXAGci5oGJnLwySPb1mSW-0wKYbdoAwML2s9yNM_MXH896mq-xXPdCWGFYFjbaNcUgQC6WM3v8-WgubduIxVq2gW_OuhXYJ_2GQstvs7qU4lTvhACPILrELwBQEAF_QlJkVBtHNWE37hW-4L5TjKBiMk5JPBcK6YWqMwl6Heqi4Q1ZrAPzrd8ewVnInrV--3dAED4k0MZwdYMHZ23yT1-YqIgNSa6OdfP5gGCs5y8TW8Iqay6MXLYX1fqxsjJt9wucJKjSNGFwBw1b9RBen4SfVEQ5pxoC4nF-cg8lgVFCC3uezNo-OpesXaSDSeI9oyMsJph50lg3Chtz_CI59zIJFq8qs-P9pa6BQoSiT407eUlLBPhj8ElMUw6c1DvVPNBiqpooV6LbHME_zLLonIBCI0yAt3-dKrKcZkwBbgCRzcXB-AAOVKa-zpbkVQaeZvpEZWWrlzPEiQfgR7Z9xmE1ORvo5tFUef7kz88vHQa9Eu3L4BapQbz8GmBqBBicQ55mDQyMwMWmXvomhmST7_1PPzKtYhhQqvfsiNgUo&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=546435&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F74-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k80ksqr7f4cfec4760&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k80ksqr7f4cfec4760_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 75. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 75. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/0/5H/Xp/05HXpC97WlxHY3d68MHbNg/05HXpC97WlxHY3d68MHbNg.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 76. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 76. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/N/cB/vC/NcBvC4Ky2Dria8ALeNIjHw/NcBvC4Ky2Dria8ALeNIjHw.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 77. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 77. BÖLÜM
-https://dmxleo.dailymotion.com/cdn/manifest/video/k13UPLrl5ylnDGEYbja.m3u8?auth=1795477087-2562-lj1n5c8l-0b0bc988beea1c1f8aec9fa48485e021oS6I5Xw288H7cyZ3Y7nC8Rf4WMmU8-RBRZKIOwGIPx69-qfbJNTAaenO_R7MMohalHEQFa116jYtjg11uK4_Z7C4u1rvo_2CcbNnwgP4uf_FolzxPV5_JPNdGowmWH0gl8nFwEqeDbjqhmKYvu0SyH6rSfs2A3iPcfi8oKVN0OTJK4F6l_RmvzOXIunWraDxu8ozClz0P1sOkHI7ajuG3TREIxQmJqUMR7C4kGFbCysSmPlUGf-ylRjP_XFTxjwT7nqu9w_L6r2XRxZVmbQ7HGBhrFf7qng12mJ8hUQF4ATQohPl_8VkJA0UglSmcJjDp6Cn-dUklQT-L4j5V8fhD7y-BJxSycF1-tl0ANVK68ju6vnWyrh3sIjdhQgjSDmyMHdbYzjV5LKJ_2eBU0ah5glErAxZP_8v4MyHaFL5Wdw2E-gT0h8hgRbPhDciBKSVGC2XyKdNOb7ZLZq_T5W2HnCem3-gWX8xoEPonqN86fco4Hg33wcNcf_0-MfXA5rfKw_aFwFIT_O2N-Ggred2fdlrBMImNblvrb2jGvoBLjXnPE_Ag522fxIZX3gdKazEqyvJp3BoxsI651yLtrtN3Boe0CGs9STLr08MPb1Q1998CNfBdrFsuktGE4wjcqn7i8VHmvTTdPA5_2Kih2Q-wCbUbdzoCQsSGXxXjKg1QGwXh2U6Hf956avcddeziV6iUSJMa97Y5CrAVUcu8UWiEdfNLEyJk_N5Qjuejpw9r1LIo1I_vC9XDwtVH0Hx6hhtABqPBg2ILxEZwBT3xjX8JjqS1STV74eqaKsG-vUbrQ_HW3ZiLUc1nschu2QQjeoQ5tefQGyZPLe1dVw3qRppXSuyjEhiyGl9M6E7d2PoCwk9j0c_7OGnG4IZlnKc-wQOyPLRTfNbrqaDn4hMKnxKAA4OtVSY4zBc_Tg6dCQhLkca60-w4BeGtExbxbqqmCakV32lANJKJ-1GWc_F515ah2lMJ6Cm41GqjR5aUkzhwlYElU9K42fyFYX5lkQlpR4CHEhnvhgLnUrfvvsmpmgvhPomNCinh4aXGS6t-rBbsDBT-V-5h2yaIVws7TlrvcPuzTjZp8qMKYdDSfvoZcgPeejWryv1BBoc7xI2zshGpTRexNjt4pCyLf8up5gQ5JNrKSfKnCVUAZjjX0wxPFwQuDo8FX7DviaCEPU420VcBKA2do00TJNONbeQuNuXCtBD3STIvfo4A78hkyzQ-UKXKdeP8PwM3eCLp6MqMZ2LssfcUSL7Ig3ab3z-tncO-y4-PEUwGCwWSU6kF2Lc2lAleTOqjnzgkXiP2553goggRdEVppzsCc7boB072RoQZoSBINAVzs4Up0u3i16k7pdgvWjjdMMg4CSIy_gpV0dtQCZaKbNVw_thU1HeP1zP1CEARTRtaLVaBR3D8Qo47nSXGY-lnt4TfjMirAhWUbJQQ0YQPArkannQ2ne9sQJQjbXeIEC1vuYWFyjuJ6Xyz_eYMFMgCBl-tq9HIDJbupY25S0jzIKamMWnn97jPAn1LmfCi_wISs797y04n7s-M92BldowL6Leco6RLiOq7v9KQh5wgeul-qCAcbs9A5iL0lnDs15Nv06N3TSFwDnzpLTdQ34QkGA23eP9can9m2CP5UluG1h49_sQTAt_zX20r5yLjl4gbg9VMSCPvTwnqoXp3_7yKwYUQe66lBa3EoYJs3ZNHU4ineBWzemF_IaUxmST-LpDBb4b-u4BiN4o_f6VK1FE5LOlCD8fxcAAKeVIrFQMeWhZhb5aOjCNKP6URlP0PK8PXE-9b768aBz3F0kTIPjv5RmijVABTQWw7xDZDA2mafIjVw_XprHDx_dE3ZEzLuGTIfmrQlZMliAQMbtBGtjtwFCTYAAAqsaLZo1iVQb6PQ774prpnXTxz5SpnQ1qTer1awORPLuVGKIh5qtp7xPY4uTIMjEFFHSodhqjVigvBo-xuFe9mhlIsGG1sbQQirHyLtO_R6H7jxQ1216i3b5RZMHUyNfZOlqHjTi6Bbb8KUWOjftWr9eqZAY7muuGFxm8b2xHqdRxZK-Zfuhx_ssoDy9hEgWhZkUanSAewp7v2WUibrvM8sEtf_h4qgI5INS-3KcXK89RWCOgxrmlpn6rVe7zsJuAOPjGJZ48f_Sf7BN4XYvJ-0c9O0Z9YycOGg0BcpTtj5QaKyiH7GmdY9SLZyqbQIGrQyl1N9U5ouj3jylx4RvV2gpMXUcSBkT52C1Sxb_zE42hXixEnorOZKdvzA4FrZg0SYj6DGC8c97BTRrDJBDqO1MocXSPnyhd4hDVW3RtjSmLfFqeggK0M_2heonXGi7OQlrEdQxNZj0qY3wO3f8q40THYlsDOzBdXfuvqLA9YO5BG5K27GI7mE54BLm6gJlQicmFp6z7oN61Z_asdR7OQ2buJeZS2-x_dizkiEjtOG5X-O9CUnnUM4P2YWMJN2FHjfTQSgAHO_8Xtsm1vzgFk5xCmmd8v27fifEIhz_bPkf62Sdy8kdwdzlcM9jeGW_iNEK2LLHL3n6BOaQoT3lNM3uWW8bZgwSosU9Z0QXCV501pl-MTFWNeUoHMFlsh94aTpLfzhF7tuZ_ZpTKHDUdn4pqSWAccSg0cgb9-VggkkfeiYF57NKNjR-IrNM2Q10JOsp_A6j8qNEKaUeNqMgB8G-TlrAlGQW5x2SSdeQ3AiDHy_dY6ATkeBzr1jc4yko-_xcDW1SlcXBR7s_LXwMH55r2aj9ccQTtfRwQNX2NGinftymbpQNiTrnD0IWQYQljVgABOKDbtfhLHaIP9sGjSflwafsSAI-8R0quesMD-XW9InttkfBYMDnUt99FLXK84eEdKdx-VOx-sqIxaP5-05TtlO10apGnvVfFCaKUgQfdQLipewlSi6nCgdamrgZqyR5Zg6vla73n4gcq2Zq8brP7Qzq9LBWlDPnhg0c9pYHxmMYiEF5RLPpd-f46kuYK57HOpE6EZ9Ng&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=562621&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F77-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k807iq3m8034ffbbe9&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k807iq3m8034ffbbe9_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
+https://dmxleo.dailymotion.com/cdn/manifest/video/k13UPLrl5ylnDGEYbja.m3u8?auth=1795491053-2688-o41t0g4s-9efa3e8ff55b0b02d31ad119d915c965wfKXPRRaYWY4AhnrHNiym2P3aad-1lvaGbSwN2BJ-navBgkeoXtVe3ZRnFY6IXFdHId4_2jOH3CGzLc1UfNyd0eSJ2rX1X0qVMN-_SLl9jskgP8-2wJif2Zfg6r6B_UhNHLuld1zvhEk8nNk4gr_qpj4DV12W5pW60b4PLOIKv7LVeV8EquhngHmJCz9lkqhVAomx03IKJor30sFNB5Anmkehih-NpTgD5VR2x9L2sePhcuRx5frE81Rx7gOqDMva8HTci8_6miWRZN0RjKXY-w0zo1yIB9sJkw0B8PXi4a6GGIo2M4KqCLHRBqKZD02kKj11CRUJY1_qHfv1USCKhIlbozeishWMkZ2CfiVyhSEXaJFDSa62i_jyL8BcZA4twg1rac5gWJ12xUVHWAM97zb1dL_q6ESmf0bRqufs0fEbRJWYAXqv_FxUVsSa9I1u7M6XDP4g5Rk5H_JzCD626uP1Va2WEerWli_ZLIXDYDv6DGDU7tpLgHE7MvBeBiTZymwMK0Z-ul_BTxYOSyBMhvVSNj2QeUCYa1HWK4_ubIGjDFXEEt4Pud-1Hkyg1T7Alc8tCnT2tx0TYjeRobV7VsAkc0kuH9zTXSScZV3loGuAjXQgFNLkZpKxuznK2JUmQud0RUTQoCuCMGabySwu0OazQSr0z5BQbLoqOStvLpoR2DoblBIVpFQc56rZL_564ODi9xUIWGoU05Bc36-CxB2hDa9RHtRJpB_D8kMCUH-sGYSuP2F4HDnaYp_Gpq7wHlhjNY1nHB3i5kTGRaiJLTDJTcersFdBLKzD5XDRzuT7pjyPE-RpNKj3Ov2pD1Mb3sKhzJ4EmaOn1p_QfwXVo0aZcAXteCm5D7RZnO5Ofs0ucZWbJPmRCA-Cm4yowiJEd3IUkneQa_ShHZEsteJyWr84fW9x1TcWyeKlyeKbVK6fe5_Rps-pHEK1fOmbS1htcn3rkJGmquBpAgkjDoBzR-6-8cFKGiIx0HtTISHJcZLnCBysN6w2Wt4UxrzZ0PLdEVz9M0Si443RaTFs_O33rxqAo4PVl6XJek8oSzV3qtlC92gmdl5wO7tM4CD0hgS-4g0e58aim2Qn3LJdc9zLCD4hxaVk-SysgGDP8dAOV7474lHe-5d0W81h_9nnhCecAwqDh6s_vrj-sJAFwCcV8S-ugzmn0thcelASKWJNeFxZAF0qlesgC0YQU8Y3fKoMYxL-NfeHHPoNYfD8TmmKha2Wo72Z3hBXu9izKLc_eJnc0gycv8KKOwUkNE--VASI_UDRj_6tbbZNLi2T14w3n-J5o6u9zXwWJbiiQxs44w6E0x_-9R-J0rmf8dy3EOxzb8OiblhAwltzzkiTQNocLinmtlk7h0CQ1cAARZUkvkSyz2Yeyjz890j0HAVKn4K_y0NLbsSENIqplYg2eawb5sDWP-YeCt_f3mK4e5xRuESzQfczctZebIb06mMIEIMhjdgs45M-mKsucxemUktrM8BAAL-iuwlpa6KxgEJRRNibzELi8s82i25axUyyBB1LWP2vBpt27sZliA9dbczqQtlO-a3GxPCHlB40N4rEDnikofy5OuMI38gAXGhsC4-vTLYK5Loj-0dIIaCKg9SeyICHFzjX_0Vbk9wH4pU2OmMtdMg-_Q_gwl-h0vPHOCUY8Qs64AZpwkxYH4QnwD-ADF3BHVpGBOOOWHVQnE305Jsrc3fQI1BYdpwzu5kDBPU4Ny_Z3cA1RXE0I0jYrAiQxlLEQftw8Ykiw-8U749j9DJqJYIYBC-4fHkxVvap1-igFSxSLnXXBJ4SQ_9hytPWC5jE5o7bBhzVJwN_0FiMf2frSKZmEIT2xYhKDoZ5J98yhNcvrLwUiP9d59X4gFY115CbJwqSRmsuk5hbU5To3cEHNDyGZ60rvkD1141c3axzEh-gu3uSnNbiwcLCXYIiu2-KRT1dbYrL6-nC1rLXSWwCy1F3XuSwtno1f7XFrRXbCeGowekk8K7ujZNMkLWoUAhgkq6zYl_Mqk-RlsymWpu7VWL_Jm1J2FNrgeTmeOiBmv_6SZJDTRsbSXzQnnnfq2rgpkZwdkeb0EDsctkfRaje_n_pE7RXOzDYM7nUuKfkXBgsqYOAlkRYQ8EkfPBbqpj_bjkAXzZlCLwIWk9ebvYWxiZrh8Nppyr8CTzurXRWRLV0tleMliy4oOrpsMuhw8tsvffYvZiioNlkYCbxMiACgCWzXttc8rqHQ7uy0DN0UH1RkGbQ7i-eO-GuyK6Ef0Coe-ghVMz3NLfUtaPEUupzTj5uYtDCEczCjnPvhMA8yQRfxTvMsI6IWXHqXgrsxe6OjGwYApJbk7l1G34rUCbQK_GZmALWELuGI4CJ87yuETRjWL4Fobe1mH0Eg8xAPdOJa7CviXV-8raw7bnOYJ5erUdwoXoCotGTQP9vaqgMBy4kKjhvHUJEMAE94yqv-ObhVyZvbiXiqy_0YXzMi-M-kkGVGmilRaE2tlWAYAipdUBhYaNrkvNzXryqXxLk5SYxavdKMLHmWhS-yn9rKrOL-PLVon7cf_VuOPUAaMIpYU28e-aXDqVHjYxIbjHIJZiKrdK__jnIDrpmL9GBnNByRiRBsSTm3tQVF3tWU3qn4BuHxIEL1mjSbhTrwjLUUm3xpzJ-92_JrYLz52uYzw5ymUX8b9NZbRzfMxZazQ5MTZur1IEkuwAAFFTXG-REOWWm1Qf-e_H-oz7idz5KNflzw9oNn4I71yfsG-1VJJv8-K6ks9zkCUUSHAwQEx50H5hrbSfyz_lG0rFHr-WOSAfazbVOdC2qu-Uwcvfyu9JXRJVPQTOzvxGSNGbR5CU0gsc6XPKZNvoPF1C7P545pgOm0Jw3JRi4Qi_InjP1Z-8qU0pGfH3uiLyjIqAXN85k2oItdt8ZylMY8FTEJZJ_6ng7I27LCKBCMl83FLoWWg9_EhnoTnDCNXhuq5kTsuM34neIxFBeS46-jRlwMA2HB5o&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=164585&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F77-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k80kt0u2082b5912c2&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k80kt0u2082b5912c2_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 78. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 78. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/6/Hu/NY/6HuNYs70fFAoXgn7C1DIFw/6HuNYs70fFAoXgn7C1DIFw.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 79. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 79. BÖLÜM
@@ -18868,7 +19301,7 @@ https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/a/UK/ex/aUKexban0JGph500X-VKcQ/aUK
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 83. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 83. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/_/Dd/um/_Ddum2PisS73Cb9A7dHXig/_Ddum2PisS73Cb9A7dHXig.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 84. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 84. BÖLÜM
-https://dmxleo.dailymotion.com/cdn/manifest/video/k2xnZPRJlRNd9DEYbmW.m3u8?auth=1795477110-2688-7p11t5c8-f4486b1b12e8ae0cdb89e0764ba8782exnsxlhEVpm3hBfptyQapKHmcEdqS9TV0boDFBtEDoW4k-HAS5-kUEHqK7DoKJeUe7WM0cQhlEdCAz8LC2h0hYCZNJ_CqLUrb84UKW1Lc9alRoeOY6sk6JnDkfrCVv7P-qXkei7rM1tvwviwpW7EAz_pKGV4IppZ20PITlZzQ893jFFinbK8VrMp2bsWEqSQkcRulk75UpETA57DZOCZPf2c4hTNiI9bKWQPb-knrhWjvM27jkycj_fz24EUAng9cKtCJ7deh8R6R1PdZMCtdPnZ4sJhG81DF7HlhMwWQegnfHtwEN6r2w7Sfdb4jcqOReM7WOQpSXbcJj7l0K4olDhfyLO3ByJ6sFuHB0N20jeIcA-1rgnXDMaLIBsQNvh2TPBLViouEznjrJuhxPpPhl8Og0RisgH0bYKP--ni0P0x-gU1rHw8gr_DFHU9qErN5VaVoPNkbyjiDwnYSKl4XY9P2R7j7snN9dCKWLiydggxnOdbCdvpCtxfU4hZkb5NejWpibvc-EweyTpcsIGWd3yk0wUfceEk3Qfa1z280KYayt27tfVnZiF6JNaiktHvHwl0lRXBEMc0GaPN0OE6jFqKAqGTl7E8a7QihNz5H-0v7KNH8ROTE6e85QxtFx8EDOskGkHtCWZ7aubsd-Q5vIFhoFQsUDd7OnjCHlZwXY69gYoLi-PCnv4A-FYaItpwOASgvSeWIXEKABW5IABlcO-7P8qEGOBYp7H47-pyylHc21VKySaFINN4s1EUNiLds0pADwywGMFqFvvUcuXVs0DNAVK13LyvBaBWUOcsUyJNH3PB-IA24EQ4mThyXvwyuvy5f_rpnCBDfTsdHg2bQYqft4EWzzZzI5pyHoSXysURkESnv45S7-uaGqRYQncU2cSMAA3vqwWDsNZy5l292ZpOLenxdUFEH5ns7Cq-2irzT5L0rFciZ4JA1po3E7U9Q0EtPgDVAg7xbbh-NgR6UcAlQoxXCCweD9vGxpIrXue8II_DWZJ1_uTbArKHsIlxRnJq3o2QbpctPnVtElwSB2-m3pKB4dfyuyvc2dKOc_aYVnnJVLsGxNZpEQxcUa4kVCJiTCvf2_2xKMwmLgm_XiB7iKVLBA48aROAOIXt4oUiGF__ewKrdIuOjgnqyDQdaLiB9e4nKSyXnpXqqgS9Yv-3pRTqmSbNNSxSpn1KkET-tvrQL116872v_dIRl9PETu79tLDDMJGqbvNVIjN58q7kP2-HbiK2acmRmL19Ga7oX7tiaAzzeyp-Fd1-vt3jEsFAZ5sEncEtdXoovIxNqie8TkNNu6XZ1l61UW6KoR9KpwomZcFJ13oFDWg5MB-6M9ttZRi29VRiOOXTbYzomkZLhP0otlojDyKuOAshvl16PcZeOpqLSDGlz8Hnkq9cfUgNwAp4K5pQFiW5Bv7Aeum65UfbKsOHc9AjbKN9-fNt5gSNDJ8ntnxu18E2Gbws1rdM4miTdtO70ASfVlaGX76ntrShjuLIavFFOYCrC27MmDXxiee41ErRF4Zm4dQc9YErZLipEz00SaMoljOm0tg3VJu-RRRHE7HVUfTXh6lRhunh4Mh3aW7pYgkC2GDWEZE1FGMlq_K1QVZSJwleN24DhKXhjikdtt9u6ZmtMJKxczMyrqU24-0iKVXN822MyIHXmvu4cg_h9NAY0c383XEn-iX0UtfGynw9jxLCebPmVTqQIak_gO99yNI3C2PFApi0s2fBZyap4xltK2X74N6ul7X2eAvcnZXmgarxfIRcjRm5-646Ea8ayQuY3Hc7cSj1N8N3Mha2jn8Vc2k4YJGKcUlbNMQwow8ZV0cjVeIzz2JOHFhU-jLX5jEubHfdIMS6gwwMvmIKsuVmT5ovHlGsP98pG5-0c2UAPo3h_1nH1EGXPdzvdIBR1mNTBmB2IxKBxwGPmr9Smxc15Wx0Hy9g2WHpPFpc0d9vnHYESknK3OJ8Bep389HId9a1FdYBlgoq6tQ2gcSa-eQ9zP0Fc-aE_7iMa5yM0gFQwE7Rl3RDjoEW-BJtNcPpCiz8i8dbxua1SLnEesUpA3N-VXjTSqSPURN_1w0kc8w0RU9aZtJ6-sf2qSWPmM-wpyDa38JIlRIzP8fwv4cM2RkmKrHaZ6BygKBW-BsT5rNEPZHV92bc-oIMQ58ZdCYi7Pv7a_nIu5e4wxdtPLWyQDeIrQmX-Bv_CG9kMJgO_RHjojd-dNWvjp3kY-F6WaxcoIekR3EoIY2kWxt-3NBYgHejlOXWBesO8us_TfXQwslRGQPs4g1RLe2kl0Uc76KeBTxlk94qBu4B3j9yUj7JkTATOjYENzDmjjAounIlVtOTInICupcEDiUhUbyAxPm04dFGfpg8mfNABtR7JVZ4gE7mcQ8zjqvl3OEUSMJY0GqkE8T5ihXXE_ohBnAKgtsNYmkY1umEKIk9rUZ7WOA22fZikPb4NxXqgE0sLmbY6tGg5M5_gQms4qq8KHbTg6TVBr-QYzAqP6OYAZKcyMebvieBChTz8eh7SUWDiucVwTxawOeQ-MS_OgG17Zf3oZ83o-mvIjY64Gj3Oaa-yiVo2Gr9jcw9iO6lpyCdwhkvNOlZqvGltRsU6XqGZa3xt3-fDC8jnWDxM9qaIQ_FivedrKkRT1GOqh80oUjI6lfzjxUmOutBcdhAHaxPocqLvY75Xrh2u3UfOHbptFvSOwyb_p_L0Ot0XOwKe2AJGEQScZrS2TcHcWMtHsJL_CLQA3YKRI1lbTaxZ-G4lGAoSMw_QfQ_iyE4_92-iLA-WEJJI2yqibipXEhs-JypxJXS7zpXrwVwXs7eEoQYA-A2qF7yDrnnT1nbU3c5c2m5zGDTtW3EFM4gPgGW780O2LYO-nhQ5iqhujGvZ0CxUsGPRjvjfd6Bcocr56WZjBUJEZalC9W-_hnq_CBA6clj5B_VvS3-6cie6GHMIISSTTaF7zv8t66FPzOjpSmvwSmP56a0K2UzbqiFneJqmezW6_iKLxz2o3vZiwc42geqRuOAKMIq4A8IBBaTQCdkiIcaR1iq458SDpSwIMaGQbEigr5HnKm0aePPj00W6AyPVTVhoDxUZRxxP54vS95ZXaUSGCYuxs4QznLEusmOq7W-a-BA9aMEBHa253ibzVy4x9XLrsAhvq9l-ydjWGLdkH-HuQDXC7CmKkQqWmCjk&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=76170&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F84-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k807jgd9023121b22c&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k807jgd9023121b22c_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
+https://dmxleo.dailymotion.com/cdn/manifest/video/k2xnZPRJlRNd9DEYbmW.m3u8?auth=1795491073-2562-9fvvrrod-688f7442d7433be6f7186c27885a0bbbi0b0bS1bB4Eqh8WPnm-tBK5HSz2o9Uz__-8KNg0hi9zFbLyo0YdH4hfjDL_mNwDb33te8X21L2wbm9Z8m2KnwiHA5DlVVj-ByT-195V1rGUZTCCYyvbKOxVsD1pxu6DZ5LY3Dn8FVicyyN4ZLCaRsyuStNpLHk0eIvAoEVMDIawPcJFl7LtKZn0aoMkckWnxzlPbrKr4JE9LnuxdKKAE-vWgda_tIMXfI8ggGx5HtwSwRVZqpGYWRV5B6M1IB6VcJazXAn0GP5fMHIuLwepH8UNU02B2oSBaVI3cGk2ifICez3klu7L7qGBPHpSxTSVRNUUx3-W6uxjjB6oZCHsn9ul1jfaRbGG1aaxDegW8ktu10xqXqgWrJ6YDZU8MGvaHfpognfpGdx_YxcRejkx6mZnPHJrBX3V3-E0kTNUDabn-99TDrLxpt23fXgWe0DMLwaq6yiym6odBz49a_L780ZQP6Fz554fmE1gdt828JVgjc2MkhssuIeGK1JqoG9jIvr4N1_BAoT6fb9pSDyqxfIoa0ED9vcrnaoq0maah7x5UhjBE4ZZUeronXwFIyT21-qjMgv6pbLiYus0bLuPsQPJcO47yQHo3F8Hy4FPiFD6mXOgTDukPuTh8hG5u_XYAC4KRi8OYvJCWnTDhrSS09lBbkqLb6WKpmygBcjMM6wf1b7f2ScR3pTaUmBCwyd4G64vlOKzdb3LInPQKgN_m9bACAPYMUyQOmtSkgqRzDPGOkTihB-S6QxU3bXrHbDZGcC5eOM8YU0RSfRH0pUsi5hMhtaMv68398RgqxaHcRsnZEULLra60_PwHp4ggAAg-brte0d07FlYQTjrjK-MexrMlxTdFL-ZZlg9PXT3JDPl8bQWlxphWJtL2ySQ2fdfxUQrrTGY5vOvKWKSWHqJEPJwRlBwq6P3JFvaRm1vtX2WNRrJmeRNqgvBd3_gBMy5sOjv5RMPb8uGotae_2nWCbKPTgVsmEvsleUAwKjLKngef1xUHP3kJGTX-cledJqZm5H_P3IBV_K_KqdqVVWcFip7Xgxw4GoYZC1OE2VdoFo087JfM5y3LSnWYc2e81HsKJfKUNGI7pMFw6qV2CubNN0nqeJesIMJZS9kdt6KfQTudD6_TOfcbuxCUcP338e2ZF6bBnrV-q_sClw9Qvn38dx9PuRywOCIh7KDsOkWx-OtDTSLllAIS6fFcI50YnTJi-aJ947nIerMYklsc_K2nA00zwpPXkly9MCdGAFgHpCg7ENXa62hwVgoGYW9l6613qXLWyhvt3da0UfSdsqTyNCM-lFWTtN0qOm7dByFSuxsAzBO1qrHoNfxCYuJGgtqFbLSicIqwXmTQKu04SW2FL_om8iXK1cmctOtI0coM-UeCmfGtCjGkEwbTxbqdiqnw1rCTBlYQJYIHiI17Mzeo35Ac0_43eoWKNRouf_ayDlGc0qc8HmXRg6nrqwNJevOn7JCteOLCIO84NcCOJW4FPPjZFvvqflvJPrpXBpJ1MsRXA8Pjp6e1jb42-05hTkkZAtR3AWhdng_O6A8-kCO03nKXRkT89ncrygGa6cKZXHkArHMsCP99BK9rQO4ym-WSlw5JgbBjq3gRetP36gvlod9vUI3avun5AzPhjTyAqKQPJ1yJO_lDbkqS1466Frk3jPjSAu8XKfzAUKw3f7XPs88L6nsNzsdN8o_H36W0MsQAtCoOUEcvZK9ECmeG-14jYc2EbQSkdrdxPxOE0DMg69sODsqoTq5bd6VZzv3b_1yPedWWxGN72X3NPBP1V5EOlJwMGO8TsWv0FnFqPvSGaf84vTBaRfFfVLjRx4GdKwcbCeRnizSP1PT9shQ5MDs6HzLi0R5RZyvzAVXbcM0AVTgqmtVZ1ACgxAE7W_Zu2ycPdXiRHRPYrk07cq1YKCOpCm072w6EO2LPloSaelAHoWlJsmdIJGaSenyW93Iwpbp15TgxcXZueiCRVM_B-8hDQCgfL5hxs5w1KrPNWgLTqH1EoPuOPgqLBjVkrMtmOJYCo0uwYU_7bBugPrSMEeQVpplocp6KWby-a5yz_jmtTPOb7PKgdoG0Tj9gl8sT1MdiRE9Cp7kjPZ0fv9F5s86003KjmAebpbe4iLV1sjTc107OJxt2i7DuMhjYHn5mDyp1t-EK3J-cuFcEPiw5WWQFkz6bQv-2OMEwwzcU9rJMd8mGEYF-EY4I--ilV7BQUA8Y50wSorOP5OX2KhXu7LPK_dtEn1-XROVy9yLe87hfmMIrTa5MfxJYQ54mYpEVVtqBW7Q9BEHY5Ho8aLxXv5NwMO9uf2Lt1959W7slMweoWX1Vy6IjSj4YlexEZk-WXIMeNAwFfdEB2OUr_JWWbThRB1F9A2qlCX0t9wDYG8VKg7WnVlD-_ObISAN2aLqThtw1YAqj0fcId9Q2i2i5GJ3C-gtfZjSU9xxjyi9mlt_8ng3gStyfczbFlr0vlyiWrbh3UCDymM00htOOFWn5goMYMk2rDHlGEV9d9Sv_6LYLpyaySwAVbJx-oOgVPfvx04-t4fPEQqOof3TXh2luGnP7ipgJOsmypH9qjB9KjusU4zTdKkwpVwb8Tbql-yH1_NLONEZqAKv4MHh1lOPrEDfGkH_3n6DqCClYB3C_o0jVzphCjixDU7clBl1wRQHljAi4Z4LuKJSExd9LLVgYxg1G0iwe5JenJdWWSzi6QQZBEq87Xj-yhLRO0k3-mYG9rNNt0m3B1BiUM3yg82-lf6vVf3oq5Kh1qncDA6EpuR-V1rF2zDEn46CHYtGtuM8ldkx8bns6yVdCw8nDipPeId14UBrX6q7mpaRuigs6-yMiujYL_OBLGJfeYhpYZ7WuCPCJabGW9K11CnqYl8Ry_CHOtUT5p4o8Fr-zYXSmmzRkTck-jZictuFhWRlJVfLgBaEulfqV9b8iBgJgdcVnh4PgQ9RVFB8d4nwoW_K8840jZ5UDbgbd-_pyTE3zMbt_u0ITnUtzWkEWKz2Stnh-GLTRABHsCrngQ911iKwJnTDHu-ogInovFi-hXEKqB5qDigYZz5XWHie1LylUGFQzaqP92kEB36nFIUIGguMVttyu4biv-Tiy-JD-wYOdPhk2KgEuKhfoKU5ZJEXNgzU4F2l_yWOUk2lAjpIUELJ4Oywo6835zxfKenI53rKZa47zYF9w&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=292676&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F84-bolum&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k80ktl2683dcf9aade&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k80ktl2683dcf9aade_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 85. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 85. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/m/1J/d8/m1Jd82FiCKiaQP0oH87-hw/m1Jd82FiCKiaQP0oH87-hw.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 86. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 86. BÖLÜM
@@ -18880,7 +19313,7 @@ https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/-/97/c-/-97c-8FMYHG3Ozgh2mRwrw/-97
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 89. BÖLÜM" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 89. BÖLÜM
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/_/W5/Wm/_W5WmlCWpWDd6X37n7av5A/_W5WmlCWpWDd6X37n7av5A.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 90. BÖLÜM - FİNAL" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİLER - KINALI KAR ⭕",KINALI KAR - KINALI KAR 90. BÖLÜM - FİNAL
-https://dmxleo.dailymotion.com/cdn/manifest/video/k6sPoYfeHolCe9EYbqc.m3u8?auth=1795477127-2562-chbt7rt4-c92dc32739d7d7f6d11495159d6f50c7rx3IjCmpijZBs2uDKq99zILUFndO9hOhxnyLIVvOpEdCPUEG50jeUgXGXTLMUrAZfDQ575Ke9rXsbYeqS7mtI6iljRoCYrz7E3TRZ-E5qFbS-CoXB7nvzOIjEKNjIIFi4iMCoQrYguomDnl9lemp_kUAwT2aAKVnsj_IFznBUO3FtTe4669dQiJdhpvcJmHAmX3bLEin8w8N-S3-n07syX6NAop9yLUcFc66q2qSnQP1a5icFo3QOIvuM5UvmJbtAfMR-YKx011xWfF_yKPon7s-fujEmcmDhiCUn6vcG-XPgja15aS2pOOQOPMr81x8NKQ-XlTerILNYH88yInobDVuKLR7EZAmcnnvwFHF2csrYfq8xoW0lvDDS7jJobCV4c6asseQuCiWX0_HRJ4JIp6xa-pZCz1BR8fpdmLf1TgaYD5KE7TNHA5_pb3aBqB3vagqKaVdnnfrdGzZoC9rfM1XHsHhXxBrTuORlYyyDGS2H-XFNYorXpHZgQtc2-wndh86bHlRLuGilHWsGDI4fFXsNXaCWL53Rdb_CwW4JGcJOvU2VSIXpNN8UT4R8KVEkuUtu1XYhf9DyvlrwWmMQKFYDvE7EIkKX9qiPO9ct5FUk7Eq0iubXkghjqE4vzfHsAjk_mc4jO7Uk4G00ENHHoVH5U7SGJaYNxLXRMsHM0pZg3nIfXkfG7IHrM0KEu-RuuEps-iFmFkuf_0rRBR8yu2S0WxR2ijVN7pznE8yBrYMovc5dibPjOluYrwrUP5O0GlJxucSy4HVGi5Q02TqOSZ327C6msNLMoRyisREIMdO0Ou9TmZHJhDBmaS8-xMsyOhvUO0Qt6M0mdDgeRV-nHQgRe2WuueLvEdz8-eUodMSjToDsNvbBptFE7ewdW-NzkoQ2HpLRP5OMEf2mOk-T3zTfKsw3FBL1tDxZrQL-xNrSmZPfQM5tKjla4mudPDLyxK6cISpmrPxCJZHwNvuTj-CH0nPA6Am7W8CIwKV3DPX7sGl2uiTQcOo3UmXpDkR0nK-2pJSJMQrR63alDLMoKVOD0GsLXy8xwKGHq2C3G8Zga0xzg6Z27r8z9oXXxQ7vVN8YD4529tSWvv_PwDg6UdAZv13m_bGaE7OA5G-zErjzZOaXv3pgkaaomYXSL2X6FfG1YJ3H4F7xB9_rnkNjcnSzrMODf_N0dT4Ok6e7oZTUqcxDUkb7Lm5V0nZtQ43JKeBv64ZaVj7rE-JtzqtBaNRFUuWr_E7id5pg9_vn0Qw4pWMvfZqZhvjb488zgFWwfI07vKd_VqUTY3J6dMnKtqu1ddT6talxddC5ONF94akb6_mmIpMayhf3RjY7rzJnisYzciZ8PHro--gg-RDYtSaC7V4qD9Ff-RoPAKakZgfeepx1HW8VT8F1ZDot0j3TZBjvUOVocsNMXjpFAJOyEHxtXVzdYAxsfpF4VSbhI7dYU6LzfS5v9QxICoMQzuB3BCaBLbBwcxyhRJmSxQl8JoVgw4QFNmtu1ewNyWhRFtdPNhp7zomhXe85rH_e_VhXQdxd2wDbyRBEY799AmY1wpm0XUHNLFf2043RU9rCfj35hIC35Dp17Txfz5HqKI9mC--NA81g70J3CvuyW02EPbvkAOV0yPLwNjvNEY4dLHt4t29Cay4WocCquhGtviX1A0xCE5Ds0cmKUjpvyOlfn_EURfdM4dkb0wxUL9WA9HrDKDUzQAHCQUdvMH1-nrfVAStUamkzIIXVw1QfvOZ6wRVp1rnku5APRZzPrdSHl2PMoAuIZ8myihDbs81DZ6Ask4u8c5LT9Qb_wDFC9yyK9AJiUrBRPg_TJxSJXol1jbGM3ElHiuYuPm72ELOsquI0UM5bOJ-7TI2d_Jp09RzKRBnrYFoq-7Rt1auIP2ciOTWiROMUxo7FqjMtV4NEQV29GsYUy8xlioNr7rNhQXn4X__ZBEDH1JZW6JKwjejC8DiRdhHYkS8RdP1QTJM5TCf_1HlxEbRdlY25qxoaX706id_VSJRMHy787o3d4xcFofxdX4nTot4jmR1u6g68jcEFiTo17SSSmnDoHllDfUIupMIf6k33wy97HnJw11Ucv_MJwOCi1th-ZT8ihyi1GOQNYZVmhLcrTiIss09R3T8EWGAs4HkhtN4HmXvd6ynhr3ONJqbYi3iL0OZVEg95Xc-tZTLPguhGlyUs5kYbkwAB7AiucophIjazX6UwT4m4RJrZ0YWgxUhA8ZTV6DWCKmm2i0x9J0wXs_EMNBHYHsSuIV9DPfFDyqu_46XFy3Q0MACOtCaTvfUb3TB0yGEb3A_g2yUqt99SvkR4ip1EyIsk8CeZ1Yq__wSlmje8myxRj4iv8sS7UL-lVLZ9fClcyGAbNTMwrWEvLtJ91Yz78XDcGKLG_lmo6m4Xg5_fItIRSx_wqNXYQBJOAaiAefqLZD5imddeHow8LImb-bAMzlW1UxAHXTv-XIehw1V6w9kp6TrG7ozM33o6SDbwihpPNaBfXBuhlMJ6bbBaNJaB2KJMrPpVXD_Hvj3NWJh6xT_OucO6_WBWA2q1vEeE4r7RtEPddO1SymieL2i1ZVXsY3uZ5M5qfYP7xHK5Ykz4tbVKlQAAeY5dF4Jap8EuuVGaOFH_zPFjz-GI0r2yXMN_4dko4nP5y6C-M42TaHm7mUb58loCBR6azgjTLXGi7kqEYjvSBe65uVz5JYGc97zOdkbJ0jRbkYtHJrHKHkWvyjZLQxvDNGHfxne2cX3uLWxCHlbgxhz7oVsunt-x3Ljzlqmeaq2mIQXnp9vzsiEcmHcaZlb5HksyeuIxN5JBuIqz2H25IXHytVYPPzYPSnRTAEmQdbdLe3ApzJizvmc5-zkC35had96moxPYOhWE25BSlQ6MetmF6iJ0V9WfI7pBGFdtGNtUvULEE45csX0J4Lff-K_fHoMbn_jNEwAPYwgB_31y82WoEDQ05cj4iYCeXfj-Cm4YvINmA-TQ2AU-77Nj6-rhhsSzf6LB0sAYXhPPkUenQljWyOl9MtgjILS5oaJYATVNQefwrpqa-KDQazmdpte5MyvmNzQgFiVraLwDOsVHxJ6n2NjDWS1OSV3CiMshL6PwP-Bbq_uIwH8O6RSuWNoOEuWBJF0KuuY78SMCU3Nwxb4hm8ToTk_NAfFrMXRv4dOQeHdpU2jc_rSPHykNVVQmHS2eYJ6TJgOZLFcXs5ou&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=98448&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F90-bolum-final&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k807k1l700cf2b0baa&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k807k1l700cf2b0baa_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
+https://dmxleo.dailymotion.com/cdn/manifest/video/k6sPoYfeHolCe9EYbqc.m3u8?auth=1795491085-2562-agsoldoq-650a85377e31fa0d0a7d336ea82a96e1fIlVIU8yDfTKMnhPbOtYj0esGKpjgXxSzdHHyZdt7cqQCzhqA3QtPgVRjc4b1ADQe5tQ0zBmIqI4fZm0_Dnt5Ek0F9A9K7V-Ld5zwBcsqTAdPgrizZQ9YR68RKyov9F6R9cjlcQCJ8PPiTBRft4EP1ytp7nCEeFRS8OkorjNud0ngVzQeW48EkXguu9k3kG6Xos--bOHfh1mdE4GhLhUTWszyoj493V_WJUsNbiXS6IK5d3gbBQqVK-N9m3ZH9SgIRiQI62maC_0Qp9ucZLyKhGun-f5WromR2vv_tr6knowsm5RJ_jyxoslx_CylyNPBy10aybwOLidK0xz2kIMcmYnp9fsJDCuAGLV79-7AXAXxjSMcdyX5x6LWdcGu0LrTF8NQ6S9T44fVEKqqKdU_xDu7pXs-PN9XUQuyzrAYahiGqYJydLY_T_TiRBw9mR7YSg8Bhm3EbdVTiUB9AdyBPDDZiD9gaD5AsIPJjx-BL3r_G210RFYeoECpsDCwAGs29DANvn_l1joBLo1erTr8oWaSTZzqq5KLob3Cs5JUpydWIXNS3u0peQ0R_8YL5fk5A-RUkOMhASyAND-cn8l5mdad00ujrFPi0ZbRhu5pyuLW8Jt5jQChcuyj4Z6g-1KuNLcl10W5UqQGPVym1-AFew-uLZmH25EyD0yeiuJN2aUlyLzWBz4CEpjajGvzy43xGGwD73G1u-M1uri59xtVKgcYoLAGi0mPcu0xUfyE3WED1chlB8ag8vC3k6x4TeE-stDtiqK9unPJx9x2ujAjdUoX6u6IQyR-cYdr0EaFWAk4TrmaoWh7vH4_-aawwmhv201B_J0y6nekWHYO74JRIoavo_fLW0eD_3gHHzz6M0guCiV-KXTKfh779cdVhSyj0hr6rffmVq8KAXYmRJQaL6UMJS_LJpy2qKauV3dO6au0Kc0GZGL_3OxTnVPvWS-uYRPMMtD0s2NNv92u0OzxnKFCqIv0TvZMH-yMTme-9nREe3eYiYYtKd5VTL94Qfo0rZaVA1qgn5akCVUobEq2qZJZ7Cl639dQ9KAfDPf-KMMZJpoBs2GvldvZtQx6QZwMwTuJZ1E5Yzb0z_oL5WilSdcyZWDmjO0ZddyQpAm1-dgmTzdlnA83uQoWHj50hyJrRt9eImO0lzkiGC59vW8xz5npbotgpo_1WMgulx7w1gT2687Ya4i0uf_VaGV8Esjvaaga7k39JiB4mMCeCHWymd-CS-hJ1hKfK-fVINZJ71CXwZxbpQt65w38cmWi4iNWQMk_FoQxCC8yeO1DHAWwzD7yHd1n6ukic5DeNeetFRfSH4UuHtsEYZW-2B-F-3w5tOaIvoh0p_jjK6k0bZqbmg6h6xgP-qfs1M8RiKo2aGi_ShpSgFjfj0dMlkz_i-yrrIc8AINB9t9XNcUexN5np7yHWn1omSj2lECPTCW8S5zVkdkq0Rnm520g5uJWIk5QLwZdEbVmRAjpVoOy6f6y9RDGmC8nfNzMS53qkwZQuHvmggskRoJyOWydcad9R6ryB5iIcj1XaxaQK9ENrADFHQ9BAMSl5dbU4tiPJkODf8WJ6E4jvf6c247s6V1y3XiOPu_FLZ15qQB3hgQLi_qOXYvxenj8UgybCfrxh_YIdEU7rdO-LKeTLGOusA-0r4Nd6ov1PGFN_nSPvjTIbgVaJxDucdIsrxFpzjAYtV9PQegoq58OT4cLOKPZEwxy4EnGEtfI2oWaIdJ_P-dT5gAJLD1-cxKyLusJLXmiYnRyLOLXcY1ILYnCjz0_PUefOuaPTzHyKvldUuG_37sap26EoPAp11HBd1QBXc4OoS9OIcosbmKQNJoyVWpmuyDM34SjgovaCye0xgKYI9MDd-0gaKYhXs3u4Vz-pKu3JLJotBHlJycW-iygw7bPgkdMkcQB8NLTcefuke7-VLYYbBiVhvTle04hxCwuy7VgZgIjzSfDRfRsg4kPfFFq_IuJoheV3aUxHmurh1J5rTGZY_BQiOop_wftf0n8T2BlxDeyV8ZT5yY8zn5d2VlmYFav74iBo-6SqcARtdFXSNy07T5qcXcPmxPsD2A9yVd9KHlQ7E8BoZNrw-ur0rZ6ZCzw7lvAtCZjDhcBeT7NlbmoSpOvjqScS2tDn8xfksey7MXeeodelbX__q9zYxIeAbVQsqdvkBGUb2Csi63lTAl-4sEne77SVFs03MCF-SqUGkUYOmF5Lq9fDPFmoXAP7dAyL1-bPxoZO1MTnPhgTrgDS-D0cFFzmfZQgv46vXv_KohkWXw2mOMPyU-DIcINcb2HNPaZIh5pioPH0ivfxCvxeHdVCq69Y7dQrytE3iLdsOWtZpavp6TJv996TFTiGaMbOBvjM3R9eouoKe59g-Q5Dugsp-zwGMgGKQtKfww6M_aMvVzd_Ovs3BinAJjdpDUzvWV8aorgBqQf3dd2rKq0IJgY2iqTsSnB8JOxTPqW3vmjIx9D4dWc72T9d7gBe6WlejY5EYZDHLKyp15Q0-xgBGAPD9iIY8jTBpboKTQQ0xHYTVm9yH3FW_bOWhNsJ_v-3hLBxB_mHLfvTguuF0-pX5dFoEGJGSmfDO0kpHtPVaygu5ukubGoqv_3OnMJnLuo1a6ZdIl01Zg8XOOfmVAB9XQsrmY9TznHRiusoU17rbd-NkqMdGxlG4Bd_G2nKr0EN9R_6GXJbJJ9NUIkWppuOdhEgOjV_NyyiE6rMVwiXN2vRBAxUaORpElCaBwkIoz7N_O5eRbt9U-Uf4zY6Vf0dY1jqSFvoknF0P3DS7tpLPP4LFnlP9TteIHdeNNxvS4lLSsnnTYClO1vEMuYo3eE-QFnGY6FPzSefkfKy0jgn4la-zvhsEBPjkzkdc0Qy_CyiPVCM3APkysZjfzB4csEX6XRrqGMj2Wc42hiEPLpj3j6mI4wBD1B3GWLY88SDir_AApZL9EkeULmq2qentAhs9PtZ88dQegV7Cq0z2z6I6Bot_Rrx2COUbc3IxiN6PLTBB3NIHTLPjK_NnRTAolJGk67G8hZqpjL3HwqXR92f8smcWct58NhMS3k2b_W0q0u5NJbET5ELWeqH15eUi0r9P8qbwV0j0-lI7DOhi_SdNCYf1zMmNyUcmEHVm8AMh6t_vC_1ZT4CJ1X_4AW3ky-TwPKfekksMfg-4-NfXbdPju1N8HcsU8JabmKtRDD9EnJFYV1&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=531555&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F90-bolum-final&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k80ku0m1c6a0f6ad76&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k80ku0m1c6a0f6ad76_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
 #EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 1. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİLER - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 1. BÖLÜM
 http://xbyteios.store/yt/film-id-LfbW6DO7Zgs.m3u8
 #EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 2. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİLER - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 2. BÖLÜM
@@ -19065,435 +19498,3 @@ http://xbyteios.store/yt/film-id-L7aStJ10DRA.m3u8
 http://xbyteios.store/yt/film-id-kMWY6LZns_g.m3u8
 #EXTINF:-1 tvg-name="YABAN ÇİÇEĞİ - YABAN ÇİÇEĞİ 45. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİLER - YABAN ÇİÇEĞİ 🇰🇷",YABAN ÇİÇEĞİ - YABAN ÇİÇEĞİ 45. BÖLÜM
 http://xbyteios.store/yt/film-id-v0I49kWwe_4.m3u8
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 1. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/c/8c/65/c8c65e4b-900b-4e68-976f-c46b1af6db16/c8c65e4b-900b-4e68-976f-c46b1af6db16_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 2. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/7/82/f9/782f9d5a-f68d-43d2-8549-305817333674/782f9d5a-f68d-43d2-8549-305817333674_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 3. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/9/bd/8f/9bd8f1c6-cab0-4b30-9558-2bec3e8a2c7d/9bd8f1c6-cab0-4b30-9558-2bec3e8a2c7d_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 4. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/e/cb/83/ecb83539-8ea3-49fe-ac92-7296c118e930/ecb83539-8ea3-49fe-ac92-7296c118e930_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 5. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/c/12/c3/c12c375b-ab2f-4662-bd85-b30a980604d6/c12c375b-ab2f-4662-bd85-b30a980604d6_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 6. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/d/8c/f7/d8cf7845-3843-4673-b154-4795162686f3/d8cf7845-3843-4673-b154-4795162686f3_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 7. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/7/d6/3d/7d63d0b7-7098-4747-8979-6fb8df83fba1/7d63d0b7-7098-4747-8979-6fb8df83fba1_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 8. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/9/b7/95/9b795344-0bda-45b9-b09d-eb6a56cbcf9c/9b795344-0bda-45b9-b09d-eb6a56cbcf9c_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 9. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/6/29/f9/629f975f-d516-4b07-8ea8-2acca3bf2cc3/629f975f-d516-4b07-8ea8-2acca3bf2cc3_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 10. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/f/02/4a/f024abc8-f29d-43ba-96c3-e2c7f6e5fb83/f024abc8-f29d-43ba-96c3-e2c7f6e5fb83_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 11. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/6/0a/85/60a85a8d-bc20-4e9d-a794-05c2ba77ff27/60a85a8d-bc20-4e9d-a794-05c2ba77ff27_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 12. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/a/0d/a4/a0da4a48-e5d4-4b7a-851a-ca7595b2b63a/a0da4a48-e5d4-4b7a-851a-ca7595b2b63a_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 13. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/2/b3/8c/2b38c96b-30ef-47af-958a-6af048f46d1c/2b38c96b-30ef-47af-958a-6af048f46d1c_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 14. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/3/57/f3/357f34ff-81a7-4e5f-87cc-9be39e054869/357f34ff-81a7-4e5f-87cc-9be39e054869_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 15. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/e/43/3b/e433b071-62ed-4af3-9369-b95c350b3698/e433b071-62ed-4af3-9369-b95c350b3698_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 16. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/a/7e/ac/a7eac313-4bae-4225-be49-58d2caf4fd16/a7eac313-4bae-4225-be49-58d2caf4fd16_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 17. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/d/f1/fe/df1fefd1-acfa-4ff5-89cd-97ec3030fb5c/df1fefd1-acfa-4ff5-89cd-97ec3030fb5c_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 18. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/b/ed/37/bed370e4-9d69-4e43-9f14-a0f06d76deda/bed370e4-9d69-4e43-9f14-a0f06d76deda_720p_2000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 19. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/c/5e/e1/c5ee15db-c166-4c4a-ac66-4c1562d59e6c/c5ee15db-c166-4c4a-ac66-4c1562d59e6c_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 20. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/7/40/05/74005cd5-29c5-4130-8d06-86a1b6b6dee6/74005cd5-29c5-4130-8d06-86a1b6b6dee6_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/8275f3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Altı Üstü İstanbul - 21. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/d/32/aa/d32aad5e-8514-4dfa-8da8-097b8c18ba4c/d32aad5e-8514-4dfa-8da8-097b8c18ba4c_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 1. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/9/64/b7/964b7e8f-50c6-4dd7-bc3d-b8d1ac008b4c/964b7e8f-50c6-4dd7-bc3d-b8d1ac008b4c_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 2. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/f/cc/1b/fcc1bb3f-c231-4c6c-a28e-a3b15d4577e1/fcc1bb3f-c231-4c6c-a28e-a3b15d4577e1_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 3. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/1/71/35/17135eb7-cb27-4f34-9079-268b0a51a426/17135eb7-cb27-4f34-9079-268b0a51a426_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 4. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/9/18/0e/9180e65b-4c1e-4670-97a9-8e70c2572daa/9180e65b-4c1e-4670-97a9-8e70c2572daa_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 5. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/d/23/bb/d23bbeee-22bd-474e-9434-dac003b06b39/d23bbeee-22bd-474e-9434-dac003b06b39_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 6. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/c/34/9d/c349d3b1-2e13-4810-ae5a-77aefb67e244/c349d3b1-2e13-4810-ae5a-77aefb67e244_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 7. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/5/5f/aa/55faa449-9cfb-4461-8099-eca9b7aced6e/55faa449-9cfb-4461-8099-eca9b7aced6e_720p_2000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 8. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/d/c3/e2/dc3e22b8-d4e0-46b7-bd1e-342e7652698b/dc3e22b8-d4e0-46b7-bd1e-342e7652698b_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://iaatv.tmgrup.com.tr/b5bcd3/295/410/0/0/600/834" group-title="🟪◆ ATV DİZİLER 📺⭕",Güneşin Doğduğu Yer - 9. Bölüm ⭕
-https://httxxkbiqd.erbvr.com/vms/8/da/98/8da9896a-fcc0-43bd-9c05-7268f533a3b6/8da9896a-fcc0-43bd-9c05-7268f533a3b6_1080p_3000k.mp4
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet İlk Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/T/7k/haysiyet1_bolum/haysiyet1_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 2. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/Y/sR/hay_2blm/hay_2blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 3. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/4/lZ/haysiyet_3_bolum/haysiyet_3_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 4. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/m/Hv/hay4blm/hay4blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 5. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/H/kr/haysiyet_bolum5/haysiyet_bolum5.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 6. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/e/6u/h6_blm/h6_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 7. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/N/kS/haysiyet_bolum_7/haysiyet_bolum_7.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 8. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/t/gU/haysiyet_bolum_8/haysiyet_bolum_8.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a918788d73360a42855218c.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Haysiyet 9. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/D/TI/h_9blm/h_9blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir İlk Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/f/sn/us_1_blms/us_1_blms.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 2. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/m/j7/us_2_bolum/us_2_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 3. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/z/Au/us_3_blm_rev/us_3_blm_rev.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 4. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/e/qG/us_4_bolum/us_4_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 5. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/l/9Z/us_5_blm/us_5_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 6. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/t/QW/us_6blm_rev/us_6blm_rev.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 7. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/q/S2/us_7_blm/us_7_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 8. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/m/LV/us_8_bolumm/us_8_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 9. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/z/ET/us_9_bolumm/us_9_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 10. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/X/pM/us_10_blm/us_10_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 11. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/3/pt/us_11_bolumm/us_11_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 12. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/L/xD/us_12_blm/us_12_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 13. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/_/ht/us_13_blm/us_13_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 14. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/G/kV/us_14_blm/us_14_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 15. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/o/8S/us_15_bolum_rev/us_15_bolum_rev.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 16. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/W/ta/us_16_blm/us_16_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 17. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/F/cC/us_17_bolumm/us_17_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 18. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/S/Xi/us_18_blm/us_18_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 19. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/t/yW/us_19_bolumm/us_19_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 20. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/I/XT/us_20_bolumm/us_20_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 21. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/b/Jn/us_21_blm/us_21_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 22. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/U/9F/us_22_bolumm/us_22_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 23. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/6/DH/us_23_blm/us_23_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 24. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/e/dN/us_24_bolumm/us_24_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 25. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/M/Il/us_25_bolumm/us_25_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 26. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/Q/2b/us_26_bolum/us_26_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 27. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/q/Uq/us_27_blm/us_27_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 28. Bölüm - Sezon Finali ⭕
-https://kanaldvod.duhnet.tv/hls/B/5I/us28_sf_blm/us28_sf_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 29. Bölüm - Yeni Sezon ⭕
-https://kanaldvod.duhnet.tv/hls/u/s5/us_29_bolum/us_29_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 30. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/2/we/us_30_bolum/us_30_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 31. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/-/Ik/us_31_bolum/us_31_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 32. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/p/mi/us_32bolum/us_32bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 33. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/3/tx/uzaksehir_33_bolum/uzaksehir_33_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 34. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/Q/uS/us_34_bolum_altbantvers/us_34_bolum_altbantvers.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 35. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/r/OD/us_35_bolum_altbantvers2/us_35_bolum_altbantvers2.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 36. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/O/31/us_36_bolum_altbantvers/us_36_bolum_altbantvers.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 37. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/g/NE/us_37_bolum/us_37_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 38. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/h/no/us_38blm/us_38blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 39. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/i/Mc/us_39_bolum_entegrasyonlu/us_39_bolum_entegrasyonlu.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 40. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/j/BE/us_40_bolum_altbant_vers/us_40_bolum_altbant_vers.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 41. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/e/NC/us_41_bolum_antbantvers/us_41_bolum_antbantvers.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 42. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/j/68/us_42blm/us_42blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 43. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/W/gG/us_43_bolum/us_43_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 44. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/i/ez/us_44_bolum/us_44_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 45. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/I/E8/us_45_bolum/us_45_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 46. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/k/G4/uzaksehir_46_bolum/uzaksehir_46_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 47. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/_/E7/us_47blm/us_47blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 48. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/C/zz/us_48_bolum/us_48_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 49. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/K/Wj/us49_bolum/us49_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 50. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/B/bu/us_50_bolum/us_50_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 51. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/b/qN/us_51bolum/us_51bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 52. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/8/0J/us_52blm/us_52blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 53. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/c/Cl/us_53_bolum/us_53_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 54. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/F/DK/us_54blm/us_54blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 55. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/6/J_/us_55bolum/us_55bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 56. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/y/Gn/us_56bolum/us_56bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 57. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/n/it/us_57_bolum/us_57_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 58. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/o/2m/us_58_bolum/us_58_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 59. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/U/NE/us_59bolum/us_59bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 60. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/w/IJ/us_60_bolum_entegrasyon/us_60_bolum_entegrasyon.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 61. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/Y/XM/us_61_bolum/us_61_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 62. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/R/25/us_62blm/us_62blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 63. Bölüm - SEZON FİNALİ ⭕
-https://kanaldvod.duhnet.tv/hls/d/Fm/us_63_bolum/us_63_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 64. Bölüm - YENİ SEZON ⭕
-https://kanaldvod.duhnet.tv/hls/U/W4/us_64blm/us_64blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 65. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/y/mp/us65_blm/us65_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 66. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/i/gO/us_66_bolum/us_66_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 67. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/d/bx/us_67_bolum/us_67_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 68. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/E/h-/us_68blm/us_68blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 69. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/p/lm/us_bolum_69/us_bolum_69.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 70. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/5/Zx/us_70blm/us_70blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 71. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/B/sI/uzaksehir_bolum_71/uzaksehir_bolum_71.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a91782dd73360a42855215e.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Uzak Şehir 72. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/d/nL/us_72blm/us_72blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar İlk Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/_/OS/gvg_1_blm/gvg_1_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 2. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/Z/rZ/gg_2_bolum_rev/gg_2_bolum_rev.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 3. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/e/4d/gg_3_bolum_rev/gg_3_bolum_rev.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 4. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/W/1S/gvg_bol4_altbantli/gvg_bol4_altbantli.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 5. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/B/ND/gg_5blm/gg_5blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 6. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/o/G3/gg_6_bolum/gg_6_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 7. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/8/L4/gvg_7blm/gvg_7blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 8. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/S/yf/gg_8_bolum/gg_8_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 9. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/9/Um/gvg_9bolum/gvg_9bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 10. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/_/gB/gvg_10blm_altbantli/gvg_10blm_altbantli.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 11. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/p/F3/gg_11_bolum_rev/gg_11_bolum_rev.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 12. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/W/rs/gg_12_bolum/gg_12_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 13. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/2/Ai/gvg13/gvg13.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 14. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/w/hW/gg_14_bolum/gg_14_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 15. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/q/A7/gg_15blmbant/gg_15blmbant.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 16. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/8/IZ/gvg_16bolum/gvg_16bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 17. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/I/Pj/gvg17/gvg17.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 18. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/8/lu/gg_18blm/gg_18blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 19. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/l/AW/gg_19_bolum/gg_19_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 20. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/d/ad/gvg_20bolum_rev/gvg_20bolum_rev.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 21. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/X/_D/gvg_bol21/gvg_bol21.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 22. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/z/PI/gg_22_bolum/gg_22_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 23. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/x/Fw/gg_23blm/gg_23blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 24. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/7/oH/gvg24/gvg24.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 25. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/K/hd/gvg_25blm/gvg_25blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 26. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/C/oo/gg_26_bolum/gg_26_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 27. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/2/r7/gg_27blm/gg_27blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 28. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/I/l8/gvgbol28_tntsiz/gvgbol28_tntsiz.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 29. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/r/8p/gvg_29_bolum/gvg_29_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 30. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/h/LW/gg_30_seb/gg_30_seb.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 31. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/q/Iu/gvg_bolum31_tntsiz/gvg_bolum31_tntsiz.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 32. Bölüm - Sezon Finali ⭕
-https://kanaldvod.duhnet.tv/hls/W/0c/gvg32_sf/gvg32_sf.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 33. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/Z/KG/gvg_bol33/gvg_bol33.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 34. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/p/Xb/gg_34_bolumm/gg_34_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 35. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/o/Jj/gg_35blmrev/gg_35blmrev.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 36. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/U/jU/gg_36blm/gg_36blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 37. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/r/fg/gvg_bolum37/gvg_bolum37.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 38. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/A/-0/gg_38_bolumm/gg_38_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 39. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/A/-O/gvg_39blm/gvg_39blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 40. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/0/UY/gvg_bolum40/gvg_bolum40.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/68c83316f35cf5ba33dfcb33.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Güller ve Günahlar 41. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/k/0G/gg_bolum_41/gg_bolum_41.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 İlk Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/e/3a/d17_1_bolum/d17_1_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 2. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/n/sX/daha17_bolum2/daha17_bolum2.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 3. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/Q/NT/daha17_3blm/daha17_3blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 4. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/E/iy/daha17_4blm/daha17_4blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 5. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/2/6x/d17_bolum_5/d17_bolum_5.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 6. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/N/Ud/daha17_bol6/daha17_bol6.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 7. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/f/jj/daha17_7blm/daha17_7blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 8. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/P/SS/daha17_8blm/daha17_8blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 9. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/V/qm/daha17_9_bolum/daha17_9_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 10. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/y/i_/doy_bol10/doy_bol10.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 11. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/u/sx/d17_11blm/d17_11blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 12. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/t/pX/daha17_12blm/daha17_12blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 13. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/d/nC/doy_bolum17/doy_bolum17.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 14. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/x/n6/d17_14_bolumm/d17_14_bolumm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 15. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/N/aU/doy17_blm/doy17_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 16. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/Y/Px/doy_bolum16/doy_bolum16.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 17. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/c/1H/daha17_17_bolum/daha17_17_bolum.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 18. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/q/dn/doy18_blm/doy18_blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 19. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/j/7M/doy_19blm/doy_19blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 20. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/H/Nw/doy_bol20/doy_bol20.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 21. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/K/IC/daha17_21_bolum_rev/daha17_21_bolum_rev.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 22. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/i/QK/doy_22blm/doy_22blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 23. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/E/Q1/daha17_23blm/daha17_23blm.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://image.kanald.com.tr/i/kanald/100/264x365/6a0b381b6857e013a393b7f9.jpg" group-title="🟪◆ KANAL D DİZİLER 📺⭕",Daha 17 24. Bölüm ⭕
-https://kanaldvod.duhnet.tv/hls/I/z9/doy_bolum24/doy_bolum24.smil/playlist.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 1. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ab60ccad3270c47b7873be4&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 2. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abf8eebd3270c47b7874193&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 3. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac8a9dc147366462aad1563&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 4. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad1dbbfef431c557785daf9&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 5. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6adb1c31ef431c557785ddc4&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 6. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ae451d1817b40855bbfa50e&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Başkalarının Hayatı 7. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6af6f3a142746daf396f27ab&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Tuzlu Kahve 1. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a97c234a46e38b3a3925061&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Tuzlu Kahve 2. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aa03ca6755f87153f61dc6a&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Tuzlu Kahve 3. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abf5758d3270c47b787413e&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 1. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_698d68bc3754260b3ea63df3&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 2. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6996a26c3460ad999fb90bf4&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 3. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_699fdd37604a1fbc5d83e724&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 4. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69a9a62a604a1fbc5d83eb36&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 5. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69b24c41033a4bd9042cbb34&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 6. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69ba5973033a4bd9042cbe4f&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 7. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69c533a0c51e175df4aedf2f&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 8. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69ce4540c51e175df4aee2d1&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 9. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69d74eecca7813cfbb2bfa1d&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 10. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69ea30faf761bdbde6006496&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 11. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69f2ee33f761bdbde60067a2&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 12. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_69fc914e5c4541d52e367d9b&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 13. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a0585f55c4541d52e368037&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 14. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a0eea585b789bbe9ae3b1d7&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 15. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a2117c6f101adbc6e2a5979&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 16. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aa2f1a8755f87153f61dd5a&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 17. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6aabd6fe604b4ef9bac6f918&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 18. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ab4be6dd3270c47b78738d8&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 19. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6abdfce0d3270c47b7874059&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 20. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ac80622147366462aad14f4&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 21. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6acf70cf147366462aad1883&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 22. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ad9e5c3ef431c557785dd62&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 23. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6ae1b637817b40855bbfa456&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 24. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6af6135842746daf396f26ef&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:-1 tvg-logo="" group-title="🟪◆ STAR DİZİLER 📺⭕",Sevdiğim Sensin 25. Bölüm ⭕
-https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6afe91a2d048d568da67701d&SecretKey=NtvApiSecret2014*&.m3u8
-#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BYzMzZGNkYmMtZjAxMi00MjQ3LThkMGMtOWY3NTlhMzQ0NmJiXkEyXkFqcGc@._V1_QL75_UY281_CR18,0,190,281_.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Son Yemek-Last Meal (2026) (Romantik-Dram--Özcan Deniz-Öykü Karayel-Tilbe Saran) ⭕
-https://ha.vixolity.com/vs/tt50016818/
-#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNWM0MGRmOWMtMWNjMi00YzRlLTk4YzItZmJkZTQxNWY2YThiXkEyXkFqcGc@._V1_.jpg" group-title="🟪◆ FILM - YeniEklenenler ⭕" tvg-type="movie",On Behalf of My Son (2026)(Dram--Rejane Faria-Maíra Azevedo-Giovanna Heliodora) ⭕
-https://ha.vixolity.com/vs/tt33402927/
-#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BOTM4ZWUwODYtMDVlNC00Njc3LThkZDAtZDA4NTU5YzliYWZjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" group-title="🟪◆ FILM - YeniEklenenler ⭕" tvg-type="movie",Perfect Liars (2026)(Dram-Romantik-Gerilim--Irene Balmes-Gleb Abrosimov-Pau Simon) ⭕
-https://ha.vixolity.com/vs/tt18351090/
-#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BZTQyNjk2NmUtZWZlYi00ZDY4LWExYzgtNDY1ZGY3YTA2NDhlXkEyXkFqcGc@._V1_.jpg" group-title="🟪◆ FILM - YeniEklenenler ⭕" tvg-type="movie",Steps (2026) (Animasyon-Fantastik-Komedi--Amanda Seyfried-Daniel Radcliffe-Peter Dinklage) ⭕
-https://ha.vixolity.com/vs/tt14413964/
-#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BODcwOTdjZTItZDA5Zi00YzgwLTkwMmQtNTk2Zjc2ZDc1ZjlkXkEyXkFqcGc@._V1_QL75_UY281_CR18,0,190,281_.jpg" group-title="🟪◆ FILM - YeniEklenenler ⭕" tvg-type="movie",Guarding Stars (2026)(Komedi-Romantik--Leighton Meester-Jared Padalecki-Andie MacDowell) ⭕
-https://ha.vixolity.com/vs/tt6611324/
