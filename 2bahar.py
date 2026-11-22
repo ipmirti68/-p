@@ -196,7 +196,7 @@ def youtube_hls_bul(video_id):
             "error": "Doğrulanmış HLS M3U8 bulunamadı"
         }
 
-    except Exception as hata:
+        except Exception as hata:
 
         print(
             "GERÇEK YOUTUBE HATASI:",
@@ -206,8 +206,6 @@ def youtube_hls_bul(video_id):
         return {
             "error": str(hata)[:1000]
         }
-
-
 
 # ==================================================
 # M3U OLUŞTUR
