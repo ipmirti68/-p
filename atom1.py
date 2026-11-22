@@ -141,11 +141,7 @@ def discover_channels(api_url):
     print("BEIN SPORTS KANAL SAYISI:", len(channels))
 
     return channels
-        print("⚠️  channels.php kanal dondurmedi")
-    except Exception as e:
-        print(f"⚠️  channels.php okunamadi: {e}")
-    print(f"➡️  Son bilinen id listesi kullaniliyor: {len(FALLBACK_IDS)} kanal")
-    return [(cid, PRETTY_NAMES.get(cid, cid)) for cid in FALLBACK_IDS]
+    
 
 
 def get_stream(api_url, cid):
