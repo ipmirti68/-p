@@ -242,13 +242,21 @@ def discover_channels(api_url):
             )
 
             name = PRETTY_NAMES.get(
-                cid,
-                site_name
-            )
+    cid,
+    site_name
+)
 
-            channels.append(
-                (cid, name)
-            )
+# SADECE beIN SPORTS KANALLARI
+if not re.search(
+    r'bein[\s_-]*sports',
+    cid + " " + name,
+    re.IGNORECASE
+):
+    continue
+
+channels.append(
+    (cid, name)
+)
 
         if channels:
 
