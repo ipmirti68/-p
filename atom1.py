@@ -188,7 +188,7 @@ def main():
 
     # Guvenlik: hic kanal yoksa dosyayi bosaltma! Mevcut liste korunur,
     # workflow hata verir ve boylece eski liste silinmez.
-        if not entries:
+    if not entries:
         print("❌ Yeni kanal yok. Eski mirti68.m3u korunuyor.")
         sys.exit(1)
 
