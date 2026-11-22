@@ -132,22 +132,23 @@ def youtube_hls_bul(video_id):
         "retries": 2,
         "extractor_retries": 2,
         "ignoreerrors": False,
-        "verbose": True,
         "format": "best",
     }
 
     try:
 
         with YoutubeDL(ayarlar) as ydl:
+
             bilgi = ydl.extract_info(
                 video_url,
                 download=False
             )
 
         if not bilgi:
-          return {
-        "error": "YouTube video bilgisi döndürmedi."
-    }
+
+            return {
+                "error": "YouTube video bilgisi döndürmedi."
+            }
 
         formats = bilgi.get("formats", [])
         adaylar = []
@@ -196,10 +197,16 @@ def youtube_hls_bul(video_id):
         }
 
     except Exception as hata:
-    print("GERÇEK YOUTUBE HATASI:", repr(hata))
-    return {
-        "error": str(hata)[:1000]
-    }
+
+        print(
+            "GERÇEK YOUTUBE HATASI:",
+            repr(hata)
+        )
+
+        return {
+            "error": str(hata)[:1000]
+        }
+
 
 
 # ==================================================
