@@ -1,257 +1,615 @@
 
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import asyncio
 import os
 import re
 import requests
+
 from pathlib import Path
+from urllib.parse import urljoin
 from playwright.async_api import async_playwright
 
+# ============================================================
+# MIRTI68 - TARAFTARIUM OTOMATIK M3U GUNCELLEYICI
+# BEIN SPORTS + DIGER KANALLAR
+# AYNI LOGO - IKI AYRI GRUP
+# ============================================================
+
 # ==================== KULLANICI AYARLARI ====================
+
 BASLANGIC_DOMAIN_NUM = 1082
+
 CIKTI_DOSYASI = "mirti.m3u"
+
+# GRUPLAR
 GROUP = "🟩◆  beIN SPORTS 🖥"
+DIGER_GROUP = "📺 DİĞER KANALLAR"
+
+# IKI GRUPTA DA AYNI LOGO
+LOGO_URL = "https://files.catbox.moe/1yu2j7.png"
 
 SABIT_USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/120.0.0.0 Safari/537.36"
 )
+
+# Kanal sayfasında yayın bağlantısı bekleme süresi
+YAYIN_BEKLEME = 6
+
+# ============================================================
+# AKTIF DOMAIN BUL
 # ============================================================
 
+def get_active_taraftarium_url(
+    start_num,
+    max_attempts=15
+):
 
-def get_active_taraftarium_url(start_num, max_attempts=15):
-    headers = {"User-Agent": SABIT_USER_AGENT}
+    headers = {
+        "User-Agent": SABIT_USER_AGENT
+    }
 
-    print("🌐 [ADIM 1] Aktif Taraftarium domaini aranıyor...")
+    print("\n🌐 [ADIM 1] AKTIF DOMAIN ARANIYOR")
 
     for i in range(max_attempts):
-        current_num = start_num + i
-        test_url = f"https://taraftarium{current_num}.xyz"
 
-        print(f"🔎 {test_url} test ediliyor...")
+        current_num = start_num + i
+
+        test_url = (
+            f"https://taraftarium{current_num}.xyz"
+        )
+
+        print(f"🔎 TEST: {test_url}")
 
         try:
+
             response = requests.get(
                 test_url,
                 headers=headers,
                 timeout=4,
-                allow_redirects=False
+                allow_redirects=True
             )
 
             if response.status_code == 200:
-                print(f"✅ AKTİF DOMAIN BULUNDU: {test_url}")
-                return test_url
 
-            elif response.status_code in [301, 302, 307, 308]:
-                print(f"⏩ Yönlendirme bulundu, atlanıyor: {test_url}")
+                aktif_url = response.url.rstrip("/")
+
+                print(
+                    f"✅ AKTIF DOMAIN: {aktif_url}"
+                )
+
+                return aktif_url
 
         except requests.RequestException:
             continue
 
-    print("⚠️ Yeni domain bulunamadı. Başlangıç adresi kullanılacak.")
-    return f"https://taraftarium{start_num}.xyz"
+    print(
+        "⚠️ Aktif domain bulunamadi. "
+        "Baslangic adresi kullanilacak."
+    )
 
+    return (
+        f"https://taraftarium{start_num}.xyz"
+    )
+
+
+# ============================================================
+# KANAL ADI DUZENLE
+# ============================================================
 
 def kanal_adi_duzenle(kanal_adi):
+
     kanal_adi = kanal_adi.strip()
 
     if "⭕" not in kanal_adi:
+
         kanal_adi += " ᴴᴰ⭕"
 
     return kanal_adi
 
 
+# ============================================================
+# KANAL ADI NORMALIZE
+# ============================================================
+
 def kanal_adi_normalize(kanal_adi):
-    """
-    Karşılaştırma için kanal adını standart hale getirir.
-    ⭕ işaretini ve gereksiz boşlukları dikkate almaz.
-    """
+
     kanal_adi = kanal_adi.replace("⭕", "")
-    kanal_adi = re.sub(r"\s+", " ", kanal_adi)
+
+    kanal_adi = kanal_adi.replace("ᴴᴰ", "")
+
+    kanal_adi = re.sub(
+        r"\s+",
+        " ",
+        kanal_adi
+    )
+
     return kanal_adi.strip().casefold()
 
 
-def m3u_blok_olustur(url, kanal_adi, referer_url):
-    if not referer_url.endswith("/"):
-        referer_url += "/"
+# ============================================================
+# BEIN SPORTS TESPITI
+# ============================================================
 
-    if "/ex1/" in url:
-        url = url.replace("/ex1/", "/taraftarium/")
+def bein_kanali_mi(
+    kanal_adi,
+    kanal_id
+):
 
-    kanal_adi = kanal_adi_duzenle(kanal_adi)
+    metin = (
+        str(kanal_adi)
+        + " "
+        + str(kanal_id)
+    )
 
-    return (
-        f'#EXTINF:-1 group-title="{GROUP}",{kanal_adi}\n'
-        f'#EXTVLCOPT:http-referrer={referer_url}\n'
-        f'#EXTVLCOPT:http-user-agent={SABIT_USER_AGENT}\n'
-        f"{url}\n"
+    return bool(
+        re.search(
+            r"bein[\s_-]*sports",
+            metin,
+            re.IGNORECASE
+        )
     )
 
 
+# ============================================================
+# KANAL GRUBUNU BELIRLE
+# ============================================================
+
+def kanal_grubunu_bul(
+    kanal_adi,
+    kanal_id
+):
+
+    if bein_kanali_mi(
+        kanal_adi,
+        kanal_id
+    ):
+
+        return GROUP
+
+    # beIN olmayan HER kanal buraya gelir.
+    # ATV dahil hiçbir kanal filtrelenmez.
+
+    return DIGER_GROUP
+
+
+# ============================================================
+# M3U KANAL BLOGU OLUSTUR
+# ============================================================
+
+def m3u_blok_olustur(
+    url,
+    kanal_adi,
+    referer_url,
+    kanal_id
+):
+
+    if not referer_url.endswith("/"):
+
+        referer_url += "/"
+
+    if "/ex1/" in url:
+
+        url = url.replace(
+            "/ex1/",
+            "/taraftarium/"
+        )
+
+    kanal_adi = kanal_adi_duzenle(
+        kanal_adi
+    )
+
+    grup = kanal_grubunu_bul(
+        kanal_adi,
+        kanal_id
+    )
+
+    return (
+        f'#EXTINF:-1 tvg-logo="{LOGO_URL}" '
+        f'group-title="{grup}",{kanal_adi}\n'
+        f'#EXTVLCOPT:http-referrer={referer_url}\n'
+        f'#EXTVLCOPT:http-user-agent={SABIT_USER_AGENT}\n'
+        f'{url}\n'
+    )
+
+
+# ============================================================
+# M3U DOSYASINI BLOKLARA AYIR
+# ============================================================
+
 def m3u_bloklara_ayir(lines):
-    """
-    M3U dosyasını başlık ve kanal bloklarına ayırır.
-    Diğer grupların satırlarını değiştirmeden korur.
-    """
+
     baslik = []
+
     bloklar = []
+
     mevcut_blok = []
 
     for line in lines:
+
         if line.startswith("#EXTINF:"):
+
             if mevcut_blok:
-                bloklar.append("".join(mevcut_blok))
+
+                bloklar.append(
+                    "".join(mevcut_blok)
+                )
 
             mevcut_blok = [line]
 
         elif mevcut_blok:
+
             mevcut_blok.append(line)
 
         else:
+
             baslik.append(line)
 
     if mevcut_blok:
-        bloklar.append("".join(mevcut_blok))
+
+        bloklar.append(
+            "".join(mevcut_blok)
+        )
 
     return baslik, bloklar
 
 
-def blok_grubunu_bul(blok):
-    ilk_satir = blok.splitlines()[0] if blok.splitlines() else ""
+# ============================================================
+# BLOK GRUBUNU BUL
+# ============================================================
 
-    match = re.search(r'group-title="([^"]*)"', ilk_satir)
+def blok_grubunu_bul(blok):
+
+    satirlar = blok.splitlines()
+
+    ilk_satir = (
+        satirlar[0]
+        if satirlar
+        else ""
+    )
+
+    match = re.search(
+        r'group-title="([^"]*)"',
+        ilk_satir
+    )
 
     if match:
+
         return match.group(1)
 
     return ""
 
 
+# ============================================================
+# BLOK KANAL ADINI BUL
+# ============================================================
+
 def blok_kanal_adini_bul(blok):
-    ilk_satir = blok.splitlines()[0] if blok.splitlines() else ""
+
+    satirlar = blok.splitlines()
+
+    ilk_satir = (
+        satirlar[0]
+        if satirlar
+        else ""
+    )
 
     if "," in ilk_satir:
-        return ilk_satir.split(",", 1)[1].strip()
+
+        return ilk_satir.split(
+            ",",
+            1
+        )[1].strip()
 
     return ""
 
 
-def sadece_bein_grubunu_guncelle(yeni_bloklar, dosya_yolu):
-    """
-    Yalnızca hedef GROUP grubunu günceller.
+# ============================================================
+# IKI GRUBU GUVENLI GUNCELLE
+# ============================================================
 
-    - Diğer grupları korur.
-    - Aynı isimli beIN kanalının bağlantısını yeniler.
-    - Tarama sırasında bulunamayan eski beIN kanallarını korur.
-    - Hiç yeni kanal bulunmadıysa dosyaya dokunmaz.
-    """
+def iki_grubu_guncelle(
+    yeni_bloklar,
+    dosya_yolu
+):
 
     if not yeni_bloklar:
-        print("⚠️ Yeni kanal bulunmadı. Mevcut M3U listesi korunuyor.")
-        return
+
+        print(
+            "\n⚠️ YENI YAYIN BULUNAMADI"
+        )
+
+        print(
+            "🛡️ ESKI M3U DOSYASI KORUNDU"
+        )
+
+        return False
 
     dosya = Path(dosya_yolu)
 
+    # Eski dosyayı oku.
+
     if dosya.exists():
-        eski_metin = dosya.read_text(encoding="utf-8-sig")
-        lines = eski_metin.splitlines(keepends=True)
+
+        eski_metin = dosya.read_text(
+            encoding="utf-8-sig"
+        )
+
+        lines = eski_metin.splitlines(
+            keepends=True
+        )
+
     else:
+
         lines = []
 
-    baslik, eski_bloklar = m3u_bloklara_ayir(lines)
+    baslik, eski_bloklar = m3u_bloklara_ayir(
+        lines
+    )
 
-    if not any(line.strip() == "#EXTM3U" for line in baslik):
-        baslik.insert(0, "#EXTM3U\n")
+    # M3U başlığını kontrol et.
+
+    baslik = [
+        line
+        for line in baslik
+        if line.strip() != "#EXTM3U"
+    ]
+
+    baslik.insert(
+        0,
+        "#EXTM3U\n"
+    )
+
+    yonetilen_gruplar = {
+        GROUP,
+        DIGER_GROUP
+    }
 
     diger_gruplar = []
-    eski_bein_bloklari = []
+
+    eski_yonetilen = []
+
+    # Eski grupları ayır.
 
     for blok in eski_bloklar:
-        grup = blok_grubunu_bul(blok)
 
-        if grup == GROUP:
-            eski_bein_bloklari.append(blok)
+        grup = blok_grubunu_bul(
+            blok
+        )
+
+        if grup in yonetilen_gruplar:
+
+            eski_yonetilen.append(
+                blok
+            )
+
         else:
-            diger_gruplar.append(blok)
 
-    # Yeni kanalları isimlerine göre hazırla.
-    yeni_kanal_haritasi = {}
+            # Diğer gruplara dokunulmaz.
+            diger_gruplar.append(
+                blok
+            )
+
+    # Yeni kanalları hazırla.
+
+    yeni_harita = {}
 
     for blok in yeni_bloklar:
-        kanal_adi = blok_kanal_adini_bul(blok)
-        anahtar = kanal_adi_normalize(kanal_adi)
 
-        if anahtar:
-            yeni_kanal_haritasi[anahtar] = blok
+        grup = blok_grubunu_bul(
+            blok
+        )
 
-    birlesmis_bein = []
+        kanal_adi = blok_kanal_adini_bul(
+            blok
+        )
+
+        anahtar = (
+            grup,
+            kanal_adi_normalize(kanal_adi)
+        )
+
+        if anahtar[1]:
+
+            yeni_harita[anahtar] = blok
+
+    birlesmis = []
+
     kullanilanlar = set()
 
-    # Eski beIN kanallarını koru.
-    # Yeni bağlantısı bulunanların bağlantısını güncelle.
-    for eski_blok in eski_bein_bloklari:
-        eski_ad = blok_kanal_adini_bul(eski_blok)
-        anahtar = kanal_adi_normalize(eski_ad)
+    # Eski beIN ve diğer kanal kayıtlarını kontrol et.
 
-        if anahtar in yeni_kanal_haritasi:
-            if anahtar not in kullanilanlar:
-                birlesmis_bein.append(yeni_kanal_haritasi[anahtar])
-                kullanilanlar.add(anahtar)
+    for eski_blok in eski_yonetilen:
+
+        eski_grup = blok_grubunu_bul(
+            eski_blok
+        )
+
+        eski_ad = blok_kanal_adini_bul(
+            eski_blok
+        )
+
+        anahtar = (
+            eski_grup,
+            kanal_adi_normalize(eski_ad)
+        )
+
+        # Aynı kanalı ikinci kez ekleme.
+
+        if anahtar in kullanilanlar:
+
+            continue
+
+        if anahtar in yeni_harita:
+
+            # Yeni bağlantı varsa güncelle.
+
+            birlesmis.append(
+                yeni_harita[anahtar]
+            )
+
         else:
-            birlesmis_bein.append(eski_blok)
 
-    # Daha önce listede olmayan yeni kanalları ekle.
-    for anahtar, yeni_blok in yeni_kanal_haritasi.items():
+            # Tarama sırasında bulunamayan eski kanalı koru.
+
+            birlesmis.append(
+                eski_blok
+            )
+
+        kullanilanlar.add(
+            anahtar
+        )
+
+    # Yeni bulunan kanalları ekle.
+
+    for anahtar, yeni_blok in yeni_harita.items():
+
         if anahtar not in kullanilanlar:
-            birlesmis_bein.append(yeni_blok)
-            kullanilanlar.add(anahtar)
 
-    # Diğer gruplar aynen korunur.
-    # Sadece beIN grubu güncellenmiş haliyle sona eklenir.
+            birlesmis.append(
+                yeni_blok
+            )
+
+            kullanilanlar.add(
+                anahtar
+            )
+
+    # Grupları say.
+
+    bein_sayisi = sum(
+        1
+        for blok in birlesmis
+        if blok_grubunu_bul(blok) == GROUP
+    )
+
+    diger_sayisi = sum(
+        1
+        for blok in birlesmis
+        if blok_grubunu_bul(blok) == DIGER_GROUP
+    )
+
+    # Son dosyayı oluştur.
+
     son_metin = "".join(baslik)
-    son_metin += "".join(diger_gruplar)
-    son_metin += "".join(birlesmis_bein)
 
-    # Önce geçici dosyaya yaz, ardından asıl dosyanın yerine koy.
-    gecici_dosya = dosya.with_name(dosya.name + ".tmp")
+    son_metin += "".join(diger_gruplar)
+
+    son_metin += "".join(birlesmis)
+
+    # Önce geçici dosyaya yaz.
+
+    gecici_dosya = dosya.with_name(
+        dosya.name + ".tmp"
+    )
 
     try:
-        gecici_dosya.write_text(son_metin, encoding="utf-8")
-        os.replace(gecici_dosya, dosya)
 
-    except Exception:
+        gecici_dosya.write_text(
+            son_metin,
+            encoding="utf-8"
+        )
+
+        os.replace(
+            gecici_dosya,
+            dosya
+        )
+
+    except Exception as e:
+
+        print(
+            "❌ DOSYA KAYIT HATASI:",
+            e
+        )
+
         if gecici_dosya.exists():
+
             gecici_dosya.unlink()
-        raise
 
-    print("\n✅ M3U GÜNCELLEME TAMAMLANDI")
-    print(f"📁 Dosya: {dosya_yolu}")
-    print(f"🛡️ Korunan diğer grup sayısı: {len(diger_gruplar)}")
-    print(f"📺 Eski beIN kayıt sayısı: {len(eski_bein_bloklari)}")
-    print(f"🆕 Yeni taramada bulunan kanal: {len(yeni_kanal_haritasi)}")
-    print(f"💾 Son beIN kayıt sayısı: {len(birlesmis_bein)}")
+        return False
 
+    # Sonuç.
+
+    print("\n====================================")
+
+    print(
+        "✅ MIRTI68 GUNCELLEME TAMAMLANDI"
+    )
+
+    print("====================================")
+
+    print(
+        f"📁 DOSYA: {dosya_yolu}"
+    )
+
+    print(
+        f"⚽ BEIN SPORTS: {bein_sayisi}"
+    )
+
+    print(
+        f"📺 DIGER KANALLAR: {diger_sayisi}"
+    )
+
+    print(
+        f"🛡️ KORUNAN DIGER KANAL: {len(diger_gruplar)}"
+    )
+
+    print(
+        f"🖼️ ORTAK LOGO: {LOGO_URL}"
+    )
+
+    print("====================================")
+
+    return True
+
+
+# ============================================================
+# ANA PROGRAM
+# ============================================================
 
 async def main():
-    hedef_url = get_active_taraftarium_url(BASLANGIC_DOMAIN_NUM)
+
+    hedef_url = get_active_taraftarium_url(
+        BASLANGIC_DOMAIN_NUM
+    )
 
     yeni_bloklar = []
 
     async with async_playwright() as p:
-        print("🚀 [ADIM 2] Playwright başlatılıyor...")
 
-        browser = await p.chromium.launch(headless=True)
+        print(
+            "\n🚀 [ADIM 2] PLAYWRIGHT BASLATILIYOR"
+        )
+
+        browser = await p.chromium.launch(
+            headless=True
+        )
 
         context = await browser.new_context(
             user_agent=SABIT_USER_AGENT,
-            viewport={"width": 1280, "height": 720}
+            viewport={
+                "width": 1280,
+                "height": 720
+            }
         )
 
         page = await context.new_page()
 
-        async def trafik_filtresi(route, request):
+        # Gereksiz kaynakları engelle.
+
+        async def trafik_filtresi(
+            route,
+            request
+        ):
+
             if (
-                request.resource_type in ["stylesheet", "font", "image"]
+                request.resource_type in [
+                    "stylesheet",
+                    "font",
+                    "image"
+                ]
                 or any(
                     x in request.url
                     for x in [
@@ -262,92 +620,191 @@ async def main():
                     ]
                 )
             ):
+
                 await route.abort()
+
             else:
+
                 await route.continue_()
 
-        await page.route("**/*", trafik_filtresi)
+        await page.route(
+            "**/*",
+            trafik_filtresi
+        )
 
-        print(f"🛰️ [ADIM 3] Ana menü taranıyor: {hedef_url}")
+        print(
+            f"\n🛰️ [ADIM 3] ANA MENU: {hedef_url}"
+        )
 
         try:
+
             await page.goto(
                 hedef_url,
                 wait_until="domcontentloaded",
                 timeout=15000
             )
-            await page.wait_for_timeout(2000)
+
+            await page.wait_for_timeout(
+                2000
+            )
 
         except Exception as e:
-            print(f"❌ Ana sayfaya erişilemedi: {e}")
+
+            print(
+                f"❌ ANA SAYFA HATASI: {e}"
+            )
+
             await browser.close()
+
             return
 
-        kanal_elementleri = await page.query_selector_all("a.channel-item")
+        # Kanal kutularını bul.
+
+        kanal_elementleri = await page.query_selector_all(
+            "a.channel-item"
+        )
 
         kesfedilen_kanallar = []
 
-        for kutu in kanal_elementleri:
-            href = await kutu.get_attribute("href")
+        gorulen_idler = set()
 
-            id_match = re.search(r"id=([^&]+)", href) if href else None
+        for kutu in kanal_elementleri:
+
+            href = await kutu.get_attribute(
+                "href"
+            )
+
+            id_match = (
+                re.search(
+                    r"id=([^&]+)",
+                    href
+                )
+                if href
+                else None
+            )
 
             if not id_match:
+
                 continue
 
-            kanal_id = id_match.group(1)
+            kanal_id = id_match.group(1).strip()
 
-            kanal_adi_element = await kutu.query_selector(".channel-name")
+            # Aynı ID tekrar eklenmesin.
+
+            if kanal_id in gorulen_idler:
+
+                continue
+
+            gorulen_idler.add(
+                kanal_id
+            )
+
+            kanal_adi_element = await kutu.query_selector(
+                ".channel-name"
+            )
 
             if kanal_adi_element:
-                kanal_adi = (await kanal_adi_element.inner_text()).strip()
-            else:
-                kanal_adi = f"Kanal {kanal_id.upper()}"
 
-            if "atv" in kanal_adi.lower() or "atv" in kanal_id.lower():
-                print(f"⏭️ [ATLANTI] {kanal_adi} (ATV listeden çıkarıldı)")
-                continue
+                kanal_adi = (
+                    await kanal_adi_element.inner_text()
+                ).strip()
+
+            else:
+
+                kanal_adi = (
+                    f"Kanal {kanal_id.upper()}"
+                )
+
+            # ATV dahil hiçbir kanal filtrelenmez.
+
+            grup = kanal_grubunu_bul(
+                kanal_adi,
+                kanal_id
+            )
 
             kesfedilen_kanallar.append({
                 "id": kanal_id,
-                "name": kanal_adi
+                "name": kanal_adi,
+                "group": grup
             })
 
-        total_kanal = len(kesfedilen_kanallar)
+            print(
+                f"📺 BULUNDU: {kanal_adi} | {grup}"
+            )
 
-        print(f"📺 Toplam {total_kanal} kanal tespit edildi.")
+        total_kanal = len(
+            kesfedilen_kanallar
+        )
+
+        print(
+            f"\n📺 TOPLAM {total_kanal} KANAL BULUNDU"
+        )
 
         if total_kanal == 0:
-            print("❌ Kanal bulunamadı. Eski liste korunuyor.")
+
+            print(
+                "❌ KANAL BULUNAMADI. ESKI DOSYA KORUNDU."
+            )
+
             await browser.close()
+
             return
 
-        for index, kanal in enumerate(kesfedilen_kanallar):
+        # ====================================================
+        # KANAL SAYFALARINI TARA
+        # ====================================================
+
+        for index, kanal in enumerate(
+            kesfedilen_kanallar
+        ):
+
             kanal_id = kanal["id"]
+
             kanal_adi = kanal["name"]
 
-            kanal_sayfa_url = f"{hedef_url}/channel.html?id={kanal_id}"
+            grup = kanal["group"]
+
+            kanal_sayfa_url = urljoin(
+                hedef_url + "/",
+                f"channel.html?id={kanal_id}"
+            )
 
             print(
                 f"\n⚡ [{index + 1}/{total_kanal}] "
-                f"Tarama: {kanal_adi} (ID: {kanal_id})"
+                f"TARAMA: {kanal_adi}"
+            )
+
+            print(
+                f"📂 GRUP: {grup}"
             )
 
             yakalanan_url = None
+
             link_yakalandi_olayi = asyncio.Event()
 
             async def istek_dinle(request):
+
                 nonlocal yakalanan_url
 
                 url = request.url
 
-                if re.search(r"\.m3u8(\?|$)", url):
+                if re.search(
+                    r"\.m3u8(?:\?|$)",
+                    url,
+                    re.IGNORECASE
+                ):
+
                     yakalanan_url = url
+
                     link_yakalandi_olayi.set()
 
-            page.on("request", istek_dinle)
+            page.on(
+                "request",
+                istek_dinle
+            )
 
             try:
+
                 await page.goto(
                     kanal_sayfa_url,
                     wait_until="domcontentloaded",
@@ -355,47 +812,85 @@ async def main():
                 )
 
                 try:
+
                     await asyncio.wait_for(
                         link_yakalandi_olayi.wait(),
-                        timeout=6.0
+                        timeout=YAYIN_BEKLEME
                     )
+
                 except asyncio.TimeoutError:
+
                     pass
 
                 if yakalanan_url:
-                    print(f"🎯 LINK BULUNDU: {yakalanan_url}")
+
+                    print(
+                        f"🎯 LINK BULUNDU: {yakalanan_url}"
+                    )
 
                     yeni_blok = m3u_blok_olustur(
                         yakalanan_url,
                         kanal_adi,
-                        hedef_url
+                        hedef_url,
+                        kanal_id
                     )
 
-                    yeni_bloklar.append(yeni_blok)
+                    yeni_bloklar.append(
+                        yeni_blok
+                    )
 
-                    print(f"💾 Yeni kayıt hazırlandı: {kanal_adi}")
+                    print(
+                        f"💾 KAYIT HAZIR: {kanal_adi}"
+                    )
 
                 else:
-                    print("⚠️ Yayın linki bulunamadı. Eski kayıt korunacak.")
+
+                    print(
+                        "⚠️ YAYIN LINKI BULUNAMADI"
+                    )
+
+                    print(
+                        "🛡️ VARSA ESKI KAYIT KORUNACAK"
+                    )
 
             except Exception as ex:
-                print(f"❌ Sayfa hatası: {str(ex)[:100]}")
+
+                print(
+                    f"❌ SAYFA HATASI: {str(ex)[:150]}"
+                )
 
             finally:
-                page.remove_listener("request", istek_dinle)
+
+                page.remove_listener(
+                    "request",
+                    istek_dinle
+                )
 
         await browser.close()
 
-    # Tarama bittikten sonra sadece beIN grubu güncellenir.
-    print("\n🔧 [ADIM 4] Sadece beIN SPORTS grubu güncelleniyor...")
+    # ====================================================
+    # M3U GUNCELLE
+    # ====================================================
 
-    sadece_bein_grubunu_guncelle(
+    print(
+        "\n🔧 [ADIM 4] IKI GRUP GUNCELLENIYOR"
+    )
+
+    iki_grubu_guncelle(
         yeni_bloklar,
         CIKTI_DOSYASI
     )
 
-    print("\n🏁 İŞLEM TAMAMLANDI!")
+    print(
+        "\n🏁 MIRTI68 ISLEMI TAMAMLANDI"
+    )
 
+
+# ============================================================
+# PROGRAMI BASLAT
+# ============================================================
 
 if __name__ == "__main__":
+
     asyncio.run(main())
+            
