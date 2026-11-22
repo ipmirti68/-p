@@ -79,12 +79,12 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
     {
-        "kaynak_url": "https://raw.githubusercontent.com/smtv62/atomspor/refs/heads/main/atom.m3u",
+        "kaynak_url": "",
         "kaynak_grup": "",
-        "aranacak": "beIN Sports",
-        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
-        "ek_kod": "⭕ Atom",
+        "aranacak": "",
+        "hedef_grup": "",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
     },
     {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
