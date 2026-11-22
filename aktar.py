@@ -30,7 +30,7 @@ AKTARIMLAR = [
         "kaynak_grup": "Belgesel",
         "aranacak": "",
         "hedef_grup": "🟫◆  BELGESEL 🏔️",
-        "hedef_logo": "",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/BELGESEL-final-temiz.png",
         "ek_kod": "⭕",
         "grup_onek": False,
     },
