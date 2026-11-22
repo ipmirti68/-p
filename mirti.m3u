@@ -1,5 +1,5 @@
 #EXTM3U
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 1 ᴴᴰ⭕
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 1 ᴴᴰ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
@@ -7,15 +7,15 @@ https://g1b.d72577a9dd0ec74.cfd/patron/mono.m3u8
 #EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/b2/mono.m3u8
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 3 ᴴᴰ⭕
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 3 ᴴᴰ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/b3/mono.m3u8
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 4 ᴴᴰ⭕
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 4 ᴴᴰ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/b4/mono.m3u8
-#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 5 ᴴᴰ⭕
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="🟩◆  beIN SPORTS 🖥",BeIN Sports 5 ᴴᴰ⭕
 #EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/b5/mono.m3u8
@@ -203,3 +203,27 @@ https://g1b.d72577a9dd0ec74.cfd/eu1/mono.m3u8
 #EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://g1b.d72577a9dd0ec74.cfd/eu2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="📺 DİĞER KANALLAR",S Sport ᴴᴰ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss/mono.m3u8
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="📺 DİĞER KANALLAR",S Sport 2 ᴴᴰ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/ss2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="📺 DİĞER KANALLAR",Smartspor ᴴᴰ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/smarts/mono.m3u8
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="📺 DİĞER KANALLAR",Smartspor 2 ᴴᴰ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/sms2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="📺 DİĞER KANALLAR",TRT Spor ᴴᴰ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor/mono.m3u8
+#EXTINF:-1 tvg-logo="https://files.catbox.moe/1yu2j7.png" group-title="📺 DİĞER KANALLAR",TRT Spor 2 ᴴᴰ⭕
+#EXTVLCOPT:http-referrer=https://taraftarium1089.xyz/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+https://g1b.d72577a9dd0ec74.cfd/trtspor2/mono.m3u8
