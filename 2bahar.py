@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -7,14 +8,15 @@ import json
 import html
 import requests
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
-from urllib.parse import urlparse, parse_qs
 
-# ==========================================
-# MIRTI68 - İKİNCİ BAHAR 37 BÖLÜM ARŞİVİ
-# YASAL VERSİYON: Sadece 【entity-RSS¦canonical_name=RSS】 + YouTube Embed
-# HLS / yt-dlp YOK
-# ==========================================
+from datetime import datetime, timezone
+from urllib.parse import urlparse
+
+# ==================================================
+# MIRTI68 - IKINCI BAHAR 37 BOLUM
+# TELEVIZO UYUMLU HLS M3U8
+# SADECE YETKILI YAYIN KAYNAKLARI
+# ==================================================
 
 CHANNEL_ID = "UC8Nnnhuc9V5YUiYBa4Qdr6A"
 
@@ -24,10 +26,25 @@ RSS_URL = (
 )
 
 JSON_FILE = "ikinci_bahar_kaynaklar.json"
+
+HLS_FILE = "ikinci_bahar_hls.json"
+
 M3U_FILE = "ikinci_bahar.m3u"
 
+TOPLAM_BOLUM = 37
+
+GROUP = "🎬 İKİNCİ BAHAR"
+
+TIMEOUT = 25
+
 HEADERS = {
-    "User-Agent": "Mozilla/5.0"
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36"
+    ),
+    "Accept": "*/*",
+    "Accept-Language": "tr-TR,tr;q=0.9",
+    "Connection": "keep-alive",
 }
 
 NS = {
@@ -35,147 +52,575 @@ NS = {
     "yt": "http://www.youtube.com/xml/schemas/2015",
 }
 
+
+# ==================================================
+# ZAMAN
+# ==================================================
+
 def now_utc():
-    return datetime.now(timezone.utc)
 
-def load_json():
-    if not os.path.exists(JSON_FILE):
+    return datetime.now(timezone.utc).isoformat()
+
+
+# ==================================================
+# JSON OKU
+# ==================================================
+
+def json_oku(dosya):
+
+    if not os.path.exists(dosya):
         return {}
+
     try:
-        with open(JSON_FILE, "r", encoding="utf-8") as f:
+
+        with open(
+            dosya,
+            "r",
+            encoding="utf-8"
+        ) as f:
+
             return json.load(f)
-    except Exception:
+
+    except Exception as e:
+
+        print("JSON OKUMA HATASI:", e)
+
         return {}
 
-def prepare_37_episodes(old_data):
+
+# ==================================================
+# JSON GUVENLI KAYDET
+# ==================================================
+
+def json_kaydet(dosya, veri):
+
+    gecici = dosya + ".tmp"
+
+    with open(
+        gecici,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            veri,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    os.replace(gecici, dosya)
+
+
+# ==================================================
+# 37 BOLUM HAZIRLA
+# ==================================================
+
+def bolumleri_hazirla(old_data):
+
     episodes = {}
-    for number in range(1, 38):
+
+    for number in range(1, TOPLAM_BOLUM + 1):
+
         episodes[number] = {
             "episode": number,
             "title": f"İkinci Bahar {number}. Bölüm",
             "youtube_url": None,
             "video_id": None,
             "embed_url": None,
+            "hls_url": None,
+            "hls_status": "BEKLENİYOR",
             "status": "BEKLENİYOR",
         }
 
-    # Eski kayıtları koru ama eski m3u8 varsa sil
     for item in old_data.get("episodes", []):
+
         try:
+
             number = int(item.get("episode"))
+
         except Exception:
+
             continue
-        if 1 <= number <= 37:
-            # eski hls alanlarını taşıma
-            item.pop("m3u8_url", None)
-            item.pop("hls_checked_at", None)
-            item.pop("hls_status", None)
+
+        if 1 <= number <= TOPLAM_BOLUM:
+
             episodes[number].update(item)
 
     return episodes
 
-def get_channel_videos():
-    print("RESMİ KANAL RSS KONTROLÜ")
-    response = requests.get(RSS_URL, headers=HEADERS, timeout=30)
-    response.raise_for_status()
 
-    root = ET.fromstring(response.content)
-    found = []
+# ==================================================
+# YETKILI HLS KAYNAKLARINI OKU
+# ==================================================
 
-    for entry in root.findall("atom:entry", NS):
-        title_node = entry.find("atom:title", NS)
-        id_node = entry.find("yt:videoId", NS)
-        if title_node is None or id_node is None:
-            continue
+def hls_kaynaklarini_oku():
 
-        title = html.unescape(title_node.text or "").strip()
-        video_id = (id_node.text or "").strip()
-        if not video_id:
-            continue
+    data = json_oku(HLS_FILE)
 
-        match = re.search(r'(\d{1,2})\s*\.?\s*bölüm', title, re.IGNORECASE)
-        if not match:
-            continue
+    kaynaklar = data.get("episodes", {})
 
-        number = int(match.group(1))
-        if not 1 <= number <= 37:
-            continue
+    if not isinstance(kaynaklar, dict):
 
-        found.append({
-            "episode": number,
-            "title": title,
-            "video_id": video_id,
-            "youtube_url": f"https://www.youtube.com/watch?v={video_id}",
-            "embed_url": f"https://www.youtube.com/embed/{video_id}",
-        })
+        return {}
 
-    return found
+    return kaynaklar
 
-def save_m3u(episodes):
-    # Artık HLS değil, YouTube linki yazıyoruz.
-    # IPTV player'lar bunu YouTube üzerinden açar.
-    lines = ["#EXTM3U"]
-    for n in range(1, 38):
-        item = episodes[n]
-        if not item.get("youtube_url"):
-            continue
-        lines.append(
-            f'#EXTINF:-1 group-title="🎬 İKİNCİ BAHAR",'
-            f'İkinci Bahar {n}. Bölüm'
-        )
-        lines.append(item["youtube_url"])
 
-    with open(M3U_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
+# ==================================================
+# YOUTUBE RSS BOLUM BILGILERI
+# ==================================================
 
-def main():
-    print("=" * 50)
-    print("MIRTI68 - İKİNCİ BAHAR 37 BÖLÜM")
-    print("=" * 50)
+def youtube_rss_kontrol():
 
-    old_data = load_json()
-    episodes = prepare_37_episodes(old_data)
+    print("\nYOUTUBE RESMI RSS KONTROL EDILIYOR")
+
+    bulunan = []
 
     try:
-        videos = get_channel_videos()
-        print("RSS İLE BULUNAN:", len(videos))
+
+        response = requests.get(
+            RSS_URL,
+            headers=HEADERS,
+            timeout=TIMEOUT
+        )
+
+        response.raise_for_status()
+
+        root = ET.fromstring(response.content)
+
+        for entry in root.findall("atom:entry", NS):
+
+            title_node = entry.find(
+                "atom:title",
+                NS
+            )
+
+            id_node = entry.find(
+                "yt:videoId",
+                NS
+            )
+
+            if title_node is None or id_node is None:
+                continue
+
+            title = html.unescape(
+                title_node.text or ""
+            ).strip()
+
+            video_id = (
+                id_node.text or ""
+            ).strip()
+
+            if not video_id:
+                continue
+
+            match = re.search(
+                r"(\d{1,2})\s*\.?\s*bölüm",
+                title,
+                re.IGNORECASE
+            )
+
+            if not match:
+                continue
+
+            number = int(match.group(1))
+
+            if not 1 <= number <= TOPLAM_BOLUM:
+                continue
+
+            bulunan.append({
+
+                "episode": number,
+
+                "title": title,
+
+                "video_id": video_id,
+
+                "youtube_url": (
+                    "https://www.youtube.com/watch?v="
+                    + video_id
+                ),
+
+                "embed_url": (
+                    "https://www.youtube.com/embed/"
+                    + video_id
+                ),
+
+            })
+
+        print("RSS BOLUM SAYISI:", len(bulunan))
+
     except Exception as e:
+
         print("RSS HATASI:", str(e))
-        videos = []
+
+    return bulunan
+
+
+# ==================================================
+# HLS ADRESI DOGRULA
+# ==================================================
+
+def hls_dogrula(adres):
+
+    if not adres:
+        return False
+
+    adres = str(adres).strip()
+
+    try:
+
+        parsed = urlparse(adres)
+
+        if parsed.scheme not in ("http", "https"):
+            return False
+
+        if not parsed.netloc:
+            return False
+
+        # YouTube normal video adreslerini kabul etme.
+
+        host = parsed.netloc.lower()
+
+        if (
+            "youtube.com" in host
+            or "youtu.be" in host
+            or "googlevideo.com" in host
+        ):
+
+            return False
+
+        headers = dict(HEADERS)
+
+        headers["Range"] = "bytes=0-8191"
+
+        response = requests.get(
+            adres,
+            headers=headers,
+            timeout=TIMEOUT,
+            stream=True,
+            allow_redirects=True
+        )
+
+        try:
+
+            if response.status_code not in (200, 206):
+
+                print(
+                    "[HLS HTTP HATASI]",
+                    response.status_code,
+                    adres[:100]
+                )
+
+                return False
+
+            icerik = b""
+
+            for parca in response.iter_content(
+                chunk_size=2048
+            ):
+
+                if parca:
+
+                    icerik += parca
+
+                if len(icerik) >= 8192:
+                    break
+
+            metin = icerik.decode(
+                "utf-8-sig",
+                errors="ignore"
+            ).lstrip()
+
+            # HLS playlist imzası kontrolü.
+
+            if not metin.startswith("#EXTM3U"):
+
+                print(
+                    "[HLS GECERSIZ]",
+                    adres[:100]
+                )
+
+                return False
+
+            print(
+                "[HLS OK]",
+                adres[:110]
+            )
+
+            return True
+
+        finally:
+
+            response.close()
+
+    except Exception as e:
+
+        print(
+            "[HLS BAGLANTI HATASI]",
+            str(e)[:120]
+        )
+
+        return False
+
+
+# ==================================================
+# HLS KAYNAKLARINI BOLUM LERLE BIRLESTIR
+# ==================================================
+
+def hls_bolumlerini_isle(episodes, kaynaklar):
+
+    print("\nHLS KAYNAKLARI KONTROL EDILIYOR")
+
+    for no in range(1, TOPLAM_BOLUM + 1):
+
+        item = episodes[no]
+
+        # Önce kaynak JSON dosyasına bak.
+
+        kaynak = kaynaklar.get(str(no))
+
+        if isinstance(kaynak, dict):
+
+            adres = kaynak.get("hls_url")
+
+        elif isinstance(kaynak, str):
+
+            adres = kaynak
+
+        else:
+
+            adres = item.get("hls_url")
+
+        if not adres:
+
+            item["hls_url"] = None
+
+            item["hls_status"] = "KAYNAK YOK"
+
+            continue
+
+        print(
+            f"\n[{no}/{TOPLAM_BOLUM}] HLS KONTROL"
+        )
+
+        if hls_dogrula(adres):
+
+            item["hls_url"] = adres
+
+            item["hls_status"] = "CALISIYOR"
+
+        else:
+
+            item["hls_url"] = None
+
+            item["hls_status"] = "GECERSIZ VEYA ERISILEMIYOR"
+
+    return episodes
+
+
+# ==================================================
+# TELEVIZO UYUMLU M3U OLUSTUR
+# ==================================================
+
+def m3u_olustur(episodes):
+
+    lines = [
+        "#EXTM3U"
+    ]
+
+    toplam = 0
+
+    for no in range(1, TOPLAM_BOLUM + 1):
+
+        item = episodes[no]
+
+        adres = item.get("hls_url")
+
+        if not adres:
+            continue
+
+        if item.get("hls_status") != "CALISIYOR":
+            continue
+
+        baslik = (
+            f"İkinci Bahar {no}. Bölüm"
+        )
+
+        lines.append(
+            f'#EXTINF:-1 group-title="{GROUP}",{baslik}'
+        )
+
+        lines.append(adres)
+
+        toplam += 1
+
+    if toplam == 0:
+
+        print(
+            "\nCALISAN HLS YOK. ESKI M3U KORUNDU."
+        )
+
+        return False
+
+    gecici = M3U_FILE + ".tmp"
+
+    with open(
+        gecici,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        f.write(
+            "\n".join(lines) + "\n"
+        )
+
+    os.replace(
+        gecici,
+        M3U_FILE
+    )
+
+    print("\n================================")
+    print("TELEVIZO M3U GUNCELLENDI")
+    print("DOSYA:", M3U_FILE)
+    print("CALISAN HLS:", toplam)
+    print("================================")
+
+    return True
+
+
+# ==================================================
+# ANA PROGRAM
+# ==================================================
+
+def main():
+
+    print("=" * 55)
+
+    print("MIRTI68 - IKINCI BAHAR")
+
+    print("37 BOLUM HLS M3U8 GUNCELLEYICI")
+
+    print("TELEVIZO UYUMLU")
+
+    print("=" * 55)
+
+    # Eski JSON kayıtlarını al.
+
+    old_data = json_oku(JSON_FILE)
+
+    episodes = bolumleri_hazirla(
+        old_data
+    )
+
+    # RSS ile bölüm bilgilerini güncelle.
+
+    videos = youtube_rss_kontrol()
 
     for video in videos:
-        number = video["episode"]
-        current = episodes[number]
-        current["title"] = video["title"]
-        current["video_id"] = video["video_id"]
-        current["youtube_url"] = video["youtube_url"]
-        current["embed_url"] = video["embed_url"]
-        current["status"] = "BULUNDU"
+
+        no = video["episode"]
+
+        episodes[no]["title"] = video["title"]
+
+        episodes[no]["video_id"] = video["video_id"]
+
+        episodes[no]["youtube_url"] = video["youtube_url"]
+
+        episodes[no]["embed_url"] = video["embed_url"]
+
+        episodes[no]["status"] = "RSS BULUNDU"
+
+    # Yetkili HLS kaynaklarını al.
+
+    kaynaklar = hls_kaynaklarini_oku()
+
+    # HLS bağlantılarını doğrula.
+
+    episodes = hls_bolumlerini_isle(
+        episodes,
+        kaynaklar
+    )
+
+    # JSON kayıtlarını hazırla.
 
     result = {
+
         "series": "İkinci Bahar",
+
         "channel": "İkinci Bahar (Dizi)",
+
         "channel_id": CHANNEL_ID,
-        "expected_episodes": 37,
-        "updated_at": now_utc().isoformat(),
-        "episodes": [episodes[n] for n in range(1, 38)],
+
+        "expected_episodes": TOPLAM_BOLUM,
+
+        "updated_at": now_utc(),
+
+        "playlist": M3U_FILE,
+
+        "format": "HLS M3U8",
+
+        "episodes": [
+            episodes[n]
+            for n in range(1, TOPLAM_BOLUM + 1)
+        ],
+
     }
 
-    with open(JSON_FILE, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+    # JSON kaydet.
 
-    save_m3u(episodes)
+    json_kaydet(
+        JSON_FILE,
+        result
+    )
 
-    youtube_count = sum(1 for x in episodes.values() if x.get("youtube_url"))
+    # M3U oluştur.
 
-    print("\n" + "=" * 50)
-    print("İKİNCİ BAHAR ARŞİV SONUCU")
-    print("=" * 50)
-    print("Arşiv bölüm sayısı: 37")
-    print("YouTube bağlantısı bulunan:", youtube_count)
+    m3u_olustur(episodes)
+
+    # Rapor.
+
+    youtube_count = sum(
+        1
+        for x in episodes.values()
+        if x.get("youtube_url")
+    )
+
+    hls_count = sum(
+        1
+        for x in episodes.values()
+        if x.get("hls_status") == "CALISIYOR"
+    )
+
+    print("\n" + "=" * 55)
+
+    print("IKINCI BAHAR TARAMA RAPORU")
+
+    print("=" * 55)
+
+    print("Toplam bolum:", TOPLAM_BOLUM)
+
+    print("RSS video kaydi:", youtube_count)
+
+    print("Calisan HLS:", hls_count)
+
+    print("HLS bulunamayan:", TOPLAM_BOLUM - hls_count)
+
     print("JSON:", JSON_FILE)
+
+    print("HLS KAYNAK:", HLS_FILE)
+
     print("M3U:", M3U_FILE)
-    print("=" * 50)
+
+    print("=" * 55)
+
+
+# ==================================================
+# CALISTIR
+# ==================================================
 
 if __name__ == "__main__":
+
     main()
+                    
