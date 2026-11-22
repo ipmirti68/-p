@@ -8,7 +8,7 @@ import sys
 import urllib3
 import warnings
 import os
-import tempfile
+from urllib.parse import urlparse, urljoin
 
 # ==================================================
 # MIRTI68 - ATOM SPOR OTOMATIK GUNCELLEYICI
@@ -43,13 +43,14 @@ STATIC_LOGO = (
 
 GROUP = "🟩◆  beIN SPORTS 🖥"
 
-START_URL = "https://url24.link/AtomSporTV"
+START_URL = "https://url24.link/AtomSpor"
 
 FALLBACK_BASE = "https://www.atomsportv519.top"
 
 FALLBACK_API = "https://teletv15.top/load/yayinlink.php"
 
 TIMEOUT = 15
+
 
 # ==================================================
 # KANAL ISIMLERI
@@ -85,7 +86,6 @@ def discover_base_domain():
     print("\nANA MAKINE ARANIYOR")
 
     headers = HEADERS.copy()
-
     headers["Referer"] = "https://url24.link/"
 
     url = START_URL
@@ -106,12 +106,9 @@ def discover_base_domain():
             if not location:
                 break
 
-            url = requests.compat.urljoin(
-                url,
-                location
-            )
+            url = urljoin(url, location)
 
-        parsed = requests.utils.urlparse(url)
+        parsed = urlparse(url)
 
         if parsed.scheme and parsed.netloc:
 
@@ -149,6 +146,8 @@ def discover_api(base_domain):
             headers=HEADERS,
             timeout=TIMEOUT
         )
+
+        response.raise_for_status()
 
         urls = re.findall(
             r'https?://[^"\'\s\\]+?/load/[a-z0-9_]+\.php',
@@ -210,6 +209,8 @@ def discover_channels(api_url):
             timeout=TIMEOUT
         )
 
+        response.raise_for_status()
+
         ids = re.findall(
             r'href=["\']matches\?id=([^"\']+)',
             response.text,
@@ -223,7 +224,6 @@ def discover_channels(api_url):
         )
 
         channels = []
-
         seen_ids = set()
 
         for i, cid in enumerate(ids):
@@ -240,21 +240,21 @@ def discover_channels(api_url):
             )
 
             name = PRETTY_NAMES.get(
-    cid,
-    site_name
-)
+                cid,
+                site_name
+            )
 
-# SADECE beIN SPORTS KANALLARI
-if not re.search(
-    r'bein[\s_-]*sports',
-    cid + " " + name,
-    re.IGNORECASE
-):
-    continue
+            # SADECE beIN SPORTS KANALLARI
+            if not re.search(
+                r'bein[\s_-]*sports',
+                cid + " " + name,
+                re.IGNORECASE
+            ):
+                continue
 
-channels.append(
-    (cid, name)
-)
+            channels.append(
+                (cid, name)
+            )
 
         if channels:
 
@@ -306,16 +306,18 @@ def get_stream(api_url, cid):
 
             data = response.json()
 
-            link = (
-                data.get("deismackanal")
-                or ""
-            ).strip()
+            if isinstance(data, dict):
 
-        except Exception:
+                link = str(
+                    data.get("deismackanal") or ""
+                ).strip()
+
+        except ValueError:
 
             match = re.search(
                 r'"deismackanal"\s*:\s*"(.*?)"',
-                response.text
+                response.text,
+                re.I
             )
 
             if match:
@@ -326,19 +328,29 @@ def get_stream(api_url, cid):
                     .strip()
                 )
 
-        if (
-            link.startswith("https://")
-            or link.startswith("http://")
-        ) and ".m3u8" in link.lower():
+        link = link.replace("\\/", "/").strip()
 
-            return link.replace("\\", "")
+        parsed = urlparse(link)
+
+        if (
+            parsed.scheme in ("https", "http")
+            and parsed.netloc
+            and ".m3u8" in parsed.path.lower()
+        ):
+
+            return link
+
+        print(
+            "GECERSIZ YAYIN ADRESI:",
+            cid
+        )
 
     except Exception as e:
 
         print(
             "YAYIN OKUMA HATASI:",
             cid,
-            str(e)[:100]
+            str(e)[:150]
         )
 
     return ""
@@ -353,7 +365,6 @@ def yeni_kanallari_hazirla(channels, api_url):
     print("\nYAYINLAR ALINIYOR")
 
     entries = []
-
     seen_links = set()
 
     for cid, name in channels:
@@ -412,13 +423,11 @@ def eski_grubu_temizle(eski_satirlar):
     while i < len(eski_satirlar):
 
         satir = eski_satirlar[i]
-
         temiz = satir.strip()
 
         if temiz == "#EXTM3U":
 
             i += 1
-
             continue
 
         if temiz.startswith("#EXTINF:"):
@@ -427,7 +436,7 @@ def eski_grubu_temizle(eski_satirlar):
 
                 i += 1
 
-                # Kanalın URL satırını da sil.
+                # Hedef kanalın URL satırını da sil.
 
                 while i < len(eski_satirlar):
 
@@ -436,7 +445,6 @@ def eski_grubu_temizle(eski_satirlar):
                     if sonraki and not sonraki.startswith("#"):
 
                         i += 1
-
                         break
 
                     i += 1
@@ -459,7 +467,6 @@ def m3u_guncelle(entries):
     if not entries:
 
         print("\nHIC YAYIN BULUNAMADI.")
-
         print("ESKI DOSYA KORUNDU.")
 
         return False
@@ -484,13 +491,9 @@ def m3u_guncelle(entries):
 
             return False
 
-    if not eski_satirlar:
+    yeni_satirlar = ["#EXTM3U"]
 
-        yeni_satirlar = ["#EXTM3U"]
-
-    else:
-
-        yeni_satirlar = ["#EXTM3U"]
+    if eski_satirlar:
 
         diger_gruplar = eski_grubu_temizle(
             eski_satirlar
@@ -533,8 +536,84 @@ def m3u_guncelle(entries):
         print("DOSYA KAYIT HATASI:", e)
 
         if os.path.exists(gecici):
-
             os.remove(gecici)
+
+        return False
+
+    print("\n====================================")
+    print("MIRTI68 ATOM GUNCELLEME TAMAMLANDI")
+    print("====================================")
+
+    print("GRUP:", GROUP)
+    print("YENI KANAL:", len(entries))
+    print("DIGER GRUPLAR: KORUNDU")
+    print("TEKRAR KANAL: ENGELLENDI")
+    print("DOSYA:", OUTPUT_FILENAME)
+
+    print(
+        "KAYIT YERI:",
+        os.path.abspath(OUTPUT_FILENAME)
+    )
+
+    print("====================================")
+
+    return True
+
+
+# ==================================================
+# ANA PROGRAM
+# ==================================================
+
+def main():
+
+    print("\n" + "=" * 50)
+    print("MIRTI68 - ATOM SPOR")
+    print("SADECE BEIN SPORTS GRUBU YENILENIR")
+    print("=" * 50)
+
+    # Ana makineyi bul.
+
+    base_domain = discover_base_domain()
+
+    # API adresini bul.
+
+    api_url = discover_api(
+        base_domain
+    )
+
+    # Kanalları bul.
+
+    channels = discover_channels(
+        api_url
+    )
+
+    if not channels:
+
+        print("KANAL LISTESI BOS.")
+        sys.exit(1)
+
+    # Yayın adreslerini al.
+
+    entries = yeni_kanallari_hazirla(
+        channels,
+        api_url
+    )
+
+    # M3U dosyasını güncelle.
+
+    if not m3u_guncelle(entries):
+
+        sys.exit(1)
+
+
+# ==================================================
+# CALISTIR
+# ==================================================
+
+if __name__ == "__main__":
+
+    main()
+                    
 
         return False
 
