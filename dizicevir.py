@@ -5,15 +5,15 @@ EK_KOD = "⭕"
 FILTRELER = {
     "atv.m3u": {
         "aranacak": ["Altı Üstü İstanbul",  "Güneşin Doğduğu Yer"],
-        "hedef_grup": "🟪◆ ATV DİZİLER 📺⭕",
+        "hedef_grup": "🟪◆ DİZİ - ATV  📺⭕",
     },
     "kanalddizi.m3u": {
         "aranacak": ["Haysiyet", "Uzak Şehir", "Güller ve Günahlar", "Daha 17"],
-        "hedef_grup": "🟪◆ KANAL D DİZİLER 📺⭕",
+        "hedef_grup": "🟪◆ DİZİ - KANAL D  📺⭕",
     },
     "stardizi.m3u": {
         "aranacak": ["Başkalarının Hayatı", "Tuzlu Kahve", "Sevdiğim Sensin"],
-        "hedef_grup": "🟪◆ STAR DİZİLER 📺⭕",
+        "hedef_grup": "🟪◆ DİZİ - STAR  📺⭕",
     },
 }
 SOURCES = [
