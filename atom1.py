@@ -643,6 +643,7 @@ if __name__ == "__main__":
     return True
 
 
+
 # ==================================================
 # ANA PROGRAM
 # ==================================================
@@ -650,46 +651,26 @@ if __name__ == "__main__":
 def main():
 
     print("\n" + "=" * 50)
-
     print("MIRTI68 - ATOM SPOR")
-
     print("SADECE BEIN SPORTS GRUBU YENILENIR")
-
     print("=" * 50)
-
-    # Ana makine.
 
     base_domain = discover_base_domain()
 
-    # API.
+    api_url = discover_api(base_domain)
 
-    api_url = discover_api(
-        base_domain
-    )
-
-    # Kanallar.
-
-    channels = discover_channels(
-        api_url
-    )
+    channels = discover_channels(api_url)
 
     if not channels:
-
         print("KANAL LISTESI BOS.")
-
         sys.exit(1)
-
-    # Yayın adresleri.
 
     entries = yeni_kanallari_hazirla(
         channels,
         api_url
     )
 
-    # M3U güncelle.
-
     if not m3u_guncelle(entries):
-
         sys.exit(1)
 
 
@@ -698,6 +679,4 @@ def main():
 # ==================================================
 
 if __name__ == "__main__":
-
     main()
-    
