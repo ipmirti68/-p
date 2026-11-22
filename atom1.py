@@ -13,9 +13,9 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
 }
 
-OUTPUT_FILENAME = "atom.m3u"
-STATIC_LOGO = "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-GROUP = "Atom-Panel"
+OUTPUT_FILENAME = "a.m3u"
+STATIC_LOGO = "https://i.imgur.com/71TSn0Q.jpeg"
+GROUP = "🟩◆  beIN SPORTS 🖥"
 
 # Ana sayfa yonlendirme zinciri (alan adi her ay degisebiliyor)
 START_URL = "https://url24.link/AtomSporTV"
