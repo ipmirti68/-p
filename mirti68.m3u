@@ -300,6 +300,20 @@ https://zeus645423.cfd/b3/index.txt
 https://zeus645423.cfd/b4/index.txt
 #EXTINF:-1 tvg-id="bein sports 5.tr" tvg-name="bein sports 5.tr" tvg-logo="https://i.imgur.com/BUwTKBI.jpeg" tvg-country="TR" tvg-language="Turkish" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 5 Zeus
 https://zeus645423.cfd/b4/index.txt
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 1 - Atom ⭕
+https://css.d6e3eds5e065t5.help//beyin1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 2 - Atom ⭕
+https://css.d6e3eds5e065t5.help//b2/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 3 - Atom ⭕
+https://css.d6e3eds5e065t5.help//b3/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 4 - Atom ⭕
+https://css.d6e3eds5e065t5.help//b4/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 5 - Atom ⭕
+https://css.d6e3eds5e065t5.help//b5/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS Max 1 - Atom ⭕
+https://css.d6e3eds5e065t5.help//bm1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS Max 2 - Atom ⭕
+https://css.d6e3eds5e065t5.help//bm2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS ⭕",bilgi
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆  beIN SPORTS 📡⭕",bilgi
