@@ -1,320 +1,179 @@
-
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-import os
-import sys
+import requests
 import re
-from urllib.parse import urlparse
+import sys
+import urllib3
+import warnings
+import os
 
-# ==================================================
-# MIRTI68 - ATOM SPOR M3U GUNCELLEYICI
-# SADECE BEIN SPORTS GRUBUNU YENILER
-# DIGER M3U GRUPLARINI KORUR
-# ==================================================
+# --- YAPILANDIRMA ---
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+warnings.filterwarnings('ignore')
 
-OUTPUT_FILENAME = "mirti68.m3u"
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+}
 
-STATIC_LOGO = "https://i.imgur.com/71TSn0Q.jpeg"
+OUTPUT_FILENAME = "atom.m3u"
+STATIC_LOGO = "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+GROUP = "Atom-Panel"
 
-GROUP = "🟩◆ beIN SPORTS 🖥"
+# Ana sayfa yonlendirme zinciri (alan adi her ay degisebiliyor)
+START_URL = "https://url24.link/AtomSporTV"
+# Zincir kirilirsa son bilinen ana makine
+FALLBACK_BASE = "https://www.atomsportv519.top"
+# API adresi ana sayfadan dinamik okunur; okunamazsa son bilinen adres
+FALLBACK_API = "https://teletv15.top/load/yayinlink.php"
 
-# ==================================================
-# YETKILI HLS YAYIN ADRESLERI
-# KENDI ERISIM HAKKIN OLAN M3U8 ADRESLERINI GIR
-# ==================================================
+# Kanal adlari sitesiden gelir; bilinen id'ler icin daha duzgun gosterim
+PRETTY_NAMES = {
+    "bein-sports-1": "beIN Sports 1",
+    "bein-sports-2": "beIN Sports 2",
+    "bein-sports-3": "beIN Sports 3",
+    "bein-sports-4": "beIN Sports 4",
+    "bein-sports-5": "beIN Sports 5",
+    "bein-sports-max-1": "beIN Sports Max 1",
+    "bein-sports-max-2": "beIN Sports Max 2",
+    "s-sport": "S Sport 1",
+    "s-sport-2": "S Sport 2",
+    "trt-spor": "TRT Spor",
+    "trt-1": "TRT 1",
+    "a-spor": "A Spor",
+}
 
-AUTHORIZED_CHANNELS = [
-    {
-        "id": "bein-sports-1",
-        "name": "beIN SPORTS 1 - Atom ⭕",
-        "url": ""
-    },
-    {
-        "id": "bein-sports-2",
-        "name": "beIN SPORTS 2 - Atom ⭕",
-        "url": ""
-    },
-    {
-        "id": "bein-sports-3",
-        "name": "beIN SPORTS 3 - Atom ⭕",
-        "url": ""
-    },
-    {
-        "id": "bein-sports-4",
-        "name": "beIN SPORTS 4 - Atom ⭕",
-        "url": ""
-    },
-    {
-        "id": "bein-sports-5",
-        "name": "beIN SPORTS 5 - Atom ⭕",
-        "url": ""
-    },
-    {
-        "id": "bein-sports-max-1",
-        "name": "beIN SPORTS Max 1 - Atom ⭕",
-        "url": ""
-    },
-    {
-        "id": "bein-sports-max-2",
-        "name": "beIN SPORTS Max 2 - Atom ⭕",
-        "url": ""
-    }
-]
+# channels.php okunamazsa son bilinen kanal id'leri
+FALLBACK_IDS = list(PRETTY_NAMES.keys())
 
 
-# ==================================================
-# M3U8 ADRES KONTROLU
-# ==================================================
-
-def hls_adresi_gecerli(url):
-
-    if not url:
-        return False
-
-    url = url.strip()
-
+def discover_base_domain():
+    """url24.link zincirinden guncel ana makineyi bulur."""
+    headers = HEADERS.copy()
+    headers['Referer'] = 'https://url24.link/'
+    url = START_URL
     try:
-        parsed = urlparse(url)
+        for _ in range(3):  # en fazla 3 yonlendirme
+            r = requests.get(url, headers=headers, allow_redirects=False, timeout=10)
+            loc = r.headers.get('location')
+            if not loc:
+                break
+            url = loc if loc.startswith('http') else f"https://url24.link{loc}"
+        if url.startswith('http'):
+            base = url.rstrip('/')
+            # son atlamada '/' ile bitti ise (orn. ...v519.top/) kullan
+            print(f"✅ Ana makine: {base}")
+            return base
+    except Exception as e:
+        print(f"⚠️  Alan adi zinciri okunamadi: {e}")
+    print(f"➡️  Son bilinen ana makine kullaniliyor: {FALLBACK_BASE}")
+    return FALLBACK_BASE
 
-        if parsed.scheme not in ("http", "https"):
-            return False
 
-        if not parsed.netloc:
-            return False
+def discover_api(base_domain):
+    """Ana sayfadaki load/*.php adreslerinden API origin'ini bulur.
 
-        if ".m3u8" not in parsed.path.lower():
-            return False
+    yayinlink.php ana sayfada gecmez, o yuzden once origin (orn. teletv15.top)
+    bulunur ayni origin'deki yayinlink.php kullanilir.
+    """
+    try:
+        r = requests.get(f"{base_domain}/", headers=HEADERS, timeout=10)
+        urls = re.findall(r'https?://[^"\'\s\\]+?/load/[a-z0-9_]+\.php', r.text, re.I)
+        if urls:
+            m = re.match(r'(https?://[^/]+)', urls[0])
+            if m:
+                api = f"{m.group(1)}/load/yayinlink.php"
+                try:
+                    chk = requests.get(f"{api}?id=bein-sports-1", headers=HEADERS, timeout=10)
+                    if chk.status_code == 200 and 'deismackanal' in chk.text:
+                        print(f"✅ Yayin API: {api}")
+                        return api
+                    print(f"⚠️  {api} yanit vermedi (HTTP {chk.status_code})")
+                except Exception as e:
+                    print(f"⚠️  API dogrulanamadi: {e}")
+    except Exception as e:
+        print(f"⚠️  API adresi okunamadi: {e}")
+    print(f"➡️  Son bilinen API kullaniliyor: {FALLBACK_API}")
+    return FALLBACK_API
 
-        return True
 
+def discover_channels(api_url):
+    """channels.php icindeki id + kanal adlarini okur (site id degistirebilir)."""
+    m = re.match(r'(https?://[^/]+)', api_url)
+    origin = m.group(1) if m else "https://teletv15.top"
+    try:
+        r = requests.get(f"{origin}/load/channels.php", headers=HEADERS, timeout=10)
+        ids = re.findall(r'href=["\']matches\?id=([^"\']+)', r.text, re.I)
+        names = re.findall(r'<div class="home">([^<]+)</div>', r.text, re.I)
+        channels = []
+        for i, cid in enumerate(ids):
+            if cid not in [c for c, _ in channels]:
+                site_name = names[i].strip() if i < len(names) else cid
+                channels.append((cid, PRETTY_NAMES.get(cid, site_name)))
+        if channels:
+            print(f"✅ {len(channels)} kanal bulundu (channels.php)")
+            return channels
+        print("⚠️  channels.php kanal dondurmedi")
+    except Exception as e:
+        print(f"⚠️  channels.php okunamadi: {e}")
+    print(f"➡️  Son bilinen id listesi kullaniliyor: {len(FALLBACK_IDS)} kanal")
+    return [(cid, PRETTY_NAMES.get(cid, cid)) for cid in FALLBACK_IDS]
+
+
+def get_stream(api_url, cid):
+    """yayinlink.php -> JSON {deismackanal: m3u8}"""
+    try:
+        r = requests.get(f"{api_url}?id={cid}", headers=HEADERS, timeout=12)
+        link = ""
+        try:
+            link = (r.json().get("deismackanal") or "").strip()
+        except Exception:
+            m = re.search(r'"deismackanal"\s*:\s*"(.*?)"', r.text)
+            if m:
+                link = m.group(1).replace('\\/', '/').strip()
+        if link and "m3u8" in link:
+            return link.replace('\\', '')
     except Exception:
-        return False
+        pass
+    return ""
 
 
-# ==================================================
-# YENI KANAL LISTESI HAZIRLA
-# ==================================================
-
-def yeni_kanallari_hazirla():
-
-    print("\nYAYINLAR KONTROL EDILIYOR")
+def main():
+    print("--- 📡 Atom Spor Taranıyor ---")
+    base_domain = discover_base_domain()
+    api_url = discover_api(base_domain)
+    channels = discover_channels(api_url)
 
     entries = []
     seen_links = set()
-
-    for kanal in AUTHORIZED_CHANNELS:
-
-        name = kanal.get("name", "").strip()
-        link = kanal.get("url", "").strip()
-
-        if not name:
+    for cid, name in channels:
+        link = get_stream(api_url, cid)
+        if not link:
+            print(f"  ❌ {name} ({cid}): yayin yok")
             continue
-
-        if not hls_adresi_gecerli(link):
-
-            print("GECERSIZ VEYA BOS ADRES:", name)
-            continue
-
+        # Ayni yayin iki ayri ad ile gelirse (site yanlis esleme yapabiliyor)
+        # ilk gecen ad kalir: yanlis etiketli kanal listeye girmesin.
         if link in seen_links:
-
-            print("TEKRAR YAYIN ATLANDI:", name)
+            print(f"  ⏭️  {name} ({cid}): ayni yayin zaten var, atlandi")
             continue
-
         seen_links.add(link)
-
-        entry = (
-            f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" '
-            f'group-title="{GROUP}",{name}\n'
-            f'{link}'
+        entries.append(
+            f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="{GROUP}", {name}\n{link}'
         )
+        print(f"  ✅ {name}")
 
-        entries.append(entry)
-
-        print("OK:", name)
-
-    print("\nBULUNAN GECERLI KANAL:", len(entries))
-
-    return entries
-
-
-# ==================================================
-# SADECE HEDEF GRUBU TEMIZLE
-# ==================================================
-
-def eski_grubu_temizle(eski_satirlar):
-
-    yeni_satirlar = []
-
-    i = 0
-
-    while i < len(eski_satirlar):
-
-        satir = eski_satirlar[i]
-        temiz = satir.strip()
-
-        if temiz == "#EXTM3U":
-            i += 1
-            continue
-
-        if temiz.startswith("#EXTINF:"):
-
-            grup_eslesmesi = re.search(
-                r'group-title="([^"]*)"',
-                temiz,
-                re.IGNORECASE
-            )
-
-            hedef_grup = (
-                grup_eslesmesi.group(1)
-                if grup_eslesmesi
-                else ""
-            )
-
-            if hedef_grup == GROUP:
-
-                i += 1
-
-                # Kanalin URL satirini da atla.
-                while i < len(eski_satirlar):
-
-                    sonraki = eski_satirlar[i].strip()
-
-                    if sonraki and not sonraki.startswith("#"):
-                        i += 1
-                        break
-
-                    i += 1
-
-                continue
-
-        yeni_satirlar.append(satir)
-        i += 1
-
-    return yeni_satirlar
-
-
-# ==================================================
-# M3U DOSYASINI GUVENLI GUNCELLE
-# ==================================================
-
-def m3u_guncelle(entries):
-
+    # Guvenlik: hic kanal yoksa dosyayi bosaltma! Mevcut liste korunur,
+    # workflow hata verir ve boylece eski liste silinmez.
     if not entries:
-
-        print("\nHIC GECERLI YAYIN BULUNAMADI.")
-        print("ESKI M3U DOSYASI KORUNDU.")
-
-        return False
-
-    eski_satirlar = []
-
-    if os.path.exists(OUTPUT_FILENAME):
-
-        try:
-
-            with open(
-                OUTPUT_FILENAME,
-                "r",
-                encoding="utf-8-sig"
-            ) as f:
-
-                eski_satirlar = f.read().splitlines()
-
-        except Exception as hata:
-
-            print("ESKI DOSYA OKUNAMADI:", hata)
-            return False
-
-    yeni_satirlar = ["#EXTM3U"]
-
-    if eski_satirlar:
-
-        diger_gruplar = eski_grubu_temizle(
-            eski_satirlar
-        )
-
-        yeni_satirlar.extend(diger_gruplar)
-
-    # Yeni beIN SPORTS grubunu ekle.
-
-    for entry in entries:
-
-        yeni_satirlar.extend(
-            entry.splitlines()
-        )
-
-    gecici = OUTPUT_FILENAME + ".tmp"
-
-    try:
-
-        with open(
-            gecici,
-            "w",
-            encoding="utf-8"
-        ) as f:
-
-            f.write(
-                "\n".join(yeni_satirlar)
-                + "\n"
-            )
-
-        os.replace(
-            gecici,
-            OUTPUT_FILENAME
-        )
-
-    except Exception as hata:
-
-        print("DOSYA KAYIT HATASI:", hata)
-
-        if os.path.exists(gecici):
-            os.remove(gecici)
-
-        return False
-
-    print("\n====================================")
-    print("MIRTI68 ATOM GUNCELLEME TAMAMLANDI")
-    print("====================================")
-    print("GRUP:", GROUP)
-    print("YENI KANAL:", len(entries))
-    print("DIGER GRUPLAR: KORUNDU")
-    print("TEKRAR KANAL: ENGELLENDI")
-    print("DOSYA:", OUTPUT_FILENAME)
-    print("KAYIT YERI:", os.path.abspath(OUTPUT_FILENAME))
-    print("====================================")
-
-    return True
-
-
-# ==================================================
-# ANA PROGRAM
-# ==================================================
-
-def main():
-
-    print("\n" + "=" * 50)
-    print("MIRTI68 - ATOM SPOR")
-    print("SADECE BEIN SPORTS GRUBU YENILENIR")
-    print("=" * 50)
-
-    entries = yeni_kanallari_hazirla()
-
-    if not entries:
-
-        print("\nGUNCELLEME YAPILMADI.")
-        print("ESKI DOSYA KORUNDU.")
+        print("\n❌ HIC KANAL YOK - atom.m3u DEGISTIRILMEYOR (mevcut liste korunuyor)")
         sys.exit(1)
 
-    if not m3u_guncelle(entries):
+    all_content = ["#EXTM3U"] + entries
+    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
+        f.write("\n".join(all_content))
 
-        sys.exit(1)
+    print(f"\n✅ İŞLEM TAMAMLANDI!")
+    print(f"💾 Dosya Adı: {OUTPUT_FILENAME}")
+    print(f"📝 Toplam Kanal: {len(entries)}")
+    print(f"📍 Kayıt Yeri: {os.path.abspath(OUTPUT_FILENAME)}")
 
-
-# ==================================================
-# CALISTIR
-# ==================================================
 
 if __name__ == "__main__":
     main()
-    
