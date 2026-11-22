@@ -131,7 +131,8 @@ def youtube_hls_bul(video_id):
         "socket_timeout": 25,
         "retries": 2,
         "extractor_retries": 2,
-        "ignoreerrors": True,
+        "ignoreerrors": False,
+        "verbose": True,
         "format": "best",
     }
 
@@ -144,9 +145,9 @@ def youtube_hls_bul(video_id):
             )
 
         if not bilgi:
-            return {
-                "error": "Video bilgisi alınamadı"
-            }
+          return {
+        "error": "YouTube video bilgisi döndürmedi."
+    }
 
         formats = bilgi.get("formats", [])
         adaylar = []
@@ -195,10 +196,10 @@ def youtube_hls_bul(video_id):
         }
 
     except Exception as hata:
-
-        return {
-            "error": str(hata)[:500]
-        }
+    print("GERÇEK YOUTUBE HATASI:", repr(hata))
+    return {
+        "error": str(hata)[:1000]
+    }
 
 
 # ==================================================
