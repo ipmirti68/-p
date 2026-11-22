@@ -3,20 +3,20 @@
 # -*- coding: utf-8 -*-
 
 import os
-import re
 import json
 import requests
-import subprocess
+from datetime import datetime, timezone
 from urllib.parse import urlparse
 from yt_dlp import YoutubeDL
 
-# ==========================================
-# MIRTI68 - IKINCI BAHAR HLS KONTROL
-# Yalnizca dogrudan ve dogrulanmis M3U8
-# ==========================================
+# ==================================================
+# MIRTI68 - İKİNCİ BAHAR
+# TELEVIZO UYUMLU HLS M3U8
+# ==================================================
 
 M3U_FILE = "ikinci_bahar.m3u"
 JSON_FILE = "ikinci_bahar_kontrol.json"
+
 LOGO = "https://cdn.neoldu.com.tr/other/14-250.jpg"
 
 VIDEO_IDS = [
@@ -54,22 +54,23 @@ VIDEO_IDS = [
     "wgivjyDfK7c",
     "uMY775MnqDI",
     "6ERQHjDpMUY",
-    "6ERQHjDpMUY",
+    "6ERQHjDpMUY"
 ]
 
-def tekil_idler():
-    sonuc = []
-    gorulen = set()
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
+    )
+}
 
-    for video_id in VIDEO_IDS:
-        if video_id not in gorulen:
-            gorulen.add(video_id)
-            sonuc.append(video_id)
 
-    return sonuc
-
+# ==================================================
+# HLS ADRESİ DOĞRULAMA
+# ==================================================
 
 def hls_dogrula(url, headers=None):
+
     if not url:
         return False
 
@@ -82,168 +83,308 @@ def hls_dogrula(url, headers=None):
         if not parsed.path.lower().endswith(".m3u8"):
             return False
 
-        yanit = requests.get(
+        request_headers = HEADERS.copy()
+
+        if headers:
+            request_headers.update(headers)
+
+        response = requests.get(
             url,
-            headers=headers or {},
+            headers=request_headers,
             timeout=20,
             stream=True,
             allow_redirects=True
         )
 
-        try:
-            if yanit.status_code != 200:
-                return False
+        if response.status_code != 200:
+            response.close()
+            return False
 
-            icerik = yanit.raw.read(4096)
-            metin = icerik.decode(
-                "utf-8",
-                errors="ignore"
-            ).lstrip("\ufeff \r\n\t")
+        ilk_veri = next(
+            response.iter_content(2048),
+            b""
+        )
 
-            return metin.startswith("#EXTM3U")
+        response.close()
 
-        finally:
-            yanit.close()
+        return b"#EXTM3U" in ilk_veri
 
-    except Exception as hata:
-        print("[HLS KONTROL HATASI]", hata)
+    except Exception:
         return False
 
 
+# ==================================================
+# YOUTUBE HLS BULUCU
+# ==================================================
+
 def youtube_hls_bul(video_id):
-    adres = f"https://www.youtube.com/watch?v={video_id}"
+
+    video_url = (
+        "https://www.youtube.com/watch?v=" + video_id
+    )
 
     ayarlar = {
         "quiet": True,
         "no_warnings": True,
         "skip_download": True,
         "noplaylist": True,
+        "socket_timeout": 25,
+        "retries": 2,
         "extractor_retries": 2,
-        "socket_timeout": 20,
+        "ignoreerrors": True,
+        "format": "best",
     }
 
     try:
+
         with YoutubeDL(ayarlar) as ydl:
             bilgi = ydl.extract_info(
-                adres,
+                video_url,
                 download=False
             )
 
         if not bilgi:
-            return None
+            return {
+                "error": "Video bilgisi alınamadı"
+            }
 
-        genel_headers = bilgi.get("http_headers", {})
-        formatlar = bilgi.get("formats", [])
-
+        formats = bilgi.get("formats", [])
         adaylar = []
 
-        for fmt in formatlar:
-            url = fmt.get("url", "")
-            protokol = fmt.get("protocol", "")
+        for fmt in formats:
+
+            adres = fmt.get("url", "")
+            protocol = fmt.get("protocol", "")
+
+            if not adres:
+                continue
 
             if (
-                protokol in ("m3u8", "m3u8_native")
-                or urlparse(url).path.lower().endswith(".m3u8")
+                protocol in ("m3u8", "m3u8_native")
+                or urlparse(adres).path.lower().endswith(".m3u8")
             ):
-                adaylar.append(fmt)
 
-        for fmt in adaylar:
-            url = fmt.get("url")
-
-            headers = dict(genel_headers)
-            headers.update(fmt.get("http_headers", {}))
-
-            if hls_dogrula(url, headers):
-                return {
-                    "url": url,
+                adaylar.append({
+                    "url": adres,
+                    "height": fmt.get("height") or 0,
                     "format_id": fmt.get("format_id"),
-                    "height": fmt.get("height"),
+                    "headers": fmt.get("http_headers") or {}
+                })
+
+        adaylar.sort(
+            key=lambda x: x["height"],
+            reverse=True
+        )
+
+        for aday in adaylar:
+
+            if hls_dogrula(
+                aday["url"],
+                aday["headers"]
+            ):
+
+                return {
+                    "url": aday["url"],
+                    "height": aday["height"],
+                    "format_id": aday["format_id"],
+                    "title": bilgi.get("title", "")
                 }
 
-        return None
+        return {
+            "error": "Doğrulanmış HLS M3U8 bulunamadı"
+        }
 
     except Exception as hata:
-        print("[VIDEO HATASI]", video_id, str(hata)[:250])
-        return None
 
+        return {
+            "error": str(hata)[:500]
+        }
+
+
+# ==================================================
+# M3U OLUŞTUR
+# ==================================================
 
 def m3u_yaz(kayitlar):
+
     if not kayitlar:
-        print("CALISAN HLS YOK. ESKI M3U KORUNDU.")
+        print("HLS bulunamadı. Eski M3U korunuyor.")
         return False
 
     gecici = M3U_FILE + ".tmp"
 
-    with open(gecici, "w", encoding="utf-8") as dosya:
-        dosya.write("#EXTM3U\n")
+    try:
 
-        for kayit in kayitlar:
-            dosya.write(
-                f'#EXTINF:-1 tvg-logo="{LOGO}" '
-                f'group-title="İKİNCİ BAHAR",'
-                f'İKİNCİ BAHAR {kayit["bolum"]}. BÖLÜM\n'
-            )
-            dosya.write(kayit["url"] + "\n")
+        with open(
+            gecici,
+            "w",
+            encoding="utf-8"
+        ) as dosya:
 
-    os.replace(gecici, M3U_FILE)
-    return True
+            dosya.write("#EXTM3U\n")
+
+            for kayit in kayitlar:
+
+                bolum = kayit["bolum"]
+                adres = kayit["url"]
+
+                dosya.write(
+                    '#EXTINF:-1 '
+                    'tvg-logo="' + LOGO + '" '
+                    'group-title="🎬 İKİNCİ BAHAR",'
+                    'İkinci Bahar - Bölüm '
+                    + str(bolum) + '\n'
+                )
+
+                dosya.write(adres + "\n")
+
+        os.replace(gecici, M3U_FILE)
+
+        print(
+            str(len(kayitlar))
+            + " bölüm M3U dosyasına yazıldı."
+        )
+
+        return True
+
+    except Exception as hata:
+
+        print("M3U yazma hatası:", hata)
+
+        if os.path.exists(gecici):
+            os.remove(gecici)
+
+        return False
 
 
-def main():
-    print("=" * 45)
-    print("MIRTI68 - IKINCI BAHAR HLS GUNCELLEYICI")
-    print("TELEVIZO - DOĞRUDAN M3U8")
-    print("=" * 45)
+# ==================================================
+# JSON RAPORU
+# ==================================================
 
-    kayitlar = []
-    rapor = []
+def rapor_yaz(sonuclar):
 
-    idler = tekil_idler()
+    rapor = {
+        "proje": "MIRTI68 - İkinci Bahar",
+        "tarih": datetime.now(
+            timezone.utc
+        ).isoformat(),
+        "toplam_kayit": len(VIDEO_IDS),
+        "sonuclar": sonuclar
+    }
 
-    print("Tekil video ID:", len(idler))
-    print("Kontrol basliyor...")
+    with open(
+        JSON_FILE,
+        "w",
+        encoding="utf-8"
+    ) as dosya:
 
-    for bolum, video_id in enumerate(idler, 1):
-        print(f"[{bolum}] Bolum kontrol ediliyor: {video_id}")
-
-        sonuc = youtube_hls_bul(video_id)
-
-        if sonuc:
-            kayit = {
-                "bolum": bolum,
-                "video_id": video_id,
-                "url": sonuc["url"],
-                "durum": "HLS_CALISIYOR",
-            }
-
-            kayitlar.append(kayit)
-            rapor.append(kayit)
-
-            print("[BULUNDU] Dogrudan HLS")
-        else:
-            rapor.append({
-                "bolum": bolum,
-                "video_id": video_id,
-                "durum": "HLS_BULUNAMADI",
-            })
-
-            print("[YOK] Dogrudan HLS bulunamadi")
-
-    with open(JSON_FILE, "w", encoding="utf-8") as dosya:
         json.dump(
             rapor,
             dosya,
             ensure_ascii=False,
-            indent=2
+            indent=4
         )
 
-    if m3u_yaz(kayitlar):
-        print("M3U GUNCELLENDI:", M3U_FILE)
 
-    print("Toplam video:", len(idler))
-    print("Calisan HLS:", len(kayitlar))
-    print("HLS bulunamayan:", len(idler) - len(kayitlar))
-    print("Kontrol raporu:", JSON_FILE)
+# ==================================================
+# ANA PROGRAM
+# ==================================================
+
+def main():
+
+    print("=" * 50)
+    print("MIRTI68 - İKİNCİ BAHAR HLS TARAMASI")
+    print("=" * 50)
+
+    kayitlar = []
+    rapor = []
+
+    gorulen_idler = {}
+
+    for bolum, video_id in enumerate(
+        VIDEO_IDS,
+        start=1
+    ):
+
+        print(
+            "\nBölüm "
+            + str(bolum)
+            + " kontrol ediliyor..."
+        )
+
+        if video_id in gorulen_idler:
+
+            ilk_bolum = gorulen_idler[video_id]
+
+            print(
+                "Tekrarlanan video ID. İlk bölüm: "
+                + str(ilk_bolum)
+            )
+
+            rapor.append({
+                "bolum": bolum,
+                "video_id": video_id,
+                "durum": "TEKRAR",
+                "ilk_bolum": ilk_bolum
+            })
+
+            continue
+
+        gorulen_idler[video_id] = bolum
+
+        sonuc = youtube_hls_bul(video_id)
+
+        if sonuc and sonuc.get("url"):
+
+            kayitlar.append({
+                "bolum": bolum,
+                "video_id": video_id,
+                "url": sonuc["url"]
+            })
+
+            rapor.append({
+                "bolum": bolum,
+                "video_id": video_id,
+                "durum": "HLS_BULUNDU",
+                "format": sonuc.get("format_id"),
+                "height": sonuc.get("height")
+            })
+
+            print(
+                "HLS bulundu - Bölüm "
+                + str(bolum)
+            )
+
+        else:
+
+            hata = (
+                sonuc.get("error", "Bilinmeyen hata")
+                if sonuc else "Video alınamadı"
+            )
+
+            rapor.append({
+                "bolum": bolum,
+                "video_id": video_id,
+                "durum": "BULUNAMADI",
+                "hata": hata
+            })
+
+            print("Bulunamadı:", hata)
+
+    kayitlar.sort(
+        key=lambda x: x["bolum"]
+    )
+
+    m3u_yaz(kayitlar)
+    rapor_yaz(rapor)
+
+    print("\n" + "=" * 50)
+    print("TARAMA TAMAMLANDI")
+    print("Bulunan HLS:", len(kayitlar))
+    print("Toplam bölüm kaydı:", len(VIDEO_IDS))
+    print("M3U:", M3U_FILE)
+    print("Rapor:", JSON_FILE)
+    print("=" * 50)
 
 
 if __name__ == "__main__":
