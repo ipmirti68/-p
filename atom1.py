@@ -196,14 +196,13 @@ def main():
         print("❌ Grup güncellenemedi.")
         sys.exit(1)
         
- def m3u_grup_guncelle(yeni_kayitlar):
-
+def m3u_grup_guncelle(yeni_kayitlar):
     dosya = OUTPUT_FILENAME
     gecici = dosya + ".tmp"
     yedek = dosya + ".bak"
 
     if not yeni_kayitlar:
-        print("HATA: Yeni kayıt yok. Mevcut liste korunuyor.")
+        print("Yeni kayıt yok. Mevcut liste korunuyor.")
         return False
 
     eski_satirlar = []
@@ -212,7 +211,6 @@ def main():
         with open(dosya, "r", encoding="utf-8") as f:
             eski_satirlar = f.read().splitlines()
 
-    # Yedek al
     if eski_satirlar and not os.path.exists(yedek):
         with open(yedek, "w", encoding="utf-8") as f:
             f.write("\n".join(eski_satirlar) + "\n")
@@ -242,21 +240,46 @@ def main():
 
     os.replace(gecici, dosya)
 
-    print("Güncelleme tamamlandı.")
     print("Diğer gruplar korundu.")
-    print("Yedek:", yedek)
-
+    print("beIN SPORTS grubu güncellendi.")
     return True
-    
-   if not entries:
+
+
+def main():
+    print("--- Atom Spor Taranıyor ---")
+
+    base_domain = discover_base_domain()
+    api_url = discover_api(base_domain)
+    channels = discover_channels(api_url)
+
+    entries = []
+    seen_links = set()
+
+    for cid, name in channels:
+        link = get_stream(api_url, cid)
+
+        if not link:
+            print(f"Yayın bulunamadı: {name}")
+            continue
+
+        if link in seen_links:
+            continue
+
+        seen_links.add(link)
+
+        entries.append(
+            f'#EXTINF:-1 tvg-logo="{STATIC_LOGO}" group-title="{GROUP}", {name}\n{link}'
+        )
+
+    if not entries:
         print("Yeni kanal yok. Eski liste korunuyor.")
         sys.exit(1)
 
     if not m3u_grup_guncelle(entries):
         sys.exit(1)
 
-    print(f"✅ İŞLEM TAMAMLANDI: {len(entries)} kanal")
-    print(f"💾 Dosya: {OUTPUT_FILENAME}")
+    print(f"İşlem tamamlandı: {len(entries)} kanal")
+    print(f"Dosya: {OUTPUT_FILENAME}")
 
 
 if __name__ == "__main__":
