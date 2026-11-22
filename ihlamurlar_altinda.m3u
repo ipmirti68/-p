@@ -89,8 +89,10 @@ https://kanaldvod.duhnet.tv/S1/HLS_VOD/c47a_3572/1500/prog_index.m3u8?key=5465ef
 https://kanaldvod.duhnet.tv/S1/HLS_VOD/cb5e_3573/1500/prog_index.m3u8?key=5465efb9cf45af1064b71d9b&app=com.kanald&part=1-1&min=350&max=1250
 #EXTINF:-1 group-title="",45. BOLUM
 https://kanaldvod.duhnet.tv/S1/HLS_VOD/e8a4_3574/1500/prog_index.m3u8?key=5465efb9cf45af1064b71d9e&app=com.kanald&part=1-1&min=350&max=1250
+#EXTINF:-1 group-title="",46. BOLUM
+https://kanaldvod.duhnet.tv/S1/HLS_VOD/bbb6_3580/1500/prog_index.m3u8?key=5465efb9cf45af1064b71da1&app=com.kanald&part=1-1&min=350&max=1250
 #EXTINF:-1 group-title="",47. BOLUM
-https://kanaldvod.duhnet.tv/S1/HLS_VOD/648d_3582/1000/prog_index.m3u8?key=5465efb9cf45af1064b71da4&app=com.kanald&part=1-1&min=350&max=1250
+https://kanaldvod.duhnet.tv/S1/HLS_VOD/648d_3582/1500/prog_index.m3u8?key=5465efb9cf45af1064b71da4&app=com.kanald&part=1-1&min=350&max=1250
 #EXTINF:-1 group-title="",48. BOLUM
 https://kanaldvod.duhnet.tv/S1/HLS_VOD/5b18_3588/1500/prog_index.m3u8?key=5465efbacf45af1064b71da7&app=com.kanald&part=1-1&min=350&max=1250
 #EXTINF:-1 group-title="",49. BOLUM
