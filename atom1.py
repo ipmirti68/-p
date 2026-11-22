@@ -197,13 +197,12 @@ def main():
         sys.exit(1)
         
 def m3u_grup_guncelle(yeni_kayitlar):
-
     dosya = OUTPUT_FILENAME
     gecici = dosya + ".tmp"
     yedek = dosya + ".bak"
 
     if not yeni_kayitlar:
-        print("Yeni kanal yok. Liste korunuyor.")
+        print("Yeni kayıt yok. Liste korunuyor.")
         return False
 
     if not os.path.exists(dosya):
@@ -217,52 +216,64 @@ def m3u_grup_guncelle(yeni_kayitlar):
         with open(yedek, "w", encoding="utf-8") as f:
             f.write("\n".join(satirlar) + "\n")
 
-    sonuc = []
-    grup_bulundu = False
-    grup_eklendi = False
-    i = 0
+    # Grubun var mı kontrol et
+    grup_var = any(
+        s.startswith("#EXTINF:") and f'group-title="{GROUP}"' in s
+        for s in satirlar
+    )
+    if not grup_var:
+        print("Hedef grup bulunamadı. Dosya değiştirilmedi.")
+        return False
 
-    while i < len(satirlar):
+    # Mevcut URL'leri topla - sadece URL satırları
+    mevcut_url = set(
+        s.strip() for s in satirlar
+        if s.startswith("http")
+    )
 
-        satir = satirlar[i]
-
-        if satir.startswith("#EXTINF:") and f'group-title="{GROUP}"' in satir:
-
-            if not grup_bulundu:
-                grup_bulundu = True
-
-                # Yeni kanalları eski grubun bulunduğu yere ekle
-                for kayit in yeni_kayitlar:
-                    sonuc.extend(kayit.splitlines())
-
-                grup_eklendi = True
-
-            # Eski grubun kanalını atla
-            i += 1
-
-            if i < len(satirlar):
-                i += 1
-
+    eklenecek = []
+    for kayit in yeni_kayitlar:
+        kayit_satirlar = kayit.splitlines()
+        if len(kayit_satirlar) < 2:
             continue
+        url = kayit_satirlar[-1].strip()
+        if url not in mevcut_url:
+            eklenecek.extend(kayit_satirlar)
+            mevcut_url.add(url)
 
-        sonuc.append(satir)
+    if not eklenecek:
+        print("Yeni kanal yok. Mevcut grup korundu.")
+        return True
+
+    # Grubun SON kanalının URL satırını bul
+    son_ekleme_index = -1
+    i = 0
+    while i < len(satirlar):
+        if satirlar[i].startswith("#EXTINF:") and f'group-title="{GROUP}"' in satirlar[i]:
+            # Bu EXTINF'in URL'sini bul - sonraki satır http ile başlıyorsa o
+            if i + 1 < len(satirlar) and satirlar[i + 1].startswith("http"):
+                son_ekleme_index = i + 1
+                i += 2
+                continue
+            else:
+                # URL yoksa, EXTINF'in hemen arkası
+                son_ekleme_index = i
         i += 1
 
-    # Grup daha önce yoksa en sona ekle
-    if not grup_bulundu:
-        sonuc.extend(yeni_kayitlar)
+    if son_ekleme_index == -1:
+        print("Grup bulundu ama ekleme noktası bulunamadı.")
+        return False
+
+    sonuc = satirlar[:son_ekleme_index + 1] + eklenecek + satirlar[son_ekleme_index + 1:]
 
     with open(gecici, "w", encoding="utf-8") as f:
         f.write("\n".join(sonuc) + "\n")
 
     os.replace(gecici, dosya)
 
-    print("✅ beIN SPORTS grubu güncellendi.")
-    print("✅ Eski grup konumu korundu.")
-    print("✅ Diğer gruplar korundu.")
-
+    print("Mevcut kanallar korundu.")
+    print(f"{len(eklenecek)//2} yeni kanal aynı gruba eklendi.")
     return True
-
 
 def main():
     print("--- Atom Spor Taranıyor ---")
