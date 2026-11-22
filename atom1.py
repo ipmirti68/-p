@@ -192,10 +192,59 @@ def main():
         print("\n❌ HIC KANAL YOK - atom.m3u DEGISTIRILMEYOR (mevcut liste korunuyor)")
         sys.exit(1)
 
-    all_content = ["#EXTM3U"] + entries
-    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as f:
-        f.write("\n".join(all_content))
+    def m3u_grup_guncelle(yeni_kayitlar):
+    dosya = OUTPUT_FILENAME
+    gecici = dosya + ".tmp"
+    yedek = dosya + ".bak"
 
+    if not yeni_kayitlar:
+        print("HATA: Yeni kayıt yok. Mevcut liste korunuyor.")
+        return False
+
+    eski_satirlar = []
+
+    if os.path.exists(dosya):
+        with open(dosya, "r", encoding="utf-8") as f:
+            eski_satirlar = f.read().splitlines()
+
+    # Mevcut dosyayı yedekle
+    if eski_satirlar and not os.path.exists(yedek):
+        with open(yedek, "w", encoding="utf-8") as f:
+            f.write("\n".join(eski_satirlar) + "\n")
+
+    korunan = []
+    i = 0
+
+    while i < len(eski_satirlar):
+        satir = eski_satirlar[i]
+
+        if satir.startswith("#EXTINF:") and f'group-title="{GROUP}"' in satir:
+            i += 1
+            if i < len(eski_satirlar):
+                i += 1
+            continue
+
+        korunan.append(satir)
+        i += 1
+
+    # Başlık yoksa ekle
+    if not korunan or korunan[0].strip() != "#EXTM3U":
+        korunan.insert(0, "#EXTM3U")
+
+    # Yalnızca hedef grubu ekle
+    son_icerik = korunan + yeni_kayitlar
+
+    with open(gecici, "w", encoding="utf-8") as f:
+        f.write("\n".join(son_icerik) + "\n")
+
+    os.replace(gecici, dosya)
+
+    print("Güncelleme tamamlandı.")
+    print("Diğer gruplar korundu.")
+    print("Yedek:", yedek)
+
+    return True
+    
     print(f"\n✅ İŞLEM TAMAMLANDI!")
     print(f"💾 Dosya Adı: {OUTPUT_FILENAME}")
     print(f"📝 Toplam Kanal: {len(entries)}")
