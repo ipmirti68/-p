@@ -334,35 +334,20 @@ def m3u_olustur(sonuc):
 
     gecici = OUTPUT + ".tmp"
 
-    with open(
-        gecici,
-        "w",
-        encoding="utf-8"
-    ) as f:
+    with open(gecici, "w", encoding="utf-8") as f:
 
         f.write("#EXTM3U\n")
 
         for no, adres in sorted(sonuc.items()):
 
             if no == 1:
-
-                baslik = (
-                    "IHLAMURLAR ALTINDA ILK BOLUM"
-                )
+                baslik = "1. BOLUM"
 
             elif no == TOPLAM_BOLUM:
-
-                baslik = (
-                    f"IHLAMURLAR ALTINDA "
-                    f"{no}. BOLUM - FINAL"
-                )
+                baslik = f"{no}. BOLUM - FINAL"
 
             else:
-
-                baslik = (
-                    f"IHLAMURLAR ALTINDA "
-                    f"{no}. BOLUM"
-                )
+                baslik = f"{no}. BOLUM"
 
             f.write(
                 f'#EXTINF:-1 group-title="{GROUP}",{baslik}\n'
