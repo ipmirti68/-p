@@ -15,7 +15,7 @@ from playwright.async_api import async_playwright
 M3U_FILE = "showdizi.m3u"
 BASE = "https://www.showtv.com.tr"
 
-TARGET_GROUP = "🟪◆ SHOW DİZİ 📺⭕"
+TARGET_GROUP = "🟪◆ DİZİ - SHOW  📺⭕"
 
 INFO_URL = "https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4"
 INFO_LOGO = "https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png"
