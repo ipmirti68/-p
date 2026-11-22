@@ -191,11 +191,10 @@ def main():
     if not entries:
         print("\n❌ HIC KANAL YOK - atom.m3u DEGISTIRILMEYOR (mevcut liste korunuyor)")
         sys.exit(1)
-
     def m3u_grup_guncelle(yeni_kayitlar):
-    dosya = OUTPUT_FILENAME
-    gecici = dosya + ".tmp"
-    yedek = dosya + ".bak"
+        dosya = OUTPUT_FILENAME
+        gecici = dosya + ".tmp"
+        yedek = dosya + ".bak"
 
     if not yeni_kayitlar:
         print("HATA: Yeni kayıt yok. Mevcut liste korunuyor.")
