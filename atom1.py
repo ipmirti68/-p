@@ -26,19 +26,16 @@ FALLBACK_API = "https://teletv15.top/load/yayinlink.php"
 
 # Kanal adlari sitesiden gelir; bilinen id'ler icin daha duzgun gosterim
 PRETTY_NAMES = {
-    "bein-sports-1": "beIN Sports 1",
-    "bein-sports-2": "beIN Sports 2",
-    "bein-sports-3": "beIN Sports 3",
-    "bein-sports-4": "beIN Sports 4",
-    "bein-sports-5": "beIN Sports 5",
-    "bein-sports-max-1": "beIN Sports Max 1",
-    "bein-sports-max-2": "beIN Sports Max 2",
-    "s-sport": "S Sport 1",
-    "s-sport-2": "S Sport 2",
-    "trt-spor": "TRT Spor",
-    "trt-1": "TRT 1",
-    "a-spor": "A Spor",
+    "bein-sports-1": "beIN SPORTS 1",
+    "bein-sports-2": "beIN SPORTS 2",
+    "bein-sports-3": "beIN SPORTS 3",
+    "bein-sports-4": "beIN SPORTS 4",
+    "bein-sports-5": "beIN SPORTS 5",
+    "bein-sports-max-1": "beIN SPORTS Max 1",
+    "bein-sports-max-2": "beIN SPORTS Max 2",
 }
+
+FALLBACK_IDS = list(PRETTY_NAMES.keys())
 
 # channels.php okunamazsa son bilinen kanal id'leri
 FALLBACK_IDS = list(PRETTY_NAMES.keys())
@@ -95,21 +92,55 @@ def discover_api(base_domain):
 
 
 def discover_channels(api_url):
-    """channels.php icindeki id + kanal adlarini okur (site id degistirebilir)."""
+
+    print("\nSADECE BEIN SPORTS KANALLARI ARANIYOR")
+
     m = re.match(r'(https?://[^/]+)', api_url)
-    origin = m.group(1) if m else "https://teletv15.top"
+    origin = m.group(1) if m else ""
+
+    channels = []
+    seen = set()
+
     try:
-        r = requests.get(f"{origin}/load/channels.php", headers=HEADERS, timeout=10)
-        ids = re.findall(r'href=["\']matches\?id=([^"\']+)', r.text, re.I)
-        names = re.findall(r'<div class="home">([^<]+)</div>', r.text, re.I)
-        channels = []
-        for i, cid in enumerate(ids):
-            if cid not in [c for c, _ in channels]:
-                site_name = names[i].strip() if i < len(names) else cid
-                channels.append((cid, PRETTY_NAMES.get(cid, site_name)))
-        if channels:
-            print(f"✅ {len(channels)} kanal bulundu (channels.php)")
-            return channels
+        r = requests.get(
+            f"{origin}/load/channels.php",
+            headers=HEADERS,
+            timeout=10
+        )
+        r.raise_for_status()
+
+        ids = re.findall(
+            r'href=["\']matches\?id=([^"\']+)',
+            r.text,
+            re.I
+        )
+
+        for cid in ids:
+            cid = cid.strip()
+
+            if cid not in PRETTY_NAMES:
+                continue
+
+            if cid in seen:
+                continue
+
+            seen.add(cid)
+            channels.append((cid, PRETTY_NAMES[cid]))
+
+    except Exception as e:
+        print("KANAL LISTESI OKUNAMADI:", e)
+
+    if not channels:
+        print("YEDEK BEIN SPORTS LISTESI KULLANILIYOR")
+
+        channels = [
+            (cid, PRETTY_NAMES[cid])
+            for cid in FALLBACK_IDS
+        ]
+
+    print("BEIN SPORTS KANAL SAYISI:", len(channels))
+
+    return channels
         print("⚠️  channels.php kanal dondurmedi")
     except Exception as e:
         print(f"⚠️  channels.php okunamadi: {e}")
