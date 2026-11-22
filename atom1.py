@@ -248,7 +248,7 @@ def main():
 
     return True
     
-        if not entries:
+   if not entries:
         print("Yeni kanal yok. Eski liste korunuyor.")
         sys.exit(1)
 
