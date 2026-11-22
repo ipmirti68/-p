@@ -188,15 +188,20 @@ def main():
 
     # Guvenlik: hic kanal yoksa dosyayi bosaltma! Mevcut liste korunur,
     # workflow hata verir ve boylece eski liste silinmez.
-    if not entries:
-        print("\n❌ HIC KANAL YOK - atom.m3u DEGISTIRILMEYOR (mevcut liste korunuyor)")
+        if not entries:
+        print("❌ Yeni kanal yok. Eski mirti68.m3u korunuyor.")
         sys.exit(1)
+
+    if not m3u_grup_guncelle(entries):
+        print("❌ Grup güncellenemedi.")
+        sys.exit(1)
+        
     def m3u_grup_guncelle(yeni_kayitlar):
         dosya = OUTPUT_FILENAME
         gecici = dosya + ".tmp"
         yedek = dosya + ".bak"
 
-    if not yeni_kayitlar:
+    if not entries:
         print("HATA: Yeni kayıt yok. Mevcut liste korunuyor.")
         return False
 
