@@ -15,7 +15,7 @@ HEADERS = {
 
 OUTPUT_FILENAME = "atom.m3u"
 STATIC_LOGO = "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
-GROUP = ""
+GROUP = "🟩◆  beIN SPORTS 🖥"
 
 # Ana sayfa yonlendirme zinciri (alan adi her ay degisebiliyor)
 START_URL = "https://url24.link/AtomSporTV"
@@ -26,19 +26,14 @@ FALLBACK_API = "https://teletv15.top/load/yayinlink.php"
 
 # Kanal adlari sitesiden gelir; bilinen id'ler icin daha duzgun gosterim
 PRETTY_NAMES = {
-    "bein-sports-1": "beIN Sports 1",
-    "bein-sports-2": "beIN Sports 2",
-    "bein-sports-3": "beIN Sports 3",
-    "bein-sports-4": "beIN Sports 4",
-    "bein-sports-5": "beIN Sports 5",
-    "bein-sports-max-1": "beIN Sports Max 1",
-    "bein-sports-max-2": "beIN Sports Max 2",
-    "s-sport": "S Sport 1",
-    "s-sport-2": "S Sport 2",
-    "trt-spor": "TRT Spor",
-    "trt-1": "TRT 1",
-    "a-spor": "A Spor",
-}
+    "bein-sports-1": "beIN SPORTS 1 - Atom ⭕ ",
+    "bein-sports-2": "beIN SPORTS 2 - Atom ⭕",
+    "bein-sports-3": "beIN SPORTS 3- Atom ⭕",
+    "bein-sports-4": "beIN SPORTS 4- Atom ⭕",
+    "bein-sports-5": "beIN SPORTS 5- Atom ⭕",
+    "bein-sports-max-1": "beIN SPORTS Max 1- Atom ⭕",
+    "bein-sports-max-2": "beIN SPORTS Max 2- Atom ⭕",
+
 
 # channels.php okunamazsa son bilinen kanal id'leri
 FALLBACK_IDS = list(PRETTY_NAMES.keys())
