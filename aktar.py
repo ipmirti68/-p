@@ -25,6 +25,16 @@ AKTARIMLAR = [
         "grup_onek": False,
     },
 
+    {
+        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR | DISNEY+",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ DİZİ - DİSNEY ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+        "grup_onek": False,
+    },
+
      {
         "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/cbb795920a991c5d694b5ba9740336e30d29604b/tv247tr.m3u",
         "kaynak_grup": "Belgesel",
