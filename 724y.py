@@ -17,7 +17,7 @@ SOURCE_URL = (
 
 OUTPUT_FILE = Path("mirti68.m3u")
 
-GROUP = "🟪◆ 7/24 DİZİ ⭕▶️"
+GROUP = "🟪◆ DİZİ - 7/24  ⭕▶️"
 
 KANALLAR = [
     "Kemal-sunal-1",
