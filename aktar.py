@@ -26,10 +26,10 @@ AKTARIMLAR = [
     },
 
      {
-        "kaynak_url": "",
-        "kaynak_grup": "",
+        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/cbb795920a991c5d694b5ba9740336e30d29604b/tv247tr.m3u",
+        "kaynak_grup": "Belgesel",
         "aranacak": "",
-        "hedef_grup": "🟪◆  DİZİLER ⭕",
+        "hedef_grup": "🟫◆  BELGESEL 🏔️",
         "hedef_logo": "",
         "ek_kod": "⭕",
         "grup_onek": True,
