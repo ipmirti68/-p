@@ -20,7 +20,7 @@ WORKER = "https://mak.sadecenjoy.workers.dev"
 
 M3U = "kanalddizi.m3u"
 
-GROUP = "🟪◆  KANAL D DİZİ 📺⭕"
+GROUP = "🟪◆  DİZİ - KANAL D  📺⭕"
 
 LIMIT = 1
 
