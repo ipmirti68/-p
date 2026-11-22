@@ -23,7 +23,7 @@ BOLUM_URL = DIZI_URL + "/bolumler"
 
 OUTPUT = "ihlamurlar_altinda.m3u"
 
-GROUP = "🟪◆ IHLAMURLAR ALTINDA ⭕"
+GROUP = ""
 
 TOPLAM_BOLUM = 80
 ES_ZAMANLI = 3
