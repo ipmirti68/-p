@@ -16,13 +16,13 @@ AKTARIMLAR = [
         "grup_onek": False, "sinema_modu": True,
     },
     {
-        "kaynak_url": "http://kobra47.xyz:8080/get.php?username=welBox34jTwo&password=MLNt1MiZQe&type=m3u_plus&output=ts",
-        "kaynak_grup": "(TR-S) Amazon Prime Diziler",
+        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR | AMAZON PRIME",
         "aranacak": "",
         "hedef_grup": "🟪◆ DİZİ - AMAZON PRİME ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
-        "grup_onek": True,
+        "grup_onek": False,
     },
 
      {
