@@ -4,7 +4,7 @@ HEDEF_DOSYA = "mirti68.m3u"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
 TIMEOUT = 30
 
-AKTARIMLAR = [
+AKTARIMLAR = [ 
     {
         "kaynak_url": "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u",
         "kaynak_gruplar": ["IMDb Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"],
