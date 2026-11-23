@@ -1,118 +1,72 @@
 
-import json
-import os
-from urllib.parse import urlparse
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+import re
 
-# ==========================================
-# HANIM VIKI KORE DIZILERI
-# MIRTITV M3U ENTEGRASYONU
-# ==========================================
+BASE = "https://www.viki.com"
+CATEGORY = BASE + "/categories/country/korea/genre/all?type=series"
 
-M3U_DOSYA = "mirti.m3u"
-JSON_DOSYA = "viki_kore_katalog.json"
+OUTPUT = "hanim_viki_kore.m3u"
+GROUP = "🇰🇷 HANIM VIKI DİZİLERİ ⭕"
 
-GRUP = "🇰🇷 HANIM VIKI DİZİLERİ ⭕"
+HEADERS = {
+    "User-Agent": "Mozilla/5.0"
+}
 
+def main():
+    print("[BASLA] Viki Kore dizileri kontrol ediliyor...")
 
-def katalog_sablonu():
-    if not os.path.exists(JSON_DOSYA):
-        sablon = {
-            "series": [
-                {
-                    "name": "ÖRNEK KORE DİZİSİ",
-                    "poster": "https://example.com/poster.jpg",
-                    "episodes": [
-                        {
-                            "title": "1. BÖLÜM",
-                            "stream_url": "",
-                            "authorized": False
-                        }
-                    ]
-                }
-            ]
-        }
-        with open(JSON_DOSYA, "w", encoding="utf-8") as f:
-            json.dump(sablon, f, ensure_ascii=False, indent=4)
-        print("[BILGI] Katalog şablonu oluşturuldu.")
-        return None
-    return True
+    r = requests.get(CATEGORY, headers=HEADERS, timeout=30)
+    r.raise_for_status()
 
+    soup = BeautifulSoup(r.text, "html.parser")
+    found = {}
 
-def gecerli_yayin(url):
-    try:
-        p = urlparse(url)
-        uzanti = p.path.lower()
-        return (
-            p.scheme in ("http", "https")
-            and (
-                uzanti.endswith(".m3u8")
-                or uzanti.endswith(".mp4")
-                or uzanti.endswith(".mpd")
-            )
-        )
-    except Exception:
-        return False
+    for a in soup.select("a[href]"):
+        href = a.get("href", "")
+        name = a.get_text(" ", strip=True)
 
-
-def liste_oku():
-    if not os.path.exists(M3U_DOSYA):
-        with open(M3U_DOSYA, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
-    with open(M3U_DOSYA, encoding="utf-8-sig") as f:
-        return f.read()
-
-
-def m3u_guncelle():
-    if not katalog_sablonu():
-        return
-
-    with open(JSON_DOSYA, encoding="utf-8") as f:
-        katalog = json.load(f)
-
-    mevcut = liste_oku()
-    satirlar = []
-
-    for dizi in katalog.get("series", []):
-        ad = dizi.get("name", "").strip()
-        afis = dizi.get("poster", "")
-
-        if not ad:
+        if not name or not re.match(r"^/tv/", href):
             continue
 
-        for bolum in dizi.get("episodes", []):
-            baslik = bolum.get("title", "").strip()
-            url = bolum.get("stream_url", "").strip()
+        url = urljoin(BASE, href)
 
-            if not bolum.get("authorized", False):
-                continue
+        if url in found:
+            continue
 
-            if not baslik or not gecerli_yayin(url):
-                continue
+        image = a.select_one("img")
+        poster = ""
 
-            if url in mevcut:
-                continue
+        if image:
+            poster = (
+                image.get("src")
+                or image.get("data-src")
+                or ""
+            )
 
-            tam_ad = f"{ad} - {baslik}"
+        found[url] = {
+            "name": name,
+            "poster": poster
+        }
 
-            satirlar.extend([
-                f'#EXTINF:-1 tvg-logo="{afis}" group-title="{GRUP}",{tam_ad}',
-                url
-            ])
+    lines = ["#EXTM3U"]
 
-    if not satirlar:
-        print("[BILGI] Eklenecek yeni ve doğrulanmış yayın yok.")
-        return
+    for url, item in found.items():
+        name = item["name"]
+        poster = item["poster"]
 
-    with open(M3U_DOSYA, "a", encoding="utf-8") as f:
-        f.write("\n")
-        f.write("\n".join(satirlar))
-        f.write("\n")
+        lines.append(
+            f'#EXTINF:-1 tvg-logo="{poster}" '
+            f'group-title="{GROUP}",{name} - 1. BÖLÜM'
+        )
+        lines.append(url)
 
-    print(f"[OK] {len(satirlar)//2} yeni bölüm eklendi.")
-    print(f"[OK] Dosya: {M3U_DOSYA}")
+    with open(OUTPUT, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
 
+    print("[SONUC] Bulunan dizi:", len(found))
+    print("[DOSYA]", OUTPUT)
 
 if __name__ == "__main__":
-    print("🇰🇷 HANIM VIKI KORE DIZILERI")
-    print("--------------------------------")
-    m3u_guncelle()
+    main()
