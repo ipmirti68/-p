@@ -80,6 +80,11 @@ jobs:
         run: python atom1.py || echo "atom1 failed"
      
   
+      - name: 7 - ATOM
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python alspor.py || echo "alspor failed"
+     
   
  
     
