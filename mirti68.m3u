@@ -210,8 +210,8 @@ http://mekantv56.win/live/akifalioglu33/33akifalioglu/aea0339c-be03-459b-9bec-85
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/6691a461-05f0-4d3a-b93a-1853ebf9ba2e.ts
 #EXTINF:-1 tvg-id="FX.tr" tvg-name="TR:FX UHD ⭕" tvg-logo="https://logo.cloudzone55.store/sinema/fx.png" group-title="🟨◆ ULUSALᴴᴰ⁺⭕",TR:FX UHD ⭕
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/bd437c74-ebd6-4d93-bbb7-16aab243f8e0.ts
-#EXTINF:0 tvg-id="TRT.1.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/trt-1-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
-https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
+https://css.d6e3eds5e065t5.help//hls/arda.m3u8
 #EXTINF:0 tvg-id="STAR.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/star-tv-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",Star TV ⭕
 https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8laoxi44qj2k&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
 #EXTINF:0 tvg-id="KANAL.D.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/kanal-d-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",Kanal D ⭕
@@ -502,22 +502,27 @@ https://andro.evrenesoglu235.click/checklist/androstreamlivebiraz1.m3u8
 #EXTVLCOPT:http-referrer=https://mahsunsports19.xyz/
 https://andro.evrenesoglu235.click/checklist/androstreamliveexn.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1ᴳᴴᴰ Mahsun ⭕
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 1 - Atom ⭕
-https://css.d6e3ess6e065r5.help//beyin1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 2 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b2/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 3 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b3/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 4 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b4/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 5 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b5/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS Max 1 - Atom ⭕
-https://css.d6e3ess6e065r5.help//bm1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS Max 2 - Atom ⭕
-https://css.d6e3ess6e065r5.help//bm2/tracks-v1a1/mono.m3u8
-#EXTVLCOPT:http-referrer=https://mahsunsports19.xyz/
-https://andro.evrenesoglu235.click/checklist/androstreamliveexn1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 1 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 2 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs2.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 3 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs3.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 4 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs4.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 5 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs5.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports Max 1 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebsm1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports Max 2 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebsm2.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS ⭕",bilgi
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",S SPORTS 1 Mahsun ⭕
@@ -26376,16 +26381,24 @@ http://mekantv56.win/series/akifalioglu33/33akifalioglu/51c03aa9-1dea-4399-a669-
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/362a971f-e803-49c8-a1d9-8978c1ad133f.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Penny Dreadful S3 E9 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/zqeHQ2lvikQkOCiaPFKQD1KQ6bB.jpg" group-title="🟪◆ DİZİ - AMAZON PRİME ⭕",Penny Dreadful S3 E9 ⭕
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/6164f2c9-9b9d-483e-b30a-92b92f17d257.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Boston Blue S2 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/gkGZyqSivZUNiTBXzze1EV6l8Q3.jpg" group-title="🟪◆ DİZİ - AMAZON PRİME ⭕",Boston Blue S2 E3 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/3cdeab17-0563-4237-a8e9-2adf8a73697f.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Boston Blue S2 E4 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/S41E1CSYAozF5AW2cjFjEstGIK.jpg" group-title="🟪◆ DİZİ - AMAZON PRİME ⭕",Boston Blue S2 E4 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/776aaea4-fe31-4ab8-b4b9-2d25b685ad8d.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Boston Blue S2 E5 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/q4ELV5uALyKeYSYPVAdY87DNxYY.jpg" group-title="🟪◆ DİZİ - AMAZON PRİME ⭕",Boston Blue S2 E5 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/67f4d2a5-d1e1-47a8-b040-84fe14043304.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Marshals S2 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w400/zV1MRb6eqx6Uj3NSXquZFfz75pa.jpg" group-title="🟪◆ DİZİ - AMAZON PRİME ⭕",Marshals S2 E7 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/8a602534-4456-40ee-a230-6687e039478c.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Bursa Bülbülü - 2023 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/iG3ca3sAmhVMOsHTJJ5QMqivhkq.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Bursa Bülbülü - 2023 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/558b979f-855d-473c-ac74-2056580e27f6.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Küçük Deniz Kızı - 2023 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3BksgwSqcUE3mw11LRhIFUiw0ga.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Küçük Deniz Kızı - 2023 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/4f77b1e7-2a59-44a1-b88d-2b3e431cd959.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/8923ccb0-e5d5-4a46-80f7-f2a3a10bec97.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Küçük Deniz Kızı - 2023 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3BksgwSqcUE3mw11LRhIFUiw0ga.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Küçük Deniz Kızı - 2023 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/8923ccb0-e5d5-4a46-80f7-f2a3a10bec97.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Disenchanted - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/4x3pt6hoLblBeHebUa4OyiVXFiM.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Disenchanted - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/47c2a199-20dc-4ade-b1d6-494a8e25830b.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/f87d374b-2b16-4fb0-a481-f77e3def0fe8.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Disenchanted - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/4x3pt6hoLblBeHebUa4OyiVXFiM.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Disenchanted - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/6d5de599-45f2-4b41-8437-ffd0363a7cdf.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/f87d374b-2b16-4fb0-a481-f77e3def0fe8.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Disenchanted - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/4x3pt6hoLblBeHebUa4OyiVXFiM.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Disenchanted - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/f87d374b-2b16-4fb0-a481-f77e3def0fe8.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Işıkyılı - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/5AxSdzNaMeeqblpn0KEqUu1c96S.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Işıkyılı - 2022 ⭕
@@ -26393,35 +26406,35 @@ http://mekantv56.win/movie/akifalioglu33/33akifalioglu/b5bd7160-67f4-44bd-a5c9-0
 #EXTINF:-1 tvg-id="" tvg-name="Benden Ne Olur? - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/msyHMyQ3mJuhEqq84SUAIcUU9nX.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Benden Ne Olur? - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/85bbff92-ab9e-4ec0-9d00-6872ce7cfadf.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Chip ve Dale: Kurtarma Timi - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/o89s7MACELRRpGGYGM5WLMtYXZB.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Chip ve Dale: Kurtarma Timi - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/f0bc28b3-6562-4650-84cf-bc0d4e2c3d42.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/fb680910-a215-49d2-a527-4edaa69e9d32.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Chip ve Dale: Kurtarma Timi - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/o89s7MACELRRpGGYGM5WLMtYXZB.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Chip ve Dale: Kurtarma Timi - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/fb680910-a215-49d2-a527-4edaa69e9d32.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Doktor Strange Çoklu Evren Çılgınlığında - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tQCKPTbfawjCRPSzBVlm6VUsaiw.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Doktor Strange Çoklu Evren Çılgınlığında - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/11810689-1942-4361-8350-12332d2712f1.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Galaksinin Koruyucuları Tatil Özel - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/8dqXyslZ2hv49Oiob9UjlGSHSTR.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Galaksinin Koruyucuları Tatil Özel - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/8246a51b-fbd0-4f96-a0a6-fd2996705253.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/c7f4a7a9-fd87-4a7a-9b88-f340e153866e.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Galaksinin Koruyucuları Tatil Özel - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/8dqXyslZ2hv49Oiob9UjlGSHSTR.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Galaksinin Koruyucuları Tatil Özel - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/90bede0d-c275-405c-956c-2e865541d22e.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/c7f4a7a9-fd87-4a7a-9b88-f340e153866e.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Galaksinin Koruyucuları Tatil Özel - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/8dqXyslZ2hv49Oiob9UjlGSHSTR.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Galaksinin Koruyucuları Tatil Özel - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/c7f4a7a9-fd87-4a7a-9b88-f340e153866e.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Kral Şakir: Geri Dönüşüm - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/eTgFwoqoBv5uVdnWMhiR7TuS3MJ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Kral Şakir: Geri Dönüşüm - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/04536bc6-8be0-4b63-b90e-447ba7c37b14.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/54c2f398-27cd-4fa5-81bf-9eb7a7efb166.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Kral Şakir: Geri Dönüşüm - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/eTgFwoqoBv5uVdnWMhiR7TuS3MJ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Kral Şakir: Geri Dönüşüm - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/54c2f398-27cd-4fa5-81bf-9eb7a7efb166.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Nate'in Hayali - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/aMFBBVuugWsCLg2MjE78ftFXNps.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Nate'in Hayali - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/42b65e76-02d3-499d-b575-e173d7be2284.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Pinokyo - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tN8HeqzvdoEZtmQaUeLzOdOOyVe.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Pinokyo - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/8212a019-736b-46fe-b52d-c8cdab3979fd.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/c71299f7-358f-41cb-a3ec-bab1d7aea0ec.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Pinokyo - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tN8HeqzvdoEZtmQaUeLzOdOOyVe.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Pinokyo - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/c71299f7-358f-41cb-a3ec-bab1d7aea0ec.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Prey - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3zind2VqZjPVOZeHPYCsjvxbhwg.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Prey - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/2aab38da-bdae-476c-aab6-5c6412b205a3.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/d46d117f-1125-482d-8924-eb57b635781a.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Prey - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3zind2VqZjPVOZeHPYCsjvxbhwg.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Prey - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/7af156c6-4ea4-4c7f-bbb8-a0177dc03cbf.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/d46d117f-1125-482d-8924-eb57b635781a.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Prey - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3zind2VqZjPVOZeHPYCsjvxbhwg.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Prey - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/d46d117f-1125-482d-8924-eb57b635781a.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Rise - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p6FMYJSc9vhyqzMaYOC8yPS7aXQ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Rise - 2022 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/8148b667-c14d-4818-9b2c-fbf915b72cfc.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/f111f779-974d-4024-b15c-9fffa62e19d8.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Rise - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/p6FMYJSc9vhyqzMaYOC8yPS7aXQ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Rise - 2022 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/f111f779-974d-4024-b15c-9fffa62e19d8.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Thor: Aşk ve Gök Gürültüsü - 2022 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/pJrupbmMan1SStJ18IVXiHMactU.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Thor: Aşk ve Gök Gürültüsü - 2022 ⭕
@@ -26437,9 +26450,9 @@ http://mekantv56.win/movie/akifalioglu33/33akifalioglu/ea1b8c6b-1f49-4094-9792-0
 #EXTINF:-1 tvg-id="" tvg-name="Black Widow - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7JPpIjhD2V0sKyFvhB9khUMa30d.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Black Widow - 2021 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/fe5ed0fe-297e-4440-9055-571d1252f845.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Saftirik Greg'in Günlüğü - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/obg6lWuNaZkoSlwrVG4VVk4SmT.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Saftirik Greg'in Günlüğü - 2021 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/14ea6430-fb17-4eca-849f-911f7fd736fb.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/8992301c-dc88-4f00-94c7-ae77b6cc89f7.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Saftirik Greg'in Günlüğü - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/obg6lWuNaZkoSlwrVG4VVk4SmT.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Saftirik Greg'in Günlüğü - 2021 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/5b71a2b8-c542-4bc0-8911-82d7ef1e4d82.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/8992301c-dc88-4f00-94c7-ae77b6cc89f7.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Saftirik Greg'in Günlüğü - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/obg6lWuNaZkoSlwrVG4VVk4SmT.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Saftirik Greg'in Günlüğü - 2021 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/8992301c-dc88-4f00-94c7-ae77b6cc89f7.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Eternals - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/eyorgAaVN8Yo9aEFUKpnolPN0LC.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Eternals - 2021 ⭕
@@ -26447,13 +26460,13 @@ http://mekantv56.win/movie/akifalioglu33/33akifalioglu/53c859e9-7b38-42e4-92a0-1
 #EXTINF:-1 tvg-id="" tvg-name="Flora ile Ulysses - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/syobJCxZcIJl0OpjNroZSQKa1kW.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Flora ile Ulysses - 2021 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/1b11ea4b-d0c2-448a-9c59-8d4e49012088.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Max Evde Tek Başına - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fP3VvqUjEBjawxZHL4sYCq2ZdJD.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Max Evde Tek Başına - 2021 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/6a478ed8-6117-4ba9-9d81-c36ef3e0aae8.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/fd04c51d-d706-4afd-b2db-eb38b94a33f7.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Max Evde Tek Başına - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fP3VvqUjEBjawxZHL4sYCq2ZdJD.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Max Evde Tek Başına - 2021 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/fd04c51d-d706-4afd-b2db-eb38b94a33f7.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Jungle Cruise - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/vbuyLRCo9QF9ZGeKfcxLPuKPOTW.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Jungle Cruise - 2021 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/d765466a-99b4-4417-8ee7-5436149bc733.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Kabus Sokağı - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/gthdiTaDPbkutLGYsty7G3vxIYK.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Kabus Sokağı - 2021 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/3c871027-399f-406d-9c53-6f39f311cfd2.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/60cd933c-507e-49d3-ad15-1782d9fa438e.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Kabus Sokağı - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/gthdiTaDPbkutLGYsty7G3vxIYK.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Kabus Sokağı - 2021 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/60cd933c-507e-49d3-ad15-1782d9fa438e.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Lego Star Wars Korkunç Hikayeler - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/fYiaBZDjyXjvlY6EDZMAxIhBO1I.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Lego Star Wars Korkunç Hikayeler - 2021 ⭕
@@ -26467,9 +26480,9 @@ http://mekantv56.win/movie/akifalioglu33/33akifalioglu/b7435165-b58e-4dc7-81eb-2
 #EXTINF:-1 tvg-id="" tvg-name="Son Düello - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/nCLBqHGtbPG6OC5NID8gGNVcZws.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Son Düello - 2021 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/88103b70-9e3a-4871-a77b-f3a1d569ed2c.mp4
 #EXTINF:-1 tvg-id="" tvg-name="The King's Man: Başlangıç - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/RdRp0p8BCbW99Y44BQwDwzOun1.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",The King's Man: Başlangıç - 2021 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/1c0426b8-a6e8-426f-b7e2-13d171f6fe10.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/631c5f61-29f6-40bf-ae7c-3ce44c109432.mp4
 #EXTINF:-1 tvg-id="" tvg-name="The King's Man: Başlangıç - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/RdRp0p8BCbW99Y44BQwDwzOun1.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",The King's Man: Başlangıç - 2021 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/32017068-b7ee-4ffe-9824-578c3098e0a9.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/631c5f61-29f6-40bf-ae7c-3ce44c109432.mp4
 #EXTINF:-1 tvg-id="" tvg-name="The King's Man: Başlangıç - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/RdRp0p8BCbW99Y44BQwDwzOun1.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",The King's Man: Başlangıç - 2021 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/631c5f61-29f6-40bf-ae7c-3ce44c109432.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Bir Dağcının Ardından - 2021 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/A2FQq9rXzIp9uMLnhB15686Y6uJ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Bir Dağcının Ardından - 2021 ⭕
@@ -26485,7 +26498,7 @@ http://mekantv56.win/movie/akifalioglu33/33akifalioglu/7fa433de-31bd-484b-a6c3-7
 #EXTINF:-1 tvg-id="" tvg-name="Mulan - 2020 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/tJoqoMcxoydG3kiVvZnzvQo8M7Q.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Mulan - 2020 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/33a9a966-b6a3-417d-bd11-2a92f6bad9e5.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Fineas ve Förb: Candace Evrene Karşı - 2020 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/n6hptKS7Y0ZjkYwbqKOK3jz9XAC.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Fineas ve Förb: Candace Evrene Karşı - 2020 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/4629983b-5286-460d-a6e6-e49fd6606d42.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/50c8ac63-a53b-47c1-a55d-a2e06c897364.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Fineas ve Förb: Candace Evrene Karşı - 2020 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/n6hptKS7Y0ZjkYwbqKOK3jz9XAC.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Fineas ve Förb: Candace Evrene Karşı - 2020 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/50c8ac63-a53b-47c1-a55d-a2e06c897364.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Köpekbalığı Balinaya Karşı - 2020 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/22gc1w71mTs91LPnniywuDS9vfu.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Köpekbalığı Balinaya Karşı - 2020 ⭕
@@ -26509,13 +26522,13 @@ http://mekantv56.win/movie/akifalioglu33/33akifalioglu/6435f694-291b-4c81-8c1f-f
 #EXTINF:-1 tvg-id="" tvg-name="Ay'ın İzinde Apollo - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/pKEmDdeFVX3oKWDM9T1s78W7HYZ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Ay'ın İzinde Apollo - 2019 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/995550cd-3b0e-422b-a148-3778d6cd690a.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Asfaltın Kralları - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7yXOh2PqutxhruHzVuoR35D1r4m.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Asfaltın Kralları - 2019 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/85fc1bf6-b25c-4686-831a-26da64c89910.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/95c87bba-6300-4f28-856e-339c2677b225.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Asfaltın Kralları - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7yXOh2PqutxhruHzVuoR35D1r4m.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Asfaltın Kralları - 2019 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/95c87bba-6300-4f28-856e-339c2677b225.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Aslan Kral - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/504WVhBDkrerv2u58gaHtCjKxc9.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Aslan Kral - 2019 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/4b0833f5-2f60-4273-9c56-809be91f19c9.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/813dd1d6-b45d-41fa-99e5-00350f09b34d.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Aslan Kral - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/504WVhBDkrerv2u58gaHtCjKxc9.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Aslan Kral - 2019 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/5c967c1e-2a68-4866-8815-c2342fbea148.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/813dd1d6-b45d-41fa-99e5-00350f09b34d.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Aslan Kral - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/504WVhBDkrerv2u58gaHtCjKxc9.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Aslan Kral - 2019 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/813dd1d6-b45d-41fa-99e5-00350f09b34d.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Avengers: Endgame - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/or06FN3Dka5tukK1e9sl16pB3iy.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Avengers: Endgame - 2019 ⭕
@@ -26523,9 +26536,9 @@ http://mekantv56.win/movie/akifalioglu33/33akifalioglu/9ed56929-5d9f-4bc0-b82a-5
 #EXTINF:-1 tvg-id="" tvg-name="Ekinoksun Peşinde - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/vcUg9U10RNe4q6BYM49Tf0bVRVn.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Ekinoksun Peşinde - 2019 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/b6be1d65-0f38-4ea4-8e5f-8094b45c0cc7.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Karlar Ülkesi II - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9tg47I7WTte0GfFDCDlaQZXfaSj.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Karlar Ülkesi II - 2019 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/32ae8317-e022-46a5-a9b2-6cbda591607b.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/e43dfad6-b1ab-459a-9146-5d38baed466c.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Karlar Ülkesi II - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9tg47I7WTte0GfFDCDlaQZXfaSj.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Karlar Ülkesi II - 2019 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/c2c72e82-d880-41e6-9431-5b1df73baca8.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/e43dfad6-b1ab-459a-9146-5d38baed466c.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Karlar Ülkesi II - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9tg47I7WTte0GfFDCDlaQZXfaSj.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Karlar Ülkesi II - 2019 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/e43dfad6-b1ab-459a-9146-5d38baed466c.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Tavşan Jojo - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3pDjOqD4yzbJ131IxBnVok0ArZR.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Tavşan Jojo - 2019 ⭕
@@ -26533,7 +26546,7 @@ http://mekantv56.win/movie/akifalioglu33/33akifalioglu/41ca265f-7e64-45cb-a5fe-2
 #EXTINF:-1 tvg-id="" tvg-name="Togo - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/921q4gPNN4J6UxvKaw6SCNBe3F8.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Togo - 2019 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/8c18ba04-5257-4ec1-9453-fca20258fd63.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Lady ile Sokak Köpeği - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/8wBEye516IKul9sW7JKGcFXVGfV.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Lady ile Sokak Köpeği - 2019 ⭕
-http://mekantv56.win/movie/akifalioglu33/33akifalioglu/419bd01b-9795-456b-b773-c9c067ba64cd.mp4
+http://mekantv56.win/movie/akifalioglu33/33akifalioglu/acc9f994-c33a-44da-9287-fba57bc1cd3b.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Lady ile Sokak Köpeği - 2019 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/8wBEye516IKul9sW7JKGcFXVGfV.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Lady ile Sokak Köpeği - 2019 ⭕
 http://mekantv56.win/movie/akifalioglu33/33akifalioglu/acc9f994-c33a-44da-9287-fba57bc1cd3b.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Avengers: Sonsuzluk Savaşı - 2018 ⭕" tvg-logo="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7FQTJyrvhUp9oYDhHgujWRlxUES.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Avengers: Sonsuzluk Savaşı - 2018 ⭕
@@ -30258,22 +30271,22 @@ http://mekantv56.win/series/akifalioglu33/33akifalioglu/d5082bad-021c-43ae-97ce-
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/a4d8ab7f-d8f3-4c86-adad-6dc6dd6bdfa1.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Reboot S1 E8 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/wHqioWMijHijbeUHfvDXnlWByEv.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Reboot S1 E8 ⭕
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/f1c562bd-046f-4280-bc8f-b6e923294452.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E1 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/kK05PLKG6P977t0sKVhd9GBf1Ms.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E1 ⭕
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/eee5a0cd-797d-45d3-b7e8-aca482131ee8.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E2 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/9IMBQ0PmolNRAz6DLswZGbee8Is.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E2 ⭕
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/f726dad8-1aac-42cd-be83-c953d45a89cb.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/ckptddV29CM8gdQhV8MEpHb2FXW.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E3 ⭕
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/28409ce6-33a1-4369-bce2-f318e7b00390.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E4 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/Kcwptn8VRis9NWhpboITRzYkiU.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E4 ⭕
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/91a7542e-b3eb-4c7c-bf4e-75d4a06c9f6e.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E5 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/sr3zDr2dGnypgFQQUEtCfIelEnh.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E5 ⭕
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/8b3d715f-1725-48d0-8459-54b749cdbd4b.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E6 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/ciLUyrAXSmZALMeKrWP7lOqru15.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E6 ⭕
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/25900400-5003-4071-990b-67b0678268bc.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/3bjrOfOv8FQ4FHA6aDNkHU8F4wG.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E7 ⭕
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/0c68d08e-c0d7-4e53-a47c-ef36fc76ee2a.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E8 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/84aAnx47SBCikTBQiDUwW9RgkJq.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E8 ⭕
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/5f4a85f3-f0bf-47e7-8a6b-be844d61ac3b.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E1 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/k9fdSUv9tm00IdKadxsAenSW0vm.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E1 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/906908ef-f1e9-42c5-83e8-8b52dad0ed37.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E2 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/dDZBZ7pQ4cEn1JVmMFCli2WS8sW.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E2 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/d87f2c14-f46d-42f8-8137-872d7bedafa8.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/yf4zBWJ6F50yctFXZdOZdgJ0JVT.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E3 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/c1dc4e24-4d50-42ef-abd8-2cf07d07dc8e.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E4 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/w7F4j22ouDMEZtRHGqqD4OULIjr.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E4 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/0fe01b8d-588d-428a-b0f0-175b80416099.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E5 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/balBm2cOlM4HQBFt4rKXnA0ThjS.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E5 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/d2583ea8-c357-4ac2-9897-69b95c552a76.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E6 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/edxEIQsxlkAYy5LQqtPEGNGwfRw.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E6 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/9d535a4f-3655-4c4d-ac6f-0243a3446e4a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/gqRBMvtTwNAgeRYVDGsphfYPaqM.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E7 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/d14b6d5d-f795-4357-88b2-98705ba282af.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Red Kit S1 E8 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/5T6D9nf5lLHXRrzw2jfWFPFrLTI.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Red Kit S1 E8 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/681138e4-f94b-46c7-ac09-05f19a1a7c8b.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Renegade Nell S1 E1 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/ugI6baOIpcA5nCDXHDLmZ2IQVg6.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Renegade Nell S1 E1 ⭕
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/1d2ba44d-6ca5-48de-802e-39de9fc20319.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Renegade Nell S1 E2 ⭕" tvg-logo="https://image.tmdb.org/t/p/w185/pgBBy9pQjTGDV6ZAliGilsgyoQv.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Renegade Nell S1 E2 ⭕
@@ -41018,6 +41031,264 @@ http://mekantv56.win/series/akifalioglu33/33akifalioglu/9a84025e-abc2-4243-ab26-
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/fad82d26-8076-4e46-a7b1-05c65e36bb29.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Waverly Büyücüleri S4 E28 ⭕" tvg-logo="https://image.tmdb.org/t/p/w400/spVI8Zns4Ep30zzxcoO7f7nwfck.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Waverly Büyücüleri S4 E28 ⭕
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/cdb2e1dc-2856-4846-a4b8-045c3c6bcf79.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E1 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/zPyNtKPl7S4IAGzohTjvOHGoti5.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E1 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/ec474a74-9962-42d1-82ce-c0609eadebbe.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E2 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/2fbkidtdVURH2v1IbyOMFJv14R5.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E2 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/cf2657df-69f0-4d61-8ace-5647e69ebc14.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/p37idHQIs5ztzGK7rpfPrQGRZuu.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E3 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/4b7cc86f-6c62-4141-988c-93511ee987e6.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E4 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/jn6Pcp90LG7DpALsLyrjoGrz9o7.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E4 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/151b2aed-b8d4-4de7-850d-564b25f4f3c3.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E5 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/uEZNSfCsUqO3nim8MArdk62KUsD.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E5 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6a8985b0-e1e8-4aa5-b623-8efa899e4d05.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E6 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/bX0QTl7cxFlFLrlqsF9Fjq1THzr.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E6 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/a45553f3-5a4a-4cee-adb7-edf4f90b060a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/eofxSigv2HcdnxRmSHEBGsJl2aO.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E7 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/f7d1f936-866c-437e-b080-80aa901a83cc.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E8 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/5CgAU1iyy7zwl84HmOvVyfL3Aht.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E8 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/48b9f26e-6551-4822-99e7-cebd2282ee59.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E9 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/v3RPMAnIdxi0TrJI9O8D0aOM42I.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E9 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6425bd8d-96d1-46ca-a434-679d0b6ce223.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E10 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/sefSYbpiW393Pfl7KF3iQ2UJLOf.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E10 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/ffd9e7e2-125d-45d6-92f8-22178860544d.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E11 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/zOZa7E2ZH7obgqYuav24EACqwE8.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E11 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/9dbb03ae-920d-4a32-9d99-ed233e2156f0.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S1 E12 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/8m7rgYl2m197LnnNi9Jz0desczy.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S1 E12 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/8f8d3b96-4d9d-4576-bc25-bc0e9d08ed1a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E1 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/mNQjSaz3IaWizrU0YNHiCEmnJQU.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E1 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/1a31e922-6b25-46c1-a971-a28dd62afcea.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E2 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/gS27RTXMXAwFvXD4dSGne9Pe9nD.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E2 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/45716546-8c6e-44bf-b064-e1067db76a20.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/59PDZdtM0Jpl8PJQLCEubQco8xV.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E3 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6d2cda6a-1a74-4186-bc4e-0d534caeaac3.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E4 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/8HVA2KkwU6C3JEzXpLhDitLLW2w.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E4 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/33bc428d-e31d-4219-9bd1-3204afc9a35b.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E5 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/yNVIdRQz6zYbPXgPalHsMuSkt1o.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E5 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/25dfd267-7cb7-4529-831c-9e1083f86d38.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E6 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/z5jnWdxcKgM83y5QwpMGAYpO7aY.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E6 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/8762d7cb-a654-4445-817b-49f6925d34f4.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/4OIsSti8CGPynj2KcxbaEiEc9tB.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E7 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/4d8f3fe9-478f-4828-96c4-937908df4f3b.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E8 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/kLMZDKMxrWbwysuK7QSYrJwqPaE.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E8 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/15f040ee-2280-4f0d-b56a-b6f42b91faec.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E9 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/cw8gzJAPCNRG381EVVAVQGT9rK.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E9 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/e65fb70b-4481-448a-825b-67f443ce3513.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E10 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/xfNp76oMVRPrS5eyN8NM7j5FyT3.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E10 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/39ede69c-e8a2-4c0d-b0ae-c0fa9fa04adc.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E11 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/493y8Wd1575gZCd2GR388cBNYgB.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E11 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/762a679f-1d8c-4d7d-bc00-b63f351224f6.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E12 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/s5c3IaAcN868gehK1BvodWU6grJ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E12 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/dc331d9e-1946-4bf0-a053-29d122fa9358.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E13 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/9VgzHK1x3ITg3NHZoozQUVmNgAr.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E13 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/57c60243-f63f-4fe2-a800-143cf9de6265.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E14 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/jCqZrES4ePu4kqmanbqqAGNWoQw.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E14 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/3565b8f3-2c05-434c-ab99-d693914d6c81.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E15 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/oG9u8zCafCH5w4IOqcdwvaLImYO.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E15 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/0c695eb0-7e0b-4173-a3dd-1670b4b608e0.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E16 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/yrzlSS3whVHdxj5UI3pLsrfoiVt.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E16 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/26d32479-c09d-4abc-a2fa-9bd0ae5caf57.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E17 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/1pnlKr9lNPOGrJhuIJj3T8iG9jZ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E17 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/a64d3f8b-afee-4d44-9551-94787986bc40.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E18 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/wrMbQMsBl4wbGdm4a2cjCZE7ndf.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E18 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/be2c5131-f5f0-4c9e-afb0-a7bba67e11f6.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E19 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/p1v3IAhrzsOJAvdf7T25ZcmrPOT.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E19 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/27a057e7-4cad-476e-9084-6a81e48a8dc6.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E20 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/8IftbK2tZb22LRDKFeOVbXkuWa9.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E20 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/9f3d28d8-b95c-4a60-b0c8-19963d7fdfa1.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E21 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/rTa54XapJvTvxrxa55WGDqWymbd.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E21 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/fe5dfdf1-db09-49a4-b504-3f216be90afd.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S2 E22 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/nxpLOKH2rg2gswf6dLxYgmJKq8t.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S2 E22 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/b0a2b35f-cb4c-46d9-8220-a7fa4396fde7.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S3 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/6ft5wffZjDr2RsgmCyzCfvIe8U9.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S3 E7 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/f8e833c6-2851-42da-8db1-f6a8da723009.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S3 E9 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/xa3ui8oNGpXTHS1gF4GrY56nNDz.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S3 E9 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/9b18d323-3492-418a-a239-5a0f435d9f67.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S3 E12 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/bcuAPRPEeLHpC6qDVw3m5GstcBY.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S3 E12 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/626165b9-57a5-4324-8969-5dfb7935883c.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S3 E16 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/8WlOoG14X4MVoIRwIWKBXSz9KVZ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S3 E16 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/e5e874f8-3e31-4ffe-99c6-3f3d719ace46.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S3 E17 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/6tfmIGfgpOrGHIYPO7tCChCeGJZ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S3 E17 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/c6306589-73a3-47d7-ba89-f42b07127605.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S3 E18 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/yp2zt8NPaT1Jj2NPxiUha7uWT8f.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S3 E18 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/e2188604-5772-4208-8b22-ed77f4565f2a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S3 E20 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/mz05DUG1lk5YOvqNAIWAYjnRmUb.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S3 E20 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/96e7bcfd-baef-4d2a-a24a-44aa6f3d0f2d.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E1 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/fQjH38AoYFuts4bLqCX1ep2Zl5f.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E1 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/2f1e5819-24ae-4dda-842d-43f63a09f075.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E2 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/3WxkbbZINKt6WCRm9QaEi8vDfwC.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E2 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/caba5c6f-4e8f-404d-b0e8-ec5b97b41060.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/bZuebbRzEVV7snffPsOLnWgDHlY.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E3 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/7a8ec5ec-2ed7-42fc-a8c3-754e35ada271.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E4 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/a75JZnKRZX5LTSs8bxzk2GJV6Sc.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E4 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6d0707f7-fb40-4e40-98fb-e6cca1895df2.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E5 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/cy282Kg6ecBDk9jTyjavkydPwJV.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E5 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/0413cc7b-feb8-4b57-8fd4-87191bcebb7f.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E6 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/ujO4SJu5V6YYtnBe4441H658TLL.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E6 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/f12b0d4d-fc3f-4d30-b987-2d34182ca415.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/jLaxNmVueJACgJx9t5r1x1U36i0.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E7 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6f2bca77-abe8-4d9e-92f7-98d3e5dbdc7c.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E8 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/aYLvBvOQSmKwl9FfspwG8Kn3VJZ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E8 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/3fa46a77-f66e-4eb9-9434-e1119e34ee35.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E9 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/szE1l8QavgGapRqSAoxPcSHk6NC.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E9 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/b2b0d02a-66d1-4661-ba43-15782d8acf2b.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E10 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/1tBCCCMfUufE8lNjWn2rQU5A1V1.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E10 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/5fbfffc5-231a-4cc6-b082-766dab353c28.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E11 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/tb4lBgc4TEonuN2zUzIqW7xnHHn.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E11 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/c2ff8ebf-5a45-404d-890c-43cae7a575e5.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E12 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/7acBLaZucNSkcjDcrOh5gZWZc6s.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E12 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/7c1b1a4f-5d70-4d78-b5a0-c08cf4f444cf.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E13 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/31D6OfuzXX7Chw3unVs70myNfXL.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E13 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/9805332d-721a-44bc-b95a-c152dcb8d527.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E14 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/yIFR9eBUFei7n1fnanS7qMlZCHu.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E14 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/c81b5c15-cced-4e3a-944a-bba7322be40b.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E15 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/2omrOjkV70i2H91t2lJR5Cq5vkO.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E15 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/40ec31a7-a8a7-4b0a-baab-170d39d3dffd.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E16 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/wytKtOJwUo4gFbgDJEYwA8LOgFR.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E16 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6568c789-f519-46d5-a7ef-0e114e38d6bd.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E17 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/xx7qvkIFPDt71veDTRp6NTgpDpW.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E17 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6a572027-e66b-47d1-8a7c-6ea8f80be82c.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E18 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/ggdRogAZIV4GjT1i9y5Wpy8w0rL.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E18 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/77beade3-c6f2-4970-afa3-30f2b17ed156.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E19 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/hnBzxkT3HIQFT2sK9LoRKtYuljq.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E19 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/ffa5e323-a8fc-4a9c-81a0-84727e10cd84.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E20 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/k7TRAKEZkHCs3qODR1zxB7rrRkn.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E20 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6a9a77f6-363e-4719-8c54-bdee8ba647e2.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E21 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/rEeMeY33ffWQibhJTgMuF7V4yns.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E21 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/c7f21d08-e673-4502-b37b-6355fbe1b364.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S4 E22 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/xN6rLfDR7ATzRkXoAlMWSviRMTP.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S4 E22 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/07c109ec-cd75-498a-b9f2-f40788654fb4.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E1 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/7LrezlL7drYPZfwPbDRJelDGVX4.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E1 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/36b5886c-b2fa-41a5-951d-7c5bd2d492bf.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E2 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/vjQp29Si9K2kbhXJzzr7vwwCqZb.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E2 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/f8e1d16b-08e4-4ba8-93d9-9d44aa6fea96.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/hfQDzySQdximJKQ4pAZGYBV1KEF.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E3 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/aac1b6f1-eda3-49c9-a416-016054148e6c.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E4 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/7ZBKFD59pvMGocwXH1j0QllmwWF.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E4 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/03be35da-78ad-4975-a0a0-807aa3c26b4d.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E5 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/nJDEAetGrswj2lMG7LPFSVXEIQp.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E5 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/157129f7-b1cd-4253-9adc-01034eaba818.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E6 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/tUE66WDk5IVGoF78tGFMjQV4oW.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E6 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/947c1f63-79e6-4509-8c06-3cdec4026dc8.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/2SI0nex2tJcpm4TmmPWcw5pCwNp.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E7 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/7f1d10f9-7acf-44b6-9191-bb88a8bf1f72.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E8 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/jzo0MOa0dm88C4wrafSnOWiPzgJ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E8 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/525e3e72-0fb4-43a2-9832-6ac56490d292.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E9 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/nWIKg8i2sSyh3FbCYwSBbE6wTV3.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E9 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/d417d110-dfa8-4044-8358-8f93944c824b.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E10 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/vqKptmgpGDWdPBXP5GRGagimwev.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E10 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/43ff5f21-0d5b-4a14-a9e0-918805b50bfe.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E11 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/7f46CLXGkWErjesrcni0gZix85c.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E11 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/b7a3d687-1bb5-4000-8d62-a04f1ffe26e9.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E12 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/lK7k2ARtT3CtyMPxqbXkAMpJic6.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E12 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/8889d02f-9728-477d-9092-8509eff08414.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E13 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/olSQyxVp6MWGyaGMxXd3bAXkJBx.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E13 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/555cc583-23a0-443c-85ae-6ef4b4a9a8ac.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E14 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/tL9Vg0nHRb1zYV8cQFDkdm8GLKr.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E14 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/06439cbc-9e9d-4c80-8d90-44e53bd2f5ba.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E15 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/25ltbmhUduNtIZCGczQjsLnd1gL.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E15 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/216dd021-1d11-45a6-ab8a-797ccba05ef7.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E16 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/cq8Xqf1oWyQTX5jDNfFGOUoZzZe.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E16 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6b42c99a-162f-4ee4-a0bb-4df787e33af6.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E17 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/4YeHC40JNx6pUbHUEoFROteGeGJ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E17 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/9b0bcc9e-aed6-4d3b-9a32-ff0e15fa8d83.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E18 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/iyvsJ5zohjutFXq3IeQrFJyqiWx.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E18 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/80b93221-f39c-4a11-bf1d-97aa82586b8a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E19 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/gCYnfArnRRkGf9eWvsiP7FPYfVy.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E19 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/42be8a66-a62c-4c66-9611-5105c2525520.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E20 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/mLrc6Q0fAfIUb79us6Kt92KyPJt.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E20 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/f434f9a1-bfb7-4d7b-9f13-e61b13b17797.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E21 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/8TMlvHBCDuvHJ4npBsaB8zbdE7i.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E21 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/29db0169-d1ac-4f0c-b474-ced99f7e4f2a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S5 E22 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/1G0VB0zMbYMyfVNEUoRUTLzYsx.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S5 E22 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/d43391f8-1cf2-49a1-a7d9-b0833adecc4e.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E1 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/q6YimmwstCbajBY7aMl6OsXaRU3.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E1 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/2c007084-0899-4435-95a9-242616ecf145.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E2 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/cbZCOABOcJJhO9Up05fTRFns0iA.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E2 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/367fdd85-cfea-4863-831d-efc6462786ef.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/5TF4M9q1q8AILE4EauAlTKE11Di.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E3 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/38b9a86b-c6cf-43b9-b624-692df15c0dc7.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E4 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/rIwhEPI6khuOHmDjX0jPgx4buYG.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E4 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/9cf14d08-e049-4516-85ff-05b68dcdb8f4.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E5 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/ugqRb0G98ypiArQFAb1Wy8d4ziQ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E5 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/be5a70b7-af45-4e63-bc0d-2194525afedd.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E6 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/upgFsjYce8k4JsTQA6tabkvCCee.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E6 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/8534f07b-3320-4c12-8e33-6121f6479517.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/m6DAoR7I3UAeyjGA5ekLf5KQDfS.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E7 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/d15ba073-c164-4727-893c-dac087b706f5.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E8 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/g44MSCA0Z5mA8Yr7arkowa4hDRJ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E8 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/b2fe2ddd-dbc6-45d3-ab24-270845661fc0.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E9 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/3jUToSvkuHWMtbACIdM7pTE3jqs.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E9 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/63552ded-5497-4182-a7fc-19d2f9060178.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E10 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/bDjoO4ebG0UYZwJyGLJKBWDt3ad.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E10 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/d3554f4a-6eaf-4e60-bfb0-1cf8443ab336.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E11 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/rpTt7C5rdut8inmOoNLOSltSo1X.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E11 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/aaae4800-1b71-488e-8c9c-0caa4657ad21.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E12 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/6fknp0yn5gH00x9NTVitfS7mWqk.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E12 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/49ead9ce-5dcd-4bcc-b410-60e779ce55fd.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E13 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/axHu1Jvu4g3oMGVAliNjnLLXv4F.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E13 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/89d4a6d8-3759-4704-9eed-584e4482a11a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E14 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/zmRlR0o4jk2Yga5GFzXDOc6usRP.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E14 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/aaa019e9-abe7-4b96-ba89-1dc808456411.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E15 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/sqKWT5Yk4rqnh5EJ7RS1sp2UkFH.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E15 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/2d0128a2-a3d9-42f5-a8d4-07c36a0768f6.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E16 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/mlkHAdRrUJ79NtMYnrRcA92oJpD.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E16 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/c2acc4bd-cfe6-482c-8d34-981f234783a8.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E17 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/A7vOaodA3NihPm6sSSSSNLtBvEO.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E17 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/308d717c-df4f-4011-a7ec-6b25c57a32a1.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E18 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/wf8eWvOomS7nXzxl01lodyyhWak.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E18 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/eb9fdc99-2391-4b8f-938d-db84fed89fb3.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E19 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/3HyqqPnWn3oRsNYRpRcgDBL4fn9.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E19 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/3734e892-bf73-4164-9b44-fa6735017a9a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E20 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/dUS5olJiGdULJqBpioq1OLdrqJu.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E20 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/71e4127b-70d7-4a22-88b5-4f432bb3e25a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E21 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/tyFqwqILQBiDPCbIsJWqsSpR9AH.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E21 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/b4f76ff6-93ae-413f-86c3-3e91800b93b9.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S6 E22 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/lnyeVvoR1WSsLJqhXzpBn0Us2iJ.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S6 E22 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/dded11f4-b4c9-416a-850b-56e51ea28dc6.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E1 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/tdSm1ATMjUSYwYF5XPpQ3Z3lyu5.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E1 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/8ec993f8-359d-44d2-989e-f742e303e7e9.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E2 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/irXvq6LP87M5aPLFlTkfNLjRnJs.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E2 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/4dad26d8-ff18-470e-a9fc-0bf3a8dc9f3d.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E3 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/lkqn9yIsz8Glst7PVuHuWaZQUNz.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E3 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/ddcf5bf6-aaee-4f93-81d8-d15411528612.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E4 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/ljtqnF28bHRGctgqHlAoYz6ltlh.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E4 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/8546f349-7ecf-4b33-982f-6e7919b01e48.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E5 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/kuzjA68LYsH4MQrg2WN1LHaVi0b.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E5 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/3a201bdf-3b34-4bd7-aaf7-b3a406c36419.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E6 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/5IqUpTsMJeke54X1OLO0MBnoOUn.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E6 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/222ba961-3190-4b35-bd2b-309ed43224ef.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E7 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/mKJraddhP9FLH5FqpBTPcx7XkXd.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E7 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/17b58781-1e31-463e-8063-e6e868c862a0.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E8 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/lUg1VeBvDdfAj19vGgwG6pvxEiL.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E8 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/e19063d9-32fa-4c0d-b25a-b4db8deeb20e.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E9 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/tTifo52KzGHHDH0FHciUkwpshCA.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E9 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/7302e240-fb03-402e-b854-706864311db8.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E10 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/rWRAMyH1h7FNk5tME7fBO0CgibU.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E10 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/a8ec4d02-7c15-4f9b-8f78-384f45058dcc.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E11 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/40VwaImda6bMP0UlJBPK6AF5yIy.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E11 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/1e30cb7d-a0c9-4d4f-9d06-4fcc6f4f2871.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E12 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/4WjNUOBtqQJW7IakVcVkuk7PlKh.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E12 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/6ab67283-29e0-46d4-b8fd-dc263b034f43.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E13 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/gtMxkVbaqrZ7iSNTBiCevLJsxXW.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E13 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/19ed1411-e507-47c3-b08b-0fb6fb08e553.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E14 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/lbNaXfr5kcIVkF7UduQYZ0cgBbV.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E14 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/214d7ed4-2c40-4612-966b-d2d651cd4f42.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E15 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/AsRAu3wdKdhZuGUJFZDDqYHEXtr.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E15 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/2c4d9c50-1687-4d3b-afaf-1ca99c670291.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E16 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/eMSOsCq2ozuFUua318IVv9mzpC5.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E16 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/ee18ad31-4581-477b-bf84-33ef39c9efc2.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E17 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/s2BBmfSdsyMIMf7DK13n40qlpZs.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E17 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/628f2ae2-7c7a-4b0c-9e1e-c22da939ffbc.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E18 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/dWhxndckmwvuHeu68SRkuycenvM.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E18 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/5f29332c-87fa-48f9-9b75-62c3a94d6146.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E19 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/e9oYMFunoe23CZlXkwWlQPo4Nov.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E19 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/e788d20e-b299-4f7a-b886-d307a332176a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E20 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/x8mVXHOEO0Mj9teTbxuyFPfYcRK.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E20 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/b103cd5c-c3ad-41ca-a510-4a1d5962d419.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E21 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/llYiCp5xBnGm92KO5xxopbdW0rn.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E21 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/a35fcf82-caf3-45dd-90ca-60cab2a720a7.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Buffy the Vampire Slayer S7 E22 ⭕" tvg-logo="https://image.tmdb.org/t/p/w300/yRaLZCHG2wvagDY6hPDo6mXqITc.jpg" group-title="🟪◆ DİZİ - DİSNEY ⭕",Buffy the Vampire Slayer S7 E22 ⭕
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/77ad19ac-6b43-4ed8-8e70-2fdb68f3a74d.mp4
 #EXTINF:0 type="video" tvg-logo="https://tvdiziler.tv/uploads/series/alti-ustu-istanbul.jpg" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",PAZARTESİ DİZİLERİ - Altı Üstü İstanbul (Atv) ⭕
 https://video.twimg.com/amplify_video/2122436013557522432/pl/yRwSOBy2ijk-T4dw.m3u8?tag=29
 #EXTINF:0 type="video" tvg-logo="https://cdn.sinemalar.com/images/movie/299420/poster/evlilik-guzeldir-1788522146.jpg" group-title="🟪◆ DİZİ - GÜNCEL  ⭕",PAZARTESİ DİZİLERİ - Evlilik Güzeldir (Trt1) ⭕
@@ -42260,26 +42531,26 @@ http://mekantv56.win/series/akifalioglu33/33akifalioglu/b2c6744f-2684-45f5-9c19-
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/c732be59-926c-4f0a-a893-1f1ad3d0e651.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Baş Başa S1 E13" tvg-logo="https://image.tmdb.org/t/p/w400/zEZyBJNBHNfbbup8AFSAOCDONiL.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Baş Başa S1 E13
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/e20e717c-0c19-4224-8d26-c60727e99b3b.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E1" tvg-logo="https://image.tmdb.org/t/p/w400/a1hAzsjO3TSRV6uTl6rXBE4FbhQ.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E1
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/c2ce92a5-64d6-4cb4-9821-f376650fe4c1.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E2" tvg-logo="https://image.tmdb.org/t/p/w400/eoH51kQmhR7sfwcwmJj2N2YYJOf.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E2
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/12eb02ac-0a38-4238-9bad-6faed837135c.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E3" tvg-logo="https://image.tmdb.org/t/p/w400/eTLk2tCfj0ZmUcsA1AhyeDyDgml.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E3
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/1ed56d6e-b07e-43e1-a1ba-7eecc8c13757.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E4" tvg-logo="https://image.tmdb.org/t/p/w400/9ocCLrpFpdpwaF8f43BknjZdmfI.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E4
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/a73744ac-f969-4c7a-84b2-b91b4b6519c1.mp4
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E5" tvg-logo="https://image.tmdb.org/t/p/w400/rLbs760pdb1G2dP0JKaSAvfUFq0.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E5
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/c9ce4319-d8ca-49de-aa06-3733bcdc61fb.mkv
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E6" tvg-logo="https://image.tmdb.org/t/p/w400/fJU3Bm8MTyq3Ip5Foj8gxpnutbq.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E6
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/ec27428b-ee74-4e41-93cb-ada601baaed7.mkv
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E7" tvg-logo="https://image.tmdb.org/t/p/w400/kZKQ6RVsCteI897sGbAVUFRugDG.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E7
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/cb3a1b65-59c7-471b-9b97-0ac8dd1e83bc.mkv
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E8" tvg-logo="https://image.tmdb.org/t/p/w400/wKHD0JAAqd2uEnvHFA4FxvRt2Dl.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E8
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/dc610907-b082-4606-b154-6c19c487110a.mkv
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E9" tvg-logo="https://image.tmdb.org/t/p/w400/vvm1Zp6UdubiQXx61Pv29tk6Vng.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E9
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/7f985274-f8b2-4a9e-befc-06c78242301d.mkv
-#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E10" tvg-logo="https://image.tmdb.org/t/p/w400/suDfL7gonbABFGCAKSRzkbSoekD.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E10
-http://mekantv56.win/series/akifalioglu33/33akifalioglu/adc81e82-791f-4a56-a6a8-e2d8ef475caf.mkv
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E1" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E1
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/811167e1-1b1a-4e7c-995e-1560520a1d1f.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E2" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E2
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/78044969-c83f-4858-9092-7e5749cbacb6.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E3" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E3
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/f6e01635-1c42-4c1f-96a7-05824f2dbc14.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E4" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E4
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/b21723ac-9bae-4278-83d3-8fe9a1814548.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E5" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E5
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/67185650-f190-46b5-aeaa-8cd602a977eb.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E6" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E6
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/b36f6903-cb8d-4d8a-8c12-df1ce1d3a0d1.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E7" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E7
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/0d0f7b48-201f-410e-a1eb-0e07974d623b.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E8" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E8
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/1cfabaa0-e70b-4805-8a9e-a39c57f96dba.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E9" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E9
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/212239f0-45a7-41d4-aece-0bb01ac7bc3a.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E10" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E10
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/2013245e-e8c0-4bdf-9f84-a3a0c22c514e.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E1" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E1
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/811167e1-1b1a-4e7c-995e-1560520a1d1f.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Alıkara S1 E2" tvg-logo="https://image.tmdb.org/t/p/w400/y87872DJHRrmYtM3FkGsgNvbT4j.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Alıkara S1 E2
@@ -44442,6 +44713,12 @@ http://mekantv56.win/series/akifalioglu33/33akifalioglu/75be1678-376d-438c-9e15-
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/97faa3ba-b205-4edc-92e9-b692e4c7fb23.mp4
 #EXTINF:-1 tvg-id="" tvg-name="Elementary S7 E13" tvg-logo="https://image.tmdb.org/t/p/w300/o7JNbGMJkGuwSlrWjF4oCIBUQ6X.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Elementary S7 E13
 http://mekantv56.win/series/akifalioglu33/33akifalioglu/328f4ff3-2b46-489c-abab-e7b659a3202d.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Outlander: Blood of My Blood S2 E9" tvg-logo="https://image.tmdb.org/t/p/w300/uUyueLRHX5KRMf1Jl2K0UJCHzXU.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Outlander: Blood of My Blood S2 E9
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/f6b556f6-b585-44b2-b676-40515bb7d15c.mp4
+#EXTINF:-1 tvg-id="" tvg-name="Doc S3 E7" tvg-logo="https://image.tmdb.org/t/p/w300/mKmj0jdUXon2lSkINWdfYJ1AElW.jpg" group-title="🟪◆ DİZİ - TOD ⭕",Doc S3 E7
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/d8c3c703-b84a-4476-bbca-fa330cacae9c.mp4
+#EXTINF:-1 tvg-id="" tvg-name="American Hostage S1 E8" tvg-logo="https://image.tmdb.org/t/p/w300/pJLFRdZZETSwVhlg0oZ0TTVJBv0.jpg" group-title="🟪◆ DİZİ - TOD ⭕",American Hostage S1 E8
+http://mekantv56.win/series/akifalioglu33/33akifalioglu/a8500262-3b7d-408a-a0fd-63dac5bb2b77.mp4
 #EXTINF:-1 tvg-id="oz.206572750aa64aa99ea6882e6600a34f" tvg-name="TR:DIZIMAX DRAMA HD ⭕ᴴᴰ" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-drama.png" group-title="🟪◆ DİZİ - 7/24  ⭕",TR:DIZIMAX DRAMA HD ⭕ᴴᴰ
 http://mekantv56.win/live/akifalioglu33/33akifalioglu/20657275-0aa6-4aa9-9ea6-882e6600a34f.ts
 #EXTINF:-1 tvg-id="oz.2ecd355a215c4f48a8e95098c8a00b2d" tvg-name="TR:DIZIMAX COMEDY HD ⭕ᴴᴰ" tvg-logo="https://logo.cloudzone55.store/uret/dizimax-comedy.png" group-title="🟪◆ DİZİ - 7/24  ⭕",TR:DIZIMAX COMEDY HD ⭕ᴴᴰ
