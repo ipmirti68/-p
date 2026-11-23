@@ -103,15 +103,7 @@ jobs:
         timeout-minutes: 30
         run: python hayat.py || echo "hayat failed"
 
-      # ==========================================
-      # 6 - SÜPER BABA
-      # ==========================================
-
-      - name: 6 - SÜPER BABA
-        continue-on-error: true
-        timeout-minutes: 30
-        run: python sbaba.py || echo "sbaba failed"
-
+ 
       # ==========================================
       # DOSYALARI KAYDET
       # ==========================================
