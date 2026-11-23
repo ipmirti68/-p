@@ -79,11 +79,11 @@ AKTARIMLAR = [
         "ek_kod": "⭕",
     },
     {
-        "kaynak_url": "",
+        "kaynak_url": "https://raw.githubusercontent.com/smtv62/kralbozguncu/refs/heads/main/kral.m3u",
         "kaynak_grup": "",
-        "aranacak": "",
-        "hedef_grup": "",
-        "hedef_logo": "",
+        "aranacak": "BeIN Sports",
+        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
+        "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",
         "ek_kod": "⭕",
     },
     {
