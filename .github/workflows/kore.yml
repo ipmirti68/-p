@@ -1,73 +1,56 @@
 
-name: HANIM KORE DIZILERI
+name: PATRON OTOMATİK ÇALIŞTIR
 
 on:
   workflow_dispatch:
 
   schedule:
-    - cron: "0 5 * * *"
+    - cron: "0 */6 * * *"
 
 permissions:
   contents: write
 
 concurrency:
-  group: asyawatch-kore
+  group: patron-otomatik
   cancel-in-progress: false
 
 jobs:
-  kore-dizileri:
+  patron:
     runs-on: ubuntu-latest
 
     steps:
       - name: Depoyu indir
         uses: actions/checkout@v4
 
-      - name: Python kur
+      - name: Python 3.12 Kur
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
+          cache: pip
 
-      - name: Python paketlerini kur
+      - name: Gerekli Kütüphaneleri Kur
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install playwright requests beautifulsoup4 lxml
 
-      - name: Kore dizilerini tara
+      - name: Chromium Kur
+        run: |
+          playwright install --with-deps chromium
+
+      - name: Patron.py Çalıştır
         run: |
           python patron.py
 
-      - name: M3U dosyalarını kontrol et
-        run: |
-          echo "Oluşturulan dosyalar:"
-          ls -lh
-
-          test -s hanim_kore_test.m3u
-          test -s hanim_kore_rapor.txt
-
-          echo "M3U ve rapor dosyaları başarıyla oluşturuldu."
-
-      - name: M3U dosyalarını indirilebilir yap
-        uses: actions/upload-artifact@v4
-        with:
-          name: HANIM-KORE-LISTESI
-          path: |
-            hanim_kore_test.m3u
-            hanim_kore_rapor.txt
-          if-no-files-found: error
-    
-      - name: Kore dosyalarını GitHub'a kaydet
+      - name: Değişiklikleri GitHub'a Kaydet
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add -f hanim_kore_test.m3u hanim_kore_rapor.txt
+          git add -A
 
           if ! git diff --cached --quiet; then
-            git commit -m "Hanım Kore listesi güncellendi"
+            git commit -m "Patron otomatik güncelleme"
+            git push
           else
-            echo "Kore dosyaları zaten güncel."
+            echo "Kaydedilecek değişiklik yok."
           fi
-
-          git fetch origin main
-          git rebase origin/main
-          git push origin HEAD:main
