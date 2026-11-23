@@ -9,10 +9,10 @@
 # MIRTI68_TRT1_AUTO
 # MIRTI68_TRT1_AUTO
 # MIRTI68_TRT1_AUTO
-#EXTINF:-1 tvg-name="TRT 1 " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TRT 1 
+#EXTINF:-1 tvg-name="TRT 1 " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 # MIRTI68_ATV_AUTO
-#EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV 
+#EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
 # MIRTI68_SHOWTV_AUTO
 #EXTINF:-1 tvg-name="SHOW TV ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",SHOW TV ⭕
@@ -529,6 +529,8 @@ https://andro.evrenesoglu239.click/checklist/androstreamlivebs5.m3u8
 #EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
 https://andro.evrenesoglu239.click/checklist/androstreamlivebsm1.m3u8
 #EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",TR:beIN Sport Max 2 HD-Mahsun ⭕
+#EXTVLCOPT:http-referrer=https://mahsunsports18.xyz/
+https://andro.evrenesoglu239.click/checklist/androstreamlivebsm2.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 1 - Atom ⭕
 https://css.d6e3ess6e065r5.help//beyin1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 2 - Atom ⭕
