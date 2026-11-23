@@ -1,5 +1,5 @@
 
-name: SPOR MAHSUN LİG
+name: SPOR 
 
 on:
   workflow_dispatch:
@@ -46,7 +46,7 @@ jobs:
       - name: 2 - ATOM
         continue-on-error: true
         timeout-minutes: 10
-        run: python atom1.py || echo "atom1 failed"
+        run: python allspor.py || echo "atom1 failed"
      
  
       
