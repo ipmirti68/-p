@@ -39,7 +39,7 @@ jobs:
 
       - name: Patron.py Çalıştır
         run: |
-          python patron.py
+          python asyawatch_kore.py
 
       - name: Değişiklikleri GitHub'a Kaydet
         run: |
