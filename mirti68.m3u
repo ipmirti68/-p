@@ -5,35 +5,36 @@
 # MIRTI68_TRT1_AUTO
 # MIRTI68_TRT1_AUTO
 # MIRTI68_TRT1_AUTO
-#EXTINF:-1 tvg-name="TRT 1 " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TRT 1
+# MIRTI68_TRT1_AUTO
+#EXTINF:-1 tvg-name="TRT 1 " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TRT 1 
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 # MIRTI68_ATV_AUTO
-#EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
+#EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV 
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
 # MIRTI68_SHOWTV_AUTO
 #EXTINF:-1 tvg-name="SHOW TV ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",SHOW TV ⭕
-https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=c638549b1603a0bb95884ba5d1b9a84a&dfp_paln=AQzzBGQEAL1e7M-rh2zpSwy4USYn9wAytpFyX2mysFRDsO2Tds9vmB3zWjIn9QL6fos05TesrX6nlZjCh9YY8yg_lUY0cNQNFqdABV2KXLqc_rApXs-2UW6hOTSUBh4uadA6DBgobl_dWB5IQg0nvbTFZMThAJu_6GoJ4Y_VP49eS2VSfh1tnkwZHYEUhbC3qbyN8uMlTYJOu8iKKwehKX26_bdStQeo67eHSis11cAGgIbqNlz-gHsz8OzBx2iBq0MALmV16qdwkOKIprUJyz_olqlzQbFNLgilDva8RMIr5xm3A5hyOP1WsnziHBzVDr8MGwMa6VdYaGmr7irOfjyATqkUer2D7FPXVv38-5Zs2rZntbrdrjatT2_QEyFp51qHPs6AphbCm2aO3XFY39smv7pWbrU7HkJocAJJaPCe3sDJddpuqQITcPckfj6ooziwduq46uvTxtPv7oK944e_-ngcxKwz8NpyVnC1Lah_OfEHZTmYf2EiCgf0oQDrtNxZ6QL6SZHsKulSPE6F7nLwfHEamsFnHK2IKTyGHmp28Fvbs1cu2rUDrwUfPAXYkrKLcms_0BvaFV37EbdgMC-zBbktyI4XGrW7CYe2fPE5ypBRRxjDFVSPBqfDWIOAz4ws0MEKx1T5tRpUz9yqUJeSfLrskLtx85GK1gJy3Tpnoyjn80XtHD15yRCdm6Wara-e1W--8BE_dwoFvgfDwZgKhRHL9ieukMKGDigYcGcXxlzmJeF3o5ylQ_Tehpued23e3SDmedPtOh4sbJ1EO2zk3ONHr1E0LByNSPCy8nD7yv0h3JGbOuhLJP4Yp60PM_jVM2knE9mlWvK7ob0f_QLb9Cn0sJL0RfdsUN8OCCoL3xQEmlfR1ndL9UAJ_fFAtEFuinQjkcOv7RHNYFiYzW8gLdi61qcZk4lGsbLg282eDEb4Ca6KVuN_f_fTDh3jS4MxXkEWmlKlvrxH9of6xpny3uFLakky7Ex-yAKCwoRz86ReZuXmyLaWmCxWiXTWCM8Da2enJCF5-3V6BQ2m78nKGlx7tUNVmhsq4SaMfGpXy8fpzQMHLhx4ZbFQBgSE8DNPYflquRWs_Ewe-Q-Kxht9kJcwUgUXcWkXMUBg3AJffbg36k1EbY2NRgOTHuLZks_4Ok49A759VASp5yOk5ZHhFiK0qnNF-FneN8UBLddC-7vYlDPk1EYPqZwGjqmqGt1cXHTry2YgdtnSEIf9yLHvAsxnwtwDu6Zdqs39PmP6dfzPUY2M98K7n3_0Gk8qOfMr9PnGnJhyCQ..
+https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=583d5b8b29715a0aefb954581f28cd4e&dfp_paln=AQzzBGQEBCfzbnSaz-OyKkzqaTFbXJN214B8meSSnXrAGevkk1NwTSlk84Trgiaahb2D2J_tLO5ybYAImNpZqcdKzT5zSFuDbdOKABXKfQvYkkWuoNUXjY0m0fRqR2a4MHZjlNXqNIjLejN9JfrgBMKNBlDWb9pK0lVK2hpfEkkh-AKw3qqJH4vdAE0iOHVwE0zES48ffNOP5ablYnTXP9UElgapYeZbMayDCW2kg486NKRFivXTQqZJYoQ9MNgJTENOjcaHq2zGLBMfunvR7CbEoSukxblBWdL9igpGMt-aAPgJUUz4g7Nsgzg8hZHTWxkSOn7REiG2J-7zrypHNmRvMXmg5QwvmOZo8FqaY9cBKtbuKpATooxyPmM70_pCOo5ibTSAeYM9LRqAe3sopRZisFA3ikt2cKo6EWPLUtKS1PK6UBReIXtdbYOa8bSOI37sySMZuczZGE2ONghNN-VqcUoBjdyK68Eg-ZXl48UUwUdWSs0xuo9KDO-Ia9T5Bq8w3kyQE2bkFsiC7UOEr2PE17EAWB4nbJpYm8HsOuv22mh_sb06ctxnBvEAeHXBPYgS4Zh_lcyJ_9OvgmbRa5dY0nLuXqfX1k8RaYvhIi1GMlsaj5FQ8huqLHg1Z-FL_FakbB8rpDAiHx_v8QPX3OkgsldIrDt4HfgkAawd3R3woD3KXaVs20uneVz--QHGnGRI67tJ3Gv0-vWBE4mNYaFGWYXUg8b4ucfdRMkgck1uCA7XtytPWZNmWCv2yXV0zbk2DyLN66WW299EFZnXg4ZD6S4kAJh5MmpovHK5NFa9l0yjgPbWLHj8_XTdbXFA2JuyiWRQep9JzrqMUpcxvf2TLf8oVKOfMmuehCr4aYxxPB3EKTr17hH1s_olfbtynTOXloCT7g33rdDRsaA__5r-OomErGBB8Ho4Oz2oWzkFUUtWyeex-YBIagptSTM6xWKLLxywcNT03BqIwwI3uZuf9RZW2C7WXP4Cliv-f71cFwhW23IanApwOEBWj29XBxD0RkSyLNsiwmHhCcGOudvu_Tcffz_ZWh_3U_QtZs_WmA8gbhQJV7HtOTZiqivMjyVD2IkOE5MxUeAHG5p5GqcGhFLV4CDatkuVuynYp3XS4hdl9jDgo0PqR7wcC-kj5ROzKo37632dWxb4ECrMYfQnjUgOHashTqy7EzeFl0mxUMw9GXv4pVfK3EcPQfIp9COSf9jS6YzP_QZhS3O8M7QOX5NbgKxsKUOS17gnxh4mbA56OsmneMyKVtw6Vc_Cu3soMv7ToVmVMH8o_Ubjfknkjx9q6Uw61qXGQDmqy-yR22Iaf9yVCUpP7ga3eRC3jK7XnmkMs_dLNCwRBI9FM5e-MeGiDI5RqkRxoDAruiUfXPqTQ6CjVsTPUtIA7LCe57wPHglGc3ZvEE9mWu_Syad6iTjhJA..
 # MIRTI68_KANALD_AUTO
 #EXTINF:-1 tvg-name="KANAL D ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",KANAL D ⭕
-https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=02d73b2e88014e6532836e3c36b6fc91&dfp_paln=AQzzBGQEjpMac5-53qKwb5j9Js0S2Eh6QEAs3pdbqXgiHF0UsJKNDVU18suiGWYTtC2-xAVpZSuu_NPiQQlOnj5i3SfWz9HmTXKSdCO04_yraRekUa0J59-i7LG8iHdNLoGuPuSEweJTK85o4_NyOmshI0Ctc9l5cumQyzZouYv-Wo7Haa09XESiMSg7nO6ZWvl_i8DQB3_iFvD8UtC6ORMyHyW7snnOI_XMuh40NKy2DDmUakLLFOzKoIoy4BLd2IZB6Vf4KBkRN_4EbPl2KUxis-R3moykx021GWc23uaXuCwQ9hYQfMbO74SZnxLQeVrqFHkewKp732k7njZfEMiySaD95W_j5ICE2BQ3zpt5xn-NWsEB40XhE-XzesQmGIfvR-f5-KpgbgiWLpesGr2shGJ7ic_xa1JL961u-g185q4r9cBzqq0FdyhT9Hoyv46lbo-t2su6Te4_HHbumfTlm_nvurtXzu7EelouYFApq417bRBZn-5o5yBlHFZsILb-85pKJV7PJ-kfrr9xHhCWeWpvv7a2Ut7y_s1Bk4bLlk573Kke445uqzG6h3H8Dh172fHNfuGvGuX_HhOuuz9kP3nGVjMpyKGTYACOk2Yu-tXsAb4QOR_OiIm3ZELHZle--i3x8wUALE63LseJFPqDjSYwu8evGW6c5aaZvop45RCsaBq4nxREM78DTzYZhRZOxPsdcGaHGiNUZ3JgP15agQ5wWhXde12PXVfmE_3vZr8zs_tpguOtLYC0E1bBAtjeVydeSj1MSbYLgX5wazUu9D1uS7aDfnGgEZ6vYdSswZfIuzTpQm6RYlpLxa9-qKOhTVRUKPh5mjubwOEMGpTpdNoUhlB4wJW8-3NQVAT67R06Up7P-AU7jJTvSCTFzXx67XQX9ErngJg--Notn82uFiWiyL_I81YcJofW9ZQEoxjmNtKXTZt5wec8WalwEaKJOMFHDFkdVIxsv5WBC4clKrVk-rWGJfLfMqCyvyrdcFGuyYFptVn61TNkC7waRIeu_4pq2qwQaEW2JtmZCdw0A7ilCVCLQWz1OSMPrblUf2flZNRKZNhsa1aym_OQCMqwExn9AUL9kSQkiI3JKNkDHydXkH6MGeZtJMWKr5NSkrIAMYGDIii9owGmabQuonxLQWABU5IH1lq9O5E2rSF5c7A9n5pm-0liVraHGa91BJFCG2AQaB1HO-_valOoPvaSPiDa7rjmcmqlBcMy3OX-usRy0g0Haw7DGrv2U_TrbwM9wYXz5h99v4nCg-1E9PtBAWLTY6fsRyyPzkPgpSkzu1LKL0Kr_LZUH4Xyuflq3Y-YwCUUfypkrx68odZ5AqgNvIX0Azi5tlLFZIxkR9MzA4CKOc_TJe1NtYxwOoIBSdHQx263t5WReRqWnXFwBynqdH6ho_ttDdJxstPat-PiTkkL7ZVhj-UOLKlss1PNM8HutYbX5VUy2LfxtsWn0A..
+https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3&ppid=f3b197ad0d44747ba6bfe9c1a13f2b87&dfp_paln=AQzzBGQET9XxKL5u6GYdr1fBxkk1k8bREFVIhq_uKfPbY-_mDOz-CkyRrW5rWnTPL0HTzhPrhTHunqrQhHdLJ-sYv2dfQCtIZNhzMJIpHmAUAt3sg_oN5RDNxc5oxEPFvPe31Aaak_l0R41h42biAYYeEXOR82MIZjT4r3o3RBUG55bzvOQ4KSCShxpb8Xn493jS_s0IUTrS34FGMCgGwZnxfNkTqGtWEMOLSk-HQX3Lfb4GKsLK30QudBxP3wuzgtdFrDiVmcbDKLjfDQRAWVGmHRsSTtOdjDG9z9R11O4h0smnzuDf_-MSq8q_uy-_nHTxEVPCg7Kt1sj2S7FOfMgl1u1iW8mEMQJrEsfaqNzqzU-55vFcWyW8O7fZjdVI0nMLtVmGCobnEppcgo8U9OXwJNCAFaXSzwSRJpXbx1NwUW03wyUMZUT_WrEJiAnv1i02nr8knaAEOmrF51Hz_MRzxY-grFgeEidIoruc7e3wxZP2VTYzUmIAZYHRYGAKZYenZMslFnK3mhncFW7pNORqKgHV-q3rB2QGCL5kZxmYGYd2cKH2LE1AEPU73hPIe_5T4YgkJs7lJXI6XJ_lkcLZcTM3HfhSL9h6ijcsO8Q62fWpEiAnMIQyuO7qgBPLc5lTFBaMvyH6VicxJ0vjQhverG6ZZsWRYQaSrZdebBESwrmxiEvYSWlmlaOyIIPwWN9MZj8d_kFIYw8f5za4qGJgDDwNBF7r4JZRoHt9X-6uEa_mE9G4FDid1DnuPb6fw7x6Vm2pr5rQZT8A7OGn4-fLcg2t9H7dET0s9lJJ1XBuKcmvTn-f9IMcvQYxemi_4Lf6jL3e4I3iyGijnMEKFz0sogpu9eDx0P0v6X3MHcdPye8DCxirQKJhJ56zNWn54ehPmY1WxnqKM5Gar4illfXgpWFb0BsDSYnHqwCmlP5Evs_YPxsn5bDR_B_0KnD-kIyXNL18ch2VHD49Zel-A4g6MQY7o6TegTAicLr0nhHJJjbqru4VqlmaOHq3DBbJknmZw84UQm6MLBbmfFHEpfl13AQ29pD_eqkPXy-edRl3fwOc4Pc2qovSeWN5gLf-KDKaCmYoTkK2-yaRMllDDU4L8L3-bB9wfQKkfTTKGkGxZZ1vIwXln4xsGL2EP5JfyjPtAbl99p7hlRoxU6D2KTuyjdfmxRSSZV_MwwCeCALh0pPKrNEGBaSr_BTB4RYcicmQAP1OBWoHrfgAOAn-kbqkvBgCHJyDfsUWqiazzSYsKymK3sQyHWvT1jexO7kDs2DhQNMtU606GiizsS-rOj1j6SdFQs2F18JVu4yynhHKZga4YnlsDHPoov68aHRaD7C1lqQ3W7jSnHamBcUkrOboGtS8vnKdyADSPg3LCPYSp7re6XJwv2yqjRplu29t6G-nhUsqX14n3rITGK3LVQ9y3NFw-xirntL6oQ0iRIfYjj6mbZ1XW9MYAsDE3KF_AEGy
 # MIRTI68_STARTV_AUTO
 #EXTINF:-1 tvg-name="Star TV  ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",Star TV  ⭕
-https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=fdcd2a9d00a621d3357c4f32e1321bd5&dfp_paln=AQzzBGQEXZgo-6tPy-kvtKXyKNOusgZSZ1tgd1TXoT6S1adUd3G3HhGVTRKzS7_nZJV6nNVyNF2At5Idl_JV2n-nrpMaDeqGsszBhenkbsIfT9ctzg92VKYW9-P7_MVHpTQSSYsnW63Ssj8Frwz_xvQCWTMZ8PvajP-6j1Czx0biDeUZaYkyHUPyJjf7d44O0mK4jSG3EpdMPZMI9rUsTr2IJD_NYYWZy8Y0GtPqSgxu-aKkSqaQcf9s82yPsxzAxbb7aVuURxKv3AtmjNKKjWi0w49WKLlYMiloXWhObYipTDhVnYm5BY26I2xeGhxlXoITQ7sv9inM7X0KeifgKTDq-1FEO3gFL_-_lDqCqLYIHIoO2CiU2ZDRAh4WoJCbPB3zlXy45XBv1ejbNc1bHIHrtQ_nGqccVhFYDEUqQen4mk5RNz3J0K0HBUHKNI_ZheIC6NNUynmBYhWn2QNnvLw4qigLT6_MHPM4VUYIcHi3ufE6D4DNVeYu7jBTsxTbsxO6WtpcH3UWxxTyibvAmgMY3T34Q3l7bRUPye2aUf_VHxu64lisi0cki1TCpkjDB6gN6JUu4KhdijDDraODNsYrY4Xu9CLgBADYJkPJlxuU5l6jTKTaD-C6mBGW-1FNji0mrP75SMbrPxi3aGGuqnOUk4EmN7VFophnoiLQu-uaEWBOB1wlsKByCZOcIz4AHgKTCHMFC3agMNmGcCg_PCEtaq6GVzn2w8HrM-JnMjdu_0nDHixuBXZxOoZ19eldtiwKvG1HorEaf751huAB_sgFicSWrI2shFxZkwtriBcKUnR0T8WnafDpvAghG_nq8KDAe7kyT0z3C3cKRw_xMhem5KUuHQgoFeriZcW7mHt793AE6xk_Mw7uIaLKC3DpDkAjm3skoPo6tRHpOmTuMm1cNToLl9O6kSOTajLD5XD0RC5674ETQdMuazyGC4CKDWeWUZkQjFvDMs-RZZVgCyUGGn66ZohaKmPmaujgRUOJbLJ_CvcitEwMs6qPUPdtHjoSeHx83bageMRHpbkDtxYA-ls_cPBX7670u9HZvCeHsiObZEHF4jqEfdDUWsBjiUvzr9vdRu_jaNblZwLHCLz1pC4pTsbOtBZdpR6gNTLKdfJVcNBngHEmQjapns-YSIUlifnMiUXghjRdpSaWeKS2-RvosogYSsHOyBRMT15V-48Mo5xGWsrlADduXMwZH77w7aV0NFn8_M4O_0NZ5K1Q6myaICxlFbmZIGbkTt5PY3dl1a9xDxPfsC3ohA-2KuVu5DYcKHjyWhtwWTIIci7kmFDsdeQW26RV0u4z8B0vbyKAlOZ49J1WweBsIlj1ORY-47mk3QFswMFKSLq9NGeeAUrJRiFRrgL5Fj1C1__Te3270eEPkGqBT309DLUYZy37GUKNLMNBHw-iAyyoMss35xycihspy6ICEnl0sHA.
+https://dogus.daioncdn.net/startv/startv.m3u8?ce=3&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ppid=5e981aa835e9bc7c7c782c97b506cd62&dfp_paln=AQzzBGQEEoaaw2tLJgcDvhYKwWzj5AWmz7e3RAZOCht_ZgluB78uTJeCUpHxfZGEO_4IHhUmegzqAufE7_GGzlc5g-2zRjBeNvABnG9f72qbn8-N-J6lBj9kGcfjwVgyOieAzYgq64WVSigDNhdPn1B0JWxmSwQv9sKz-srNf9qKoWOqDRLOWITajFxPZ6xgUeNaGZFA3IXygus2sBdtaCXffg6g_8uXhH2AYgUAwI-ZxymBWWB_XkbKlPI68TwmtsJ8eX43vrAP-NIK49uAY_14H44s-RO3JwtZQFzv29OHWRg1klqIJeEsJTYov_n815-H4T9pc0q1K1KoKpfao2JlBdgd2pSSGc3c5KBgLuYouO-Z2whB6WLnKV5r-jSeyLg3rvxQIlBc1zSEJGwlb-Ds7HhF66Gwo05EY0lILSQr7l7D8zXXuTC5Ah0btGU94k8igCrRsPZPvKjhGJwvXATr_T0wQLbh1Dd-JQOQ2TYBmZudzVWR2d9hnm0TDJwz2hdKi9Of36U9qA-AhABivgjyGNJlxKzXuXIFkPUwLMBFa75qcu08uK1mej91AplUyUqvIajwLK_SlKrhpGIrh9NDL_9qwAqGZ2xtTEbbNKRecSckzS3o0ox2WoTUTvXPbJ354Zee1fzFE5pLv4UtgCkJspvdhSHk6uuW5V8QlNH-WTAtaSWSsjTOowFvAGESUpO1L-ZmKOp532kBQZ0zbq9Qma0OhPYfzDm-PRSzZnMbkqqJ1x0aYlU-Kla8ugZMwX4sHi9qgZkByhjsOfkT-vbUF3GyzAEjFj9opav7jd0tw8oQq9dxbEP6Tyu6T62yNCGnWlq8oZj8iSu-6ckFQx9zqryKVHBj6oMgo9eNAlId3aRIs5dKDgdgCu1ohlK1elKLlFc6D-dmhxOtjQNZ816ykRd5JqARZTFGqyb5Ot_jLkxoHuZfiR85ziJZ8WZZyUdzm0jY-6uK0MsGqxjWfpBSmUw8sTQx3MjHNOvDvtDt7OprP-z3IrKNsTLDNCxnFunJQikM6UYHs6YELe5AM2vZceB0PtKdJKJBBC1_WT8dR67r6-ieznAVfmV3lJ7nIbuedpPyIikFBUK-9b4m007oEnqpjiCWtAdSrmSykiXOtD5Wgz0tCf6PK4ghtqZEPbnsZ0bwPn0WKCJ8xjldhBNQDcRROrAs3AIdO3B3oBSdX8kC3N8V-Y9rMrRYU360ilCYWPTtyTri02VKxlkyf0Y_0t6Tmo79wFZE56uQFXGC9AnOpY4whB2Lik2zvXGw-FOM8QQBNIbHMU_OgZ3G3xTrrCNMMXzoxcCiGoesEOGhUGZg7rKi1DBHXRP6tvx_2QrRUM3YuclDkPEns6H1Y65Z4lwSFJ0CaXJOEOZ8XaTqqJwFbPy2ckC7mVOkebs__S3J0FECxbOqptBEwgyqIYyQIJaARrA-A0i2
 # MIRTI68_NOWTV_AUTO
 #EXTINF:-1 tvg-name="NOW ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",NOW ⭕
-https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=KCcnl1ACKvvzumJnzdFZtg&e=1795436508
+https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=QFFhpmbr1MQ4H62ZpuHsig&e=1795438010
 # MIRTI68_KANAL7_AUTO
 #EXTINF:-1 tvg-name="KANAL 7 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",KANAL 7 ⭕
-https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=cdccb610653fe02822430c5299f73650&dfp_paln=AQzzBGQExqH2OJ6Ce5ecaACtcR4QQGGdUsTODB0MwodF4GGiqR2BN7FLFmMcBCVRpSXiWRbklrqIkVM9XZmH3-qngfsge9bOkSgUGhAeMZFFiv7xm_HbK0zojKWgLnJDi9p7tk9QD9DYzZzIpDZfyWBZxYxqieG5xHT6e0DNO1xqaNmu5uKJyO8K0BZPq8i6sgyzRoPG2NtS83TAUmvD18h_wcBGWcEsgkKvdmB2i9iBTQiJBBjJzLnHOcsklBiCx6XIhYn2xCp92EJ4zB-fgPQL-Vb38CLgj6_IJfvqGpv27gRcBKSTUV0bRnRlpu1XQuRsGsuLwHRJsM2liGkj_F89jkPBWjN-oqkpIgO4FpS2ZJL8VtsVoH7T8NKB9x7sqphluvYg2vtR2rZ9t1i_CAbVF3xzh4kWsUVU_MbR-jkv-NdjjcYYPzaswQR47qo9RSJOm4Wj47f6bmtXWkPGWP-TqhqMfhdJ3JDRRvoiWTxBSeGkVAPnB0nnjI8k-S6gAPVpo7QbWnzWOPKdKKaUsoacyadLBDyJLWB3REA3kQB82bg_sxKVDunMVUEZtqqmtV6RWom7-9PwTlV1KdvOTJhCwDxWXLzaMXfd7X-gNxdhkKkVtjLSVmay6dc2Oy7VPM9Ur-jFmRajCJM-fqWoBl0Jbk9AukMrEAzHMbYMo1L5wTWBq334yFQdvlZkdnJ8JdkKqHL2BXp9t6jPK3RsbUVK75wHKpYK5tc-okV7B_kf4LnSa5Awk1dW0EV06COa8tSAeEHUDt-I3QBK8eca8ztqNo8bMf2IxnRqXyAX2Nx5EdQSlcirkiP-2oFGO51kWpaxXjT1nkE93tPaYWBQ3RXEQ-fMWAvLudGwOb6ODrQX8-KBzKDZrB0CKHVI0nu84Pm0SpLoq_enoW1JWYFzTPP8f35sOlWMZ9aXBPxTfkw5osFwYCNw5NqQVQDBxLiexqjJzRalSfk9S9MqqYXd9GheAtZOdXvwApJLzgpiscBz8iEcvpGnRLIDCHuqwXejmHjaiueTkVhGy21ivcFfzxh8hNO5eGZ3pFc02hHK4aIx33wNBvAbIojOsupdKDb5ER6GHuW2Hq4LSG-szNhNRyxGJvRWgW65kKgFv1GiFyUaEcUyCUwtxrVGZzOfWeFF7I5l1UPIFjVyXi1OjTUyVY-Pva88rbCP8k1zALLjHpu0tlEKpOXDRurgbDFAvCrBslBk21OPl8IFsNAQGZ4_vlmFRZuC1fcoITqqMaM-GXz1IIizWPHfdZE8IiCv5s19Gzc8_KjD3odgRI_M_47E1-kChSoeFuj4iUNCX-2MZqyDdOTrewaZEr0_ceqVAusDD3-goDRiGbem0GllMOgs9yQy-aVtlO71Nz0-AMgCpXmRAtQcs2uJNq3cgeqFUTCf7yyF3kWG618raJIhU-H5C_O9lWBbZLXbkkyWhXbGyuWec8m5qnbDzuzoPmjhJULCh_kegXZuSZtyDucD8Rbr
+https://kanal7.daioncdn.net/kanal7/kanal7.m3u8?app=f99587ad-1637-494d-8255-da35b09d17a1&ce=3&ppid=323efd2ffbfbd794f93615e956407394&dfp_paln=AQzzBGQEN91Kmd1R5lZZSJxhXUlov0cqU25gTWYRiDlFlXPf5CaDWiDnE1B40LmdtqYErtmvAJqIEF5rvvWQ1H18Rq2VsugHAo0c4DYGGOEne2Ht4dZvMKpQVQizmDBYikEHubRa7VVLntlyd0ch5dOfyyPdoT4wTvRHERenGe_8ygAYWvO67XgOLDCj7_Sz7usaD6EFdCiuEfrRFJy3W7rQz16FfbBxsLsbIb9vEPx3A7dKm7erWmQTHI3GsW63rYRY9SYpXvrmHYQ14jcsHVgICItW11ySLFYrwsbJlXOyomEKr_rOJZB3xkWUvu9fEzpg9wEIKJ_IZnusTRD-h_kXfHHwWuhyEJ_77V1OifGfAlmkq7BmMnpLBd_E-gNH4ozxZXa2h5yvgUlpt6NdgREjw5KjaU3BK6arNbX02HPSADidRMykofW8go55HRJyX4mYCMFMIu2CrCD3C752H0YmBBr8jQKLPC-mR_DbWXWMX0ARjVPBPr0Hqcig7IG2pCjC__D5hv0OF4ilBL5BTn_yhxiMlsiGFpyMkMtCuA0B1FOAoj9yNGtYRo_pr24E2e-3I193eMb84TAQtGehDbfndYAsv9jkl-EGKLX9iOWuNie09Tuq3BZURPkxs_x04YnInT3z4pC1wg8xi_DgXsQKH0T9jDnCfZlqao4r-_UOqaI5WSmumqOc3t9q-PfMDvrQnwTL4LurQK4MnBWeuMmpLlZiX-JK3N-79olUQ4bhYw0yV53_bVoUbkwkiVeT855lpkoZAMijlf1TUiQnVYiuuf9WSL7uX421uCD34QgDFs5mUzHLsT3N0Qv06CvoGhIShadcxSWs3gp9V8zFVpdUe-vAUWbGgYmD571nJqdLYZNJCDtasq6oG9jaJO_CsAuLhKPlANDVolmzXlJnVM-Y6blDIKanw9kbQdWd3_0D3e75GP6_CbBBs_gNAXiG5CBYOQTDNHD82Wha9VsIt-05Lk7zq0HNJ4mGFj_fwLf1kpJbYDNrOyx5DUvfMFe4p5Wo1bHvoUVNjVmKmuvL1GIqhfXRHhgJ4Zgy0hQeK4dEr4NsZX84TvjKyLOqHfQxtud733HJCjX6_ntVgwRk0F-Yze4pZNirO4R_Qz-eZmp7Mm-ZkOCuf3aEa3rmy_iNaqqFGGJHVKOXH0bRWxxAcdVnpa2WqKksts7uiJ2auFZhE6vFX090LyZk1OwSZHEeQ_UiZ1C9hisLax_M1rmajao8htV9fc2dCYdtZyDHj-1UkTEh0lh_SWaM6DPHjhSB7TOazw6xhM170rgENoFKopZTGnnk5YJIu7rKFfyEoymJaN9o_0VCwoTAClrcuiMbu8Wp0YFACmK4s_dwd79un5KmvZUbk2Ijwe8by1oGp6uqk5tW5wYzJRa7lu2L2FY9GgfDvn5aAu5MuoxSwiyadw2Lh6VBdKPkzd11mFU63Ueog16Ug2DW7qP8tGLMWoWL5ZYpNkpe38On7usQuk95q-zL0IWWHPfZ9ZcfPmXSUyCaBT3P3WB6dwtj
 # MIRTI68_TV8_AUTO
 #EXTINF:-1 tvg-name="TV8 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TV8 ⭕
-https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=7e99d99ea05b7f85fe8121bb77636f33&dfp_paln=AQzzBGQEJQ-KpkxP0HhoC1DIX8wvtwisRhok9NDaNa63FqaCxuY_oEzzpLOFfWo-mU0FHmmD89BnFDihZa_coFvAdxo4kksASo49CRgE-cbgM7c4BelE7U-gtwnCJu_6IjTFy51aUXShGmx33AjKnefPydr2KYFEVq2blTd9UWYxkYIGa0zyd8NMh1sb8Z7FPVygYGl7LA49MTqczs1Z5m9H2JVcVDlk40yAFywym_s76NOaVK3c0_1MX4jQyuJWzSsS400ja7C-DXJWc1ukaD847XYiFdB0WZdEYJJ3paaPa8G1oDVKcsizOWXM-Y4XP6lr_w8s5gT1MxArZU4yxNrdFrChmBg8zhTn8UmK33J812sx4_ox1gg6jbwQCzjiQRcLagQvkEM_qXTAaSH0i9AaCHRg8kSumeAdOFn5VdY2jQFHKx-CwGj_6s_6E1jxZtd9JDlt03zAE2_fWPqpEvrRsL2LB6O0padt4JTrLWmMrRr8B2WanCb4ZMkH3eyvEMyoHpyfIrAzbZd5QZ1gB9Q_gowUasPylH4TAZsHlDUe-hNTUP97J_hIR8G-jnEQLhTdqvhBqJHDS4cDeKZg12l72BYHaY8CG-Ymz8nbfi5ayOGyBqSqgXRRrAtTV-yabdytFwHOnwkQESKNsA3TKNvHXZ-wQBnW9SUtYYHdknntpHMxHT7msnnHbG1ezC4HjPWkm2m4Xx5oJ22WaGarCjASuQNmHhhU-qnAmlcxykNxEl7a9brzDbRVeJ9PIMm9ItJg-bmhGxQow5WNvnz6AITo7Q_53q9dXu3jX7K_52U_a2cIwrlWlMGK4kf383o3njNZ57xbjiLAKId0_oRnuIixl2tfp8L_RxhCTDvpy1K8Z-5RXgZxavNpMF5jYFORINlMr3xKfOZci6qoc-a7kH4nQR6q9rOOFcBl9Ng18Yj_5YuEQeVbe2MNFthF-levFhwBOaKoC6MTCeplpyQhedvqxcZyBioae6es7J7DtOmzxF9wL6iNjqPrx0C9r6vIbwLVN8fus402RM9ORUdDJ_BozM2yd4GqqRYonTZPvh2Pvd7P_PgJoMnQGv2naI4J0hjwmnkFyPpJYqxKuWxPiwEU975eN1eLfLQECfLPXqLfn6PqVTxv_r0fZwCmSBYW3OdnfM6edFrc3J7NN6we3GaVia2QZlCHIfpLgucGRrkGDI_Mg4FZKwmY58dDQzxU9AFV8xVPlucZ8MlthrYHDnZt0j77yF42Ky8OZycyJMBcCFC7yBMB5mYPqzWVx3DMQvr8n-h0X-7N1rKxuBn8tfF5Isna-HJ2pO-6
+https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3&ppid=ed62789bc65900de7a2523345bcf0059&dfp_paln=AQzzBGQE9lNlokJWXRYFgsPDWgpMzJKvAnkEDnv9-qj2hJXqLeeSyW23MkpmE3nGqagXepGra65z895RJSnoHlGngbDpo_LDPMSlvOmt2miK6GyOUi7MKm3sQk5j0GIjld2RhyMSe-aVyD_x9zN4hZOdKsagiDu0nFjsqpV_8yPZ5YDus5CRe_naVJkpczz2tquxFEGqlo6iLtfSEpiZkSLeUzIRVhaxHIAQtO9zFhWhIyNe_-DQ0U7qA9-t_IOSIEbjdecIz9HFVVRWQtm5k2WRKo1bbaZHe8YrD1oeSnCGcmDfVzOAdnsWKihPbyNOuYcnUeY1vc1aDdQeqTQpuFr6bOtsfJrUl6k9GhNCCr1MY6_y6TnGW5LBMXtwlLJmil1A_lkbjP7By3Bidufpcv0Z8sgSuY2x8UYUAxBf4eyO_vfl5J7-ux_yeQFRszYYih72qrvHnmMnqZIuQOSJWYLZwTYZHOOQ1yRDomGKur__WBj9NFGXaQaaOgZYPSpnlvS1HG9bhXq6ak9gu_9w6NVcA8hsR6zKXDs3RHdXnXMjiKYymkXWXBELBqDS2Dk2wruT981p5DsqMaO-NkJuZJuH_i86yS4hO_444EQ0zv-XmJXBCOGewiD9Jj1Yc45_gwnP5dZOdlYDY3uIDb23oxy6rpnHy8xYj-4E2wQQwrW21Zh39DvOIuJVCn-emGM61nG4QV3pEYFO93pZQqIqoIUr_PtT8s7z7LVc0P4GepmydzYoh7UDjfao8UtCbsJE9IhNOvRDUanW-Tsv_-be2mb0P1HWzqRECSGsO9vxfEiSXpmUk9vZHVvvdjH0yW1pX5pXo2l1RyAAG2J79axPyEw0u_-f0wBDhG3uQf_TSnJgyHhWi1Oy-_ml1vV4BPT4yBZyZ_qVf5cQ8gctqVQgzn-vkv6or0Ebs8vNqM87zsmNF4MWWzhLsvumZNC2K01MVE81XHAXnsuxOXW5beVnbDFd8VUAx9rt2h0QXLsSxr5Dyrjr3TCo7BbCLvC3WwKzuUz0WjHYPqt_Xtkil7UkBqMDgtL0f4rN-lt6MFmWQLktgBG7NOZ6tj1zBYZuaBgFnFPsksrrz2SFfSTnFErV3tyUKMml89Ug2upn3lMbtkOp_NBJ9GurxHGOFwv7ZyVMoi4pqSyQoDmr_KG_y7_uZPH7OKGOCqkoe44KB_7TKY0OxFJt33mxZ86rWxLNbSQgIuNjTohs3ESKhFfBGqTf7NPxnnWt_3xElHfLi3WKXfjNLCjFgF-Zivt1rdjU_H_vMpvQjtZvRY9Kg3Qwh5T3uVOU9ivZTmb9I9w_wWwX6gFvq4xG5uw.
 # MIRTI68_360_AUTO
 #EXTINF:-1 tvg-name="360 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/360.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",360 ⭕
 https://turkmedya-live.ercdn.net/tv360/tv360_720p.m3u8
 # MIRTI68_TV2_AUTO
 #EXTINF:-1 tvg-name="TV 2 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv2.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TV 2 ⭕
-https://demiroren.daioncdn.net/teve2/teve2.m3u8?ce=3&app=6aab838a-437e-4a1b-bbd0-e30f79cdbbbd&ppid=7fa77aaf8b309d8ba99787bd7b3eebe8&dfp_paln=AQzzBGQE-_vnwM136UsO6QK2ScjzwcAEl3yzAZli_39NN6wsK7KMnYYB2UkGPp923zXRH2lZFHawcpl3b71JavOguAhkTsuPjMsM-Om_RRIhymc1lpv8SxqZnWQ785tR9FfX_s4EvI_MZInDn6wOGIMqlJaxY5PzQ8oBuYW9dkHj3zoMKlQqqIYn-XheDOAWWLQswuA0McFcN_fMveiw5wfHAipZlsOwTitKWplzw5pLIERNZDlJRfLv1sxN5JPYrHLrX0rFRlCH5vki4RQ0O-tRMngzR46D8tAGO6uDKeDGE3FvixoRz-gmKRR5OGAte6IyGoCj8LsJqCAql8kesXX7d3EjjOLm6rKt63CXRBqc6wg7A4eTB6zzJxFKnkVDAyoltvf6F7Djf_1bS8weYbKOGM-2AlSzjLf6_5FHAoRzjiA1wWGnlEESASqjAdFy6VNVGroX6qploOuqhFGCZdwNdxwe_DWpeXxv43kfJozbeHudxWFBJ5IVJQro2kHByVWXWaIbHhhnBjNakremO-wgGpAOSm0KUdAu7xlOeVdXOw00BTpPxyt-majboG0P1Pj-yAi_MSU3vvoukkMeNoGVH1Jv-nGAyo-QuZuyijPjJ4LkKsjf8CnjTHttPUoj3aW0re1uTBtpSHFsyv3a7mv-EkKk5px0TKbk_r3SO3xr--KIJzd-d4CRmwgNPg7biftGZoE7po9G0IWQuvuLz1BqK9C6S3p8VsoEPz9XuM_THFRrDC12-BW5MhTxIjQK1D5Vpv7bdJ6Qr5dJVuMWThcaWjHkp3J3rPt5aiWcv8zD5Z7j2C0_tsxMQHCst6AxyFdLT-SLtfyvE18NrjnbaVBEgzpbNxOvcppqAdtK6vGUFLiC148ioN5dP8kWyfMbtsm09bfYsIeqdZgEtZQXjknfpaI_3KZiX8gTe8TNtUdX4sJoLHAxJiZ-9VLmPiRO_osgbpCFZSsw4sig7lMb8i_JUiRkAnhFyiIqmVYGxmMIwvDV02izlszjJxUylCSOgqF0aNagRC8BTxKll6qgyduvVRwzN55TKAI2hgtVcw2UhSwaph3lbn6u5Txc4OUW6OnnKssOXiVgeyEwY9ZKjCzbjs0qF5irr2cIyyNSS3PH1rvT0UyDp1e7wNuB9peSLo7o9n9QsmiMkHgOe8fyGNdbVIF-cLoZZGmvrvwf_em_D3RDL69sWXhPamrwdnfjv0ZmrptahEX2DySiHW5i02B0BMc20TRdvKfbeN2ms0gFQxH1OtEEiDr41WduTmwql2q9LK4hMAhscYewasnLroc5H4OGFWVDUikf3fDTLUo-NDEJ8ObuuWSzzHgwonHY2ts5m48wxAOpAP53w58UbnkJY79VHKBMoiXSeYr2zFy8TB5sTUtv80gQPPVQ56SaJWr1DZZroXCmzbdZzU8FlUo3UNuKRkUMXeKKYDx5O8ZXunnslR59i-jCqlQ.
+https://demiroren.daioncdn.net/teve2/teve2.m3u8?ce=3&app=6aab838a-437e-4a1b-bbd0-e30f79cdbbbd&ppid=7a0abd4d1d747d1d0c3914401040bb62&dfp_paln=AQzzBGQEX8WjrQRLGWHbVz7N1iq1Bomb0nspkkRfv2ANT8Bx9r2x6--8ZBjNPpcbtAWiw9xRqV9iNoKCdtpoejwP34OIyfP318wbPd1WWywahNwSaOLOtaLwBHrqJ-GAqCOvhue55ZHzkN6beFwriYVAtS60JdhGVlYpAT2tOYS9NbTgfSVsgdv1V_Vn8YQz7ONKN_LfgOwlgyA7UWSfOcMSGSNTtp_PWfg3JsY9hBW5b2CoLCl_B4MZgXUXpW4e0cJxCNEYlLn09sCaugA1gH4B_Adpblfw9Yx6GnUl92Taw_lpdVWDtuvNJK8LisuA8FYjsOvw38RO2Dc6dekjMf25CbpWwHaxomkv5sFBt67ndxS8jnExCU6jh6aoK-evkm4BKWN_Z5cogkFWIHQOFC1iO8alwQzdJ_OSDHwsz4yvZU1wVoY_rR78VlWuy10AOXrydSebnGsEnJEx_28296fkw4jRmPdWEiHVELIlUQ-j2ww0WlzGUAhbRhm2Lc7RBfa-DgLbIhsk_JXcH8Md4UtDrNikxUmA43TO8IAfCGwc_sLxl_lL3hm_VZh0V6qlTsJ8ptbV33WIn2_d5Kv4_tbXH_Z1M-mwHkRIyPoeAbb8DpPyFNByhyoZoczXqcewNZCQg_BgxtibpulJZonYV4pK7GDshAbAQbbrQU90tGTPJ1uIrBSkE8hKXMauwlf6saYnXmu1wc0uryu1-xrpeqq2jvcWFbHcMuD5VRl4A4cjn3QFrVOPbgoqMsyVgVG9-UT5v5NjPdQbmJLV668crh8FQU_6E_E7j0jkRBx97B2D12UV7lDD9Etry1tSva-3hh2eLPcUgCcNYOa24WhQ7XaIep_X7JcZ9oFjW3uBNQ_KtRcTULtEUGRQ4ZR9n8jcwmjR9l6TgG-OWtZr_yTmR-3rIK4XfCTBJqSk3B0HpcWTwFDt4nrUAau2DiFWh1kr5ul9Lcnj4ywjIBfgzPqAFKQSkozoPIkvdrkZye_e-IxH-fE3qR0wyaKAKBJNQiliLNJVK5zmgxYx_zh3IRozUcfQvOxEjBR-v_QfezkHCgQjtXAIFRNnTDwb3c-dINAYsOocPj5KbzScSQjaM_eNtRHID0F_kKNjOsGg0dYa5xDDIIfiQgasmWHIyDGJ_f_xzBiVpPbLcd_7XYMxozT4kDFmFNPKbWLwzcDwFSw6_4DL4s1QzCAifkv-9U_wMUjwsSYvXQjyybUXcrFTatov1g5FZyiSDT_mo9f0KMaUUHhB16j_hkdBuapANiKyfTmB6-wGq3Xr_CW3YcmLDIzdRyXkJvK1
 #EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL",İNFO
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL",TRT 1
@@ -47451,6 +47452,298 @@ http://xbyteios.store/yt/film-id-L7aStJ10DRA.m3u8
 http://xbyteios.store/yt/film-id-kMWY6LZns_g.m3u8
 #EXTINF:-1 tvg-name="YABAN ÇİÇEĞİ - YABAN ÇİÇEĞİ 45. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - YABAN ÇİÇEĞİ 🇰🇷",YABAN ÇİÇEĞİ - YABAN ÇİÇEĞİ 45. BÖLÜM
 http://xbyteios.store/yt/film-id-v0I49kWwe_4.m3u8
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 1-. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 1-. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=LfbW6DO7Zgs
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 2. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 2. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Hw3dsq2vQ4g
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 3. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 3. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=lNcOqYLowb8
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 4. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 4. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=vwP-w63klHE
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 5. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 5. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=NxrDuIWSBzM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 6. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 6. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=n9TL3sx1-p4
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 7. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 7. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=6XMFs_6eQgI
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 8. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 8. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Z-E_yJOAPTQ
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 9. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 9. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=sLJCtfZz4xg
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 10. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 10. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=5iK7smTuUXI
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 11. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 11. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=bJ7VH99YqXo
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 12. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 12. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=rG_kYsgFw2M
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 13. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 13. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=KswYPc4PNxo
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 14. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 14. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=qebJp8JQ7TE
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 15. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 15. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=sGujswnthwg
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 16. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 16. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=izdZC-nFgnE
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 17. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 17. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=WIlLyFRwSkA
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 18. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 18. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=I9Katr8kVac
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 19. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 19. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=s5gqzOmyBG4
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 20. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 20. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=kTYyr9nhBcs
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 21. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 21. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=CavumG3Remg
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 22. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 22. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=WDBA05Hlamo
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 23. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 23. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=m3JhYNa2hzc
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 24. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 24. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=D6JOH1XxfcY
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 25. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 25. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=bWLUlX7sv2o
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 26. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 26. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=7Yp3iU_xF6Y
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 27. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 27. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=OzUw40lfsrw
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 28. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 28. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=aUsiTeAFTnI
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 29. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 29. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=NHvjVdH66s0
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 30. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 30. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=FlUSzeQZ4QI
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 31. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 31. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=jmZsUdUw3TI
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 32. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 32. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=wgivjyDfK7c
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 33. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 33. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=uMY775MnqDI
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 34. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 34. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=6ERQHjDpMUY
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 35. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 35. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=6ERQHjDpMUY
+#EXTINF:-1 tvg-name="SÜPER BABA - 001. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 001. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=p3oOogfDAVo
+#EXTINF:-1 tvg-name="SÜPER BABA - 002. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 002. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=REnRobF2seY
+#EXTINF:-1 tvg-name="SÜPER BABA - 003. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 003. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=2EvngsTvfMA
+#EXTINF:-1 tvg-name="SÜPER BABA - 004. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 004. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=pOzRBa3fscU
+#EXTINF:-1 tvg-name="SÜPER BABA - 005. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 005. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=zydRpYU86BU
+#EXTINF:-1 tvg-name="SÜPER BABA - 006. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 006. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=VYpmOLHvJLY
+#EXTINF:-1 tvg-name="SÜPER BABA - 007. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 007. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Zm0sANOGwqg
+#EXTINF:-1 tvg-name="SÜPER BABA - 008. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 008. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Mir7OKKVLaM
+#EXTINF:-1 tvg-name="SÜPER BABA - 009. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 009. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=zP6mg7Ro2zI
+#EXTINF:-1 tvg-name="SÜPER BABA - 010. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 010. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=ydaBnOJ24d8
+#EXTINF:-1 tvg-name="SÜPER BABA - 011. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 011. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=luAPaRZlkZY
+#EXTINF:-1 tvg-name="SÜPER BABA - 012. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 012. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=bFsaZtsix5c
+#EXTINF:-1 tvg-name="SÜPER BABA - 013. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 013. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=su-McCpvh0I
+#EXTINF:-1 tvg-name="SÜPER BABA - 014. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 014. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=uUnic9oxyL8
+#EXTINF:-1 tvg-name="SÜPER BABA - 015. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 015. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Qwz3Ovgy1O0
+#EXTINF:-1 tvg-name="SÜPER BABA - 016. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 016. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=O-pVd81VpHg
+#EXTINF:-1 tvg-name="SÜPER BABA - 017. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 017. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=jcPEEiKrF_E
+#EXTINF:-1 tvg-name="SÜPER BABA - 018. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 018. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=R1PE_XYtmDA
+#EXTINF:-1 tvg-name="SÜPER BABA - 019. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 019. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=CR8G7bXcH1M
+#EXTINF:-1 tvg-name="SÜPER BABA - 020. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 020. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=wNZn18AcxwM
+#EXTINF:-1 tvg-name="SÜPER BABA - 021. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 021. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=ih3B2xdNGuk
+#EXTINF:-1 tvg-name="SÜPER BABA - 022. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 022. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=WaoaAQZ-atY
+#EXTINF:-1 tvg-name="SÜPER BABA - 023. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 023. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=mXB4-zS_S-4
+#EXTINF:-1 tvg-name="SÜPER BABA - 024. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 024. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=O5Y7LEWHY3Q
+#EXTINF:-1 tvg-name="SÜPER BABA - 025. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 025. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=9VTvlj_ai8o
+#EXTINF:-1 tvg-name="SÜPER BABA - 026. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 026. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=M7znph6LJxQ
+#EXTINF:-1 tvg-name="SÜPER BABA - 027. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 027. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=dkFMj3pnzro
+#EXTINF:-1 tvg-name="SÜPER BABA - 028. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 028. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=dsuQ7pzFtek
+#EXTINF:-1 tvg-name="SÜPER BABA - 029. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 029. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=br6wtcU7i1g
+#EXTINF:-1 tvg-name="SÜPER BABA - 030. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 030. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=AtpAbM5CYRc
+#EXTINF:-1 tvg-name="SÜPER BABA - 031. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 031. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=ac_BDw0dwyI
+#EXTINF:-1 tvg-name="SÜPER BABA - 032. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 032. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=N3E2dmA_Q2M
+#EXTINF:-1 tvg-name="SÜPER BABA - 033. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 033. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=ewUglDlCoas
+#EXTINF:-1 tvg-name="SÜPER BABA - 034. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 034. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=jVytYbVfAPM
+#EXTINF:-1 tvg-name="SÜPER BABA - 035. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 035. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=1xjRa6s8sNw
+#EXTINF:-1 tvg-name="SÜPER BABA - 036. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 036. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=RTQHCCs3Q3A
+#EXTINF:-1 tvg-name="SÜPER BABA - 037. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 037. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=ZmCakdhMWx4
+#EXTINF:-1 tvg-name="SÜPER BABA - 038. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 038. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=J79dPFdSkmw
+#EXTINF:-1 tvg-name="SÜPER BABA - 039. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 039. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=CKb2jISa594
+#EXTINF:-1 tvg-name="SÜPER BABA - 040. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 040. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=iPaocMRb99k
+#EXTINF:-1 tvg-name="SÜPER BABA - 041. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 041. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=HmJH-vER7BU
+#EXTINF:-1 tvg-name="SÜPER BABA - 042. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 042. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Nu8YlWOcziE
+#EXTINF:-1 tvg-name="SÜPER BABA - 043. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 043. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=JvGgUzGs4Cc
+#EXTINF:-1 tvg-name="SÜPER BABA - 044. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 044. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=RVIjoJhU4E0
+#EXTINF:-1 tvg-name="SÜPER BABA - 045. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 045. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=HnswoTaAZPA
+#EXTINF:-1 tvg-name="SÜPER BABA - 046. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 046. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=_--qZqR4g0I
+#EXTINF:-1 tvg-name="SÜPER BABA - 047. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 047. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=lAwkEOzC7kw
+#EXTINF:-1 tvg-name="SÜPER BABA - 048. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 048. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=EqoQRuHRiMU
+#EXTINF:-1 tvg-name="SÜPER BABA - 049. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 049. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=On--HBOSN9g
+#EXTINF:-1 tvg-name="SÜPER BABA - 050. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 050. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=WiG2yt-d-Fc
+#EXTINF:-1 tvg-name="SÜPER BABA - 051. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 051. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=v3bf_6anHWs
+#EXTINF:-1 tvg-name="SÜPER BABA - 052. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 052. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=v65soaWujZ4
+#EXTINF:-1 tvg-name="SÜPER BABA - 053. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 053. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=7Gk5VXiSNP8
+#EXTINF:-1 tvg-name="SÜPER BABA - 054. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 054. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=IKEmqFW95Jg
+#EXTINF:-1 tvg-name="SÜPER BABA - 055. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 055. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=fKPd1p0uHfY
+#EXTINF:-1 tvg-name="SÜPER BABA - 056. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 056. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=DoEEcgJl9-I
+#EXTINF:-1 tvg-name="SÜPER BABA - 057. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 057. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=jTLu3gaMqGA
+#EXTINF:-1 tvg-name="SÜPER BABA - 058. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 058. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=bmCg4gKIp18
+#EXTINF:-1 tvg-name="SÜPER BABA - 059. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 059. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=ryE3Wwuax18
+#EXTINF:-1 tvg-name="SÜPER BABA - 060. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 060. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=MqoSUvKvqfY
+#EXTINF:-1 tvg-name="SÜPER BABA - 061. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 061. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=IaB_Bdaa5vs
+#EXTINF:-1 tvg-name="SÜPER BABA - 062. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 062. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=NJYJwOA4OHM
+#EXTINF:-1 tvg-name="SÜPER BABA - 063. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 063. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=2BNDRI347Hw
+#EXTINF:-1 tvg-name="SÜPER BABA - 064. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 064. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=uO4C_hhLvrE
+#EXTINF:-1 tvg-name="SÜPER BABA - 065. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 065. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=1abQ_tDKNsM
+#EXTINF:-1 tvg-name="SÜPER BABA - 066. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 066. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=_LgN6NdKBvE
+#EXTINF:-1 tvg-name="SÜPER BABA - 067. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 067. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=-ShMUh_F0Q0
+#EXTINF:-1 tvg-name="SÜPER BABA - 068. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 068. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=ejZLDPwRBPk
+#EXTINF:-1 tvg-name="SÜPER BABA - 069. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 069. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=E8bSVJ_V-6U
+#EXTINF:-1 tvg-name="SÜPER BABA - 070. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 070. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=qZO5fgPee0w
+#EXTINF:-1 tvg-name="SÜPER BABA - 071. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 071. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=9JzEjQjYZjU
+#EXTINF:-1 tvg-name="SÜPER BABA - 072. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 072. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=B3BMVZFDlIo
+#EXTINF:-1 tvg-name="SÜPER BABA - 073. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 073. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Kv-4UKMrTxk
+#EXTINF:-1 tvg-name="SÜPER BABA - 074. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 074. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=kCLzjatrTfc
+#EXTINF:-1 tvg-name="SÜPER BABA - 075. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 075. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=1q5o4nn1zy4
+#EXTINF:-1 tvg-name="SÜPER BABA - 076. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 076. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=gO0w3GadyFQ
+#EXTINF:-1 tvg-name="SÜPER BABA - 077. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 077. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=nobMj_UNIiM
+#EXTINF:-1 tvg-name="SÜPER BABA - 078. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 078. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=otYS93KsYMc
+#EXTINF:-1 tvg-name="SÜPER BABA - 079. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 079. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=QQ2o-kJ0v9w
+#EXTINF:-1 tvg-name="SÜPER BABA - 080. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 080. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=U1cs3HygUrc
+#EXTINF:-1 tvg-name="SÜPER BABA - 081. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 081. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=nzOKhFPN7Cw
+#EXTINF:-1 tvg-name="SÜPER BABA - 082. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 082. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=HNcguto5o0k
+#EXTINF:-1 tvg-name="SÜPER BABA - 083. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 083. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=KNkV17eLITg
+#EXTINF:-1 tvg-name="SÜPER BABA - 084. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 084. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=lpup25aIyZM
+#EXTINF:-1 tvg-name="SÜPER BABA - 085. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 085. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Fg6aJTPkvEc
+#EXTINF:-1 tvg-name="SÜPER BABA - 086. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 086. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=dMT7PPd2gys
+#EXTINF:-1 tvg-name="SÜPER BABA - 087. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 087. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=gk-IUg2A5Cg
+#EXTINF:-1 tvg-name="SÜPER BABA - 088. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 088. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=QWbuKHjhJlQ
+#EXTINF:-1 tvg-name="SÜPER BABA - 089. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 089. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=4ulQt5Vzcxg
+#EXTINF:-1 tvg-name="SÜPER BABA - 090. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 090. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=fDnTMdHnNsA
+#EXTINF:-1 tvg-name="SÜPER BABA - 091. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 091. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=tAk68CNyEZM
+#EXTINF:-1 tvg-name="SÜPER BABA - 092. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 092. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=0CvNqGQwhFE
+#EXTINF:-1 tvg-name="SÜPER BABA - 093. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 093. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=FxzXcTeKLGI
+#EXTINF:-1 tvg-name="SÜPER BABA - 094. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 094. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Au4ago609lc
+#EXTINF:-1 tvg-name="SÜPER BABA - 095. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 095. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=OY7sH6lELwg
+#EXTINF:-1 tvg-name="SÜPER BABA - 096. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 096. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=ooRd0aOi_jM
+#EXTINF:-1 tvg-name="SÜPER BABA - 097. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 097. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=itzq_smHMLw
+#EXTINF:-1 tvg-name="SÜPER BABA - 098. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 098. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=a6a6S3ycnKE
+#EXTINF:-1 tvg-name="SÜPER BABA - 099. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 099. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=ehaVN_EA26g
+#EXTINF:-1 tvg-name="SÜPER BABA - 100. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 100. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=J0i2iD5_Exw
+#EXTINF:-1 tvg-name="SÜPER BABA - 101. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 101. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=L99c1KSx668
+#EXTINF:-1 tvg-name="SÜPER BABA - 102. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 102. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=VFfYHWDBdMA
+#EXTINF:-1 tvg-name="SÜPER BABA - 103. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 103. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=3VgjKFKegrE
+#EXTINF:-1 tvg-name="SÜPER BABA - 104. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 104. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=Ujys6zA15xI
+#EXTINF:-1 tvg-name="SÜPER BABA - 105. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 105. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=htbx4C1O9eE
+#EXTINF:-1 tvg-name="SÜPER BABA - 106. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 106. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=R8zwATf1LS0
+#EXTINF:-1 tvg-name="SÜPER BABA - 107. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 107. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=OmcDrEj9N4s
+#EXTINF:-1 tvg-name="SÜPER BABA - 108. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 108. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=RwM-20S0bp0
+#EXTINF:-1 tvg-name="SÜPER BABA - 109. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 109. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=wzNJOz2eYCQ
+#EXTINF:-1 tvg-name="SÜPER BABA - 110. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 110. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=vZMwfNjXMUs
+#EXTINF:-1 tvg-name="SÜPER BABA - 111. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 111. BÖLÜM
+https://mirti68.alwaysdata.net/yt/film.php?id=2G0pquZ9ISM
 #EXTINF:-1 tvg-name="IHLAMUR ALDINDA - 1. BOLUM" tvg-logo="https://www.cinematerial.com/p/500x/eirheask/ihlamurlar-altinda-turkish-movie-poster.jpg?v=1456262467" group-title="🟪◆ DİZİ - IHLAMURLAR ALTINDA ⭕",IHLAMUR ALDINDA - 1. BOLUM
 https://kanaldvod.duhnet.tv/S1/HLS_VOD/a63a_3211/1500/prog_index.m3u8?key=5465efb0cf45af1064b71d1a&app=com.kanald&part=1-1&min=350&max=1250
 #EXTINF:-1 tvg-name="IHLAMUR ALDINDA - 2. BOLUM" tvg-logo="https://www.cinematerial.com/p/500x/eirheask/ihlamurlar-altinda-turkish-movie-poster.jpg?v=1456262467" group-title="🟪◆ DİZİ - IHLAMURLAR ALTINDA ⭕",IHLAMUR ALDINDA - 2. BOLUM
@@ -48987,295 +49280,295 @@ https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/-/97/c-/-97c-8FMYHG3Ozgh2mRwrw/-97
 https://kanaldvodnew.duhnet.tv/vms/e228sc3e0o/_/W5/Wm/_W5WmlCWpWDd6X37n7av5A/_W5WmlCWpWDd6X37n7av5A.smil/.m3u8?app=com.kanald&min=0&max=1250&part=1-1
 #EXTINF:-1 tvg-name="KINALI KAR - KINALI KAR 90. BÖLÜM - FİNAL" tvg-logo="https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg" group-title="🟪◆ DİZİ - KINALI KAR ⭕",KINALI KAR - KINALI KAR 90. BÖLÜM - FİNAL
 https://dmxleo.dailymotion.com/cdn/manifest/video/k6sPoYfeHolCe9EYbqc.m3u8?auth=1795582241-2562-i96cqj8f-26e0deee2d72f822eb4fffa35fd90f5fVLrxDTHIKMzbRaE3IJyzVHElJYM8Qmqv4b7rmE4aVc3YDMpDK3MWNcNKUeYFH4eYjIdkGik4vmDWU35XKmBrchWHsQpLWr7CtGJSOFqMq4jWejATVVNwxYNpbWZ4x-D19EAQLz3xlngQjez0-FUAYN8DipgaG_bUvMEsTv9ZGmnQbJ6tSMVjxOGkxHSRoZJG7w6FMCgP4stL_exGxtMySQsqVjSbNOnkA0tV2u7tTwIUcTrJ5XSEZlRXp2Pab8nyzfGEmVVtPv_Zq0mmUltu-svLMY3f4zGKHn-KNlEk966cCsBbsJ1dlzFtBJuh_9luCejoJOa-Il7mpmGuGBZNl7XdN8kQEPY5zpRntAyxdYn_1WYNLVHbd71tdFjicxkPvROP3fYPGE3Z31arTzHLexPBa_ycWXFzNeCSYMZSBQ3EtR2KF3KNawndfFFlMl5dIB-TGvTO_uwqgE32k7affXk5K4FN-VSC4plH4HEQsDdM5huFSDdjLb-aG8MLEv-4pBtddn5gGu5uyQUgNe53uSt3pW_m5k5jSLf-gPlsxJKA9BGT9_bsnCdF9VDCIgM4oQG0UmZpBXl725wMeKeiNvjuBUC41X9eGN2ly6XGDWIGO-beyfssZ7WmBEs8cailMwATMCBuOuahyZZHyFgIf-HZ412HywmFSK4JKjT5hg-JqGmpKfO-xigY27JRt3CqJIkEe0N3hpzufKUQkUU0cKy7mwCsn9-6mjvTCREICdeGD-oynSaQEj9EhcggU6u32p_rr2MCqgCLK2AKwPXxfk_RwwEbnnxJ2PAatfsw-BM3iBjUrAHbizC2gTMxEmRtWXiESeaSQxN2mldDM7w-_wpk0kCw2Amf3sXirxqgYgbO7wW0OycI9osU4R_DWQp7CsAwTn-0UnKqjkP5cKoQR7EdB420UxhVWTE7uLuJaY32kOhufFkJ_3DXqOc0wKNdyKrW83bBJC-7c7Bth1Z7i4ga4ku7Ljg1oxHnW-9bQaIWBSy3IjKQ_7ay_4zzL03kfcu6t7cBCGVt_-tVizA7rMFI44j_wul3tipdREh9XezejDjSHPiDAt7iS5HmmySuUw_BkH41Ee9S1ZVN8nrYLiv6IjFfmSbKHuH6KxhvExSiA8FweuwaWe5mwNZxNx502dw9whYjI2bu501y3epIN3pjiBk69dXPmtxDOG065bGHBAHbjtMVyiskn0YLQOQAdidlPQ4uQ6d-1wW5dEnqJy6Fhxb-d-qYdPkascHnSeWkQkPm6q8Y_yFpYHkopdznRlf9hWqoJmoL_QV-rdtp7RqJGJVCApCpzDtGqiBf8iQvm1v2ojnbhXEb3lVCfoYhT8-ol7sQ_mYcvL8s2pDZ61IoxlGVpM0ZH9vKTLfJO2J2N77umJxvlAJHtJDlo9wHtX_gxcgenqtT4AxS9Ws-QYQw5LvzsGhARs0Bbof12Q6Zwu7jDwFY2TTHgIUXF-8xbpZU0O19QCvJbN_UWxGzOPAFjcD2isKsE6Sp-GoMnsX39lvXhIH56FokCbZB4VCCyqjpD4I4Bmr_VMefv-9Lwl9YMTxY2dkZq_Ai4W82pPaidVUGJEzz2YXWdP2CQGyCSaVrAy7lruzVmuBZ4yTXw4DozrduqGALusQsA_bHShwsMTyg2SS9vqh0zybG94Qmu2JFSUX2nnrPX-slZNPXQ0SLlNslCep8KQpdh7Z0Vv-kthlB3XsUCycvXTjq_a3SL_loOBGo7bMMKJfT9-GcEvjWTBBhaQafNP_wTw5x2luS1IJFhpkGxnthJMAgBIX4BL_miuyIoCwLZtXIP5hnDeEm5hPoOHcgy6bInxoO01ltWWpBqwE2pJDWzQup8PVHRXvz5jDsTjgFvKY84FqSDn8BosZV1P6Q6H-4gP4VDdBwwlUUuvhsvrlEm0nMzoRMO9cZrDZGSMWRhOKvgVzHMfncyZO9GlFicVVTFX9Rv_WAEW88lYsIGGCc3wolFm8bMHzTYfMMvj2JODycmO2vyhg9wzDA2AU6A2tJCLR8afuU2c-2tX0QAnyzjbcm1rfoXSUYNpbW8oSQcy5aUxM1H4aSYvhVjsSxImAJQddaQCbAPCQWMZy6Z3hShHg00WaXc2AMgmfD6wB6n1o4Gl6hHP6ZmdDLSMzcTutYPPFJcEND4QLI0C25nQkNwWs9HhVKKPRCBEBrUzzOM-ro_u-CRk8d3YOwtM0sjWOoFeCBOtVD3K2YQvXPNwF6tJbpt1TRkuLeY11pcX273e49p_thk5T7_ZSx1YXw1R4dR6T3rsxAZFxoPuLbwMPXaZgzuEsmEFv2JnKpUMTA2bv1nU5ASaiWSwRmaUqgMwMOJJcZGFfsfY1qg2kTUrvCT-yJY92ErxTJNiGM-7yyo3FUyZkMAsM5fS2ojwVFMhhDO1yB8R2nXDLaRWFO_D17JVwuxaePh7Em1YwaHciUOKlWh6mtIQ0Xl7KUY384uxWkhRnYK6j-WkYUmUVQD8WK6szs9iNrDbcC6Wtyw-KuWPXNYnr83s42YkPXY-os_K4v2kaIe06TJJqSnNwnugMHhiu02mkPzSJHHJdNKVNmZX7U7Hmln3tm53PjdCZJgtAbD5A2OrGuQ-dTKqFCP_0E7Yvbohw4f4XGIcZeQpjS8sCKppBu2l7-H-sH-z4BNEHCSmXmnSV_XX2V2rx6ZGu7tjABfprT-lfWnQIWUUTXpVwreV0HCkEzOqhZw2yOEr_p2NQhBiFjQk9067Ycp_xXE6HdK5fnwMQhIuB4pxaFjysDs1aN49D3ZNdOsUWDbSd1exwS50lbO2wK4xY_mNH-FRNZGeXF4U0rEQPIQRVQeU-A_DnjaS5uDu2ZY7XfS0XYsgbPnU6DHa2giEK42r4KCy-jc1MuIIhm8P4EfR0vzrdoN1ZEKJLdj0P0a-WvuGVzwVkj6quTBm79VsC6roiAsgYDq6_5Qm0gKC-_H0rey1qfMtpDQ9MoGhmO47p5AsSuENZba2MK-BA_tkU-ac_bQUqPeIpQSHgZ3_Ct9LlY1xUfkNEmAl2fSVFtI2qWASeSEjWg0_ZI0C4BhQf0GpPI1yTxWX3P48cAWKMzvcenFn29RE68bK8fHvyHIYOgt8lbGcIMx4wz2-KMVqDDtwdJoUSDez_khdcauLv4WHjmXmXYCs0TS9_JWfXen-YhqV7AxepSztCbDNb7IiLM8LDay3rX8VLXM&vv=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C11%2C12%2C13%2C14&sec=1&rts=257278&rla=en&rhv=1&reader_us_privacy=1YNY&reader.player=dailymotion&reader.demographics_eligibility=false&plt=1&mm=video%2Fmp4%2Cvideo%2Fwebm%2Caudio%2Fmp4%2Caudio%2Fmpeg%2Caudio%2Faac%2Caudio%2Fmpeg3%2Caudio%2Fmp3%2Caudio%2Fvnd.wave%2Caudio%2Fwav%2Caudio%2Fwave%2Caudio%2Fogg%2Caudio%2Fvorbis%2Cimage%2Fjpeg%2Cimage%2Fpng%2Cimage%2Fwebp%2Cimage%2Fsvg%2Bxml&lnrt=1&gpp_pls=7&gpp_pl=DBABLA%7EBVQqAAAAAWA&eb=https%3A%2F%2Fwww.kanald.com.tr%2Fkinali-kar%2Fbolumler%2F90-bolum-final&dmngv=1.0&dmng=Dailymotion&dlvr=1%2C2&csr=1&cse=1k83brs733b37bdb38a&cpt=player&cpr=xbcf4&cpi=xold69&cen=prod&cbrs=1&battr=9%2C10%2C11%2C12%2C13%2C14%2C17&apo=monetization&3pcb=0&r=v&vl=-1&ciid=1k83brs733b37bdb38a_PRE_2_1&cidx=0&sidx=0&rap=1&vidIdx=0&omp=Dailymotion%2F1.0&omn=0&ccPlcmt=1&ccVpa=auto&ccVpmute=1&pos=1&pdm=regular&csr=1&pbm=2
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 1-. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 1-. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 1-. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 1-. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=LfbW6DO7Zgs
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 2. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 2. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 2. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 2. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Hw3dsq2vQ4g
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 3. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 3. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 3. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 3. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=lNcOqYLowb8
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 4. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 4. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 4. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 4. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=vwP-w63klHE
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 5. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 5. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 5. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 5. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=NxrDuIWSBzM
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 6. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 6. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 6. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 6. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=n9TL3sx1-p4
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 7. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 7. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 7. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 7. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=6XMFs_6eQgI
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 8. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 8. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 8. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 8. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Z-E_yJOAPTQ
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 9. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 9. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 9. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 9. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=sLJCtfZz4xg
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 10. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 10. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 10. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 10. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=5iK7smTuUXI
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 11. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 11. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 11. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 11. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=bJ7VH99YqXo
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 12. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 12. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 12. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 12. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=rG_kYsgFw2M
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 13. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 13. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 13. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 13. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=KswYPc4PNxo
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 14. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 14. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 14. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 14. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=qebJp8JQ7TE
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 15. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 15. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 15. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 15. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=sGujswnthwg
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 16. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 16. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 16. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 16. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=izdZC-nFgnE
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 17. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 17. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 17. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 17. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=WIlLyFRwSkA
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 18. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 18. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 18. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 18. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=I9Katr8kVac
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 19. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 19. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 19. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 19. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=s5gqzOmyBG4
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 20. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 20. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 20. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 20. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=kTYyr9nhBcs
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 21. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 21. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 21. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 21. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=CavumG3Remg
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 22. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 22. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 22. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 22. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=WDBA05Hlamo
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 23. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 23. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 23. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 23. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=m3JhYNa2hzc
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 24. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 24. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 24. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 24. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=D6JOH1XxfcY
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 25. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 25. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 25. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 25. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=bWLUlX7sv2o
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 26. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 26. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 26. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 26. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=7Yp3iU_xF6Y
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 27. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 27. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 27. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 27. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=OzUw40lfsrw
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 28. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 28. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 28. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 28. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=aUsiTeAFTnI
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 29. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 29. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 29. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 29. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=NHvjVdH66s0
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 30. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 30. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 30. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 30. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=FlUSzeQZ4QI
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 31. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 31. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 31. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 31. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=jmZsUdUw3TI
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 32. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 32. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 32. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 32. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=wgivjyDfK7c
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 33. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 33. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 33. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 33. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=uMY775MnqDI
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 34. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 34. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 34. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 34. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=6ERQHjDpMUY
-#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 35. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕",İKİNCİ BAHAR - İKİNCİ BAHAR 35. BÖLÜM
+#EXTINF:-1 tvg-name="İKİNCİ BAHAR - İKİNCİ BAHAR 35. BÖLÜM" tvg-logo="https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg" group-title="🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️",İKİNCİ BAHAR - İKİNCİ BAHAR 35. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=6ERQHjDpMUY
-#EXTINF:-1 tvg-name="SÜPER BABA - 001. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 001. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 001. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 001. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=p3oOogfDAVo
-#EXTINF:-1 tvg-name="SÜPER BABA - 002. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 002. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 002. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 002. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=REnRobF2seY
-#EXTINF:-1 tvg-name="SÜPER BABA - 003. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 003. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 003. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 003. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=2EvngsTvfMA
-#EXTINF:-1 tvg-name="SÜPER BABA - 004. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 004. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 004. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 004. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=pOzRBa3fscU
-#EXTINF:-1 tvg-name="SÜPER BABA - 005. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 005. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 005. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 005. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=zydRpYU86BU
-#EXTINF:-1 tvg-name="SÜPER BABA - 006. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 006. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 006. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 006. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=VYpmOLHvJLY
-#EXTINF:-1 tvg-name="SÜPER BABA - 007. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 007. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 007. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 007. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Zm0sANOGwqg
-#EXTINF:-1 tvg-name="SÜPER BABA - 008. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 008. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 008. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 008. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Mir7OKKVLaM
-#EXTINF:-1 tvg-name="SÜPER BABA - 009. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 009. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 009. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 009. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=zP6mg7Ro2zI
-#EXTINF:-1 tvg-name="SÜPER BABA - 010. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 010. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 010. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 010. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=ydaBnOJ24d8
-#EXTINF:-1 tvg-name="SÜPER BABA - 011. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 011. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 011. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 011. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=luAPaRZlkZY
-#EXTINF:-1 tvg-name="SÜPER BABA - 012. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 012. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 012. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 012. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=bFsaZtsix5c
-#EXTINF:-1 tvg-name="SÜPER BABA - 013. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 013. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 013. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 013. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=su-McCpvh0I
-#EXTINF:-1 tvg-name="SÜPER BABA - 014. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 014. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 014. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 014. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=uUnic9oxyL8
-#EXTINF:-1 tvg-name="SÜPER BABA - 015. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 015. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 015. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 015. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Qwz3Ovgy1O0
-#EXTINF:-1 tvg-name="SÜPER BABA - 016. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 016. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 016. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 016. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=O-pVd81VpHg
-#EXTINF:-1 tvg-name="SÜPER BABA - 017. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 017. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 017. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 017. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=jcPEEiKrF_E
-#EXTINF:-1 tvg-name="SÜPER BABA - 018. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 018. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 018. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 018. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=R1PE_XYtmDA
-#EXTINF:-1 tvg-name="SÜPER BABA - 019. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 019. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 019. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 019. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=CR8G7bXcH1M
-#EXTINF:-1 tvg-name="SÜPER BABA - 020. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 020. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 020. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 020. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=wNZn18AcxwM
-#EXTINF:-1 tvg-name="SÜPER BABA - 021. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 021. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 021. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 021. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=ih3B2xdNGuk
-#EXTINF:-1 tvg-name="SÜPER BABA - 022. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 022. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 022. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 022. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=WaoaAQZ-atY
-#EXTINF:-1 tvg-name="SÜPER BABA - 023. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 023. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 023. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 023. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=mXB4-zS_S-4
-#EXTINF:-1 tvg-name="SÜPER BABA - 024. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 024. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 024. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 024. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=O5Y7LEWHY3Q
-#EXTINF:-1 tvg-name="SÜPER BABA - 025. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 025. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 025. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 025. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=9VTvlj_ai8o
-#EXTINF:-1 tvg-name="SÜPER BABA - 026. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 026. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 026. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 026. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=M7znph6LJxQ
-#EXTINF:-1 tvg-name="SÜPER BABA - 027. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 027. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 027. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 027. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=dkFMj3pnzro
-#EXTINF:-1 tvg-name="SÜPER BABA - 028. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 028. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 028. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 028. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=dsuQ7pzFtek
-#EXTINF:-1 tvg-name="SÜPER BABA - 029. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 029. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 029. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 029. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=br6wtcU7i1g
-#EXTINF:-1 tvg-name="SÜPER BABA - 030. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 030. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 030. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 030. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=AtpAbM5CYRc
-#EXTINF:-1 tvg-name="SÜPER BABA - 031. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 031. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 031. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 031. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=ac_BDw0dwyI
-#EXTINF:-1 tvg-name="SÜPER BABA - 032. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 032. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 032. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 032. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=N3E2dmA_Q2M
-#EXTINF:-1 tvg-name="SÜPER BABA - 033. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 033. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 033. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 033. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=ewUglDlCoas
-#EXTINF:-1 tvg-name="SÜPER BABA - 034. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 034. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 034. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 034. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=jVytYbVfAPM
-#EXTINF:-1 tvg-name="SÜPER BABA - 035. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 035. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 035. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 035. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=1xjRa6s8sNw
-#EXTINF:-1 tvg-name="SÜPER BABA - 036. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 036. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 036. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 036. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=RTQHCCs3Q3A
-#EXTINF:-1 tvg-name="SÜPER BABA - 037. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 037. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 037. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 037. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=ZmCakdhMWx4
-#EXTINF:-1 tvg-name="SÜPER BABA - 038. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 038. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 038. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 038. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=J79dPFdSkmw
-#EXTINF:-1 tvg-name="SÜPER BABA - 039. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 039. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 039. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 039. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=CKb2jISa594
-#EXTINF:-1 tvg-name="SÜPER BABA - 040. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 040. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 040. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 040. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=iPaocMRb99k
-#EXTINF:-1 tvg-name="SÜPER BABA - 041. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 041. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 041. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 041. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=HmJH-vER7BU
-#EXTINF:-1 tvg-name="SÜPER BABA - 042. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 042. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 042. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 042. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Nu8YlWOcziE
-#EXTINF:-1 tvg-name="SÜPER BABA - 043. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 043. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 043. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 043. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=JvGgUzGs4Cc
-#EXTINF:-1 tvg-name="SÜPER BABA - 044. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 044. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 044. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 044. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=RVIjoJhU4E0
-#EXTINF:-1 tvg-name="SÜPER BABA - 045. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 045. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 045. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 045. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=HnswoTaAZPA
-#EXTINF:-1 tvg-name="SÜPER BABA - 046. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 046. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 046. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 046. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=_--qZqR4g0I
-#EXTINF:-1 tvg-name="SÜPER BABA - 047. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 047. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 047. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 047. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=lAwkEOzC7kw
-#EXTINF:-1 tvg-name="SÜPER BABA - 048. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 048. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 048. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 048. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=EqoQRuHRiMU
-#EXTINF:-1 tvg-name="SÜPER BABA - 049. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 049. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 049. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 049. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=On--HBOSN9g
-#EXTINF:-1 tvg-name="SÜPER BABA - 050. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 050. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 050. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 050. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=WiG2yt-d-Fc
-#EXTINF:-1 tvg-name="SÜPER BABA - 051. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 051. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 051. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 051. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=v3bf_6anHWs
-#EXTINF:-1 tvg-name="SÜPER BABA - 052. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 052. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 052. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 052. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=v65soaWujZ4
-#EXTINF:-1 tvg-name="SÜPER BABA - 053. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 053. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 053. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 053. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=7Gk5VXiSNP8
-#EXTINF:-1 tvg-name="SÜPER BABA - 054. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 054. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 054. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 054. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=IKEmqFW95Jg
-#EXTINF:-1 tvg-name="SÜPER BABA - 055. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 055. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 055. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 055. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=fKPd1p0uHfY
-#EXTINF:-1 tvg-name="SÜPER BABA - 056. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 056. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 056. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 056. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=DoEEcgJl9-I
-#EXTINF:-1 tvg-name="SÜPER BABA - 057. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 057. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 057. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 057. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=jTLu3gaMqGA
-#EXTINF:-1 tvg-name="SÜPER BABA - 058. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 058. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 058. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 058. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=bmCg4gKIp18
-#EXTINF:-1 tvg-name="SÜPER BABA - 059. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 059. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 059. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 059. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=ryE3Wwuax18
-#EXTINF:-1 tvg-name="SÜPER BABA - 060. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 060. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 060. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 060. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=MqoSUvKvqfY
-#EXTINF:-1 tvg-name="SÜPER BABA - 061. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 061. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 061. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 061. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=IaB_Bdaa5vs
-#EXTINF:-1 tvg-name="SÜPER BABA - 062. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 062. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 062. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 062. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=NJYJwOA4OHM
-#EXTINF:-1 tvg-name="SÜPER BABA - 063. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 063. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 063. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 063. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=2BNDRI347Hw
-#EXTINF:-1 tvg-name="SÜPER BABA - 064. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 064. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 064. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 064. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=uO4C_hhLvrE
-#EXTINF:-1 tvg-name="SÜPER BABA - 065. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 065. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 065. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 065. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=1abQ_tDKNsM
-#EXTINF:-1 tvg-name="SÜPER BABA - 066. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 066. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 066. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 066. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=_LgN6NdKBvE
-#EXTINF:-1 tvg-name="SÜPER BABA - 067. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 067. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 067. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 067. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=-ShMUh_F0Q0
-#EXTINF:-1 tvg-name="SÜPER BABA - 068. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 068. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 068. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 068. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=ejZLDPwRBPk
-#EXTINF:-1 tvg-name="SÜPER BABA - 069. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 069. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 069. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 069. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=E8bSVJ_V-6U
-#EXTINF:-1 tvg-name="SÜPER BABA - 070. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 070. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 070. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 070. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=qZO5fgPee0w
-#EXTINF:-1 tvg-name="SÜPER BABA - 071. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 071. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 071. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 071. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=9JzEjQjYZjU
-#EXTINF:-1 tvg-name="SÜPER BABA - 072. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 072. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 072. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 072. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=B3BMVZFDlIo
-#EXTINF:-1 tvg-name="SÜPER BABA - 073. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 073. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 073. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 073. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Kv-4UKMrTxk
-#EXTINF:-1 tvg-name="SÜPER BABA - 074. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 074. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 074. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 074. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=kCLzjatrTfc
-#EXTINF:-1 tvg-name="SÜPER BABA - 075. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 075. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 075. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 075. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=1q5o4nn1zy4
-#EXTINF:-1 tvg-name="SÜPER BABA - 076. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 076. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 076. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 076. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=gO0w3GadyFQ
-#EXTINF:-1 tvg-name="SÜPER BABA - 077. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 077. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 077. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 077. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=nobMj_UNIiM
-#EXTINF:-1 tvg-name="SÜPER BABA - 078. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 078. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 078. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 078. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=otYS93KsYMc
-#EXTINF:-1 tvg-name="SÜPER BABA - 079. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 079. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 079. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 079. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=QQ2o-kJ0v9w
-#EXTINF:-1 tvg-name="SÜPER BABA - 080. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 080. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 080. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 080. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=U1cs3HygUrc
-#EXTINF:-1 tvg-name="SÜPER BABA - 081. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 081. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 081. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 081. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=nzOKhFPN7Cw
-#EXTINF:-1 tvg-name="SÜPER BABA - 082. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 082. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 082. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 082. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=HNcguto5o0k
-#EXTINF:-1 tvg-name="SÜPER BABA - 083. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 083. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 083. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 083. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=KNkV17eLITg
-#EXTINF:-1 tvg-name="SÜPER BABA - 084. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 084. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 084. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 084. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=lpup25aIyZM
-#EXTINF:-1 tvg-name="SÜPER BABA - 085. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 085. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 085. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 085. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Fg6aJTPkvEc
-#EXTINF:-1 tvg-name="SÜPER BABA - 086. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 086. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 086. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 086. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=dMT7PPd2gys
-#EXTINF:-1 tvg-name="SÜPER BABA - 087. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 087. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 087. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 087. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=gk-IUg2A5Cg
-#EXTINF:-1 tvg-name="SÜPER BABA - 088. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 088. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 088. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 088. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=QWbuKHjhJlQ
-#EXTINF:-1 tvg-name="SÜPER BABA - 089. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 089. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 089. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 089. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=4ulQt5Vzcxg
-#EXTINF:-1 tvg-name="SÜPER BABA - 090. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 090. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 090. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 090. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=fDnTMdHnNsA
-#EXTINF:-1 tvg-name="SÜPER BABA - 091. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 091. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 091. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 091. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=tAk68CNyEZM
-#EXTINF:-1 tvg-name="SÜPER BABA - 092. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 092. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 092. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 092. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=0CvNqGQwhFE
-#EXTINF:-1 tvg-name="SÜPER BABA - 093. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 093. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 093. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 093. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=FxzXcTeKLGI
-#EXTINF:-1 tvg-name="SÜPER BABA - 094. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 094. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 094. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 094. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Au4ago609lc
-#EXTINF:-1 tvg-name="SÜPER BABA - 095. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 095. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 095. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 095. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=OY7sH6lELwg
-#EXTINF:-1 tvg-name="SÜPER BABA - 096. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 096. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 096. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 096. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=ooRd0aOi_jM
-#EXTINF:-1 tvg-name="SÜPER BABA - 097. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 097. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 097. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 097. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=itzq_smHMLw
-#EXTINF:-1 tvg-name="SÜPER BABA - 098. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 098. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 098. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 098. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=a6a6S3ycnKE
-#EXTINF:-1 tvg-name="SÜPER BABA - 099. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 099. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 099. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 099. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=ehaVN_EA26g
-#EXTINF:-1 tvg-name="SÜPER BABA - 100. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 100. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 100. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 100. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=J0i2iD5_Exw
-#EXTINF:-1 tvg-name="SÜPER BABA - 101. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 101. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 101. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 101. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=L99c1KSx668
-#EXTINF:-1 tvg-name="SÜPER BABA - 102. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 102. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 102. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 102. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=VFfYHWDBdMA
-#EXTINF:-1 tvg-name="SÜPER BABA - 103. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 103. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 103. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 103. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=3VgjKFKegrE
-#EXTINF:-1 tvg-name="SÜPER BABA - 104. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 104. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 104. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 104. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=Ujys6zA15xI
-#EXTINF:-1 tvg-name="SÜPER BABA - 105. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 105. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 105. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 105. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=htbx4C1O9eE
-#EXTINF:-1 tvg-name="SÜPER BABA - 106. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 106. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 106. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 106. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=R8zwATf1LS0
-#EXTINF:-1 tvg-name="SÜPER BABA - 107. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 107. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 107. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 107. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=OmcDrEj9N4s
-#EXTINF:-1 tvg-name="SÜPER BABA - 108. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 108. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 108. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 108. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=RwM-20S0bp0
-#EXTINF:-1 tvg-name="SÜPER BABA - 109. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 109. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 109. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 109. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=wzNJOz2eYCQ
-#EXTINF:-1 tvg-name="SÜPER BABA - 110. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 110. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 110. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 110. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=vZMwfNjXMUs
-#EXTINF:-1 tvg-name="SÜPER BABA - 111. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA",SÜPER BABA - 111. BÖLÜM
+#EXTINF:-1 tvg-name="SÜPER BABA - 111. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 111. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=2G0pquZ9ISM
