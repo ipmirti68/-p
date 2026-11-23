@@ -1,0 +1,15 @@
+{
+    "series": [
+        {
+            "name": "ÖRNEK KORE DİZİSİ",
+            "poster": "https://example.com/poster.jpg",
+            "episodes": [
+                {
+                    "title": "1. BÖLÜM",
+                    "stream_url": "",
+                    "authorized": false
+                }
+            ]
+        }
+    ]
+}
