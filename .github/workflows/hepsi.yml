@@ -1,9 +1,9 @@
-name: SDİZİLER YUTUBE7/24 
+name: MIRTI68 HEPSI BIR ARADA
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/20 * * * *"
+    - cron: "*/30 * * * *"
 
 permissions:
   contents: write
@@ -15,7 +15,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
 
     steps:
       - uses: actions/checkout@v5
@@ -40,19 +40,52 @@ jobs:
           playwright install --with-deps chromium
           yt-dlp --version
           deno --version
-          
-   
-                
-      - name: 2 - ATOM 1
+
+      - name: 0 - AKTAR
         continue-on-error: true
         timeout-minutes: 10
-        run: python atom1.py || echo "sdiziler failed"
+        run: python aktar.py || echo "aktar failed"
 
+      - name: 1 - IPTV ULUSAL
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python iptv.py || echo "iptv failed"
+      
+      - name: 2 - DİZİLER YAML
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python sdiziler.py || echo "sdiziler failed"
 
+      - name: 3 - 7/24 YOUTUBE DİZİ 2026
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python 724y.py || echo "724y failed"
 
+      - name: 4 - PATRO
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python patron.py || echo "patron failed"
      
-           
- 
+      - name: 5 - MAHSUN
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python mahsun.py || echo "mahsun failed"
+
+      - name: 6 - GOLLER
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python lig.py || echo "lig failed"
+
+      - name: 7 - ATOM
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python atom1.py || echo "atom1 failed"
+     
+      - name: 8 - ALLSPOR
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python allspor.py || echo "allspor failed"
+    
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
         if: always()
@@ -62,14 +95,14 @@ jobs:
 
           rm -rf __pycache__ .pytest_cache/
 
-          # Başta remote'daki en yeni hali al, eski kalıntı rebase varsa temizle
           git rebase --abort || true
           git fetch origin main || true
 
-          ls -lh *.m3u *.json 2>/dev/null || true
+          ls -lh *.m3u *.json hatali_url_listesi.txt 2>/dev/null || true
 
           git add -f -- *.m3u || true
           git add -f -- *.json || true
+          git add -f -- mirti68.m3u hatali_url_listesi.txt || true
 
           git status --short
 
@@ -87,20 +120,14 @@ jobs:
             fi
 
             echo "Push çakıştı, tekrar deneniyor $i"
-
-            # Yarım kalmış rebase varsa temizle, yoksa sonraki pull patlar:
-            # "Pulling is not possible because you have unmerged files"
             git rebase --abort || true
             git fetch origin main
 
-            # Çakışırsa generated dosyalarda BOT versiyonu kazansın (X ours)
-            # Çünkü bu .m3u / .json dosyalarını bot üretiyor, manuel edit yok
             if git rebase -X ours origin/main; then
               echo "Rebase OK, tekrar push deneniyor"
               continue
             fi
 
-            # Hâlâ olmadıysa son çare: bot commitini zorla yaz
             git rebase --abort || true
             git push --force-with-lease origin HEAD:main && echo "Force push OK" && break
             sleep 3
