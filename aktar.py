@@ -207,7 +207,7 @@ AKTARIMLAR = [
         "kaynak_url": "https://raw.githubusercontent.com/abdcev/lists/refs/heads/main/ad.m3u",
         "kaynak_grup": "",
         "aranacak": "trt1, star tv, kanal d, show tv, atv, now, kanal 7, tv 8",
-        "hedef_grup": "🟨◆ ULUSAL⁺⁺ᴴᴰ⭕",
+        "hedef_grup": "🟨◆ ULUSALᵁᴴᴰ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
