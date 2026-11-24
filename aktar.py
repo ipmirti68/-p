@@ -60,6 +60,16 @@ AKTARIMLAR = [
     },
 
 
+       {
+        "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u",
+        "kaynak_grup": "",
+        "aranacak": "BeIN Sports",
+        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
+        "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",
+        "ek_kod": "t⭕",
+    },
+    
+    
 
     
     {
