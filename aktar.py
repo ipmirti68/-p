@@ -65,6 +65,14 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "",
     }, 
+     {
+        "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u",
+        "kaynak_grup": "TOOD",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ DİZİ - TOD  ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
     {
         "kaynak_url": "http://190502.tomtv.eu:80/get.php?username=MustafaozdemR7808&password=z189b8mv2r&type=m3u_plus&output=ts",
         "kaynak_grup": "SONVIZYON FILMLER",
