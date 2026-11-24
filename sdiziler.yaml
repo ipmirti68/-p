@@ -1,12 +1,11 @@
 series:
-
-     - name: "IHLAMUR ALDINDA"
+    - name: "IHLAMUR ALDINDA"
       group: "🟪◆ DİZİ - IHLAMURLAR ALTINDA ⭕"
       logo: "https://www.cinematerial.com/p/500x/eirheask/ihlamurlar-altinda-turkish-movie-poster.jpg?v=1456262467"
       url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ihlamurlar_altinda.m3u"
-      
-    - name: "ÇUKUR"
-      group: "🟪◆ DİZİ - ÇUKUR ⭕"
+
+    - name: "【entity-ÇUKUR¦canonical_name=ÇUKUR】"
+      group: "🟪◆ DİZİ - 【entity-ÇUKUR¦canonical_name=ÇUKUR】 ⭕"
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFfoXV4zJgA1hy2pUeJHhuG-bG3KA3HHggd5icGoOXg157iLfyyRbQCaQW&s=10"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/cukur.m3u"
 
@@ -17,12 +16,12 @@ series:
 
     - name: "İÇERDE"
       group: "🟪◆ DİZİ - İÇERDE ⭕"
-      logo:  "https://m.media-amazon.com/images/M/MV5BMTQ1YjA0OTQtYjU2NC00YTI1LTkzMGQtOTAwNjRiMWE1MzExXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg"
+      logo: "https://m.media-amazon.com/images/M/MV5BMTQ1YjA0OTQtYjU2NC00YTI1LTkzMGQtOTAwNjRiMWE1MzExXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/icerde.m3u"
 
     - name: "BEHZAT Ç"
       group: "🟪◆ DİZİ - BEHZAT Ç ⭕"
-      logo: "logo: "https://m.media-amazon.com/images/M/MV5BZDZjY2I5ZjEtZGE2MS00ZjRmLTlmMGEtMDQ5ZmZhZWJjYzk3XkEyXkFqcGdeQXVyNDg4MjkzNDk%40._V1_.jpg"
+      logo: "https://m.media-amazon.com/images/M/MV5BZDZjY2I5ZjEtZGE2MS00ZjRmLTlmMGEtMDQ5ZmZhZWJjYzk3XkEyXkFqcGdeQXVyNDg4MjkzNDk%40._V1_.jpg"
       url: "https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/behzat-c.m3u"
 
     - name: "Fİ"
@@ -56,24 +55,21 @@ series:
       url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/kinali_kar.m3u"
 
     - name: "İKİNCİ BAHAR"
-      group: "🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶️"
+      group: "🟪◆ DİZİ - İKİNCİ BAHAR ⭕▶"
       logo: "https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg"
       url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ikincibhr.m3u"
 
     - name: "SÜPER BABA"
-      group: "🟪◆ DİZİ - SÜPER BABA ⭕▶️"
+      group: "🟪◆ DİZİ - SÜPER BABA ⭕▶"
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcqK_2wOLRdf0BX7cAUq7gzANGxD8xkHSIvQPqiIK_9A&s"
       url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/sbaba.m3u"
 
-        - name: "BİZİMKİLER"
+    - name: "BİZİMKİLER"
       group: "🟪◆ DİZİ - BİZİMKİLER ⭕"
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOdXZq_Nhr9o2T0jCuAVUFTe0RSywkjW0Anq8sCZjM9A&s=10"
       url: "https://raw.githubusercontent.com/k33n26/iptv/refs/heads/master/Bizimkiler.m3u"
 
-
-        - name: "PERİHAN ABLA"
+    - name: "PERİHAN ABLA"
       group: "🟪◆ DİZİ - PERİHAN ABLA ⭕"
-      logo: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQquIA8Vvm1V27fM_AyYw0Dgw1qpI5Ggd3SyUhSvLQYeA&s=10"
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQquIA8Vvm1V27fM_AyYw0Dgw1qpI5Ggd3SyUhSvLQYeA&s=10"
       url: "https://raw.githubusercontent.com/k33n26/iptv/refs/heads/master/PerihanAbla.m3u"
-
-    
