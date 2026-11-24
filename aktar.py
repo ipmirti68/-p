@@ -5,6 +5,8 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrom
 TIMEOUT = 30
 
 AKTARIMLAR = [ 
+
+
     {
         "kaynak_url": "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u",
         "kaynak_gruplar": ["IMDb Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"],
@@ -35,20 +37,6 @@ AKTARIMLAR = [
         "grup_onek": False,
     },
 
-     {
-        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/cbb795920a991c5d694b5ba9740336e30d29604b/tv247tr.m3u",
-        "kaynak_grup": "Belgesel",
-        "aranacak": "",
-        "hedef_grup": "🟫◆  BELGESEL 🏔️",
-        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/BELGESEL-final-temiz.png",
-        "ek_kod": "⭕",
-        "grup_onek": False,
-    },
-
-
-
-    
-
     {
         "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
         "kaynak_grup": "",
@@ -59,20 +47,7 @@ AKTARIMLAR = [
         "grup_onek": True,
     },
 
-
-       {
-        "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u",
-        "kaynak_grup": "",
-        "aranacak": "BeIN Sports",
-        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
-        "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",
-        "ek_kod": "t⭕",
-    },
-    
-    
-
-    
-    {
+   {
         "kaynak_url": "http://190502.tomtv.eu/get.php?username=GokmenS947&password=5rr53m3b8c&type=m3u_plus&output=ts",
         "kaynak_grup": "GUNCEL DiZiLER SON BOLUM",
         "aranacak": "",
@@ -80,55 +55,9 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
-    {
-        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR | UHD",
-        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
-        "hedef_grup": "🟨◆ ULUSALᴴᴰ⁺⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/smtv62/kralbozguncu/refs/heads/main/kral.m3u",
-        "kaynak_grup": "",
-        "aranacak": "BeIN Sports",
-        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",
-        "ek_kod": "⭕",
-    },
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
-        "kaynak_grup": "",
-        "aranacak": "trt 1, atv, show tv, kanal d, star, now, kanal 7, tv 8, trt1",
-        "hedef_grup": "🟨◆ ULUSALᴴᴰ⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/Kral-Turk/Kral-Turk-TV/refs/heads/main/TURK_TV.m3u_plus",
-        "kaynak_grup": "TR ULUSAL-UHD",
-        "aranacak": "trt1, atv, show tv,kanal d, star tv, now, kanal 7, tv8",
-        "hedef_grup": "🟨◆ ULUSALᶠᴴᴰ⭕",
-        "hedef_logo": "",
-        "ek_kod": "⭕",
-    },
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
-        "kaynak_gruplar": ["🇰🇷 Korea | Drama","🇰🇷 Korea | Education","🇰🇷 Korea | Entertainment","🇰🇷 Korea | Knowledge","🇰🇷 Korea | Movies","🇰🇷 Korea | Music"],
-        "aranacak": "",
-        "hedef_grup": "🟨◆ YABANCI 🇰🇷⭕",
-        "hedef_logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",
-        "ek_kod": "⭕",
-    },
-    {
-        "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
-        "kaynak_grup": "",
-        "aranacak": "beIN Sports",
-        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
-        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
-        "ek_kod": "⭕",
-    },
-    {
+
+
+ {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | TOD",
         "aranacak": "",
@@ -152,6 +81,56 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕ᴴᴰ",
     },
+
+   {
+        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR | TABii",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ DİZİ - TABİİ  ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
+
+
+
+     {
+        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/cbb795920a991c5d694b5ba9740336e30d29604b/tv247tr.m3u",
+        "kaynak_grup": "Belgesel",
+        "aranacak": "",
+        "hedef_grup": "🟫◆  BELGESEL 🏔️",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/BELGESEL-final-temiz.png",
+        "ek_kod": "⭕",
+        "grup_onek": False,
+    },
+
+       {
+        "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u",
+        "kaynak_grup": "",
+        "aranacak": "BeIN Sports",
+        "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
+        "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",
+        "ek_kod": "t⭕",
+    },
+    
+      {
+        "kaynak_url": "https://raw.githubusercontent.com/smtv62/kralbozguncu/refs/heads/main/kral.m3u",
+        "kaynak_grup": "",
+        "aranacak": "BeIN Sports",
+        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
+        "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",
+        "ek_kod": "⭕",
+    },
+
+
+  {
+        "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
+        "kaynak_grup": "",
+        "aranacak": "beIN Sports",
+        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
+        "ek_kod": "⭕",
+    },
+   
     {
         "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
         "kaynak_grup": "Yerel / 🔴 SPOR",
@@ -200,14 +179,51 @@ AKTARIMLAR = [
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
         "ek_kod": "5️⃣⭕",
     },
-    {
-        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR | TABii",
-        "aranacak": "",
-        "hedef_grup": "🟪◆ DİZİ - TABİİ  ⭕",
+
+     {
+        "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u",
+        "kaynak_grup": "",
+        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
+        "hedef_grup": "🟨◆ ULUSAL⁺ᴴᴰ⭕",
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
+  
+    {
+        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR | UHD",
+        "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
+        "hedef_grup": "🟨◆ ULUSALᴴᴰ⁺⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
+  
+    {
+        "kaynak_url": "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u",
+        "kaynak_grup": "",
+        "aranacak": "trt 1, atv, show tv, kanal d, star, now, kanal 7, tv 8, trt1",
+        "hedef_grup": "🟨◆ ULUSALᴴᴰ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
+    {
+        "kaynak_url": "https://raw.githubusercontent.com/Kral-Turk/Kral-Turk-TV/refs/heads/main/TURK_TV.m3u_plus",
+        "kaynak_grup": "TR ULUSAL-UHD",
+        "aranacak": "trt1, atv, show tv,kanal d, star tv, now, kanal 7, tv8",
+        "hedef_grup": "🟨◆ ULUSALᶠᴴᴰ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
+    {
+        "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
+        "kaynak_gruplar": ["🇰🇷 Korea | Drama","🇰🇷 Korea | Education","🇰🇷 Korea | Knowledge","🇰🇷 Korea | Movies","🇰🇷 Korea | Music"],
+        "aranacak": "",
+        "hedef_grup": "🟨◆ YABANCI 🇰🇷⭕",
+        "hedef_logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg",
+        "ek_kod": "⭕",
+    },
+  
+ 
     {
         "kaynak_url": "https://raw.githubusercontent.com/PRoDi79/Deneme/refs/heads/main/ibb_cams.m3u",
         "kaynak_grup": "",
