@@ -165,8 +165,8 @@ AKTARIMLAR = [
     },
    
     {
-        "kaynak_url": "https://79.76.50.223/get.php?username=ViP&password=GaraveliForum&type=m3u_plus&output=m3u8",
-        "kaynak_grup": "Yerel / 🔴 SPOR",
+        "kaynak_url": "http://1066.7382164.xyz/get.php?username=MusabeY.Sunx&password=Bx8Pq@Sd.y4z&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR ☀️ BEIN SPORTS",
         "aranacak": "beIN Sports",
         "hedef_grup": "🟩◆  beIN SPORTS 📡⭕",
         "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
@@ -222,8 +222,8 @@ AKTARIMLAR = [
     },
 
      {
-        "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u",
-        "kaynak_grup": "⫸TR ULUSAL 1 ⫷",
+        "kaynak_url": "http://1066.7382164.xyz/get.php?username=MusabeY.Sunx&password=Bx8Pq@Sd.y4z&type=m3u_plus&output=ts",
+        "kaynak_grup": "TR ☀️ ULUSAL",
         "aranacak": "trt1, star tv, kanal d, show tv, atv, now, kanal 7, tv 8",
         "hedef_grup": "🟨◆ ULUSAL⁺ᴴᴰ⭕",
         "hedef_logo": "",
