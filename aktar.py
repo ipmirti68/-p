@@ -182,7 +182,7 @@ AKTARIMLAR = [
 
      {
         "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u",
-        "kaynak_grup": "",
+        "kaynak_grup": ⫸TR ULUSAL 2 ⫷"",
         "aranacak": "trt1, star tv, kanal d, show tv, atv, now, beyaz tv, fx, kanal 7, tv 8",
         "hedef_grup": "🟨◆ ULUSAL⁺ᴴᴰ⭕",
         "hedef_logo": "",
