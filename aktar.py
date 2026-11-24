@@ -81,6 +81,14 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕ᴴᴰ",
     },
+ {
+        "kaynak_url": "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u",
+        "kaynak_grup": "TABII",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ DİZİ - TABİİ  ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+    },
 
    {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
