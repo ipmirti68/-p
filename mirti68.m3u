@@ -4,10 +4,10 @@
 #EXTM3U x-tvg-url="https://epgshare01.online/epgshare01/epg_ripper_TR3.xml"
 # MIRTI68_TRT1_AUTO
 # MIRTI68_TRT1_AUTO
-#EXTINF:-1 tvg-name="TRT 1 " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TRT 1 
+#EXTINF:-1 tvg-name="TRT 1 " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 # MIRTI68_ATV_AUTO
-#EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV 
+#EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
 # MIRTI68_SHOWTV_AUTO
 #EXTINF:-1 tvg-name="SHOW TV ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",SHOW TV ⭕
@@ -523,20 +523,27 @@ https://andro.evrenesoglu235.click/checklist/androstreamlivebs5.m3u8
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu235.click/checklist/androstreamlivebsm1.m3u8
 #EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports Max 2 ⭕
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 1 - Atom ⭕
-https://css.d6e3ess6e065r5.help//beyin1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 2 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b2/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 3 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b3/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 4 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b4/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 5 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b5/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS Max 1 - Atom ⭕
-https://css.d6e3ess6e065r5.help//bm1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS Max 2 - Atom ⭕
-https://css.d6e3ess6e065r5.help//bm2/tracks-v1a1/mono.m3u8
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebsm2.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 1 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 2 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs2.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 3 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs3.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 4 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs4.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 5 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs5.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports Max 1 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebsm1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports Max 2 ⭕
 #EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
 https://andro.evrenesoglu235.click/checklist/androstreamlivebsm2.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS ⭕",bilgi
@@ -49425,3 +49432,121 @@ https://mirti68.alwaysdata.net/yt/film.php?id=wzNJOz2eYCQ
 https://mirti68.alwaysdata.net/yt/film.php?id=vZMwfNjXMUs
 #EXTINF:-1 tvg-name="SÜPER BABA - 111. BÖLÜM" tvg-logo="" group-title="🟪◆ DİZİ - SÜPER BABA ⭕▶️",SÜPER BABA - 111. BÖLÜM
 https://mirti68.alwaysdata.net/yt/film.php?id=2G0pquZ9ISM
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNWY0NDY5NDktN2I3Yi00ZTM3LWFmM2MtZTRmZThjOTUzZDFmXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Bana Bir Soygun Yaz ⭕
+https://ha.vixolity.com/vs/tt2561140/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTc0MjMyMzI1OF5BMl5BanBnXkFtZTcwMzc2NjM4OA@@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Dağ ⭕
+https://ha.vixolity.com/vs/tt2471640/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNDFmMzgzOWQtOWQ1Ny00NTBlLTkwNGEtZTVjMzM0MTc0NzI1XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Temel 2 Moskovanın Şifresi ⭕
+https://ha.vixolity.com/vs/tt2463922/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTQ1MTE0NTIzOV5BMl5BanBnXkFtZTcwNjk1NzI4Nw@@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Sağ Salim (2012) ⭕
+https://ha.vixolity.com/vs/tt2355823/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BM2MyNjdmMDgtMTBhMi00NGUzLWFmNGItYWNiNGQ2YWM2YzA4XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",istanbul İçin Son Çağrı ⭕
+https://ha.vixolity.com/vs/tt23334616/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BN2IzNGQ4NzUtM2YxNS00YzQ5LWFhNDktNTAzMjRhZDg2NjBkXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Cok Aşk ⭕
+https://ha.vixolity.com/vs/tt23047172/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BOWJlNGNiM2QtMjBmZC00ODJjLWIyMTEtMjk4MDNmODk3NGNkXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Ozür Dilerim ⭕
+https://ha.vixolity.com/vs/tt22208480/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNTNhNjc3OTctMmQ5OS00ZTg5LTg1Y2YtM2Y4OTk4ZmYxY2FhXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Prestij Meselesi ⭕
+https://ha.vixolity.com/vs/tt21909844/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMjJmOGM0ZDUtYjg2Zi00MWRlLWJiOTMtODhhNGFmNGNlNjNmXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Müjdemi Isterim (2022) ⭕
+https://ha.vixolity.com/vs/tt21636066/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTcxMzk3NDQ1M15BMl5BanBnXkFtZTcwMzA5MTIzNw@@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Berlin Kaplanı (2012) ⭕
+https://ha.vixolity.com/vs/tt2142711/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTY2NjBlM2MtNGNiMy00MDRjLTljNDctNGQwZDNkNDFlM2NlXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Rüyanda Görürsün (2023) ⭕
+https://ha.vixolity.com/vs/tt21308736/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNTYwMzdkNDUtMzllNi00MjQ4LWI3ZmMtNTRkZDY0YTZhM2Q3XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Yılbaşı Gecesi ⭕
+https://ha.vixolity.com/vs/tt21268790/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BYWRhMjQ3YjktZjEzZS00Y2ViLTgzZjYtYWQzM2IzZWQyY2I5XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Tamirhane (2022) ⭕
+https://ha.vixolity.com/vs/tt21215056/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BZTQzMTRlOWQtNDljZS00ZWVhLThmOTEtMmJiMzM2MWU5NTA3XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Barış Akarsu: Merhaba ⭕
+https://ha.vixolity.com/vs/tt21111348/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMTUwNDUxNjc1NV5BMl5BanBnXkFtZTcwMDcyODY5Ng@@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Temel 1 Sümelanın Şifresi ⭕
+https://ha.vixolity.com/vs/tt2069935/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNjMyNzQ2MzQtNDE3Mi00N2U3LTg5ZjItMTkzM2QyNTA0MjZhXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Her Şey Dahil ⭕
+https://ha.vixolity.com/vs/tt20568010/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BYWNiODllZTMtY2Y5Mi00ZDM3LWI2NGYtOWUzNGVlMzg2NzE4XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Alice Müzikali ⭕
+https://ha.vixolity.com/vs/tt20194152/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNzQwOGJiZWQtNmFmNS00YjA3LTkzM2YtM2NmNGM2ZmNiZTZhXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Ana Ocağı ⭕
+https://ha.vixolity.com/vs/tt1998172/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNzliZGFhZjktMGY0YS00MTM5LWExY2QtMmU2YjUzOThlZDI1XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Bursa Bülbülü ⭕
+https://ha.vixolity.com/vs/tt19246408/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMDdiZmIwYTItODY5Yi00NWMxLWI4NGMtZWNkNjE4ZjcxMjIyXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Merve Kült (2023) ⭕
+https://ha.vixolity.com/vs/tt19121700/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BNDZmMTU4MjQtOTI2Ny00OTgxLTk3OGQtMmUyMzllZDUyN2Y5XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Aynasiz Haluk (2022) ⭕
+https://ha.vixolity.com/vs/tt19064648/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BYTQzZjZiNDktMGRlZS00Y2RjLTgwNzctMGMwMDQ1ZWU4NjZiXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Calgı Çengi ⭕
+https://ha.vixolity.com/vs/tt1865569/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BYWNlMmE3ZjAtNTljMC00NjM1LWIwZDgtZjY5NzdlOGYwNWQ0XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Gergedan Mevsimi ⭕
+https://ha.vixolity.com/vs/tt1850419/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BZjc4ZjAyNWQtMmE1MC00ZmM0LTllODMtNGI0YzliMmVlYjk0XkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Kal ⭕
+https://ha.vixolity.com/vs/tt18450548/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BZGQ5Y2ViZmUtNDZkNC00ZWJhLWIwOWEtZDNjMjIzZDIzYzIyXkEyXkFqcGc@._V1.jpg" group-title="🟪◆ YERLI FILM ⭕" tvg-type="movie",Kaybedenler Kulübü ⭕
+https://ha.vixolity.com/vs/tt1808223/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/ioIEt0lpJjivLbyoDFVjPcfpS2S.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",Painted Woman (2017) ⭕
+https://ha.vixolity.com/vs/tt6281242/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/8ATPSsMG6lFk5UinmK2rWeMMpw7.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",Laissez bronzer les cadavres (2017) ⭕
+https://ha.vixolity.com/vs/tt5827212/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/2noDbjYvihxgZZH33uoaSpkoopT.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",Katil Marlina (2017) ⭕
+https://ha.vixolity.com/vs/tt5923026/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/ffElbNyNDFYUNGzm2Tp4tRb39Ez.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",Öldür ya da Öl (2016) ⭕
+https://ha.vixolity.com/vs/tt2364774/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/T9mRvjX4ALjGPlgamxsMHlI7HO.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",J.L. Family Ranch (2016) ⭕
+https://ha.vixolity.com/vs/tt5321174/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/w57jQVXbWgxcgZzLiG6UHd0c5Wy.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",The Legend of Ben Hall (2016) ⭕
+https://ha.vixolity.com/vs/tt3844876/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/tU4DcityKcI0NVLIYksgLb919tG.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",Suçlu Erkekler (2016) ⭕
+https://ha.vixolity.com/vs/tt6152546/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/kV0jEsELVEhqIU9MPyidKaHpvh9.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",The Timber (2015) ⭕
+https://ha.vixolity.com/vs/tt2215673/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/s594RW4LJ6SEzpcO2qyiTEmCJ3W.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",Echoes of War (2015) ⭕
+https://ha.vixolity.com/vs/tt3094252/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/fbTpSiqGn6ImqSAyawHlLf7goat.jpg" group-title="🟪◆ FILM - WESTERN ⭕" tvg-type="movie",Forsaken (2015) ⭕
+https://ha.vixolity.com/vs/tt2271563/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/iKSWi7RQ1czT3qKoYeZuYxlUkak.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Sıcak Süt (2025) ⭕
+https://ha.vixolity.com/vs/tt17538632/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/9W44XSMYbjXdlXcQhD104zPhhhJ.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Hurry Up Tomorrow (2025) ⭕
+https://ha.vixolity.com/vs/tt26927452/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/62nu9AEIeyDNCQ2xJabq7gwb2zR.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",The Last Rodeo (2025) ⭕
+https://ha.vixolity.com/vs/tt30908405/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/fszN3PSB40FYsFzkHvNZrXLes0M.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Words of War (2025) ⭕
+https://ha.vixolity.com/vs/tt8679660/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/AsqALJWqGRgnKEo3gt1TCOF4nCM.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Echo Valley (2025) ⭕
+https://ha.vixolity.com/vs/tt27052633/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/tO4PLOx2Ey9PZunmwEAsGhc4Ah0.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Kryptic (2025) ⭕
+https://ha.vixolity.com/vs/tt22697898/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/8rxFUdvtFwAxbyZfSBKPB2Vaal9.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Evimdeki Yabancı (2025) ⭕
+https://ha.vixolity.com/vs/tt32147653/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/fxkMRuTwWNDsYDB9uFLhjcpFS7L.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Day of a Lion (2025) ⭕
+https://ha.vixolity.com/vs/tt28153464/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/a1CVNbFt39WBB1LoEE9TEq2fNah.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Sana Çıkan Yollar (2025) ⭕
+https://ha.vixolity.com/vs/tt33549478/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/aRWeT2UIkaWolqQ6fYeHOB1D6vA.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",The Occupant (2025) ⭕
+https://ha.vixolity.com/vs/tt7230422/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/uMAkmQlKthQpTMiyPAKOYK3JnMs.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Cesur ve Güzel Bir Yolculuk (2025) ⭕
+https://ha.vixolity.com/vs/tt13650700/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/1Jqsf2HN01kyVT1m1BIcyJrFadM.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Chiquita (2025) ⭕
+https://ha.vixolity.com/vs/tt33256586/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/dubKbJTRTJmji0VUEo5pVoZ92ra.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Anemone (2025) ⭕
+https://ha.vixolity.com/vs/tt33549447/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/97cx8dfeTk2Co5CmzhogaQYj7KS.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Uzaydan Mesaj Var (2023) ⭕
+https://ha.vixolity.com/vs/tt21622000/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/h5tSkhc8aDnW3g5Yj8wkNAthehc.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Çocuk ve Balıkçıl (2023) ⭕
+https://ha.vixolity.com/vs/tt6587046/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/4SvEgyMg5sc4NK7sULHK1GvT1au.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Hayalî (2023) ⭕
+https://ha.vixolity.com/vs/tt16369708/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/wgR0iQHNalkUf2sqTRxybMouutK.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Harika Kanatlar: Maksimum Hız (2023) ⭕
+https://ha.vixolity.com/vs/tt28554423/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/bF341fp2s6YAxP6R2Gj98Ht1el8.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Süper Ajan Bernard: Görev Mars (2023) ⭕
+https://ha.vixolity.com/vs/tt32526396/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/zM9qQrY9PsparIpFg4UlUS3YmMe.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Elf Me (2023) ⭕
+https://ha.vixolity.com/vs/tt28527613/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/mh9MV1HLHx94zcBF4iGAUMctFRY.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",По щучьему велению (2023) ⭕
+https://ha.vixolity.com/vs/tt23737556/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/w29k8dhlSZHwGP9TucXiQ28oqk0.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Köpekler Firarda (2023) ⭕
+https://ha.vixolity.com/vs/tt26448350/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/mBUxvUBo3AeERY3bdac0x0dI8tD.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Bay Araba ve Tapınak Şövalyeleri (2023) ⭕
+https://ha.vixolity.com/vs/tt27876411/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/1w2eYhKqyXs4NyuXcV7vZtNJOJr.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Neşeli Çiftlik: Tren Kalkıyor! (2023) ⭕
+https://ha.vixolity.com/vs/tt25627320/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://image.tmdb.org/t/p/w500/9KCmtSc6hQ1q2T3HsSqHhDfagtx.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Mavka: Ormanın Şarkısı (2023) ⭕
+https://ha.vixolity.com/vs/tt6685538/
