@@ -28,6 +28,15 @@ AKTARIMLAR = [
     },
 
     {
+        "kaynak_url": "https://raw.githubusercontent.com/k33n26/iptv/refs/heads/master/Bizimkiler.m3u",
+        "kaynak_grup": "",
+        "aranacak": "",
+        "hedef_grup": "🟪◆ DİZİ - BİZİMKİLER ⭕",
+        "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOdXZq_Nhr9o2T0jCuAVUFTe0RSywkjW0Anq8sCZjM9A&s=10",
+        "ek_kod": "⭕",
+        "grup_onek": False,
+    },
+    {
         "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
         "kaynak_grup": "TR | DISNEY+",
         "aranacak": "",
