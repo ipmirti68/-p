@@ -127,6 +127,14 @@ AKTARIMLAR = [
         "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",
         "ek_kod": "t⭕",
     },
+     {
+        "kaynak_url": "https://raw.githubusercontent.com/bscandua/D-zzserisi/refs/heads/main/NexaTV.m3u",
+        "kaynak_grup": "",
+        "aranacak": "BeIN Sports",
+        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
+        "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSpNz7jbGMKMlAh_UU1tCQQEvUsh-sdBOvCngTxe_rg&s=10",
+        "ek_kod": "⭕",
+    },
     
       {
         "kaynak_url": "https://raw.githubusercontent.com/smtv62/kralbozguncu/refs/heads/main/kral.m3u",
