@@ -1,0 +1,17 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d2fabf0980cc85b1461aacd88d944714.jpg" group-title="La Palma", La Palma - 1.S Altyazı - Bölüm 1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/677f0610f6f98bb3ac8ed5c8444326ee17339986546.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d2fabf0980cc85b1461aacd88d944714.jpg" group-title="La Palma", La Palma - 1.S Altyazı - Bölüm 2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/3274f1c47e22ee0ef1ba145355e489d8173400071410.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d2fabf0980cc85b1461aacd88d944714.jpg" group-title="La Palma", La Palma - 1.S Altyazı - Bölüm 3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/ff1f034a5f7661ac46c5300b1ece211617340007206.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d2fabf0980cc85b1461aacd88d944714.jpg" group-title="La Palma", La Palma - 1.S Altyazı - Bölüm 4 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/d6d04ae90912748cfec2a2aa1ccfe65e173400072615.mp4/index.m3u8

@@ -1,0 +1,17 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/1979577ee6cbed94eb6738274cf8864e.jpg" group-title="Tertemiz", Tertemiz - Sezon 1 - Bölüm 1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/f1cbb443a3f5da0bdcd820899dce24c517353004965.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/1979577ee6cbed94eb6738274cf8864e.jpg" group-title="Tertemiz", Tertemiz - Sezon 1 - Bölüm 2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/491c611daca4158e02e6687f8d2f6806173650297515.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/1979577ee6cbed94eb6738274cf8864e.jpg" group-title="Tertemiz", Tertemiz - Sezon 1 - Bölüm 3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/06575976618664a68b0f0138ebf37c36173650441510.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/1979577ee6cbed94eb6738274cf8864e.jpg" group-title="Tertemiz", Tertemiz - Sezon 1 - Bölüm 4 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/44a41fb5670ac9032c101822ba5950c0173712188711.mp4/index.m3u8

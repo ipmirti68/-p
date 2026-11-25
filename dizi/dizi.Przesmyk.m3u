@@ -1,0 +1,25 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/bc112754c03ac65cfda246e7e18fc93f.jpg" group-title="Przesmyk", Przesmyk - Sezon 1 - Bölüm 1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/219ddb3d52f707f23fcf5ed5b21692bd17390373119.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/bc112754c03ac65cfda246e7e18fc93f.jpg" group-title="Przesmyk", Przesmyk - Sezon 1 - Bölüm 2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/c25fd060752db90c7731b393d465f20b17390373195.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/bc112754c03ac65cfda246e7e18fc93f.jpg" group-title="Przesmyk", Przesmyk - Sezon 1 - Bölüm 3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn444/4IoWFSIoFxaBhgdvnJArz5amsN1KRsMgYHHM5v91.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/bc112754c03ac65cfda246e7e18fc93f.jpg" group-title="Przesmyk", Przesmyk - Sezon 1 - Bölüm 4 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn444/8pKr8TA22KoHJSJBA9q91wFXaN0flnJJvcfbG9Sb.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/bc112754c03ac65cfda246e7e18fc93f.jpg" group-title="Przesmyk", Przesmyk - Sezon 1 - Bölüm 5 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn444/Zy3YaqhYQoUErPFnQglHToUTJvhrCYDscAd9Qvdr.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/bc112754c03ac65cfda246e7e18fc93f.jpg" group-title="Przesmyk", Przesmyk - Sezon 1 - Bölüm 6 Final - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn65/9iGBwHhLBG8sRh6TjVIY1ehpmuRnmOD28QzYA5on.mp4/index.m3u8
