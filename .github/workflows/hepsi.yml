@@ -62,21 +62,25 @@ jobs:
         run: python 724y.py || echo "724y failed"
 
           
-      - name: 5 - MAHSUN
+      - name: 4 - MAHSUN
         continue-on-error: true
         timeout-minutes: 10
         run: python mahsun.py || echo "mahsun failed"
 
-      - name: 6 - GOLLER
+      - name: 5 - GOLLER
         continue-on-error: true
         timeout-minutes: 10
         run: python lig.py || echo "lig failed"
 
-      - name: 7 - ATOM
+      - name: 6 - ATOM
         continue-on-error: true
         timeout-minutes: 10
         run: python atom1.py || echo "atom1 failed"
-     
+
+      - name: 7 - DİZİ CEVİR
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python dizicevir.py || echo "dizicevir failed"
      
     
       # DOSYALARI KAYDET
