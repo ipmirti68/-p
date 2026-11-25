@@ -1,0 +1,17 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/7f5a60e1e5e2302e08595dd8522e128c.jpg" group-title="STHLM Blackout",STHLM Blackout S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn60/f5433905d4c998b1d4804840907178dc17204312019.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/7f5a60e1e5e2302e08595dd8522e128c.jpg" group-title="STHLM Blackout",STHLM Blackout S1E2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn60/9d253339bd7d7732f4ffb9f8b7c51d8d172043121615.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/7f5a60e1e5e2302e08595dd8522e128c.jpg" group-title="STHLM Blackout",STHLM Blackout S1E3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn60/294cef8545bb731f0c4b01b3aefac5ac172043123112.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/7f5a60e1e5e2302e08595dd8522e128c.jpg" group-title="STHLM Blackout",STHLM Blackout S1E4 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn60/418ef7d94fc42d24cd1bad047f403255172043122313.mp4/index.m3u8

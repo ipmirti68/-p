@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/53e2f35344a47365b73870892feb5590.jpg" group-title="The Triangle",The Triangle S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/4/cdn14/Dizi/TheTriangle/1.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/53e2f35344a47365b73870892feb5590.jpg" group-title="The Triangle",The Triangle S1E2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/4/cdn14/Dizi/TheTriangle/2.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/53e2f35344a47365b73870892feb5590.jpg" group-title="The Triangle",The Triangle S1E3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/4/cdn14/Dizi/TheTriangle/3.mp4/index.m3u8

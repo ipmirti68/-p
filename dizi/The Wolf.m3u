@@ -1,0 +1,5 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/c94e4f91bb6b511ca2473dcad17f7871.jpg" group-title="The Wolf",The Wolf S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn62/a379d243fa1508f003cd7903fa33da39172778400711.mp4/index.m3u8

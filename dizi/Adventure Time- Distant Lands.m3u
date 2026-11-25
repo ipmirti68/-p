@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/45ed91f053b112a75b9aebdf27ecc669.jpg" group-title="Adventure Time: Distant Lands",Adventure Time: Distant Lands - 1.S Altyazı - Bölüm 1  - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/5/ax61/mp4/55bae3eb6530bd3b69462dfc9b164c3f.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/45ed91f053b112a75b9aebdf27ecc669.jpg" group-title="Adventure Time: Distant Lands",Adventure Time: Distant Lands - 1.S Altyazı - Bölüm 2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/6/cdn2/series/AdventureTimeDistant/2.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/45ed91f053b112a75b9aebdf27ecc669.jpg" group-title="Adventure Time: Distant Lands",Adventure Time: Distant Lands - 1.S Dublaj - Bölüm 1 - Dublaj
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/6/cdn2/series/AdventureTimeDistant/tr/1.mp4/index.m3u8
