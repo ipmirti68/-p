@@ -1,0 +1,22 @@
+name: Dizi Ayır - Günlük Güncelle
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */2 * * *"
+permissions:
+  contents: write
+jobs:
+  ayir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python diziayir.py --out dizi
+      - run: |
+          git config user.name "MIRTI68 Bot"
+          git config user.email "mirti68@users.noreply.github.com"
+          git add dizi/
+          git commit -m "dizi güncelle" || echo "değişiklik yok"
+          git push
