@@ -61,11 +61,7 @@ jobs:
         timeout-minutes: 10
         run: python 724y.py || echo "724y failed"
 
-      - name: 4 - PATRO
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python patron.py || echo "patron failed"
-     
+          
       - name: 5 - MAHSUN
         continue-on-error: true
         timeout-minutes: 10
@@ -81,10 +77,7 @@ jobs:
         timeout-minutes: 10
         run: python atom1.py || echo "atom1 failed"
      
-      - name: 8 - ALLSPOR
-        continue-on-error: true
-        timeout-minutes: 10
-        run: python allspor.py || echo "allspor failed"
+     
     
       # DOSYALARI KAYDET
       - name: Dosyaları kaydet
