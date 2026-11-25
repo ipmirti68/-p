@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-DİZİAYIR - Son hali, URL kontrolü KAPALI
-Dosya: dizi/A.m3u
-Grup:  A - Bloody Lucky Day
+DİZİAYIR - Son hali
+Yapı: dizi/A/A Bloody Lucky Day.m3u
+Grup: A Bloody Lucky Day
 İçerik: S01E01, S01E02...
+URL kontrolü KAPALI
 """
 import re
 import os
@@ -19,12 +20,20 @@ KAYNAKLAR = [
 TUM_HARFLER = list("ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ") + list("0123456789") + ["#"]
 GENEL_GRUPLAR = {"dizi", "diziler", "series"}
 
+def dosya_adi_temizle(s):
+    # Dosya adında olmaması gereken karakterleri temizle
+    s = re.sub(r'[\\/:*?"<>|]', '', s)
+    s = re.sub(r'\s+', ' ', s).strip()
+    return s
+
 def temizle_isim(s):
     s = s or ""
     s = re.sub(r'[🟪◆⭕]', '', s)
     s = re.sub(r'(?i)^DİZİ\s*-\s*', '', s)
     s = re.sub(r'(?i)^DIZI\s*-\s*', '', s)
+    # Eski "A - Bloody Lucky Day" veya "A Bloody Lucky Day" gelirse harfi at
     s = re.sub(r'^[A-ZÇĞİÖŞÜ0-9#]\s*-\s*', '', s)
+    s = re.sub(r'^[A-ZÇĞİÖŞÜ0-9#]\s+', '', s, count=1) if len(s.split()) > 1 else s
     s = re.sub(r'\s+', ' ', s).strip()
     return s
 
@@ -111,7 +120,8 @@ def m3u_parse_et(satirlar, havuz):
                 se = se_bul(ham + " " + tvg_name)
                 if dizi:
                     harf = harf_bul(dizi)
-                    grup_yeni = f"{harf} - {dizi}"
+                    # Grup adı = Dosya adı: A Bloody Lucky Day
+                    grup_yeni = f"{harf} {dizi}"
                     yeni = f'#EXTINF:-1 tvg-name="{se}" tvg-logo="{logo}" group-title="{grup_yeni}",{se}'
                     for (eski_se, eski_u) in list(havuz[(harf, dizi)].keys()):
                         if eski_se == se:
@@ -126,14 +136,17 @@ def calistir(cikti_klasor):
     havuz = defaultdict(dict)
     os.makedirs(cikti_klasor, exist_ok=True)
 
-    # 1. ESKİYİ OKU - üzerine ekle
-    for f in os.listdir(cikti_klasor):
-        if f.endswith(".m3u"):
-            try:
-                with open(os.path.join(cikti_klasor, f), encoding="utf-8", errors="ignore") as fh:
-                    m3u_parse_et(fh.read().splitlines(), havuz)
-            except Exception:
-                pass
+    # 1. ESKİYİ OKU - hem eski düz dizi/A.m3u hem de yeni dizi/A/A ...m3u yapısını oku
+    print("Eski dosyalar okunuyor...")
+    for kok, klasorler, dosyalar in os.walk(cikti_klasor):
+        for f in dosyalar:
+            if f.endswith(".m3u"):
+                yol = os.path.join(kok, f)
+                try:
+                    with open(yol, encoding="utf-8", errors="ignore") as fh:
+                        m3u_parse_et(fh.read().splitlines(), havuz)
+                except Exception as e:
+                    print(f"Eski okunamadı {yol}: {e}")
 
     # 2. KAYNAKTAN EKLE
     for kaynak in KAYNAKLAR:
@@ -142,18 +155,28 @@ def calistir(cikti_klasor):
         print(f"Kaynak satır: {len(icerik.splitlines())}")
         m3u_parse_et(icerik.splitlines(), havuz)
 
-    # 3. HARFE GÖRE GRUP GRUP YAZ
+    # 3. ESKİ DÜZ DOSYALARI TEMİZLE - artık klasörlü yapıya geçiyoruz
+    for f in os.listdir(cikti_klasor):
+        yol = os.path.join(cikti_klasor, f)
+        if os.path.isfile(yol) and f.endswith(".m3u"):
+            os.remove(yol)
+
+    # 4. YAZ: dizi/A/A Bloody Lucky Day.m3u
     for harf in TUM_HARFLER:
-        dosya = os.path.join(cikti_klasor, f"{harf}.m3u")
-        with open(dosya, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n")
-            diziler = sorted([d for (h, d) in havuz.keys() if h == harf], key=lambda x: x.lower())
-            for dizi in diziler:
+        klasor = os.path.join(cikti_klasor, harf)
+        os.makedirs(klasor, exist_ok=True)
+        diziler = sorted([d for (h, d) in havuz.keys() if h == harf], key=lambda x: x.lower())
+        for dizi in diziler:
+            grup_adi = f"{harf} {dizi}"
+            dosya_adi = dosya_adi_temizle(grup_adi) + ".m3u"
+            dosya = os.path.join(klasor, dosya_adi)
+            with open(dosya, "w", encoding="utf-8") as f:
+                f.write("#EXTM3U\n")
                 for (se, url) in sorted(havuz[(harf, dizi)].keys()):
                     extinf, u = havuz[(harf, dizi)][(se, url)]
                     f.write(extinf + "\n")
                     f.write(u + "\n")
-        print(f"{harf}.m3u -> {len(diziler)} dizi")
+        print(f"{harf}/ -> {len(diziler)} dizi")
 
     toplam = sum(len(v) for v in havuz.values())
     print(f"Bitti: {len(havuz)} dizi, {toplam} bölüm")
