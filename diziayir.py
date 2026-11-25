@@ -1,218 +1,121 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-diziayir.py - MIRTI68
-URL içindeki M3U'yu group-title değerine göre ayırır.
-Önce "dizi" klasörünü kurar, sonra içine yazar:
-  dizi/Island.m3u
-  dizi/10 Bin Adım.m3u
-
-KURAL: Grup adı SADECE group-title içinde ve DOSYA ADINDA olur.
-Dosyanın içindeki görünen ad (virgülden sonrası) ve tvg-name içinde
-grup adı ASLA yazılmaz.
-  Örn: group-title="Island",Island S1E1 - Altyazı  ->  group-title="Island",S1E1 - Altyazı
-  Örn: group-title="10 Bin Adım",10 Bin Adım - Sezon 1 - Bölüm 1 - Altyazı  ->  group-title="10 Bin Adım",S1E1 - Altyazı
-
-Her çalıştırmada eski / artık olmayan grup dosyalarını siler (günlük güncelleme).
-
-Kullanım:
-  python diziayir.py
-  python diziayir.py --url "https://.../dizi.m3u" --out dizi
-  python diziayir.py --file dizi.m3u --out dizi
+DİZİAYIR - Tek dosya, sabit isimli
+- Her dizi için ayrı dosya açmaz, hepsini dizi/dizi.m3u içine yazar
+- Başlıkta dizi ismini tekrarlamaz, sadece S01E01 yazar
+- Grup adında dizi ismi olur
+- Kaynak başlığı değişse bile isim değişmez
 """
-
-import argparse
-import os
 import re
-import sys
-import urllib.request
+import os
+import requests
+from collections import defaultdict
 
-VARSAYILAN_URL = "https://raw.githubusercontent.com/kimbumuratyavuz/capcanli/refs/heads/main/dizi.m3u"
-VARSAYILAN_KLASOR = "dizi"
-VARSAYILAN_ONEK = ""  # Boş: dosya adı = GRUPADI.m3u, önünde dizi. yok
+# BURAYA KAYNAK LİSTENİ YAZ
+KAYNAKLAR = [
+    "https://raw.githubusercontent.com/k33n26/iptv/refs/heads/master/Bizimkiler.m3u",
+]
 
-YASAKLI = r'\/\\:*?"<>|'
+CIKTI = "dizi/dizi.m3u"
 
-def dosya_adi_temizle(grup):
-    ad = (grup or "").strip() or "Grupsuz"
-    for ch in YASAKLI:
-        ad = ad.replace(ch, "-")
-    ad = "".join(c for c in ad if ord(c) >= 32)
-    ad = ad.strip().strip(".")
-    ad = re.sub(r"\s+", " ", ad)
-    ad = re.sub(r"-+", "-", ad)
-    if len(ad) > 80:
-        ad = ad[:80].rstrip(" -.")
-    return ad or "Grupsuz"
+def temizle_isim(s):
+    s = s or ""
+    s = re.sub(r'[🟪◆⭕]', '', s)
+    s = s.replace("DİZİ -", "").replace("DIZI -", "").replace("Dizi -", "")
+    s = re.sub(r'\s+', ' ', s).strip()
+    return s
 
-def grup_bul(extinf_satiri):
-    m = re.search(r'group-title="([^"]*)"', extinf_satiri)
-    if m:
-        return m.group(1).strip() or "Grupsuz"
-    m = re.search(r"group-title='([^']*)'", extinf_satiri)
-    if m:
-        return m.group(1).strip() or "Grupsuz"
-    return "Grupsuz"
-
-def _grup_adini_at(ad, grup):
-    """Adın başından, ortasından, sonundan grup adını (birebir + ayraçlarıyla) at."""
-    if not grup or not ad:
-        return ad.strip()
-    # Önce tam hali: "Island - ..." / "Island: ..." / "Island ..."
-    ad = re.sub(r"(?i)^\s*" + re.escape(grup) + r"\s*[-–—:,.]?\s*", "", ad.strip())
-    # İçte kalan tekrarlar: "... - Island - ..." / "... Island ..."
-    ad = re.sub(r"(?i)\s*[-–—:]\s*" + re.escape(grup) + r"\s*[-–—:,.]?\s*", " - ", ad)
-    ad = re.sub(r"(?i)\b" + re.escape(grup) + r"\b\s*[-–—:,.]?\s*", "", ad)
-    # Tekrar "IslandIsland" gibi bitişik kalırsa da temizle
-    ad = re.sub(r"(?i)" + re.escape(grup), "", ad)
-    ad = re.sub(r"\s+", " ", ad).strip(" -–—:,. ")
-    # Ayraçlar üst üste kaldıysa düzelt: "S1E1 - - Altyazı" -> "S1E1 - Altyazı"
-    ad = re.sub(r"\s*[-–—]\s*[-–—]\s*", " - ", ad)
-    return ad.strip(" -–—:,. ")
-
-def isim_temizle(grup, ad):
-    """Görünen adı grup adından arındır, Sezon/Bölüm -> S1E1 yap.
-    DÖNÜŞTE GRUP ADI YOK: 'Island - Sezon 1 - Bölüm 1 - Altyazı' -> 'S1E1 - Altyazı'"""
+def dizi_adi_bul(extinf_satiri, grup):
+    # Önce grup adından al, en stabil olanı bu
+    ad = temizle_isim(grup)
+    # Grupta "Island" gibi tek isim varsa onu kullan
+    # Grup boşsa başlıktan al
     if not ad:
-        return "Bölüm"
-    kalan = _grup_adini_at(ad.strip(), grup)
-    # Sezon X - Bölüm Y -> S1E1 (Sezon 1 Bölüm 1 / S1 B1 / 1. Sezon 1. Bölüm)
-    m = re.search(r"(?i)(?:sezon|s)\s*0*(\d+)\s*(?:[-–—:. ]+)?(?:b[öo]l[üu]m|b|e|episode)\s*0*(\d+)", kalan)
+        # Başlıktaki S01E01 öncesini al
+        m = re.search(r',(.+)', extinf_satiri)
+        if m:
+            baslik = m.group(1).strip()
+            ad = re.split(r'\s+S\d+E\d+', baslik, flags=re.I)[0]
+            ad = re.split(r'\s+-\s+', ad)[0]
+            ad = temizle_isim(ad)
+    return ad
+
+def se_bul(baslik):
+    # S1E1, S01E01, 1x01, Sezon 1 Bölüm 1 gibi her şeyi S01E01 yapar
+    m = re.search(r'[Ss](\d+)\s*[Ee](\d+)', baslik)
     if m:
-        sezon, bolum = m.group(1), m.group(2)
-        once = _grup_adini_at(kalan[:m.start()], grup)
-        sonra = _grup_adini_at(kalan[m.end():], grup)
-        parcalar = [x for x in [once, sonra] if x]
-        sxxexx = f"S{sezon}E{bolum}"
-        if parcalar:
-            return f"{sxxexx} - {' - '.join(parcalar)}"
-        return sxxexx
-    # Sezon/Bölüm yoksa sadece grup adı atılmış kalanı döndür
-    if kalan:
-        return kalan
-    return "Bölüm"
+        return f"S{int(m.group(1)):02d}E{int(m.group(2)):02d}"
+    m = re.search(r'(\d+)\s*x\s*(\d+)', baslik, flags=re.I)
+    if m:
+        return f"S{int(m.group(1)):02d}E{int(m.group(2)):02d}"
+    m = re.search(r'Sezon\s*(\d+).*?Bölüm\s*(\d+)', baslik, flags=re.I)
+    if m:
+        return f"S{int(m.group(1)):02d}E{int(m.group(2)):02d}"
+    m = re.search(r'(\d+)\.\s*Bölüm', baslik, flags=re.I)
+    if m:
+        return f"S01E{int(m.group(1)):02d}"
+    return "S01E01"
 
-def extinf_temizle(satir, grup):
-    """#EXTINF satırındaki tvg-name ve virgülden sonraki görünen adı temizler.
-    group-title'e DOKUNMAZ, o grup adı olarak kalır."""
-    if "," not in satir:
-        return satir
-    bas, gorunen = satir.rsplit(",", 1)
-    yeni = isim_temizle(grup, gorunen)
-    bas = re.sub(r'tvg-name="[^"]*"', f'tvg-name="{yeni}"', bas)
-    bas = re.sub(r"tvg-name='[^']*'", f"tvg-name='{yeni}'", bas)
-    return bas + "," + yeni
+def calistir():
+    # dizi_adi -> { (se, url): satirlar }
+    havuz = defaultdict(dict)
 
-def m3u_indir(url):
-    print(f"İndiriliyor: {url}")
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        data = r.read()
-    try:
-        return data.decode("utf-8-sig")
-    except UnicodeDecodeError:
-        return data.decode("utf-8", errors="ignore")
-
-def ayir(metin, out_dir, prefix, temizle=True):
-    os.makedirs(out_dir, exist_ok=True)
-    print(f"Klasör hazır: {out_dir}/")
-    satirlar = metin.splitlines()
-    gruplar = {}
-    sira = []
-    mevcut_grup = None
-    bekleyen_blok = []
-
-    def blogu_kaydet(blok, grup):
-        if not blok:
-            return
-        if grup not in gruplar:
-            gruplar[grup] = []
-            sira.append(grup)
-        gruplar[grup].extend(blok)
-
-    for satir in satirlar:
-        s = satir.strip()
-        if not s:
-            continue
-        if s.startswith("#EXTM3U"):
-            continue
-        if s.startswith("#EXTGRP:"):
-            mevcut_grup = s[len("#EXTGRP:"):].strip() or "Grupsuz"
-            continue
-        if s.startswith("#EXTINF"):
-            if bekleyen_blok:
-                blogu_kaydet(bekleyen_blok, mevcut_grup or "Grupsuz")
-            mevcut_grup = grup_bul(s)
-            bekleyen_blok = [extinf_temizle(satir, mevcut_grup)]
-            continue
-        if s.startswith("#") and bekleyen_blok:
-            bekleyen_blok.append(satir)
-            continue
-        if s.startswith("#"):
-            continue
-        if bekleyen_blok:
-            bekleyen_blok.append(satir)
-            blogu_kaydet(bekleyen_blok, mevcut_grup or "Grupsuz")
-            bekleyen_blok = []
-            mevcut_grup = None
-        else:
-            blogu_kaydet([satir], "Grupsuz")
-
-    if bekleyen_blok:
-        blogu_kaydet(bekleyen_blok, mevcut_grup or "Grupsuz")
-
-    ozet = []
-    for grup in sira:
-        temiz = dosya_adi_temizle(grup)
-        taban = f"{prefix}.{temiz}" if prefix else temiz
-        dosya = os.path.join(out_dir, f"{taban}.m3u")
-        sayac = 2
-        while os.path.exists(dosya) and dosya not in [x[2] for x in ozet]:
-            dosya = os.path.join(out_dir, f"{taban}-{sayac}.m3u")
-            sayac += 1
-        with open(dosya, "w", encoding="utf-8") as f:
-            f.write("#EXTM3U\n" + "\n".join(gruplar[grup]) + "\n")
-        adet = sum(1 for x in gruplar[grup] if x.startswith("#EXTINF"))
-        ozet.append((grup, adet, dosya))
-        print(f"  {adet:4d} adet -> {dosya}")
-
-    if temizle:
-        yazilan_adlar = {os.path.basename(x[2]) for x in ozet}
-        for ad in os.listdir(out_dir):
-            if ad.endswith(".m3u") and ad not in yazilan_adlar:
-                try:
-                    os.remove(os.path.join(out_dir, ad))
-                    print(f"  silindi (artık yok): {ad}")
-                except OSError as e:
-                    print(f"  silinemedi {ad}: {e}")
-
-    ozet_yolu = os.path.join(out_dir, "_GRUPLAR.txt")
-    with open(ozet_yolu, "w", encoding="utf-8") as f:
-        f.write(f"Toplam grup: {len(ozet)}\n")
-        f.write(f"Toplam dizi/bölüm: {sum(a for _, a, _ in ozet)}\n\n")
-        for grup, adet, dosya in ozet:
-            f.write(f"{adet:4d} | {grup} | {os.path.basename(dosya)}\n")
-    print(f"\nToplam {len(ozet)} grup, {sum(a for _, a, _ in ozet)} kayıt")
-    print(f"Özet: {ozet_yolu}")
-    return ozet
-
-def main():
-    p = argparse.ArgumentParser(description="M3U'yu gruplara göre dizi/GRUPADI.m3u olarak ayırır, iç isimde grup adı bırakmaz")
-    p.add_argument("--url", default=VARSAYILAN_URL, help="Kaynak M3U URL")
-    p.add_argument("--file", default=None, help="URL yerine yerel M3U dosyası kullan")
-    p.add_argument("--out", default=VARSAYILAN_KLASOR, help="Çıktı klasörü (varsayılan: dizi)")
-    p.add_argument("--prefix", default=VARSAYILAN_ONEK, help="Dosya öneki (varsayılan: boş)")
-    args = p.parse_args()
-    if args.file:
-        with open(args.file, encoding="utf-8-sig", errors="ignore") as f:
-            metin = f.read()
-    else:
+    for kaynak in KAYNAKLAR:
+        print(f"Kaynak: {kaynak}")
         try:
-            metin = m3u_indir(args.url)
+            r = requests.get(kaynak, timeout=60)
+            r.raise_for_status()
+            satirlar = r.text.splitlines()
         except Exception as e:
-            print(f"HATA: URL indirilemedi: {e}", file=sys.stderr)
-            sys.exit(1)
-    ayir(metin, args.out, args.prefix, temizle=True)
+            print(f"Kaynak okunamadı: {e}")
+            continue
+
+        i = 0
+        while i < len(satirlar):
+            satir = satirlar[i].strip()
+            if satir.startswith("#EXTINF"):
+                # grup-title al
+                gm = re.search(r'group-title="([^"]*)"', satir)
+                grup = gm.group(1) if gm else ""
+                # logo al
+                lm = re.search(r'tvg-logo="([^"]*)"', satir)
+                logo = lm.group(1) if lm else ""
+                # başlık al (virgülden sonrası)
+                bm = re.search(r',(.+)$', satir)
+                ham_baslik = bm.group(1).strip() if bm else ""
+
+                # Bir sonraki satır URL olmalı
+                if i + 1 < len(satirlar) and satirlar[i+1].strip().startswith("http"):
+                    url = satirlar[i+1].strip()
+                    dizi = dizi_adi_bul(satir, grup)
+                    se = se_bul(ham_baslik)
+
+                    if dizi:
+                        # SABİT BAŞLIK: İsim tekrarı yok, sadece S01E01
+                        # Grup: 🟪◆ DİZİ - Island ⭕
+                        grup_yeni = f"🟪◆ DİZİ - {dizi} ⭕"
+                        # tvg-name de sabit: Island S01E01
+                        yeni_extinf = f'#EXTINF:-1 tvg-name="{dizi} {se}" tvg-logo="{logo}" group-title="{grup_yeni}",{se}'
+                        # Aynı dizi + aynı bölüm + aynı URL tekrar ederse ekleme
+                        havuz[dizi][(se, url)] = (yeni_extinf, url)
+                    i += 2
+                    continue
+            i += 1
+
+    os.makedirs("dizi", exist_ok=True)
+    with open(CIKTI, "w", encoding="utf-8") as f:
+        f.write("#EXTM3U\n")
+        # Dizi adına göre sırala, böylece her seferinde aynı sıra olur
+        for dizi in sorted(havuz.keys(), key=lambda x: x.lower()):
+            # Bölüme göre sırala
+            for (se, url) in sorted(havuz[dizi].keys()):
+                extinf, u = havuz[dizi][(se, url)]
+                f.write(extinf + "\n")
+                f.write(u + "\n")
+
+    toplam = sum(len(v) for v in havuz.values())
+    print(f"Bitti: {len(havuz)} dizi, {toplam} bölüm -> {CIKTI}")
 
 if __name__ == "__main__":
-    main()
+    calistir()
