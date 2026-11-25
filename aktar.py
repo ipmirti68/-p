@@ -162,7 +162,14 @@ AKTARIMLAR = [
         "hedef_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",
         "ek_kod": "⭕",
     },
-
+  {
+        "kaynak_url": "https://raw.githubusercontent.com/panorea744/stawerlo/refs/heads/main/DeaTHLesS-Botiptv.m3u",
+        "kaynak_grup": "renconnect",
+        "aranacak": "beIN Sports",
+        "hedef_grup": "🟩◆  beIN SPORTS 🖥",
+        "hedef_logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/bein.png",
+        "ek_kod": "dea⭕",
+    },
 
   {
         "kaynak_url": "https://raw.githubusercontent.com/mehmetey03/METV/refs/heads/main/mahsun.m3u",
