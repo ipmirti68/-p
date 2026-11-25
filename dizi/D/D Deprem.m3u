@@ -1,0 +1,9 @@
+#EXTM3U
+#EXTINF:-1 tvg-name="S01E01" tvg-logo="https://a.psrectv80.xyz/uploads/jpg/ac582a51475623e47c50f788e33baf56.jpg" group-title="D Deprem",S01E01
+https://load.prectv63.lol/hls/9/cdn31/8b5c5dbde7a90714d77c0a7b0f4df887170887367212.mp4/index.m3u8
+#EXTINF:-1 tvg-name="S01E02" tvg-logo="https://a.psrectv80.xyz/uploads/jpg/ac582a51475623e47c50f788e33baf56.jpg" group-title="D Deprem",S01E02
+https://load.prectv63.lol/hls/9/cdn31/f225ad6cfc919c6a988ba1c66944890717088736935.mp4/index.m3u8
+#EXTINF:-1 tvg-name="S01E03" tvg-logo="https://a.psrectv80.xyz/uploads/jpg/ac582a51475623e47c50f788e33baf56.jpg" group-title="D Deprem",S01E03
+https://load.prectv63.lol/hls/9/cdn31/3700d2f8aa6dcb3c82f51bae1e9444fa170887368213.mp4/index.m3u8
+#EXTINF:-1 tvg-name="S01E04" tvg-logo="https://a.psrectv80.xyz/uploads/jpg/ac582a51475623e47c50f788e33baf56.jpg" group-title="D Deprem",S01E04
+https://load.prectv63.lol/hls/10/cdn32/09830c6748c7262363773c8b11654632170914424315.mp4/index.m3u8
