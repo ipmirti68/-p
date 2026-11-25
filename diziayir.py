@@ -3,12 +3,12 @@
 """
 diziayir.py - MIRTI68
 URL içindeki M3U'yu grup-title değerine göre ayırır.
-Her grup -> dizi/dizi.GRUPADI.m3u (önce dizi klasörünü kurar, her gün günceller)
+Her grup -> dizi/GRUPADI.m3u  (klasör zaten dizi, dosya önünde tekrar dizi. yok)
 
 Kullanım:
   python diziayir.py
-  python diziayir.py --url "https://.../dizi.m3u" --out cikti
-  python diziayir.py --url "https://.../dizi.m3u" --out cikti --prefix dizi
+  python diziayir.py --url "https://.../dizi.m3u" --out dizi
+  python diziayir.py --url "https://.../dizi.m3u" --out cikti --prefix dizi  (istersen öneki geri açarsın)
 """
 
 import argparse
@@ -42,6 +42,50 @@ def dosya_adi_temizle(grup):
     if not ad:
         ad = "Grupsuz"
     return ad
+
+def isim_temizle(grup, ad):
+    """'10 Bin Adım - Sezon 1 - Bölüm 1 - Altyazı' -> '10 Bin Adım S1E1 - Altyazı'
+    Grup adı baştan tekrar ediyorsa at, Sezon/Bölüm -> S1E1 yap."""
+    if not ad:
+        return grup
+    ad = ad.strip()
+    g = (grup or "").strip()
+    # Baştaki grup adını at: "10 Bin Adım - Sezon 1..." -> "Sezon 1..."
+    if g and ad.lower().startswith(g.lower()):
+        ad = ad[len(g):].lstrip(" -–—:").strip()
+    # İçte tekrar eden grup adı varsa at: "Sezon 1 - 10 Bin Adım - Bölüm 1" gibi
+    if g:
+        ad = re.sub(r"(?i)" + re.escape(g) + r"\s*[-–—:]\s*", "", ad).strip()
+    # Sezon X - Bölüm Y  ->  S1E1  (Sezon 1 Bölüm 1 / S1 B1 / 1. Sezon 1. Bölüm varyasyonları)
+    m = re.search(r"(?i)(?:sezon|s)\s*0*(\d+)\s*(?:[-–—:. ]+)?(?:b[öo]l[üu]m|b|e|episode)\s*0*(\d+)", ad)
+    if m:
+        sezon, bolum = m.group(1), m.group(2)
+        kalan = ad[:m.start()].strip(" -–—:,. ") + " " + ad[m.end():].strip(" -–—:,. ")
+        kalan = re.sub(r"\s+", " ", kalan).strip(" -–—:,. ")
+        # Kalanın içinde tekrar grup adı kaldıysa at
+        if g and kalan.lower().startswith(g.lower()):
+            kalan = kalan[len(g):].lstrip(" -–—:").strip()
+        sxxexx = f"S{sezon}E{bolum}"
+        if kalan:
+            return f"{g} {sxxexx} - {kalan}" if g else f"{sxxexx} - {kalan}"
+        return f"{g} {sxxexx}" if g else sxxexx
+    # Sezon/Bölüm yoksa, sadece tekrarı atılmış hali + grup
+    if g and ad and ad.lower() != g.lower():
+        return f"{g} - {ad}"
+    return g or ad
+
+def extinf_temizle(satir, grup):
+    """#EXTINF satırındaki tvg-name ve virgülden sonraki görünen adı temizler."""
+    if "," not in satir:
+        return satir
+    bas, gorunen = satir.rsplit(",", 1)
+    yeni_gorunen = isim_temizle(grup, gorunen)
+    # tvg-name="..." de aynı temizliği uygula
+    def _tvg(m):
+        return f'tvg-name="{isim_temizle(grup, m.group(1))}"'
+    bas = re.sub(r'tvg-name="([^"]*)"', _tvg, bas)
+    bas = re.sub(r"tvg-name='([^']*)'", lambda m: f"tvg-name='{isim_temizle(grup, m.group(1))}'", bas)
+    return bas + "," + yeni_gorunen
 
 def grup_bul(extinf_satiri):
     m = re.search(r'group-title="([^"]*)"', extinf_satiri)
@@ -97,7 +141,7 @@ def ayir(metin, out_dir, prefix, temizle=True):
             if bekleyen_blok:
                 blogu_kaydet(bekleyen_blok, mevcut_grup or "Grupsuz")
             mevcut_grup = grup_bul(s)
-            bekleyen_blok = [satir]
+            bekleyen_blok = [extinf_temizle(satir, mevcut_grup)]
             continue
         if s.startswith("#") and bekleyen_blok:
             # #EXTVLCOPT gibi EXTINF ile URL arası satırlar bloğa dahil
@@ -123,11 +167,12 @@ def ayir(metin, out_dir, prefix, temizle=True):
     ozet = []
     for grup in sira:
         temiz = dosya_adi_temizle(grup)
-        dosya = os.path.join(out_dir, f"{prefix}.{temiz}.m3u")
+        taban = f"{prefix}.{temiz}" if prefix else temiz
+        dosya = os.path.join(out_dir, f"{taban}.m3u")
         # Aynı temiz ad iki farklı gruptan gelirse ezmesin
         sayac = 2
         while os.path.exists(dosya) and dosya not in [x[2] for x in ozet]:
-            dosya = os.path.join(out_dir, f"{prefix}.{temiz}-{sayac}.m3u")
+            dosya = os.path.join(out_dir, f"{taban}-{sayac}.m3u")
             sayac += 1
         icerik = ["#EXTM3U"] + gruplar[grup]
         with open(dosya, "w", encoding="utf-8") as f:
@@ -140,7 +185,7 @@ def ayir(metin, out_dir, prefix, temizle=True):
     if temizle:
         yazilan_adlar = {os.path.basename(x[2]) for x in ozet}
         for ad in os.listdir(out_dir):
-            if ad.startswith(prefix + ".") and ad.endswith(".m3u") and ad not in yazilan_adlar:
+            if ad.endswith(".m3u") and ad not in yazilan_adlar:
                 try:
                     os.remove(os.path.join(out_dir, ad))
                     print(f"  silindi (artık yok): {ad}")
@@ -159,11 +204,11 @@ def ayir(metin, out_dir, prefix, temizle=True):
     return ozet
 
 def main():
-    p = argparse.ArgumentParser(description="M3U'yu gruplara göre dizi.GRUPADI.m3u olarak ayırır")
+    p = argparse.ArgumentParser(description="M3U'yu gruplara göre dizi/GRUPADI.m3u olarak ayırır")
     p.add_argument("--url", default=VARSAYILAN_URL, help="Kaynak M3U URL")
     p.add_argument("--file", default=None, help="URL yerine yerel M3U dosyası kullan")
     p.add_argument("--out", default="dizi", help="Çıktı klasörü (varsayılan: dizi)")
-    p.add_argument("--prefix", default="dizi", help="Dosya öneki (varsayılan: dizi)")
+    p.add_argument("--prefix", default="", help="Dosya öneki (varsayılan: boş, örn: 10 Bin Adım.m3u)")
     args = p.parse_args()
 
     if args.file:
