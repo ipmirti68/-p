@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-DİZİAYIR - Son hali
-Yapı: dizi/A/A Bloody Lucky Day.m3u
-Grup: A Bloody Lucky Day
+DİZİAYIR - KOMPLE SON HALİ
+Yapı: dizi/A/Atiye.m3u
+Grup: A Atiye
+İsimler İngilizce harfle, BOŞLUKSUZ
+Dosya adında önde harf YOK
 İçerik: S01E01, S01E02...
 URL kontrolü KAPALI
+Eskinin üzerine ekler
 """
 import re
 import os
@@ -17,30 +20,44 @@ KAYNAKLAR = [
     "https://raw.githubusercontent.com/kimbumuratyavuz/capcanli/refs/heads/main/dizi.m3u",
 ]
 
-TUM_HARFLER = list("ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ") + list("0123456789") + ["#"]
+TUM_HARFLER = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ") + list("0123456789") + ["#"]
 GENEL_GRUPLAR = {"dizi", "diziler", "series"}
 
-def dosya_adi_temizle(s):
-    # Dosya adında olmaması gereken karakterleri temizle
-    s = re.sub(r'[\\/:*?"<>|]', '', s)
-    s = re.sub(r'\s+', ' ', s).strip()
-    return s
+TR_MAP = str.maketrans({
+    "Ç": "C", "ç": "c",
+    "Ğ": "G", "ğ": "g",
+    "İ": "I", "ı": "i",
+    "Ö": "O", "ö": "o",
+    "Ş": "S", "ş": "s",
+    "Ü": "U", "ü": "u",
+})
+
+def ingilizce_yap(s):
+    return (s or "").translate(TR_MAP)
+
+def bosluk_sil(s):
+    return re.sub(r'\s+', '', s or "")
 
 def temizle_isim(s):
     s = s or ""
     s = re.sub(r'[🟪◆⭕]', '', s)
     s = re.sub(r'(?i)^DİZİ\s*-\s*', '', s)
     s = re.sub(r'(?i)^DIZI\s*-\s*', '', s)
-    # Eski "A - Bloody Lucky Day" veya "A Bloody Lucky Day" gelirse harfi at
     s = re.sub(r'^[A-ZÇĞİÖŞÜ0-9#]\s*-\s*', '', s)
     s = re.sub(r'^[A-ZÇĞİÖŞÜ0-9#]\s+', '', s, count=1) if len(s.split()) > 1 else s
-    s = re.sub(r'\s+', ' ', s).strip()
-    return s
+    s = ingilizce_yap(s)
+    s = bosluk_sil(s)
+    return s.strip()
+
+def dosya_adi_temizle(s):
+    s = re.sub(r'[\\/:*?"<>|]', '', s)
+    s = re.sub(r'\s+', '', s)
+    return s.strip()
 
 def harf_bul(dizi):
     if not dizi:
         return "#"
-    h = dizi.strip()[0].upper()
+    h = ingilizce_yap(dizi.strip()[0].upper())
     if h in TUM_HARFLER:
         return h
     if h.isdigit():
@@ -120,7 +137,6 @@ def m3u_parse_et(satirlar, havuz):
                 se = se_bul(ham + " " + tvg_name)
                 if dizi:
                     harf = harf_bul(dizi)
-                    # Grup adı = Dosya adı: A Bloody Lucky Day
                     grup_yeni = f"{harf} {dizi}"
                     yeni = f'#EXTINF:-1 tvg-name="{se}" tvg-logo="{logo}" group-title="{grup_yeni}",{se}'
                     for (eski_se, eski_u) in list(havuz[(harf, dizi)].keys()):
@@ -136,8 +152,7 @@ def calistir(cikti_klasor):
     havuz = defaultdict(dict)
     os.makedirs(cikti_klasor, exist_ok=True)
 
-    # 1. ESKİYİ OKU - hem eski düz dizi/A.m3u hem de yeni dizi/A/A ...m3u yapısını oku
-    print("Eski dosyalar okunuyor...")
+    # 1. ESKİYİ OKU
     for kok, klasorler, dosyalar in os.walk(cikti_klasor):
         for f in dosyalar:
             if f.endswith(".m3u"):
@@ -145,8 +160,8 @@ def calistir(cikti_klasor):
                 try:
                     with open(yol, encoding="utf-8", errors="ignore") as fh:
                         m3u_parse_et(fh.read().splitlines(), havuz)
-                except Exception as e:
-                    print(f"Eski okunamadı {yol}: {e}")
+                except Exception:
+                    pass
 
     # 2. KAYNAKTAN EKLE
     for kaynak in KAYNAKLAR:
@@ -155,21 +170,24 @@ def calistir(cikti_klasor):
         print(f"Kaynak satır: {len(icerik.splitlines())}")
         m3u_parse_et(icerik.splitlines(), havuz)
 
-    # 3. ESKİ DÜZ DOSYALARI TEMİZLE - artık klasörlü yapıya geçiyoruz
+    # 3. ESKİ DOSYALARI TEMİZLE
+    for kok, klasorler, dosyalar in os.walk(cikti_klasor):
+        for f in dosyalar:
+            if f.endswith(".m3u"):
+                os.remove(os.path.join(kok, f))
     for f in os.listdir(cikti_klasor):
         yol = os.path.join(cikti_klasor, f)
         if os.path.isfile(yol) and f.endswith(".m3u"):
             os.remove(yol)
 
-    # 4. YAZ: dizi/A/A Bloody Lucky Day.m3u
+    # 4. YAZ: dizi/A/Atiye.m3u
     for harf in TUM_HARFLER:
         klasor = os.path.join(cikti_klasor, harf)
         os.makedirs(klasor, exist_ok=True)
         diziler = sorted([d for (h, d) in havuz.keys() if h == harf], key=lambda x: x.lower())
         for dizi in diziler:
-            grup_adi = f"{harf} {dizi}"
-            dosya_adi = dosya_adi_temizle(grup_adi) + ".m3u"
-            dosya = os.path.join(klasor, dosya_adi)
+            guvenli = dosya_adi_temizle(dizi)
+            dosya = os.path.join(klasor, f"{guvenli}.m3u")
             with open(dosya, "w", encoding="utf-8") as f:
                 f.write("#EXTM3U\n")
                 for (se, url) in sorted(havuz[(harf, dizi)].keys()):
