@@ -1,6 +1,5 @@
 
-name: İKİNCİ BAHAR DİZİLER
-
+name: diziayır
 on:
   workflow_dispatch:
   schedule:
@@ -35,7 +34,7 @@ jobs:
              python -m pip install --upgrade "yt-dlp[default]" requests
 
       - name: İkinci Bahar kontrol
-        run: python 2bahar.py
+        run: python diziayir.py
 
       - name: Dosyaları kaydet
         run: |
