@@ -69,3 +69,8 @@ series:
       group: "🟪◆ DİZİ - PERİHAN ABLA ⭕"
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQquIA8Vvm1V27fM_AyYw0Dgw1qpI5Ggd3SyUhSvLQYeA&s=10"
       url: "https://raw.githubusercontent.com/k33n26/iptv/refs/heads/master/PerihanAbla.m3u"
+     
+     - name: "DOKTOR CHA"
+      group: "🟪◆ DİZİ - DOKTOR CHA ⭕"
+      logo: ""
+      url: "https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/dizi/Doctor%20Cha.m3u"
