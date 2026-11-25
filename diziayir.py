@@ -1,20 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-DİZİAYIR - Son hali
+DİZİAYIR - Son hali, URL kontrolü KAPALI
 Dosya: dizi/A.m3u
 Grup:  A - Bloody Lucky Day
 İçerik: S01E01, S01E02...
-Dizi adı sadece grupta, logo aynen gelir
-Eskinin üzerine ekler, ölü URL'yi atar
 """
 import re
 import os
 import argparse
 import urllib.request
-import urllib.error
 from collections import defaultdict
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 KAYNAKLAR = [
     "https://raw.githubusercontent.com/kimbumuratyavuz/capcanli/refs/heads/main/dizi.m3u",
@@ -28,7 +24,6 @@ def temizle_isim(s):
     s = re.sub(r'[🟪◆⭕]', '', s)
     s = re.sub(r'(?i)^DİZİ\s*-\s*', '', s)
     s = re.sub(r'(?i)^DIZI\s*-\s*', '', s)
-    # Eski format "A - Bloody Lucky Day" gelirse harfi at, biz yeniden ekleyeceğiz
     s = re.sub(r'^[A-ZÇĞİÖŞÜ0-9#]\s*-\s*', '', s)
     s = re.sub(r'\s+', ' ', s).strip()
     return s
@@ -116,10 +111,8 @@ def m3u_parse_et(satirlar, havuz):
                 se = se_bul(ham + " " + tvg_name)
                 if dizi:
                     harf = harf_bul(dizi)
-                    # GRUP: A - Bloody Lucky Day
                     grup_yeni = f"{harf} - {dizi}"
                     yeni = f'#EXTINF:-1 tvg-name="{se}" tvg-logo="{logo}" group-title="{grup_yeni}",{se}'
-                    # Aynı bölüm varsa eskisini sil, yenisini yaz - çift olmasın
                     for (eski_se, eski_u) in list(havuz[(harf, dizi)].keys()):
                         if eski_se == se:
                             del havuz[(harf, dizi)][(eski_se, eski_u)]
@@ -129,35 +122,18 @@ def m3u_parse_et(satirlar, havuz):
                 continue
         i += 1
 
-def url_calisiyor_mu(url):
-    for method in ["HEAD", "GET"]:
-        try:
-            req = urllib.request.Request(url, method=method, headers={"User-Agent": "Mozilla/5.0", "Referer": "https://twitter.com/"})
-            with urllib.request.urlopen(req, timeout=10) as r:
-                if r.status < 400 or r.status in (401, 403):
-                    return True
-                return False
-        except urllib.error.HTTPError as e:
-            if e.code in (401, 403):
-                return True
-            return False
-        except Exception:
-            continue
-    return False
-
-def calistir(cikti_klasor, kontrol_et=True):
+def calistir(cikti_klasor):
     havuz = defaultdict(dict)
     os.makedirs(cikti_klasor, exist_ok=True)
 
-    # 1. ESKİYİ OKU - üzerine ekleyeceğiz
-    print("Eski dosyalar okunuyor...")
+    # 1. ESKİYİ OKU - üzerine ekle
     for f in os.listdir(cikti_klasor):
         if f.endswith(".m3u"):
             try:
                 with open(os.path.join(cikti_klasor, f), encoding="utf-8", errors="ignore") as fh:
                     m3u_parse_et(fh.read().splitlines(), havuz)
-            except Exception as e:
-                print(f"Eski okunamadı {f}: {e}")
+            except Exception:
+                pass
 
     # 2. KAYNAKTAN EKLE
     for kaynak in KAYNAKLAR:
@@ -166,31 +142,7 @@ def calistir(cikti_klasor, kontrol_et=True):
         print(f"Kaynak satır: {len(icerik.splitlines())}")
         m3u_parse_et(icerik.splitlines(), havuz)
 
-    # 3. ÖLÜ URL'Yİ AT
-    if kontrol_et:
-        print("URL kontrolü başlıyor...")
-        tum = [(h, d, se, u) for (h, d) in havuz.keys() for (se, u) in havuz[(h, d)].keys()]
-        print(f"Kontrol: {len(tum)} URL")
-        olu = 0
-        with ThreadPoolExecutor(max_workers=30) as ex:
-            fmap = {ex.submit(url_calisiyor_mu, u): (h, d, se, u) for (h, d, se, u) in tum}
-            done = 0
-            for fut in as_completed(fmap):
-                h, d, se, u = fmap[fut]
-                done += 1
-                if done % 5000 == 0:
-                    print(f"Kontrol: {done}/{len(tum)}")
-                try:
-                    ok = fut.result()
-                except Exception:
-                    ok = False
-                if not ok:
-                    if (se, u) in havuz[(h, d)]:
-                        del havuz[(h, d)][(se, u)]
-                    olu += 1
-        print(f"Ölü atıldı: {olu}")
-
-    # 4. HARFE GÖRE GRUP GRUP YAZ
+    # 3. HARFE GÖRE GRUP GRUP YAZ
     for harf in TUM_HARFLER:
         dosya = os.path.join(cikti_klasor, f"{harf}.m3u")
         with open(dosya, "w", encoding="utf-8") as f:
@@ -209,6 +161,5 @@ def calistir(cikti_klasor, kontrol_et=True):
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--out", default="dizi")
-    p.add_argument("--no-check", action="store_true")
     args = p.parse_args()
-    calistir(args.out, kontrol_et=not args.no_check)
+    calistir(args.out)
