@@ -1,0 +1,21 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/e24e7a1dd922c4498cd29d624350350c.jpg" group-title="Aftertaste",S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/4/cdn1/Diziler/Aftertaste/1.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/e24e7a1dd922c4498cd29d624350350c.jpg" group-title="Aftertaste",S1E2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/4/cdn1/Diziler/Aftertaste/2.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/e24e7a1dd922c4498cd29d624350350c.jpg" group-title="Aftertaste",S1E3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/4/cdn1/yeni/AfterTaste/3.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/e24e7a1dd922c4498cd29d624350350c.jpg" group-title="Aftertaste",S1E4 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/2/cdn7/yeni2/Aftertaste/s1b4.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/e24e7a1dd922c4498cd29d624350350c.jpg" group-title="Aftertaste",S1E5 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/2/cdn7/yeni2/Aftertaste/s1b5.mp4/index.m3u8

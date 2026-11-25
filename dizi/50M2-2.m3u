@@ -1,0 +1,33 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/9a9351c3c20f844f83326fab7af431f6.jpg" group-title="50M2",S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/3/cdn6/series/50m2/1.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/9a9351c3c20f844f83326fab7af431f6.jpg" group-title="50M2",S1E2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/3/cdn6/series/50m2/2.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/9a9351c3c20f844f83326fab7af431f6.jpg" group-title="50M2",S1E3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/3/cdn6/series/50m2/3.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/9a9351c3c20f844f83326fab7af431f6.jpg" group-title="50M2",S1E4 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/3/cdn6/series/50m2/4.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/9a9351c3c20f844f83326fab7af431f6.jpg" group-title="50M2",S1E5 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/6/cdn3/Diziler/50m2/5.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/9a9351c3c20f844f83326fab7af431f6.jpg" group-title="50M2",S1E6 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/6/cdn3/Diziler/50m2/6.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/9a9351c3c20f844f83326fab7af431f6.jpg" group-title="50M2",S1E7 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/6/cdn3/Diziler/50m2/7.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/9a9351c3c20f844f83326fab7af431f6.jpg" group-title="50M2",S1E8 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/6/cdn3/Diziler/50m2/8.mp4/index.m3u8

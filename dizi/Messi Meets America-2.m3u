@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/bffa0ffe7ac9b27f528fedc12c133bc6.jpg" group-title="Messi Meets America",S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/1/cdn783/s/MessiMeetsAmerica/1.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/bffa0ffe7ac9b27f528fedc12c133bc6.jpg" group-title="Messi Meets America",S1E2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/1/cdn783/s/MessiMeetsAmerica/2.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/bffa0ffe7ac9b27f528fedc12c133bc6.jpg" group-title="Messi Meets America",S1E3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/1/cdn783/s/MessiMeetsAmerica/3.mp4/index.m3u8

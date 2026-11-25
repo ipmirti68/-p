@@ -1,0 +1,9 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d0314ee0c7764cafcc9e7f4ee5d5c768.jpg" group-title="Konflikti",S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn169/1592a0ac4c773d6c657393d28a1725a617338233416.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d0314ee0c7764cafcc9e7f4ee5d5c768.jpg" group-title="Konflikti",S1E2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn169/079387e6778405bc90b47e720c4cd88417338233259.mp4/index.m3u8

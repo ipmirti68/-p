@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/87dab3f7eeab1e8383ec3056f2ed6f2d.jpg" group-title="Arnold",S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/2/cdn611/s/Arnold/1.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/87dab3f7eeab1e8383ec3056f2ed6f2d.jpg" group-title="Arnold",S1E2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/2/cdn611/s/Arnold/2.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/87dab3f7eeab1e8383ec3056f2ed6f2d.jpg" group-title="Arnold",S1E3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/2/cdn611/s/Arnold/3.mp4/index.m3u8

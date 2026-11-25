@@ -1,0 +1,9 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/5c15c834daf4493668c4959bc683151b.jpg" group-title="The Colour of Magic",1.S Altyazı - Bölüm 1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn1280/c355d286ef84fb5638c51c238175cbd882317caa.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/5c15c834daf4493668c4959bc683151b.jpg" group-title="The Colour of Magic",1.S Altyazı - Bölüm 2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/11/cdn1280/0c9277995038c97670fb8c0d06af3fd011334aa2.mp4/index.m3u8

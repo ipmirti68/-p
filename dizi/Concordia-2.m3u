@@ -1,0 +1,17 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/60794e5cab3f830212781765203180dc.jpg" group-title="Concordia",S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/10/cdn32/9846b54abaf46b8c4d73f6cc50b9b77d171657403510.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/60794e5cab3f830212781765203180dc.jpg" group-title="Concordia",S1E2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/10/cdn32/c8873a93e44825530b8ccec239803f7f171665871014.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/60794e5cab3f830212781765203180dc.jpg" group-title="Concordia",S1E3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/10/cdn32/b382fd1efcb31b5c0c1cd4ef7ae0d58717172637017.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/60794e5cab3f830212781765203180dc.jpg" group-title="Concordia",S1E4 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/10/cdn32/0ae9ebfa4d43b916a4728e4f71543684171726372210.mp4/index.m3u8

@@ -1,0 +1,17 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d53f21bcbff8ecdb049d0aa7d2255cac.jpg" group-title="Playing Nice",S1E1 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/dbcb0120cd0322e3127eadc32077cb04173853110013.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d53f21bcbff8ecdb049d0aa7d2255cac.jpg" group-title="Playing Nice",S1E2 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/59b17ccb29487bcf079a9695dafeb143173853109412.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d53f21bcbff8ecdb049d0aa7d2255cac.jpg" group-title="Playing Nice",S1E3 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/9c38e3ebfb7421baa246204a899867ce173853110715.mp4/index.m3u8
+#EXTINF:-1 tvg-logo="https://a.psrectv80.xyz/uploads/jpg/d53f21bcbff8ecdb049d0aa7d2255cac.jpg" group-title="Playing Nice",S1E4 - Altyazı
+#EXTVLCOPT:http-referrer=https://twitter.com/
+#EXTVLCOPT:http-user-agent=googleusercontent
+https://load.prectv63.lol/hls/8/cdn801/64777d6c301ca6b7f295359a0c07e73a173853108813.mp4/index.m3u8
