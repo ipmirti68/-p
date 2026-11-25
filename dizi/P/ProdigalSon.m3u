@@ -1,0 +1,9 @@
+#EXTM3U
+#EXTINF:-1 tvg-name="S01E01" tvg-logo="https://a.psrectv80.xyz/uploads/jpg/ddddf9a1104484d07c5ab40dff872d89.jpg" group-title="P ProdigalSon",S01E01
+https://load.prectv63.lol/hls/4/cdn1/cdn/series/ProdigalSon/ProdigalSon213.tr.mp4/index.m3u8
+#EXTINF:-1 tvg-name="S01E02" tvg-logo="https://a.psrectv80.xyz/uploads/jpg/ddddf9a1104484d07c5ab40dff872d89.jpg" group-title="P ProdigalSon",S01E02
+https://load.prectv63.lol/hls/6/cdn2/series/ProdigalSon/Sezon2/2.mp4/index.m3u8
+#EXTINF:-1 tvg-name="S01E03" tvg-logo="https://a.psrectv80.xyz/uploads/jpg/ddddf9a1104484d07c5ab40dff872d89.jpg" group-title="P ProdigalSon",S01E03
+https://load.prectv63.lol/hls/6/cdn2/series/ProdigalSon/Sezon2/3.mp4/index.m3u8
+#EXTINF:-1 tvg-name="S01E04" tvg-logo="https://a.psrectv80.xyz/uploads/jpg/ddddf9a1104484d07c5ab40dff872d89.jpg" group-title="P ProdigalSon",S01E04
+https://load.prectv63.lol/hls/6/cdn2/series/ProdigalSon/Sezon2/4.mp4/index.m3u8
