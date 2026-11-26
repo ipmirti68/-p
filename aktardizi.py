@@ -1,5 +1,5 @@
 # MIRTI68 - DIZI AKTARICI - YEDEK YOK
-# Hepsi yaml'da: adres, grup, filtre
+# Hepsi yaml'da: adres, grup, filtre, dizi_adi
 # Py'de sadece HEDEF_DOSYA var
 # Py'ye dokunma, degisiklik yaml'da
 import re, os, shutil, urllib.request
@@ -35,7 +35,7 @@ def oku_yaml_toleransli(path):
             if not line or line.startswith("#"): continue
             if "kaynak_url" in line:
                 if cur: bloklar.append(cur)
-                cur = {"kaynak_url": "", "hedef_grup": "", "hedef_logo": "", "filtre_grup_icerir": "", "filtre_ad_icerir": "", "filtre_grup_haric": "", "filtre_ad_haric": ""}
+                cur = {"kaynak_url": "", "hedef_grup": "", "hedef_logo": "", "dizi_adi": "", "filtre_grup_icerir": "", "filtre_ad_icerir": "", "filtre_grup_haric": "", "filtre_ad_haric": ""}
                 idx = line.find("kaynak_url:")
                 cur["kaynak_url"] = deger_al(line[idx + len("kaynak_url:"):].strip())
                 continue
@@ -43,7 +43,7 @@ def oku_yaml_toleransli(path):
             if ":" not in line: continue
             k, v = line.split(":", 1)
             k = k.strip().lstrip("- ").strip()
-            if k in ("hedef_grup", "hedef_logo", "kaynak_grup", "filtre_grup_icerir", "filtre_ad_icerir", "filtre_grup_haric", "filtre_ad_haric"):
+            if k in ("hedef_grup", "hedef_logo", "dizi_adi", "kaynak_grup", "filtre_grup_icerir", "filtre_ad_icerir", "filtre_grup_haric", "filtre_ad_haric"):
                 cur[k] = deger_al(v.strip())
     if cur: bloklar.append(cur)
     return bloklar
@@ -114,29 +114,41 @@ def oku_m3u(p):
     if cur: records.append(cur)
     return records
 
-def dizi_adini_duzelt_tivimate(ad):
+def dizi_adini_duzelt_tivimate(ad, dizi_adi=""):
+    # TiviMate: "Dizi Adi S01E01" - dizi_adi varsa onu baz alir
     s = (ad or "").strip()
     s = re.sub(r'\b(1080p|720p|4K|UHD|FHD|HD|CAM|TS|WEB-DL|BluRay|Dublaj|Dublajlı|Altyazılı|Altyazili|Türkçe|Turkce|Altyazı|Altyazi)\b', ' ', s, flags=re.I)
     s = re.sub(r'[._\-]+', ' ', s)
     s = re.sub(r'\s+', ' ', s).strip()
+    # Zaten S01E01 varsa
     m = re.search(r'\bS(\d{1,2})E(\d{1,3})\b', s, re.I)
     if m:
-        dizi = s[:m.start()].strip(" -|")
+        dizi = (dizi_adi or s[:m.start()]).strip(" -|")
         dizi = re.sub(r'\s+', ' ', dizi).strip()
         dizi = re.sub(r'\s*(Sezon|Season|Bölüm|Bolum|Episode).*$', '', dizi, flags=re.I).strip()
+        if not dizi: dizi = dizi_adi or s
         return f"{dizi} S{int(m.group(1)):02d}E{int(m.group(2)):02d}"
     m2 = re.search(r'(.*?)\s*[-–]?\s*Sezon\s*(\d+)\s*[-–]?\s*B[öo]l[üu]m\s*(\d+)', s, re.I)
     if m2:
-        dizi = re.sub(r'\s+', ' ', m2.group(1)).strip(" -|")
+        dizi = (dizi_adi or m2.group(1)).strip(" -|")
+        dizi = re.sub(r'\s+', ' ', dizi).strip()
         return f"{dizi} S{int(m2.group(2)):02d}E{int(m2.group(3)):02d}"
     m3 = re.search(r'(.*?)\s*[-–]?\s*Season\s*(\d+)\s*[-–]?\s*Episode\s*(\d+)', s, re.I)
     if m3:
-        dizi = re.sub(r'\s+', ' ', m3.group(1)).strip(" -|")
+        dizi = (dizi_adi or m3.group(1)).strip(" -|")
+        dizi = re.sub(r'\s+', ' ', dizi).strip()
         return f"{dizi} S{int(m3.group(2)):02d}E{int(m3.group(3)):02d}"
     m4 = re.search(r'(.*?)\s*[-–]?\s*B[öo]l[üu]m\s*(\d+)', s, re.I)
     if m4:
-        dizi = re.sub(r'\s+', ' ', m4.group(1)).strip(" -|")
+        dizi = (dizi_adi or m4.group(1)).strip(" -|")
+        dizi = re.sub(r'\s+', ' ', dizi).strip()
         return f"{dizi} S01E{int(m4.group(2)):02d}"
+    # "Cukur 12" gibi sadece sayi varsa
+    m5 = re.search(r'^(.*?)\s+(\d{1,3})$', s)
+    if m5 and dizi_adi:
+        return f"{dizi_adi} S01E{int(m5.group(2)):02d}"
+    if dizi_adi:
+        return dizi_adi
     return s
 
 def main():
@@ -169,7 +181,8 @@ def main():
             print("[HATA] yaml'da hedef_grup bos, atlaniyor")
             continue
         hedef_logo = str(blok.get("hedef_logo", "") or "").strip()
-        print(f"[DIZI] {kurl[:60]} -> {hedef_grup}")
+        dizi_adi = str(blok.get("dizi_adi", "") or "").strip()
+        print(f"[DIZI] {kurl[:60]} -> {hedef_grup} - dizi_adi: {dizi_adi or '-'}")
         try:
             kaynak = oku_m3u(kurl)
         except Exception as e:
@@ -184,7 +197,7 @@ def main():
             if not filtre_gecer(ad, grup_bul(r), blok):
                 atlanan += 1
                 continue
-            yeni_ad = dizi_adini_duzelt_tivimate(ad)
+            yeni_ad = dizi_adini_duzelt_tivimate(ad, dizi_adi)
             if not re.search(r'\bS\d{2}E\d{2,3}\b', yeni_ad):
                 atlanan += 1
                 continue
@@ -198,7 +211,7 @@ def main():
                 oz["group-title"] = hedef_grup
                 oz["tvg-name"] = yeni_ad
                 oz["tvg-type"] = "series"
-                oz["tvg-id"] = yeni_ad
+                # EPG: varsa koru, yoksa dokunma - yeni_ad ile ezme
                 gelen_logo = oz.get("tvg-logo", "").strip()
                 if not gelen_logo and hedef_logo:
                     oz["tvg-logo"] = hedef_logo
