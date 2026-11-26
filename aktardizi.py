@@ -1,4 +1,4 @@
-# MIRTI68 - DIZI - Senin YAML formatina gore: dizi_adi + filtre_grup_icerir
+# MIRTI68 - DIZI - Nostalji icinde dizi grup
 import re, os, shutil, urllib.request
 
 HEDEF_DOSYA = "MIRTI_TV.m3u"
@@ -14,7 +14,6 @@ def normalize(s):
     return re.sub(r"\s+"," ",s).strip()
 
 def liste_parse(v):
-    # 'squid game, hotel del luna' -> ['squid game', 'hotel del luna']
     if not v: return []
     return [x.strip() for x in str(v).split(",") if x.strip()]
 
@@ -68,17 +67,24 @@ def oku_m3u(p):
 def dizi_adi_temizle(ad):
     s = (ad or "").strip()
     m = re.search(r'[Ss](\d{1,2})[Ee](\d{1,3})', s)
-    if not m:
-        m2 = re.search(r'Sezon\s*(\d+).*?B[oö]l[uü]m\s*(\d+)', s, re.I)
-        if m2: return re.sub(r'Sezon.*', '', s, flags=re.I).strip(" -|"), int(m2.group(1)), int(m2.group(2))
-        return s, None, None
-    sezon, bolum = int(m.group(1)), int(m.group(2))
-    temel = s[:m.start()].strip(" -|_.,")
-    temel = re.sub(r'\s+', ' ', temel).strip()
-    return temel, sezon, bolum
+    if m:
+        sezon, bolum = int(m.group(1)), int(m.group(2))
+        temel = s[:m.start()].strip(" -|_.,")
+        temel = re.sub(r'\s+', ' ', temel).strip()
+        return temel, f"S{sezon:02d}E{bolum:02d}"
+    m2 = re.search(r'Sezon\s*(\d+).*?B[oö]l[uü]m\s*(\d+)', s, re.I)
+    if m2:
+        temel = re.sub(r'Sezon.*', '', s, flags=re.I).strip(" -|")
+        return temel, f"S{int(m2.group(1)):02d}E{int(m2.group(2)):02d}"
+    m3 = re.search(r'(.+?)\s+(\d{1,4})\s*\.\s*(B[oö]l[uü]m|BOLUM)\b', s, re.I)
+    if m3:
+        return m3.group(1).strip(" -|"), f"{m3.group(2)}. BÖLÜM"
+    m4 = re.search(r'(.+?)\s+(\d{1,4})\s*$', s)
+    if m4 and len(m4.group(1)) > 2:
+        return m4.group(1).strip(), f"{m4.group(2)}. BÖLÜM"
+    return s, s
 
 def yaml_oku_guvenli(path):
-    # Senin formatin: kaynak_url, dizi_adi, hedef_grup, hedef_logo, filtre_*
     def temiz(v):
         v = v.strip()
         if len(v) >= 2 and ((v[0] == "'" and v[-1] == "'") or (v[0] == '"' and v[-1] == '"')):
@@ -100,8 +106,6 @@ def yaml_oku_guvenli(path):
                         break
     if cur: out.append(cur)
     print(f"[BILGI] Girintisiz okundu, blok: {len(out)}")
-    for b in out:
-        print(f"  - {b['dizi_adi'] or b['filtre_grup_icerir'][:40]} -> {b['hedef_grup']}")
     return out
 
 def main():
@@ -113,7 +117,6 @@ def main():
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
-    print(f"[EPG] Ust baslik korundu: {baslik}")
     def kalacak_mi(r):
         g = grup_bul(r)
         if g.startswith("DIZILER /"): return False
@@ -131,13 +134,13 @@ def main():
         kurl = str(f.get("kaynak_url","") or "").strip()
         if not kurl: continue
         dizi_adi = str(f.get("dizi_adi","") or "").strip()
-        hedef_grup = str(f.get("hedef_grup","") or "").strip()
+        hedef_grup_sabit = str(f.get("hedef_grup","") or "").strip()
         hedef_logo = str(f.get("hedef_logo","") or "").strip()
         f_grup = liste_parse(f.get("filtre_grup_icerir",""))
         f_ad = liste_parse(f.get("filtre_ad_icerir",""))
         f_grup_haric = liste_parse(f.get("filtre_grup_haric",""))
         f_ad_haric = liste_parse(f.get("filtre_ad_haric",""))
-        print(f"[DIZI {sira}] {dizi_adi or 'KORE LST'} -> {hedef_grup}")
+        print(f"[DIZI {sira}] {dizi_adi or 'KORE LISTE'} -> {hedef_grup_sabit}")
         try: _, kaynak = oku_m3u(kurl)
         except Exception as e: print(f"  [ATLANDI] {e}"); continue
         eklenen_blok = 0
@@ -147,49 +150,47 @@ def main():
             if u.strip() in gorulen: continue
             g = grup_bul(r)
             ng = normalize(g); na = normalize(ad)
-            # HARIC filtresi
             haric = False
             for x in f_grup_haric:
                 if normalize(x) in ng: haric = True; break
             for x in f_ad_haric:
                 if normalize(x) in na: haric = True; break
             if haric: continue
-            # ICERIR filtresi
+            eslesen_filtre = ""
             if dizi_adi:
-                # Tek dizi: adinda veya grubunda dizi adi gecmeli, yoksa alma
-                # Bos dizi_adi olan Kore blogu buraya girmez
                 if normalize(dizi_adi) not in na and normalize(dizi_adi) not in ng:
-                    # Kaynak zaten tek dizi dosyasiysa (cukur.m3u gibi) hepsini al
-                    # Dosya adinda dizi adi geciyorsa hepsini al
                     if normalize(dizi_adi) not in normalize(kurl):
                         continue
             elif f_grup or f_ad:
-                # Kore gibi liste: grup veya ad listeden birini icermeli
                 tuttu = False
                 for x in f_grup:
                     if normalize(x) in ng or normalize(x) in na:
-                        tuttu = True; break
-                for x in f_ad:
-                    if normalize(x) in na:
-                        tuttu = True; break
+                        tuttu = True; eslesen_filtre = x.strip(); break
+                if not tuttu:
+                    for x in f_ad:
+                        if normalize(x) in na:
+                            tuttu = True; eslesen_filtre = x.strip(); break
                 if not tuttu: continue
             else:
-                # Ne dizi_adi ne filtre var: hepsini alma, atla
-                print(f"  [ATLANDI] Filtre yok, hepsini almamak icin atlandi")
                 break
-            # Ad duzenle
-            temel, sezon, bolum = dizi_adi_temizle(ad)
-            if dizi_adi and normalize(dizi_adi) not in normalize(temel):
-                # Nostalji: Adin basina dizi adini koy, S01E01'i koru
-                if sezon is not None and bolum is not None:
-                    yeni_ad = f"{dizi_adi} S{sezon:02d}E{bolum:02d}"
-                else:
-                    yeni_ad = f"{dizi_adi} {temel}".strip()
+            temel, bolum_kodu = dizi_adi_temizle(ad)
+            # --- ASIL DEGISIKLIK BURADA ---
+            # Nostalji / Kore ana grup + altina dizi adi
+            if dizi_adi:
+                alt_grup = dizi_adi.upper().strip()
+            elif eslesen_filtre:
+                alt_grup = eslesen_filtre.upper().strip()
             else:
-                if sezon is not None and bolum is not None:
-                    yeni_ad = f"{temel} S{sezon:02d}E{bolum:02d}"
+                alt_grup = temel.upper().strip()
+            if hedef_grup_sabit:
+                # Zaten sonunda dizi adi varsa tekrar ekleme
+                if normalize(alt_grup) in normalize(hedef_grup_sabit):
+                    hedef_grup = hedef_grup_sabit
                 else:
-                    yeni_ad = temel
+                    hedef_grup = f"{hedef_grup_sabit} / {alt_grup}"
+            else:
+                hedef_grup = f"DIZILER / {alt_grup}"
+            yeni_ad = bolum_kodu
             yeni = list(r)
             idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
             if idx is not None:
@@ -200,9 +201,13 @@ def main():
                     extinf = extinf.replace("#EXTINF:", f'#EXTINF: group-title="{hedef_grup}"', 1)
                 if 'tvg-name="' in extinf:
                     extinf = re.sub(r'tvg-name="[^"]*"', f'tvg-name="{yeni_ad}"', extinf)
+                else:
+                    extinf = extinf.replace('group-title=', f'tvg-name="{yeni_ad}" group-title=', 1)
                 if 'tvg-type="' not in extinf:
                     extinf = extinf.replace('group-title=', 'tvg-type="series" group-title=', 1)
-                if 'tvg-logo="' not in extinf and hedef_logo:
+                m_logo = re.search(r'tvg-logo="([^"]*)"', extinf)
+                gelen_logo = m_logo.group(1).strip() if m_logo else ""
+                if not gelen_logo and hedef_logo:
                     extinf = extinf.replace('group-title=', f'tvg-logo="{hedef_logo}" group-title=', 1)
                 extinf = extinf.rsplit(",", 1)[0] + "," + yeni_ad
                 yeni[idx] = extinf
