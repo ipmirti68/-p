@@ -24,7 +24,7 @@ def normalize(s):
 def norm_sinema(s):
     return re.sub(r'[^a-z0-9çğıöşü]+','',(s or "").lower())
 
-SINEMA_WANTED_RAW = [" IMDb Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"]
+SINEMA_WANTED_RAW = [" 【entity-IMDb¦canonical_name=IMDb】 Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"]
 SINEMA_WANTED = {norm_sinema(x): x for x in SINEMA_WANTED_RAW}
 SINEMA_EXCLUDED = ["【entity-adam sandler¦canonical_name=adam sandler】","clint eastwood","【entity-sylvester stallone¦canonical_name=sylvester stallone】","【entity-jackie chan¦canonical_name=jackie chan】","nicolas cage","【entity-steven seagal¦canonical_name=steven seagal】","【entity-jason statham¦canonical_name=jason statham】","seri","dizi","series","sezon","season","episode","bölüm","bolum","s01e","s02e","s03e"]
 def sinema_excluded(text):
@@ -132,46 +132,35 @@ def film_bilgisi_internet(baslik, yil_hint=""):
     return sonuc
 
 def yaml_oku_guvenli(path):
-    # 1. Normal YAML dene
-    try:
-        with open(path, encoding="utf-8") as f: return yaml.safe_load(f) or {}
-    except Exception as e:
-        print(f"[UYARI] YAML bozuk, girinti duzeltilip tekrar okunuyor: {e}")
-    # 2. Girinti duzelt: - kaynak_url ile baslayan satirlari bul, hepsini 2 bosluk + - yap, alt satirlari 4 bosluk yap
-    with open(path, encoding="utf-8") as f: raw = f.read()
-    lines = raw.splitlines()
-    fixed = []
-    for line in lines:
-        s = line.strip()
-        if not s: continue
-        if s.startswith("filmler:"):
-            fixed.append("filmler:")
-        elif s.startswith("- kaynak_url:"):
-            fixed.append("  - " + s[2:].strip())
-        elif s.startswith("- hedef_adi:"):
-            fixed.append("      - " + s[2:].strip())
-        elif s.startswith("hedefler:"):
-            fixed.append("    hedefler:")
-        elif s.startswith("kaynak_url:") or s.startswith("kaynak_grup:") or s.startswith("kaynak_gruplar:") or s.startswith("sinema_modu:") or s.startswith("grup_onek:") or s.startswith("epg_koru:") or s.startswith("sadece_listedekiler:") or s.startswith("film_bilgi_al:"):
-            fixed.append("    " + s)
-        elif s.startswith("hedef_adi:") or s.startswith("aranacak:") or s.startswith("hedef_grup:") or s.startswith("hedef_logo:") or s.startswith("ek_kod:"):
-            # hedef_adi zaten - ile baslamiyorsa 8 bosluk
-            if s.startswith("hedef_adi:"):
-                fixed.append("        " + s)
-            else:
-                fixed.append("        " + s)
-        else:
-            fixed.append("    " + s)
-    # hedef_adi satirini duzelt: - hedef_adi olanlar 6 bosluk olmali, digerleri 8
-    out = []
-    for l in fixed:
-        if l.strip().startswith("- hedef_adi:"):
-            out.append("      - hedef_adi: " + l.split("hedef_adi:",1)[1].strip())
-        else:
-            out.append(l)
-    txt = "\n".join(out) + "\n"
-    print("[BILGI] Duzeltilmis YAML:\n" + txt)
-    return yaml.safe_load(txt) or {}
+    # DÜZELTİLDİ: YAML'a hiç güvenme, satır satır oku, girinti önemli değil
+    # Her blok: - kaynak_url / kaynak_grup / hedef_grup
+    def temiz(v):
+        v = v.strip()
+        if len(v) >= 2 and ((v[0] == "'" and v[-1] == "'") or (v[0] == '"' and v[-1] == '"')):
+            v = v[1:-1]
+        return v.strip()
+    out = {"filmler": []}
+    cur = None
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            s = line.strip()
+            if not s or s.startswith("#") or s == "filmler:": continue
+            if "kaynak_url:" in s:
+                if cur: out["filmler"].append(cur)
+                v = s.split("kaynak_url:",1)[1]
+                cur = {"kaynak_url": temiz(v), "kaynak_grup": "", "hedef_grup": "", "kaynak_gruplar": [], "sinema_modu": True, "film_bilgi_al": True, "hedefler": []}
+            elif "kaynak_grup:" in s and cur is not None:
+                v = s.split("kaynak_grup:",1)[1]
+                cur["kaynak_grup"] = temiz(v)
+            elif "hedef_grup:" in s and cur is not None:
+                v = s.split("hedef_grup:",1)[1]
+                cur["hedef_grup"] = temiz(v)
+                cur["hedefler"] = [{"hedef_adi": "hedef_1", "aranacak": "", "hedef_grup": cur["hedef_grup"], "hedef_logo": "", "ek_kod": ""}]
+    if cur: out["filmler"].append(cur)
+    print(f"[BILGI] Girintisiz okundu, blok: {len(out['filmler'])}")
+    for b in out["filmler"]:
+        print(f"  - {b['kaynak_grup']} -> {b['hedef_grup']}")
+    return out
 
 def main():
     print("MIRTI68 - FILM BASLADI - aktarfilim.yaml okunuyor")
