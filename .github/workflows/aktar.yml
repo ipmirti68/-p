@@ -7,14 +7,14 @@ jobs:
   aktar:
     runs-on: ubuntu-latest
     steps:
-            - uses: actions/checkout@v4
-            - uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-            - run: pip install requests pyyaml
-            - run: cp mirti68.m3u mirti_test.m3u || echo "#EXTM3U" > mirti_test.m3u
-            - run: HEDEF_DOSYA=mirti_test.m3u python aktardizi.py
-            - run: |
+      - run: pip install requests pyyaml
+      - run: cp mirti68.m3u mirti_test.m3u || echo "#EXTM3U" > mirti_test.m3u
+      - run: HEDEF_DOSYA=mirti_test.m3u python aktardizi.py
+      - run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "mirti68@bot.local"
           git add mirti_test.m3u aktardizi.yaml aktardizi.py
