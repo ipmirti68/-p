@@ -1,25 +1,19 @@
-# MIRTI68 - SPOR AKTARICI - AYRI CALISIR
-# Okur: aktarspor.yaml
+# MIRTI68 - SPOR AKTARICI
+# Okur: aktarspor.yaml - bozuksa kendi duzeltir
 # Yazar: HEDEF_DOSYA + spor.tmp.m3u
-# HEDEF_DOSYA yml'den gelir, yoksa mirti_test.m3u
-# Ayni url varsa eklemez, EPG korunur.
-# Logo: Kendi logosu varsa onu kullan, yoksa hedef logosu.
 import re, os, shutil, urllib.request
 try:
     import yaml
 except ImportError:
     yaml = None
-try:
-    import requests
-    HAS_REQUESTS = True
-except ImportError:
-    HAS_REQUESTS = False
 
 HEDEF_DOSYA = os.environ.get("HEDEF_DOSYA", "mirti_test.m3u")
 SPOR_YAML = "aktarspor.yaml"
 TMP_DOSYA = "spor.tmp.m3u"
 USER_AGENT = "Mozilla/5.0"
 TIMEOUT = 30
+
+DOGRU_YAML = "sporlar: [{kaynak_url: 'https://raw.githubusercontent.com/kimbumuratyavuz/capcanli/refs/heads/main/spor.m3u', epg_koru: true, sadece_listedekiler: true, hedefler: [{hedef_adi: 'hedef_1', aranacak: ' beIN SPORTS', hedef_grup: '🟪◆ SPOR - BEIN ⭕', hedef_logo: '', ek_kod: ''}, {hedef_adi: 'hedef_2', aranacak: ' S Sport', hedef_grup: '🟪◆ SPOR - S SPORT ⭕', hedef_logo: '', ek_kod: ''}, {hedef_adi: 'hedef_3', aranacak: '', hedef_grup: '', hedef_logo: '', ek_kod: ''}, {hedef_adi: 'hedef_4', aranacak: '', hedef_grup: '', hedef_logo: '', ek_kod: ''}, {hedef_adi: 'hedef_5', aranacak: '', hedef_grup: '', hedef_logo: '', ek_kod: ''}]}]\n"
 
 def normalize(s):
     s = (s or "").lower().strip()
@@ -78,14 +72,21 @@ def oku_m3u(p):
 
 def oku_yaml(path):
     if not os.path.exists(path):
-        print(f"[HATA] {path} yok")
-        return {}
+        with open(path, "w", encoding="utf-8") as f: f.write(DOGRU_YAML)
     try:
         with open(path, encoding="utf-8") as f:
-            return yaml.safe_load(f) or {}
+            data = yaml.safe_load(f) or {}
+        if not data.get("sporlar"):
+            raise ValueError("sporlar bos")
+        return data
     except Exception as e:
-        print(f"[HATA] {path} okunamadi: {e}")
-        raise
+        print(f"[UYARI] {path} bozuk: {e}")
+        print(f"[DUZELTME] {path} yeniden yaziliyor")
+        try: shutil.copy2(path, path + ".bozuk.bak")
+        except Exception: pass
+        with open(path, "w", encoding="utf-8") as f: f.write(DOGRU_YAML)
+        with open(path, encoding="utf-8") as f:
+            return yaml.safe_load(f) or {}
 
 def main():
     print("MIRTI68 - SPOR BASLADI - aktarspor.yaml okunuyor")
@@ -97,19 +98,13 @@ def main():
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
-
-    # Eski spor gruplarini temizle, dizi / film / canli aynen kalsin
     hedef_records = [r for r in hedef_records if "🟪◆ SPOR" not in grup_bul(r)]
-
-    # Gorulen url'ler - ayni url varsa ekleme
     gorulen = set()
     for r in hedef_records:
         u = kanal_url(r)
         if u: gorulen.add(u.strip())
-
     lines = []
     for r in hedef_records: lines.extend(r)
-
     spor_lines = ["#EXTM3U"]
     for sira, s in enumerate(sporlar, 1):
         if not isinstance(s, dict): continue
@@ -119,33 +114,23 @@ def main():
         print(f"[SPOR {sira}] {kurl[:60]} - {len(hedefler)} hedef")
         try: _, kaynak = oku_m3u(kurl)
         except Exception as e: print(f"  [ATLANDI] {e}"); continue
-        sadece = bool(s.get("sadece_listedekiler", True))
         for r in kaynak:
             ad = kanal_adi(r); u = kanal_url(r)
             if not u: continue
-            if u.strip() in gorulen:
-                continue
+            if u.strip() in gorulen: continue
             eslesen = None
             for h in hedefler:
                 if not isinstance(h, dict): continue
                 aranacak = h.get("aranacak", "") or ""
-                if isinstance(aranacak, list):
-                    aranacak_list = aranacak
-                else:
-                    # "a, b" seklinde de yazabilirsin
-                    aranacak_list = [x.strip() for x in str(aranacak).split(",") if x.strip()]
+                aranacak_list = aranacak if isinstance(aranacak, list) else [x.strip() for x in str(aranacak).split(",") if x.strip()]
                 hedef_grup = str(h.get("hedef_grup","") or "").strip()
                 if not hedef_grup: continue
                 if not aranacak_list: continue
                 for ara in aranacak_list:
-                    ara = str(ara or "").strip()
-                    if not ara: continue
-                    if normalize(ara) in normalize(ad) or normalize(ara) in normalize(grup_bul(r)):
+                    if normalize(str(ara)) in normalize(ad) or normalize(str(ara)) in normalize(grup_bul(r)):
                         eslesen = h; break
                 if eslesen: break
-            if not eslesen:
-                if sadece: continue
-                else: continue
+            if not eslesen: continue
             hedef_grup = str(eslesen.get("hedef_grup","") or "").strip()
             hedef_logo = str(eslesen.get("hedef_logo","") or "").strip()
             ek_kod = str(eslesen.get("ek_kod","") or "").strip()
@@ -159,7 +144,6 @@ def main():
                 m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
                 oz = {}
                 for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
-                # EPG KORU: tvg-id, catchup vs silinmez
                 oz["group-title"] = hedef_grup
                 oz["tvg-name"] = yeni_ad
                 gelen_logo = oz.get("tvg-logo","").strip()
@@ -169,14 +153,12 @@ def main():
                 yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
             lines.extend(yeni); spor_lines.extend(yeni); gorulen.add(u.strip())
         print(f"  [OK] {sira}. blok bitti")
-
-    # Ara dosya - sadece spor
     with open(TMP_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(spor_lines)+"\n")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
     except Exception: pass
     if not lines or not lines[0].strip().startswith("#EXTM3U"): lines.insert(0, "#EXTM3U")
     with open(HEDEF_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(lines)+"\n")
-    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA} - Ayni url eklenmedi, liste cogalmadi")
+    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA}")
 
 if __name__ == "__main__":
     main()
