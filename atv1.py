@@ -1,4 +1,4 @@
-# MIRTI68 - ATV Canli - atv1.py - ASLA SILMEZ
+# MIRTI68 - ATV Canli - atv1.py - GRUP ALTINA EKLE, TEKRAR EKLEME
 import requests
 import time
 import re
@@ -6,6 +6,7 @@ import os
 
 OUTPUT_FILE = "mirti68.m3u"
 GROUP = "🟨◆  ULUSALᴴᴰ ⭕"
+AD = "ATVᴴᴰ⭕"
 SITE_ID = "0fe2a405-8afa-4238-b429-e5f96aec3a5c"
 LIVE_ID = "00000000-0000-0000-0000-000000000000"
 
@@ -49,6 +50,17 @@ def atv_link_al():
         tokenli = find_m3u8(r2.text)
     return tokenli.strip()
 
+def grup_al(s):
+    m = re.search(r'group-title="([^"]*)"', s)
+    if m:
+        return m.group(1)
+    return ""
+
+def ad_al(s):
+    if "," in s:
+        return s.rsplit(",", 1)[-1].strip()
+    return ""
+
 def main():
     if not os.path.exists(OUTPUT_FILE):
         print("[HATA] " + OUTPUT_FILE + " yok")
@@ -62,39 +74,66 @@ def main():
     with open(OUTPUT_FILE, encoding="utf-8") as f:
         satirlar = f.read().splitlines()
 
-    yeni = []
-    hedef_bulundu = False
-
+    # 1. Zaten ATVᴴᴰ var mi? Varsa sadece onun linkini yenile, yeni ekleme
+    hedef_idx = -1
     for idx, s in enumerate(satirlar):
-        # Sadece hedef grup + hedef ad ise linki degistir
-        if s.startswith("#EXTINF:") and ('group-title="' + GROUP + '"') in s and s.strip().endswith(",ATV"):
-            hedef_bulundu = True
-            yeni.append(s)
-            yeni.append('#EXTVLCOPT:http-referer=https://www.atv.com.tr/')
-            yeni.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0 Safari/537.36')
-            yeni.append(link)
-            print("[GUNCELLENDI] Kendi grubundaki ATV")
-            continue
-        # Hedef ATV'nin eski link satiri ise atla, YENI link zaten yazildi
-        # Ama bunu sadece bir onceki satir hedef ATV ise yap
-        if idx > 0 and satirlar[idx-1].startswith("#EXTINF:") and ('group-title="' + GROUP + '"') in satirlar[idx-1] and satirlar[idx-1].strip().endswith(",ATV"):
-            if s.strip().startswith("http") or s.strip().startswith("#EXTVLCOPT"):
-                continue
-        # Diger her sey: aynen koru, SILME YOK
-        yeni.append(s)
+        if s.startswith("#EXTINF:") and grup_al(s) == GROUP and ad_al(s) == AD:
+            hedef_idx = idx
+            break
 
-    if not hedef_bulundu:
-        print("[BILGI] Bu grupta ATV yok, sadece bu gruba 1 tane ekleniyor")
-        ek1 = '#EXTINF:-1 tvg-name="ATV" tvg-logo="" group-title="' + GROUP + '",ATV'
-        ek = [ek1, '#EXTVLCOPT:http-referer=https://www.atv.com.tr/', '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0 Safari/537.36', link]
-        if yeni and yeni[0].startswith("#EXTM3U"):
-            yeni = [yeni[0]] + ek + yeni[1:]
-        else:
-            yeni = ["#EXTM3U"] + ek + yeni
+    if hedef_idx != -1:
+        print("[BULUNDU] ATVᴴᴰ zaten bu grupta, ayni yer guncelleniyor")
+        yeni = []
+        i = 0
+        while i < len(satirlar):
+            s = satirlar[i]
+            if i == hedef_idx:
+                yeni.append(s)
+                yeni.append('#EXTVLCOPT:http-referer=https://www.atv.com.tr/')
+                yeni.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0 Safari/537.36')
+                yeni.append(link)
+                # Eski link + eski VLCOPT satirlarini atla
+                j = i + 1
+                while j < len(satirlar) and (satirlar[j].strip().startswith("http") or satirlar[j].strip().startswith("#EXTVLCOPT")):
+                    j = j + 1
+                i = j
+                continue
+            yeni.append(s)
+            i = i + 1
+        with open(OUTPUT_FILE, "w", encoding="utf-8", newline="") as f:
+            f.write("\n".join(yeni) + "\n")
+        print("[KAYDEDILDI] Ayni yer guncellendi, tekrar eklenmedi")
+        return
+
+    # 2. Yoksa: Bu grubun en son kanalini bul, onun altina ekle
+    son_grup_idx = -1
+    son_grup_bitisi = -1
+    for idx, s in enumerate(satirlar):
+        if s.startswith("#EXTINF:") and grup_al(s) == GROUP:
+            # Bu kaydin bittigi yeri bul (bir sonraki EXTINF'e kadar)
+            bitis = idx + 1
+            while bitis < len(satirlar) and not satirlar[bitis].startswith("#EXTINF:"):
+                bitis = bitis + 1
+            son_grup_idx = idx
+            son_grup_bitisi = bitis
+
+    ek = []
+    ek.append('#EXTINF:-1 tvg-name="' + AD + '" tvg-logo="" group-title="' + GROUP + '",' + AD)
+    ek.append('#EXTVLCOPT:http-referer=https://www.atv.com.tr/')
+    ek.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0 Safari/537.36')
+    ek.append(link)
+
+    if son_grup_bitisi != -1:
+        print("[EKLENDI] Grubun altina eklendi: " + GROUP + " -> " + AD)
+        yeni = satirlar[:son_grup_bitisi] + ek + satirlar[son_grup_bitisi:]
+    else:
+        # Bu grup hic yoksa en sona ekle, en basa degil
+        print("[BILGI] Grup bulunamadi, en sona ekleniyor")
+        yeni = satirlar + ek
 
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="") as f:
         f.write("\n".join(yeni) + "\n")
-    print("[KAYDEDILDI] " + OUTPUT_FILE + " - hicbir satir silinmedi")
+    print("[KAYDEDILDI] " + OUTPUT_FILE)
 
 if __name__ == "__main__":
     main()
