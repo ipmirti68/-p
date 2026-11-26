@@ -5,3 +5,7 @@ diziler:
     sadece_listedekiler: true
     hedef_grup: '🟪◆ DİZİLER ⭕'
     hedef_logo: ''
+    filtre_grup_icerir: 'korea, kore, korean, k-drama, kdrama, south korea'
+    filtre_ad_icerir: ''
+    filtre_grup_haric: 'turk, yerli, tr, english, ispanya, brezilya'
+    filtre_ad_haric: ''
