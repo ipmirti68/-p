@@ -12,6 +12,7 @@ except ImportError:
 # ==================================================
 # MIRTI68 - DİZİLER YAML TOPLU ÇEKİM + LOGO
 # YAMALI VERSİYON - Bölünmüş EXTINF düzeltmeli
+# REVİZE: YAML logo yoksa kaynaktan gelen logo kullanılır
 # ==================================================
 
 M3U_FILE = "mirti68.m3u"
@@ -25,7 +26,7 @@ HEADERS = {
 }
 
 # ==================================================
-# YENİ - BOZUK M3U SATIRLARINI BİRLEŞTİRME
+# BOZUK M3U SATIRLARINI BİRLEŞTİRME
 # ==================================================
 
 def normalize_m3u_lines(lines):
@@ -89,6 +90,17 @@ def get_group(line):
 def get_channel_name(line):
     m = re.search(r',\s*(.*)$', line)
     return m.group(1).strip() if m else ""
+
+def get_source_logo(line):
+    """Kaynak EXTINF satırındaki tvg-logo'yu alır. Yoksa boş döner."""
+    m = re.search(r'tvg-logo="([^"]*)"', line)
+    if m:
+        v = m.group(1).strip()
+        # Bozuk logo: içinde logo: kalıntısı varsa temizle
+        if "logo:" in v and "http" in v:
+            v = v[v.rfind("http"):].strip()
+        return v
+    return ""
 
 def parse_season_episode(name):
     m = re.search(
@@ -234,11 +246,17 @@ def clean_old_groups(lines, target_groups, target_names):
 
 # ==================================================
 # M3U KAYIT OLUŞTURMA + LOGO
+# REVİZE: YAML logo yoksa kaynaktan gelen logo kullanılır
 # ==================================================
 
 def make_records(src_lines, name, group, logo=""):
     # YAMA: Kaynak zaten normalize edilmiş geliyor ama yine de garantiye al
     src_lines = normalize_m3u_lines(src_lines)
+
+    yaml_logo = (logo or "").strip()
+    # YAML logosundaki bozuk kalıntıyı temizle
+    if "logo:" in yaml_logo and "http" in yaml_logo:
+        yaml_logo = yaml_logo[yaml_logo.rfind("http"):].strip()
 
     records = []
     count = 0
@@ -266,11 +284,20 @@ def make_records(src_lines, name, group, logo=""):
                 continue
             new_name = f"{name} - {raw_name}"
 
+        # --- LOGO SEÇİMİ ---
+        # 1. Öncelik YAML logosu
+        # 2. YAML boşsa kaynak satırındaki tvg-logo
+        # 3. İkisi de yoksa boş
+        if yaml_logo:
+            final_logo = yaml_logo
+        else:
+            final_logo = get_source_logo(line)
+
         # EXTINF SATIRI + LOGO
         new_inf = (
             f'#EXTINF:-1 '
             f'tvg-name="{new_name}" '
-            f'tvg-logo="{logo}" '
+            f'tvg-logo="{final_logo}" '
             f'group-title="{group}",'
             f'{new_name}'
         )
@@ -395,9 +422,9 @@ def main():
         print(f"\n[{sira}/{len(series_list)}] -> {name}")
 
         if logo:
-            print("  [LOGO] Logo adresi mevcut.")
+            print("  [LOGO] YAML logosu kullanılacak.")
         else:
-            print("  [LOGO] Logo adresi boş.")
+            print("  [LOGO] YAML logosu boş, kaynaktan gelen logo kullanılacak.")
 
         try:
             src_lines = fetch_m3u(url)
