@@ -11,15 +11,15 @@ import requests
 import urllib3
 
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 urllib3.disable_warnings(
     urllib3.exceptions.InsecureRequestWarning
 )
 
 # ==================================================
-# MIRTI68 - ATV HLS GELİŞMİŞ TEST SİSTEMİ
-# TELEVIZO UYUMLU M3U
+# MIRTI68 - ATV GÜNCEL YAYIN SİSTEMİ
+# PLAYWRIGHT + STREAMLINK + HLS TEST
 # ==================================================
 
 SAYFA_URL = "https://www.atv.com.tr/canli-yayin"
@@ -35,7 +35,7 @@ LOGO = (
     "ipmirti68/Logo/refs/heads/main/atv.png"
 )
 
-REFERER = "https://www.atv.com.tr/canli-yayin"
+REFERER = SAYFA_URL
 ORIGIN = "https://www.atv.com.tr"
 
 USER_AGENT = (
@@ -45,6 +45,8 @@ USER_AGENT = (
 )
 
 TIMEOUT = 30
+TARAMA_SURESI = 30000
+
 
 # ==================================================
 # HTTP OTURUMU
@@ -63,21 +65,18 @@ session.headers.update({
 
 # ==================================================
 # GÜVENLİ URL GÖSTERİMİ
-# TOKEN VE GİZLİ PARAMETRELERİ YAZDIRMAZ
 # ==================================================
 
 def guvenli_adres(adres):
 
-    from urllib.parse import urlsplit
-
     try:
 
-        parca = urlsplit(adres)
+        p = urlsplit(adres)
 
         return (
-            parca.scheme + "://" +
-            parca.netloc +
-            parca.path
+            p.scheme + "://" +
+            p.netloc +
+            p.path
         )
 
     except Exception:
@@ -86,7 +85,253 @@ def guvenli_adres(adres):
 
 
 # ==================================================
-# STREAMLINK
+# ATV M3U8 ADRES KONTROLÜ
+# ==================================================
+
+def atv_hls_mi(adres):
+
+    if not adres:
+        return False
+
+    try:
+
+        p = urlsplit(adres)
+
+        return (
+            p.scheme in ("http", "https")
+            and "trkvz.daioncdn.net" in p.netloc.lower()
+            and "/atv/" in p.path.lower()
+            and ".m3u8" in p.path.lower()
+        )
+
+    except Exception:
+
+        return False
+
+
+# ==================================================
+# PLAYWRIGHT İLE GÜNCEL ADRESİ YAKALA
+# ==================================================
+
+def playwright_ile_yayin_al():
+
+    print("")
+    print("[1] ATV resmî sayfası taranıyor...")
+
+    try:
+
+        from playwright.sync_api import sync_playwright
+
+    except ImportError:
+
+        print("[HATA] Playwright bulunamadı.")
+
+        return None
+
+    bulunan_adresler = []
+    yakalanan_basliklar = {}
+
+    try:
+
+        with sync_playwright() as p:
+
+            browser = p.chromium.launch(
+                headless=True,
+                args=[
+                    "--no-sandbox",
+                    "--disable-dev-shm-usage",
+                    "--disable-gpu"
+                ]
+            )
+
+            context = browser.new_context(
+                user_agent=USER_AGENT,
+                viewport={
+                    "width": 1365,
+                    "height": 768
+                },
+                ignore_https_errors=True
+            )
+
+            page = context.new_page()
+
+            # ------------------------------------------
+            # HLS İSTEKLERİNİ YAKALA
+            # ------------------------------------------
+
+            def istek_yakala(istek):
+
+                url = istek.url
+
+                if not atv_hls_mi(url):
+                    return
+
+                if url not in bulunan_adresler:
+
+                    bulunan_adresler.append(url)
+
+                    try:
+
+                        yakalanan_basliklar[url] = (
+                            istek.headers
+                        )
+
+                    except Exception:
+
+                        yakalanan_basliklar[url] = {}
+
+                    print(
+                        "[M3U8 YAKALANDI]",
+                        guvenli_adres(url)
+                    )
+
+            page.on(
+                "request",
+                istek_yakala
+            )
+
+            # ------------------------------------------
+            # SAYFAYI AÇ
+            # ------------------------------------------
+
+            try:
+
+                page.goto(
+                    SAYFA_URL,
+                    wait_until="domcontentloaded",
+                    timeout=60000
+                )
+
+                print("[OK] ATV sayfası açıldı.")
+
+            except Exception as hata:
+
+                print(
+                    "[UYARI] Sayfa yükleme:",
+                    str(hata)[:400]
+                )
+
+            # ------------------------------------------
+            # VİDEO OYNATMAYI TETİKLE
+            # ------------------------------------------
+
+            try:
+
+                page.evaluate("""
+                    () => {
+                        document.querySelectorAll('video').forEach(v => {
+                            v.muted = true;
+                            const p = v.play();
+                            if (p && p.catch) p.catch(() => {});
+                        });
+                    }
+                """)
+
+            except Exception:
+
+                pass
+
+            # ------------------------------------------
+            # YAYIN İSTEKLERİNİ BEKLE
+            # ------------------------------------------
+
+            print("[BİLGİ] M3U8 isteği bekleniyor...")
+
+            page.wait_for_timeout(
+                TARAMA_SURESI
+            )
+
+            # ------------------------------------------
+            # ÇEREZLERİ AKTAR
+            # ------------------------------------------
+
+            try:
+
+                cerezler = context.cookies()
+
+                for cookie in cerezler:
+
+                    try:
+
+                        session.cookies.set(
+                            cookie["name"],
+                            cookie["value"],
+                            domain=cookie.get("domain"),
+                            path=cookie.get("path", "/")
+                        )
+
+                    except Exception:
+
+                        pass
+
+                print(
+                    "[OK] Çerez sayısı:",
+                    len(cerezler)
+                )
+
+            except Exception as hata:
+
+                print(
+                    "[UYARI] Çerez aktarımı:",
+                    str(hata)[:300]
+                )
+
+            browser.close()
+
+        # ------------------------------------------
+        # ADRES BULUNDU MU?
+        # ------------------------------------------
+
+        if not bulunan_adresler:
+
+            print(
+                "[HATA] Tarayıcı M3U8 adresi yakalayamadı."
+            )
+
+            return None
+
+        adres = bulunan_adresler[-1]
+
+        # ------------------------------------------
+        # İSTEK BAŞLIKLARINI AKTAR
+        # ------------------------------------------
+
+        basliklar = yakalanan_basliklar.get(
+            adres,
+            {}
+        )
+
+        for isim in (
+            "user-agent",
+            "referer",
+            "origin",
+            "accept",
+            "accept-language"
+        ):
+
+            deger = basliklar.get(isim)
+
+            if deger:
+
+                session.headers[isim] = deger
+
+        print("[BAŞARILI] Güncel ATV adresi yakalandı.")
+        print("[URL]", guvenli_adres(adres))
+
+        return adres
+
+    except Exception as hata:
+
+        print(
+            "[PLAYWRIGHT HATASI]",
+            str(hata)[:1000]
+        )
+
+        return None
+
+
+# ==================================================
+# STREAMLINK YEDEK YÖNTEM
 # ==================================================
 
 def streamlink_bul():
@@ -94,22 +339,20 @@ def streamlink_bul():
     yol = shutil.which("streamlink")
 
     if yol:
-        print("[OK] Streamlink bulundu:", yol)
+
+        print("[OK] Streamlink bulundu.")
+
         return yol
 
-    print("[HATA] Streamlink kurulu değil.")
+    print("[UYARI] Streamlink bulunamadı.")
 
     return None
 
 
-# ==================================================
-# ATV YAYIN ADRESİNİ AL
-# ==================================================
-
-def atv_yayinini_al():
+def streamlink_ile_yayin_al():
 
     print("")
-    print("[1] ATV canlı yayın sayfası taranıyor...")
+    print("[2] Streamlink yedek yöntem deneniyor...")
 
     streamlink = streamlink_bul()
 
@@ -137,7 +380,7 @@ def atv_yayinini_al():
         )
 
         print(
-            "[STREAMLINK] Çıkış kodu:",
+            "[STREAMLINK ÇIKIŞ]",
             sonuc.returncode
         )
 
@@ -146,47 +389,58 @@ def atv_yayinini_al():
             print("[HATA] Streamlink başarısız.")
 
             if sonuc.stderr:
-                print(sonuc.stderr[-1500:])
+
+                print(
+                    sonuc.stderr[-1000:]
+                )
 
             return None
-
-        adresler = []
 
         for satir in sonuc.stdout.splitlines():
 
             satir = satir.strip()
 
-            if re.match(r"^https?://", satir):
-                adresler.append(satir)
+            if atv_hls_mi(satir):
 
-        if not adresler:
+                print("[OK] Streamlink adresi bulundu.")
 
-            print("[HATA] Yayın adresi bulunamadı.")
+                print(
+                    "[URL]",
+                    guvenli_adres(satir)
+                )
 
-            return None
+                return satir
 
-        adres = adresler[-1]
-
-        print("[OK] ATV yayın adresi alındı.")
-        print("[URL]", guvenli_adres(adres))
-
-        return adres
-
-    except subprocess.TimeoutExpired:
-
-        print("[HATA] Streamlink zaman aşımı.")
+        print("[HATA] Streamlink M3U8 bulamadı.")
 
         return None
 
     except Exception as hata:
 
-        print("[HATA] Streamlink:", hata)
+        print("[STREAMLINK HATASI]", hata)
 
         return None
 
 
 # ==================================================
-# HLS DOSYASINI İNDİR
+# ATV YAYIN ADRESİNİ AL
+# ==================================================
+
+def atv_yayinini_al():
+
+    adres = playwright_ile_yayin_al()
+
+    if adres:
+
+        return adres
+
+    print("[UYARI] Playwright sonuç vermedi.")
+
+    return streamlink_ile_yayin_al()
+
+
+# ==================================================
+# HLS PLAYLIST OKU
 # ==================================================
 
 def hls_oku(adres, baslik):
@@ -206,14 +460,17 @@ def hls_oku(adres, baslik):
         )
 
         if cevap.status_code != 200:
+
             return None, None
 
-        icerik = cevap.text.lstrip("\ufeff \r\n\t")
+        icerik = cevap.text.lstrip(
+            "\ufeff \r\n\t"
+        )
 
         if not icerik.startswith("#EXTM3U"):
 
             print(
-                f"[HATA] {baslik}: HLS formatı değil."
+                f"[HATA] {baslik}: HLS biçimi değil."
             )
 
             return None, None
@@ -222,13 +479,16 @@ def hls_oku(adres, baslik):
 
     except requests.RequestException as hata:
 
-        print(f"[HATA] {baslik}:", hata)
+        print(
+            f"[HATA] {baslik}:",
+            str(hata)[:500]
+        )
 
         return None, None
 
 
 # ==================================================
-# HLS SATIRLARINDAN URI BUL
+# HLS URI BUL
 # ==================================================
 
 def hls_uri_bul(satir):
@@ -239,6 +499,7 @@ def hls_uri_bul(satir):
     )
 
     if eslesme:
+
         return eslesme.group(1)
 
     return None
@@ -253,7 +514,10 @@ def parca_test(adres, aciklama):
     print("")
     print("[TEST]", aciklama)
 
-    print("[URL]", guvenli_adres(adres))
+    print(
+        "[URL]",
+        guvenli_adres(adres)
+    )
 
     try:
 
@@ -265,11 +529,14 @@ def parca_test(adres, aciklama):
             stream=True
         )
 
-        print("[PARÇA HTTP]", cevap.status_code)
+        print(
+            "[HTTP]",
+            cevap.status_code
+        )
 
         if cevap.status_code not in (200, 206):
 
-            print("[HATA] Yayın parçası indirilemedi.")
+            print("[HATA] Parça indirilemedi.")
 
             cevap.close()
 
@@ -279,15 +546,17 @@ def parca_test(adres, aciklama):
 
         cevap.close()
 
-        print("[İNDİRİLEN BYTE]", len(veri))
+        print(
+            "[İNDİRİLEN BYTE]",
+            len(veri)
+        )
 
         if len(veri) < 100:
 
-            print("[HATA] Video parçası çok küçük.")
+            print("[HATA] Veri çok küçük.")
 
             return False
 
-        # HTML hata sayfasını tespit et.
         ilk = veri[:500].lstrip().lower()
 
         if (
@@ -297,7 +566,7 @@ def parca_test(adres, aciklama):
             or b"forbidden" in ilk
         ):
 
-            print("[HATA] Sunucu video yerine HTML döndürdü.")
+            print("[HATA] HTML hata sayfası döndü.")
 
             return False
 
@@ -307,7 +576,10 @@ def parca_test(adres, aciklama):
 
     except requests.RequestException as hata:
 
-        print("[HATA] Video parçası:", hata)
+        print(
+            "[PARÇA HATASI]",
+            str(hata)[:500]
+        )
 
         return False
 
@@ -316,7 +588,7 @@ def parca_test(adres, aciklama):
 # ŞİFRELEME ANAHTARI TESTİ
 # ==================================================
 
-def anahtar_test(anahtar_adresi):
+def anahtar_test(adres):
 
     print("")
     print("[TEST] HLS şifreleme anahtarı")
@@ -324,23 +596,24 @@ def anahtar_test(anahtar_adresi):
     try:
 
         cevap = session.get(
-            anahtar_adresi,
+            adres,
             timeout=TIMEOUT,
             verify=False,
             allow_redirects=True
         )
 
-        print("[ANAHTAR HTTP]", cevap.status_code)
+        print(
+            "[ANAHTAR HTTP]",
+            cevap.status_code
+        )
 
         if cevap.status_code != 200:
-
-            print("[HATA] Anahtara erişilemedi.")
 
             return False
 
         if len(cevap.content) < 16:
 
-            print("[HATA] Anahtar yanıtı eksik.")
+            print("[HATA] Anahtar verisi eksik.")
 
             return False
 
@@ -350,13 +623,16 @@ def anahtar_test(anahtar_adresi):
 
     except requests.RequestException as hata:
 
-        print("[HATA] Anahtar testi:", hata)
+        print(
+            "[ANAHTAR HATASI]",
+            str(hata)[:500]
+        )
 
         return False
 
 
 # ==================================================
-# HLS YAYIN ZİNCİRİ
+# HLS YAYIN ZİNCİR TESTİ
 # ==================================================
 
 def hls_zincir_test(adres):
@@ -379,15 +655,15 @@ def hls_zincir_test(adres):
 
     print("[OK] Ana M3U8 okundu.")
 
-    # --------------------------------------------------
-    # MASTER PLAYLIST KONTROLÜ
-    # --------------------------------------------------
-
     satirlar = [
         x.strip()
         for x in icerik.splitlines()
         if x.strip()
     ]
+
+    # ------------------------------------------
+    # MASTER PLAYLIST
+    # ------------------------------------------
 
     varyantlar = []
 
@@ -409,7 +685,10 @@ def hls_zincir_test(adres):
                 if not alt.startswith("#"):
 
                     varyantlar.append(
-                        (hiz, urljoin(son_adres, alt))
+                        (
+                            hiz,
+                            urljoin(son_adres, alt)
+                        )
                     )
 
     if varyantlar:
@@ -422,14 +701,12 @@ def hls_zincir_test(adres):
         alt_adres = varyantlar[0][1]
 
         print(
-            "[OK] Master playlist bulundu.",
-            "Varyant sayısı:",
-            len(varyantlar)
+            "[OK] Master playlist bulundu."
         )
 
         print(
-            "[SEÇİLEN BANDWIDTH]",
-            varyantlar[0][0]
+            "[VARYANT SAYISI]",
+            len(varyantlar)
         )
 
         medya, medya_adresi = hls_oku(
@@ -445,14 +722,14 @@ def hls_zincir_test(adres):
 
     else:
 
-        print("[BİLGİ] Ana dosya doğrudan medya playlist'i.")
+        print("[BİLGİ] Doğrudan medya playlist'i.")
 
         medya = icerik
         medya_adresi = son_adres
 
-    # --------------------------------------------------
+    # ------------------------------------------
     # ŞİFRELEME ANAHTARI
-    # --------------------------------------------------
+    # ------------------------------------------
 
     for satir in medya.splitlines():
 
@@ -472,20 +749,18 @@ def hls_zincir_test(adres):
             )
 
             if not anahtar_test(anahtar_adresi):
+
                 return False
 
-        else:
+        elif "METHOD=AES-128" in satir:
 
-            print(
-                "[UYARI] Şifreleme satırı var fakat "
-                "URI bulunamadı."
-            )
+            print("[HATA] AES anahtar URI bulunamadı.")
 
-    # --------------------------------------------------
-    # INIT SEGMENT / MAP
-    # --------------------------------------------------
+            return False
 
-    map_adresi = None
+    # ------------------------------------------
+    # INIT SEGMENT
+    # ------------------------------------------
 
     for satir in medya.splitlines():
 
@@ -500,20 +775,18 @@ def hls_zincir_test(adres):
                     uri
                 )
 
-                break
+                if not parca_test(
+                    map_adresi,
+                    "INIT SEGMENT"
+                ):
 
-    if map_adresi:
+                    return False
 
-        if not parca_test(
-            map_adresi,
-            "INIT SEGMENT"
-        ):
+            break
 
-            return False
-
-    # --------------------------------------------------
+    # ------------------------------------------
     # İLK VİDEO PARÇASI
-    # --------------------------------------------------
+    # ------------------------------------------
 
     parca_adresi = None
 
@@ -533,7 +806,7 @@ def hls_zincir_test(adres):
 
     if not parca_adresi:
 
-        print("[HATA] Medya playlist içinde parça bulunamadı.")
+        print("[HATA] Video parçası bulunamadı.")
 
         return False
 
@@ -541,8 +814,6 @@ def hls_zincir_test(adres):
         parca_adresi,
         "İLK VİDEO PARÇASI"
     ):
-
-        print("[BAŞARISIZ] Video parçası alınamadı.")
 
         return False
 
@@ -559,6 +830,7 @@ def hls_zincir_test(adres):
 def atv_m3u_kaydi(adres):
 
     return [
+
         (
             f'#EXTINF:-1 tvg-id="{TVG_ID}" '
             f'tvg-name="{KANAL}" '
@@ -591,7 +863,7 @@ def atv_mi(blok):
 
 
 # ==================================================
-# GRUP KONTROLÜ
+# HEDEF GRUP KONTROLÜ
 # ==================================================
 
 def hedef_grup_mu(blok):
@@ -606,7 +878,11 @@ def hedef_grup_mu(blok):
             satir
         )
 
-        if eslesme and eslesme.group(1) == GRUP:
+        if (
+            eslesme
+            and eslesme.group(1) == GRUP
+        ):
+
             return True
 
     return False
@@ -614,207 +890,110 @@ def hedef_grup_mu(blok):
 
 # ==================================================
 # M3U DOSYASINI GÜVENLİ GÜNCELLE
+# ==================================================# ==================================================
+# M3U DOSYASINI GÜVENLİ GÜNCELLE
 # ==================================================
 
-def m3u_guncelle(adres):
+def m3u_guvenli_guncelle(yeni_kanal):
 
-    print("")
-    print("[3] M3U dosyası hazırlanıyor...")
+    dosya = "mirti68.m3u"
+    gecici = dosya + ".tmp"
 
-    dosya = Path(M3U_DOSYA)
-
-    if dosya.exists():
-
-        try:
-
-            satirlar = dosya.read_text(
-                encoding="utf-8-sig"
-            ).splitlines()
-
-        except Exception as hata:
-
-            print("[HATA] M3U okunamadı:", hata)
-
-            return False
-
-    else:
-
-        print("[HATA] mirti68.m3u bulunamadı.")
-
+    if not os.path.exists(dosya):
+        print("❌ M3U dosyası bulunamadı.")
         return False
 
-    if not satirlar:
-        print("[HATA] M3U dosyası boş.")
+    if not yeni_kanal or "#EXTINF" not in yeni_kanal:
+        print("❌ Yeni kanal bilgisi geçersiz.")
         return False
 
-    if satirlar[0].strip() != "#EXTM3U":
+    try:
+        with open(dosya, "r", encoding="utf-8-sig") as f:
+            satirlar = f.read().splitlines()
 
-        print("[HATA] M3U başlığı geçersiz.")
+        bloklar = []
+        baslik = []
+        mevcut = []
 
-        return False
+        for satir in satirlar:
+            if satir.startswith("#EXTINF"):
+                if mevcut:
+                    bloklar.append(mevcut)
+                mevcut = [satir]
 
-    baslik = []
-    bloklar = []
-    mevcut_blok = None
+            elif mevcut:
+                mevcut.append(satir)
 
-    for satir in satirlar:
+            else:
+                baslik.append(satir)
 
-        if satir.startswith("#EXTINF:"):
+        if mevcut:
+            bloklar.append(mevcut)
 
-            if mevcut_blok is not None:
-                bloklar.append(mevcut_blok)
+        # Eski ATV kaydını çıkar, diğer kanalları koru.
+        yeni_bloklar = []
 
-            mevcut_blok = [satir]
+        for blok in bloklar:
+            metin = "\n".join(blok)
 
-        elif mevcut_blok is None:
-
-            baslik.append(satir)
-
-        else:
-
-            mevcut_blok.append(satir)
-
-    if mevcut_blok is not None:
-        bloklar.append(mevcut_blok)
-
-    yeni_bloklar = []
-    silinen = 0
-
-    for blok in bloklar:
-
-        if atv_mi(blok):
-
-            silinen += 1
-
-        else:
+            if (
+                'tvg-id="atv.tr"' in metin
+                or "ATVᴴᴰ⭕" in metin
+            ):
+                continue
 
             yeni_bloklar.append(blok)
 
-    print("[ESKİ ATV KAYDI]", silinen)
+        # Hedef grubu bul.
+        hedef = 'group-title="🟨◆  ULUSALᴴᴰ ⭕"'
+        son_indeks = None
 
-    grup_sonu = -1
+        for indeks, blok in enumerate(yeni_bloklar):
+            if hedef in blok[0]:
+                son_indeks = indeks
 
-    for indeks, blok in enumerate(yeni_bloklar):
-
-        if hedef_grup_mu(blok):
-            grup_sonu = indeks
-
-    yeni_atv = atv_m3u_kaydi(adres)
-
-    if grup_sonu >= 0:
-
-        yeni_bloklar.insert(
-            grup_sonu + 1,
-            yeni_atv
-        )
-
-        print("[OK] ATV mevcut grubun içine eklendi.")
-
-    else:
-
-        print("[HATA] Hedef grup bulunamadı.")
-
-        return False
-
-    cikti = []
-
-    cikti.extend(baslik)
-
-    for blok in yeni_bloklar:
-        cikti.extend(blok)
-
-    gecici = Path(M3U_DOSYA + ".tmp")
-
-    try:
-
-        gecici.write_text(
-            "\n".join(cikti) + "\n",
-            encoding="utf-8"
-        )
-
-        kontrol = gecici.read_text(
-            encoding="utf-8"
-        )
-
-        if kontrol.count(f'tvg-id="{TVG_ID}"') != 1:
-
-            print("[HATA] ATV tekrar kontrolü başarısız.")
-
-            gecici.unlink(missing_ok=True)
-
+        if son_indeks is None:
+            print("❌ Hedef grup bulunamadı. M3U korunuyor.")
             return False
+
+        # Yeni ATV kanalını ekle.
+        yeni_satirlar = yeni_kanal.strip().splitlines()
+
+        if not yeni_satirlar[0].startswith("#EXTINF"):
+            print("❌ EXTINF satırı hatalı.")
+            return False
+
+        yeni_bloklar.insert(son_indeks + 1, yeni_satirlar)
+
+        # Geçici dosyaya yaz.
+        with open(gecici, "w", encoding="utf-8", newline="\n") as f:
+            for satir in baslik:
+                f.write(satir + "\n")
+
+            for blok in yeni_bloklar:
+                for satir in blok:
+                    f.write(satir + "\n")
+
+        # Geçici dosyayı kontrol et.
+        with open(gecici, "r", encoding="utf-8") as f:
+            kontrol = f.read()
+
+        if kontrol.count('tvg-id="atv.tr"') != 1:
+            raise ValueError("ATV kayıt kontrolü başarısız.")
 
         if "#EXTM3U" not in kontrol:
+            raise ValueError("M3U başlığı eksik.")
 
-            print("[HATA] M3U başlığı kayboldu.")
+        # Güvenli şekilde asıl dosyanın yerine koy.
+        os.replace(gecici, dosya)
 
-            gecici.unlink(missing_ok=True)
-
-            return False
-
-        os.replace(
-            gecici,
-            dosya
-        )
-
-        print("[BAŞARILI] ATV M3U dosyasına yazıldı.")
-
+        print("✅ ATV kanalı güvenli şekilde güncellendi.")
         return True
 
     except Exception as hata:
+        if os.path.exists(gecici):
+            os.remove(gecici)
 
-        print("[HATA] M3U yazma hatası:", hata)
-
-        gecici.unlink(missing_ok=True)
-
+        print("❌ M3U güncellenemedi:", hata)
+        print("Orijinal M3U dosyası korundu.")
         return False
-
-
-# ==================================================
-# ANA PROGRAM
-# ==================================================
-
-def main():
-
-    print("")
-    print("======================================")
-    print("MIRTI68 ATV HLS TEŞHİS SİSTEMİ")
-    print("======================================")
-
-    adres = atv_yayinini_al()
-
-    if not adres:
-
-        print("[BAŞARISIZ] Yayın adresi alınamadı.")
-
-        sys.exit(1)
-
-    # HLS zincirini test et.
-    # Başarısızsa mevcut M3U kaydına dokunma.
-
-    if not hls_zincir_test(adres):
-
-        print("")
-        print("[BAŞARISIZ] HLS zincir testi geçilemedi.")
-        print("[BİLGİ] Mevcut M3U kaydı korundu.")
-
-        sys.exit(1)
-
-    # Tüm testler başarılıysa M3U güncelle.
-
-    if not m3u_guncelle(adres):
-
-        print("[BAŞARISIZ] M3U güncellenemedi.")
-
-        sys.exit(1)
-
-    print("")
-    print("======================================")
-    print("ATV GÜNCELLEME TAMAMLANDI")
-    print("HLS ZİNCİR TESTİ BAŞARILI")
-    print("======================================")
-
-
-if __name__ == "__main__":
-    main()
-    
