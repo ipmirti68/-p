@@ -16,7 +16,7 @@ except ImportError:
     HAS_REQUESTS = False
 
 HEDEF_DOSYA = "mirti.m3u"
-YAML_FILE = "sdiziler.yaml"
+YAML_FILE = "aktardizi.yaml"
 USER_AGENT = "Mozilla/5.0"
 TIMEOUT = 30
 
