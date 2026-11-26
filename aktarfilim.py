@@ -15,7 +15,7 @@ try:
 except ImportError:
     HAS_REQUESTS = False
 
-HEDEF_DOSYA = "mirti68.m3u"
+HEDEF_DOSYA = "mirti.m3u"
 FILM_YAML = "aktarfilm.yaml"
 TMP_DOSYA = "film.tmp.m3u"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
