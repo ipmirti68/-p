@@ -1,7 +1,6 @@
-# MIRTI68 - DIZI AKTARICI - YEDEK YOK
-# Hepsi yaml'da: adres, grup, filtre, dizi_adi
-# Py'de sadece HEDEF_DOSYA var
-# Py'ye dokunma, degisiklik yaml'da
+# MIRTI68 - DIZI AKTARICI - YEDEK YOK, EPG KORUNUR
+# Listenin sekli: group-title = DIZI ADI, kanal adi = BOLUM
+# Py diziyi gruptan alir, bolum numarasini addan alir
 import re, os, shutil, urllib.request
 
 HEDEF_DOSYA = "mirti.m3u"
@@ -27,7 +26,7 @@ def oku_yaml_toleransli(path):
     bloklar = []
     cur = None
     if not os.path.exists(path):
-        print(f"[HATA] {path} yok, yedek kullanilmiyor")
+        print(f"[HATA] {path} yok")
         return []
     with open(path, encoding="utf-8") as f:
         for ham in f:
@@ -105,6 +104,7 @@ def oku_m3u(p):
             metin = f.read().decode("utf-8-sig", errors="ignore")
     satirlar = [x.strip() for x in metin.splitlines() if x.strip()]
     ilk = next((i for i,s in enumerate(satirlar) if s.startswith("#EXTINF:")), len(satirlar))
+    baslik = satirlar[:ilk]
     govde = satirlar[ilk:]
     records, cur = [], []
     for line in govde:
@@ -112,47 +112,63 @@ def oku_m3u(p):
             records.append(cur); cur = []
         cur.append(line)
     if cur: records.append(cur)
-    return records
+    return baslik, records
 
-def dizi_adini_duzelt_tivimate(ad, dizi_adi=""):
-    # TiviMate: "Dizi Adi S01E01" - dizi_adi varsa onu baz alir
-    s = (ad or "").strip()
+def temizle(s):
     s = re.sub(r'\b(1080p|720p|4K|UHD|FHD|HD|CAM|TS|WEB-DL|BluRay|Dublaj|Dublajlı|Altyazılı|Altyazili|Türkçe|Turkce|Altyazı|Altyazi)\b', ' ', s, flags=re.I)
     s = re.sub(r'[._\-]+', ' ', s)
-    s = re.sub(r'\s+', ' ', s).strip()
+    s = re.sub(r'\s+', ' ', s).strip(" -|")
+    return s
+
+def dizi_adini_duzelt_tivimate(ad, grup, dizi_adi="", sira=0):
+    # ONCELIK: 1. yaml'daki dizi_adi  2. group-title (senin listende dizi adi grupta)
+    # 3. kanal adinin baslangici
+    s = temizle(ad or "")
+    g = temizle(grup or "")
     # Zaten S01E01 varsa
     m = re.search(r'\bS(\d{1,2})E(\d{1,3})\b', s, re.I)
     if m:
-        dizi = (dizi_adi or s[:m.start()]).strip(" -|")
-        dizi = re.sub(r'\s+', ' ', dizi).strip()
+        dizi = (dizi_adi or g or s[:m.start()]).strip(" -|")
         dizi = re.sub(r'\s*(Sezon|Season|Bölüm|Bolum|Episode).*$', '', dizi, flags=re.I).strip()
-        if not dizi: dizi = dizi_adi or s
+        if not dizi: dizi = dizi_adi or g or s
         return f"{dizi} S{int(m.group(1)):02d}E{int(m.group(2)):02d}"
+    # Sezon 1 Bolum 2
     m2 = re.search(r'(.*?)\s*[-–]?\s*Sezon\s*(\d+)\s*[-–]?\s*B[öo]l[üu]m\s*(\d+)', s, re.I)
     if m2:
-        dizi = (dizi_adi or m2.group(1)).strip(" -|")
-        dizi = re.sub(r'\s+', ' ', dizi).strip()
+        dizi = (dizi_adi or g or m2.group(1)).strip(" -|")
         return f"{dizi} S{int(m2.group(2)):02d}E{int(m2.group(3)):02d}"
+    # Season 1 Episode 2
     m3 = re.search(r'(.*?)\s*[-–]?\s*Season\s*(\d+)\s*[-–]?\s*Episode\s*(\d+)', s, re.I)
     if m3:
-        dizi = (dizi_adi or m3.group(1)).strip(" -|")
-        dizi = re.sub(r'\s+', ' ', dizi).strip()
+        dizi = (dizi_adi or g or m3.group(1)).strip(" -|")
         return f"{dizi} S{int(m3.group(2)):02d}E{int(m3.group(3)):02d}"
+    # Bolum 12 - dizi adi gruptan gelir
     m4 = re.search(r'(.*?)\s*[-–]?\s*B[öo]l[üu]m\s*(\d+)', s, re.I)
     if m4:
-        dizi = (dizi_adi or m4.group(1)).strip(" -|")
-        dizi = re.sub(r'\s+', ' ', dizi).strip()
+        dizi = (dizi_adi or g or m4.group(1)).strip(" -|")
         return f"{dizi} S01E{int(m4.group(2)):02d}"
-    # "Cukur 12" gibi sadece sayi varsa
+    # "Dizi Adi 12" veya sadece "12" - grup dizi adidir
     m5 = re.search(r'^(.*?)\s+(\d{1,3})$', s)
-    if m5 and dizi_adi:
-        return f"{dizi_adi} S01E{int(m5.group(2)):02d}"
+    if m5:
+        # Eger ad grup ile ayniysa veya grup varsa, grup dizi adidir
+        if g:
+            return f"{dizi_adi or g} S01E{int(m5.group(2)):02d}"
+        dizi = (dizi_adi or m5.group(1)).strip(" -|")
+        if dizi:
+            return f"{dizi} S01E{int(m5.group(2)):02d}"
+    # Sadece sayi: "12" - gruptan al
+    m6 = re.search(r'^\d{1,3}$', s)
+    if m6 and (dizi_adi or g):
+        return f"{dizi_adi or g} S01E{int(s):02d}"
+    # Hic sayi yoksa, sira ile - tek dizi dosyasi veya gruptan
+    if (dizi_adi or g) and sira > 0:
+        return f"{dizi_adi or g} S01E{sira:02d}"
     if dizi_adi:
         return dizi_adi
     return s
 
 def main():
-    print("MIRTI68 - DIZI BASLADI")
+    print("MIRTI68 - DIZI BASLADI - EPG KORUNUR - GRUP = DIZI ADI")
     print(f"[HEDEF] {HEDEF_DOSYA}")
     diziler = oku_yaml_toleransli(DIZI_YAML)
     print(f"[BILGI] Dizi blok: {len(diziler)}")
@@ -162,13 +178,16 @@ def main():
     if not os.path.exists(HEDEF_DOSYA):
         print(f"[HATA] {HEDEF_DOSYA} yok")
         return
-    hedef_records = oku_m3u(HEDEF_DOSYA)
+    baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
+    if not baslik:
+        baslik = ["#EXTM3U"]
+    print(f"[EPG] Baslik korundu: {baslik[:2]}")
     eski_sayi = len(hedef_records)
     gorulen = set()
     for r in hedef_records:
         u = kanal_url(r)
         if u: gorulen.add(u.strip())
-    lines = []
+    lines = list(baslik)
     for r in hedef_records: lines.extend(r)
     sayi = 0
     atlanan = 0
@@ -182,25 +201,33 @@ def main():
             continue
         hedef_logo = str(blok.get("hedef_logo", "") or "").strip()
         dizi_adi = str(blok.get("dizi_adi", "") or "").strip()
-        print(f"[DIZI] {kurl[:60]} -> {hedef_grup} - dizi_adi: {dizi_adi or '-'}")
+        print(f"[DIZI] {kurl[:60]} -> {hedef_grup} - dizi_adi: {dizi_adi or '(bos, gruptan alacak)'}")
         try:
-            kaynak = oku_m3u(kurl)
+            _, kaynak = oku_m3u(kurl)
         except Exception as e:
             print(f"  [ATLANDI] {e}")
             continue
+        # Ayni gruptan gelenleri sirayla numaralandirmak icin
+        grup_sayac = {}
         for r in kaynak:
             ad = kanal_adi(r); u = kanal_url(r)
             if not u: continue
             if u.strip() in gorulen:
                 zaten_var += 1
                 continue
-            if not filtre_gecer(ad, grup_bul(r), blok):
+            g = grup_bul(r)
+            if not filtre_gecer(ad, g, blok):
                 atlanan += 1
                 continue
-            yeni_ad = dizi_adini_duzelt_tivimate(ad, dizi_adi)
+            grup_sayac[g] = grup_sayac.get(g, 0) + 1
+            sira = grup_sayac[g]
+            yeni_ad = dizi_adini_duzelt_tivimate(ad, g, dizi_adi, sira)
             if not re.search(r'\bS\d{2}E\d{2,3}\b', yeni_ad):
-                atlanan += 1
-                continue
+                if dizi_adi or g:
+                    yeni_ad = f"{dizi_adi or g} S01E{sira:02d}"
+                else:
+                    atlanan += 1
+                    continue
             yeni = list(r)
             idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
             if idx is not None:
@@ -208,10 +235,10 @@ def main():
                 m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
                 oz = {}
                 for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k] = v
+                # EPG: tvg-id, catchup, tvg-shift varsa koru, ezme
                 oz["group-title"] = hedef_grup
                 oz["tvg-name"] = yeni_ad
                 oz["tvg-type"] = "series"
-                # EPG: varsa koru, yoksa dokunma - yeni_ad ile ezme
                 gelen_logo = oz.get("tvg-logo", "").strip()
                 if not gelen_logo and hedef_logo:
                     oz["tvg-logo"] = hedef_logo
@@ -221,11 +248,9 @@ def main():
         print(f"  [OK] Yeni: {sayi} - Zaten vardi: {zaten_var} - Atlanan: {atlanan}")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA + ".bak")
     except Exception: pass
-    if not lines or not lines[0].strip().startswith("#EXTM3U"):
-        lines.insert(0, "#EXTM3U")
     with open(HEDEF_DOSYA, "w", encoding="utf-8", newline="") as f:
         f.write("\n".join(lines) + "\n")
-    print(f"[KAYDEDILDI] {HEDEF_DOSYA} - Eski: {eski_sayi} - Yeni: {sayi} - Toplam: {eski_sayi + sayi}")
+    print(f"[KAYDEDILDI] {HEDEF_DOSYA} - Eski: {eski_sayi} - Yeni: {sayi} - Toplam: {eski_sayi + sayi} - EPG basligi korundu")
 
 if __name__ == "__main__":
     main()
