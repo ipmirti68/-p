@@ -1,27 +1,17 @@
-# MIRTI68 - FILM AKTARICI
-# Okur: aktarfilm.yaml
-# Yazar: film.tmp.m3u + mirti68.m3u
-# film_bilgi_al: true ise internetten poster + yil + aciklama ceker
-# Bulamazsa eski haline doner, film dusmez
-# Ayni url varsa eklemez, EPG korunur
+# MIRTI68 - FILM AKTARICI - Girinti bagimsiz
+# Okur: aktarfilim.yaml (bozuk girinti olsa bile okur)
+# Yazar: film.tmp.m3u + mirti.m3u
 import re, os, shutil, urllib.request, urllib.parse, json, time
 try:
     import yaml
 except ImportError:
     yaml = None
-try:
-    import requests
-    HAS_REQUESTS = True
-except ImportError:
-    HAS_REQUESTS = False
 
 HEDEF_DOSYA = "mirti.m3u"
 FILM_YAML = "aktarfilim.yaml"
 TMP_DOSYA = "film.tmp.m3u"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
 TIMEOUT = 30
-
-# Internetten bilgi icin onbellek, ayni filmi 2. kez sormasin
 _FILM_CACHE = {}
 
 def normalize(s):
@@ -34,9 +24,9 @@ def normalize(s):
 def norm_sinema(s):
     return re.sub(r'[^a-z0-9çğıöşü]+','',(s or "").lower())
 
-SINEMA_WANTED_RAW = [" 【entity-IMDb¦canonical_name=IMDb】 Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"]
+SINEMA_WANTED_RAW = [" IMDb Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"]
 SINEMA_WANTED = {norm_sinema(x): x for x in SINEMA_WANTED_RAW}
-SINEMA_EXCLUDED = [" 【entity-adam sandler¦canonical_name=adam sandler】","clint eastwood"," 【entity-sylvester stallone¦canonical_name=sylvester stallone】"," 【entity-jackie chan¦canonical_name=jackie chan】","nicolas cage"," 【entity-steven seagal¦canonical_name=steven seagal】"," 【entity-jason statham¦canonical_name=jason statham】","seri","dizi","series","sezon","season","episode","bölüm","bolum","s01e","s02e","s03e"]
+SINEMA_EXCLUDED = ["【entity-adam sandler¦canonical_name=adam sandler】","clint eastwood","【entity-sylvester stallone¦canonical_name=sylvester stallone】","【entity-jackie chan¦canonical_name=jackie chan】","nicolas cage","【entity-steven seagal¦canonical_name=steven seagal】","【entity-jason statham¦canonical_name=jason statham】","seri","dizi","series","sezon","season","episode","bölüm","bolum","s01e","s02e","s03e"]
 def sinema_excluded(text):
     t = " " + re.sub(r'[^a-z0-9çğıöşü]+',' ',(text or "").lower()) + " "
     compact = (text or "").lower().replace(" ","")
@@ -112,8 +102,6 @@ def film_bilgisi_yerel(ham):
     return s2, yil
 
 def film_bilgisi_internet(baslik, yil_hint=""):
-    # Anahtarsiz acik kaynak: poster + yil + aciklama + kimlik doner
-    # Bulamazsa None doner, py eski haline doner
     anahtar = normalize(baslik) + "|" + str(yil_hint)
     if anahtar in _FILM_CACHE: return _FILM_CACHE[anahtar]
     sonuc = None
@@ -124,7 +112,6 @@ def film_bilgisi_internet(baslik, yil_hint=""):
         req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
         with urllib.request.urlopen(req, timeout=10) as r:
             data = json.loads(r.read().decode("utf-8", errors="ignore"))
-        # Ilk dogru sonucu al
         adaylar = []
         if isinstance(data, dict):
             if isinstance(data.get("description"), list): adaylar = data["description"]
@@ -144,21 +131,63 @@ def film_bilgisi_internet(baslik, yil_hint=""):
     _FILM_CACHE[anahtar] = sonuc
     return sonuc
 
+def yaml_oku_guvenli(path):
+    # 1. Normal YAML dene
+    try:
+        with open(path, encoding="utf-8") as f: return yaml.safe_load(f) or {}
+    except Exception as e:
+        print(f"[UYARI] YAML bozuk, girinti duzeltilip tekrar okunuyor: {e}")
+    # 2. Girinti duzelt: - kaynak_url ile baslayan satirlari bul, hepsini 2 bosluk + - yap, alt satirlari 4 bosluk yap
+    with open(path, encoding="utf-8") as f: raw = f.read()
+    lines = raw.splitlines()
+    fixed = []
+    for line in lines:
+        s = line.strip()
+        if not s: continue
+        if s.startswith("filmler:"):
+            fixed.append("filmler:")
+        elif s.startswith("- kaynak_url:"):
+            fixed.append("  - " + s[2:].strip())
+        elif s.startswith("- hedef_adi:"):
+            fixed.append("      - " + s[2:].strip())
+        elif s.startswith("hedefler:"):
+            fixed.append("    hedefler:")
+        elif s.startswith("kaynak_url:") or s.startswith("kaynak_grup:") or s.startswith("kaynak_gruplar:") or s.startswith("sinema_modu:") or s.startswith("grup_onek:") or s.startswith("epg_koru:") or s.startswith("sadece_listedekiler:") or s.startswith("film_bilgi_al:"):
+            fixed.append("    " + s)
+        elif s.startswith("hedef_adi:") or s.startswith("aranacak:") or s.startswith("hedef_grup:") or s.startswith("hedef_logo:") or s.startswith("ek_kod:"):
+            # hedef_adi zaten - ile baslamiyorsa 8 bosluk
+            if s.startswith("hedef_adi:"):
+                fixed.append("        " + s)
+            else:
+                fixed.append("        " + s)
+        else:
+            fixed.append("    " + s)
+    # hedef_adi satirini duzelt: - hedef_adi olanlar 6 bosluk olmali, digerleri 8
+    out = []
+    for l in fixed:
+        if l.strip().startswith("- hedef_adi:"):
+            out.append("      - hedef_adi: " + l.split("hedef_adi:",1)[1].strip())
+        else:
+            out.append(l)
+    txt = "\n".join(out) + "\n"
+    print("[BILGI] Duzeltilmis YAML:\n" + txt)
+    return yaml.safe_load(txt) or {}
+
 def main():
-    print("MIRTI68 - FILM BASLADI - aktarfilm.yaml okunuyor")
+    print("MIRTI68 - FILM BASLADI - aktarfilim.yaml okunuyor")
     if not os.path.exists(FILM_YAML):
         print(f"[HATA] {FILM_YAML} yok"); return
-    with open(FILM_YAML, encoding="utf-8") as f: cfg = yaml.safe_load(f) or {}
+    cfg = yaml_oku_guvenli(FILM_YAML)
     filmler = cfg.get("filmler", []) or []
     print(f"[BILGI] Film blok: {len(filmler)}")
     if not os.path.exists(HEDEF_DOSYA):
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
-
     def kalacak_mi(r):
         g = grup_bul(r)
         if "🟪◆ FİLM" in g or "🟪◆ FILM" in g or "🟪◆ FİLİM" in g: return False
+        if g.startswith("FILMLER /"): return False
         return True
     hedef_records = [r for r in hedef_records if kalacak_mi(r)]
     gorulen = set()
@@ -169,7 +198,6 @@ def main():
     for r in hedef_records: lines.extend(r)
     film_lines = ["#EXTM3U"]
     bilgi_alinan = 0
-
     for sira, f in enumerate(filmler, 1):
         if not isinstance(f, dict): continue
         kurl = str(f.get("kaynak_url","") or "").strip()
@@ -197,16 +225,14 @@ def main():
             elif kg:
                 if normalize(g) != normalize(kg): continue
             if sinema_modu and (sinema_excluded(g) or sinema_excluded(ad)): continue
-            # Hedef sec: sinema modunda hedef_grup bos ise kaynak grubunu kullan
             eslesen = None
             for h in hedefler:
                 if not isinstance(h, dict): continue
-                # hedef_grup bos + sinema_modu -> kabul et, grup kaynaktan gelecek
-                if sinema_modu:
-                    eslesen = h; break
                 hg = str(h.get("hedef_grup","") or "").strip()
-                if not hg: continue
+                if not hg and not sinema_modu: continue
                 ar = str(h.get("aranacak","") or "").strip()
+                if sinema_modu and not ar:
+                    eslesen = h; break
                 if not ar:
                     eslesen = h; break
                 for parca in [x.strip() for x in ar.split(",") if x.strip()]:
@@ -217,13 +243,10 @@ def main():
             hedef_grup = str(eslesen.get("hedef_grup","") or "").strip()
             hedef_logo = str(eslesen.get("hedef_logo","") or "").strip()
             ek_kod = str(eslesen.get("ek_kod","") or "").strip()
-            # Sinema grubu: kaynak grubundan uret
             if sinema_modu and not hedef_grup:
                 _clean = SINEMA_WANTED.get(norm_sinema(g), g)
                 _clean = re.sub(r"\s+", " ", _clean).strip()
-                if "FILM" not in _clean.upper(): _clean = f"FILM - {_clean}"
-                hedef_grup = f"🟪◆ {_clean} ⭕"
-            # Film bilgisi: yerel + internet
+                hedef_grup = f"FILMLER / {_clean.upper()}"
             temiz_ad, yil_yerel = film_bilgisi_yerel(ad)
             poster = ""; kimlik = ""; aciklama = ""
             if bilgi_al:
@@ -246,15 +269,12 @@ def main():
                 for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
                 oz["group-title"] = hedef_grup
                 oz["tvg-name"] = yeni_ad
-                # Logo: gelen varsa onu kullan, yoksa internet posteri, yoksa hedef logosu
                 gelen_logo = oz.get("tvg-logo","").strip()
                 if not gelen_logo and poster: oz["tvg-logo"] = poster
                 elif not gelen_logo and hedef_logo: oz["tvg-logo"] = hedef_logo
-                # Kimlik: EPG eslesmesi icin, varsa koru, yoksa internetten geleni yaz
                 if kimlik and not oz.get("tvg-id"):
                     oz["tvg-id"] = kimlik
                 if sinema_modu: oz["tvg-type"] = "movie"
-                # Aciklama varsa tvg-plot olarak sakla, TiviMate bazi surumlerde gosterir
                 if aciklama and not oz.get("tvg-plot"):
                     oz["tvg-plot"] = aciklama.replace('"','').replace('\n',' ')[:300]
                 oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
@@ -264,7 +284,6 @@ def main():
                     if l.strip().startswith(("http://","https://")): yeni[i]=sinema_fix_url(l.strip())
             lines.extend(yeni); film_lines.extend(yeni); gorulen.add(u.strip())
         print(f"  [OK] {sira}. blok bitti, internetten bilgi alinan: {bilgi_alinan}")
-
     with open(TMP_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(film_lines)+"\n")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
     except Exception: pass
