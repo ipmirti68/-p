@@ -1,4 +1,4 @@
-# MIRTI68 - ATV Canli - atv1.py - GRUP ALTINA EKLE, TEKRAR EKLEME
+# MIRTI68 - ATV Canli  - atv1.py - GRUP ALTINA EKLE, TEKRAR EKLEME
 import requests
 import time
 import re
