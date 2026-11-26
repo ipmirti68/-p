@@ -1,8 +1,9 @@
 
-name: SPOR 
+name: SPOR
 
 on:
   workflow_dispatch:
+
   schedule:
     - cron: "*/20 * * * *"
 
@@ -19,15 +20,19 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      - uses: actions/checkout@v5
+      # REPOSITORY
+      - name: Depoyu indir
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v6
+      # PYTHON
+      - name: Python kurulumu
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      # YOUTUBE JAVASCRIPT DESTEĞİ
+      # DENO
       - name: Deno kur
         uses: denoland/setup-deno@v2
         with:
@@ -37,21 +42,39 @@ jobs:
       - name: Paketleri kur
         run: |
           python -m pip install --upgrade pip
-          python -m pip install --upgrade --pre "yt-dlp[default]" requests beautifulsoup4 lxml playwright pycryptodome pycryptodomex pyjwt
+
+          python -m pip install --upgrade --pre \
+            "yt-dlp[default]" \
+            requests \
+            beautifulsoup4 \
+            lxml \
+            playwright \
+            pycryptodome \
+            pycryptodomex \
+            pyjwt
+
           playwright install --with-deps chromium
+
+          echo "========== SÜRÜMLER =========="
+          python --version
           yt-dlp --version
           deno --version
 
+          python -c "import requests; print('REQUESTS OK')"
           python -c "from Crypto.Cipher import AES; print('CRYPTO AES OK')"
-      - name: 2 - ATOM
-        continue-on-error: true
+          python -c "from bs4 import BeautifulSoup; print('BS4 OK')"
+
+      # ATV
+      - name: ATV CANLI YAYIN GÜNCELLE
+        id: atv
         timeout-minutes: 10
-        run: python atv1.py || echo "atom1 failed"
-     
- 
-      
+        run: |
+          echo "========== ATV BAŞLADI =========="
+          python -u atv1.py
+          echo "========== ATV TAMAMLANDI =========="
+
       # DOSYALARI KAYDET
-      - name: Dosyaları kaydet
+      - name: M3U ve JSON dosyalarını kaydet
         if: always()
         run: |
           git config user.name "MIRTI68 Bot"
@@ -59,42 +82,43 @@ jobs:
 
           rm -rf __pycache__ .pytest_cache/
 
-          # Başta remote'daki en yeni hali al
-          git rebase --abort || true
-          git fetch origin main || true
-
+          echo "========== DOSYALAR =========="
           ls -lh *.m3u *.json 2>/dev/null || true
 
-          git add -f -- *.m3u || true
-          git add -f -- *.json || true
-
+          echo "========== GIT DURUMU =========="
           git status --short
 
+          git add -f -- '*.m3u' '*.json' 2>/dev/null || true
+
           if git diff --cached --quiet; then
-            echo "Değişiklik yok"
+            echo "Değişiklik yok."
             exit 0
           fi
 
           git commit -m "MIRTI68 update $(date +'%d.%m %H:%M')"
 
+          echo "========== PUSH =========="
+
           for i in 1 2 3; do
-            if git push origin HEAD:main; then
-              echo "Push OK"
-              break
-            fi
 
-            echo "Push çakıştı, tekrar deneniyor $i"
-
-            git rebase --abort || true
             git fetch origin main
 
             if git rebase -X ours origin/main; then
-              echo "Rebase OK, tekrar push deneniyor"
-              continue
+
+              if git push origin HEAD:main; then
+                echo "PUSH BAŞARILI"
+                exit 0
+              fi
+
+            else
+              echo "Rebase başarısız."
+              git rebase --abort || true
             fi
 
-            git rebase --abort || true
-            git push --force-with-lease origin HEAD:main && echo "Force push OK" && break
+            echo "Tekrar deneniyor: $i"
             sleep 3
+
           done
-          
+
+          echo "PUSH BAŞARISIZ"
+          exit 1
