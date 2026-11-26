@@ -1,14 +1,13 @@
-# FILM - Sadece power-sinema, baska yok
-# hedef_1 dolu, hedef_2 - hedef_5 bos, sen sonradan dolduracaksin
-# Bir tane de en sonda tamamen bos blok biraktim
+# FILM
 filmler:
     - kaynak_url: "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"
-    kaynak_gruplar: [" 【entity-IMDb¦canonical_name=IMDb】 Top Rated", "YERLI FILM", "KEMAL SUNAL", "KORKU", "WESTERN", "YeniEklenenler", "2026", "2025", "2023 2024", "2021 2022", "2019 2020", "2017 2018", "2015 2016", "2013 2014", "2011 2012", "2001 2010"]
+    kaynak_gruplar: [" MDb Top Rated", "YERLI FILM", "KEMAL SUNAL", "KORKU", "WESTERN", "YeniEklenenler", "2026", "2025", "2023 2024", "2021 2022", "2019 2020", "2017 2018", "2015 2016", "2013 2014", "2011 2012", "2001 2010"]
     kaynak_grup: ""
     sinema_modu: true
     grup_onek: false
     epg_koru: true
     sadece_listedekiler: true
+    film_bilgi_al: true
     hedefler:
             - hedef_adi: "hedef_1"
         aranacak: ""
@@ -36,7 +35,6 @@ filmler:
         hedef_logo: ""
         ek_kod: ""
 
-  # BOS BLOK - Yeni film dosyasi gelirse buraya ekle
     - kaynak_url: ""
     kaynak_gruplar: []
     kaynak_grup: ""
@@ -44,6 +42,7 @@ filmler:
     grup_onek: false
     epg_koru: true
     sadece_listedekiler: true
+    film_bilgi_al: true
     hedefler:
             - hedef_adi: "hedef_1"
         aranacak: ""
