@@ -22,6 +22,6 @@ jobs:
         run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "mirti68@bot.local"
-          git add mirti.m3u aktardizi.yaml aktardizi.py aktarfilm.yaml aktarfilim.yaml aktarfilim.py film.tmp.m3u
+          git add mirti.m3u aktardizi.yaml aktardizi.py aktarfilim.yaml aktarfilim.py film.tmp.m3u
           git commit -m "Dizi + Film guncelleme" || echo "Degisiklik yok"
           git push
