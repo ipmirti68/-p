@@ -2,536 +2,561 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# ==================================================
-# MIRTI68 - ATV CANLI
-# LOGO + GRUP ALTINA EKLE
-# TEKRAR EKLEME + LINK YENILEME
-# ==================================================
-
-import requests
-import re
 import os
+import re
+import sys
 import html
+import json
+import requests
+import urllib3
 
-OUTPUT_FILE = "mirti68.m3u"
+from html.parser import HTMLParser
+from urllib.parse import urlparse
 
-GROUP = "🟨◆  ULUSALᴴᴰ ⭕"
-AD = "ATVᴴᴰ⭕"
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+
+# =========================================================
+# MIRTI68 - ATV CANLI YAYIN
+# Televizo uyumlu HLS M3U8
+# =========================================================
+
+SITE_ID_FALLBACK = "0fe2a405-8afa-4238-b429-e5f96aec3a5c"
+LIVE_ID = "00000000-0000-0000-0000-000000000000"
+
+SAYFA_URL = "https://www.atv.com.tr/canli-yayin"
+
+VIDEO_API = (
+    "https://videojs.tmgrup.com.tr/getvideo/"
+    "{site_id}/{video_id}"
+)
+
+TOKEN_API = (
+    "https://securevideotoken.tmgrup.com.tr/webtv/secure"
+)
+
+M3U_DOSYA = "mirti68.m3u"
+
+GRUP = "🟨◆  ULUSALᴴᴰ ⭕"
+KANAL_ADI = "ATVᴴᴰ⭕"
+TVG_ID = "atv.tr"
 
 LOGO = (
     "https://raw.githubusercontent.com/"
     "ipmirti68/Logo/refs/heads/main/atv.png"
 )
 
-TVG_ID = "atv.tr"
-
-SITE_ID = "0fe2a405-8afa-4238-b429-e5f96aec3a5c"
-LIVE_ID = "00000000-0000-0000-0000-000000000000"
-
-ATV_PAGE = "https://www.atv.com.tr/canli-yayin"
-
-REFERER = "https://www.atv.com.tr/"
+TIMEOUT = 25
 
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
+        "Mozilla/5.0 (Linux; Android 14; Mobile) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/131.0.0.0 Mobile Safari/537.36"
     ),
-    "Referer": REFERER,
-    "Origin": "https://www.atv.com.tr"
+    "Referer": SAYFA_URL,
+    "Origin": "https://www.atv.com.tr",
+    "Accept": "*/*",
 }
 
-session = requests.Session()
-session.headers.update(HEADERS)
+
+# =========================================================
+# HTML İÇİNDEN AYNI ÖĞEDEKİ VIDEO ID VE SITE ID
+# =========================================================
+
+class VideoHTMLParser(HTMLParser):
+
+    def __init__(self):
+        super().__init__()
+        self.video_id = None
+        self.site_id = None
+
+    def handle_starttag(self, tag, attrs):
+
+        attrs = dict(attrs)
+
+        video_id = attrs.get("data-videoid")
+        site_id = attrs.get("data-websiteid")
+
+        if video_id and site_id:
+            self.video_id = video_id.strip()
+            self.site_id = site_id.strip()
 
 
-# ==================================================
-# ATV KIMLIKLERI
-# ==================================================
+def kimlikleri_al(session):
 
-def kimlikleri_al():
-
-    global SITE_ID, LIVE_ID
+    print("[1] ATV sayfası açılıyor...")
 
     try:
-
-        r = session.get(
-            ATV_PAGE,
-            timeout=25
+        response = session.get(
+            SAYFA_URL,
+            headers=HEADERS,
+            timeout=TIMEOUT
         )
 
-        r.raise_for_status()
+        response.raise_for_status()
 
-        sayfa = html.unescape(r.text)
+        kaynak = response.text
 
-        video = re.search(
-            r'data-videoid=["\']([^"\']+)',
-            sayfa,
-            re.I
-        )
+        parser = VideoHTMLParser()
+        parser.feed(kaynak)
 
-        website = re.search(
-            r'data-websiteid=["\']([^"\']+)',
-            sayfa,
-            re.I
-        )
+        video_id = parser.video_id
+        site_id = parser.site_id
 
-        if video and website:
+        # HTML içine kaçışlı gömülmüş içerik ihtimali
+        if not video_id or not site_id:
 
-            LIVE_ID = video.group(1)
-            SITE_ID = website.group(1)
+            temiz = html.unescape(kaynak)
+            temiz = temiz.replace("\\/", "/")
+            temiz = temiz.replace('\\"', '"')
 
-            print("[OK] ATV kimlikleri bulundu")
+            parser2 = VideoHTMLParser()
+            parser2.feed(temiz)
 
-            return True
+            video_id = video_id or parser2.video_id
+            site_id = site_id or parser2.site_id
 
-        m = re.search(
-            r'var\s+tmdPlayer\s*=\s*["\'](.*?)["\']',
-            sayfa,
-            re.S
-        )
+        # Sayfada video ID bulunamazsa canlı yayın ID'sini kullan
+        if not video_id:
+            video_id = LIVE_ID
 
-        if m:
+        # Kullanıcının verdiği SITE ID yedek olarak kullanılır
+        if not site_id:
+            site_id = SITE_ID_FALLBACK
 
-            player = html.unescape(m.group(1))
+        if not video_id or not site_id:
+            print("[HATA] Video veya site kimliği bulunamadı.")
+            return None, None
 
-            v = re.search(
-                r'data-videoid=["\']([^"\']+)',
-                player,
-                re.I
-            )
+        print("[OK] VIDEO ID:", video_id)
+        print("[OK] WEBSITE ID:", site_id)
 
-            w = re.search(
-                r'data-websiteid=["\']([^"\']+)',
-                player,
-                re.I
-            )
-
-            if v and w:
-
-                LIVE_ID = v.group(1)
-                SITE_ID = w.group(1)
-
-                print("[OK] ATV player kimlikleri bulundu")
-
-                return True
-
-        print("[BILGI] Mevcut kimlikler kullanilacak")
+        return video_id, site_id
 
     except Exception as e:
 
-        print("[UYARI] Kimlik alma:", e)
+        print("[HATA] ATV sayfası okunamadı:", str(e))
+        return None, None
 
-    return True
 
+# =========================================================
+# VIDEO API
+# =========================================================
 
-# ==================================================
-# M3U8 BUL
-# ==================================================
+def video_api_al(session, site_id, video_id):
 
-def find_m3u8(text):
+    print("[2] ATV video API sorgulanıyor...")
 
-    if not text:
-        return ""
-
-    m = re.search(
-        r'https?://[^"\'\s<>]+\.m3u8[^"\'\s<>]*',
-        str(text),
-        re.I
+    api_url = VIDEO_API.format(
+        site_id=site_id,
+        video_id=video_id
     )
-
-    return m.group(0).rstrip("\\") if m else ""
-
-
-# ==================================================
-# ATV CANLI YAYIN LINKI
-# ==================================================
-
-def atv_link_al():
 
     try:
 
-        api = (
-            "https://videojs.tmgrup.com.tr/getvideo/"
-            + SITE_ID + "/" + LIVE_ID
+        response = session.get(
+            api_url,
+            headers=HEADERS,
+            timeout=TIMEOUT
         )
 
-        r = session.get(
-            api,
-            timeout=25
-        )
+        print("[API] HTTP:", response.status_code)
 
-        r.raise_for_status()
+        response.raise_for_status()
 
-        data = r.json()
+        try:
+            data = response.json()
+        except ValueError:
+            print("[HATA] Video API JSON döndürmedi.")
+            return None
 
-        video = data.get("video") or {}
+        if data.get("success") is not True:
+            print("[HATA] API success değeri True değil.")
+            print("[API] Dönen alanlar:", list(data.keys()))
+            return None
+
+        video = data.get("video")
 
         if not isinstance(video, dict):
-            video = {}
+            print("[HATA] API içinde video bilgisi bulunamadı.")
+            return None
 
-        ham = (
-            video.get("VideoSmilUrl")
-            or video.get("VideoUrl")
-            or video.get("videoUrl")
-            or video.get("Url")
-            or video.get("url")
-            or ""
-        )
+        smil_url = video.get("VideoSmilUrl")
 
-        # Alternatif JSON alanlari
-        if not ham:
+        if not smil_url:
+            print("[HATA] VideoSmilUrl bulunamadı.")
+            print("[API] Video alanları:", list(video.keys()))
+            return None
 
-            for key in (
-                "VideoSmilUrl",
-                "VideoUrl",
-                "videoUrl",
-                "Url",
-                "url"
-            ):
+        print("[OK] Video adresi alındı.")
 
-                if data.get(key):
-
-                    ham = str(data[key])
-                    break
-
-        if not ham:
-
-            ham = find_m3u8(data)
-
-        if not ham:
-
-            print("[HATA] ATV kaynak adresi bulunamadi")
-            print("[API]", str(data)[:500])
-
-            return ""
-
-        print("[OK] ATV kaynak adresi alindi")
-
-        # Guvenli yayin tokeni
-        token_api = (
-            "https://securevideotoken.tmgrup.com.tr/webtv/secure"
-        )
-
-        r2 = session.get(
-            token_api,
-            params={"url": ham},
-            headers={"Referer": REFERER},
-            timeout=25
-        )
-
-        r2.raise_for_status()
-
-        data2 = r2.json()
-
-        link = (
-            data2.get("Url")
-            or data2.get("url")
-            or data2.get("VideoUrl")
-            or data2.get("VideoURL")
-            or ""
-        )
-
-        link = str(link).strip()
-
-        # Token cevabinda dogrudan M3U8 ara
-        if not link:
-
-            link = find_m3u8(data2)
-
-        if not link.startswith("http"):
-
-            print("[HATA] Gecersiz token adresi")
-            print("[TOKEN]", str(data2)[:500])
-
-            return ""
-
-        if ".m3u8" not in link.lower():
-
-            print("[HATA] Yayin adresi M3U8 degil")
-            print("[LINK]", link[:300])
-
-            return ""
-
-        print("[OK] ATV M3U8 adresi alindi")
-
-        return link
+        return smil_url
 
     except Exception as e:
 
-        print("[HATA] ATV yayin alma:", str(e))
+        print("[HATA] Video API:", str(e))
+        return None
 
+
+# =========================================================
+# GÜVENLİ YAYIN TOKEN ADRESİ
+# =========================================================
+
+def token_al(session, smil_url):
+
+    print("[3] Güvenli yayın adresi alınıyor...")
+
+    try:
+
+        response = session.get(
+            TOKEN_API,
+            params={"url": smil_url},
+            headers=HEADERS,
+            timeout=TIMEOUT
+        )
+
+        print("[TOKEN] HTTP:", response.status_code)
+
+        response.raise_for_status()
+
+        try:
+            data = response.json()
+        except ValueError:
+            print("[HATA] Token servisi JSON döndürmedi.")
+            return None
+
+        if data.get("Success") is not True:
+            print("[HATA] Token servisi Success=True döndürmedi.")
+            print("[TOKEN] Dönen alanlar:", list(data.keys()))
+            return None
+
+        yayin_url = data.get("Url")
+
+        if not yayin_url:
+            print("[HATA] Token yanıtında Url bulunamadı.")
+            return None
+
+        if not yayin_url.startswith(("http://", "https://")):
+            print("[HATA] Yayın adresi geçerli HTTP adresi değil.")
+            return None
+
+        print("[OK] Güvenli yayın adresi alındı.")
+        print("[OK] Yayın sunucusu:", urlparse(yayin_url).netloc)
+
+        return yayin_url
+
+    except Exception as e:
+
+        print("[HATA] Token servisi:", str(e))
+        return None
+
+
+# =========================================================
+# HLS YAYININI KONTROL ET
+# =========================================================
+
+def hls_kontrol(session, yayin_url):
+
+    print("[4] HLS yayın kontrolü yapılıyor...")
+
+    try:
+
+        response = session.get(
+            yayin_url,
+            headers=HEADERS,
+            timeout=TIMEOUT,
+            allow_redirects=True,
+            stream=True
+        )
+
+        print("[HLS] HTTP:", response.status_code)
+
+        response.raise_for_status()
+
+        ilk_parca = next(
+            response.iter_content(chunk_size=4096),
+            b""
+        )
+
+        response.close()
+
+        icerik = ilk_parca.decode(
+            "utf-8",
+            errors="ignore"
+        ).lstrip("\ufeff \r\n\t")
+
+        if not icerik.startswith("#EXTM3U"):
+
+            print("[HATA] Gelen yanıt HLS M3U8 değil.")
+            print("[HATA] İlk yanıt:", repr(icerik[:150]))
+            return False
+
+        print("[OK] HLS M3U8 başlığı doğrulandı.")
+
+        return True
+
+    except Exception as e:
+
+        print("[HATA] HLS kontrolü başarısız:", str(e))
+        return False
+
+
+# =========================================================
+# M3U KANAL BLOĞU
+# =========================================================
+
+def kanal_blok(yayin_url):
+
+    return [
+        (
+            f'#EXTINF:-1 tvg-id="{TVG_ID}" '
+            f'tvg-name="{KANAL_ADI}" '
+            f'tvg-logo="{LOGO}" '
+            f'group-title="{GRUP}",{KANAL_ADI}'
+        ),
+        yayin_url
+    ]
+
+
+# =========================================================
+# M3U BLOKLARINI OKU
+# =========================================================
+
+def m3u_bloklara_ayir(satirlar):
+
+    baslik = []
+    bloklar = []
+    mevcut = []
+
+    for satir in satirlar:
+
+        if satir.startswith("#EXTINF:"):
+
+            if mevcut:
+                bloklar.append(mevcut)
+
+            mevcut = [satir]
+
+        elif mevcut:
+            mevcut.append(satir)
+
+        else:
+            baslik.append(satir)
+
+    if mevcut:
+        bloklar.append(mevcut)
+
+    return baslik, bloklar
+
+
+def blok_grubu(blok):
+
+    if not blok:
         return ""
 
+    extinf = blok[0]
 
-# ==================================================
-# M3U BILGILERI
-# ==================================================
-
-def grup_al(s):
-
-    m = re.search(
+    eslesme = re.search(
         r'group-title="([^"]*)"',
-        s
+        extinf,
+        re.IGNORECASE
     )
 
-    return m.group(1) if m else ""
-
-
-def ad_al(s):
-
-    if "," in s:
-
-        return s.rsplit(",", 1)[-1].strip()
+    if eslesme:
+        return eslesme.group(1)
 
     return ""
 
 
-# ==================================================
-# ATV EXTINF SATIRI - LOGO DAHIL
-# ==================================================
+def atv_blok_mu(blok):
 
-def kanal_satiri():
+    if not blok:
+        return False
+
+    satir = blok[0].lower()
 
     return (
-        '#EXTINF:-1 '
-        'tvg-id="' + TVG_ID + '" '
-        'tvg-name="' + AD + '" '
-        'tvg-logo="' + LOGO + '" '
-        'group-title="' + GROUP + '",'
-        + AD
+        'tvg-id="atv.tr"' in satir
+        or "atvᴴᴰ⭕".lower() in satir
     )
 
 
-# ==================================================
-# YAYIN SATIRLARI
-# ==================================================
+# =========================================================
+# M3U İÇİNE ATV EKLE / GÜNCELLE
+# =========================================================
 
-def yayin_satirlari(link):
+def m3u_guncelle(yayin_url):
 
-    return [
-        kanal_satiri(),
+    print("[5] M3U dosyası güncelleniyor...")
 
-        '#EXTVLCOPT:http-referer=' + REFERER,
+    if os.path.exists(M3U_DOSYA):
 
-        '#EXTVLCOPT:http-user-agent=' + HEADERS["User-Agent"],
+        try:
 
-        link
-    ]
+            with open(
+                M3U_DOSYA,
+                "r",
+                encoding="utf-8-sig"
+            ) as f:
 
+                satirlar = f.read().splitlines()
 
-# ==================================================
-# ANA ISLEM
-# ==================================================
+        except Exception as e:
 
-def main():
-
-    if not os.path.exists(OUTPUT_FILE):
-
-        print("[HATA] mirti68.m3u bulunamadi")
-
-        return
-
-    # 1 - Kimlikleri bul
-    kimlikleri_al()
-
-    # 2 - ATV yayinini al
-    link = atv_link_al()
-
-    if not link:
-
-        print("[KORUMA] Dosyaya dokunulmadi")
-
-        return
-
-    # 3 - M3U dosyasini oku
-    with open(
-        OUTPUT_FILE,
-        "r",
-        encoding="utf-8-sig"
-    ) as f:
-
-        satirlar = f.read().splitlines()
-
-    # 4 - ATV kaydini bul
-    hedefler = []
-
-    for idx, s in enumerate(satirlar):
-
-        if not s.startswith("#EXTINF:"):
-            continue
-
-        # Ayni gruptaki ATV
-        if (
-            grup_al(s) == GROUP
-            and ad_al(s) == AD
-        ):
-
-            hedefler.append(idx)
-
-    # 5 - ATV zaten varsa guncelle
-    if hedefler:
-
-        hedef_idx = hedefler[0]
-
-        print("[BULUNDU] ATV mevcut, guncelleniyor")
-
-        yeni = []
-
-        i = 0
-
-        while i < len(satirlar):
-
-            s = satirlar[i]
-
-            if i == hedef_idx:
-
-                yeni.extend(
-                    yayin_satirlari(link)
-                )
-
-                i += 1
-
-                # Eski yayin ve VLCOPT satirlarini temizle
-                while i < len(satirlar):
-
-                    eski = satirlar[i].strip()
-
-                    if eski.startswith("#EXTINF:"):
-                        break
-
-                    if (
-                        eski.startswith("http://")
-                        or eski.startswith("https://")
-                        or eski.startswith("#EXTVLCOPT:")
-                    ):
-
-                        i += 1
-                        continue
-
-                    yeni.append(satirlar[i])
-
-                    i += 1
-
-                continue
-
-            # Ayni gruptaki olasi kopya ATV kayitlarini kaldir
-            if i in hedefler[1:]:
-
-                i += 1
-
-                while i < len(satirlar):
-
-                    eski = satirlar[i].strip()
-
-                    if eski.startswith("#EXTINF:"):
-                        break
-
-                    i += 1
-
-                continue
-
-            yeni.append(s)
-
-            i += 1
-
-        print("[OK] ATV mevcut yerinde guncellendi")
+            print("[HATA] M3U okunamadı:", str(e))
+            return False
 
     else:
 
-        # 6 - Grubun son kanalini bul
-        son_grup_bitisi = -1
+        satirlar = ["#EXTM3U"]
 
-        for idx, s in enumerate(satirlar):
+    if not satirlar:
+        satirlar = ["#EXTM3U"]
 
-            if (
-                s.startswith("#EXTINF:")
-                and grup_al(s) == GROUP
-            ):
+    baslik, bloklar = m3u_bloklara_ayir(satirlar)
 
-                bitis = idx + 1
+    # ATV'nin eski kayıtlarını kaldır.
+    # Diğer kanallara dokunulmaz.
+    yeni_bloklar = [
+        blok for blok in bloklar
+        if not atv_blok_mu(blok)
+    ]
 
-                while (
-                    bitis < len(satirlar)
-                    and not satirlar[bitis].startswith("#EXTINF:")
-                ):
+    # Hedef grubun son kanalını bul.
+    grup_indeksi = -1
 
-                    bitis += 1
+    for i, blok in enumerate(yeni_bloklar):
 
-                son_grup_bitisi = bitis
+        if blok_grubu(blok) == GRUP:
+            grup_indeksi = i
 
-        ek = yayin_satirlari(link)
+    yeni_atv = kanal_blok(yayin_url)
 
-        if son_grup_bitisi != -1:
+    if grup_indeksi >= 0:
 
-            yeni = (
-                satirlar[:son_grup_bitisi]
-                + ek
-                + satirlar[son_grup_bitisi:]
-            )
-
-            print("[EKLENDI] ATV grubun altina eklendi")
-
-        else:
-
-            yeni = satirlar + ek
-
-            print("[BILGI] Grup bulunamadi, dosyanin sonuna eklendi")
-
-    # 7 - Kaydetmeden once kontrol
-    kontrol = sum(
-        1 for s in yeni
-        if (
-            s.startswith("#EXTINF:")
-            and grup_al(s) == GROUP
-            and ad_al(s) == AD
+        yeni_bloklar.insert(
+            grup_indeksi + 1,
+            yeni_atv
         )
-    )
 
-    if kontrol != 1:
+        print("[OK] ATV mevcut grubun içine eklendi.")
 
-        print("[HATA] ATV tekrar kontrolunden gecemedi")
-        print("[KORUMA] Orijinal dosya korunuyor")
+    else:
 
-        return
+        yeni_bloklar.append(yeni_atv)
 
-    # 8 - Gecici dosyaya yaz
-    gecici = OUTPUT_FILE + ".tmp"
+        print("[BİLGİ] Hedef grup bulunamadı.")
+        print("[BİLGİ] ATV kanal kaydı dosyanın sonuna eklendi.")
+
+    # Dosya içeriğini yeniden oluştur.
+    cikti = []
+
+    cikti.extend(baslik)
+
+    if not any(
+        satir.strip() == "#EXTM3U"
+        for satir in cikti
+    ):
+        cikti.insert(0, "#EXTM3U")
+
+    for blok in yeni_bloklar:
+        cikti.extend(blok)
+
+    gecici_dosya = M3U_DOSYA + ".tmp"
 
     try:
 
         with open(
-            gecici,
+            gecici_dosya,
             "w",
-            encoding="utf-8",
-            newline="\n"
+            encoding="utf-8"
         ) as f:
 
-            f.write("\n".join(yeni) + "\n")
+            f.write("\n".join(cikti))
+            f.write("\n")
 
-        # 9 - Orijinal dosyayi guvenli guncelle
         os.replace(
-            gecici,
-            OUTPUT_FILE
+            gecici_dosya,
+            M3U_DOSYA
         )
 
-        print("----------------------------------")
-        print("[BASARILI] MIRTI68 ATV GUNCELLENDI")
-        print("[LOGO] " + LOGO)
-        print("[GRUP] " + GROUP)
-        print("[KANAL] " + AD)
-        print("[KOPYA] 1 adet")
-        print("----------------------------------")
+        print("[OK] M3U dosyası kaydedildi.")
+        print("[OK] Kanal:", KANAL_ADI)
+        print("[OK] Grup:", GRUP)
+
+        return True
 
     except Exception as e:
 
-        print("[HATA] Dosya kaydedilemedi:", e)
+        print("[HATA] M3U kaydedilemedi:", str(e))
 
-        if os.path.exists(gecici):
-            os.remove(gecici)
+        if os.path.exists(gecici_dosya):
+            os.remove(gecici_dosya)
+
+        return False
+
+
+# =========================================================
+# ANA PROGRAM
+# =========================================================
+
+def main():
+
+    print("=" * 55)
+    print("       MIRTI68 - ATV CANLI YAYIN")
+    print("       TELEVIZO HLS M3U8 SİSTEMİ")
+    print("=" * 55)
+
+    session = requests.Session()
+
+    session.headers.update(HEADERS)
+
+    # 1 - Video ve site kimlikleri
+    video_id, site_id = kimlikleri_al(session)
+
+    if not video_id or not site_id:
+        print("[DURDU] Kimlikler alınamadı.")
+        sys.exit(1)
+
+    # 2 - Video API
+    smil_url = video_api_al(
+        session,
+        site_id,
+        video_id
+    )
+
+    if not smil_url:
+        print("[DURDU] Video API adresi alınamadı.")
+        sys.exit(1)
+
+    # 3 - Token
+    yayin_url = token_al(
+        session,
+        smil_url
+    )
+
+    if not yayin_url:
+        print("[DURDU] Güvenli yayın adresi alınamadı.")
+        sys.exit(1)
+
+    # 4 - HLS kontrolü
+    if not hls_kontrol(
+        session,
+        yayin_url
+    ):
+        print("[DURDU] Yayın M3U8 olarak doğrulanamadı.")
+        sys.exit(1)
+
+    # 5 - M3U kaydı
+    if not m3u_guncelle(yayin_url):
+        print("[DURDU] M3U güncellenemedi.")
+        sys.exit(1)
+
+    print("=" * 55)
+    print("[BAŞARILI] ATV M3U kaydı güncellendi.")
+    print("=" * 55)
 
 
 if __name__ == "__main__":
-
     main()
-                
