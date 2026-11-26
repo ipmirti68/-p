@@ -294,8 +294,8 @@ https://b.xaomi.workers.dev/atvyedek2
 https://b.xaomi.workers.dev/now
 #EXTINF:-1 tvg-id="TV8 HD.tr" tvg-logo="https://raw.githubusercontent.com/abdcev/lists/refs/heads/main/image/tv8.png" group-title="🟨◆ ULUSALᵁᴴᴰ⭕",TV8 ⭕
 https://b.xaomi.workers.dev/tv8
-#EXTINF:0 tvg-id="TRT.1.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/trt-1-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
-https://tv-trt1.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Bein_sport_logo.png/1920px-Bein_sport_logo.png?utm_source=tr.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
+https://css.d6e3eds5e065t5.help//hls/arda.m3u8
 #EXTINF:0 tvg-id="STAR.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/star-tv-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",Star TV ⭕
 https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8laoxi44qj2k&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
 #EXTINF:0 tvg-id="KANAL.D.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/kanal-d-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",Kanal D ⭕
@@ -606,22 +606,27 @@ https://andro.evrenesoglu235.click/checklist/androstreamlivebsm2.m3u8
 #EXTVLCOPT:http-referrer=https://mahsunsports15.xyz/
 https://andro.evrenesoglu235.click/checklist/androstreamliveexn.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆  beIN SPORTS 🖥",beIN SPORTS 1ᴳᴴᴰ Mahsun ⭕
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 1 - Atom ⭕
-https://css.d6e3ess6e065r5.help//beyin1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 2 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b2/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 3 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b3/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 4 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b4/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS 5 - Atom ⭕
-https://css.d6e3ess6e065r5.help//b5/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS Max 1 - Atom ⭕
-https://css.d6e3ess6e065r5.help//bm1/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/71TSn0Q.jpeg" group-title="🟩◆  beIN SPORTS 🖥", beIN SPORTS Max 2 - Atom ⭕
-https://css.d6e3ess6e065r5.help//bm2/tracks-v1a1/mono.m3u8
-#EXTVLCOPT:http-referrer=https://mahsunsports15.xyz/
-https://andro.evrenesoglu235.click/checklist/androstreamliveexn1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 1 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 2 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs2.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 3 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs3.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 4 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs4.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports 5 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebs5.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports Max 1 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebsm1.m3u8
+#EXTINF:-1 group-title="🟩◆  beIN SPORTS 🖥" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyOjSNmGvHsSqb0bZRlvwpCjP_27zhV32BvpzprXe8Pg&s=10",BeIN Sports Max 2 ⭕
+#EXTVLCOPT:http-referrer=https://kralbozguncu.xyz/
+https://andro.evrenesoglu235.click/checklist/androstreamlivebsm2.m3u8
 #EXTINF:-1 tvg-id="bein sports 1.tr" tvg-name="bein sports 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/mirtispor1_final.png" group-title="🟩◆ SPORTS ⭕",bilgi
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-logo="https://i.imgur.com/OqdfQmw.png" group-title="🟩◆ SPORTS ⭕",S SPORTS 1 Mahsun ⭕
@@ -16397,6 +16402,274 @@ http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/506773.mkv
 http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/506774.mkv
 #EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w600_and_h900_bestv2/qYQd4iC8UWTtmRtjRGKqaDg7PMV.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Şaşkın Bakkal 216 S01 E03 ⭕
 http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/506775.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/xfzLy8Mkj1YjbqLLQxUD96U3Y4i.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E01 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505800.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/vC4nXRheOE5Dy73pcSCtdR1ze2F.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E02 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505801.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/scPRfuHRgMu4npavxZkVvHHMZou.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E03 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505802.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/2mULnnHCoPsf4kctScZmqMz3jPZ.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E04 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505803.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/9bJ5fH1ykOWxamkKT5DShpqBwEX.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E05 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505804.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/3wtKb4Fag3n3xvB7nx9r1203F4R.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E06 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505805.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/mhrM9EogTkFvRJqmTIbSTWtwdcZ.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E07 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505806.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/xDWI0bZwtDdp2gRh1wuRUFFQsaD.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E08 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505807.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/gT2utHROfRD2WDQHinkt5ER1UBc.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E09 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505808.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/szqthXRA8BmsB73A8H9BlUrdvhY.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E10 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505809.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/2IC61AOUjlSfU1gtL9ozYJYYVbp.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E11 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505810.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/zaZ8aLzxXOoUJCCwl2U2HGJpLYq.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E12 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505811.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/aH7iJYEelaem6ZAY5BwBpOiZgpx.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E13 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505812.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/dDxH4scxXnRWF1c5OiJzyc0NQjF.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E14 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505813.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/infzsQuaYMCkNYYqMeOmbEUu7vD.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E15 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505814.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/lMt3gK6rV2tLBTrBKR8WMiLIle.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E16 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505815.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/9ftNBlMvmCZWfLJLL29ZUxMOY2e.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E17 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505816.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/qqsYbqYNdmdfvGEAiBhQuM3vS6o.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E18 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505817.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/aH7iJYEelaem6ZAY5BwBpOiZgpx.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E19 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505818.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/itlzfEFv8qePR0gkxtkzPuI2y5D.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E20 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505819.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/ar9WkUr9ZOfNyVPwfOJ0RTXVrI9.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E21 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505820.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/k9QnixmcB0okxUbYDKbGSHnG88I.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E22 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505821.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/xx7Jm2dJr6yFGyPkevNAUqApIjV.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E23 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505822.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/eUxenegwqnCmlqpCbdO3Z4wXZYW.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E24 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505823.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/uuBBEr46gZ0NQ8LyARhWa0aKCwo.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E25 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505824.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/c5zSjK1xBXg1ZJbKz94MC37n9WW.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E26 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505825.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/sxCjwdKmdClYYhMCWcjGDp0dtpu.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E27 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505826.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/eYlmytlzEzFRo81cuMX0MDCQQCL.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E28 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505827.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/aeTUMFyGYJ0ZcNVBpyyK7MMTQ6r.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E29 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505828.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/lcu4mtd6q2VD1uzFJTNoo053ATt.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E30 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505829.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/dYfZJPgkyUPqvI6hiwvH3sNj019.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E31 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505830.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/fYEEKWMsNd0uDQCXvw91o04NdQR.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E32 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505831.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/8G1CSGAmAxxqDUdhB2fO8kEe7Gr.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E33 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505832.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/ujx9Q5lfg4mIevU0Cf7GDtD0zMN.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E34 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505833.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/vZzHLn9QK8QPnh2TWhQHiMqPCBc.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E35 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505834.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/1kBczkdnbW2VXu4QM6erkrNawJ8.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E36 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505835.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/jlqfhwSsrAuvsQfPvSCq0fagIrx.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E37 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505836.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/hPUj7uITrxJVk1Q53I0carSOVWn.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S01 E38 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505837.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/yeilZ52oI7o6ShuqSmY746HkqrY.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E01 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505838.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/s21owXiWhr8aeQGo7RKB2LE19W2.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E02 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505839.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/dYvrhKYILXqCdPkycEwAXf9KAEF.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E03 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505840.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/rn79QP3MqX2PwHUG3kQkr0S8GOi.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E04 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505841.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/p8Sim9b5bSUf8MzHMbuvtZ8Sons.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E05 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505842.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/gxyPOti3rv6BfWxfOc6D839iDIa.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E06 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505843.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/lDP3D1aWu21gg5ORKCTgHxELwu.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E07 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505844.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/UXcLJtuIkfeJUVRBrn0O4Bj8JF.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E08 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505845.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/xG5LTtOTX8bGzFGLuRwO6OLJazW.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E09 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505846.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/c8lgzXZSTdMcmfSdyBjheUtoZSt.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E10 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505847.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/gaGRENcvgRt11LdhMlcpqWdHdyB.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E11 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505848.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/t0QJXVFVZHhUzcAsJGa66a8hWes.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E12 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505849.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/mwtoJFf5Fsk6kcTBOcOdAVD13bO.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E13 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505850.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/pcSvMqUgzrv3WiUYiNB9iYxF0iV.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E14 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505851.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/pcSvMqUgzrv3WiUYiNB9iYxF0iV.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E15 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505852.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/iH6bqg6uMio4X1JaXgDX9SEKHJR.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E16 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505853.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/oTEAqRUO8PjnqW6AyhZVKNJqSCf.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E17 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505854.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/3v7esvbiu6xRk6EwX4AA6IOwbc.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E18 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505855.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/v3VwtPkrXKf7h9wV2rEfrnOPje9.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E19 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505856.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/dSJUet4DItzoYFbgg5gFGMQUzLK.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E20 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505857.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/jiqZdodT6UKY0lOeOrbnVpZx3W2.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E21 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505858.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/dFfcupRvmaH0NmDI0ls1wRfsEAz.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E22 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505859.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/rEXYHtyI05YyQSxozxBvisZCnpU.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E23 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505860.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/7CoHISpsHjfrKU4ium2FtZthSWJ.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E24 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505861.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/sP9E8tK7w030Ag7B1lAftEOTwmn.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E25 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505862.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/869GFaWJhsKgvuIbLOaA2e3pRvK.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E26 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505863.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/Apoy6mXAfDLGuhRkPJnYC512sCQ.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E27 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505864.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/6mrVLaFpUUjJUCRLQVVUFd9dUUK.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E28 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505865.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/n1ZjJF9I6jwZlmaB3Hf6oBnLq49.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E29 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505866.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/x00p810OUGrKWa1uBJou5K8XHSY.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E30 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505867.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/3WPa5I6jvbmAPsL8xkMtoC1S64V.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S02 E31 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505868.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/auB0QMAf5E8tdfBvgLSHbZXjydO.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E01 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505869.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/qFuFtEu9KAMiMgOz3kx2VXkblnY.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E02 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505870.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/8w145ToI2Clw9UwJ9jmq6oaoRLA.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E03 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505871.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/zlxNXVh2kqivUbfHKgHoNDWbs5Q.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E04 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505872.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/cQMoSzMRMU9QyD1tfa3iWeAOtbR.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E05 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505873.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/pAqss4hmwbNPShjqGpp2CuqZar7.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E06 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505874.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/vskplvGh2UaIq44AegkHWLL5dLm.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E07 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505875.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/7bKkkGOPkn9HHbs7gQV183MHB0n.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E08 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505876.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/uvOwCkL7xmHMaE2Rku8zR1Wq4RN.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E09 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505877.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/1E4vvSrdii6mgjAVPKTJngGsR9V.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E10 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505878.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/cEjXeaug3LBUoQFIWVLdbOhKLDD.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E11 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505879.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/hSg5uXyUZeHjYp6KOmkzx0CuIdU.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E12 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505880.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/2AmT061IEy0vz8zX3eGWOLROTLg.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E13 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505881.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/yvgPwbowDa4lbNsjd4RBMZS32aq.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E14 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505882.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/E7f8EYYRrryqQmeQACWI2hQ2N5.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E15 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505883.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/7hamN4vRvV6TFXA0caNtWOQIZB.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E16 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505884.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/dc7CBUnbsNAe3HQEzB2JbZ99ur2.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E17 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505885.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/9Mz9e0rCGM9MTv7wtzd0numIzev.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E18 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505886.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/9hczEipJKSv3YRZJcphuEPO67rF.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E19 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505887.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/3s7GKXNevr0VhDl07n6Ec3RX1hK.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E20 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505888.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/gb9GmKaQmXJ14ReYtitpQUtLoXc.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E21 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505889.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/fgf3fUiDjJSZ2HgAc2ZYQbBQCxq.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E22 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505890.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/cyOpobqiLTtE0Jhb6JWr7mg0TOh.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E23 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505891.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/or9LYYgtoyEaxfViWIpq5kcw38R.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E24 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505892.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/e2RxDifrKT1HMkY4d3eZXxXduJB.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E25 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505893.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/baPvfDTnpooBpHyYTjLwQTmK6Iz.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E26 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505894.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/ze4HXfHXKifc3kykfJF7s2xy08G.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S03 E27 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505895.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/pOuzhEH2DLPjEqBw2gbsI9oZde5.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S04 E01 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505896.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/illGbwp9PDFeRMpXYmGlPGxeS7N.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S04 E02 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505897.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/pK70z4VtM427DQiPzXVRqya4zeW.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S04 E03 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505898.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/8P9EuQAU8ox1737P2fLx8fr6zlA.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S04 E04 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505899.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/8P9EuQAU8ox1737P2fLx8fr6zlA.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S04 E05 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505900.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/qbuqJIc2NC4Jpai3s6pFP7hVHz8.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S04 E06 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505901.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/uEHDDaJZgrtZ9pPcHqhThE6Aijh.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S04 E07 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505902.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/t9LbubcMk7XvasWcAdgYMGJMd9N.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Behzat Ç.: Bir Ankara Polisiyesi S04 E08 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505903.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/ivSZMrht5AIdxNwOkcU1AY70Fmu.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S01 E01 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505984.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/vqRJNi4WtM9BtIgfVLFZ5OGZIQk.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S01 E02 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505985.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/enJLIdNdhm9MUMHxAXqo5NBG8Q2.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S01 E03 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505986.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/lXd8qepsDBMxNxUoh67C5ekBhHQ.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S01 E04 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505987.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/jiRbI5xgdPaVUNp1wTOLgixH7u2.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S01 E05 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505988.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/2lwzrkxZDm7Ux55dRVo6ipI3lhj.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S01 E06 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505989.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/4RWugbxIUyjki9YnWlp8vV5qDV8.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S01 E07 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505990.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/k9IoOT1gkw4wpVsvfXWpcJDoNax.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S01 E08 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505991.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/s7xv1zRlje7ndZn7WBRtjebI2W6.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S02 E01 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505992.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/1xrk6Z5oz4FDryOnRaTI8S3uc3F.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S02 E02 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505993.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/kMiN33evI8PVn7mq1nUClQuGT68.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S02 E03 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505994.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/vg1OJ14bia9cPAKSBdY8Z3PMST7.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S02 E04 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505995.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/uBa5o572EwKFtkkoeJ6RXU7MjgZ.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S02 E05 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505996.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/iZQIv9pyrgAejxwzPO0aDsqcWDa.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S02 E06 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505997.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/nMFK37iqwM1LwBzabWn5LF9lNh8.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S02 E07 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505998.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/rXiUsKYlQkBaias6LR2UD81DW3S.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S03 E01 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/505999.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/s3zhyHyEEfkGZYrxhYrDatttnOK.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S03 E02 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/506000.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/6Q1NpaS7KDkZiI1y5oEG6oUUpF.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S03 E03 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/506001.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/sNAX7IOo0dryf93nYa77KVvbRQS.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S03 E04 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/506002.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/vqZYRzZoHZs2OMaD5qs7oEoUu6S.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S03 E05 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/506003.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/38mUIXR4YxMnX4rGQ7i0kCm7tH2.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S03 E06 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/506004.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/zRhDcSrP65lU7dlTeTzixdoV8eZ.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S03 E07 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/506005.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/ic6pVY89CSdk7Yxd9CkuVGNnvoH.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S04 E01 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/526512.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/ic6pVY89CSdk7Yxd9CkuVGNnvoH.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S04 E02 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/526513.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/ic6pVY89CSdk7Yxd9CkuVGNnvoH.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S04 E03 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/526514.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/dXpx921W8qMMb99v23qkRJqqTwc.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S04 E04 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/526515.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/jBxUaHsIiJrc54hzK6zP799QUOK.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S04 E05 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/526516.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/L0TM89VkCsiN5euQnhFE2CvGUT.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S04 E06 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/526517.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/p0ez5lS6942SLhy5NKGqa5STHvz.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S04 E07 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/526518.mkv
+#EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/27mNZKggXZ0UxsnGGmwLEvjx0z7.jpg" tvg-language="" group-title="🟪◆ DİZİ - NETFLİX  ⭕",Çekiç ve Gül: Bir Behzat Ç. Hikayesi S04 E08 ⭕
+http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/526519.mkv
 #EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/dHOzqcePDFBBjtNPCS7H06JV934.jpg" tvg-language="" group-title="🟪◆ DİZİ - TABİİ  ⭕",Adalett S01 E01 ⭕
 http://ruzgarplayer.site:8080/series/KH6Rn39q4WpL/bnzSVts6Lner/518281.mkv
 #EXTINF:-1 tvg-id="" tvg-logo="http://image.tmdb.org/t/p/w300/b8KSth9llThVh6s4sPeec8xXSkY.jpg" tvg-language="" group-title="🟪◆ DİZİ - TABİİ  ⭕",Adalett S01 E02 ⭕
@@ -20303,3 +20576,19 @@ https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6a
 https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6af6135842746daf396f26ef&SecretKey=NtvApiSecret2014*&.m3u8
 #EXTINF:-1 tvg-logo="" group-title="🟪◆ DİZİ - STAR  📺⭕",Sevdiğim Sensin 25. Bölüm ⭕
 https://dygvideo.dygdigital.com/api/redirect?PublisherId=1&ReferenceId=StarTV_6afe91a2d048d568da67701d&SecretKey=NtvApiSecret2014*&.m3u8
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://turkcealtyazi.org/film/200/1130884.jpg" group-title="🟪◆ FILM - IMDb Top Rated ⭕" tvg-type="movie",(🌟8.2)Zindan Adası :Shutter Island(Gizem-Gerilim)(2010) ⭕
+https://ha.vixolity.com/vs/tt1130884/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BYmNhYzg4MjEtYjI3Yy00ZDNiLWIwNjUtMzFlODQ0ZmZmZmUxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" group-title="🟪◆ FILM - 2025 ⭕" tvg-type="movie",Islands (2025)Gerilim-Dram-Suç--Sam Riley-Stacy Martin-Jack Farthing ⭕
+https://ha.vixolity.com/vs/tt27796126/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BYWJkY2I3NWQtYWZiMC00MjFjLWIyOGItMjZlNWJkYmRiODdkXkEyXkFqcGc@._V1_.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",İçerde ⭕
+https://ha.vixolity.com/vs/tt14781036/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://turkcealtyazi.org/film/200/9224104.jpg" group-title="🟪◆ FILM - 2023 2024 ⭕" tvg-type="movie",Meg 2: Çukur ⭕
+https://ha.vixolity.com/vs/tt9224104/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://turkcealtyazi.org/film/200/8688634.jpg" group-title="🟪◆ FILM - 2019 2020 ⭕" tvg-type="movie",21 Köprü ⭕
+https://ha.vixolity.com/vs/tt8688634/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://turkcealtyazi.org/film/200/3731562.jpg" group-title="🟪◆ FILM - 2017 2018 ⭕" tvg-type="movie",Kong Kafatası Adası-Kong Skull Island ⭕
+https://ha.vixolity.com/vs/tt3731562/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://turkcealtyazi.org/film/200/3682448.jpg" group-title="🟪◆ FILM - 2015 2016 ⭕" tvg-type="movie",Casuslar Köprüsü ⭕
+https://ha.vixolity.com/vs/tt3682448/
+#EXTINF:0 tvg-country="TR/Yabancı Dil" tvg-language="TR/EN" type="video" tvg-logo="https://m.media-amazon.com/images/M/MV5BMjc4Nzk5MDY0OV5BMl5BanBnXkFtZTgwODQ3MjQ0NjE@._V1_FMjpg_UX1000_.jpg" group-title="🟪◆ FILM - 2013 2014 ⭕" tvg-type="movie",Kaptan Köprüye 2014 ⭕
+https://ha.vixolity.com/vs/tt2880448/
