@@ -5,7 +5,8 @@
 # Eskiyi silme, icine ekle
 import re, os, shutil, urllib.request
 
-HEDEF_DOSYA = os.environ.get("HEDEF_DOSYA", "mirti.m3u")
+
+HEDEF_DOSYA = "mirti.m3u"
 DIZI_YAML = "aktardizi.yaml"
 USER_AGENT = "Mozilla/5.0"
 TIMEOUT = 30
