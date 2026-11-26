@@ -9,8 +9,10 @@
 #EXTINF:-1 tvg-name="TRT 1 " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 # MIRTI68_ATV_AUTO
-#EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
-https://trkvz-live.ercdn.net/atvhd/atvhd.m3u8?st=0LJPI1up1qxm5Y8R4gkZEw&e=1795757407
+#EXTINF:-1 tvg-name="ATV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
+#EXTVLCOPT:http-referer=https://www.atv.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0 Safari/537.36
+https://trkvz-live.ercdn.net/atvhd/atvhd.m3u8?st=Zrgl_DFtO_xDgjIjFodqcQ&e=1795757707
 # MIRTI68_SHOWTV_AUTO
 #EXTINF:-1 tvg-name="SHOW TV ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",SHOW TV ⭕
 https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=8ac5cfbfcb0a311a83ea74f490533a10&dfp_paln=AQzzBGQESws_DLQkEzvI9ByC29QTIDmA9hT4FoDOZ985wY6ha6cMvcQXgarfLSpxq7dN2cVVZEs7cyQYLnLNHf3XvJ-s1TmPZLvERvVXNG4Ilhvq_YG9OBgIfFaa9mkPnQf0PFEnHJF7TGQyM9KugG5P75bjRU2t1fqqj7_jM0vT3cllFtfrViz_qrVsQcL6lL00HOZiGyZ7ZSb3hnQFOGyxTi06qSDa_42fsxnuxPDdFx8hJ6oiyxOxTbRyaynMn4TRZdbTZjg0a8ib_WieDOG5LJnX32KfQ7aR1mdob0YLD8Z4VgfC3npaS0yRbPnC1imtRNw1Xlb_Hi22-xG1RQwr5rKdTk4aEDgtv5JQ291tEqxmuYLMEyAbjzuxhe9H108Bn2c7dTBFwFSMBts5sSL-Huyccj37QQe6RHnslqRjSDVNZT4ZkvptNKFEaR-hywpBJuNHt50_cnj--_iwINKms_A5vZygLdjW9WyvnFTUt86Vic6h_YP0ca4y3Zk3jEHkGwu850UTu-_wrp65_NAjBwtuaQ76wjG73mYV-reZnRZKTA1rYie3evYPMPxO_EOc1-oUb-q4xxpmFgjqCWco1kl9or7fvyhwo1kM8dny-XXaTBwWPAx2I8uD_EKV7pMdZEpeTbtxyXjc0c4cfWuU9EI8MQTS0fhioNzvMWpdu5rhlM8yzyHxp-u5MoRawKbjOC_lv_Pu6VDJcfotLE9DyzhCcUfcd4QAiFSteUZpuWGfzag3hYJyllbZxDQrNZnoFdkAYZ5BcDvmI2AyBy13z56ME8OntQcrgbyAQhgdju8o5O8cDNCRYD3FM-JVo8H1rGfM4sizhGaHIa6wMgzDufw5dHibM40LuDlrEX3jGu0RTevARaeKe0KK0Hrn0N1_uZFWM2bqKDs1UHcIyGBroZzt23_pSpV7yiOPvYToy2RatIdUx6wfAI89_RANXGXvBiMDKZJ-5MYUvE296_rDc33UjIEUzUIGx1gWsPUoB1MKGDTg5-malcbTG8ZzmJk-KO_I2rxxN9XMG6rS4VGT2_LsHfXTrdw09ruXjJt1unt-9pjY_hP16a24A6iasPgo9l_2HKM7NfNWlSZWivOBCT5Hp1waLNdYe76Cofnt3k8uyQAavIu5pRDSF0KgXdDoOnk3oE5bf_klTt8yu07iBvcgVEiNznrNBunrY71k7aHDXsRLoXw0YAVAMyu5Tb9xNP044POWPWaSRl_wuIyuMKHqV2xfU3T5dlUkXw236TqnTDSSINcNxsGbwD7Anm9XoFpHD2BAuw..
@@ -38,7 +40,6 @@ https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 https://trt.daioncdn.net/trt-1/master_1440p.m3u8?&sid=8aa3uppo48h8&app=ed3904e8-737b-4a5e-856a-1b0d7a0a94e2&ce=2
 #EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL",TRT 1
 https://tv-trt1.medya.trt.com.tr/master.m3u8
-#EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="atv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV
 #EXTVLCOPT:http-referrer=https://www.atv.com.tr/
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_720p.m3u8
 #EXTINF:-1 tvg-id="Show TV" tvg-name="Show TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSAL",SHOW
@@ -135,10 +136,6 @@ https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_1080p.m3u8
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196697&extension=ts&play_token=S05dySmbjf
 #EXTINF:-1 tvg-name="show TV.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSAL",SHOW
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196681&extension=ts&play_token=D1bWjTr6uO
-#EXTINF:-1 tvg-name="atv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
-https://trkvz-live.ercdn.net/atvhd/atvhd.m3u8?st=0LJPI1up1qxm5Y8R4gkZEw&e=1795757407
-#EXTINF:-1 tvg-name="atv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.jpg" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
-https://trkvz-live.ercdn.net/atvhd/atvhd.m3u8?st=0LJPI1up1qxm5Y8R4gkZEw&e=1795757407
 #EXTINF:-1 tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL",TRT 1
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196683&extension=ts&play_token=YUIm1DgYqE
 #EXTINF:-1 tvg-id="trt1.tr" tvg-name="TRT 1 HD" tvg-logo="https://i.ibb.co/jPM5WHsv/42.png" group-title="🟨◆ ULUSALᴴᴰ",TRT 1 HD
@@ -235,8 +232,6 @@ http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475434
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475435
 #EXTINF:-1 tvg-name="trt1.tr" tvg-logo="https://docdog.top/logo/countries/turkey/trt-1-tr.png" group-title="🟨◆ ULUSALᵁᴴᴰ",TRT
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141239
-#EXTINF:-1 tvg-name="atv.tr" tvg-logo="https://docdog.top/logo/countries/turkey/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
-https://trkvz-live.ercdn.net/atvhd/atvhd.m3u8?st=0LJPI1up1qxm5Y8R4gkZEw&e=1795757407
 #EXTINF:-1 tvg-name="show TV.tr" tvg-logo="https://docdog.top/logo/countries/turkey/show-turk-tr.png" group-title="🟨◆ ULUSALᵁᴴᴰ",SHOW
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141176
 #EXTINF:-1 tvg-name="kanal d.tr" tvg-logo="https://docdog.top/logo/countries/turkey/kanal-d-tr.png" group-title="🟨◆ ULUSALᵁᴴᴰ",KANAL D
