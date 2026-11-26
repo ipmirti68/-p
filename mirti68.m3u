@@ -28,6 +28,8 @@ https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&c
 # MIRTI68_TV2_AUTO
 #EXTINF:-1 tvg-name="TV 2 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv2.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",TV 2 ⭕
 https://demiroren.daioncdn.net/teve2/teve2.m3u8?ce=3&app=6aab838a-437e-4a1b-bbd0-e30f79cdbbbd&ppid=096603af8003d1fd290daf5e9dd76577&dfp_paln=AQzzBGQEgImJXlkf6Weuun6JqFbSe0Ujlu0MA8-7X8Gpjky3FJI-Y1RyzWX9VEhFsAmvEeEUDYjrq3jX6dYPf3-9Nh6Opc4HyVmNaWJNqAtQd4TynamlakM9vZrhJP6sMHnh9CQl8CxfTu5c2g-nxWwl59cc6w3PSrFyxRdlSTU5Kr9OVmiGKznZYl82B2-zLkb2HaOX48XgixTZHgGLP7whbF9DInA0oj7RlCmmg7x7z5B8teBm8kLlcF8qnHrCBuJbNuT5EB_xgQOg_HarRBIDC2FsQelmHKkS0GPKslIXRDIPzopPbdVW-TVkrsZFu7kkVK2bQnS-9W_GfPEt_4Qs262ijR8lgrPKcMXzOEbr3sl7LFpteAenOPnuoRXe_G8nCWESDshsuQF6vYf0A1mms7SU6NDOdL9hZA73a_AG74qEeIYJM7_hqUTilWzL1ldANBCDFvlPSVQ-pKY4iIQfw6KJZAFIBK3RD42PT6_2AXRO2trxrRxTbAubCqDT125kygx-FPYWSoUSfuXmS_BqFT3uN8l4afDTcVwYKE0Up9aRIF7ahtu46rf2hHOhvmQM-u0EnvIJH3eMRGu3zJlc6ydiLWspkkSk6t_WbWbKnoh66uo6Eltl6vdvitU3vgmFzySZZ68uUkkl8XoeaFowcG7AY9VL-fhShiNxk1MKRSukSeRsqzHSao_omVMq5U84Jf04-IAaIAgdyQmD_mrbhtJgzu0e1tZheA7gvSL3AUb3A9qo4kEVi_avia0wJduuVaXUwPPxTnlP-q-y3zTN29vXghdTVIamcL0vt_zxkxTOaGIjVMUdDN2YSx8jFFtvB4QsyZvZbOBYZFJRXrmZ540IMHPNGW8kH_4b-d3iVjHYP1pt3mN7hnCwU6NjSXJrYQX9uIskJojGrOzVmZkHC45EWYi0MLY7bFAWlbYEAfqvVf0LrbNtk7z-ffsLAuzA0oGbYD_QKMyALKgiA572NkuEPj6MRyVuBKveWVsqxCHoT8tAie_23Yq1FDkmIfZRoxcl3Ys2ajRbQwPdXK6S-4ALs87KQm1ugimwEgFN1B8mahdO67N652XwhlKth6BKhkBTNCu2NFoqTfWntpMxE7oLQg2Jra0ZTsd5jFcb-vTmBfHgUCJpS-iDAHeXRRb3f8DbY0TUfyyce-vwp7qBDAoVbh0KZYejvNRWomxIjByvehC-KHMz9ny5mt_nWM8vXAJnEkzck39Aa666mcM8ah8FFZBOsHMP_2fo5PowOrUq8Bv6n9C-M6r8qKxCNxyT27sTWh_q56RFUwsEFgC_-p38U1y3-qUOVESq95Qt0naNV1DgYeOcEno8XiQRIOV8f1rLC9FlQMxVm2n3zESafXslxY_BEsvHcYew_n8BYgLeExB3Z7Vxcw_70eHQ0IgML6E_OF-sURbdvnYWC_nfqTzLpC05jdKOBPFM1Ce08Hce3ZbjK3WRZFzYEgDP8GnmLACw
+#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATVᴴᴰ.  ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATVᴴᴰ.  ⭕
+https://trkvz-live.ercdn.net/atvhd/atvhd_1080p.m3u8?st=MSTx38ts9zwlvSwN92d_ug&e=1795765351
 #EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://www.freepnglogos.com/uploads/turk-bayragi-png/turk-bayragi-hareketli-bayrak-gif-turkey-wavy-flag-png-27.png" group-title="🟨◆  ULUSAL",İNFO
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="TRT1.HD.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL",TRT1
@@ -141,10 +143,6 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196683&exte
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475358
 #EXTINF:-1 tvg-id="trt1.tr" tvg-name="TRT 1 FHD" tvg-logo="https://i.ibb.co/G4BSQ2yx/4.png" group-title="🟨◆ ULUSALᴴᴰ",TRT 1 FHD
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475359
-#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV HD" tvg-logo="https://i.ibb.co/0j51Lhgc/45.png" group-title="🟨◆ ULUSALᴴᴰ",ATV HD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475360
-#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV FHD" tvg-logo="https://i.ibb.co/3mGNDCh4/10.png" group-title="🟨◆ ULUSALᴴᴰ",ATV FHD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475361
 #EXTINF:-1 tvg-id="kanald.tr" tvg-name="Kanal D HD" tvg-logo="https://i.ibb.co/jPzDwCKk/48.png" group-title="🟨◆ ULUSALᴴᴰ",Kanal D HD
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475362
 #EXTINF:-1 tvg-id="kanald.tr" tvg-name="Kanal D FHD" tvg-logo="https://i.ibb.co/q3f9pRYh/16.png" group-title="🟨◆ ULUSALᴴᴰ",Kanal D FHD
@@ -303,8 +301,6 @@ https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8laoxi44qj2k&app=a20ac41
 https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3
 #EXTINF:0 tvg-id="SHOW.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/show-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",SHOW TV ⭕
 https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_720p.m3u8
-#EXTINF:0 tvg-id="ATV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/atv-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",ATV ⭕
-https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
 #EXTINF:0 tvg-id="NOW.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/now-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",NOW ⭕
 https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
 #EXTINF:0 tvg-id="KANAL.7.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/kanal-7-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",Kanal 7 ⭕
