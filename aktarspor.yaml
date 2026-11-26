@@ -1,0 +1,78 @@
+# ANA AKTARIM - 1 url, 5 hedef
+# Her hedef: aranacak kanal adlari -> farkli grup -> kendi logosu yoksa hedef logosu
+# Ayni url varsa ekleme, guncelle. EPG korunur.
+aktarimlar:
+    - kaynak_url: "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts"
+    epg_koru: true
+    sadece_listedekiler: true
+    hedefler:
+            - hedef_adi: "hedef_1"
+        aranacak: ["AMAZON PRIME"]
+        hedef_grup: "🟪◆ DİZİ - AMAZON ⭕"
+        hedef_logo: ""
+            - hedef_adi: "hedef_2"
+        aranacak: ["DISNEY+"]
+        hedef_grup: "🟪◆ DİZİ - DISNEY ⭕"
+        hedef_logo: ""
+            - hedef_adi: "hedef_3"
+        aranacak: ["TOD"]
+        hedef_grup: "🟪◆ DİZİ - TOD ⭕"
+        hedef_logo: ""
+            - hedef_adi: "hedef_4"
+        aranacak: []
+        hedef_grup: ""
+        hedef_logo: ""
+            - hedef_adi: "hedef_5"
+        aranacak: []
+        hedef_grup: ""
+        hedef_logo: ""
+
+    - kaynak_url: "https://raw.githubusercontent.com/k33n26/iptv/refs/heads/master/Bizimkiler.m3u"
+    epg_koru: true
+    sadece_listedekiler: true
+    hedefler:
+            - hedef_adi: "hedef_1"
+        aranacak: ["BİZİMKİLER"]
+        hedef_grup: "🟪◆ DİZİ - BİZİMKİLER ⭕"
+        hedef_logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOdXZq_Nhr9o2T0jCuAVUFTe0RSywkjW0Anq8sCZjM9A&s=10"
+            - hedef_adi: "hedef_2"
+        aranacak: []
+        hedef_grup: ""
+        hedef_logo: ""
+            - hedef_adi: "hedef_3"
+        aranacak: []
+        hedef_grup: ""
+        hedef_logo: ""
+            - hedef_adi: "hedef_4"
+        aranacak: []
+        hedef_grup: ""
+        hedef_logo: ""
+            - hedef_adi: "hedef_5"
+        aranacak: []
+        hedef_grup: ""
+        hedef_logo: ""
+
+    - kaynak_url: "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u"
+    epg_koru: true
+    sadece_listedekiler: true
+    hedefler:
+            - hedef_adi: "hedef_1"
+        aranacak: ["TOOD"]
+        hedef_grup: "🟪◆ DİZİ - TOOD ⭕"
+        hedef_logo: ""
+            - hedef_adi: "hedef_2"
+        aranacak: ["YERLİ DİJİTAL"]
+        hedef_grup: "🟪◆ DİZİ - YERLİ DİJİTAL ⭕"
+        hedef_logo: ""
+            - hedef_adi: "hedef_3"
+        aranacak: ["TABII"]
+        hedef_grup: "🟪◆ DİZİ - TABII ⭕"
+        hedef_logo: ""
+            - hedef_adi: "hedef_4"
+        aranacak: []
+        hedef_grup: ""
+        hedef_logo: ""
+            - hedef_adi: "hedef_5"
+        aranacak: []
+        hedef_grup: ""
+        hedef_logo: ""
