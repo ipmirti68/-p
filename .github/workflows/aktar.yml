@@ -1,6 +1,8 @@
 name: MIRTI68 - Tek Aktar
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *'
 permissions:
   contents: write
 jobs:
@@ -12,10 +14,14 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests pyyaml
-      - run: python aktardizi.py
-      - run: |
+      - name: Dizi aktar
+        run: python aktardizi.py
+      - name: Film aktar
+        run: python aktarfilim.py
+      - name: Kaydet
+        run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "mirti68@bot.local"
-          git add mirti.m3u aktardizi.yaml aktardizi.py
-          git commit -m "Dizi guncelleme" || echo "Degisiklik yok"
+          git add mirti.m3u aktardizi.yaml aktardizi.py aktarfilm.yaml aktarfilim.yaml aktarfilim.py film.tmp.m3u
+          git commit -m "Dizi + Film guncelleme" || echo "Degisiklik yok"
           git push
