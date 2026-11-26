@@ -8,6 +8,7 @@ Tivimate ve Televizo icin tek MIRTI_TV.m3u olusturur.
 from pathlib import Path
 import re
 import sys
+import unicodedata
 
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / "MIRTI_TV.m3u"
@@ -70,13 +71,17 @@ def clean_group(value):
     value = re.sub(r"\s+", " ", value)
     return value
 
+def fold_text(value):
+    value = unicodedata.normalize("NFKD", value or "")
+    return "".join(ch for ch in value if not unicodedata.combining(ch)).casefold()
+
 def categorized_group(record):
     for i, line in enumerate(record):
         if not line.startswith("#EXTINF:"):
             continue
         match = re.search(r'group-title="([^"]*)"', line, re.I)
         group = match.group(1).strip() if match else ""
-        low = group.casefold()
+        low = fold_text(group)
         clean = clean_group(group)
 
         is_movie = any(word in low for word in ("film", "f\u0131lm", "filim", "sinema", "movie", "cinema"))
