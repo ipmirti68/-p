@@ -24,7 +24,7 @@ def normalize(s):
 def norm_sinema(s):
     return re.sub(r'[^a-z0-9çğıöşü]+','',(s or "").lower())
 
-SINEMA_WANTED_RAW = [" 【entity-IMDb¦canonical_name=IMDb】 Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"]
+SINEMA_WANTED_RAW = ["【entity-IMDb¦canonical_name=IMDb】 Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"]
 SINEMA_WANTED = {norm_sinema(x): x for x in SINEMA_WANTED_RAW}
 SINEMA_EXCLUDED = ["【entity-adam sandler¦canonical_name=adam sandler】","clint eastwood","【entity-sylvester stallone¦canonical_name=sylvester stallone】","【entity-jackie chan¦canonical_name=jackie chan】","nicolas cage","【entity-steven seagal¦canonical_name=steven seagal】","【entity-jason statham¦canonical_name=jason statham】","seri","dizi","series","sezon","season","episode","bölüm","bolum","s01e","s02e","s03e"]
 def sinema_excluded(text):
@@ -132,8 +132,6 @@ def film_bilgisi_internet(baslik, yil_hint=""):
     return sonuc
 
 def yaml_oku_guvenli(path):
-    # DÜZELTİLDİ: YAML'a hiç güvenme, satır satır oku, girinti önemli değil
-    # Her blok: - kaynak_url / kaynak_grup / hedef_grup
     def temiz(v):
         v = v.strip()
         if len(v) >= 2 and ((v[0] == "'" and v[-1] == "'") or (v[0] == '"' and v[-1] == '"')):
@@ -187,6 +185,7 @@ def main():
     for r in hedef_records: lines.extend(r)
     film_lines = ["#EXTM3U"]
     bilgi_alinan = 0
+    eklenen_toplam = 0
     for sira, f in enumerate(filmler, 1):
         if not isinstance(f, dict): continue
         kurl = str(f.get("kaynak_url","") or "").strip()
@@ -198,10 +197,17 @@ def main():
         print(f"[FILM {sira}] {kurl[:60]} - bilgi_al: {bilgi_al}")
         try: _, kaynak = oku_m3u(kurl)
         except Exception as e: print(f"  [ATLANDI] {e}"); continue
+        # DEBUG: Kaynakta hangi gruplar var
+        _gruplar = {}
+        for _r in kaynak:
+            _g = grup_bul(_r)
+            _gruplar[_g] = _gruplar.get(_g, 0) + 1
+        print(f"  [KAYNAK] Toplam: {len(kaynak)}, Gruplar: {list(_gruplar.items())[:20]}")
         kg = str(f.get("kaynak_grup","") or "").strip()
         kgs = f.get("kaynak_gruplar", []) or []
         if isinstance(kgs, str): kgs = [kgs]
         sinema_modu = bool(f.get("sinema_modu", False))
+        eklenen_blok = 0
         for r in kaynak:
             ad = kanal_adi(r); u = kanal_url(r)
             if not u: continue
@@ -212,8 +218,10 @@ def main():
                 _n = norm_sinema(g) if sinema_modu else normalize(g)
                 if _n not in kgs_n: continue
             elif kg:
-                if normalize(g) != normalize(kg): continue
-            if sinema_modu and (sinema_excluded(g) or sinema_excluded(ad)): continue
+                # DUZELTILDI: Tam esitlik degil, icinde geciyor mu bak
+                if normalize(kg) not in normalize(g) and normalize(g) not in normalize(kg): continue
+            # DUZELTILDI: Sadece grup adina bak, film adindaki 'seri' filmi silmesin
+            if sinema_modu and sinema_excluded(g): continue
             eslesen = None
             for h in hedefler:
                 if not isinstance(h, dict): continue
@@ -272,13 +280,14 @@ def main():
                 for i,l in enumerate(yeni):
                     if l.strip().startswith(("http://","https://")): yeni[i]=sinema_fix_url(l.strip())
             lines.extend(yeni); film_lines.extend(yeni); gorulen.add(u.strip())
-        print(f"  [OK] {sira}. blok bitti, internetten bilgi alinan: {bilgi_alinan}")
+            eklenen_blok += 1; eklenen_toplam += 1
+        print(f"  [OK] {sira}. blok bitti, bu blokta eklenen: {eklenen_blok}, internetten bilgi alinan: {bilgi_alinan}")
     with open(TMP_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(film_lines)+"\n")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
     except Exception: pass
     if not lines or not lines[0].strip().startswith("#EXTM3U"): lines.insert(0, "#EXTM3U")
     with open(HEDEF_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(lines)+"\n")
-    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA}")
+    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA} - Toplam eklenen film: {eklenen_toplam}")
 
 if __name__ == "__main__":
     main()
