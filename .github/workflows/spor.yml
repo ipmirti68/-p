@@ -46,7 +46,7 @@ jobs:
       - name: 2 - ATOM
         continue-on-error: true
         timeout-minutes: 10
-        run: python allspor.py || echo "atom1 failed"
+        run: python atv1.py || echo "atom1 failed"
      
  
       
