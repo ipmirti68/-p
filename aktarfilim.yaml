@@ -1,80 +1,113 @@
 filmler:
     - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: 'YERLI FILM'
-    hedef_grup: 'FILMLER / YERLİ FİLM'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
-
+    kaynak_grup: 'YERLI FILM'
+    kaynak_gruplar: []
+    sinema_modu: true
+    grup_onek: false
+    epg_koru: true
+    sadece_listedekiler: true
+    film_bilgi_al: true
+    hedefler:
+            - hedef_adi: 'hedef_1'
+        aranacak: ''
+        hedef_grup: 'FILMLER / YERLİ FİLM'
+        hedef_logo: ''
+        ek_kod: ''
     - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: 'KEMAL SUNAL'
-    hedef_grup: 'FILMLER / KEMAL SUNAL'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
-
+    kaynak_grup: 'KEMAL SUNAL'
+    kaynak_gruplar: []
+    sinema_modu: true
+    grup_onek: false
+    epg_koru: true
+    sadece_listedekiler: true
+    film_bilgi_al: true
+    hedefler:
+            - hedef_adi: 'hedef_1'
+        aranacak: ''
+        hedef_grup: 'FILMLER / KEMAL SUNAL'
+        hedef_logo: ''
+        ek_kod: ''
     - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: 'KORKU'
-    hedef_grup: 'FILMLER / KORKU'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
-
+    kaynak_grup: 'KORKU'
+    kaynak_gruplar: []
+    sinema_modu: true
+    grup_onek: false
+    epg_koru: true
+    sadece_listedekiler: true
+    film_bilgi_al: true
+    hedefler:
+            - hedef_adi: 'hedef_1'
+        aranacak: ''
+        hedef_grup: 'FILMLER / KORKU'
+        hedef_logo: ''
+        ek_kod: ''
     - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: 'WESTERN'
-    hedef_grup: 'FILMLER / WESTERN'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
-
+    kaynak_grup: 'WESTERN'
+    kaynak_gruplar: []
+    sinema_modu: true
+    grup_onek: false
+    epg_koru: true
+    sadece_listedekiler: true
+    film_bilgi_al: true
+    hedefler:
+            - hedef_adi: 'hedef_1'
+        aranacak: ''
+        hedef_grup: 'FILMLER / WESTERN'
+        hedef_logo: ''
+        ek_kod: ''
     - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: 'MDb Top Rated'
-    hedef_grup: 'FILMLER / IMDB TOP'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
-
+    kaynak_grup: ' IMDb Top Rated'
+    kaynak_gruplar: []
+    sinema_modu: true
+    grup_onek: false
+    epg_koru: true
+    sadece_listedekiler: true
+    film_bilgi_al: true
+    hedefler:
+            - hedef_adi: 'hedef_1'
+        aranacak: ''
+        hedef_grup: 'FILMLER / IMDB TOP'
+        hedef_logo: ''
+        ek_kod: ''
     - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: 'YeniEklenenler'
-    hedef_grup: 'FILMLER / YENİ EKLENENLER'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
-
+    kaynak_grup: 'YeniEklenenler'
+    kaynak_gruplar: []
+    sinema_modu: true
+    grup_onek: false
+    epg_koru: true
+    sadece_listedekiler: true
+    film_bilgi_al: true
+    hedefler:
+            - hedef_adi: 'hedef_1'
+        aranacak: ''
+        hedef_grup: 'FILMLER / YENİ EKLENENLER'
+        hedef_logo: ''
+        ek_kod: ''
     - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: '2026'
-    hedef_grup: 'FILMLER / 2026'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
-
+    kaynak_grup: '2026'
+    kaynak_gruplar: []
+    sinema_modu: true
+    grup_onek: false
+    epg_koru: true
+    sadece_listedekiler: true
+    film_bilgi_al: true
+    hedefler:
+            - hedef_adi: 'hedef_1'
+        aranacak: ''
+        hedef_grup: 'FILMLER / 2026'
+        hedef_logo: ''
+        ek_kod: ''
     - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: '2025'
-    hedef_grup: 'FILMLER / 2025'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
-
-    - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: '2023 2024'
-    hedef_grup: 'FILMLER / 2023-2024'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
-
-    - kaynak_url: 'https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u'
-    filtre_grup_icerir: '2021 2022'
-    hedef_grup: 'FILMLER / 2021-2022'
-    hedef_logo: ''
-    filtre_ad_icerir: ''
-    filtre_grup_haric: ''
-    filtre_ad_haric: ''
+    kaynak_grup: '2025'
+    kaynak_gruplar: []
+    sinema_modu: true
+    grup_onek: false
+    epg_koru: true
+    sadece_listedekiler: true
+    film_bilgi_al: true
+    hedefler:
+            - hedef_adi: 'hedef_1'
+        aranacak: ''
+        hedef_grup: 'FILMLER / 2025'
+        hedef_logo: ''
+        ek_kod: ''
