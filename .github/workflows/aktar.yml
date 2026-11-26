@@ -32,6 +32,6 @@ jobs:
           git fetch origin main
           git rebase origin/main || (git rebase --abort; git reset --hard origin/main)
           git stash pop || true
-          git add mirti.m3u aktardizi.yaml aktardizi.py aktarfilim.yaml aktarfilim.py film.tmp.m3u
+          git add MIRTI_TV.m3u aktardizi.yaml aktardizi.py aktarfilim.yaml aktarfilim.py film.tmp.m3u
           git commit -m "Dizi + Film guncelleme" || echo "Degisiklik yok"
           git push || (git pull --rebase && git push)
