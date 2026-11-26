@@ -5,11 +5,16 @@ on:
     - cron: '0 */2 * * *'
 permissions:
   contents: write
+concurrency:
+  group: mirti68-aktar
+  cancel-in-progress: true
 jobs:
   aktar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -22,7 +27,8 @@ jobs:
         run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "mirti68@bot.local"
-          git pull --rebase || git pull
+          git fetch origin main
+          git rebase origin/main || (git rebase --abort; git stash; git rebase origin/main; git stash pop || true)
           git add mirti.m3u aktardizi.yaml aktardizi.py aktarfilim.yaml aktarfilim.py film.tmp.m3u
           git commit -m "Dizi + Film guncelleme" || echo "Degisiklik yok"
-          git push
+          git push || (git pull --rebase && git push)
