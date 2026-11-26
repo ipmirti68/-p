@@ -38,7 +38,7 @@ TOKEN_API = (
 M3U_DOSYA = "mirti68.m3u"
 
 GRUP = "🟨◆  ULUSALᴴᴰ ⭕"
-KANAL_ADI = "ATVᴴᴰ⭕"
+KANAL_ADI = "ATVᴴᴰ ⭕"
 TVG_ID = "atv.tr"
 
 LOGO = (
