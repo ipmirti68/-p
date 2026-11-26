@@ -1,145 +1,106 @@
-# atv1.py - MIRTI68 - Senin bookmarklet mantigiyla calisir
-# Mantik: performance + innerHTML + video tagi tara -> DAION 1080p sec -> listeyi bozmadan guncelle
-import asyncio, re, requests, os
-from playwright.async_api import async_playwright
+# MIRTI68 - ATV Canli Token Tazeleme
+# OUTPUT: mirti68.m3u
+# GROUP: 🟨◆  ULUSALᴴᴰ ⭕
+import requests, time, re, os, shutil
 
-URL = "https://www.atv.com.tr/canli-yayin"
-OUTPUT = "mirti68.m3u"
+OUTPUT_FILE = "mirti68.m3u"
+GROUP = "🟨◆  ULUSALᴴᴰ ⭕"
+SITE_ID = "0fe2a405-8afa-4238-b429-e5f96aec3a5c"
+LIVE_ID = "00000000-0000-0000-0000-000000000000"
 
-# === SENIN BOOKMARKLET'ININ AYNISI, AMA ATV'YE OZEL - PLAYWRIGHT ICINDE CALISIR ===
-BOOKMARKLET_JS = r"""
-() => {
-  let u = new Set();
-  // 1) performance - networkte akan m3u8'ler
-  try { performance.getEntriesByType('resource').forEach(r => {
-    if (r.name.includes('.m3u8') || r.name.includes('.mpd')) u.add(r.name);
-  }); } catch(e) {}
-  // 2) sayfa kaynagi - BODY'ye gomulu linkler
-  let h = document.documentElement.innerHTML;
-  let re = /https?:\/\/[^"'\s]+\.m3u8[^"'\s]*/gi;
-  let m = h.match(re);
-  if (m) m.forEach(x => u.add(x));
-  // 3) securevideotoken linkleri de topla
-  let re2 = /https?:\/\/[^"'\s]+securevideotoken[^"'\s]*/gi;
-  let m2 = h.match(re2);
-  let tokens = m2 ? [...new Set(m2)] : [];
-  // 4) video / source taglari
-  document.querySelectorAll('video,source').forEach(v => {
-    if (v.src) u.add(v.src);
-    if (v.currentSrc) u.add(v.currentSrc);
-  });
-  // 5) script taglarinin ici - player config genelde burada
-  document.querySelectorAll('script').forEach(s => {
-    let t = s.textContent || '';
-    let mm = t.match(/https?:\/\/[^"'\s]+\.m3u8[^"'\s]*/gi);
-    if (mm) mm.forEach(x => u.add(x));
-  });
-  return { links: [...u], tokens: tokens };
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0 Safari/537.36",
+    "Referer": "https://www.atv.com.tr/",
+    "Origin": "https://www.atv.com.tr",
 }
-"""
 
-def clean(u):
-    return u.replace("\\u0026","&").replace("&amp;","&").replace("\\/","/").strip().strip("'\"")
-
-def resolve_daion_variant(master_url):
+def atv_link_al():
+    url = f"https://videojs.tmgrup.com.tr/getvideo/{SITE_ID}/{LIVE_ID}"
+    r = requests.get(url, headers=headers, timeout=20)
+    print("PLAYER:", r.text[:500])
+    ham = ""
     try:
-        r = requests.get(master_url, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"}, timeout=15)
-        for q in ["atv_1080p.m3u8","atv_720p.m3u8"]:
-            m = re.findall(r'(' + re.escape(q) + r'[^\s"\']+)', r.text)
-            if m:
-                v = clean(m[0])
-                if v.startswith("http"): return v
-                base = master_url.split("atv.m3u8")[0]
-                if "?" not in v and "?" in master_url: v = v + "?" + master_url.split("?",1)[1]
-                return base + v
-        return master_url
+        data = r.json()
+        for k in ["VideoUrl", "videoUrl", "Url", "url", "Source", "source", "StreamUrl", "VideoURL"]:
+            if k in data and data[k]:
+                ham = data[k]
+                break
+        if not ham:
+            txt = str(data)
+            m = re.search(r'https?://[^"\']+\.m3u8[^"\']*', txt)
+            if m: ham = m.group(0)
     except Exception as e:
-        print(f" [VARYANT HATASI] {e}"); return master_url
-
-def update_m3u_smart(output_path, new_atv_url):
-    if not os.path.exists(output_path):
-        content = "#EXTM3U x-tvg-url=\"https://raw.githubusercontent.com/iptv-org/epg/master/epg.xml\"\n"
-    else:
-        content = open(output_path, "r", encoding="utf-8", errors="ignore").read()
-    lines = content.splitlines(); new_lines=[]; i=0; removed=0
-    while i < len(lines):
-        line = lines[i]
-        if line.startswith("#EXTINF") and ('tvg-name="ATV"' in line or ',ATV' in line or ',ATV HD' in line):
-            removed+=1; i+=1
-            while i < len(lines) and (lines[i].startswith("#EXTVLCOPT") or lines[i].startswith("http") or lines[i].strip()==""):
-                if lines[i].strip()=="": break
-                i+=1
-            continue
-        if line.startswith("http") and ("daioncdn.net/atv/" in line or "ercdn.net/atvhd" in line or "securevideotoken" in line):
-            removed+=1; i+=1; continue
-        new_lines.append(line); i+=1
-    atv_block = [
-        '#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV" tvg-logo="https://i.tmgrup.com.tr/atv/logo.png" group-title="Ulusal",ATV',
-        '#EXTVLCOPT:http-referrer=https://www.atv.com.tr/',
-        '#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36',
-        new_atv_url,
-    ]
-    out=[]; inserted=False
-    for line in new_lines:
-        out.append(line)
-        if not inserted and line.startswith("#EXTM3U"):
-            out.extend(atv_block); inserted=True
-    if not inserted: out = ["#EXTM3U"] + atv_block + out
-    open(output_path, "w", encoding="utf-8").write("\n".join(out)+"\n")
-    print(f" [OK] {removed} adet eski/olu ATV silindi, 1 adet yeni ATV eklendi")
-    print(f" [OK] Diger kanallar aynen korundu - toplam satir: {len(out)}")
-
-async def main():
-    print(" [*] ATV DAION araniyor - bookmarklet mantigi...")
-    found=[]
-    async with async_playwright() as p:
-        # CI / GitHub Actions'ta ekran (XServer) yok -> headless=False patlar
-        # O yuzden: DISPLAY varsa gorunur, yoksa headless. Elle degistirmek istersen: HEADLESS=0 python atv1.py
-        import os as _os
-        _headless = _os.environ.get("HEADLESS", "1") != "0" and not _os.environ.get("DISPLAY")
-        # _headless True ise ekransiz, False ise gorunur
-        try:
-            b = await p.chromium.launch(headless=_headless, args=["--no-sandbox","--disable-dev-shm-usage"])
-        except Exception as e:
-            print(f" [!] Gorunur mod acilamadi ({e}), headless'a dusuluyor...")
-            b = await p.chromium.launch(headless=True, args=["--no-sandbox","--disable-dev-shm-usage"])
-        page = await b.new_page(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36")
-        await page.goto(URL, wait_until="domcontentloaded", timeout=60000)
-        print(" [+] Sayfa acildi. Canliyi baslat butonuna basarsan daha iyi, 15sn bekleniyor...")
-        await asyncio.sleep(15)
-        # SENIN BOOKMARKLET'INI SAYFANIN ICINDE CALISTIR
-        res = await page.evaluate(BOOKMARKLET_JS)
-        found = [clean(x) for x in res.get("links",[])]
-        tokens = [clean(x) for x in res.get("tokens",[])]
-        print(f" [*] Bookmarklet {len(found)} link buldu, {len(tokens)} token linki")
-        for u in found: print("  -", u[:140])
-        # Token varsa onu da coz
-        for t in tokens:
-            try:
-                r = requests.get(t, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"}, timeout=15)
-                for mm in re.findall(r'https://[^\s"\'\\]+daioncdn[^\s"\'\\]+', r.text):
-                    c = clean(mm)
-                    if c not in found: found.append(c); print(f"  - TOKENDEN: {c[:140]}")
-            except Exception as e: print(f" [TOKEN] {e}")
-        await b.close()
-
-    daion_1080 = next((u for u in found if "daioncdn" in u and "atv_1080p" in u), None)
-    daion_720 = next((u for u in found if "daioncdn" in u and "atv_720p" in u), None)
-    daion_master = next((u for u in found if "daioncdn" in u and "/atv/atv.m3u8" in u), None)
-    if daion_1080: final=daion_1080; kaynak="DAION 1080p"
-    elif daion_720: final=daion_720; kaynak="DAION 720p"
-    elif daion_master:
-        print(" [*] Master bulundu, icinden 1080p cikartiliyor...")
-        final=resolve_daion_variant(daion_master); kaynak="DAION master -> 1080p"
-    else:
-        print(" [!] DAION bulunamadi! Canliyi baslat butonuna basip tekrar dene.")
-        if not found: print(" [HATA] Hic link yok"); return
-        final=found[0]; kaynak="ILK BULUNAN (YEDEK)"
-    print(f"\n [SECILDI - {kaynak}]\n{final}")
+        print("JSON hatasi:", e)
+        m = re.search(r'https?://[^"\']+\.m3u8[^"\']*', r.text)
+        if m: ham = m.group(0)
+    if not ham:
+        print("[HATA] Ham link bulunamadi")
+        return ""
+    print("HAM:", ham)
+    ts = int(time.time())
+    token_url = f"https://securevideotoken.tmgrup.com.tr/webtv/secure?{ts}&url={ham}"
+    r2 = requests.get(token_url, headers=headers, timeout=20)
+    print("TOKEN:", r2.text[:500])
     try:
-        r=requests.get(final, headers={"User-Agent":"Mozilla/5.0","Referer":"https://www.atv.com.tr/"}, timeout=15)
-        print(f" [TEST] HTTP {r.status_code} - #EXTM3U var mi? {'#EXTM3U' in r.text}")
-    except Exception as e: print(f" [TEST] {e}")
-    update_m3u_smart(OUTPUT, final)
+        d2 = r2.json()
+        tokenli = d2.get("Url") or d2.get("url") or d2.get("VideoUrl") or d2.get("VideoURL") or ""
+        if not tokenli:
+            m = re.search(r'https?://[^"\']+\.m3u8[^"\']*', r2.text)
+            tokenli = m.group(0) if m else ""
+    except:
+        m = re.search(r'https?://[^"\']+\.m3u8[^"\']*', r2.text)
+        tokenli = m.group(0) if m else r2.text.strip()
+    return tokenli.strip()
 
-if __name__=="__main__": asyncio.run(main())
+def main():
+    if not os.path.exists(OUTPUT_FILE):
+        print(f"[HATA] {OUTPUT_FILE} yok")
+        return
+    link = atv_link_al()
+    if not link or ".m3u8" not in link:
+        print("[HATA] Tokenli link alinamadi, dosya degistirilmedi")
+        return
+    print("[OK] Yeni ATV linki:", link[:120])
+
+    with open(OUTPUT_FILE, encoding="utf-8") as f:
+        satirlar = f.read().splitlines()
+
+    yeni_satirlar = []
+    degisti = False
+    bulundu = False
+    i = 0
+    while i < len(satirlar):
+        s = satirlar[i]
+        # ATV satirini bul - grup ne olursa olsun ATV ise al
+        is_atv = s.startswith("#EXTINF:") and (',ATV' in s or 'tvg-name="ATV"' in s or ',ATV ' in s or s.strip().endswith(",ATV"))
+        if is_atv:
+            bulundu = True
+            # group-title'i istedigin gruba zorla
+            if 'group-title="' in s:
+                s = re.sub(r'group-title="[^"]*"', f'group-title="{GROUP}"', s)
+            else:
+                s = s.replace("#EXTINF:", f'#EXTINF: group-title="{GROUP}"', 1)
+            yeni_satirlar.append(s)
+            if i + 1 < len(satirlar) and satirlar[i+1].strip().startswith("http"):
+                yeni_satirlar.append(link)
+                print(f"[DEGISTI] ATV linki yenilendi + grup -> {GROUP}")
+                degisti = True
+                i += 2
+                continue
+            i += 1
+            continue
+        yeni_satirlar.append(s)
+        i += 1
+
+    if not bulundu:
+        print(f"[BILGI] Listede ATV yok, {GROUP} grubuna ekleniyor")
+        ek = [f'#EXTINF:-1 tvg-name="ATV" tvg-logo="" group-title="{GROUP}",ATV', link]
+        if yeni_satirlar and yeni_satirlar[0].startswith("#EXTM3U"):
+            yeni_satirlar = [yeni_satirlar[0]] + ek + yeni_satirlar[1:]
+        else:
+            yeni_satirlar = ["#EXTM3U"] + ek + yeni_satirlar
+        degisti = True
+
+    try: shutil.copy2(OUTPUT_FILE, OUTPUT_FILE + ".bak")
+    except: pass
+    with open(
