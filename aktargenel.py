@@ -18,7 +18,7 @@ try:
 except ImportError:
     HAS_REQUESTS = False
 
-HEDEF_DOSYA = "mirti68.m3u"
+HEDEF_DOSYA = "mirti.m3u"
 GENEL_YAML = "aktargenel.yaml"
 TMP_DOSYA = "genel.tmp.m3u"
 USER_AGENT = "Mozilla/5.0"
