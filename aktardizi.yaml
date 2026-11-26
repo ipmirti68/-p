@@ -3,7 +3,7 @@ diziler:
     dizi_adi: ''
     hedef_grup: 'DIZILER / KORE DİZİLERİ'
     hedef_logo: ''
-    filtre_grup_icerir: '【entity-squid game¦canonical_name=squid game】, hotel del luna, vincenzo, itaewon class, queen of tears, the glory, all of us are dead, lovely runner, weak hero, bloodhounds, reply 1988, crash landing on you, my mister, its okay to not be okay'
+    filtre_grup_icerir: 'squid game, hotel del luna, vincenzo, itaewon class, queen of tears, the glory, all of us are dead, lovely runner, weak hero, bloodhounds, reply 1988, crash landing on you, my mister, its okay to not be okay'
     filtre_ad_icerir: ''
     filtre_grup_haric: ''
     filtre_ad_haric: ''
@@ -18,7 +18,7 @@ diziler:
     filtre_ad_haric: ''
 
     - kaynak_url: 'https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/cukur.m3u'
-    dizi_adi: '【entity-ÇUKUR¦canonical_name=ÇUKUR】'
+    dizi_adi: 'ÇUKUR'
     hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
     hedef_logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFfoXV4zJgA1hy2pUeJHhuG-bG3KA3HHggd5icGoOXg157iLfyyRbQCaQW&s=10'
     filtre_grup_icerir: ''
