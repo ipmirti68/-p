@@ -3,7 +3,9 @@
 https://tv-trt1.medya.trt.com.tr/master.m3u8
 # MIRTI68_ATV_AUTO
 #EXTINF:-1 tvg-name="ATV " tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATV
-https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
+#EXTVLCOPT:http-referer=https://www.atv.com.tr/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0 Safari/537.36
+https://trkvz-live.ercdn.net/atvhd/atvhd.m3u8?st=OKBJpG-Gj6vqAGUIvRZHgA&e=1795759749
 # MIRTI68_SHOWTV_AUTO
 #EXTINF:-1 tvg-name="SHOW TV ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",SHOW TV ⭕
 https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1&ppid=9f9a96944320827d6867ce72b05675bb&dfp_paln=AQzzBGQE82ne_IPXsTQmTm-GKCAe8VTB1Aqzp3IDvgwVbZL24Hm5EVfbcMi_T5NowBjCEqWS-v8diG3M6_ZpPy2gzV7oddddxxD9pE4AfEuySmQrQpUvem1tsrkdIZ_fEv4gACgNdm3ptEW4Wsm__ZYuL0RpbYaUqRwRPd1xXA8KHji5wrQ7-NFDhWvdycCi0klV1zjrKDcfZONX2Y2d9a1az9q9FGxmCAp1umSGZBtkRRaY-IxCM9vZ9IHvuQl-f-1j0I9bSMmrv3DgVagsIZ7kGHItbky56M1mpGO--PSeEGUVHp0RrJL7Y28eBZJpPqt6LQuYq5sZdh8Hp9i5cH_NyUVs3ub1M6OmsAez1AKSu2kpAAjd4-g2rXXXeaBf7rxDSFgbTohwmdrEJW6bre5esAABA4hgbb0iYnccgk1pYyaHqV89Jukjaa_H-8ga_lsFPzx-g1VjhFBEfQXL9zSnUhSgaZQnJgxQ64Vq5xBPiVLbnFvysPMbVMGhDUyFW9NTR22lUsxogKlxg2nYHJxteefOB8yMnPBq4g8oKTOzCj-g3X04L4AKCTVZLwf67OviW2GtCy9b04t7VH9Rf_3eIX0Wvt0akIjM1w-Bpm9peprND_fqysx6i0i5RBuvNnb_KzrO4VvmYsmg6PkWyx5ZHS9ytVozuVf--DJnjJ1Lx09EKoVfNYPAHoTYNgpeYy3EvPbGsKoCukeG_y42HmEbEsPU8ZfZIck2vJt19CGrVZITwKkgp_8R5Qd7d0ORicOnFzOSx5YSN-IoVO0okfSbkj5lNA-b69m8NN1i_4ogVSBDq_3HmnKgSbtzd72B33XCxeWKDekLpenUKWDxdirlzg8gN1Zbog2QitOT8C9tW_ntbdREqaBNrn7YBqiZOOgCyOqtfu6mXPDlZT9CJgEFwvEfXijQX2lQtZqRnroaR3zAcJM7P0nCvzwy4KjRd9ckCCHAxHJAQakeYGilH374LkYhpJxdlr0NBngr-uYmhib4QoxhHaXhOWYt2jc27M8fQHB4-SZAeciOFXIOoOutqoP7a7ZNMGVyL2FOEPHpIXscDIrBYGKcKA4hN5vs8AnI3DMkAKPWsXiy8wFkiYDPUVY1H5DW2EUY3CcxOZZAod_3pK43f74O6tRZCTjsZ_YcnKCei40GxJ0TwpPRQBNYNA1D7DhBgJNpbKJiwdFZL6DR
