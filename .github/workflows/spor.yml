@@ -20,25 +20,38 @@ jobs:
     timeout-minutes: 30
 
     steps:
+
+      # =================================
       # REPOSITORY
+      # =================================
+
       - name: Depoyu indir
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
+      # =================================
       # PYTHON
+      # =================================
+
       - name: Python kurulumu
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
+      # =================================
       # DENO
+      # =================================
+
       - name: Deno kur
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
 
-      # PAKETLER
+      # =================================
+      # TÜM PAKETLER
+      # =================================
+
       - name: Paketleri kur
         run: |
           python -m pip install --upgrade pip
@@ -51,41 +64,63 @@ jobs:
             playwright \
             pycryptodome \
             pycryptodomex \
-            pyjwt
+            pyjwt \
+            streamlink
 
           playwright install --with-deps chromium
 
-          echo "========== SÜRÜMLER =========="
+          echo "========== SÜRÜM KONTROLÜ =========="
+
           python --version
+          pip --version
           yt-dlp --version
+          streamlink --version
           deno --version
 
+          echo "========== MODÜL KONTROLÜ =========="
+
           python -c "import requests; print('REQUESTS OK')"
+          python -c "import streamlink; print('STREAMLINK OK')"
           python -c "from Crypto.Cipher import AES; print('CRYPTO AES OK')"
           python -c "from bs4 import BeautifulSoup; print('BS4 OK')"
 
-      # ATV
-      - name: ATV CANLI YAYIN GÜNCELLE
-        id: atv
-        timeout-minutes: 10
-        run: |
-          echo "========== ATV BAŞLADI =========="
-          python -u atv1.py
-          echo "========== ATV TAMAMLANDI =========="
+      # =================================
+      # ATV OTOMATİK YAYIN ÇEKME
+      # =================================
 
+      - name: ATV OTOMATİK YAYIN ÇEK
+        id: atv
+        timeout-minutes: 5
+        run: |
+          echo "=================================="
+          echo "MIRTI68 ATV YAYIN BAŞLIYOR"
+          echo "=================================="
+
+          python -u atv1.py
+
+          echo "=================================="
+          echo "ATV İŞLEMİ TAMAMLANDI"
+          echo "=================================="
+
+      # =================================
       # DOSYALARI KAYDET
+      # =================================
+
       - name: M3U ve JSON dosyalarını kaydet
         if: always()
         run: |
+
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
 
           rm -rf __pycache__ .pytest_cache/
 
-          echo "========== DOSYALAR =========="
+          echo "========== DOSYA KONTROLÜ =========="
+
           ls -lh *.m3u *.json 2>/dev/null || true
 
           echo "========== GIT DURUMU =========="
+
           git status --short
 
           git add -f -- '*.m3u' '*.json' 2>/dev/null || true
@@ -95,11 +130,13 @@ jobs:
             exit 0
           fi
 
-          git commit -m "MIRTI68 update $(date +'%d.%m %H:%M')"
+          git commit -m "MIRTI68 ATV update $(date +'%d.%m.%Y %H:%M')"
 
-          echo "========== PUSH =========="
+          echo "========== GITHUB PUSH =========="
 
           for i in 1 2 3; do
+
+            echo "Push denemesi: $i"
 
             git fetch origin main
 
@@ -111,14 +148,16 @@ jobs:
               fi
 
             else
+
               echo "Rebase başarısız."
               git rebase --abort || true
+
             fi
 
-            echo "Tekrar deneniyor: $i"
             sleep 3
 
           done
 
           echo "PUSH BAŞARISIZ"
           exit 1
+          
