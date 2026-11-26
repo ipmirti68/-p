@@ -1,7 +1,5 @@
-# MIRTI68 - DIZI AKTARICI - EPG korur, ust tarafa dokunmaz
-# Okur: aktardizi.yaml
-# Yazar: mirti.m3u (ust baslik aynen kalir)
-import re, os, shutil, urllib.request, urllib.parse
+# MIRTI68 - DIZI - Senin YAML formatina gore: dizi_adi + filtre_grup_icerir
+import re, os, shutil, urllib.request
 
 HEDEF_DOSYA = "mirti.m3u"
 DIZI_YAML = "aktardizi.yaml"
@@ -14,6 +12,11 @@ def normalize(s):
     s = "".join(cevir.get(c,c) for c in s)
     s = s.replace("|"," ").replace("-"," ").replace("_"," ")
     return re.sub(r"\s+"," ",s).strip()
+
+def liste_parse(v):
+    # 'squid game, hotel del luna' -> ['squid game', 'hotel del luna']
+    if not v: return []
+    return [x.strip() for x in str(v).split(",") if x.strip()]
 
 def grup_bul(rec):
     for l in rec:
@@ -75,45 +78,37 @@ def dizi_adi_temizle(ad):
     return temel, sezon, bolum
 
 def yaml_oku_guvenli(path):
+    # Senin formatin: kaynak_url, dizi_adi, hedef_grup, hedef_logo, filtre_*
     def temiz(v):
         v = v.strip()
         if len(v) >= 2 and ((v[0] == "'" and v[-1] == "'") or (v[0] == '"' and v[-1] == '"')):
             v = v[1:-1]
         return v.strip()
-    out = {"diziler": []}
+    out = []
     cur = None
     with open(path, encoding="utf-8") as f:
         for line in f:
             s = line.strip()
             if not s or s.startswith("#") or s == "diziler:": continue
             if "kaynak_url:" in s:
-                if cur: out["diziler"].append(cur)
-                v = s.split("kaynak_url:",1)[1]
-                cur = {"kaynak_url": temiz(v), "kaynak_grup": "", "hedef_grup": "", "hedefler": []}
-            elif "kaynak_grup:" in s and cur is not None:
-                v = s.split("kaynak_grup:",1)[1]
-                cur["kaynak_grup"] = temiz(v)
-            elif "hedef_grup:" in s and cur is not None:
-                v = s.split("hedef_grup:",1)[1]
-                cur["hedef_grup"] = temiz(v)
-                cur["hedefler"] = [{"hedef_adi": "hedef_1", "aranacak": "", "hedef_grup": cur["hedef_grup"], "hedef_logo": "", "ek_kod": ""}]
-            elif "aranacak:" in s and cur is not None:
-                v = s.split("aranacak:",1)[1]
-                if cur["hedefler"]:
-                    cur["hedefler"][0]["aranacak"] = temiz(v)
-    if cur: out["diziler"].append(cur)
-    print(f"[BILGI] Girintisiz okundu, blok: {len(out['diziler'])}")
-    for b in out["diziler"]:
-        print(f"  - {b['kaynak_grup']} -> {b['hedef_grup']}")
+                if cur: out.append(cur)
+                cur = {"kaynak_url": temiz(s.split("kaynak_url:",1)[1]), "dizi_adi": "", "hedef_grup": "", "hedef_logo": "", "filtre_grup_icerir": "", "filtre_ad_icerir": "", "filtre_grup_haric": "", "filtre_ad_haric": ""}
+            elif cur is not None:
+                for anahtar in ["dizi_adi", "hedef_grup", "hedef_logo", "filtre_grup_icerir", "filtre_ad_icerir", "filtre_grup_haric", "filtre_ad_haric"]:
+                    if anahtar + ":" in s:
+                        cur[anahtar] = temiz(s.split(anahtar + ":",1)[1])
+                        break
+    if cur: out.append(cur)
+    print(f"[BILGI] Girintisiz okundu, blok: {len(out)}")
+    for b in out:
+        print(f"  - {b['dizi_adi'] or b['filtre_grup_icerir'][:40]} -> {b['hedef_grup']}")
     return out
 
 def main():
-    print("MIRTI68 - DIZI BASLADI - aktardizi.yaml okunuyor")
+    print("MIRTI68 - DIZI BASLADI")
     if not os.path.exists(DIZI_YAML):
         print(f"[HATA] {DIZI_YAML} yok"); return
-    cfg = yaml_oku_guvenli(DIZI_YAML)
-    diziler = cfg.get("diziler", []) or []
-    print(f"[BILGI] Dizi blok: {len(diziler)}")
+    diziler = yaml_oku_guvenli(DIZI_YAML)
     if not os.path.exists(HEDEF_DOSYA):
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
@@ -133,50 +128,71 @@ def main():
     for r in hedef_records: lines.extend(r)
     eklenen_toplam = 0
     for sira, f in enumerate(diziler, 1):
-        if not isinstance(f, dict): continue
         kurl = str(f.get("kaynak_url","") or "").strip()
         if not kurl: continue
-        hedefler = f.get("hedefler", []) or []
-        if not hedefler and f.get("hedef_grup"):
-            hedefler = [{"hedef_adi": "hedef_1", "aranacak": f.get("aranacak",""), "hedef_grup": f.get("hedef_grup",""), "hedef_logo": f.get("hedef_logo",""), "ek_kod": f.get("ek_kod","")}]
-        print(f"[DIZI {sira}] {kurl[:60]}")
+        dizi_adi = str(f.get("dizi_adi","") or "").strip()
+        hedef_grup = str(f.get("hedef_grup","") or "").strip()
+        hedef_logo = str(f.get("hedef_logo","") or "").strip()
+        f_grup = liste_parse(f.get("filtre_grup_icerir",""))
+        f_ad = liste_parse(f.get("filtre_ad_icerir",""))
+        f_grup_haric = liste_parse(f.get("filtre_grup_haric",""))
+        f_ad_haric = liste_parse(f.get("filtre_ad_haric",""))
+        print(f"[DIZI {sira}] {dizi_adi or 'KORE LST'} -> {hedef_grup}")
         try: _, kaynak = oku_m3u(kurl)
         except Exception as e: print(f"  [ATLANDI] {e}"); continue
-        kg = str(f.get("kaynak_grup","") or "").strip()
         eklenen_blok = 0
         for r in kaynak:
             ad = kanal_adi(r); u = kanal_url(r)
             if not u: continue
             if u.strip() in gorulen: continue
             g = grup_bul(r)
-            if kg:
-                if normalize(kg) not in normalize(g) and normalize(g) not in normalize(kg): continue
-            eslesen = None
-            for h in hedefler:
-                if not isinstance(h, dict): continue
-                hg = str(h.get("hedef_grup","") or "").strip()
-                ar = str(h.get("aranacak","") or "").strip()
-                if not ar:
-                    eslesen = h; break
-                for parca in [x.strip() for x in ar.split(",") if x.strip()]:
-                    if normalize(parca) in normalize(ad):
-                        eslesen = h; break
-                if eslesen: break
-            if not eslesen: continue
-            hedef_grup = str(eslesen.get("hedef_grup","") or "").strip()
-            hedef_logo = str(eslesen.get("hedef_logo","") or "").strip()
-            ek_kod = str(eslesen.get("ek_kod","") or "").strip()
-            temel, sezon, bolum = dizi_adi_temizle(ad)
-            if sezon is not None and bolum is not None:
-                yeni_ad = f"{temel} S{sezon:02d}E{bolum:02d}"
+            ng = normalize(g); na = normalize(ad)
+            # HARIC filtresi
+            haric = False
+            for x in f_grup_haric:
+                if normalize(x) in ng: haric = True; break
+            for x in f_ad_haric:
+                if normalize(x) in na: haric = True; break
+            if haric: continue
+            # ICERIR filtresi
+            if dizi_adi:
+                # Tek dizi: adinda veya grubunda dizi adi gecmeli, yoksa alma
+                # Bos dizi_adi olan Kore blogu buraya girmez
+                if normalize(dizi_adi) not in na and normalize(dizi_adi) not in ng:
+                    # Kaynak zaten tek dizi dosyasiysa (cukur.m3u gibi) hepsini al
+                    # Dosya adinda dizi adi geciyorsa hepsini al
+                    if normalize(dizi_adi) not in normalize(kurl):
+                        continue
+            elif f_grup or f_ad:
+                # Kore gibi liste: grup veya ad listeden birini icermeli
+                tuttu = False
+                for x in f_grup:
+                    if normalize(x) in ng or normalize(x) in na:
+                        tuttu = True; break
+                for x in f_ad:
+                    if normalize(x) in na:
+                        tuttu = True; break
+                if not tuttu: continue
             else:
-                yeni_ad = temel
-            if ek_kod and not yeni_ad.endswith(ek_kod):
-                yeni_ad = f"{yeni_ad} {ek_kod}"
+                # Ne dizi_adi ne filtre var: hepsini alma, atla
+                print(f"  [ATLANDI] Filtre yok, hepsini almamak icin atlandi")
+                break
+            # Ad duzenle
+            temel, sezon, bolum = dizi_adi_temizle(ad)
+            if dizi_adi and normalize(dizi_adi) not in normalize(temel):
+                # Nostalji: Adin basina dizi adini koy, S01E01'i koru
+                if sezon is not None and bolum is not None:
+                    yeni_ad = f"{dizi_adi} S{sezon:02d}E{bolum:02d}"
+                else:
+                    yeni_ad = f"{dizi_adi} {temel}".strip()
+            else:
+                if sezon is not None and bolum is not None:
+                    yeni_ad = f"{temel} S{sezon:02d}E{bolum:02d}"
+                else:
+                    yeni_ad = temel
             yeni = list(r)
             idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
             if idx is not None:
-                # DUZELTILDI: EXTINF'i yeniden yazma, sadece group-title + tvg-name degistir
                 extinf = yeni[idx]
                 if 'group-title="' in extinf:
                     extinf = re.sub(r'group-title="[^"]*"', f'group-title="{hedef_grup}"', extinf)
@@ -186,13 +202,10 @@ def main():
                     extinf = re.sub(r'tvg-name="[^"]*"', f'tvg-name="{yeni_ad}"', extinf)
                 if 'tvg-type="' not in extinf:
                     extinf = extinf.replace('group-title=', 'tvg-type="series" group-title=', 1)
-                # Logo varsa koru, yoksa YAML'daki logoyu ekle
                 if 'tvg-logo="' not in extinf and hedef_logo:
                     extinf = extinf.replace('group-title=', f'tvg-logo="{hedef_logo}" group-title=', 1)
-                # Virgülden sonraki ismi de degistir, EPG icin tvg-id'ye dokunma
                 extinf = extinf.rsplit(",", 1)[0] + "," + yeni_ad
                 yeni[idx] = extinf
-            # URL'ye, VLCOPT'a dokunma
             lines.extend(yeni); gorulen.add(u.strip())
             eklenen_blok += 1; eklenen_toplam += 1
         print(f"  [OK] {sira}. blok bitti, eklenen: {eklenen_blok}")
@@ -203,7 +216,6 @@ def main():
     final = baslik + lines
     with open(HEDEF_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(final)+"\n")
     print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} - Toplam eklenen dizi: {eklenen_toplam}")
-    print(f"[EPG] Ust baslik aynen korundu, degistirilmedi")
 
 if __name__ == "__main__":
     main()
