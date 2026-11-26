@@ -115,10 +115,6 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196683&exte
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475358
 #EXTINF:-1 tvg-id="trt1.tr" tvg-name="TRT 1 FHD" tvg-logo="https://i.ibb.co/G4BSQ2yx/4.png" group-title="🟨◆ ULUSALᴴᴰ",TRT 1 FHD
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475359
-#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV HD" tvg-logo="https://i.ibb.co/0j51Lhgc/45.png" group-title="🟨◆ ULUSALᴴᴰ",ATV HD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475360
-#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV FHD" tvg-logo="https://i.ibb.co/3mGNDCh4/10.png" group-title="🟨◆ ULUSALᴴᴰ",ATV FHD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475361
 #EXTINF:-1 tvg-id="kanald.tr" tvg-name="Kanal D HD" tvg-logo="https://i.ibb.co/jPzDwCKk/48.png" group-title="🟨◆ ULUSALᴴᴰ",Kanal D HD
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475362
 #EXTINF:-1 tvg-id="kanald.tr" tvg-name="Kanal D FHD" tvg-logo="https://i.ibb.co/q3f9pRYh/16.png" group-title="🟨◆ ULUSALᴴᴰ",Kanal D FHD
@@ -1478,3 +1474,5 @@ https://kamerayayin.ibb.istanbul/turistikcam/ulusparki.stream/chunklist_w1031523
 #EXTVLCOPT:http-user-agent=88.247.47.226
 #EXTVLCOPT:http-referrer=88.247.47.226
 https://belsis.nevsehir.bel.tr/hls/live/X8o7aXINdylwjstgvjyPjSJn/index.m3u8
+#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATVᴴᴰ ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSALᴴᴰ ⭕",ATVᴴᴰ ⭕
+https://trkvz-live.ercdn.net/atvhd/atvhd.m3u8?st=qrMNAImFiINxNz6vbhjUrQ&e=1795762761
