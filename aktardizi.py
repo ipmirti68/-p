@@ -63,7 +63,6 @@ def oku_m3u(p):
     return baslik, records
 
 def dizi_adi_temizle(ad):
-    # "Dizi Adi S01E01 - Bolum" -> ("Dizi Adi", 1, 1)
     s = (ad or "").strip()
     m = re.search(r'[Ss](\d{1,2})[Ee](\d{1,3})', s)
     if not m:
@@ -99,7 +98,6 @@ def yaml_oku_guvenli(path):
                 cur["hedef_grup"] = temiz(v)
                 cur["hedefler"] = [{"hedef_adi": "hedef_1", "aranacak": "", "hedef_grup": cur["hedef_grup"], "hedef_logo": "", "ek_kod": ""}]
             elif "aranacak:" in s and cur is not None:
-                # aranacak varsa, hedefler icine koy
                 v = s.split("aranacak:",1)[1]
                 if cur["hedefler"]:
                     cur["hedefler"][0]["aranacak"] = temiz(v)
@@ -118,7 +116,6 @@ def main():
     print(f"[BILGI] Dizi blok: {len(diziler)}")
     if not os.path.exists(HEDEF_DOSYA):
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
-    # EPG DUZELTILDI: Basligi oku, aynen sakla, hic degistirme
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
     print(f"[EPG] Ust baslik korundu: {baslik}")
@@ -179,23 +176,28 @@ def main():
             yeni = list(r)
             idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
             if idx is not None:
+                # DUZELTILDI: EXTINF'i yeniden yazma, sadece group-title + tvg-name degistir
                 extinf = yeni[idx]
-                m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
-                oz = {}
-                for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
-                oz["group-title"] = hedef_grup
-                oz["tvg-name"] = yeni_ad
-                gelen_logo = oz.get("tvg-logo","").strip()
-                if not gelen_logo and hedef_logo: oz["tvg-logo"] = hedef_logo
-                oz["tvg-type"] = "series"
-                oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
-                yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
+                if 'group-title="' in extinf:
+                    extinf = re.sub(r'group-title="[^"]*"', f'group-title="{hedef_grup}"', extinf)
+                else:
+                    extinf = extinf.replace("#EXTINF:", f'#EXTINF: group-title="{hedef_grup}"', 1)
+                if 'tvg-name="' in extinf:
+                    extinf = re.sub(r'tvg-name="[^"]*"', f'tvg-name="{yeni_ad}"', extinf)
+                if 'tvg-type="' not in extinf:
+                    extinf = extinf.replace('group-title=', 'tvg-type="series" group-title=', 1)
+                # Logo varsa koru, yoksa YAML'daki logoyu ekle
+                if 'tvg-logo="' not in extinf and hedef_logo:
+                    extinf = extinf.replace('group-title=', f'tvg-logo="{hedef_logo}" group-title=', 1)
+                # Virgülden sonraki ismi de degistir, EPG icin tvg-id'ye dokunma
+                extinf = extinf.rsplit(",", 1)[0] + "," + yeni_ad
+                yeni[idx] = extinf
+            # URL'ye, VLCOPT'a dokunma
             lines.extend(yeni); gorulen.add(u.strip())
             eklenen_blok += 1; eklenen_toplam += 1
         print(f"  [OK] {sira}. blok bitti, eklenen: {eklenen_blok}")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
     except Exception: pass
-    # EPG DUZELTILDI: Basligi aynen geri yaz, yeni #EXTM3U uydurma
     if not baslik:
         baslik = ['#EXTM3U']
     final = baslik + lines
