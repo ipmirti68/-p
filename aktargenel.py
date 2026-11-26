@@ -1,6 +1,7 @@
 # MIRTI68 - GENEL AKTARICI - AYRI CALISIR
 # Okur: aktargenel.yaml
-# Yazar: genel.tmp.m3u + mirti68.m3u icindeki genel bolumunu gunceller
+# Yazar: HEDEF_DOSYA + genel.tmp.m3u
+# HEDEF_DOSYA yml'den gelir, yoksa mirti_test.m3u
 # 1 url -> 5 hedef, her hedef farkli grup
 # aranacak: "a, b, c" seklinde virgullu, py listeye cevirir
 # kaynak_grup / kaynak_gruplar varsa once ona gore suzer
@@ -18,7 +19,7 @@ try:
 except ImportError:
     HAS_REQUESTS = False
 
-HEDEF_DOSYA = "mirti.m3u"
+HEDEF_DOSYA = os.environ.get("HEDEF_DOSYA", "mirti_test.m3u")
 GENEL_YAML = "aktargenel.yaml"
 TMP_DOSYA = "genel.tmp.m3u"
 USER_AGENT = "Mozilla/5.0"
@@ -87,11 +88,24 @@ def aranacak_liste(v):
         return out
     return [y.strip() for y in str(v).split(",") if y.strip()]
 
+def oku_yaml(path):
+    if not os.path.exists(path):
+        print(f"[HATA] {path} yok")
+        return {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = yaml.safe_load(f) or {}
+        if not data.get("genel"):
+            print(f"[UYARI] {path} icinde genel bos")
+        return data
+    except Exception as e:
+        print(f"[HATA] {path} bozuk: {e}")
+        raise
+
 def main():
     print("MIRTI68 - GENEL BASLADI - aktargenel.yaml okunuyor")
-    if not os.path.exists(GENEL_YAML):
-        print(f"[HATA] {GENEL_YAML} yok"); return
-    with open(GENEL_YAML, encoding="utf-8") as f: cfg = yaml.safe_load(f) or {}
+    print(f"[HEDEF] {HEDEF_DOSYA}")
+    cfg = oku_yaml(GENEL_YAML)
     genel = cfg.get("genel", []) or []
     print(f"[BILGI] Genel blok: {len(genel)}")
     if not os.path.exists(HEDEF_DOSYA):
