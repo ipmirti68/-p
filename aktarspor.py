@@ -1,6 +1,7 @@
 # MIRTI68 - SPOR AKTARICI - AYRI CALISIR
 # Okur: aktarspor.yaml
-# Yazar: spor.tmp.m3u + mirti68.m3u icindeki spor bolumunu gunceller
+# Yazar: HEDEF_DOSYA + spor.tmp.m3u
+# HEDEF_DOSYA yml'den gelir, yoksa mirti_test.m3u
 # Ayni url varsa eklemez, EPG korunur.
 # Logo: Kendi logosu varsa onu kullan, yoksa hedef logosu.
 import re, os, shutil, urllib.request
@@ -14,7 +15,7 @@ try:
 except ImportError:
     HAS_REQUESTS = False
 
-HEDEF_DOSYA = "mirti.m3u"
+HEDEF_DOSYA = os.environ.get("HEDEF_DOSYA", "mirti_test.m3u")
 SPOR_YAML = "aktarspor.yaml"
 TMP_DOSYA = "spor.tmp.m3u"
 USER_AGENT = "Mozilla/5.0"
@@ -79,11 +80,16 @@ def oku_yaml(path):
     if not os.path.exists(path):
         print(f"[HATA] {path} yok")
         return {}
-    with open(path, encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            return yaml.safe_load(f) or {}
+    except Exception as e:
+        print(f"[HATA] {path} okunamadi: {e}")
+        raise
 
 def main():
     print("MIRTI68 - SPOR BASLADI - aktarspor.yaml okunuyor")
+    print(f"[HEDEF] {HEDEF_DOSYA}")
     cfg = oku_yaml(SPOR_YAML)
     sporlar = cfg.get("sporlar", []) or []
     print(f"[BILGI] Spor blok: {len(sporlar)}")
@@ -122,11 +128,16 @@ def main():
             eslesen = None
             for h in hedefler:
                 if not isinstance(h, dict): continue
-                aranacak = h.get("aranacak", []) or []
-                if isinstance(aranacak, str): aranacak = [aranacak]
+                aranacak = h.get("aranacak", "") or ""
+                if isinstance(aranacak, list):
+                    aranacak_list = aranacak
+                else:
+                    # "a, b" seklinde de yazabilirsin
+                    aranacak_list = [x.strip() for x in str(aranacak).split(",") if x.strip()]
                 hedef_grup = str(h.get("hedef_grup","") or "").strip()
                 if not hedef_grup: continue
-                for ara in aranacak:
+                if not aranacak_list: continue
+                for ara in aranacak_list:
                     ara = str(ara or "").strip()
                     if not ara: continue
                     if normalize(ara) in normalize(ad) or normalize(ara) in normalize(grup_bul(r)):
@@ -137,6 +148,10 @@ def main():
                 else: continue
             hedef_grup = str(eslesen.get("hedef_grup","") or "").strip()
             hedef_logo = str(eslesen.get("hedef_logo","") or "").strip()
+            ek_kod = str(eslesen.get("ek_kod","") or "").strip()
+            yeni_ad = ad
+            if ek_kod and not yeni_ad.endswith(ek_kod):
+                yeni_ad = f"{yeni_ad} {ek_kod}"
             yeni = list(r)
             idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
             if idx is not None:
@@ -146,12 +161,12 @@ def main():
                 for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
                 # EPG KORU: tvg-id, catchup vs silinmez
                 oz["group-title"] = hedef_grup
-                oz["tvg-name"] = ad
+                oz["tvg-name"] = yeni_ad
                 gelen_logo = oz.get("tvg-logo","").strip()
                 if not gelen_logo and hedef_logo:
                     oz["tvg-logo"] = hedef_logo
                 oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
-                yeni[idx] = f"#EXTINF:{sure} {oz_str},{ad}"
+                yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
             lines.extend(yeni); spor_lines.extend(yeni); gorulen.add(u.strip())
         print(f"  [OK] {sira}. blok bitti")
 
