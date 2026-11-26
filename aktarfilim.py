@@ -16,7 +16,7 @@ except ImportError:
     HAS_REQUESTS = False
 
 HEDEF_DOSYA = "mirti.m3u"
-FILM_YAML = "aktarfilm.yaml"
+FILM_YAML = "aktarfilim.yaml"
 TMP_DOSYA = "film.tmp.m3u"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
 TIMEOUT = 30
