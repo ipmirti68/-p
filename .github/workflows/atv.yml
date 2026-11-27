@@ -83,6 +83,7 @@ jobs:
           python -c "import streamlink; print('STREAMLINK OK')"
           python -c "from Crypto.Cipher import AES; print('CRYPTO AES OK')"
           python -c "from bs4 import BeautifulSoup; print('BS4 OK')"
+          python -c "from playwright.sync_api import sync_playwright; print('PLAYWRIGHT OK')"
 
       # =================================
       # ATV OTOMATİK YAYIN ÇEKME
@@ -91,16 +92,25 @@ jobs:
       - name: ATV OTOMATİK YAYIN ÇEK
         id: atv
         timeout-minutes: 5
+        continue-on-error: true
         run: |
           echo "=================================="
-          echo "MIRTI68 ATV YAYIN BAŞLIYOR"
+          echo "MIRTI68 ATV 1080P YAYIN BAŞLIYOR"
           echo "=================================="
 
           python -u atv1.py
+          SONUC=$?
 
-          echo "=================================="
-          echo "ATV İŞLEMİ TAMAMLANDI"
-          echo "=================================="
+          echo "ATV_EXIT_CODE=$SONUC" >> "$GITHUB_OUTPUT"
+
+          if [ "$SONUC" -eq 0 ]; then
+            echo "ATV işlemi başarılı."
+          else
+            echo "ATV adresi bulunamadı veya güncellenemedi."
+            echo "Eski M3U kaydı korunmuş olmalı."
+          fi
+
+          exit "$SONUC"
 
       # =================================
       # M3U KONTROLÜ
@@ -112,14 +122,25 @@ jobs:
           echo "========== M3U KONTROLÜ =========="
 
           if [ -f mirti68.m3u ]; then
+
             echo "M3U DOSYASI BULUNDU"
+
+            echo "========== ATV KAYDI =========="
 
             grep -n -A4 -B1 'tvg-id="atv.tr"' mirti68.m3u || true
 
+            echo "========== ATV ADRES KONTROLÜ =========="
+
+            grep -n 'trkvz.daioncdn.net/atv/' mirti68.m3u || true
+
             echo "========== DOSYA BOYUTU =========="
+
             ls -lh mirti68.m3u
+
           else
+
             echo "M3U DOSYASI BULUNAMADI"
+
           fi
 
       # =================================
@@ -180,4 +201,23 @@ jobs:
 
           echo "PUSH BAŞARISIZ"
           exit 1
-          
+
+      # =================================
+      # SONUÇ RAPORU
+      # =================================
+
+      - name: ATV SONUÇ RAPORU
+        if: always()
+        run: |
+
+          echo "=================================="
+          echo "MIRTI68 ATV SONUÇ RAPORU"
+          echo "=================================="
+
+          if [ "${{ steps.atv.outputs.ATV_EXIT_CODE }}" = "0" ]; then
+            echo "ATV: BAŞARILI"
+          else
+            echo "ATV: BAŞARISIZ / ESKİ KAYIT KORUNDU"
+          fi
+
+          echo "=================================="
