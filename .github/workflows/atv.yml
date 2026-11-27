@@ -1,9 +1,7 @@
-
 name: atv
 
 on:
   workflow_dispatch:
-
   schedule:
     - cron: "*/20 * * * *"
 
@@ -17,14 +15,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
 
     steps:
-
       # =================================
       # REPOSITORY
       # =================================
-
       - name: Depoyu indir
         uses: actions/checkout@v5
         with:
@@ -33,70 +29,41 @@ jobs:
       # =================================
       # PYTHON
       # =================================
-
       - name: Python kurulumu
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
       # =================================
-      # DENO
+      # PAKETLER - SADECE GEREKENLER
       # =================================
-
-      - name: Deno kur
-        uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
-
-      # =================================
-      # TÜM PAKETLER
-      # =================================
-
       - name: Paketleri kur
         run: |
           python -m pip install --upgrade pip
-
-          python -m pip install --upgrade --pre \
-            "yt-dlp[default]" \
-            requests \
-            beautifulsoup4 \
-            lxml \
-            playwright \
-            pycryptodome \
-            pycryptodomex \
-            pyjwt \
-            streamlink
-
-          playwright install --with-deps chromium
-
-          echo "========== SÜRÜM KONTROLÜ =========="
-
-          python --version
-          pip --version
-          yt-dlp --version
-          streamlink --version
-          deno --version
-
-          echo "========== MODÜL KONTROLÜ =========="
-
-          python -c "import requests; print('REQUESTS OK')"
-          python -c "import streamlink; print('STREAMLINK OK')"
-          python -c "from Crypto.Cipher import AES; print('CRYPTO AES OK')"
-          python -c "from bs4 import BeautifulSoup; print('BS4 OK')"
-          python -c "from playwright.sync_api import sync_playwright; print('PLAYWRIGHT OK')"
+          python -m pip install requests
 
       # =================================
-      # ATV OTOMATİK YAYIN ÇEKME
+      # ATV - SECRET ILE GUNCELLE
       # =================================
-
-      - name: ATV OTOMATİK YAYIN ÇEK
+      - name: ATV OTOMATIK YAYIN CEK
         id: atv
         timeout-minutes: 5
         continue-on-error: true
+        env:
+          ATV_URL: ${{ secrets.ATV_URL }}
         run: |
           echo "=================================="
-          echo "MIRTI68 ATV 1080P YAYIN BAŞLIYOR"
+          echo "MIRTI68 ATV 1080P YAYIN BASLIYOR"
           echo "=================================="
+
+          if [ -z "$ATV_URL" ]; then
+            echo "HATA: ATV_URL Secret bos! 【entity-GitHub¦canonical_name=GitHub】 > Settings > Secrets > ATV_URL ekle"
+            echo "ATV_EXIT_CODE=1" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "Secret bulundu, uzunluk: ${#ATV_URL}"
+          echo "$ATV_URL" | cut -c1-80
 
           python -u atv1.py
           SONUC=$?
@@ -104,120 +71,85 @@ jobs:
           echo "ATV_EXIT_CODE=$SONUC" >> "$GITHUB_OUTPUT"
 
           if [ "$SONUC" -eq 0 ]; then
-            echo "ATV işlemi başarılı."
+            echo "ATV islemi basarili."
           else
-            echo "ATV adresi bulunamadı veya güncellenemedi."
-            echo "Eski M3U kaydı korunmuş olmalı."
+            echo "ATV adresi bulunamadi veya guncellenemedi."
+            echo "Eski M3U kaydi korunmus olmali."
           fi
 
-          exit "$SONUC"
+          # Basarisiz olsa bile workflow'u kirmadan devam et, eski liste kalsin
+          exit 0
 
       # =================================
-      # M3U KONTROLÜ
+      # M3U KONTROLU
       # =================================
-
-      - name: ATV M3U kontrolü
+      - name: ATV M3U kontrolu
         if: always()
         run: |
-          echo "========== M3U KONTROLÜ =========="
-
+          echo "========== M3U KONTROLU =========="
           if [ -f mirti68.m3u ]; then
-
             echo "M3U DOSYASI BULUNDU"
-
             echo "========== ATV KAYDI =========="
-
             grep -n -A4 -B1 'tvg-id="atv.tr"' mirti68.m3u || true
-
-            echo "========== ATV ADRES KONTROLÜ =========="
-
+            echo "========== ATV ADRES KONTROLU =========="
             grep -n 'trkvz.daioncdn.net/atv/' mirti68.m3u || true
-
+            echo "========== AVRUPA KONTROLU - OLMAMALI =========="
+            grep -n 'atvavrupa' mirti68.m3u || echo "Avrupa yok, temiz"
             echo "========== DOSYA BOYUTU =========="
-
             ls -lh mirti68.m3u
-
           else
-
             echo "M3U DOSYASI BULUNAMADI"
-
           fi
 
       # =================================
       # DOSYALARI KAYDET
       # =================================
-
-      - name: M3U ve JSON dosyalarını kaydet
+      - name: M3U ve JSON dosyalarini kaydet
         if: always()
         run: |
-
           git config user.name "MIRTI68 Bot"
           git config user.email "bot@users.noreply.github.com"
-
           rm -rf __pycache__ .pytest_cache/
-
-          echo "========== DOSYA KONTROLÜ =========="
-
+          echo "========== DOSYA KONTROLU =========="
           ls -lh *.m3u *.json 2>/dev/null || true
-
           echo "========== GIT DURUMU =========="
-
           git status --short
-
           git add -f -- '*.m3u' '*.json' 2>/dev/null || true
-
           if git diff --cached --quiet; then
-            echo "Değişiklik yok."
+            echo "Degisiklik yok."
             exit 0
           fi
-
           git commit -m "MIRTI68 ATV update $(date -u +'%d.%m.%Y %H:%M UTC')"
-
           echo "========== GITHUB PUSH =========="
-
           for i in 1 2 3; do
-
             echo "Push denemesi: $i"
-
             git fetch origin main
-
             if git rebase origin/main; then
-
               if git push origin HEAD:main; then
-                echo "PUSH BAŞARILI"
+                echo "PUSH BASARILI"
                 exit 0
               fi
-
             else
-
-              echo "Rebase başarısız."
+              echo "Rebase basarisiz."
               git rebase --abort || true
-
             fi
-
             sleep 3
-
           done
-
-          echo "PUSH BAŞARISIZ"
+          echo "PUSH BASARISIZ"
           exit 1
 
       # =================================
-      # SONUÇ RAPORU
+      # SONUC RAPORU
       # =================================
-
-      - name: ATV SONUÇ RAPORU
+      - name: ATV SONUC RAPORU
         if: always()
         run: |
-
           echo "=================================="
-          echo "MIRTI68 ATV SONUÇ RAPORU"
+          echo "MIRTI68 ATV SONUC RAPORU"
           echo "=================================="
-
           if [ "${{ steps.atv.outputs.ATV_EXIT_CODE }}" = "0" ]; then
-            echo "ATV: BAŞARILI"
+            echo "ATV: BASARILI"
           else
-            echo "ATV: BAŞARISIZ / ESKİ KAYIT KORUNDU"
+            echo "ATV: BASARISIZ / ESKI KAYIT KORUNDU"
           fi
-
           echo "=================================="
