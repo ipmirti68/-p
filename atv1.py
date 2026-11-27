@@ -14,9 +14,9 @@ from playwright.sync_api import sync_playwright
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# =========================================================
+# =====================================================
 # AYARLAR
-# =========================================================
+# =====================================================
 
 SAYFA_URL = "https://www.atv.com.tr/canli-yayin"
 ORIGIN = "https://www.atv.com.tr"
@@ -28,7 +28,10 @@ GRUP = "🟨◆  ULUSALᴴᴰ ⭕"
 KANAL = "ATVᴴᴰ⭕"
 TVG_ID = "atv.tr"
 
-LOGO = "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png"
+LOGO = (
+    "https://raw.githubusercontent.com/"
+    "ipmirti68/Logo/refs/heads/main/atv.png"
+)
 
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -37,11 +40,8 @@ UA = (
 )
 
 TIMEOUT = 25
-TARAMA_SURESI = 45000
-
-# =========================================================
-# OTURUM
-# =========================================================
+ILK_BEKLEME = 10000
+TARAMA_SURESI = 30000
 
 session = requests.Session()
 
@@ -54,6 +54,10 @@ session.headers.update({
 
 aday_basliklari = {}
 
+
+# =====================================================
+# YARDIMCI
+# =====================================================
 
 def yaz(mesaj):
     print(mesaj, flush=True)
@@ -79,16 +83,11 @@ def m3u8_mi(url):
 
 
 def atv_puani(url):
-    """
-    ATV ile ilişkili olabilecek adreslere öncelik verir.
-    Bilinmeyen CDN adreslerini de tamamen elemez.
-    """
 
     p = urlsplit(url)
 
     host = p.netloc.lower()
     yol = p.path.lower()
-    tam = url.lower()
 
     puan = 0
 
@@ -96,10 +95,10 @@ def atv_puani(url):
         puan += 100
 
     if "daioncdn" in host:
-        puan += 60
+        puan += 50
 
     if "trkvz" in host:
-        puan += 50
+        puan += 30
 
     if "/atv/" in yol:
         puan += 100
@@ -107,25 +106,51 @@ def atv_puani(url):
     if "atv" in host:
         puan += 50
 
-    if "atv" in tam:
+    if "atv" in url.lower():
         puan += 20
 
     return puan
 
 
-# =========================================================
-# PLAYWRIGHT TARAMASI
-# =========================================================
+def baslik_uygula(url):
+
+    session.headers.clear()
+
+    session.headers.update({
+        "User-Agent": UA,
+        "Referer": REFERER,
+        "Origin": ORIGIN,
+        "Accept": "*/*"
+    })
+
+    gelen = aday_basliklari.get(url, {})
+
+    izinli = (
+        "user-agent",
+        "referer",
+        "origin",
+        "accept",
+        "accept-language"
+    )
+
+    for isim, deger in gelen.items():
+
+        if isim.lower() in izinli and deger:
+            session.headers[isim] = deger
+
+
+# =====================================================
+# PLAYWRIGHT + BOOKMARKLET TARAMASI
+# =====================================================
 
 def playwright_tara():
 
     yaz("")
-    yaz("========================================")
-    yaz("[1] PLAYWRIGHT ATV TARAMASI")
-    yaz("========================================")
+    yaz("====================================")
+    yaz("[1] ATV BOOKMARKLET TARAMASI")
+    yaz("====================================")
 
     bulunan = []
-
     aday_basliklari.clear()
 
     try:
@@ -153,7 +178,16 @@ def playwright_tara():
 
             page = context.new_page()
 
-            def adres_ekle(url, headers=None, kaynak="REQUEST"):
+            # -----------------------------------------
+            # ADRES KAYDET
+            # -----------------------------------------
+
+            def ekle(url, headers=None, kaynak=""):
+
+                if not isinstance(url, str):
+                    return
+
+                url = url.strip()
 
                 if not m3u8_mi(url):
                     return
@@ -166,32 +200,28 @@ def playwright_tara():
 
                     yaz("")
                     yaz(f"[M3U8 {len(bulunan)}] {kaynak}")
-                    yaz("[ADRES] " + guvenli_url(url))
+                    yaz("[URL] " + guvenli_url(url))
                     yaz("[HOST] " + urlsplit(url).netloc)
 
-                    puan = atv_puani(url)
-
-                    yaz(f"[ATV PUANI] {puan}")
-
-            # Ağ isteklerini yakala
+            # -----------------------------------------
+            # AĞ İSTEKLERİ
+            # -----------------------------------------
 
             def request_yakala(request):
 
                 try:
-                    adres_ekle(
+                    ekle(
                         request.url,
                         request.headers,
-                        "REQUEST"
+                        "NETWORK"
                     )
                 except Exception:
                     pass
 
-            # Sunucu cevaplarını da kontrol et
-
             def response_yakala(response):
 
                 try:
-                    adres_ekle(
+                    ekle(
                         response.url,
                         response.request.headers,
                         "RESPONSE"
@@ -202,7 +232,9 @@ def playwright_tara():
             page.on("request", request_yakala)
             page.on("response", response_yakala)
 
-            # ATV sayfasını aç
+            # -----------------------------------------
+            # SAYFAYI AÇ
+            # -----------------------------------------
 
             try:
 
@@ -218,19 +250,21 @@ def playwright_tara():
 
             except Exception as hata:
 
-                yaz("[SAYFA UYARISI] " + str(hata)[:300])
+                yaz("[SAYFA UYARI] " + str(hata)[:300])
 
-            # Oynatıcıları başlatmayı dene
+            # -----------------------------------------
+            # OYNATICIYI BAŞLATMAYI DENE
+            # -----------------------------------------
 
             try:
 
                 page.evaluate("""
-                    () => {
+                    async () => {
 
-                        document.querySelectorAll('video').forEach(v => {
+                        document.querySelectorAll('video')
+                        .forEach(v => {
 
                             v.muted = true;
-
                             v.play().catch(() => {});
 
                         });
@@ -241,38 +275,121 @@ def playwright_tara():
             except Exception:
                 pass
 
-            # Yayın adreslerini bekle
+            page.wait_for_timeout(ILK_BEKLEME)
 
-            yaz("")
-            yaz("[TARAMA] M3U8 adresleri bekleniyor...")
-            yaz(f"[BEKLEME] {TARAMA_SURESI // 1000} saniye")
-
-            page.wait_for_timeout(TARAMA_SURESI)
-
-            # Tarayıcı performans kayıtlarını kontrol et
+            # -----------------------------------------
+            # OYNATMA BUTONLARINI KONTROL ET
+            # -----------------------------------------
 
             try:
 
-                performans = page.evaluate("""
-                    () => performance
-                        .getEntriesByType('resource')
-                        .map(x => x.name)
+                page.evaluate("""
+                    () => {
+
+                        const seciciler = [
+                            '.vjs-big-play-button',
+                            '.jw-icon-playback',
+                            '.plyr__control--overlaid',
+                            'button[aria-label*="Oynat"]',
+                            'button[aria-label*="Play"]'
+                        ];
+
+                        for (const secici of seciciler) {
+
+                            document.querySelectorAll(secici)
+                            .forEach(el => {
+
+                                try {
+                                    el.click();
+                                } catch(e) {}
+
+                            });
+
+                        }
+
+                    }
                 """)
 
-                for url in performans:
+            except Exception:
+                pass
 
-                    if m3u8_mi(url):
-                        adres_ekle(
-                            url,
-                            {},
-                            "PERFORMANCE"
-                        )
+            yaz("[BEKLE] Oynatıcı taranıyor...")
+
+            page.wait_for_timeout(TARAMA_SURESI)
+
+            # -----------------------------------------
+            # BOOKMARKLET MANTIĞI
+            # -----------------------------------------
+
+            try:
+
+                sonuclar = page.evaluate("""
+                    () => {
+
+                        let u = new Set();
+
+                        // 1. Performance kayıtları
+
+                        performance
+                        .getEntriesByType('resource')
+                        .forEach(r => {
+
+                            if (
+                                r.name.includes('.m3u8')
+                                || r.name.includes('.mpd')
+                            ) {
+                                u.add(r.name);
+                            }
+
+                        });
+
+                        // 2. HTML içerisindeki adresler
+
+                        let h = document.documentElement.innerHTML;
+
+                        let re = /https?:\\\\/\\\\/[^"\\\\s'<>]+?\\\\.m3u8[^"\\\\s'<>]*/gi;
+
+                        let m = h.match(re);
+
+                        if (m) {
+                            m.forEach(x => u.add(x));
+                        }
+
+                        // 3. Video ve source etiketleri
+
+                        document.querySelectorAll('video, source')
+                        .forEach(v => {
+
+                            if (v.src) {
+                                u.add(v.src);
+                            }
+
+                            if (v.currentSrc) {
+                                u.add(v.currentSrc);
+                            }
+
+                        });
+
+                        return [...u];
+
+                    }
+                """)
+
+                for url in sonuclar:
+
+                    ekle(
+                        url,
+                        {},
+                        "BOOKMARKLET"
+                    )
 
             except Exception as hata:
 
-                yaz("[PERFORMANCE UYARI] " + str(hata)[:200])
+                yaz("[BOOKMARKLET HATA] " + str(hata)[:300])
 
-            # Çerezleri requests oturumuna aktar
+            # -----------------------------------------
+            # ÇEREZLERİ AKTAR
+            # -----------------------------------------
 
             try:
 
@@ -285,15 +402,12 @@ def playwright_tara():
                         path=cookie.get("path", "/")
                     )
 
-                yaz("[OK] Tarayıcı çerezleri aktarıldı.")
+                yaz("[OK] Çerezler aktarıldı.")
 
-            except Exception as hata:
-
-                yaz("[COOKIE UYARI] " + str(hata)[:200])
+            except Exception:
+                pass
 
             browser.close()
-
-        # ATV puanına göre sırala
 
         bulunan.sort(
             key=atv_puani,
@@ -301,27 +415,25 @@ def playwright_tara():
         )
 
         yaz("")
-        yaz(f"[TARAMA TAMAMLANDI] {len(bulunan)} M3U8 bulundu.")
+        yaz(f"[TARAMA TAMAMLANDI] {len(bulunan)} M3U8")
 
         return bulunan
 
     except Exception as hata:
 
-        yaz("[PLAYWRIGHT HATASI] " + str(hata)[:500])
+        yaz("[PLAYWRIGHT HATA] " + str(hata)[:500])
 
         return bulunan
 
 
-# =========================================================
-# STREAMLINK YEDEK TARAMASI
-# =========================================================
+# =====================================================
+# STREAMLINK YEDEK
+# =====================================================
 
 def streamlink_tara():
 
     yaz("")
-    yaz("========================================")
     yaz("[2] STREAMLINK YEDEK TARAMASI")
-    yaz("========================================")
 
     yol = shutil.which("streamlink")
 
@@ -363,57 +475,20 @@ def streamlink_tara():
 
                     bulunan.append(satir)
 
-                    yaz("[STREAMLINK] M3U8 bulundu.")
-                    yaz("[ADRES] " + guvenli_url(satir))
-
-        if not bulunan:
-
-            yaz("[STREAMLINK] Adres bulunamadı.")
+                    yaz("[STREAMLINK] " + guvenli_url(satir))
 
         return bulunan
 
     except Exception as hata:
 
-        yaz("[STREAMLINK HATASI] " + str(hata)[:300])
+        yaz("[STREAMLINK HATA] " + str(hata)[:300])
 
         return []
 
 
-# =========================================================
-# ADAY BAŞLIKLARINI UYGULA
-# =========================================================
-
-def baslik_uygula(url):
-
-    session.headers.clear()
-
-    session.headers.update({
-        "User-Agent": UA,
-        "Referer": REFERER,
-        "Origin": ORIGIN,
-        "Accept": "*/*"
-    })
-
-    gelen = aday_basliklari.get(url, {})
-
-    izinli = (
-        "user-agent",
-        "referer",
-        "origin",
-        "accept",
-        "accept-language",
-    )
-
-    for isim, deger in gelen.items():
-
-        if isim.lower() in izinli and deger:
-
-            session.headers[isim] = deger
-
-
-# =========================================================
-# HLS PLAYLIST OKU
-# =========================================================
+# =====================================================
+# HLS OKU
+# =====================================================
 
 def hls_oku(url):
 
@@ -434,18 +509,16 @@ def hls_oku(url):
         if r.status_code != 200:
 
             r.close()
-
             return None, None
 
         icerik = r.text.lstrip("\ufeff \r\n\t")
-
         son_url = r.url
 
         r.close()
 
         if not icerik.startswith("#EXTM3U"):
 
-            yaz("[HATA] Geçerli M3U8 içeriği değil.")
+            yaz("[HATA] M3U8 içeriği geçersiz.")
 
             return None, None
 
@@ -458,9 +531,9 @@ def hls_oku(url):
         return None, None
 
 
-# =========================================================
-# HLS URI BUL
-# =========================================================
+# =====================================================
+# URI BUL
+# =====================================================
 
 def uri_bul(satir):
 
@@ -472,9 +545,9 @@ def uri_bul(satir):
     return m.group(1) if m else None
 
 
-# =========================================================
-# VİDEO PARÇASI TESTİ
-# =========================================================
+# =====================================================
+# VIDEO PARÇASI TEST
+# =====================================================
 
 def parca_test(url):
 
@@ -503,25 +576,17 @@ def parca_test(url):
         r.close()
 
         if len(veri) < 100:
-
-            yaz("[PARÇA] Veri çok küçük.")
-
             return False
 
         ilk = veri[:500].lower()
 
-        yasakli = (
+        if any(x in ilk for x in (
             b"<html",
             b"<!doctype",
             b"access denied",
             b"forbidden",
             b"cloudflare"
-        )
-
-        if any(x in ilk for x in yasakli):
-
-            yaz("[PARÇA] Sunucu hata sayfası döndürdü.")
-
+        )):
             return False
 
         return True
@@ -533,17 +598,14 @@ def parca_test(url):
         return False
 
 
-# =========================================================
-# HLS YAYIN TESTİ
-# =========================================================
+# =====================================================
+# HLS TEST
+# =====================================================
 
 def hls_test(url):
 
     yaz("")
-    yaz("========================================")
-    yaz("[HLS TEST]")
-    yaz(guvenli_url(url))
-    yaz("========================================")
+    yaz("[TEST] " + guvenli_url(url))
 
     icerik, son_url = hls_oku(url)
 
@@ -560,8 +622,6 @@ def hls_test(url):
     ]
 
     varyantlar = []
-
-    # Master playlist kontrolü
 
     for i, satir in enumerate(satirlar):
 
@@ -581,13 +641,8 @@ def hls_test(url):
                 if not alt.startswith("#"):
 
                     varyantlar.append(
-                        (
-                            hiz,
-                            urljoin(son_url, alt)
-                        )
+                        (hiz, urljoin(son_url, alt))
                     )
-
-    # En yüksek kaliteden başlayarak dene
 
     medya = None
     medya_url = None
@@ -599,26 +654,18 @@ def hls_test(url):
             reverse=True
         )
 
-        yaz(f"[VARYANT] {len(varyantlar)} kalite bulundu.")
-
         for hiz, alt_url in varyantlar:
 
-            yaz(f"[VARYANT TEST] {hiz} bps")
+            yaz(f"[VARYANT] {hiz}")
 
-            alt_icerik, alt_son_url = hls_oku(alt_url)
+            medya, medya_url = hls_oku(alt_url)
 
-            if alt_icerik:
-
-                medya = alt_icerik
-                medya_url = alt_son_url
-
-                yaz("[OK] Alt playlist açıldı.")
-
+            if medya:
                 break
 
         if not medya:
 
-            yaz("[HATA] Hiçbir alt playlist açılamadı.")
+            yaz("[HATA] Alt playlist açılamadı.")
 
             return False
 
@@ -627,20 +674,19 @@ def hls_test(url):
         medya = icerik
         medya_url = son_url
 
-    medya_satirlari = [
+    satirlar = [
         x.strip()
         for x in medya.splitlines()
         if x.strip()
     ]
 
-    # AES-128 anahtar kontrolü
+    # Anahtar kontrolü
 
-    for satir in medya_satirlari:
+    for satir in satirlar:
 
         if satir.startswith("#EXT-X-KEY:"):
 
             if "METHOD=NONE" in satir:
-
                 continue
 
             anahtar = uri_bul(satir)
@@ -672,19 +718,15 @@ def hls_test(url):
 
                 except requests.RequestException:
 
-                    yaz("[HATA] Anahtar isteği başarısız.")
-
                     return False
 
             elif "METHOD=AES-128" in satir:
 
-                yaz("[HATA] AES-128 anahtar URI bulunamadı.")
-
                 return False
 
-    # INIT segment kontrolü
+    # INIT segmenti
 
-    for satir in medya_satirlari:
+    for satir in satirlar:
 
         if satir.startswith("#EXT-X-MAP:"):
 
@@ -692,11 +734,9 @@ def hls_test(url):
 
             if uri:
 
-                init_url = urljoin(medya_url, uri)
+                adres = urljoin(medya_url, uri)
 
-                yaz("[INIT TEST]")
-
-                if not parca_test(init_url):
+                if not parca_test(adres):
 
                     yaz("[HATA] INIT segment başarısız.")
 
@@ -704,10 +744,10 @@ def hls_test(url):
 
             break
 
-    # Video parçalarını bul
+    # Video parçaları
 
     parcalar = [
-        x for x in medya_satirlari
+        x for x in satirlar
         if not x.startswith("#")
     ]
 
@@ -717,31 +757,25 @@ def hls_test(url):
 
         return False
 
-    # İlk parçayı test et
-
-    parca_url = urljoin(
+    adres = urljoin(
         medya_url,
         parcalar[0]
     )
 
-    yaz("[VIDEO PARÇA TEST]")
+    if not parca_test(adres):
 
-    if not parca_test(parca_url):
-
-        yaz("[HATA] Video parçası indirilemedi.")
+        yaz("[HATA] Video parçası alınamadı.")
 
         return False
 
-    yaz("")
-    yaz("[OK] HLS PLAYLIST ÇALIŞIYOR.")
-    yaz("[OK] VIDEO PARÇASI ALINDI.")
+    yaz("[OK] HLS YAYINI ÇALIŞIYOR.")
 
     return True
 
 
-# =========================================================
-# ÇALIŞAN ATV YAYININI BUL
-# =========================================================
+# =====================================================
+# YAYIN BUL
+# =====================================================
 
 def yayin_bul():
 
@@ -750,80 +784,62 @@ def yayin_bul():
     for url in streamlink_tara():
 
         if url not in adaylar:
-
             adaylar.append(url)
 
     if not adaylar:
 
-        yaz("")
-        yaz("[BAŞARISIZ] Hiç M3U8 adresi bulunamadı.")
+        yaz("[BAŞARISIZ] M3U8 bulunamadı.")
 
         return None
 
-    # ATV adreslerine öncelik ver
-
-    adaylar = sorted(
-        adaylar,
+    adaylar.sort(
         key=atv_puani,
         reverse=True
     )
 
-    yaz("")
-    yaz("========================================")
     yaz(f"[TOPLAM ADAY] {len(adaylar)}")
-    yaz("========================================")
 
     for no, url in enumerate(adaylar, 1):
 
         yaz("")
         yaz(f"[ADAY TEST] {no}/{len(adaylar)}")
 
-        yaz("[URL] " + guvenli_url(url))
-
         baslik_uygula(url)
 
         if hls_test(url):
 
-            yaz("")
-            yaz("[BAŞARILI] Çalışan yayın bulundu.")
+            yaz("[BAŞARILI] ATV adresi seçildi.")
 
             return url
 
-    yaz("")
     yaz("[BAŞARISIZ] Çalışan yayın bulunamadı.")
 
     return None
 
 
-# =========================================================
-# ATV M3U SATIRLARI
-# =========================================================
+# =====================================================
+# M3U SATIRLARI
+# =====================================================
 
 def atv_satirlari(url):
 
     return [
-
         (
             f'#EXTINF:-1 tvg-id="{TVG_ID}" '
             f'tvg-name="{KANAL}" '
             f'tvg-logo="{LOGO}" '
             f'group-title="{GRUP}",{KANAL}'
         ),
-
         f"#EXTVLCOPT:http-referrer={REFERER}",
-
         f"#EXTVLCOPT:http-origin={ORIGIN}",
-
         f"#EXTVLCOPT:http-user-agent={UA}",
-
         url
-
     ]
 
 
-# =========================================================
-# ATV KAYDINI TANIMA
-# =========================================================
+# =====================================================
+# ATV KAYDI KONTROLÜ
+# =====================================================
 
 def atv_blok_mu(blok):
 
@@ -839,26 +855,24 @@ def atv_blok_mu(blok):
 
         if satir.startswith("#EXTINF:"):
 
-            isim = satir.split(",", 1)
+            parca = satir.split(",", 1)
 
-            if len(isim) > 1:
+            if len(parca) > 1:
 
-                if isim[1].strip() == KANAL:
+                if parca[1].strip() == KANAL:
                     return True
 
     return False
 
 
-# =========================================================
+# =====================================================
 # M3U GÜNCELLE
-# =========================================================
+# =====================================================
 
 def m3u_guncelle(url):
 
     yaz("")
-    yaz("========================================")
     yaz("[3] M3U GÜNCELLEME")
-    yaz("========================================")
 
     if not os.path.isfile(DOSYA):
 
@@ -882,14 +896,11 @@ def m3u_guncelle(url):
         bloklar = []
         mevcut = []
 
-        # M3U başlığını ve yayın bloklarını ayır
-
         for satir in satirlar:
 
             if satir.startswith("#EXTINF:"):
 
                 if mevcut:
-
                     bloklar.append(mevcut)
 
                 mevcut = [satir]
@@ -903,10 +914,7 @@ def m3u_guncelle(url):
                 baslik.append(satir)
 
         if mevcut:
-
             bloklar.append(mevcut)
-
-        # Hedef grubun son konumunu bul
 
         grup_indeksleri = []
 
@@ -926,53 +934,36 @@ def m3u_guncelle(url):
             )
 
             if grup and grup.group(1) == GRUP:
-
                 grup_indeksleri.append(i)
 
         if not grup_indeksleri:
 
             yaz("[HATA] ULUSAL grubu bulunamadı.")
 
-            yaz("[BİLGİ] Mevcut gruplara dokunulmadı.")
-
             return False
 
         son_grup = grup_indeksleri[-1]
 
-        # Eski ATV kayıtlarını kaldır
-
         temiz_bloklar = []
-
         ekleme_indeksi = 0
-
         eski_atv = 0
 
         for i, blok in enumerate(bloklar):
 
-            atv = atv_blok_mu(blok)
-
-            if atv:
+            if atv_blok_mu(blok):
 
                 eski_atv += 1
-
                 continue
 
             temiz_bloklar.append(blok)
 
             if i <= son_grup:
-
                 ekleme_indeksi += 1
-
-        # Yeni ATV kaydını hedef gruba yerleştir
-
-        yeni_blok = atv_satirlari(url)
 
         temiz_bloklar.insert(
             ekleme_indeksi,
-            yeni_blok
+            atv_satirlari(url)
         )
-
-        # Dosyayı güvenli şekilde yaz
 
         with open(
             gecici,
@@ -990,27 +981,21 @@ def m3u_guncelle(url):
                     "\n".join(blok).rstrip() + "\n"
                 )
 
-        # Eski dosyanın yerine geç
-
         os.replace(
             gecici,
             DOSYA
         )
 
-        yaz("")
-        yaz("[OK] ATV kaydı güncellendi.")
         yaz(f"[OK] Eski ATV kaydı: {eski_atv}")
         yaz("[OK] Yeni ATV kaydı eklendi.")
         yaz("[OK] Diğer kanallar korundu.")
-        yaz("[OK] Diğer gruplar korundu.")
-        yaz("[OK] EPG başlıkları korundu.")
-        yaz("[OK] M3U dosyası kaydedildi.")
+        yaz("[OK] M3U güncellendi.")
 
         return True
 
     except Exception as hata:
 
-        yaz("[M3U HATASI] " + str(hata)[:500])
+        yaz("[M3U HATA] " + str(hata)[:500])
 
         if os.path.exists(gecici):
 
@@ -1022,36 +1007,28 @@ def m3u_guncelle(url):
         return False
 
 
-# =========================================================
-# ANA PROGRAM
-# =========================================================
+# =====================================================
+# MAIN
+# =====================================================
 
 def main():
 
     yaz("")
-    yaz("########################################")
-    yaz("#                                      #")
-    yaz("#       MIRTI68 ATV YAYIN SISTEMI      #")
-    yaz("#                                      #")
-    yaz("########################################")
-
-    yaz("[BAŞLA] ATV canlı yayın aranıyor.")
+    yaz("####################################")
+    yaz("       MIRTI68 ATV SISTEMI")
+    yaz("####################################")
 
     adres = yayin_bul()
 
     if not adres:
 
-        yaz("")
         yaz("[SONUÇ] ATV güncellenmedi.")
-        yaz("[SONUÇ] Mevcut M3U korunuyor.")
 
         return 1
 
     yaz("")
-    yaz("========================================")
-    yaz("[SEÇİLEN ATV URL]")
+    yaz("[SEÇİLEN URL]")
     yaz(guvenli_url(adres))
-    yaz("========================================")
 
     if not m3u_guncelle(adres):
 
@@ -1060,15 +1037,12 @@ def main():
         return 1
 
     yaz("")
-    yaz("########################################")
-    yaz("#                                      #")
-    yaz("#       MIRTI68 ATV ISLEMI BASARILI    #")
-    yaz("#                                      #")
-    yaz("########################################")
+    yaz("####################################")
+    yaz("       ATV ISLEMI BASARILI")
+    yaz("####################################")
 
     return 0
 
 
 if __name__ == "__main__":
-
     raise SystemExit(main())
