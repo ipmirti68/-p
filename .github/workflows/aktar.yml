@@ -1,77 +1,50 @@
 name: MIRTI68 - Tek Aktar
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: "0 */2 * * *"
 
 permissions:
   contents: write
-
-concurrency:
-  group: mirti68-aktar
-  cancel-in-progress: true
 
 jobs:
   aktar:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Repo al
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - name: Python kur
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      - run: pip install requests pyyaml
+      - name: Gerekli paketler
+        run: pip install requests pyyaml
 
-      - name: Dizi aktar
-        run: python aktardizi.py
-
-      - name: Film aktar
+      - name: Film calistir
         run: python aktarfilim.py
 
-      - name: Genel aktar
+      - name: Genel calistir
         run: python aktargenel.py
 
-      - name: Kaydet
+      - name: Kaydet ve Push
         run: |
+          # 1. .bak dosyalari push'u bozar, hepsini sil
+          rm -f *.bak *.m3u.bak
+          # 2. Sadece bizim 3 dosyayi al, digerlerine dokunma
           git config user.name "MIRTI68 Bot"
-          git config user.email "mirti68@bot.local"
-
-          echo "========== PY NE URETTI =========="
-          git status --short
-          ls -lh *.m3u *.json 2>/dev/null || true
-
-          # HEDEF DOSYA BURADA YAZILMIYOR
-          # py / yaml ne urettiyse onu al
-          git add -A -- '*.m3u' '*.json' '*.yaml' '*.yml' 2>/dev/null || true
-
-          # .py degisti ise onu da al, ama hedef dosya listesi yok
-          git add -A -- 'aktar*.py' 2>/dev/null || true
-
-          echo "========== KAYDEDILECEK =========="
-          git status --short
-
+          git config user.email "mirti68@users.noreply.github.com"
+          git add mirtitv68.m3u film.tmp.m3u genel.tmp.m3u || true
+          # Degisiklik yoksa bosuna push deneme
           if git diff --cached --quiet; then
-            echo "Degisiklik yok"
+            echo "Degisiklik yok, push yok"
             exit 0
           fi
-
-          git commit -m "Dizi + Film guncelleme"
-
-          echo "========== PUSH =========="
-          for i in 1 2 3; do
-            git fetch origin main
-            if git rebase origin/main; then
-              if git push origin HEAD:main; then
-                echo "PUSH BASARILI"
-                exit 0
-              fi
-            else
-              git rebase --abort || true
-            fi
-            sleep 3
-          done
-          echo "PUSH BASARISIZ"
-          exit 1
+          git commit -m "Dizi + Film guncelleme" || true
+          # 3. Unstaged kalmasin diye autostash ile rebase
+          git pull --rebase --autostash || git pull --rebase --autostash || true
+          git push || git push
