@@ -1,6 +1,6 @@
-# MIRTI68 - FILM AKTARICI - Girinti bagimsiz
-# Okur: aktarfilim.yaml (bozuk girinti olsa bile okur)
-# Yazar: film.tmp.m3u + mirti.m3u
+# MIRTI68 - FILM AKTARICI - EPG KORU + YERINDE EKLE + OK ISARETI OKUR
+# Okur: aktarfilim.yaml (kaynak_grup: / hedef_grup: VEYA  ANIMASYON COCUK -> 🟪◆FİLM - ANIMASYON COCUK)
+# Yazar: film.tmp.m3u + mirtitv68.m3u
 import re, os, shutil, urllib.request, urllib.parse, json, time
 try:
     import yaml
@@ -10,6 +10,7 @@ except ImportError:
 HEDEF_DOSYA = "mirtitv68.m3u"
 FILM_YAML = "aktarfilim.yaml"
 TMP_DOSYA = "film.tmp.m3u"
+VARSAYILAN_KAYNAK = "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
 TIMEOUT = 30
 _FILM_CACHE = {}
@@ -24,9 +25,9 @@ def normalize(s):
 def norm_sinema(s):
     return re.sub(r'[^a-z0-9çğıöşü]+','',(s or "").lower())
 
-SINEMA_WANTED_RAW = ["【entity-IMDb¦canonical_name=IMDb】 Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"]
+SINEMA_WANTED_RAW = [" 【entity-IMDb¦canonical_name=IMDb】 Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"]
 SINEMA_WANTED = {norm_sinema(x): x for x in SINEMA_WANTED_RAW}
-SINEMA_EXCLUDED = ["【entity-adam sandler¦canonical_name=adam sandler】","clint eastwood","【entity-sylvester stallone¦canonical_name=sylvester stallone】","【entity-jackie chan¦canonical_name=jackie chan】","nicolas cage","【entity-steven seagal¦canonical_name=steven seagal】","【entity-jason statham¦canonical_name=jason statham】","seri","dizi","series","sezon","season","episode","bölüm","bolum","s01e","s02e","s03e"]
+SINEMA_EXCLUDED = [" 【entity-adam sandler¦canonical_name=adam sandler】","clint eastwood"," 【entity-sylvester stallone¦canonical_name=sylvester stallone】"," 【entity-jackie chan¦canonical_name=jackie chan】","nicolas cage"," 【entity-steven seagal¦canonical_name=steven seagal】"," 【entity-jason statham¦canonical_name=jason statham】","seri","dizi","series","sezon","season","episode","bölüm","bolum","s01e","s02e","s03e"]
 def sinema_excluded(text):
     t = " " + re.sub(r'[^a-z0-9çğıöşü]+',' ',(text or "").lower()) + " "
     compact = (text or "").lower().replace(" ","")
@@ -133,16 +134,26 @@ def film_bilgisi_internet(baslik, yil_hint=""):
 
 def yaml_oku_guvenli(path):
     def temiz(v):
-        v = v.strip()
+        v = v.strip().strip(",")
         if len(v) >= 2 and ((v[0] == "'" and v[-1] == "'") or (v[0] == '"' and v[-1] == '"')):
             v = v[1:-1]
-        return v.strip()
+        return v.strip().strip("-").strip()
     out = {"filmler": []}
     cur = None
     with open(path, encoding="utf-8") as f:
         for line in f:
             s = line.strip()
             if not s or s.startswith("#") or s == "filmler:": continue
+            # YENI: Ok isaretli satir - ANIMASYON COCUK -> 🟪◆FİLM - ANIMASYON COCUK
+            if "->" in s and "kaynak_url:" not in s and "hedef_grup:" not in s and "kaynak_grup:" not in s:
+                sol, sag = s.split("->", 1)
+                sol = temiz(sol); sag = temiz(sag)
+                # 🟪◆YABANCI TR DB gibi solda emoji varsa temizle
+                sol = re.sub(r'^[🟪◆\s]+', '', sol).strip()
+                if not sol or not sag: continue
+                if cur: out["filmler"].append(cur)
+                cur = {"kaynak_url": VARSAYILAN_KAYNAK, "kaynak_grup": sol, "hedef_grup": sag, "kaynak_gruplar": [], "sinema_modu": True, "film_bilgi_al": True, "hedefler": [{"hedef_adi": "hedef_1", "aranacak": "", "hedef_grup": sag, "hedef_logo": "", "ek_kod": ""}]}
+                continue
             if "kaynak_url:" in s:
                 if cur: out["filmler"].append(cur)
                 v = s.split("kaynak_url:",1)[1]
@@ -171,25 +182,18 @@ def main():
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
-    def kalacak_mi(r):
-        g = grup_bul(r)
-        if "🟪◆ FİLM" in g or "🟪◆ FILM" in g or "🟪◆ FİLİM" in g: return False
-        if g.startswith("FILMLER /"): return False
-        return True
-    hedef_records = [r for r in hedef_records if kalacak_mi(r)]
+    # DUZELTILDI: kalacak_mi SILINDI - mevcut FİLM gruplari silinmiyor
     gorulen = set()
     for r in hedef_records:
         u = kanal_url(r)
         if u: gorulen.add(u.strip())
-    lines = []
-    for r in hedef_records: lines.extend(r)
+    yeni_by_grup = {}
     film_lines = ["#EXTM3U"]
     bilgi_alinan = 0
     eklenen_toplam = 0
     for sira, f in enumerate(filmler, 1):
         if not isinstance(f, dict): continue
-        kurl = str(f.get("kaynak_url","") or "").strip()
-        if not kurl: continue
+        kurl = str(f.get("kaynak_url","") or "").strip() or VARSAYILAN_KAYNAK
         hedefler = f.get("hedefler", []) or []
         if not hedefler and f.get("hedef_grup"):
             hedefler = [{"hedef_adi": "hedef_1", "aranacak": f.get("aranacak",""), "hedef_grup": f.get("hedef_grup",""), "hedef_logo": f.get("hedef_logo",""), "ek_kod": f.get("ek_kod","")}]
@@ -197,12 +201,6 @@ def main():
         print(f"[FILM {sira}] {kurl[:60]} - bilgi_al: {bilgi_al}")
         try: _, kaynak = oku_m3u(kurl)
         except Exception as e: print(f"  [ATLANDI] {e}"); continue
-        # DEBUG: Kaynakta hangi gruplar var
-        _gruplar = {}
-        for _r in kaynak:
-            _g = grup_bul(_r)
-            _gruplar[_g] = _gruplar.get(_g, 0) + 1
-        print(f"  [KAYNAK] Toplam: {len(kaynak)}, Gruplar: {list(_gruplar.items())[:20]}")
         kg = str(f.get("kaynak_grup","") or "").strip()
         kgs = f.get("kaynak_gruplar", []) or []
         if isinstance(kgs, str): kgs = [kgs]
@@ -218,9 +216,7 @@ def main():
                 _n = norm_sinema(g) if sinema_modu else normalize(g)
                 if _n not in kgs_n: continue
             elif kg:
-                # DUZELTILDI: Tam esitlik degil, icinde geciyor mu bak
                 if normalize(kg) not in normalize(g) and normalize(g) not in normalize(kg): continue
-            # DUZELTILDI: Sadece grup adina bak, film adindaki 'seri' filmi silmesin
             if sinema_modu and sinema_excluded(g): continue
             eslesen = None
             for h in hedefler:
@@ -240,10 +236,11 @@ def main():
             hedef_grup = str(eslesen.get("hedef_grup","") or "").strip()
             hedef_logo = str(eslesen.get("hedef_logo","") or "").strip()
             ek_kod = str(eslesen.get("ek_kod","") or "").strip()
+            # DUZELTILDI: Artik FILMLER / degil, 🟪◆FİLM - oluyor
             if sinema_modu and not hedef_grup:
                 _clean = SINEMA_WANTED.get(norm_sinema(g), g)
                 _clean = re.sub(r"\s+", " ", _clean).strip()
-                hedef_grup = f"FILMLER / {_clean.upper()}"
+                hedef_grup = f"🟪◆FİLM - {_clean.upper()}"
             temiz_ad, yil_yerel = film_bilgisi_yerel(ad)
             poster = ""; kimlik = ""; aciklama = ""
             if bilgi_al:
@@ -264,14 +261,26 @@ def main():
                 m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
                 oz = {}
                 for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
-                oz["group-title"] = hedef_grup
-                oz["tvg-name"] = yeni_ad
+                # EPG KORUMA
+                gelen_id = oz.get("tvg-id","").strip()
+                gelen_epg = oz.get("tvg-epg","").strip()
                 gelen_logo = oz.get("tvg-logo","").strip()
-                if not gelen_logo and poster: oz["tvg-logo"] = poster
-                elif not gelen_logo and hedef_logo: oz["tvg-logo"] = hedef_logo
-                if kimlik and not oz.get("tvg-id"):
+                gelen_name = oz.get("tvg-name","").strip()
+                oz["group-title"] = hedef_grup
+                if not gelen_name:
+                    oz["tvg-name"] = yeni_ad
+                if gelen_epg:
+                    oz["tvg-epg"] = gelen_epg
+                if gelen_id:
+                    oz["tvg-id"] = gelen_id
+                elif kimlik:
                     oz["tvg-id"] = kimlik
-                if sinema_modu: oz["tvg-type"] = "movie"
+                # LOGO SIRASI: 1) kaynak 2) hedef 3) internet posteri
+                if not gelen_logo and hedef_logo:
+                    oz["tvg-logo"] = hedef_logo
+                elif not gelen_logo and not hedef_logo and poster:
+                    oz["tvg-logo"] = poster
+                if sinema_modu and "tvg-type" not in oz: oz["tvg-type"] = "movie"
                 if aciklama and not oz.get("tvg-plot"):
                     oz["tvg-plot"] = aciklama.replace('"','').replace('\n',' ')[:300]
                 oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
@@ -279,13 +288,30 @@ def main():
             if sinema_modu:
                 for i,l in enumerate(yeni):
                     if l.strip().startswith(("http://","https://")): yeni[i]=sinema_fix_url(l.strip())
-            lines.extend(yeni); film_lines.extend(yeni); gorulen.add(u.strip())
+            yeni_by_grup.setdefault(hedef_grup, []).extend(yeni)
+            film_lines.extend(yeni); gorulen.add(u.strip())
             eklenen_blok += 1; eklenen_toplam += 1
         print(f"  [OK] {sira}. blok bitti, bu blokta eklenen: {eklenen_blok}, internetten bilgi alinan: {bilgi_alinan}")
+    # YERINDE EKLEME
+    lines = []
+    if not baslik or not baslik[0].strip().startswith("#EXTM3U"):
+        lines.append("#EXTM3U")
+    else:
+        lines.extend(baslik)
+    eklenmis = set()
+    for i, r in enumerate(hedef_records):
+        lines.extend(r)
+        g = grup_bul(r)
+        sonraki = grup_bul(hedef_records[i+1]) if i+1 < len(hedef_records) else None
+        if g in yeni_by_grup and g not in eklenmis and g != sonraki:
+            lines.extend(yeni_by_grup[g])
+            eklenmis.add(g)
+    for g, recs in yeni_by_grup.items():
+        if g not in eklenmis:
+            lines.extend(recs)
     with open(TMP_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(film_lines)+"\n")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
     except Exception: pass
-    if not lines or not lines[0].strip().startswith("#EXTM3U"): lines.insert(0, "#EXTM3U")
     with open(HEDEF_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(lines)+"\n")
     print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA} - Toplam eklenen film: {eklenen_toplam}")
 
