@@ -1,12 +1,12 @@
 hedef_dosya: "mirtitv68.m3u"
 sporlar:
-    - kaynak_url: "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u"
+    - kaynak_url: "https://raw.githubusercontent.com/smtv62/kralbozguncu/refs/heads/main/kral.m3u"
     epg_koru: true
     sadece_listedekiler: true
     hedefler:
             - hedef_adi: "hedef_1"
         aranacak: "beIN SPORTS"
-        hedef_grup: "🟩◆ ◆ SPOR - BEIN SPORT ⭕"
+        hedef_grup: "🟩◆  SPOR - BEIN SPORT ⭕"
         hedef_logo: ""
         ek_kod: ""
             - hedef_adi: "hedef_2"
