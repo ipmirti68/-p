@@ -5,11 +5,10 @@
 # Yazar: HEDEF_DOSYA + genel.tmp.m3u
 # HEDEF_DOSYA yaml'den gelir, yoksa mirti_test.m3u
 # 1 url -> 5 hedef, her hedef farkli grup
-# aranacak: "a, b, c" seklinde virgullu, py listeye cevirir
-# kaynak_grup / kaynak_gruplar varsa once ona gore suzer
-# Logo: Kendi logosu varsa onu kullan, yoksa hedef logosu
-# ek_kod: Kanal adinin sonuna eklenir, zaten varsa 2. kez eklenmez
-# Ayni url varsa eklemez, EPG korunur, sadece listedekiler guncellenir
+# KURAL: Var olani SILME, YERINI DEGISTIRME, EPG SILME
+# - Ayni URL varsa ayni satirda guncelle
+# - Yoksa benzer grubun altina ekle
+# - Benzer grup da yoksa en sona ekle
 import re, os, shutil, urllib.request
 try:
     import yaml
@@ -186,6 +185,29 @@ def oku_yaml(path):
         print(f"[UYARI] {path} icinde genel bos")
     return data
 
+def extinf_guncelle(rec, hedef_grup, yeni_ad, hedef_logo):
+    # EPG KORU: eski EXTINF'teki tum ozellikler aynen kalir
+    # Sadece group-title, tvg-name degisir, logo yoksa hedef logosu eklenir
+    yeni = list(rec)
+    idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
+    if idx is None:
+        return yeni
+    extinf = yeni[idx]
+    m = re.match(r"#EXTINF:(-?\d+)", extinf)
+    sure = m.group(1) if m else "-1"
+    oz = {}
+    for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf):
+        oz[k] = v
+    oz["group-title"] = hedef_grup
+    oz["tvg-name"] = yeni_ad
+    # Logo: eskide varsa ona dokunma, yoksa hedef logosunu koy
+    if not oz.get("tvg-logo","").strip() and hedef_logo:
+        oz["tvg-logo"] = hedef_logo
+    # EPG: tvg-id, catchup, catchup-source vs. hepsi oz'da kaldi, silinmedi
+    oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
+    yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
+    return yeni
+
 def main():
     global HEDEF_DOSYA
     print("MIRTI68 - GENEL BASLADI - aktargenel.yaml okunuyor")
@@ -199,19 +221,23 @@ def main():
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
 
-    def kalacak_mi(r):
-        g = grup_bul(r)
-        if g.startswith("🟨◆") or g.startswith("🟥🔹"): return False
-        return True
-    hedef_records = [r for r in hedef_records if kalacak_mi(r)]
-
-    gorulen = set()
-    for r in hedef_records:
+    # SILME YOK - hedef dosya aynen korunuyor, yerinde guncelleniyor
+    # Hizli bulmak icin URL -> index haritasi
+    url_index = {}
+    for i, r in enumerate(hedef_records):
         u = kanal_url(r)
-        if u: gorulen.add(u.strip())
-    lines = []
-    for r in hedef_records: lines.extend(r)
+        if u:
+            url_index[u.strip()] = i
+    # Isim -> index haritasi (URL degismisse isimden bul)
+    isim_index = {}
+    for i, r in enumerate(hedef_records):
+        n = normalize(kanal_adi(r))
+        if n and n not in isim_index:
+            isim_index[n] = i
+
     genel_lines = ["#EXTM3U"]
+    toplam_guncelle = 0
+    toplam_ekle = 0
 
     for sira, g in enumerate(genel, 1):
         if not isinstance(g, dict): continue
@@ -235,10 +261,11 @@ def main():
         if isinstance(kgs, str): kgs = [kgs]
         kgs_n = [normalize(x) for x in kgs if str(x).strip()]
         kg_n = normalize(kg) if kg else ""
+        blok_guncelle = 0
+        blok_ekle = 0
         for r in kaynak:
             ad = kanal_adi(r); u = kanal_url(r)
             if not u: continue
-            if u.strip() in gorulen: continue
             if kgs_n:
                 if normalize(grup_bul(r)) not in kgs_n: continue
             elif kg_n:
@@ -263,29 +290,76 @@ def main():
             yeni_ad = ad
             if ek_kod and not yeni_ad.endswith(ek_kod):
                 yeni_ad = f"{yeni_ad} {ek_kod}"
-            yeni = list(r)
-            idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
-            if idx is not None:
-                extinf = yeni[idx]
-                m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
-                oz = {}
-                for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
-                oz["group-title"] = hedef_grup
-                oz["tvg-name"] = yeni_ad
-                gelen_logo = oz.get("tvg-logo","").strip()
-                if not gelen_logo and hedef_logo:
-                    oz["tvg-logo"] = hedef_logo
-                oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
-                yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
-            lines.extend(yeni); genel_lines.extend(yeni); gorulen.add(u.strip())
-        print(f"  [OK] {sira}. blok bitti")
 
-    with open(TMP_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(genel_lines)+"\n")
+            # 1. VAR MI? URL ile bak, yoksa isimle bak
+            idx = url_index.get(u.strip(), None)
+            if idx is None:
+                idx = isim_index.get(normalize(ad), None)
+            if idx is not None:
+                # VAR: Ayni satirda guncelle, YERINI DEGISTIRME, EPG KORU
+                eski = hedef_records[idx]
+                eski_url = kanal_url(eski)
+                hedef_records[idx] = extinf_guncelle(eski, hedef_grup, yeni_ad, hedef_logo)
+                # URL degismisse URL satirini da guncelle, diger satirlara dokunma
+                if eski_url.strip() != u.strip():
+                    for j, satir in enumerate(hedef_records[idx]):
+                        if satir.strip() == eski_url.strip():
+                            hedef_records[idx][j] = u
+                            break
+                blok_guncelle += 1
+            else:
+                # 2. YOK: Benzer grubun altina ekle
+                yeni_rec = extinf_guncelle(r, hedef_grup, yeni_ad, hedef_logo)
+                # Ayni grubun en son oldugu yeri bul
+                ekle_pos = None
+                for i in range(len(hedef_records)-1, -1, -1):
+                    if grup_bul(hedef_records[i]) == hedef_grup:
+                        ekle_pos = i + 1
+                        break
+                # Ayni grup yoksa benzer prefixli grubun altina ekle
+                # Ornek: 🟥🔹 CANLI KAMERA yoksa son 🟥🔹 grubunun altina
+                if ekle_pos is None:
+                    prefix = hedef_grup[:2]
+                    for i in range(len(hedef_records)-1, -1, -1):
+                        if grup_bul(hedef_records[i]).startswith(prefix):
+                            ekle_pos = i + 1
+                            break
+                # Hic benzer yoksa en sona ekle
+                if ekle_pos is None:
+                    ekle_pos = len(hedef_records)
+                hedef_records.insert(ekle_pos, yeni_rec)
+                # Indexleri tazele, cunku insert kaydiriyor
+                url_index = {}
+                isim_index = {}
+                for i, rr in enumerate(hedef_records):
+                    uu = kanal_url(rr)
+                    if uu: url_index[uu.strip()] = i
+                    nn = normalize(kanal_adi(rr))
+                    if nn and nn not in isim_index: isim_index[nn] = i
+                blok_ekle += 1
+            genel_lines.append(None)
+        print(f"  [OK] {sira}. blok bitti, guncellenen: {blok_guncelle}, yeni eklenen: {blok_ekle}")
+        toplam_guncelle += blok_guncelle
+        toplam_ekle += blok_ekle
+
+    # genel.tmp.m3u - sadece bu calismada dokunulanlar, kontrol icin
+    # Hedef dosyanin tamami korunuyor
+    with open(TMP_DOSYA,"w",encoding="utf-8",newline="") as f:
+        f.write("#EXTM3U\n")
+        for r in hedef_records:
+            # Bu dosyada sadece genel gruplarini yaz, digerlerine dokunma
+            if grup_bul(r).startswith("🟨◆") or grup_bul(r).startswith("🟥🔹"):
+                f.write("\n".join(r)+"\n")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
     except Exception: pass
-    if not lines or not lines[0].strip().startswith("#EXTM3U"): lines.insert(0, "#EXTM3U")
+    lines = []
+    if not baslik or not baslik[0].strip().startswith("#EXTM3U"):
+        lines.append("#EXTM3U")
+    else:
+        lines.extend(baslik)
+    for r in hedef_records: lines.extend(r)
     with open(HEDEF_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(lines)+"\n")
-    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA} - Ayni url eklenmedi, liste cogalmadi")
+    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA} - Guncellenen: {toplam_guncelle}, Yeni: {toplam_ekle}, Silinen: 0, Yer degisen: 0, EPG korundu")
 
 if __name__ == "__main__":
     main()
