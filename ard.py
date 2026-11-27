@@ -6,7 +6,7 @@ OUTPUT_FILE = "mirti68.m3u"
 
 # Kanal adı, URL kodu/yolu, tip ve logosu
 channels = [
-    ("=Bein Sports 1", "b1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    ("Bein Sports 1", "b1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
     ("Bein Sports 2", "b2", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
     ("Bein Sports 3", "b3", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
     ("Bein Sports 4", "b4", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
@@ -32,8 +32,9 @@ def build_new_entries():
         else:
             stream_url = f"{BASE_DOMAIN}//{code_or_path}/tracks-v1a1/mono.m3u8"
 
-        if name.lower().startswith("Bein Sports"):
-            group = "🟩◆  beIN SPORTS 🖥"
+        # DUZELTILDI: Bein Sports iceriyorsa Bein Sports grubuna, digerleri SPORTS grubuna
+        if "Bein Sports" in name.lower():
+            group = "🟩◆ Bein Sports 🖥"
         else:
             group = "🟩◆ SPORTS ⭕"
 
@@ -48,7 +49,6 @@ def build_new_entries():
 
 def generate_playlist():
     new_entries = build_new_entries()
-    # Bu scriptin yönettigi kanal isimleri - sadece bunlar silinip yenilenecek
     managed_names = {name.lower() for name, _, _, _ in channels}
 
     header_lines = []
@@ -62,28 +62,23 @@ def generate_playlist():
         while i < len(lines):
             line = lines[i].strip()
 
-            # Baslik / EPG / VLCOPT satirlarini aynen koru
             if line.startswith("#EXTM3U") or line.startswith("#EXTVLCOPT") or line.startswith("#EXTGRP") or line.startswith("#PLAYLIST") or line.startswith("#EXT-X-"):
                 header_lines.append(lines[i])
                 i += 1
                 continue
 
-            # EXTINF + URL cifti
             if line.startswith("#EXTINF"):
-                # tvg-name veya virgulden sonraki ismi al
                 m = re.search(r'tvg-name="([^"]+)"', line)
                 after_comma = line.split(",", 1)[-1].strip() if "," in line else ""
                 tvg_name = (m.group(1) if m else after_comma).lower()
 
                 url_line = lines[i + 1] if i + 1 < len(lines) else ""
 
-                # Bu scriptin kanaliysa ESKISINI AT, yenisi asagida eklenecek
                 if tvg_name in managed_names:
                     print(f"[-] Eski kayit silindi, yenilenecek: {after_comma}")
                     i += 2
                     continue
 
-                # Baska kanalsa aynen koru
                 kept_lines.append(lines[i])
                 if url_line and not url_line.startswith("#"):
                     kept_lines.append(url_line)
@@ -92,12 +87,10 @@ def generate_playlist():
                     i += 1
                 continue
 
-            # Bos satir veya bilinmeyen satir - URL degilse atlama, koru
             if line == "":
                 i += 1
                 continue
 
-            # Tek basina URL satiri (EXTINFsiz kalmis) - koru
             if not line.startswith("#"):
                 kept_lines.append(lines[i])
             i += 1
@@ -108,13 +101,11 @@ def generate_playlist():
             f"#EXTVLCOPT:http-referrer={TARGET_URL}",
         ]
 
-    # Baslik yoksa ekle
     if not any(l.startswith("#EXTM3U") for l in header_lines):
         header_lines.insert(0, "#EXTM3U")
 
     final_lines = header_lines + [""] + kept_lines + [""]
 
-    # Yeni kanallari en sona ekle
     for extinf, url in new_entries:
         final_lines.append(extinf)
         final_lines.append(url)
