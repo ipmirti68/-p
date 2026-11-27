@@ -39,6 +39,7 @@ TARAMA_ARALIGI = 3
 
 TARAYICI_CEREZLERI = {}
 
+
 # =========================================================
 # GERÇEK ATV ADRES KONTROLÜ
 # =========================================================
@@ -120,7 +121,35 @@ def atv_adresi_bul():
         page = context.new_page()
 
         # -------------------------------------------------
-        # GERÇEK İSTEKLERİ YAKALA
+        # BOOKMARKLET GİBİ PERFORMANS KAYDI TUT
+        # -------------------------------------------------
+
+        page.add_init_script("""
+            window.__atvResources = [];
+
+            try {
+
+                const observer = new PerformanceObserver((list) => {
+
+                    for (const entry of list.getEntries()) {
+
+                        if (entry.name) {
+                            window.__atvResources.push(entry.name);
+                        }
+
+                    }
+
+                });
+
+                observer.observe({
+                    entryTypes: ['resource']
+                });
+
+            } catch(e) {}
+        """)
+
+        # -------------------------------------------------
+        # AĞ İSTEKLERİNİ YAKALA
         # -------------------------------------------------
 
         def istek_yakala(request):
@@ -128,11 +157,18 @@ def atv_adresi_bul():
             url = request.url
 
             if gercek_atv_mi(url):
-                bulunan.add(url)
-                print("[İSTEK YAKALANDI]", url[:150])
+
+                if url not in bulunan:
+
+                    bulunan.add(url)
+
+                    print(
+                        "[İSTEK YAKALANDI]",
+                        url[:180]
+                    )
 
         # -------------------------------------------------
-        # SUNUCU CEVAPLARINI YAKALA
+        # AĞ CEVAPLARINI YAKALA
         # -------------------------------------------------
 
         def cevap_yakala(response):
@@ -140,7 +176,11 @@ def atv_adresi_bul():
             url = response.url
 
             if gercek_atv_mi(url):
-                bulunan.add(url)
+
+                if url not in bulunan:
+
+                    bulunan.add(url)
+
                 print(
                     "[CEVAP]",
                     response.status,
@@ -166,20 +206,22 @@ def atv_adresi_bul():
 
         except PlaywrightTimeout:
 
-            print("[UYARI] Sayfa zaman aşımına uğradı.")
+            print("[UYARI] Sayfa yüklemesi zaman aşımına uğradı.")
             print("[UYARI] Tarama devam ediyor.")
 
         except Exception as e:
 
             print("[HATA] Sayfa açılamadı:", e)
+
             browser.close()
+
             return None
 
         # -------------------------------------------------
-        # ÇEREZ KONTROLÜ
+        # ÇEREZ ONAYI
         # -------------------------------------------------
 
-        print("[ÇEREZ] Çerez penceresi kontrol ediliyor...")
+        print("[ÇEREZ] Kontrol ediliyor...")
 
         seciciler = [
             "#onetrust-accept-btn-handler",
@@ -200,39 +242,42 @@ def atv_adresi_bul():
                     eleman.click(timeout=2000)
 
                     print("[OK] Çerez onayı verildi.")
+
                     break
 
             except Exception:
                 pass
 
         # -------------------------------------------------
-        # OYNATICIYI GÖRÜNÜR ALANA GETİR
+        # OYNATICIYI BUL
         # -------------------------------------------------
 
-        print("[OYUNCU] Oynatıcı aranıyor...")
+        print("[OYUNCU] Video oynatıcıları aranıyor...")
 
         try:
 
             page.evaluate("""
-                window.scrollTo(
-                    0,
-                    document.body.scrollHeight / 3
-                );
+                window.scrollTo({
+                    top: document.body.scrollHeight / 3,
+                    behavior: 'instant'
+                });
             """)
 
         except Exception:
             pass
 
         # -------------------------------------------------
-        # TÜM FRAME'LERDE VİDEOYU BAŞLATMAYI DENE
+        # VİDEOLARI BAŞLATMAYI DENE
         # -------------------------------------------------
 
         for frame in page.frames:
 
             try:
 
-                frame.evaluate("""
+                sonuc = frame.evaluate("""
                     () => {
+
+                        let sayac = 0;
 
                         document.querySelectorAll('video').forEach(video => {
 
@@ -246,29 +291,43 @@ def atv_adresi_bul():
                                     ''
                                 );
 
-                                video.play().catch(() => {});
+                                const sonuc = video.play();
+
+                                if (sonuc && sonuc.catch) {
+                                    sonuc.catch(() => {});
+                                }
+
+                                sayac++;
 
                             } catch(e) {}
 
                         });
 
+                        return sayac;
                     }
                 """)
+
+                if sonuc:
+                    print("[VIDEO] Bulunan video:", sonuc)
 
             except Exception:
                 pass
 
-            # Oynat düğmelerini dene.
+        # -------------------------------------------------
+        # OYNATMA DÜĞMELERİNİ DENE
+        # -------------------------------------------------
 
-            dugmeler = [
-                "button[aria-label*='Play']",
-                "button[title*='Play']",
-                ".vjs-big-play-button",
-                ".jw-display-icon-container",
-                ".plyr__control--overlaid",
-                ".play-button",
-                "[class*='playButton']"
-            ]
+        dugmeler = [
+            "button[aria-label*='Play']",
+            "button[title*='Play']",
+            ".vjs-big-play-button",
+            ".jw-display-icon-container",
+            ".plyr__control--overlaid",
+            ".play-button",
+            "[class*='playButton']"
+        ]
+
+        for frame in page.frames:
 
             for secici in dugmeler:
 
@@ -290,10 +349,48 @@ def atv_adresi_bul():
                     pass
 
         # -------------------------------------------------
-        # PERFORMANS KAYITLARINI VE VİDEOLARI TARA
+        # BOOKMARKLET VİDEO BİLGİLERİ
         # -------------------------------------------------
 
-        print("[BEKLE] ATV oynatıcısı taranıyor...")
+        print("[VIDEO] Video bilgileri:")
+
+        try:
+
+            video_bilgileri = page.evaluate("""
+                () => {
+
+                    return Array.from(
+                        document.querySelectorAll('video')
+                    ).map((v, i) => ({
+
+                        no: i + 1,
+                        kaynak: v.currentSrc || v.src || '',
+                        genislik: v.videoWidth || 0,
+                        yukseklik: v.videoHeight || 0
+
+                    }));
+
+                }
+            """)
+
+            for v in video_bilgileri:
+
+                print(
+                    "VIDEO",
+                    v["no"],
+                    v["kaynak"] or "Kaynak bekleniyor",
+                    "|",
+                    str(v["genislik"]) + "x" + str(v["yukseklik"])
+                )
+
+        except Exception:
+            pass
+
+        # -------------------------------------------------
+        # ANA TARAMA
+        # -------------------------------------------------
+
+        print("[BEKLE] Yayın kaynakları taranıyor...")
         print("[BİLGİ] Tarama süresi:", TARAMA_SURESI, "saniye")
 
         baslangic = time.time()
@@ -310,14 +407,31 @@ def atv_adresi_bul():
 
                             let sonuc = [];
 
-                            // Tarayıcı performans kayıtları
+                            // Bookmarklet ile aynı yöntem
                             try {
 
                                 performance
                                     .getEntriesByType('resource')
                                     .forEach(x => {
-                                        sonuc.push(x.name);
+
+                                        if (x.name) {
+                                            sonuc.push(x.name);
+                                        }
+
                                     });
+
+                            } catch(e) {}
+
+                            // Sayfa açılırken kaydedilen kaynaklar
+                            try {
+
+                                if (window.__atvResources) {
+
+                                    sonuc.push(
+                                        ...window.__atvResources
+                                    );
+
+                                }
 
                             } catch(e) {}
 
@@ -364,8 +478,35 @@ def atv_adresi_bul():
 
                                 print(
                                     "[PERFORMANCE]",
-                                    url[:150]
+                                    url[:180]
                                 )
+
+                except Exception:
+                    pass
+
+            # Her 3 saniyede bir tekrar video başlatmayı dene.
+            for frame in page.frames:
+
+                try:
+
+                    frame.evaluate("""
+                        () => {
+
+                            document.querySelectorAll('video').forEach(v => {
+
+                                try {
+
+                                    if (v.paused) {
+                                        v.muted = true;
+                                        v.play().catch(() => {});
+                                    }
+
+                                } catch(e) {}
+
+                            });
+
+                        }
+                    """)
 
                 except Exception:
                     pass
@@ -383,9 +524,15 @@ def atv_adresi_bul():
 
                 son_yazdirma = gecen
 
-            # 1080P adresi bulunduğunda kısa süre daha izle.
+            # 1080P adresi bulunduysa biraz daha gözlemle.
+            if (
+                any(
+                    "/atv/atv_1080p.m3u8" in u
+                    for u in bulunan
+                )
+                and gecen >= 20
+            ):
 
-            if bulunan and gecen >= 20:
                 break
 
             page.wait_for_timeout(
@@ -393,7 +540,7 @@ def atv_adresi_bul():
             )
 
         # -------------------------------------------------
-        # TARAYICI ÇEREZLERİNİ AL
+        # ÇEREZLERİ AL
         # -------------------------------------------------
 
         try:
@@ -414,7 +561,7 @@ def atv_adresi_bul():
         browser.close()
 
     # -----------------------------------------------------
-    # SONUÇ
+    # BULUNAN ADRESLER
     # -----------------------------------------------------
 
     print(
@@ -424,6 +571,9 @@ def atv_adresi_bul():
     )
 
     if not bulunan:
+
+        print("[SONUÇ] ATV adresi bulunamadı.")
+
         return None
 
     sirali = sorted(
@@ -431,22 +581,22 @@ def atv_adresi_bul():
         key=adres_onceligi
     )
 
-    print("[BULUNAN ADRESLER]")
+    print("[BULUNAN YAYIN ADRESLERİ]")
 
     for i, url in enumerate(sirali, 1):
 
         print(
             i,
-            url[:180]
+            url[:200]
         )
 
-    # Önce 1080P seç.
-
+    # 1080P öncelikli.
     for url in sirali:
 
         if adres_onceligi(url) == 0:
 
             print("[SEÇİLDİ] ATV 1080P")
+
             return url
 
     print("[SEÇİLDİ] ATV ana M3U8")
@@ -562,10 +712,7 @@ def m3u_guncelle(url):
     bloklar = []
     mevcut = []
 
-    # -----------------------------------------------------
-    # M3U BLOKLARINI AYIR
-    # -----------------------------------------------------
-
+    # M3U bloklarını ayır.
     for satir in satirlar:
 
         if satir.startswith("#EXTINF:"):
@@ -586,10 +733,7 @@ def m3u_guncelle(url):
     if mevcut:
         bloklar.append(mevcut)
 
-    # -----------------------------------------------------
-    # SADECE ATV KAYDINI KALDIR
-    # -----------------------------------------------------
-
+    # Yalnızca ATV kayıtlarını kaldır.
     temiz_bloklar = []
     silinen = 0
 
@@ -612,16 +756,14 @@ def m3u_guncelle(url):
         if atv_kaydi:
 
             silinen += 1
+
             continue
 
         temiz_bloklar.append(blok)
 
     print("[M3U] Eski ATV kaydı:", silinen)
 
-    # -----------------------------------------------------
-    # ULUSAL GRUBUNA EKLE
-    # -----------------------------------------------------
-
+    # ULUSAL grubunun sonuna ekle.
     hedef = []
 
     for i, blok in enumerate(temiz_bloklar):
@@ -655,10 +797,7 @@ def m3u_guncelle(url):
         print("[UYARI] ULUSAL grubu bulunamadı.")
         print("[M3U] ATV dosyanın sonuna eklendi.")
 
-    # -----------------------------------------------------
-    # DOSYAYI GÜVENLİ ŞEKİLDE YAZ
-    # -----------------------------------------------------
-
+    # Dosyayı yeniden oluştur.
     cikti = list(baslik)
 
     for blok in temiz_bloklar:
@@ -684,7 +823,7 @@ def m3u_guncelle(url):
     )
 
     print("[OK] M3U başarıyla güncellendi.")
-    print("[KAYIT]", url[:180])
+    print("[KAYIT]", url[:200])
 
     return True
 
@@ -706,7 +845,6 @@ def main():
     if not url:
 
         print("[BAŞARISIZ] Gerçek ATV adresi bulunamadı.")
-        print("[SONUÇ] ATV güncellenmedi.")
         print("[SONUÇ] Eski M3U korundu.")
 
         return 1
