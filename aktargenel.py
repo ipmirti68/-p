@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# MIRTI68 - GENEL AKTARICI - AYRI CALISIR
+# MIRTI68 - GENEL AKTARICI - AYRI CALISIR - TAM HALI
 # Okur: aktargenel.yaml - BOZUK YAML'I DA OKUR, ? satirini atlar
 # Yazar: HEDEF_DOSYA + genel.tmp.m3u
 # HEDEF_DOSYA yaml'den gelir, yoksa mirti_test.m3u
 # 1 url -> 5 hedef, her hedef farkli grup
-# KURAL: Var olani SILME, YERINI DEGISTIRME, EPG SILME
-# - Ayni URL varsa ayni satirda guncelle
+# KURAL: Var olani SILME, YERINI DEGISTIRME, EPG SILME, BASLIK BOZMA
+# - Once ayni grubu ara, varsa icine ekle
 # - Yoksa benzer grubun altina ekle
-# - Benzer grup da yoksa en sona ekle
+# - Benzer de yoksa en sona ekle
+# - Ayni URL varsa ayni satirda guncelle, tekrar olusturma
 import re, os, shutil, urllib.request
 try:
     import yaml
@@ -32,6 +33,40 @@ def normalize(s):
     s = "".join(cevir.get(c,c) for c in s)
     s = s.replace("|"," ").replace("-"," ").replace("_"," ")
     return re.sub(r"\s+"," ",s).strip()
+
+def norm_grup(s):
+    return re.sub(r'[^a-z0-9]', '', normalize(s))
+
+def url_norm(u):
+    # DUZELTILDI: Ayni kanal farkli yazilsa da ayni sayilsin
+    u = (u or "").strip()
+    u = u.replace("?.mp4", "").replace("?ext=.mp4", "").replace("?.m3u8", "")
+    if u.endswith(".mp4"):
+        u = u[:-4]
+    if u.endswith("/"):
+        u = u[:-1]
+    return u.lower()
+
+def benzer_grup_bul(hedef_grup, mevcut_gruplar):
+    # DUZELTILDI: Once ayni grup aranir, yoksa benzer grup bulunur
+    # Ornek: "🟥🔹 CANLI KAMERA 📹" yoksa "CANLI KAMERA" / "CANLI" grubuna ekler
+    hedef_n = norm_grup(hedef_grup)
+    hedef_kelimeler = set(normalize(hedef_grup).split())
+    en_iyi = None; en_iyi_skor = 0
+    for g in mevcut_gruplar:
+        if not g: continue
+        g_n = norm_grup(g)
+        if g_n == hedef_n:
+            return g
+        skor = 0
+        if hedef_n and g_n and (hedef_n in g_n or g_n in hedef_n):
+            skor += 10
+        g_kelimeler = set(normalize(g).split())
+        ortak = hedef_kelimeler & g_kelimeler
+        skor += len(ortak) * 5
+        if skor > en_iyi_skor and (len(ortak) > 0 or hedef_n in g_n or g_n in hedef_n):
+            en_iyi_skor = skor; en_iyi = g
+    return en_iyi
 
 def grup_bul(rec):
     for l in rec:
@@ -186,8 +221,8 @@ def oku_yaml(path):
     return data
 
 def extinf_guncelle(rec, hedef_grup, yeni_ad, hedef_logo):
-    # EPG KORU: eski EXTINF'teki tum ozellikler aynen kalir
-    # Sadece group-title, tvg-name degisir, logo yoksa hedef logosu eklenir
+    # EPG KORU VAR: eski EXTINF'teki tum ozellikler aynen kalir
+    # Sadece group-title degisir, tvg-name tvg-id varsa degisir, logo yoksa eklenir
     yeni = list(rec)
     idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
     if idx is None:
@@ -199,11 +234,13 @@ def extinf_guncelle(rec, hedef_grup, yeni_ad, hedef_logo):
     for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf):
         oz[k] = v
     oz["group-title"] = hedef_grup
-    oz["tvg-name"] = yeni_ad
-    # Logo: eskide varsa ona dokunma, yoksa hedef logosunu koy
+    # DUZELTILDI: tvg-id veya tvg-epg varsa EPG oradan eslesir, tvg-name degisebilir
+    # Yoksa EPG tvg-name'den eslesiyor demektir, tvg-name'i ezme
+    if oz.get("tvg-id","").strip() or oz.get("tvg-epg","").strip():
+        oz["tvg-name"] = yeni_ad
     if not oz.get("tvg-logo","").strip() and hedef_logo:
         oz["tvg-logo"] = hedef_logo
-    # EPG: tvg-id, catchup, catchup-source vs. hepsi oz'da kaldi, silinmedi
+    # EPG: tvg-id, tvg-epg, catchup, catchup-source hepsi oz'da kaldi, silinmedi
     oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
     yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
     return yeni
@@ -221,21 +258,17 @@ def main():
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
 
-    # SILME YOK - hedef dosya aynen korunuyor, yerinde guncelleniyor
-    # Hizli bulmak icin URL -> index haritasi
     url_index = {}
     for i, r in enumerate(hedef_records):
         u = kanal_url(r)
         if u:
-            url_index[u.strip()] = i
-    # Isim -> index haritasi (URL degismisse isimden bul)
+            url_index[url_norm(u)] = i
     isim_index = {}
     for i, r in enumerate(hedef_records):
         n = normalize(kanal_adi(r))
         if n and n not in isim_index:
             isim_index[n] = i
 
-    genel_lines = ["#EXTM3U"]
     toplam_guncelle = 0
     toplam_ekle = 0
 
@@ -292,62 +325,62 @@ def main():
                 yeni_ad = f"{yeni_ad} {ek_kod}"
 
             # 1. VAR MI? URL ile bak, yoksa isimle bak
-            idx = url_index.get(u.strip(), None)
+            idx = url_index.get(url_norm(u), None)
             if idx is None:
                 idx = isim_index.get(normalize(ad), None)
             if idx is not None:
-                # VAR: Ayni satirda guncelle, YERINI DEGISTIRME, EPG KORU
                 eski = hedef_records[idx]
                 eski_url = kanal_url(eski)
                 hedef_records[idx] = extinf_guncelle(eski, hedef_grup, yeni_ad, hedef_logo)
-                # URL degismisse URL satirini da guncelle, diger satirlara dokunma
-                if eski_url.strip() != u.strip():
+                if url_norm(eski_url) != url_norm(u):
                     for j, satir in enumerate(hedef_records[idx]):
                         if satir.strip() == eski_url.strip():
                             hedef_records[idx][j] = u
                             break
                 blok_guncelle += 1
             else:
-                # 2. YOK: Benzer grubun altina ekle
+                # 2. YOK: Once AYNI grubu ara, sonra BENZER grubu ara, sonra en sona
                 yeni_rec = extinf_guncelle(r, hedef_grup, yeni_ad, hedef_logo)
-                # Ayni grubun en son oldugu yeri bul
+                mevcut_gruplar = []
+                for rr in hedef_records:
+                    gg = grup_bul(rr)
+                    if gg and gg not in mevcut_gruplar: mevcut_gruplar.append(gg)
                 ekle_pos = None
+                # Ayni grup
                 for i in range(len(hedef_records)-1, -1, -1):
                     if grup_bul(hedef_records[i]) == hedef_grup:
                         ekle_pos = i + 1
+                        print(f"  [AYNI GRUP] {hedef_grup} icine eklendi: {yeni_ad}")
                         break
-                # Ayni grup yoksa benzer prefixli grubun altina ekle
-                # Ornek: 🟥🔹 CANLI KAMERA yoksa son 🟥🔹 grubunun altina
+                # Benzer grup
                 if ekle_pos is None:
-                    prefix = hedef_grup[:2]
-                    for i in range(len(hedef_records)-1, -1, -1):
-                        if grup_bul(hedef_records[i]).startswith(prefix):
-                            ekle_pos = i + 1
-                            break
-                # Hic benzer yoksa en sona ekle
+                    benzer = benzer_grup_bul(hedef_grup, mevcut_gruplar)
+                    if benzer:
+                        for i in range(len(hedef_records)-1, -1, -1):
+                            if grup_bul(hedef_records[i]) == benzer:
+                                ekle_pos = i + 1
+                                print(f"  [BENZER GRUP] {hedef_grup} yok, benzer bulundu: {benzer} -> altina eklendi: {yeni_ad}")
+                                break
+                # Hicbiri yoksa en sona
                 if ekle_pos is None:
                     ekle_pos = len(hedef_records)
+                    print(f"  [SONA] {hedef_grup} icin benzer grup yok, en sona eklendi: {yeni_ad}")
                 hedef_records.insert(ekle_pos, yeni_rec)
-                # Indexleri tazele, cunku insert kaydiriyor
                 url_index = {}
                 isim_index = {}
                 for i, rr in enumerate(hedef_records):
                     uu = kanal_url(rr)
-                    if uu: url_index[uu.strip()] = i
+                    if uu: url_index[url_norm(uu)] = i
                     nn = normalize(kanal_adi(rr))
                     if nn and nn not in isim_index: isim_index[nn] = i
                 blok_ekle += 1
-            genel_lines.append(None)
         print(f"  [OK] {sira}. blok bitti, guncellenen: {blok_guncelle}, yeni eklenen: {blok_ekle}")
         toplam_guncelle += blok_guncelle
         toplam_ekle += blok_ekle
 
-    # genel.tmp.m3u - sadece bu calismada dokunulanlar, kontrol icin
-    # Hedef dosyanin tamami korunuyor
     with open(TMP_DOSYA,"w",encoding="utf-8",newline="") as f:
         f.write("#EXTM3U\n")
         for r in hedef_records:
-            # Bu dosyada sadece genel gruplarini yaz, digerlerine dokunma
             if grup_bul(r).startswith("🟨◆") or grup_bul(r).startswith("🟥🔹"):
                 f.write("\n".join(r)+"\n")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
