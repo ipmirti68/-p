@@ -1,4 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 # MIRTI68 - DIZI - Nostalji icinde dizi grup
+# Okur: aktardizi.yaml
+# Yazar: mirtitv68.m3u
+# KURAL: Var olani SILME, YERINI DEGISTIRME, EPG SILME
+# Grup eslestirme: emoji, sembol, bosluk yok sayilir
+# Grup adi: "🟪◆ DİZİ - NOSTALJI ⭕ / BIZIMKILER" gibi olur
+# Ic isim: Sadece "S01E01" olur, dizi adi tekrar yazilmaz
 import re, os, shutil, urllib.request
 
 HEDEF_DOSYA = "mirtitv68.m3u"
@@ -12,6 +20,22 @@ def normalize(s):
     s = "".join(cevir.get(c,c) for c in s)
     s = s.replace("|"," ").replace("-"," ").replace("_"," ")
     return re.sub(r"\s+"," ",s).strip()
+
+def norm_grup(s):
+    # SEMBOL / BOSLUK BAGIMSIZ
+    s = (s or "").lower().strip()
+    cevir = {"ı":"i","İ":"i","ö":"o","Ö":"o","ü":"u","Ü":"u","ç":"c","Ç":"c","ğ":"g","Ğ":"g","ş":"s","Ş":"s"}
+    s = "".join(cevir.get(c,c) for c in s)
+    return re.sub(r'[^a-z0-9çğıöşü]+','',s)
+
+def grup_eslesiyor_mu(kaynak_grup, istenen_grup):
+    if not (istenen_grup or "").strip():
+        return True
+    a = norm_grup(kaynak_grup)
+    b = norm_grup(istenen_grup)
+    if not a or not b:
+        return False
+    return a == b or b in a or a in b
 
 def liste_parse(v):
     if not v: return []
@@ -86,27 +110,64 @@ def dizi_adi_temizle(ad):
 
 def yaml_oku_guvenli(path):
     def temiz(v):
-        v = v.strip()
+        v = (v or "").strip()
         if len(v) >= 2 and ((v[0] == "'" and v[-1] == "'") or (v[0] == '"' and v[-1] == '"')):
             v = v[1:-1]
         return v.strip()
     out = []
     cur = None
-    with open(path, encoding="utf-8") as f:
+    cur_hedef = None
+    with open(path, encoding="utf-8", errors="ignore") as f:
         for line in f:
             s = line.strip()
-            if not s or s.startswith("#") or s == "diziler:": continue
+            if not s or s.startswith("#") or s == "diziler:" or s == "?" or s.startswith("? "):
+                continue
+            if s.startswith("hedef_dosya:"):
+                continue
             if "kaynak_url:" in s:
                 if cur: out.append(cur)
-                cur = {"kaynak_url": temiz(s.split("kaynak_url:",1)[1]), "dizi_adi": "", "hedef_grup": "", "hedef_logo": "", "filtre_grup_icerir": "", "filtre_ad_icerir": "", "filtre_grup_haric": "", "filtre_ad_haric": ""}
-            elif cur is not None:
-                for anahtar in ["dizi_adi", "hedef_grup", "hedef_logo", "filtre_grup_icerir", "filtre_ad_icerir", "filtre_grup_haric", "filtre_ad_haric"]:
-                    if anahtar + ":" in s:
-                        cur[anahtar] = temiz(s.split(anahtar + ":",1)[1])
-                        break
+                cur = {"kaynak_url": temiz(s.split("kaynak_url:",1)[1]), "dizi_adi": "", "hedef_grup": "", "hedef_logo": "", "filtre_grup_icerir": "", "filtre_ad_icerir": "", "filtre_grup_haric": "", "filtre_ad_haric": "", "hedefler": [], "kaynak_grup": "", "kaynak_gruplar": []}
+                cur_hedef = None
+                continue
+            if cur is None:
+                continue
+            if "hedef_adi:" in s:
+                cur_hedef = {"hedef_adi": temiz(s.split("hedef_adi:",1)[1]), "aranacak": "", "hedef_grup": "", "hedef_logo": "", "ek_kod": ""}
+                cur["hedefler"].append(cur_hedef)
+                continue
+            if ":" not in s:
+                continue
+            k, v = s.split(":", 1)
+            k = k.strip(); v = temiz(v)
+            if cur_hedef is not None and k in ("aranacak","hedef_grup","hedef_logo","ek_kod"):
+                cur_hedef[k] = v
+                continue
+            if k in ("dizi_adi", "hedef_grup", "hedef_logo", "filtre_grup_icerir", "filtre_ad_icerir", "filtre_grup_haric", "filtre_ad_haric", "kaynak_grup"):
+                cur[k] = v
+            elif k == "kaynak_gruplar":
+                v2 = v.strip("[]")
+                cur["kaynak_gruplar"] = [x.strip().strip('"').strip("'") for x in v2.split(",") if x.strip()]
     if cur: out.append(cur)
     print(f"[BILGI] Girintisiz okundu, blok: {len(out)}")
     return out
+
+def extinf_guncelle_dizi(rec, hedef_grup, yeni_ad, hedef_logo):
+    # EPG KORU: tvg-id, catchup vs. aynen kalir
+    yeni = list(rec)
+    idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
+    if idx is None: return yeni
+    extinf = yeni[idx]
+    m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
+    oz = {}
+    for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
+    oz["group-title"] = hedef_grup
+    oz["tvg-name"] = yeni_ad
+    oz["tvg-type"] = "series"
+    if not oz.get("tvg-logo","").strip() and hedef_logo:
+        oz["tvg-logo"] = hedef_logo
+    oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
+    yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
+    return yeni
 
 def main():
     print("MIRTI68 - DIZI BASLADI")
@@ -117,42 +178,54 @@ def main():
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
-    def kalacak_mi(r):
-        g = grup_bul(r)
-        if g.startswith("DIZILER /"): return False
-        if "🟪◆ DİZİ" in g or "🟪◆ DIZI" in g: return False
-        return True
-    hedef_records = [r for r in hedef_records if kalacak_mi(r)]
-    gorulen = set()
-    for r in hedef_records:
+
+    # SILME YOK - hedef dosya aynen korunuyor
+    url_index = {}
+    isim_index = {}
+    for i, r in enumerate(hedef_records):
         u = kanal_url(r)
-        if u: gorulen.add(u.strip())
-    lines = []
-    for r in hedef_records: lines.extend(r)
-    eklenen_toplam = 0
+        if u: url_index[u.strip()] = i
+        n = normalize(kanal_adi(r))
+        if n and n not in isim_index: isim_index[n] = i
+
+    eklenen_toplam = 0; guncellenen_toplam = 0
     for sira, f in enumerate(diziler, 1):
         kurl = str(f.get("kaynak_url","") or "").strip()
         if not kurl: continue
         dizi_adi = str(f.get("dizi_adi","") or "").strip()
         hedef_grup_sabit = str(f.get("hedef_grup","") or "").strip()
+        # Hedef listesi varsa ilk hedefi sabit grup say
+        hedefler = f.get("hedefler", []) or []
+        if not hedef_grup_sabit and hedefler:
+            hedef_grup_sabit = str(hedefler[0].get("hedef_grup","") or "").strip()
         hedef_logo = str(f.get("hedef_logo","") or "").strip()
+        if not hedef_logo and hedefler:
+            hedef_logo = str(hedefler[0].get("hedef_logo","") or "").strip()
         f_grup = liste_parse(f.get("filtre_grup_icerir",""))
         f_ad = liste_parse(f.get("filtre_ad_icerir",""))
         f_grup_haric = liste_parse(f.get("filtre_grup_haric",""))
         f_ad_haric = liste_parse(f.get("filtre_ad_haric",""))
+        # kaynak_grup / kaynak_gruplar destegi de eklendi
+        kg = str(f.get("kaynak_grup","") or "").strip()
+        kgs = f.get("kaynak_gruplar", []) or []
+        if kg and kg not in f_grup:
+            f_grup.append(kg)
+        for x in kgs:
+            if x and x not in f_grup:
+                f_grup.append(x)
         print(f"[DIZI {sira}] {dizi_adi or 'KORE LISTE'} -> {hedef_grup_sabit}")
         try: _, kaynak = oku_m3u(kurl)
         except Exception as e: print(f"  [ATLANDI] {e}"); continue
-        eklenen_blok = 0
+        eklenen_blok = 0; guncellenen_blok = 0
         for r in kaynak:
             ad = kanal_adi(r); u = kanal_url(r)
             if not u: continue
-            if u.strip() in gorulen: continue
             g = grup_bul(r)
             ng = normalize(g); na = normalize(ad)
             haric = False
             for x in f_grup_haric:
-                if normalize(x) in ng: haric = True; break
+                # SEMBOL BAGIMSIZ haric kontrolu
+                if norm_grup(x) in norm_grup(g) or normalize(x) in ng: haric = True; break
             for x in f_ad_haric:
                 if normalize(x) in na: haric = True; break
             if haric: continue
@@ -164,7 +237,8 @@ def main():
             elif f_grup or f_ad:
                 tuttu = False
                 for x in f_grup:
-                    if normalize(x) in ng or normalize(x) in na:
+                    # SEMBOL BAGIMSIZ: "Nostalji" == "✨ Nostalji ✨"
+                    if grup_eslesiyor_mu(g, x) or normalize(x) in ng or normalize(x) in na:
                         tuttu = True; eslesen_filtre = x.strip(); break
                 if not tuttu:
                     for x in f_ad:
@@ -172,9 +246,10 @@ def main():
                             tuttu = True; eslesen_filtre = x.strip(); break
                 if not tuttu: continue
             else:
-                break
+                # Ne dizi_adi ne filtre var - kaynaktaki her seyi alma, atla
+                # Eski kod burada break yapip butun blogu bitiriyordu, onu duzelttik
+                continue
             temel, bolum_kodu = dizi_adi_temizle(ad)
-            # --- ASIL DEGISIKLIK BURADA ---
             # Nostalji / Kore ana grup + altina dizi adi
             if dizi_adi:
                 alt_grup = dizi_adi.upper().strip()
@@ -183,44 +258,67 @@ def main():
             else:
                 alt_grup = temel.upper().strip()
             if hedef_grup_sabit:
-                # Zaten sonunda dizi adi varsa tekrar ekleme
-                if normalize(alt_grup) in normalize(hedef_grup_sabit):
+                if normalize(alt_grup) in normalize(hedef_grup_sabit) or norm_grup(alt_grup) in norm_grup(hedef_grup_sabit):
                     hedef_grup = hedef_grup_sabit
                 else:
                     hedef_grup = f"{hedef_grup_sabit} / {alt_grup}"
             else:
                 hedef_grup = f"DIZILER / {alt_grup}"
+            # Ic isim sadece bolum kodu, dizi adi tekrar yazilmaz
+            # Ornek: Grup = "🟪◆ DİZİ - NOSTALJI ⭕ / BIZIMKILER", Ic = "S01E01"
             yeni_ad = bolum_kodu
-            yeni = list(r)
-            idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
+            # VAR MI?
+            idx = url_index.get(u.strip(), None)
+            if idx is None:
+                idx = isim_index.get(normalize(ad), None)
             if idx is not None:
-                extinf = yeni[idx]
-                if 'group-title="' in extinf:
-                    extinf = re.sub(r'group-title="[^"]*"', f'group-title="{hedef_grup}"', extinf)
-                else:
-                    extinf = extinf.replace("#EXTINF:", f'#EXTINF: group-title="{hedef_grup}"', 1)
-                if 'tvg-name="' in extinf:
-                    extinf = re.sub(r'tvg-name="[^"]*"', f'tvg-name="{yeni_ad}"', extinf)
-                else:
-                    extinf = extinf.replace('group-title=', f'tvg-name="{yeni_ad}" group-title=', 1)
-                if 'tvg-type="' not in extinf:
-                    extinf = extinf.replace('group-title=', 'tvg-type="series" group-title=', 1)
-                m_logo = re.search(r'tvg-logo="([^"]*)"', extinf)
-                gelen_logo = m_logo.group(1).strip() if m_logo else ""
-                if not gelen_logo and hedef_logo:
-                    extinf = extinf.replace('group-title=', f'tvg-logo="{hedef_logo}" group-title=', 1)
-                extinf = extinf.rsplit(",", 1)[0] + "," + yeni_ad
-                yeni[idx] = extinf
-            lines.extend(yeni); gorulen.add(u.strip())
-            eklenen_blok += 1; eklenen_toplam += 1
-        print(f"  [OK] {sira}. blok bitti, eklenen: {eklenen_blok}")
+                # VAR: Ayni satirda guncelle, YERINI DEGISTIRME, EPG KORU
+                eski = hedef_records[idx]
+                eski_url = kanal_url(eski)
+                hedef_records[idx] = extinf_guncelle_dizi(eski, hedef_grup, yeni_ad, hedef_logo)
+                if eski_url.strip() != u.strip():
+                    for j, satir in enumerate(hedef_records[idx]):
+                        if satir.strip() == eski_url.strip():
+                            hedef_records[idx][j] = u; break
+                guncellenen_blok += 1; guncellenen_toplam += 1
+            else:
+                # YOK: Ayni grubun altina ekle, yoksa benzer DIZI grubunun altina
+                yeni_rec = extinf_guncelle_dizi(r, hedef_grup, yeni_ad, hedef_logo)
+                ekle_pos = None
+                for i in range(len(hedef_records)-1, -1, -1):
+                    if grup_bul(hedef_records[i]) == hedef_grup:
+                        ekle_pos = i + 1; break
+                if ekle_pos is None:
+                    # Ayni ana grubun altina: "🟪◆ DİZİ - NOSTALJI" icinde herhangi bir dizi grubunun altina
+                    ana = hedef_grup_sabit
+                    for i in range(len(hedef_records)-1, -1, -1):
+                        gg = grup_bul(hedef_records[i])
+                        if ana and (ana in gg or norm_grup(ana) in norm_grup(gg)):
+                            ekle_pos = i + 1; break
+                if ekle_pos is None:
+                    for i in range(len(hedef_records)-1, -1, -1):
+                        gg = grup_bul(hedef_records[i])
+                        if "DİZİ" in gg.upper() or "DIZI" in gg.upper() or gg.startswith("DIZILER"):
+                            ekle_pos = i + 1; break
+                if ekle_pos is None:
+                    ekle_pos = len(hedef_records)
+                hedef_records.insert(ekle_pos, yeni_rec)
+                url_index = {}; isim_index = {}
+                for i, rr in enumerate(hedef_records):
+                    uu = kanal_url(rr)
+                    if uu: url_index[uu.strip()] = i
+                    nn = normalize(kanal_adi(rr))
+                    if nn and nn not in isim_index: isim_index[nn] = i
+                eklenen_blok += 1; eklenen_toplam += 1
+        print(f"  [OK] {sira}. blok bitti, yeni: {eklenen_blok}, guncellenen: {guncellenen_blok}")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
     except Exception: pass
     if not baslik:
         baslik = ['#EXTM3U']
-    final = baslik + lines
+    final = list(baslik)
+    for r in hedef_records: final.extend(r)
     with open(HEDEF_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(final)+"\n")
-    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} - Toplam eklenen dizi: {eklenen_toplam}")
+    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} - Yeni: {eklenen_toplam}, Guncellenen: {guncellenen_toplam}, Silinen: 0, EPG korundu")
 
 if __name__ == "__main__":
     main()
