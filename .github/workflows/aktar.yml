@@ -34,6 +34,9 @@ jobs:
       - name: Genel calistir
         run: python aktargenel.py
 
+      - name: Spor calistir
+        run: python aktarspor.py
+      
       - name: Kaydet ve Push
         run: |
           # 1. .bak dosyalari push'u bozar, hepsini sil
