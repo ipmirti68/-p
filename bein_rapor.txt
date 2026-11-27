@@ -1,7 +1,8 @@
 BEIN SPORTS 1 KONTROL RAPORU
-Tarih: 2026-11-27T14:30:42.347113+00:00
-Sayfa HTTP: 200
-Bulunan bağlantı sayısı: 67
+Tarih: 2026-11-27T14:33:38.069104+00:00
+HTTP: 200
+Bulunan bağlantı: 67
+Doğrulanmış yetkili yayın: 0
 
 https://mc.yandex.ru/metrika/tag.js?id=114450499
 https://mc.yandex.ru/watch/114450499
