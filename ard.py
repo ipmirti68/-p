@@ -32,10 +32,10 @@ def build_new_entries():
         else:
             stream_url = f"{BASE_DOMAIN}//{code_or_path}/tracks-v1a1/mono.m3u8"
 
-        if name.lower().startswith("【entity-bein sports¦canonical_name=Bein Sports】"):
-            group = "🟪◆ 【entity-BEIN SPORTS¦canonical_name=Bein Sports】 📺⭕"
+        if name.lower().startswith("Bein Sports"):
+            group = "🟩◆  beIN SPORTS 🖥"
         else:
-            group = "🟨◆ DİĞER SPOR 📺⭕"
+            group = "🟩◆ SPORTS ⭕"
 
         extinf = (
             f'#EXTINF:-1 tvg-name="{name}" '
