@@ -6,18 +6,18 @@ OUTPUT_FILE = "mirti68.m3u"
 
 # Kanal adı, URL kodu/yolu, tip ve logosu
 channels = [
-    ("Bein Sports 1", "b1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports 2", "b2", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports 3", "b3", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports 4", "b4", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports 5", "b5", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports Max 1", "bm1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports Max 2", "bm2", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("S Sport", "ss", "tracks", "https://yt3.googleusercontent.com/vJ6tfodHaOIAQbgPIN6Oa0cPUk5gdFAuXbLEPxMlnthgOQ2tBr8FU2UweMk-ksmyKiW3bIiFyRU=s900-c-k-c0x00ffffff-no-rj"),
-    ("S Sport 2", "ss2", "tracks", "https://yt3.googleusercontent.com/vJ6tfodHaOIAQbgPIN6Oa0cPUk5gdFAuXbLEPxMlnthgOQ2tBr8FU2UweMk-ksmyKiW3bIiFyRU=s900-c-k-c0x00ffffff-no-rj"),
-    ("TRT Spor", "trtspor", "tracks", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjuGO-ReknxTi5qGL5Y2gaAfXj3HfGoRcgBzcnGFLow29NQxwFk_gUGls&s=10"),
-    ("TRT 1", "trt1", "tracks", "https://www.trt.net.tr/_nuxt/img/trt-1-televizyon-kanali.4c9c3dd.png"),
-    ("A Spor", "aspor", "tracks", "https://cdn.aptoide.com/imgs/5/0/d/50d4bfd3c109b25b96c8e95c4d9d7df9_icon.png")
+    ("Bein Sports 1 ⭕", "b1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    ("Bein Sports 2 ⭕", "b2", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    ("Bein Sports 3 ⭕", "b3", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    ("Bein Sports 4 ⭕", "b4", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    ("Bein Sports 5 ⭕", "b5", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    ("Bein Sports Max 1 ⭕", "bm1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    ("Bein Sports Max 2 ⭕", "bm2", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    ("S Sport ⭕", "ss", "tracks", "https://yt3.googleusercontent.com/vJ6tfodHaOIAQbgPIN6Oa0cPUk5gdFAuXbLEPxMlnthgOQ2tBr8FU2UweMk-ksmyKiW3bIiFyRU=s900-c-k-c0x00ffffff-no-rj"),
+    ("S Sport 2 ⭕", "ss2", "tracks", "https://yt3.googleusercontent.com/vJ6tfodHaOIAQbgPIN6Oa0cPUk5gdFAuXbLEPxMlnthgOQ2tBr8FU2UweMk-ksmyKiW3bIiFyRU=s900-c-k-c0x00ffffff-no-rj"),
+    ("TRT Spor ⭕", "trtspor", "tracks", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjuGO-ReknxTi5qGL5Y2gaAfXj3HfGoRcgBzcnGFLow29NQxwFk_gUGls&s=10"),
+    ("TRT 1 ⭕", "trt1", "tracks", "https://www.trt.net.tr/_nuxt/img/trt-1-televizyon-kanali.4c9c3dd.png"),
+    ("A Spor ⭕", "aspor", "tracks", "https://cdn.aptoide.com/imgs/5/0/d/50d4bfd3c109b25b96c8e95c4d9d7df9_icon.png")
 ]
 
 BASE_DOMAIN = "https://css.d6e3ess6e065r5.help/"
