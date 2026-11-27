@@ -44,10 +44,13 @@ jobs:
 
       - name: Kaydet ve Push
         run: |
+          echo "=== Dosyalar ==="
+          ls -lh *.m3u || echo "m3u yok"
           rm -f *.bak *.m3u.bak *.tmp.m3u
           git config user.name "MIRTI68 Bot"
           git config user.email "mirti68@users.noreply.github.com"
           git add mirtitv68.m3u
-          git commit -m "Guncelleme" || true
+          git status --short
+          git commit -m "Guncelleme" || echo "Commit yok, degisiklik yok"
           git pull --rebase --autostash || true
           git push || git push
