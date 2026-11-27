@@ -7,7 +7,7 @@ try:
 except ImportError:
     yaml = None
 
-HEDEF_DOSYA = os.environ.get("HEDEF_DOSYA", "mirti_test.m3u")
+HEDEF_DOSYA =  "mirtitv68.m3u"
 SPOR_YAML = "aktarspor.yaml"
 TMP_DOSYA = "spor.tmp.m3u"
 USER_AGENT = "Mozilla/5.0"
