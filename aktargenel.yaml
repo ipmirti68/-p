@@ -32,4 +32,15 @@ genel:
         hedef_grup: "🟨◆ ULUSALᶠᴴᴰ⭕"
         hedef_logo: ""
         ek_kod: "⭕"
+
+      - kaynak_url: "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts"
+    sadece_listedekiler: true
+    kaynak_grup: "TR | UHD"
+    kaynak_gruplar: []
+    hedefler:
+            - hedef_adi: "hedef_1"
+        aranacak: "trt 1, atv, show tv, kanal d, star, now, kanal 7, tv 8, trt1"
+        hedef_grup: "🟨◆ ULUSALᴴᴰ⁺⭕"
+        hedef_logo: ""
+        ek_kod: "⭕"
         
