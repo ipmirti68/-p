@@ -3,11 +3,13 @@
 https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 #EXTINF:-1 tvg-id="TRT1.HD.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL",TRT1
 https://trt.daioncdn.net/trt-1/master_1440p.m3u8?&sid=8aa3uppo48h8&app=ed3904e8-737b-4a5e-856a-1b0d7a0a94e2&ce=2
-#EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL",TRT 1
+#EXTINF:-1 tvg-id="trt 1.tr" tvg-name="TRT 1 ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
 https://tv-trt1.medya.trt.com.tr/master.m3u8
-#EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="atv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆  ULUSAL" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV
+#EXTINF:0 tvg-id="STAR.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/star-tv-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕" tvg-name="Star TV ⭕",Star TV ⭕
+https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8laoxi44qj2k&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
+#EXTINF:-1 tvg-id="ATV.tr@SD" tvg-name="ATV ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png" group-title="🟨◆ ULUSALᴴᴰ⭕" http-referrer="https://www.atv.com.tr/" referrer="https://www.atv.com.tr/",ATV ⭕
 #EXTVLCOPT:http-referrer=https://www.atv.com.tr/
-https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_720p.m3u8
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8
 #EXTINF:-1 tvg-id="Show TV" tvg-name="Show TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png" group-title="🟨◆  ULUSAL",SHOW
 https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&st=RBzhSuGauna0OGld-DJUVA&e=1664766175&tv=1
 #EXTINF:-1 tvg-id="kanal d HD.tr" tvg-name="KANAL D" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/d%20(1).png" group-title="🟨◆  ULUSAL" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.kanald.com.tr/" referrer="https://www.kanald.com.tr/",KANAL D
@@ -16,10 +18,10 @@ https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-3
 https://kdlive.duhnet.tv/S2/HLS_LIVE/kanalddainp/track_4_1250/playlist.m3u8
 #EXTINF:-1 tvg-id="Star tv" tvg-name="Star tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="🟨◆  ULUSAL",STAR
 https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=8l4w3lst4co5&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
-#EXTINF:-1 tvg-id="kanal 7.tr" tvg-name="kanal 7.tr" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8a6" group-title="🟨◆  ULUSAL",KANAL 7
+#EXTINF:-1 tvg-id="kanal 7.tr" tvg-name="KANAL 7 FHD ⭕" tvg-logo="https://www.dsmart.com.tr/epg/images/0x60/59f19761cfef0b221f7da8a6" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL 7 FHD ⭕
 https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8
-#EXTINF:-1 tvg-name="TV8" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/tv8-tr.png?raw=true" group-title="🟨◆  ULUSAL",TV 8
-https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3
+#EXTINF:-1 tvg-name="TV8" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/tv8-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕",TV 8 ⭕
+https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788
 #EXTINF:-1 tvg-id="Fox.tr" tvg-name="Fox hd" tvg-logo="https://raw.githubusercontent.com/46tv/mix/main/logo/NOW.png" group-title="🟨◆  ULUSAL",NOW
 https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
 #EXTINF:-1 tvg-id="mc" tvg-name="mc" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVE1t5H4wnurwE8E_54RRJliaEmWuFVKn1vNKPiVFbwQ&s=10" group-title="🟨◆  ULUSAL",MC
@@ -64,7 +66,7 @@ https://tv-trtturk.medya.trt.com.tr/master_720.m3u8
 https://beyaztv-live.daioncdn.net/beyaztv/beyaztv.m3u8
 #EXTINF:-1 tvg-id="TV8.HD.tr" tvg-name="TV8" tvg-logo="http://picon.tivi-ott.net:25461/picon/TURKEY/Tv8.png" group-title="🟨◆  ULUSAL",TV 8
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196677&extension=ts&play_token=zLN7npODPH
-#EXTINF:-1 tvg-name="Fox hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/now.png" group-title="🟨◆  ULUSAL" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.nowtv.com.tr/" referrer="https://www.nowtv.com.tr/",NOW
+#EXTINF:-1 tvg-name="Fox hd" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/now.png" group-title="🟨◆ ULUSALᴴᴰ⭕" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.nowtv.com.tr/" referrer="https://www.nowtv.com.tr/",NOW ⭕
 #EXTVLCOPT:http-referrer=https://www.nowtv.com.tr/
 #EXTVLCOPT:http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36"
 https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8
@@ -76,7 +78,7 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196694&ex
 https://nowtv.daioncdn.net/nowtv/nowtv.m3u8?ce=3&app=65fa8997-2b2f-4529-85ea-84318628a608&st=wgIFo1yhduSsQCoDzanCEg&e=1793220878
 #EXTINF:-1 tvg-id="NOW.tr" tvg-name="NOW.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/now.png" group-title="🟨◆  ULUSAL",NOW
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196678&extension=ts&play_token=p5hwUyOLoj
-#EXTINF:-1 tvg-id="StarTV.tr" tvg-name="star tv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="🟨◆  ULUSAL",STAR
+#EXTINF:-1 tvg-id="StarTV.tr" tvg-name="STAR TV HD ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",STAR TV HD ⭕
 http://dygvideo.dygdigital.com/live/hls/startv4puhu?m3u8
 #EXTINF:-1 tvg-name="star TV" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png" group-title="🟨◆  ULUSAL",STAR
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196695&extension=ts&play_token=9rZyNWfIPX
@@ -84,10 +86,12 @@ http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196695&ex
 http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196679&extension=ts&play_token=wIZQXtaEUX
 #EXTINF:-1 tvg-id="KanalD.tr" tvg-name="kanal d.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆  ULUSAL",KANAL D
 http://live.duhnet.tv/S2/HLS_LIVE/kanalddainp/playlist.m3u8
-#EXTINF:-1 tvg-name="Kanal d.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆  ULUSAL",KANAL D
+#EXTINF:-1 tvg-name="Kanal d.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL D FHD ⭕
 https://ackaxsqacw.turknet.ercdn.net/ozfkfbbjba/kanald/kanald_1080p.m3u8
-#EXTINF:-1 tvg-id="kanal d.tr" tvg-name="kanal d" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆  ULUSAL",KANAL D
+#EXTINF:-1 tvg-id="kanal d.tr" tvg-name="Kanal D ⭕" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆ ULUSALᴴᴰ⭕",Kanal D ⭕
 https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3
+#EXTINF:0 tvg-id="SHOW.TV.tr" tvg-logo="https://github.com/tv-logo/tv-logos/blob/main/countries/turkey/show-tr.png?raw=true" group-title="🟨◆ ULUSALᴴᴰ⭕" tvg-name="SHOW TV ⭕",SHOW TV ⭕
+https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_720p.m3u8
 #EXTINF:-1 tvg-name="kanal d.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆  ULUSAL",KANAL D
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196696&extension=ts&play_token=DYgtNp28Es
 #EXTINF:-1 tvg-id="kanal d HD.tr" tvg-name="KANAL D" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png" group-title="🟨◆  ULUSAL" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/155.0.0.0 Safari/537.36" http-referrer="https://www.kanald.com.tr/" referrer="https://www.kanald.com.tr/",KANAL D
@@ -106,28 +110,46 @@ http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196681&exte
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196698&extension=ts&play_token=6k77AngOgl
 #EXTINF:-1 tvg-name="atv" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.jpg" group-title="🟨◆  ULUSAL",ATV
 https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png
-#EXTINF:-1 tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆  ULUSAL",TRT 1
-http://me.mdmfista.com:80/play/live.php?mac=00:1A:79:F5:CE:D7&stream=196683&extension=ts&play_token=YUIm1DgYqE
-#EXTINF:-1 tvg-id="trt1.tr" tvg-name="TRT 1 HD" tvg-logo="https://i.ibb.co/jPM5WHsv/42.png" group-title="🟨◆ ULUSALᴴᴰ",TRT 1 HD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475358
+#EXTINF:-1 tvg-name="TRT 1" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/trt1.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 1 HEVC ⭕
+http://89.187.191.41/TRT-1-HD-TR/tracks-v1a1/mono.ts.m3u8
+#EXTINF:-1 tvg-name="TRT 1" tvg-logo="https://www.lyngsat-logo.com/logo/tv/tt/trt1.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 1 UHD ⭕
+http://80.82.64.16:8080/live/iptv.kosiptv.comNEW/gJUP3KsM2ENEW/172cb6d9-ed1a-4038-abb6-e3a26dcb0bb6.m3u
+#EXTINF:-1 tvg-name="TRT 1.tr" tvg-logo="https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png" group-title="🟨◆ ULUSALᴴᴰ⭕",TRT 1 ⭕
+https://css.d6e3eds5e065t5.help//hls/arda.m3u8
+#EXTINF:-1 tvg-id="trt1.tr" tvg-name="TRT 1 HD ⭕" tvg-logo="https://i.ibb.co/jPM5WHsv/42.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",TRT 1 HD ⭕
+http://92.5.166.217/trt1
+#EXTINF:-1 tvg-name="ATV HD TR" tvg-logo="https://www.lyngsat-logo.com/logo/tv/aa/atv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",ATV HEVC ⭕
+http://hdlocal.de:8080/maveniptv.tv/e8yvmG8um2yhhgsjhgdd22/10153
+#EXTINF:-1 tvg-name="ATV HD TR" tvg-logo="https://www.lyngsat-logo.com/logo/tv/aa/atv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",ATV UHD ⭕
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
 #EXTINF:-1 tvg-id="trt1.tr" tvg-name="TRT 1 FHD" tvg-logo="https://i.ibb.co/G4BSQ2yx/4.png" group-title="🟨◆ ULUSALᴴᴰ",TRT 1 FHD
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475359
-#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV HD" tvg-logo="https://i.ibb.co/0j51Lhgc/45.png" group-title="🟨◆ ULUSALᴴᴰ",ATV HD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475360
-#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV FHD" tvg-logo="https://i.ibb.co/3mGNDCh4/10.png" group-title="🟨◆ ULUSALᴴᴰ",ATV FHD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475361
-#EXTINF:-1 tvg-id="kanald.tr" tvg-name="Kanal D HD" tvg-logo="https://i.ibb.co/jPzDwCKk/48.png" group-title="🟨◆ ULUSALᴴᴰ",Kanal D HD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475362
+#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV HD ⭕" tvg-logo="https://i.ibb.co/0j51Lhgc/45.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",ATV HD ⭕
+http://92.5.166.217/atv
+#EXTINF:-1 tvg-id="atv.tr" tvg-name="ATV FHD ⭕" tvg-logo="https://i.ibb.co/3mGNDCh4/10.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",ATV FHD ⭕
+http://hdlocal.de:8080/group-sky.ddns.net22/sH6JbvQNHVVD/10153
+#EXTINF:-1 tvg-name="STAR TV HEVC ⭕" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/star_tv_tr.png" tvg-id="Start.tr" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",STAR TV HEVC ⭕
+https://dogus.daioncdn.net/startv/startv.m3u8?app=startv_web
+#EXTINF:-1 tvg-id="kanald.tr" tvg-name="KANAL D HD ⭕" tvg-logo="https://i.ibb.co/jPzDwCKk/48.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL D HD ⭕
+https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=7te08khb0uxy&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
 #EXTINF:-1 tvg-id="kanald.tr" tvg-name="Kanal D FHD" tvg-logo="https://i.ibb.co/q3f9pRYh/16.png" group-title="🟨◆ ULUSALᴴᴰ",Kanal D FHD
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475363
-#EXTINF:-1 tvg-id="showtv.tr" tvg-name="SHOW TV HD" tvg-logo="https://i.ibb.co/4nBLQkms/47.png" group-title="🟨◆ ULUSALᴴᴰ",SHOW TV HD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475364
-#EXTINF:-1 tvg-id="showtv.tr" tvg-name="SHOW TV FHD" tvg-logo="https://i.ibb.co/CpzGjd0K/14.png" group-title="🟨◆ ULUSALᴴᴰ",SHOW TV FHD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475365
+#EXTINF:-1 tvg-id="showtv.tr" tvg-name="SHOW TV HD ⭕" tvg-logo="https://i.ibb.co/4nBLQkms/47.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW TV HD ⭕
+https://ciner.daioncdn.net/showtv/showtv.m3u8?app=showtv_web
+#EXTINF:-1 tvg-id="showtv.tr" tvg-name="SHOW TV FHD ⭕" tvg-logo="https://i.ibb.co/CpzGjd0K/14.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW TV FHD ⭕
+https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv.m3u8
 #EXTINF:-1 tvg-id="KABLO.INFO.tr" tvg-name="Star TV HD" tvg-logo="https://i.ibb.co/zWjWgykz/46.png" group-title="🟨◆ ULUSALᴴᴰ",Star TV HD
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475366
-#EXTINF:-1 tvg-id="KABLO.INFO.tr" tvg-name="Star TV FHD" tvg-logo="https://i.ibb.co/nNYF303D/12.png" group-title="🟨◆ ULUSALᴴᴰ",Star TV FHD
-http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475367
+#EXTINF:-1 tvg-id="KABLO.INFO.tr" tvg-name="STAR TV FHD ⭕" tvg-logo="https://i.ibb.co/nNYF303D/12.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",STAR TV FHD ⭕
+https://dogus.daioncdn.net/startv/startv_720p.m3u8?&app=startv_web&ce=3
+#EXTINF:-1 tvg-name="KANAL D" tvg-logo="https://www.lyngsat-logo.com/logo/tv/kk/kanal_d_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL D HEVC ⭕
+http://hdlocal.de:8080/live/iptv.kosiptv.comNEW/gJUP3KsM2ENEW/10147.ts
+#EXTINF:-1 tvg-name="KANAL D" tvg-logo="https://www.lyngsat-logo.com/logo/tv/kk/kanal_d_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL D UHD ⭕
+https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?app=kanald_web&ce=3
+#EXTINF:-1 tvg-name="SHOW TV TR" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/show_tv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW TV HEVC ⭕
+http://176.65.153.12:6002/play/a05m/index.m3u8
+#EXTINF:-1 tvg-name="SHOW TV TR" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/show_tv_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",SHOW TV UHD ⭕
+https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?app=showtv_web&ce=3
 #EXTINF:-1 tvg-id="now.tr" tvg-name="NOW HD" tvg-logo="https://i.ibb.co/q30WGxwm/49.png" group-title="🟨◆ ULUSALᴴᴰ",NOW HD
 http://1066.7382164.xyz:80/Mesut1973/Mutlu73/475368
 #EXTINF:-1 tvg-id="now.tr" tvg-name="NOW FHD" tvg-logo="https://i.ibb.co/fVcR2p4M/18.png" group-title="🟨◆ ULUSALᴴᴰ",NOW FHD
@@ -220,8 +242,12 @@ http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141305
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/140807
 #EXTINF:-1 tvg-name="a2.tr" tvg-logo="https://docdog.top/logo/countries/turkey/a2-tr.png" group-title="🟨◆ ULUSALᵁᴴᴰ",A2
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/140820
-#EXTINF:-1 tvg-name="atv.tr" group-title="🟨◆ ULUSALᵁᴴᴰ",ATV AVRUPA
-http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/140845
+#EXTINF:-1 tvg-name="atv.tr" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",ATV Avrupa ⭕
+http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/HW7DHBZQE4ZYG9/6888/index.m3u8
+#EXTINF:-1 tvg-name="EUROSTAR" tvg-logo="https://www.lyngsat-logo.com/logo/tv/ss/star_tv_tr.png" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",EUROSTAR televizyon ⭕
+http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/HW7DHBZQE4ZYG9/6894/index.m3u8
+#EXTINF:-1 tvg-name="KANAL 7" tvg-logo="https://www.lyngsat-logo.com/logo/tv/kk/kanal7_tr.png" tvg-id="" group-title="🟨◆ ULUSALᶠᴴᴰ⭕",KANAL 7 UHD ⭕
+https://kanal7-live.daioncdn.net/kanal7/kanal7_1080p.m3u8
 #EXTINF:-1 tvg-name="Euro d.tr" tvg-logo="https://docdog.top/logo/countries/turkey/euro-d-tr.png" group-title="🟨◆ ULUSALᵁᴴᴰ",EURO D
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/140970
 #EXTINF:-1 tvg-name="STAR.tr" tvg-logo="https://docdog.top/logo/countries/turkey/euro-star-tr.png" group-title="🟨◆ ULUSALᵁᴴᴰ",EURO STAR
@@ -238,8 +264,8 @@ http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141261
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141292
 #EXTINF:-1 tvg-name="TV 8.tr" tvg-logo="https://docdog.top/logo/countries/turkey/tv8-int-tr.png" group-title="🟨◆ ULUSALᵁᴴᴰ",TV 8 INT
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141293
-#EXTINF:-1 tvg-name="tv 8,5.tr" group-title="🟨◆ ULUSALᵁᴴᴰ",TV 8.5
-http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141294
+#EXTINF:-1 tvg-name="tv 8,5.tr" group-title="🟨◆ ULUSALᴴᴰ⭕",TV 8.5 ⭕
+https://tv8.daioncdn.net/tv8bucuk/tv8bucuk.m3u8?app=tv8bucuk_web
 #EXTINF:-1 tvg-name="tv8.tr" group-title="🟨◆ ULUSALᵁᴴᴰ",TV8
 http://31.43.191.125:8080/VIP01361740328055349/dd5808c9dede/141304
 #EXTINF:-1 tvg-name="tv 8.tr" group-title="🟨◆ ULUSALᵁᴴᴰ",TV8
