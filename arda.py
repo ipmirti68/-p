@@ -8,22 +8,44 @@ SAYFA = "https://inatsportv.live/canli-izle/bein-sports-1"
 LOGO = "https://upload.wikimedia.org/wikipedia/commons/4/4e/BeIN_Sports_logo.png"
 
 HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36"
-    )
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36"
 }
 
 
-def sayfa_kontrol():
+def m3u_olustur(yayinlar=None):
+
+    if yayinlar is None:
+        yayinlar = []
+
+    satirlar = ["#EXTM3U"]
+
+    for yayin in yayinlar:
+
+        isim = yayin["isim"]
+        url = yayin["url"]
+
+        satirlar.append(
+            f'#EXTINF:-1 tvg-name="{isim}" tvg-logo="{LOGO}" group-title="SPOR",{isim}'
+        )
+
+        satirlar.append(url)
+
+    with open("bein.m3u", "w", encoding="utf-8") as dosya:
+        dosya.write("\n".join(satirlar) + "\n")
+
+    print("[OK] bein.m3u oluşturuldu.")
+    print("[KANAL]", len(yayinlar))
+
+
+def kontrol():
 
     print("=" * 45)
-    print("MIRTI TV - BEIN SPORTS 1 KONTROL")
+    print("MIRTI TV - BEIN SPORTS 1")
     print("=" * 45)
+
+    yayinlar = []
 
     try:
-
-        print("[BASLA] Sayfa açılıyor...")
 
         cevap = requests.get(
             SAYFA,
@@ -32,7 +54,6 @@ def sayfa_kontrol():
         )
 
         print("[HTTP]", cevap.status_code)
-
         cevap.raise_for_status()
 
         html = cevap.text
@@ -44,96 +65,32 @@ def sayfa_kontrol():
 
         adresler = list(dict.fromkeys(adresler))
 
-        tarih = datetime.now(
-            timezone.utc
-        ).isoformat()
+        rapor = [
+            "BEIN SPORTS 1 KONTROL RAPORU",
+            "Tarih: " + datetime.now(timezone.utc).isoformat(),
+            "HTTP: " + str(cevap.status_code),
+            "Bulunan bağlantı: " + str(len(adresler)),
+            "Doğrulanmış yetkili yayın: " + str(len(yayinlar)),
+            "",
+            *adresler
+        ]
 
-        print("[OK] Sayfa erişildi.")
-        print("[BULUNAN]", len(adresler))
-
-        rapor = []
-
-        rapor.append(
-            "BEIN SPORTS 1 KONTROL RAPORU"
-        )
-
-        rapor.append("Tarih: " + tarih)
-
-        rapor.append(
-            "Sayfa HTTP: " + str(cevap.status_code)
-        )
-
-        rapor.append(
-            "Bulunan bağlantı sayısı: " + str(len(adresler))
-        )
-
-        rapor.append("")
-
-        rapor.extend(adresler)
-
-        with open(
-            "bein_rapor.txt",
-            "w",
-            encoding="utf-8"
-        ) as dosya:
-
+        with open("bein_rapor.txt", "w", encoding="utf-8") as dosya:
             dosya.write("\n".join(rapor))
 
-        print("[OK] bein_rapor.txt oluşturuldu.")
-
-        m3u_olustur()
+        print("[OK] Rapor oluşturuldu.")
 
     except Exception as hata:
 
         print("[HATA]", hata)
 
-        with open(
-            "bein_rapor.txt",
-            "w",
-            encoding="utf-8"
-        ) as dosya:
+        with open("bein_rapor.txt", "w", encoding="utf-8") as dosya:
+            dosya.write("KONTROL HATASI: " + str(hata))
 
-            dosya.write(
-                "KONTROL HATASI\n" + str(hata)
-            )
+    finally:
 
-        m3u_olustur()
-
-
-def m3u_olustur(yayin_url=None):
-
-    icerik = "#EXTM3U\n"
-
-    if yayin_url and yayin_url.startswith("https://"):
-
-        icerik += (
-            '#EXTINF:-1 '
-            'tvg-name="BEIN SPORTS 1" '
-            f'tvg-logo="{LOGO}" '
-            'group-title="SPOR",BEIN SPORTS 1\n'
-        )
-
-        icerik += yayin_url + "\n"
-
-    with open(
-        "bein.m3u",
-        "w",
-        encoding="utf-8"
-    ) as dosya:
-
-        dosya.write(icerik)
-
-    print("[OK] bein.m3u oluşturuldu.")
-
-    if yayin_url is None:
-
-        print("[BILGI] Doğrulanmış yayın adresi bulunmadığı için M3U boş.")
+        m3u_olustur(yayinlar)
 
 
 if __name__ == "__main__":
-
-    sayfa_kontrol()
-
-    print("=" * 45)
-    print("KONTROL TAMAMLANDI")
-    print("=" * 45)
+    kontrol()
