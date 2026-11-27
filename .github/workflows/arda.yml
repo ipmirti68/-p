@@ -32,6 +32,10 @@ jobs:
         run: |
           python arda.py
 
+      - name: Scraper Scriptini Calistir
+        run: |
+          python ard.py
+          
       - name: Degisiklikleri Git ile Gonder
         run: |
           git config --global user.name "github-actions[bot]"
