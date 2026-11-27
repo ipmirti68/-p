@@ -4,20 +4,15 @@ import re
 TARGET_URL = "https://selcuksports180.top"
 OUTPUT_FILE = "mirti68.m3u"
 
-# Kanal adı, URL kodu/yolu, tip ve logosu
+# SADECE 【entity-beIN Sports¦canonical_name=Bein Sports】 - isimler aynen
 channels = [
-    ("Bein Sports 1 ⭕", "b1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports 2 ⭕", "b2", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports 3 ⭕", "b3", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports 4 ⭕", "b4", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports 5 ⭕", "b5", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports Max 1 ⭕", "bm1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("Bein Sports Max 2 ⭕", "bm2", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
-    ("S Sport ⭕", "ss", "tracks", "https://yt3.googleusercontent.com/vJ6tfodHaOIAQbgPIN6Oa0cPUk5gdFAuXbLEPxMlnthgOQ2tBr8FU2UweMk-ksmyKiW3bIiFyRU=s900-c-k-c0x00ffffff-no-rj"),
-    ("S Sport 2 ⭕", "ss2", "tracks", "https://yt3.googleusercontent.com/vJ6tfodHaOIAQbgPIN6Oa0cPUk5gdFAuXbLEPxMlnthgOQ2tBr8FU2UweMk-ksmyKiW3bIiFyRU=s900-c-k-c0x00ffffff-no-rj"),
-    ("TRT Spor ⭕", "trtspor", "tracks", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjuGO-ReknxTi5qGL5Y2gaAfXj3HfGoRcgBzcnGFLow29NQxwFk_gUGls&s=10"),
-    ("TRT 1 ⭕", "trt1", "tracks", "https://www.trt.net.tr/_nuxt/img/trt-1-televizyon-kanali.4c9c3dd.png"),
-    ("A Spor ⭕", "aspor", "tracks", "https://cdn.aptoide.com/imgs/5/0/d/50d4bfd3c109b25b96c8e95c4d9d7df9_icon.png")
+    (" 【entity-Bein Sports¦canonical_name=Bein Sports】 1 ⭕", "b1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    (" 【entity-Bein Sports¦canonical_name=Bein Sports】 2 ⭕", "b2", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    (" 【entity-Bein Sports¦canonical_name=Bein Sports】 3 ⭕", "b3", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    (" 【entity-Bein Sports¦canonical_name=Bein Sports】 4 ⭕", "b4", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    (" 【entity-Bein Sports¦canonical_name=Bein Sports】 5 ⭕", "b5", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    (" 【entity-Bein Sports¦canonical_name=Bein Sports】 Max 1 ⭕", "bm1", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
+    (" 【entity-Bein Sports¦canonical_name=Bein Sports】 Max 2 ⭕", "bm2", "tracks", "https://resmim.net/cdn/2026/07/22/ETtrXH.png"),
 ]
 
 BASE_DOMAIN = "https://css.d6e3ess6e065r5.help/"
@@ -32,11 +27,7 @@ def build_new_entries():
         else:
             stream_url = f"{BASE_DOMAIN}//{code_or_path}/tracks-v1a1/mono.m3u8"
 
-        # DUZELTILDI: Bein Sports iceriyorsa Bein Sports grubuna, digerleri SPORTS grubuna
-        if "Bein Sports" in name.lower():
-            group = "🟩◆ Bein Sports 🖥"
-        else:
-            group = "🟩◆ SPORTS ⭕"
+        group = "🟩◆ Bein Sports 🖥"
 
         extinf = (
             f'#EXTINF:-1 tvg-name="{name}" '
@@ -49,7 +40,7 @@ def build_new_entries():
 
 def generate_playlist():
     new_entries = build_new_entries()
-    managed_names = {name.lower() for name, _, _, _ in channels}
+    managed_names = {name for name, _, _, _ in channels}
 
     header_lines = []
     kept_lines = []
@@ -70,7 +61,7 @@ def generate_playlist():
             if line.startswith("#EXTINF"):
                 m = re.search(r'tvg-name="([^"]+)"', line)
                 after_comma = line.split(",", 1)[-1].strip() if "," in line else ""
-                tvg_name = (m.group(1) if m else after_comma).lower()
+                tvg_name = m.group(1) if m else after_comma
 
                 url_line = lines[i + 1] if i + 1 < len(lines) else ""
 
