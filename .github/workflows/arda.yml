@@ -1,0 +1,42 @@
+
+name: BEIN SPORTS 1 KONTROL
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "*/20 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bein-kontrol
+  cancel-in-progress: false
+
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Depoyu indir
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Kontrolü çalıştır
+        run: |
+          python -m pip install requests
+          python arda.py
+
+      - name: Raporu kaydet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bein_rapor.txt
+          git diff --cached --quiet || git commit -m "BEIN kontrol raporu güncellendi"
+          git push
