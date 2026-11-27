@@ -1,5 +1,5 @@
 
-name: SPOR
+name: atv
 
 on:
   workflow_dispatch:
