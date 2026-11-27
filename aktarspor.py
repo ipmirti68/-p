@@ -1,8 +1,10 @@
-# MIRTI68 - SPOR AKTARICI - YAML'A DOKUNMAZ, NE VARSA ONU AKTARIR
-# Okur: aktarspor.yaml - bozuksa kendi icinde duzeltip okur, dosyayi ASLA uzerine yazmaz
+# MIRTI68 - SPOR AKTARICI - TAM HALI
+# Okur: aktarspor.yaml - ne varsa onu aktarir, dosyayi ASLA uzerine yazmaz
 # Yazar: spor.tmp.m3u + mirtitv68.m3u
-# Kural: Kaynak tvg-id / tvg-epg / catchup / logo varsa ezilmez, yoksa hedef logoya bakilir.
-#        Yeni kanal varsa grubun icine eklenir, mevcut spor grubu silinmez.
+# Kural: 1) Mevcut grup korunur, hicbir kayda dokunulmaz
+#        2) Ayni URL ise hic olusturulmaz (.mp4 / ?.mp4 / / farki sayilmaz)
+#        3) Ayni grup varsa icine, yoksa benzer grubun altina, o da yoksa en sona
+#        4) EPG / logo korunur, yoksa hedef logoya bakilir
 import re, os, shutil, urllib.request
 try:
     import yaml
@@ -21,6 +23,20 @@ def normalize(s):
     s = "".join(cevir.get(c,c) for c in s)
     s = s.replace("|"," ").replace("-"," ").replace("_"," ")
     return re.sub(r"\s+"," ",s).strip()
+
+def norm_grup(s):
+    s = normalize(s)
+    return re.sub(r"[^a-z0-9]", "", s)
+
+def url_norm(u):
+    # Ayni kanal farkli yazilsa da ayni sayilsin
+    u = (u or "").strip()
+    u = u.replace("?.mp4", "").replace("?ext=.mp4", "").replace("?.m3u8", "")
+    if u.endswith(".mp4"):
+        u = u[:-4]
+    if u.endswith("/"):
+        u = u[:-1]
+    return u.lower()
 
 def grup_bul(rec):
     for l in rec:
@@ -71,11 +87,9 @@ def oku_m3u(p):
     return baslik, records
 
 def oku_yaml(path):
-    # DUZELTILDI: Artik DOGRU_YAML yok, dosya ASLA uzerine yazilmiyor
     if not os.path.exists(path):
         print(f"[HATA] {path} yok")
         return {"sporlar": []}
-    # 1. Once normal yaml dene
     if yaml is not None:
         try:
             with open(path, encoding="utf-8") as f:
@@ -85,7 +99,6 @@ def oku_yaml(path):
                 return data
         except Exception as e:
             print(f"[UYARI] yaml normal okunamadi: {e}, girintisiz okuma deneniyor")
-    # 2. Bozuksa girintisiz / satir satir oku, dosyaya dokunma
     def temiz(v):
         v = v.strip().strip(",")
         if len(v) >= 2 and ((v[0] == "'" and v[-1] == "'") or (v[0] == '"' and v[-1] == '"')):
@@ -117,7 +130,6 @@ def oku_yaml(path):
                 cur["epg_koru"] = "true" in s.lower()
             elif "sadece_listedekiler:" in s and cur is not None:
                 cur["sadece_listedekiler"] = "true" in s.lower()
-            # Ok isaretli spor satiri da okunsun: beIN SPORTS -> 🟪◆ SPOR - BEIN ⭕
             elif "->" in s and cur is not None:
                 sol, sag = s.split("->", 1)
                 sol = temiz(sol); sag = temiz(sag)
@@ -130,6 +142,31 @@ def oku_yaml(path):
             print(f"  - {h['aranacak']} -> {h['hedef_grup']}")
     return out
 
+def benzer_grup_bul(hedef_grup, mevcut_gruplar):
+    hedef_n = norm_grup(hedef_grup)
+    hedef_kelimeler = set(normalize(hedef_grup).split())
+    hedef_kelimeler.discard("spor")
+    en_iyi = None
+    en_iyi_skor = 0
+    for g in mevcut_gruplar:
+        if not g: continue
+        g_n = norm_grup(g)
+        if g_n == hedef_n:
+            return g
+        skor = 0
+        if hedef_n and g_n and (hedef_n in g_n or g_n in hedef_n):
+            skor += 10
+        g_kelimeler = set(normalize(g).split())
+        g_kelimeler.discard("spor")
+        ortak = hedef_kelimeler & g_kelimeler
+        skor += len(ortak) * 5
+        if "spor" in normalize(g) and "spor" in normalize(hedef_grup):
+            skor += 1
+        if skor > en_iyi_skor and (len(ortak) > 0 or hedef_n in g_n or g_n in hedef_n):
+            en_iyi_skor = skor
+            en_iyi = g
+    return en_iyi
+
 def main():
     print("MIRTI68 - SPOR BASLADI - aktarspor.yaml okunuyor")
     print(f"[HEDEF] {HEDEF_DOSYA}")
@@ -140,14 +177,16 @@ def main():
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
-    # DUZELTILDI: Mevcut SPOR gruplari silinmiyor
+    # Mevcut grup korunuyor, mevcut URL'ler normalize edilip kaydediliyor
     gorulen = set()
     for r in hedef_records:
         u = kanal_url(r)
-        if u: gorulen.add(u.strip())
+        if u: gorulen.add(url_norm(u))
+    print(f"[BILGI] Mevcut kayit: {len(hedef_records)} - mevcut URL: {len(gorulen)}")
     yeni_by_grup = {}
     spor_lines = ["#EXTM3U"]
     eklenen_toplam = 0
+    atlanan_toplam = 0
     for sira, s in enumerate(sporlar, 1):
         if not isinstance(s, dict): continue
         kurl = str(s.get("kaynak_url","") or "").strip()
@@ -157,10 +196,14 @@ def main():
         try: _, kaynak = oku_m3u(kurl)
         except Exception as e: print(f"  [ATLANDI] {e}"); continue
         eklenen_blok = 0
+        atlanan_blok = 0
         for r in kaynak:
             ad = kanal_adi(r); u = kanal_url(r)
             if not u: continue
-            if u.strip() in gorulen: continue
+            # AYNI URL ISE HIC OLUSTURMA
+            if url_norm(u) in gorulen:
+                atlanan_blok += 1; atlanan_toplam += 1
+                continue
             eslesen = None
             for h in hedefler:
                 if not isinstance(h, dict): continue
@@ -187,7 +230,6 @@ def main():
                 m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
                 oz = {}
                 for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
-                # EPG KORUMA
                 gelen_id = oz.get("tvg-id","").strip()
                 gelen_epg = oz.get("tvg-epg","").strip()
                 gelen_logo = oz.get("tvg-logo","").strip()
@@ -199,21 +241,25 @@ def main():
                     oz["tvg-epg"] = gelen_epg
                 if gelen_id:
                     oz["tvg-id"] = gelen_id
-                # LOGO: 1) kaynak 2) hedef
                 if not gelen_logo and hedef_logo:
                     oz["tvg-logo"] = hedef_logo
                 oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
                 yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
             yeni_by_grup.setdefault(hedef_grup, []).extend(yeni)
-            spor_lines.extend(yeni); gorulen.add(u.strip())
+            spor_lines.extend(yeni); gorulen.add(url_norm(u))
             eklenen_blok += 1; eklenen_toplam += 1
-        print(f"  [OK] {sira}. blok bitti, bu blokta eklenen: {eklenen_blok}")
-    # YERINDE EKLEME
+        print(f"  [OK] {sira}. blok bitti, eklenen: {eklenen_blok} - atlanan ayni URL: {atlanan_blok}")
+    # YERINDE EKLEME + BENZER GRUP - mevcut kayitlara dokunulmaz
     lines = []
     if not baslik or not baslik[0].strip().startswith("#EXTM3U"):
         lines.append("#EXTM3U")
     else:
         lines.extend(baslik)
+    mevcut_gruplar = []
+    for r in hedef_records:
+        g = grup_bul(r)
+        if g and g not in mevcut_gruplar:
+            mevcut_gruplar.append(g)
     eklenmis = set()
     for i, r in enumerate(hedef_records):
         lines.extend(r)
@@ -222,15 +268,35 @@ def main():
         if g in yeni_by_grup and g not in eklenmis and g != sonraki:
             lines.extend(yeni_by_grup[g])
             eklenmis.add(g)
+            print(f"[YERLESTI] {g} grubunun icine eklendi")
     for g, recs in yeni_by_grup.items():
-        if g not in eklenmis:
-            lines.extend(recs)
+        if g in eklenmis: continue
+        benzer = benzer_grup_bul(g, mevcut_gruplar)
+        if benzer:
+            print(f"[BENZER] {g} yok, benzer grup bulundu: {benzer} -> onun altina ekleniyor")
+            son_idx = -1
+            for idx2, satir in enumerate(lines):
+                if satir.startswith("#EXTINF:"):
+                    m = re.search(r'group-title="([^"]*)"', satir)
+                    if m and m.group(1) == benzer:
+                        son_idx = idx2 + 1
+                        while son_idx < len(lines) and not lines[son_idx].startswith("#EXTINF:") and not lines[son_idx].startswith("#EXT"):
+                            son_idx += 1
+            if son_idx > 0:
+                for j, yeni_satir in enumerate(recs):
+                    lines.insert(son_idx + j, yeni_satir)
+                mevcut_gruplar.append(g)
+                eklenmis.add(g)
+                continue
+        print(f"[SONA] {g} icin benzer grup yok, en sona eklendi")
+        lines.extend(recs)
+        eklenmis.add(g)
     with open(TMP_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(spor_lines)+"\n")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
     except Exception: pass
     if not lines or not lines[0].strip().startswith("#EXTM3U"): lines.insert(0, "#EXTM3U")
     with open(HEDEF_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(lines)+"\n")
-    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA} - Toplam eklenen spor: {eklenen_toplam}")
+    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA} - Eklenen: {eklenen_toplam} - Atlanan ayni URL: {atlanan_toplam}")
 
 if __name__ == "__main__":
     main()
