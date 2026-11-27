@@ -263,6 +263,17 @@ AKTARIMLAR = [
         "hedef_logo": "",
         "ek_kod": "⭕",
     },
+{
+        "kaynak_url": "https://raw.githubusercontent.com/kadirsener1/livetv/cbb795920a991c5d694b5ba9740336e30d29604b/tv247tr.m3u",
+        "kaynak_grup": "Ulusal",
+        "aranacak": "trt 1, atv, show tv, kanal d, star, now, kanal 7, tv 8, trt1",
+        "hedef_grup": "🟨◆ ULUSALˢᴰ⭕",
+        "hedef_logo": "",
+        "ek_kod": "⭕",
+        "grup_onek": False,
+    },
+
+    
     {
         "kaynak_url": "https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u",
         "kaynak_gruplar": ["🇰🇷 Korea | Drama","🇰🇷 Korea | Education","🇰🇷 Korea | Knowledge","🇰🇷 Korea | Movies","🇰🇷 Korea | Music"],
