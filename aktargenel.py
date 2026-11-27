@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 # MIRTI68 - GENEL AKTARICI - AYRI CALISIR
-# Okur: aktargenel.yaml
+# Okur: aktargenel.yaml - BOZUK YAML'I DA OKUR, ? satirini atlar
 # Yazar: HEDEF_DOSYA + genel.tmp.m3u
-# HEDEF_DOSYA yml'den gelir, yoksa mirti_test.m3u
+# HEDEF_DOSYA yaml'den gelir, yoksa mirti_test.m3u
 # 1 url -> 5 hedef, her hedef farkli grup
 # aranacak: "a, b, c" seklinde virgullu, py listeye cevirir
 # kaynak_grup / kaynak_gruplar varsa once ona gore suzer
@@ -19,7 +21,7 @@ try:
 except ImportError:
     HAS_REQUESTS = False
 
-HEDEF_DOSYA =  "mirtitv68.m3u"
+HEDEF_DOSYA = "mirti_test.m3u"
 GENEL_YAML = "aktargenel.yaml"
 TMP_DOSYA = "genel.tmp.m3u"
 USER_AGENT = "Mozilla/5.0"
@@ -88,32 +90,115 @@ def aranacak_liste(v):
         return out
     return [y.strip() for y in str(v).split(",") if y.strip()]
 
+def _deger_temizle(v):
+    v = (v or "").strip()
+    if len(v) >= 2 and ((v[0] == '"' and v[-1] == '"') or (v[0] == "'" and v[-1] == "'")):
+        v = v[1:-1]
+    if v in ("?", "null", "Null", "NULL", "~"):
+        return ""
+    return v.strip()
+
+def _yaml_temizle(metin):
+    out = []
+    for line in metin.splitlines():
+        s = line.strip()
+        if s == "?" or s.startswith("? ") or s == "- ?" or s == "-?":
+            continue
+        m = re.match(r"^(\s*(?:- )?[\w_]+:\s*)(.+)$", line)
+        if m and "://" in m.group(2):
+            val = m.group(2).strip()
+            if not (val.startswith('"') or val.startswith("'") or val.startswith("[")):
+                line = m.group(1) + '"' + val.replace('"', '') + '"'
+        out.append(line)
+    return "\n".join(out)
+
+def _manuel_yaml_parse(metin):
+    data = {"hedef_dosya": "", "genel": []}
+    cur_genel = None
+    cur_hedef = None
+    for raw in metin.splitlines():
+        if not raw.strip() or raw.strip().startswith("#"):
+            continue
+        s = raw.strip()
+        if s == "?" or s.startswith("? "):
+            continue
+        if s.startswith("hedef_dosya:"):
+            data["hedef_dosya"] = _deger_temizle(s.split(":", 1)[1])
+            continue
+        if s == "genel:":
+            continue
+        if s.startswith("- ") and "kaynak_url" in s:
+            cur_genel = {"kaynak_url": "", "sadece_listedekiler": True, "kaynak_grup": "", "kaynak_gruplar": [], "hedefler": []}
+            data["genel"].append(cur_genel)
+            cur_hedef = None
+            if "kaynak_url:" in s:
+                cur_genel["kaynak_url"] = _deger_temizle(s.split("kaynak_url:", 1)[1])
+            continue
+        if s.startswith("- ") and cur_genel is not None and "hedef_adi" in s:
+            cur_hedef = {"hedef_adi": "", "aranacak": "", "hedef_grup": "", "hedef_logo": "", "ek_kod": ""}
+            cur_genel["hedefler"].append(cur_hedef)
+            if "hedef_adi:" in s:
+                cur_hedef["hedef_adi"] = _deger_temizle(s.split("hedef_adi:", 1)[1])
+            continue
+        if s.startswith("- ") and cur_genel is not None and cur_hedef is None:
+            continue
+        if ":" not in s:
+            continue
+        k, v = s.split(":", 1)
+        k = k.strip()
+        v = _deger_temizle(v)
+        if cur_hedef is not None and k in ("hedef_adi", "aranacak", "hedef_grup", "hedef_logo", "ek_kod"):
+            cur_hedef[k] = v
+        elif cur_genel is not None and k in ("kaynak_url", "kaynak_grup", "sadece_listedekiler"):
+            if k == "sadece_listedekiler":
+                cur_genel[k] = v.lower() not in ("false", "0", "no", "hayir")
+            else:
+                cur_genel[k] = v
+        elif k == "kaynak_gruplar" and v:
+            cur_genel["kaynak_gruplar"] = [x.strip() for x in v.strip("[]").split(",") if x.strip()]
+    return data
+
 def oku_yaml(path):
     if not os.path.exists(path):
         print(f"[HATA] {path} yok")
-        return {}
-    try:
-        with open(path, encoding="utf-8") as f:
-            data = yaml.safe_load(f) or {}
-        if not data.get("genel"):
-            print(f"[UYARI] {path} icinde genel bos")
-        return data
-    except Exception as e:
-        print(f"[HATA] {path} bozuk: {e}")
-        raise
+        return {"genel": []}
+    with open(path, encoding="utf-8", errors="ignore") as f:
+        ham = f.read()
+    if yaml is not None:
+        try:
+            data = yaml.safe_load(ham) or {}
+            if data.get("genel"):
+                return data
+        except Exception as e:
+            print(f"[UYARI] yaml.safe_load basarisiz, toleransli okunuyor: {e}")
+    temiz = _yaml_temizle(ham)
+    if yaml is not None:
+        try:
+            data = yaml.safe_load(temiz) or {}
+            if data.get("genel"):
+                print("[BILGI] Girintisiz / toleransli okundu")
+                return data
+        except Exception as e:
+            print(f"[UYARI] Temizli yaml da olmadi: {e}")
+    print("[BILGI] Manuel yaml okuyucu kullaniliyor")
+    data = _manuel_yaml_parse(ham)
+    if not data.get("genel"):
+        print(f"[UYARI] {path} icinde genel bos")
+    return data
 
 def main():
+    global HEDEF_DOSYA
     print("MIRTI68 - GENEL BASLADI - aktargenel.yaml okunuyor")
-    print(f"[HEDEF] {HEDEF_DOSYA}")
     cfg = oku_yaml(GENEL_YAML)
     genel = cfg.get("genel", []) or []
+    HEDEF_DOSYA = str(cfg.get("hedef_dosya", "") or "mirti_test.m3u").strip()
+    print(f"[HEDEF] {HEDEF_DOSYA}")
     print(f"[BILGI] Genel blok: {len(genel)}")
     if not os.path.exists(HEDEF_DOSYA):
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
 
-    # Eski genel gruplarini temizle: dizi / spor / film grubuna dokunma
     def kalacak_mi(r):
         g = grup_bul(r)
         if g.startswith("🟨◆") or g.startswith("🟥🔹"): return False
@@ -132,7 +217,6 @@ def main():
         if not isinstance(g, dict): continue
         kurl = str(g.get("kaynak_url","") or "").strip()
         hedefler = g.get("hedefler", []) or []
-        # Eski tek hedef formati varsa onu hedef_1 say
         if not hedefler and g.get("hedef_grup"):
             hedefler = [{
                 "hedef_adi": "hedef_1",
@@ -146,7 +230,6 @@ def main():
         try: _, kaynak = oku_m3u(kurl)
         except Exception as e: print(f"  [ATLANDI] {e}"); continue
         sadece = bool(g.get("sadece_listedekiler", True))
-        # kaynak_grup / kaynak_gruplar filtresi
         kg = str(g.get("kaynak_grup","") or "").strip()
         kgs = g.get("kaynak_gruplar", []) or []
         if isinstance(kgs, str): kgs = [kgs]
@@ -156,19 +239,16 @@ def main():
             ad = kanal_adi(r); u = kanal_url(r)
             if not u: continue
             if u.strip() in gorulen: continue
-            # Kaynak grup filtresi varsa once ona bak
             if kgs_n:
                 if normalize(grup_bul(r)) not in kgs_n: continue
             elif kg_n:
                 if normalize(grup_bul(r)) != kg_n: continue
-            # Hangi hedefe uyuyor?
             eslesen = None
             for h in hedefler:
                 if not isinstance(h, dict): continue
                 hedef_grup = str(h.get("hedef_grup","") or "").strip()
                 if not hedef_grup: continue
                 ar_list = aranacak_liste(h.get("aranacak",""))
-                # aranacak bos ise: kaynak_grup filtresiyle gelen tumunu al
                 if not ar_list:
                     eslesen = h; break
                 for ara in ar_list:
@@ -176,8 +256,7 @@ def main():
                         eslesen = h; break
                 if eslesen: break
             if not eslesen:
-                if sadece: continue
-                else: continue
+                continue
             hedef_grup = str(eslesen.get("hedef_grup","") or "").strip()
             hedef_logo = str(eslesen.get("hedef_logo","") or "").strip()
             ek_kod = str(eslesen.get("ek_kod","") or "").strip()
@@ -191,7 +270,6 @@ def main():
                 m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
                 oz = {}
                 for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
-                # EPG KORU: tvg-id, catchup vs silinmez
                 oz["group-title"] = hedef_grup
                 oz["tvg-name"] = yeni_ad
                 gelen_logo = oz.get("tvg-logo","").strip()
