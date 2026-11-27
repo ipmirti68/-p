@@ -31,6 +31,9 @@ jobs:
       - name: Film aktar
         run: python aktarfilim.py
 
+      - name: Genel aktar
+        run: python aktargenel.py
+
       - name: Kaydet
         run: |
           git config user.name "MIRTI68 Bot"
