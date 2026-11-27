@@ -1,7 +1,7 @@
 diziler:
     - kaynak_url: 'https://raw.githubusercontent.com/kimbumuratyavuz/capcanli/refs/heads/main/dizi.m3u'
     dizi_adi: ''
-    hedef_grup: 'DIZILER / KORE DİZİLERİ'
+    hedef_grup: '🟪◆DIZILER / KORE'
     hedef_logo: ''
     filtre_grup_icerir: 'squid game, hotel del luna, vincenzo, itaewon class, queen of tears, the glory, all of us are dead, lovely runner, weak hero, bloodhounds, reply 1988, crash landing on you, my mister, its okay to not be okay'
     filtre_ad_icerir: ''
@@ -10,7 +10,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ihlamurlar_altinda.m3u'
     dizi_adi: 'IHLAMURLAR ALTINDA'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER / NOSTALJİ '
     hedef_logo: 'https://www.cinematerial.com/p/500x/eirheask/ihlamurlar-altinda-turkish-movie-poster.jpg?v=1456262467'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -19,7 +19,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/cukur.m3u'
     dizi_adi: 'ÇUKUR'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER /  '
     hedef_logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFfoXV4zJgA1hy2pUeJHhuG-bG3KA3HHggd5icGoOXg157iLfyyRbQCaQW&s=10'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -28,7 +28,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/gaddar.m3u'
     dizi_adi: 'GADDAR'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER /  '
     hedef_logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQijqeTjDgWuNaWMQjgUNjqdzbXnSTUVdc-KOMhp1rKDHQLjxw9HH5IQ5iz&s=10'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -37,7 +37,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/icerde.m3u'
     dizi_adi: 'İÇERDE'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER /  '
     hedef_logo: 'https://m.media-amazon.com/images/M/MV5BMTQ1YjA0OTQtYjU2NC00YTI1LTkzMGQtOTAwNjRiMWE1MzExXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -46,7 +46,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/behzat-c.m3u'
     dizi_adi: 'BEHZAT Ç'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER /'
     hedef_logo: 'https://m.media-amazon.com/images/M/MV5BZDZjY2I5ZjEtZGE2MS00ZjRmLTlmMGEtMDQ5ZmZhZWJjYzk3XkEyXkFqcGdeQXVyNDg4MjkzNDk%40._V1_.jpg'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -55,7 +55,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/fi.m3u'
     dizi_adi: 'Fİ'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER /  '
     hedef_logo: 'https://seriesturkish.com/uploads/2020/07/fi-dizi-y1234.jpg'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -64,7 +64,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/karadayi.m3u'
     dizi_adi: 'KARADAYI'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER / '
     hedef_logo: 'https://www.ayyapim.com/media/images/posterler/karadayi-789312454-b.jpg'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -73,7 +73,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/refs/heads/main/lists/video/sources/puhutv-com/diziler/kopru.m3u'
     dizi_adi: 'KÖPRÜ'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER / '
     hedef_logo: 'https://m.media-amazon.com/images/M/MV5BZTM3YzhmOGItNGViOC00YjYxLTg3MTktODVjMmZiZThjNTdiXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -82,7 +82,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/hayat_bilgisi.m3u'
     dizi_adi: 'HAYAT BİLGİSİ'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER / NOSTALJİ '
     hedef_logo: 'https://image.tmdb.org/t/p/w780/jKOQ2offOH9dSQ1gRjSC8GUTQXB.jpg'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -91,7 +91,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/yilan_hikayesi.m3u'
     dizi_adi: 'YILAN HİKAYESİ'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER / NOSTALJİ '
     hedef_logo: 'https://m.media-amazon.com/images/M/MV5BOTQwMTBiNTMtOTE3ZS00NjIxLWEyYWUtMjUxNzgzYzk4NjBlXkEyXkFqcGc@._V1_.jpg'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -100,7 +100,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/kinali_kar.m3u'
     dizi_adi: 'KINALI KAR'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER / NOSTALJİ '
     hedef_logo: 'https://pro.1plus1tv.com/uploads/posts/2019-08/1565082859_preview.jpg'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -109,7 +109,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/ikincibhr.m3u'
     dizi_adi: 'İKİNCİ BAHAR'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER / NOSTALJİ'
     hedef_logo: 'https://storage.evrimagaci.org/old/mi_media/81499c915d0980de9ff6497034229b0c.jpeg'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -118,7 +118,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ipmirti68/-p/refs/heads/main/sbaba.m3u'
     dizi_adi: 'SÜPER BABA'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER / NOSTALJİ'
     hedef_logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcqK_2wOLRdf0BX7cAUq7gzANGxD8xkHSIvQPqiIK_9A&s'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
@@ -127,7 +127,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/k33n26/iptv/refs/heads/master/PerihanAbla.m3u'
     dizi_adi: 'PERİHAN ABLA'
-    hedef_grup: 'DIZILER / NOSTALJİ DİZİLER'
+    hedef_grup: '🟪◆DIZILER / NOSTALJİ '
     hedef_logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQquIA8Vvm1V27fM_AyYw0Dgw1qpI5Ggd3SyUhSvLQYeA&s=10'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
