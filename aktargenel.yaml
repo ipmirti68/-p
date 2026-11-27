@@ -10,23 +10,26 @@ genel:
         hedef_grup: "🟥🔹 CANLI KAMERA 📹"
         hedef_logo: ""
         ek_kod: "⭕"
-            - hedef_adi: "hedef_2"
-        aranacak: ""
-        hedef_grup: ""
+        
+   - kaynak_url: "https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u"
+    sadece_listedekiler: true
+    kaynak_grup: ""
+    kaynak_gruplar: []
+    hedefler:
+            - hedef_adi: "hedef_1"
+        aranacak: "trt 1, atv, show tv, kanal d, star, now, kanal 7, tv 8, trt1"
+        hedef_grup: "🟨◆ ULUSALᴴᴰ⭕"
         hedef_logo: ""
-        ek_kod: ""
-            - hedef_adi: "hedef_3"
-        aranacak: ""
-        hedef_grup: ""
+        ek_kod: "⭕"
+        
+     - kaynak_url: "https://raw.githubusercontent.com/Kral-Turk/Kral-Turk-TV/refs/heads/main/TURK_TV.m3u_plus"
+    sadece_listedekiler: true
+    kaynak_grup: "TR ULUSAL-UHD"
+    kaynak_gruplar: []
+    hedefler:
+            - hedef_adi: "hedef_1"
+        aranacak: "trt 1, atv, show tv, kanal d, star, now, kanal 7, tv 8, trt1"
+        hedef_grup: "🟨◆ ULUSALᶠᴴᴰ⭕"
         hedef_logo: ""
-        ek_kod: ""
-            - hedef_adi: "hedef_4"
-        aranacak: ""
-        hedef_grup: ""
-        hedef_logo: ""
-        ek_kod: ""
-            - hedef_adi: "hedef_5"
-        aranacak: ""
-        hedef_grup: ""
-        hedef_logo: ""
-        ek_kod: ""
+        ek_kod: "⭕"
+        
