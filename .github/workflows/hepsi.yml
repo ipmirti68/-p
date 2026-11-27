@@ -81,6 +81,11 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: python dizicevir.py || echo "dizicevir failed"
+    
+      - name: 8 - ARDA CEVİR
+        continue-on-error: true
+        timeout-minutes: 10
+        run: python ard.py || echo "arda failed"
      
     
       # DOSYALARI KAYDET
