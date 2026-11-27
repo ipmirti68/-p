@@ -28,6 +28,9 @@ jobs:
       - name: Film calistir
         run: python aktarfilim.py
 
+      - name: Film calistir
+        run: python dizifilim.py
+
       - name: Genel calistir
         run: python aktargenel.py
 
