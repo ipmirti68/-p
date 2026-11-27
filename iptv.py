@@ -7,17 +7,19 @@ GROUP = "🟨◆  ULUSALᴴᴰ ⭕"
 # SIRALAMA: TRT1 - ATV- SHOW TV - KANAL D - Star TV - NOW - KANAL7 - TV8 - 360 - TV4 - TV2 - BEYAZ
 CHANNELS = {
     "TRT 1 ": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/trt1.png", "keyword": "trt-1", "marker": "# MIRTI68_TRT1_AUTO", "direct": "https://tv-trt1.medya.trt.com.tr/master.m3u8"},
-    "ATV ": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "ATV", "marker": "# MIRTI68_ATV_AUTO", "direct": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8"},
-    "SHOW TV ⭕": {"page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png", "keyword": "showtv", "marker": "# MIRTI68_SHOWTV_AUTO"},
-    "KANAL D ⭕": {"page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald", "marker": "# MIRTI68_KANALD_AUTO"},
-    "Star TV  ⭕": {"page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv", "marker": "# MIRTI68_STARTV_AUTO"},
-    "NOW ⭕": {"page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "nowtv", "marker": "# MIRTI68_NOWTV_AUTO"},
-    "KANAL 7 ⭕": {"page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7", "marker": "# MIRTI68_KANAL7_AUTO"},
-    "TV8 ⭕": {"page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": "tv8", "marker": "# MIRTI68_TV8_AUTO"},
-    "360 ⭕": {"page": "https://www.tv360.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/360.png", "keyword": "360 tv", "marker": "# MIRTI68_360_AUTO"},
+    "ATV ": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "ATV.tr", "marker": "# MIRTI68_ATV_AUTO", "direct": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8"},
+   "ATV test": {"page": "", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/atv.png", "keyword": "ATV", "marker": "# MIRTI68_ATV_AUTO", "direct": "https://trkvz.daioncdn.net/atv/atv_1080p.m3u8?e=1795803987&st=lKxv_ko1Z_YK075TY0ePBw&sid=8ycpou2bozxj&app=d1ce2d40-5256-4550-b02e-e73c185a314e&ce=3"},
+   
+    "SHOW TV ⭕": {"page": "https://www.showtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/show.png", "keyword": "showtv.tr", "marker": "# MIRTI68_SHOWTV_AUTO"},
+    "KANAL D ⭕": {"page": "https://www.kanald.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanald.png", "keyword": "kanald.tr", "marker": "# MIRTI68_KANALD_AUTO"},
+    "Star TV  ⭕": {"page": "https://www.startv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/star.png", "keyword": "startv.tr", "marker": "# MIRTI68_STARTV_AUTO"},
+    "NOW ⭕": {"page": "https://www.nowtv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/nowtv.png", "keyword": "now.tr", "marker": "# MIRTI68_NOWTV_AUTO"},
+    "KANAL 7 ⭕": {"page": "https://www.kanal7.com/canli-izle", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/kanal7.png", "keyword": "kanal7.tr", "marker": "# MIRTI68_KANAL7_AUTO"},
+    "TV8 ⭕": {"page": "https://www.tv8.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv8.png", "keyword": "tv8.tr", "marker": "# MIRTI68_TV8_AUTO"},
+    "360 ⭕": {"page": "https://www.tv360.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/360.png", "keyword": "360tv.tr", "marker": "# MIRTI68_360_AUTO"},
     "TV 4 ⭕": {"page": "https://www.tv4.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv4.png", "keyword": "tv 4", "marker": "# MIRTI68_TV4_AUTO"},
     "TV 2 ⭕": {"page": "https://www.tv2.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/tv2.png", "keyword": "tv2", "marker": "# MIRTI68_TV2_AUTO"},
-    "BEYAZ ⭕": {"page": "https://m.beyaztv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/beyaz.png", "keyword": "beyax tv", "marker": "# MIRTI68_BEYAZ_AUTO"},
+    "BEYAZ ⭕": {"page": "https://m.beyaztv.com.tr/canli-yayin", "logo": "https://raw.githubusercontent.com/ipmirti68/Logo/refs/heads/main/beyaz.png", "keyword": "beyaz tv", "marker": "# MIRTI68_BEYAZ_AUTO"},
 }
 
 def get_link(page_url, keyword):
