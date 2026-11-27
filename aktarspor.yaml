@@ -1,1 +1,31 @@
-sporlar: [{kaynak_url: 'https://raw.githubusercontent.com/kimbumuratyavuz/capcanli/refs/heads/main/spor.m3u', epg_koru: true, sadece_listedekiler: true, hedefler: [{hedef_adi: 'hedef_1', aranacak: ' 【entity-beIN SPORTS¦canonical_name=beIN SPORTS】', hedef_grup: '🟪◆ SPOR - BEIN ⭕', hedef_logo: '', ek_kod: ''}, {hedef_adi: 'hedef_2', aranacak: ' 【entity-S Sport¦canonical_name=S Sport】', hedef_grup: '🟪◆ SPOR - 【entity-S SPORT¦canonical_name=S Sport】 ⭕', hedef_logo: '', ek_kod: ''}, {hedef_adi: 'hedef_3', aranacak: '', hedef_grup: '', hedef_logo: '', ek_kod: ''}, {hedef_adi: 'hedef_4', aranacak: '', hedef_grup: '', hedef_logo: '', ek_kod: ''}, {hedef_adi: 'hedef_5', aranacak: '', hedef_grup: '', hedef_logo: '', ek_kod: ''}]}]
+hedef_dosya: "mirtitv68.m3u"
+sporlar:
+    - kaynak_url: "https://raw.githubusercontent.com/ipmirti68/-ptv-/refs/heads/main/tum_icerikler.m3u"
+    epg_koru: true
+    sadece_listedekiler: true
+    hedefler:
+            - hedef_adi: "hedef_1"
+        aranacak: "beIN SPORTS"
+        hedef_grup: "🟩◆ ◆ SPOR - BEIN SPORT ⭕"
+        hedef_logo: ""
+        ek_kod: ""
+            - hedef_adi: "hedef_2"
+        aranacak: "S Sport"
+        hedef_grup: "🟩◆ SPOR - S SPOR ⭕"
+        hedef_logo: ""
+        ek_kod: ""
+            - hedef_adi: "hedef_3"
+        aranacak: ""
+        hedef_grup: ""
+        hedef_logo: ""
+        ek_kod: ""
+            - hedef_adi: "hedef_4"
+        aranacak: ""
+        hedef_grup: ""
+        hedef_logo: ""
+        ek_kod: ""
+            - hedef_adi: "hedef_5"
+        aranacak: ""
+        hedef_grup: ""
+        hedef_logo: ""
+        ek_kod: ""
