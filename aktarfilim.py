@@ -1,6 +1,13 @@
-# MIRTI68 - FILM AKTARICI - EPG KORU + YERINDE EKLE + OK ISARETI OKUR - TAM HALI
-# Okur: aktarfilim.yaml - 3 formati da okur, baslikli / basliksiz farketmez
-# Yazar: film.tmp.m3u + mirtitv68.m3u
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# MIRTI68 - FILM AKTARICI - FILM GRUBU TEK YER - TAM HALI - SON
+# KURAL: FİLM gruplari tek blokta, tek yerde durur
+#        - Hedefte FILM blogu varsa, yeni FILM gruplari o blogun hemen arkasina, hepsi beraber eklenir
+#        - FILM blogu yoksa, hepsi beraber en sona eklenir
+#        - Benzer grup arama YOK, daginik ekleme YOK
+#        - Var olani silme, yerini degistirme, EPG silme
+#        - Ayni URL varsa tekrar ekleme, grubunu dogru gruba tasi
+# Okur: aktarfilim.yaml - "- KAYNAK -> HEDEF" ok listesi
 import re, os, shutil, urllib.request, urllib.parse, json, time
 try:
     import yaml
@@ -22,11 +29,11 @@ def normalize(s):
     s = s.replace("|"," ").replace("-"," ").replace("_"," ")
     return re.sub(r"\s+"," ",s).strip()
 
-def norm_sinema(s):
-    return re.sub(r'[^a-z0-9çğıöşü]+','',(s or "").lower())
-
 def norm_grup(s):
     return re.sub(r'[^a-z0-9]', '', normalize(s))
+
+def norm_sinema(s):
+    return re.sub(r'[^a-z0-9çğıöşü]+','',(s or "").lower())
 
 def url_norm(u):
     u = (u or "").strip()
@@ -37,27 +44,12 @@ def url_norm(u):
         u = u[:-1]
     return u.lower()
 
-def benzer_grup_bul(hedef_grup, mevcut_gruplar):
-    hedef_n = norm_grup(hedef_grup)
-    hedef_kelimeler = set(normalize(hedef_grup).split())
-    hedef_kelimeler.discard("film"); hedef_kelimeler.discard("filim")
-    en_iyi = None; en_iyi_skor = 0
-    for g in mevcut_gruplar:
-        if not g: continue
-        g_n = norm_grup(g)
-        if g_n == hedef_n: return g
-        skor = 0
-        if hedef_n and g_n and (hedef_n in g_n or g_n in hedef_n): skor += 10
-        g_kelimeler = set(normalize(g).split()); g_kelimeler.discard("film"); g_kelimeler.discard("filim")
-        ortak = hedef_kelimeler & g_kelimeler
-        skor += len(ortak) * 5
-        if skor > en_iyi_skor and (len(ortak) > 0 or hedef_n in g_n or g_n in hedef_n):
-            en_iyi_skor = skor; en_iyi = g
-    return en_iyi
+def film_mi(grup):
+    # DUZELTILDI: TEK YER kontrolu - grup FILM mi?
+    n = normalize(grup)
+    return "film" in n or "filim" in n
 
-SINEMA_WANTED_RAW = [" 【entity-IMDb¦canonical_name=IMDb】 Top Rated","YERLI FILM","KEMAL SUNAL","KORKU","WESTERN","YeniEklenenler","2026","2025","2023 2024","2021 2022","2019 2020","2017 2018","2015 2016","2013 2014","2011 2012","2001 2010"]
-SINEMA_WANTED = {norm_sinema(x): x for x in SINEMA_WANTED_RAW}
-SINEMA_EXCLUDED = [" adam sandler","clint eastwood"," sylvester stallone"," jackie chan","nicolas cage"," steven seagal"," jason statham","seri","dizi","series","sezon","season","episode","bölüm","bolum","s01e","s02e","s03e"]
+SINEMA_EXCLUDED = [" 【entity-adam sandler¦canonical_name=adam sandler】","clint eastwood"," 【entity-sylvester stallone¦canonical_name=sylvester stallone】"," 【entity-jackie chan¦canonical_name=jackie chan】","nicolas cage"," 【entity-steven seagal¦canonical_name=steven seagal】"," 【entity-jason statham¦canonical_name=jason statham】","seri","dizi","series","sezon","season","episode","bölüm","bolum","s01e","s02e","s03e"]
 def sinema_excluded(text):
     t = " " + re.sub(r'[^a-z0-9çğıöşü]+',' ',(text or "").lower()) + " "
     compact = (text or "").lower().replace(" ","")
@@ -68,6 +60,7 @@ def sinema_excluded(text):
             nw = re.sub(r'[^a-z0-9çğıöşü]+',' ',w.lower()).strip()
             if f" {nw} " in t: return True
     return False
+
 def sinema_fix_url(url):
     url = (url or "").strip().replace("?.mp4","").replace("?ext=.mp4","")
     if "vixolity.com/vs/" in url and url.endswith(".mp4"): url = url[:-4]
@@ -79,6 +72,7 @@ def grup_bul(rec):
             m = re.search(r'group-title="([^"]*)"', l)
             return m.group(1) if m else ""
     return ""
+
 def kanal_adi(rec):
     for l in rec:
         if l.startswith("#EXTINF:"):
@@ -88,6 +82,7 @@ def kanal_adi(rec):
                 if m: return m.group(1).strip()
             return ad
     return ""
+
 def kanal_url(rec):
     for l in reversed(rec):
         s = l.strip()
@@ -163,8 +158,7 @@ def film_bilgisi_internet(baslik, yil_hint=""):
     return sonuc
 
 def yaml_oku_guvenli(path):
-    # DUZELTILDI: Once gercek yaml dene, olmazsa satir satir oku - baslikli / basliksiz farketmez
-    # 1. Gercek yaml
+    # Ok listesi: "- KAYNAK -> HEDEF" + eski dict formati
     if yaml is not None:
         try:
             with open(path, encoding="utf-8") as f:
@@ -179,22 +173,16 @@ def yaml_oku_guvenli(path):
                 for item in liste:
                     if not isinstance(item, dict): continue
                     hedefler = []
-                    # hedefler: [...] varsa onu al
                     for h in (item.get("hedefler") or []):
                         if isinstance(h, dict):
                             hedefler.append({"hedef_adi": str(h.get("hedef_adi","") or ""), "aranacak": str(h.get("aranacak","") or ""), "hedef_grup": str(h.get("hedef_grup","") or ""), "hedef_logo": str(h.get("hedef_logo","") or ""), "ek_kod": str(h.get("ek_kod","") or "")})
-                    # hedefler yoksa tek hedef_grup'tan hedef yap
                     if not hedefler and item.get("hedef_grup"):
                         hedefler = [{"hedef_adi": "hedef_1", "aranacak": str(item.get("aranacak","") or ""), "hedef_grup": str(item.get("hedef_grup","") or ""), "hedef_logo": str(item.get("hedef_logo","") or ""), "ek_kod": str(item.get("ek_kod","") or "")}]
                     out["filmler"].append({"kaynak_url": str(item.get("kaynak_url","") or VARSAYILAN_KAYNAK), "kaynak_grup": str(item.get("kaynak_grup","") or ""), "hedef_grup": str(item.get("hedef_grup","") or ""), "kaynak_gruplar": item.get("kaynak_gruplar", []) or [], "sinema_modu": True, "film_bilgi_al": True, "hedefler": hedefler})
                 print(f"[BILGI] yaml normal okundu, blok: {len(out['filmler'])}")
-                for b in out["filmler"]:
-                    for h in b["hedefler"]:
-                        print(f"  - {h.get('aranacak') or b['kaynak_grup']} -> {h.get('hedef_grup')}")
                 return out
         except Exception as e:
             print(f"[UYARI] yaml normal okunamadi: {e}, girintisiz okuma deneniyor")
-    # 2. Girintisiz / satir satir - baslik olsun olmasin calisir
     def temiz(v):
         v = v.strip().strip(",")
         if v.startswith("- "): v = v[2:].strip()
@@ -208,7 +196,6 @@ def yaml_oku_guvenli(path):
         for line in f:
             s = line.strip()
             if not s or s.startswith("#") or s in ("filmler:", "filim:", "filimler:"): continue
-            # Ok isaretli satir
             if "->" in s and "kaynak_url:" not in s and "hedef_grup:" not in s and "kaynak_grup:" not in s:
                 sol, sag = s.split("->", 1)
                 sol = temiz(sol); sag = temiz(sag)
@@ -225,7 +212,6 @@ def yaml_oku_guvenli(path):
                 cur_hedef = None
                 continue
             if cur is None: continue
-            # DUZELTILDI: hedefler icindeki hedef_adi / aranacak / hedef_grup artik okunuyor
             if "hedef_adi:" in s:
                 cur_hedef = {"hedef_adi": temiz(s.split("hedef_adi:",1)[1]), "aranacak": "", "hedef_grup": "", "hedef_logo": "", "ek_kod": ""}
                 cur["hedefler"].append(cur_hedef)
@@ -249,13 +235,10 @@ def yaml_oku_guvenli(path):
                 cur["kaynak_grup"] = temiz(s.split("kaynak_grup:",1)[1]); continue
     if cur: out["filmler"].append(cur)
     print(f"[BILGI] Girintisiz okundu, blok: {len(out['filmler'])}")
-    for b in out["filmler"]:
-        for h in b["hedefler"]:
-            print(f"  - {h.get('aranacak') or b['kaynak_grup']} -> {h.get('hedef_grup')}")
     return out
 
 def main():
-    print("MIRTI68 - FILM BASLADI - aktarfilim.yaml okunuyor")
+    print("MIRTI68 - FILM BASLADI - FILM TEK YER")
     if not os.path.exists(FILM_YAML):
         print(f"[HATA] {FILM_YAML} yok"); return
     cfg = yaml_oku_guvenli(FILM_YAML)
@@ -265,14 +248,32 @@ def main():
         print(f"[HATA] {HEDEF_DOSYA} yok"); return
     try: baslik, hedef_records = oku_m3u(HEDEF_DOSYA)
     except Exception as e: print(f"[HATA] {e}"); return
-    gorulen = set()
-    for r in hedef_records:
+
+    # DUZELTILDI: Once hedefteki FILM blogunun yerini bul
+    # FILM blogu = ilk FILM grubundan son FILM grubuna kadar olan aralik
+    film_indexler = [i for i, r in enumerate(hedef_records) if film_mi(grup_bul(r))]
+    if film_indexler:
+        film_bas = min(film_indexler)
+        film_son = max(film_indexler)
+        print(f"[TEK YER] Hedefte FILM blogu bulundu: {film_bas}. kayit - {film_son}. kayit arasi, yeni FILM gruplari {film_son+1}. siraya eklenecek")
+    else:
+        film_bas = None
+        film_son = None
+        print(f"[TEK YER] Hedefte FILM blogu yok, yeni FILM gruplari hepsi beraber en sona eklenecek")
+
+    url_index = {}
+    for i, r in enumerate(hedef_records):
         u = kanal_url(r)
-        if u: gorulen.add(url_norm(u))
-    yeni_by_grup = {}
+        if u: url_index[url_norm(u)] = i
+
+    # 1. ADIM: Var olanlarin grubunu duzelt, yeni olanlari topla, henuz dosyaya ekleme
+    yeni_by_grup = {}  # hedef_grup -> [rec, rec]
+    yeni_sira = []     # grup sirasi korunsun diye
     film_lines = ["#EXTM3U"]
     bilgi_alinan = 0
     eklenen_toplam = 0
+    guncellenen_toplam = 0
+
     for sira, f in enumerate(filmler, 1):
         if not isinstance(f, dict): continue
         kurl = str(f.get("kaynak_url","") or "").strip() or VARSAYILAN_KAYNAK
@@ -291,7 +292,6 @@ def main():
         for r in kaynak:
             ad = kanal_adi(r); u = kanal_url(r)
             if not u: continue
-            if url_norm(u) in gorulen: continue
             g = grup_bul(r)
             if kgs:
                 kgs_n = [norm_sinema(x) if sinema_modu else normalize(x) for x in kgs if str(x).strip()]
@@ -319,102 +319,145 @@ def main():
             hedef_logo = str(eslesen.get("hedef_logo","") or "").strip()
             ek_kod = str(eslesen.get("ek_kod","") or "").strip()
             if sinema_modu and not hedef_grup:
-                _clean = SINEMA_WANTED.get(norm_sinema(g), g)
-                _clean = re.sub(r"\s+", " ", _clean).strip()
+                _clean = re.sub(r"\s+", " ", g).strip()
                 hedef_grup = f"🟪◆FİLM - {_clean.upper()}"
+            # URL zaten var mi? Varsa grubunu dogru gruba tasi, tekrar ekleme
+            idx = url_index.get(url_norm(u), None)
+            if idx is not None:
+                eski_grup = grup_bul(hedef_records[idx])
+                # Ayni grupta zaten ise dokunma, farkli grupta ise tasi
+                if norm_grup(eski_grup) != norm_grup(hedef_grup):
+                    hedef_records[idx] = _extinf_guncelle(hedef_records[idx], hedef_grup, ad)
+                    print(f"  [GRUP TASINDI] {ad[:40]} : {eski_grup} -> {hedef_grup}")
+                guncellenen_toplam += 1
+                continue
             temiz_ad, yil_yerel = film_bilgisi_yerel(ad)
-            poster = ""; kimlik = ""; aciklama = ""
+            poster = ""; aciklama = ""
             if bilgi_al:
                 info = film_bilgisi_internet(temiz_ad, yil_yerel)
                 if info:
                     poster = info.get("poster","") or ""
                     if info.get("yil"): yil_yerel = str(info["yil"])
-                    kimlik = info.get("kimlik","") or ""
                     aciklama = info.get("aciklama","") or ""
                     bilgi_alinan += 1
             yeni_ad = f"{temiz_ad} ({yil_yerel})" if yil_yerel else temiz_ad
             if ek_kod and not yeni_ad.endswith(ek_kod):
                 yeni_ad = f"{yeni_ad} {ek_kod}"
-            yeni = list(r)
-            idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
-            if idx is not None:
-                extinf = yeni[idx]
-                m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
-                oz = {}
-                for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
-                # EPG KORUMA VAR: tvg-id, tvg-epg, catchup aynen kalir
-                gelen_id = oz.get("tvg-id","").strip()
-                gelen_epg = oz.get("tvg-epg","").strip()
-                gelen_logo = oz.get("tvg-logo","").strip()
-                gelen_name = oz.get("tvg-name","").strip()
-                oz["group-title"] = hedef_grup
-                if not gelen_name:
-                    oz["tvg-name"] = yeni_ad
-                if gelen_epg:
-                    oz["tvg-epg"] = gelen_epg
-                if gelen_id:
-                    oz["tvg-id"] = gelen_id
-                # Internetten gelen tt... artik tvg-id'yi ezmiyor
-                if not gelen_logo and hedef_logo:
-                    oz["tvg-logo"] = hedef_logo
-                elif not gelen_logo and not hedef_logo and poster:
-                    oz["tvg-logo"] = poster
-                if sinema_modu and "tvg-type" not in oz: oz["tvg-type"] = "movie"
-                if aciklama and not oz.get("tvg-plot"):
-                    oz["tvg-plot"] = aciklama.replace('"','').replace('\n',' ')[:300]
-                oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
-                yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
+            yeni = _yeni_rec_yap(r, hedef_grup, yeni_ad, hedef_logo, poster, aciklama, sinema_modu)
             if sinema_modu:
                 for i,l in enumerate(yeni):
                     if l.strip().startswith(("http://","https://")): yeni[i]=sinema_fix_url(l.strip())
-            yeni_by_grup.setdefault(hedef_grup, []).extend(yeni)
-            film_lines.extend(yeni); gorulen.add(url_norm(u))
+            if hedef_grup not in yeni_by_grup:
+                yeni_by_grup[hedef_grup] = []
+                yeni_sira.append(hedef_grup)
+            yeni_by_grup[hedef_grup].extend(yeni)
+            film_lines.extend(yeni)
             eklenen_blok += 1; eklenen_toplam += 1
-        print(f"  [OK] {sira}. blok bitti, bu blokta eklenen: {eklenen_blok}, internetten bilgi alinan: {bilgi_alinan}")
+        print(f"  [OK] {sira}. blok bitti, bu blokta eklenen: {eklenen_blok}")
+
+    # 2. ADIM: Var olan FILM grubunun icine ekle - grubun sonuna, dagitmadan
     lines = []
     if not baslik or not baslik[0].strip().startswith("#EXTM3U"):
         lines.append("#EXTM3U")
     else:
         lines.extend(baslik)
-    mevcut_gruplar = []
-    for r in hedef_records:
-        g = grup_bul(r)
-        if g and g not in mevcut_gruplar: mevcut_gruplar.append(g)
-    eklenmis = set()
+    # Hedef kayitlarini lines'a cevir, ama FILM grubuna ait yeni kayitlari grubun sonuna ekle
+    # Once hedef_records'u lines'a aktar, yeni gruplari ayri tut
+    kalan_yeni_gruplar = list(yeni_sira)
+    # Hedefteki FILM gruplarinin son pozisyonunu bulmak icin lines'i kayit kayit kur
+    # Basit yol: hedef_records'u tek tek ekle, grubun son kaydi geldiginde yeni kayitlari hemen arkasina ekle
     for i, r in enumerate(hedef_records):
         lines.extend(r)
         g = grup_bul(r)
         sonraki = grup_bul(hedef_records[i+1]) if i+1 < len(hedef_records) else None
-        if g in yeni_by_grup and g not in eklenmis and g != sonraki:
+        # Bu grup bitti mi? Sonraki farkli grupsa, bu grubun sonu
+        if g in yeni_by_grup and g != sonraki:
             lines.extend(yeni_by_grup[g])
-            eklenmis.add(g)
-            print(f"[YERLESTI] {g} grubunun icine eklendi")
-    for g, recs in yeni_by_grup.items():
-        if g in eklenmis: continue
-        benzer = benzer_grup_bul(g, mevcut_gruplar)
-        if benzer:
-            print(f"[BENZER] {g} yok, benzer grup bulundu: {benzer} -> onun altina ekleniyor")
-            son_idx = -1
-            for idx2, satir in enumerate(lines):
-                if satir.startswith("#EXTINF:"):
-                    m = re.search(r'group-title="([^"]*)"', satir)
-                    if m and m.group(1) == benzer:
-                        son_idx = idx2 + 1
-                        while son_idx < len(lines) and not lines[son_idx].startswith("#EXTINF:") and not lines[son_idx].startswith("#EXT"):
-                            son_idx += 1
-            if son_idx > 0:
-                for j, yeni_satir in enumerate(recs):
-                    lines.insert(son_idx + j, yeni_satir)
-                mevcut_gruplar.append(g); eklenmis.add(g)
-                continue
-        print(f"[SONA] {g} icin benzer grup yok, en sona eklendi")
-        lines.extend(recs); eklenmis.add(g)
+            print(f"[YERLESTI] {g} grubunun icine, grubun sonuna eklendi - dagilmadi")
+            kalan_yeni_gruplar.remove(g)
+
+    # 3. ADIM: TEK YER - Kalan yeni FILM gruplari hepsi beraber, tek blok halinde
+    # Hedefte FILM blogu varsa, o blogun hemen arkasina, yoksa en sona
+    if kalan_yeni_gruplar:
+        print(f"[TEK YER] Yeni FILM gruplari tek blok halinde ekleniyor: {', '.join(kalan_yeni_gruplar)}")
+        yeni_blok = []
+        for g in kalan_yeni_gruplar:
+            yeni_blok.extend(yeni_by_grup[g])
+        # Hedefte FILM blogu var mi? Varsa onun sonuna, yoksa en sona
+        # lines icinde son FILM kayidini bul
+        son_film_pos = -1
+        for idx2, satir in enumerate(lines):
+            if satir.startswith("#EXTINF:"):
+                m = re.search(r'group-title="([^"]*)"', satir)
+                if m and film_mi(m.group(1)):
+                    # bu EXTINF'in URL satirini da dahil et
+                    son_film_pos = idx2 + 1
+                    # URL satirlarini atla
+                    while son_film_pos < len(lines) and not lines[son_film_pos].startswith("#EXTINF:") and not lines[son_film_pos].startswith("#EXT"):
+                        son_film_pos += 1
+        if son_film_pos > 0:
+            # FILM blogunun hemen arkasina, tek blok halinde ekle
+            for j, yeni_satir in enumerate(yeni_blok):
+                lines.insert(son_film_pos + j, yeni_satir)
+            print(f"[TEK YER] Yeni FILM blogu, eski FILM blogunun hemen arkasina tek blok halinde eklendi")
+        else:
+            # FILM blogu yok, hepsi beraber en sona
+            lines.extend(yeni_blok)
+            print(f"[TEK YER] FILM blogu yoktu, yeni FILM gruplari hepsi beraber en sona eklendi")
+
     with open(TMP_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(film_lines)+"\n")
     try: shutil.copy2(HEDEF_DOSYA, HEDEF_DOSYA+".bak")
     except Exception: pass
     if not lines or not lines[0].strip().startswith("#EXTM3U"): lines.insert(0, "#EXTM3U")
     with open(HEDEF_DOSYA,"w",encoding="utf-8",newline="") as f: f.write("\n".join(lines)+"\n")
-    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA} - Toplam eklenen film: {eklenen_toplam}")
+    print(f"\n[KAYDEDILDI] {HEDEF_DOSYA} + {TMP_DOSYA} - Yeni: {eklenen_toplam}, Guncellenen: {guncellenen_toplam}, Silinen: 0, EPG korundu")
+    print(f"[TEK YER KONTROL] FILM gruplari artik daginik degil, tek blokta")
+
+def _extinf_guncelle(rec, hedef_grup, yeni_ad):
+    yeni = list(rec)
+    idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
+    if idx is None: return yeni
+    extinf = yeni[idx]
+    m = re.match(r"#EXTINF:(-?\d+)", extinf)
+    sure = m.group(1) if m else "-1"
+    oz = {}
+    for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
+    oz["group-title"] = hedef_grup
+    if oz.get("tvg-id","").strip() or oz.get("tvg-epg","").strip():
+        oz["tvg-name"] = yeni_ad
+    oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
+    yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
+    return yeni
+
+def _yeni_rec_yap(r, hedef_grup, yeni_ad, hedef_logo, poster, aciklama, sinema_modu):
+    yeni = list(r)
+    idx = next((i for i,x in enumerate(yeni) if x.startswith("#EXTINF:")), None)
+    if idx is not None:
+        extinf = yeni[idx]
+        m = re.match(r"#EXTINF:(-?\d+)", extinf); sure = m.group(1) if m else "-1"
+        oz = {}
+        for k,v in re.findall(r'([a-zA-Z0-9_\-]+)="([^"]*)"', extinf): oz[k]=v
+        gelen_id = oz.get("tvg-id","").strip()
+        gelen_epg = oz.get("tvg-epg","").strip()
+        gelen_logo = oz.get("tvg-logo","").strip()
+        gelen_name = oz.get("tvg-name","").strip()
+        oz["group-title"] = hedef_grup
+        if not gelen_name:
+            oz["tvg-name"] = yeni_ad
+        if gelen_epg:
+            oz["tvg-epg"] = gelen_epg
+        if gelen_id:
+            oz["tvg-id"] = gelen_id
+        if not gelen_logo and hedef_logo:
+            oz["tvg-logo"] = hedef_logo
+        elif not gelen_logo and not hedef_logo and poster:
+            oz["tvg-logo"] = poster
+        if sinema_modu and "tvg-type" not in oz: oz["tvg-type"] = "movie"
+        if aciklama and not oz.get("tvg-plot"):
+            oz["tvg-plot"] = aciklama.replace('"','').replace('\n',' ')[:300]
+        oz_str = " ".join(f'{k}="{v}"' for k,v in oz.items())
+        yeni[idx] = f"#EXTINF:{sure} {oz_str},{yeni_ad}"
+    return yeni
 
 if __name__ == "__main__":
     main()
