@@ -72,3 +72,7 @@ filmler:
     kaynak_grup: "2013 ✨ 2014"
     hedef_grup: "🟪◆FİLM - 2013 2014"
     ek_kod: ""
+        - kaynak_url: "https://raw.githubusercontent.com/GitLatte/patr0n/refs/heads/site/lists/power-sinema.m3u"
+    kaynak_grup: "2011 ✨ 2012"
+    hedef_grup: "🟪◆FİLM - 2011 2012"
+    ek_kod: ""
