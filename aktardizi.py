@@ -1,7 +1,7 @@
 # MIRTI68 - DIZI - Nostalji icinde dizi grup
 import re, os, shutil, urllib.request
 
-HEDEF_DOSYA = "MIRTI_TV.m3u"
+HEDEF_DOSYA = "mirtitv68.m3u"
 DIZI_YAML = "aktardizi.yaml"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"
 TIMEOUT = 30
