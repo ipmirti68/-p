@@ -42,16 +42,14 @@ jobs:
       - name: Spor calistir
         run: python aktarspor.py
 
-      - name: Kaydet ve Push
+            - name: Kaydet ve Push
         run: |
-          rm -f *.bak *.m3u.bak
+          rm -f *.bak *.m3u.bak *.tmp.m3u
           git config user.name "MIRTI68 Bot"
           git config user.email "mirti68@users.noreply.github.com"
-          git add mirtitv68.m3u || true
-          git add film.tmp.m3u || true
-          git add dizi.tmp.m3u || true
-          git add genel.tmp.m3u || true
-          git add spor.tmp.m3u || true
+          git add mirtitv68.m3u
           git commit -m "Guncelleme" || true
+          git pull --rebase --autostash || true
+          git push || git push
           git pull --rebase --autostash || true
           git push || git push
