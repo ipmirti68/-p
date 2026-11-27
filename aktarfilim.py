@@ -7,7 +7,7 @@ try:
 except ImportError:
     yaml = None
 
-HEDEF_DOSYA = "MIRTI_TV.m3u"
+HEDEF_DOSYA = "mirtitv68.m3u"
 FILM_YAML = "aktarfilim.yaml"
 TMP_DOSYA = "film.tmp.m3u"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36"

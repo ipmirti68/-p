@@ -3,11 +3,14 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 */2 * * *'
+
 permissions:
   contents: write
+
 concurrency:
   group: mirti68-aktar
   cancel-in-progress: true
+
 jobs:
   aktar:
     runs-on: ubuntu-latest
@@ -15,23 +18,60 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - run: pip install requests pyyaml
+
       - name: Dizi aktar
         run: python aktardizi.py
+
       - name: Film aktar
         run: python aktarfilim.py
+
+      - name: Genel aktar
+        run: python aktargenel.py
+
       - name: Kaydet
         run: |
           git config user.name "MIRTI68 Bot"
           git config user.email "mirti68@bot.local"
-          git add -A
-          git stash push -m "aktar-temp" --include-untracked || true
-          git fetch origin main
-          git rebase origin/main || (git rebase --abort; git reset --hard origin/main)
-          git stash pop || true
-          git add MIRTI_TV.m3u aktardizi.yaml aktardizi.py aktarfilim.yaml aktarfilim.py film.tmp.m3u
-          git commit -m "Dizi + Film guncelleme" || echo "Degisiklik yok"
-          git push || (git pull --rebase && git push)
+
+          echo "========== PY NE URETTI =========="
+          git status --short
+          ls -lh *.m3u *.json 2>/dev/null || true
+
+          # HEDEF DOSYA BURADA YAZILMIYOR
+          # py / yaml ne urettiyse onu al
+          git add -A -- '*.m3u' '*.json' '*.yaml' '*.yml' 2>/dev/null || true
+
+          # .py degisti ise onu da al, ama hedef dosya listesi yok
+          git add -A -- 'aktar*.py' 2>/dev/null || true
+
+          echo "========== KAYDEDILECEK =========="
+          git status --short
+
+          if git diff --cached --quiet; then
+            echo "Degisiklik yok"
+            exit 0
+          fi
+
+          git commit -m "Dizi + Film guncelleme"
+
+          echo "========== PUSH =========="
+          for i in 1 2 3; do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push origin HEAD:main; then
+                echo "PUSH BASARILI"
+                exit 0
+              fi
+            else
+              git rebase --abort || true
+            fi
+            sleep 3
+          done
+          echo "PUSH BASARISIZ"
+          exit 1

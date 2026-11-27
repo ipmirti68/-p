@@ -1,222 +1,32 @@
+hedef_dosya: "mirtitv68.m3u"
 genel:
-    - kaynak_url: 'https://raw.githubusercontent.com/abdcev/lists/refs/heads/main/ad.m3u'
-    kaynak_grup: ''
-    epg_koru: true
+    - kaynak_url: "https://raw.githubusercontent.com/PRoDi79/Deneme/refs/heads/main/ibb_cams.m3u"
     sadece_listedekiler: true
+    kaynak_grup: ""
+    kaynak_gruplar: []
     hedefler:
-            - hedef_adi: 'hedef_1'
-        aranacak: '【entity-TRT1¦canonical_name=TRT1】, 【entity-Star TV¦canonical_name=Star TV】, 【entity-Kanal D¦canonical_name=Kanal D】, 【entity-Show TV¦canonical_name=Show TV】, 【entity-ATV¦canonical_name=ATV】, now, 【entity-Kanal 7¦canonical_name=Kanal 7】, tv 8'
-        hedef_grup: '🟨◆ ULUSALᵁᴴᴰ⭕'
-        hedef_logo: ''
-        ek_kod: '⭕'
-            - hedef_adi: 'hedef_2'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_3'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_4'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_5'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-
-    - kaynak_url: 'http://1066.7382164.xyz/get.php?username=MusabeY.Sunx&password=Bx8Pq@Sd.y4z&type=m3u_plus&output=ts'
-    kaynak_grup: 'TR ☀ ULUSAL'
-    epg_koru: true
-    sadece_listedekiler: true
-    hedefler:
-            - hedef_adi: 'hedef_1'
-        aranacak: '【entity-TRT1¦canonical_name=TRT1】, 【entity-Star TV¦canonical_name=Star TV】, 【entity-Kanal D¦canonical_name=Kanal D】, how TV, 【entity-ATV¦canonical_name=ATV】, now, 【entity-Kanal 7¦canonical_name=Kanal 7】, tv 8'
-        hedef_grup: '🟨◆ ULUSAL⁺ᴴᴰ⭕'
-        hedef_logo: ''
-        ek_kod: '⭕'
-            - hedef_adi: 'hedef_2'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_3'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_4'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_5'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-
-    - kaynak_url: 'http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts'
-    kaynak_grup: 'TR | UHD'
-    epg_koru: true
-    sadece_listedekiler: true
-    hedefler:
-            - hedef_adi: 'hedef_1'
-        aranacak: '【entity-TRT1¦canonical_name=TRT1】, 【entity-Star TV¦canonical_name=Star TV】, 【entity-Kanal D¦canonical_name=Kanal D】, 【entity-Show TV¦canonical_name=Show TV】, 【entity-ATV¦canonical_name=ATV】, now, beyaz tv, 【entity-FX¦canonical_name=FX】, 【entity-Kanal 7¦canonical_name=Kanal 7】, tv 8'
-        hedef_grup: '🟨◆ ULUSALᴴᴰ⁺⭕'
-        hedef_logo: ''
-        ek_kod: '⭕'
-            - hedef_adi: 'hedef_2'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_3'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_4'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_5'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-
-    - kaynak_url: 'https://raw.githubusercontent.com/smtv62/smtv/refs/heads/main/turkce.m3u'
-    kaynak_grup: ''
-    epg_koru: true
-    sadece_listedekiler: true
-    hedefler:
-            - hedef_adi: 'hedef_1'
-        aranacak: 'trt 1, ATV, Show TV, 【entity-Kanal D¦canonical_name=Kanal D】, star, now, Kanal 7, tv 8, 【entity-TRT1¦canonical_name=TRT1】'
-        hedef_grup: '🟨◆ ULUSALᴴᴰ⭕'
-        hedef_logo: ''
-        ek_kod: '⭕'
-            - hedef_adi: 'hedef_2'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_3'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_4'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_5'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-
-    - kaynak_url: 'https://raw.githubusercontent.com/Kral-Turk/Kral-Turk-TV/refs/heads/main/TURK_TV.m3u_plus'
-    kaynak_grup: 'TR ULUSAL-UHD'
-    epg_koru: true
-    sadece_listedekiler: true
-    hedefler:
-            - hedef_adi: 'hedef_1'
-        aranacak: '【entity-trt1¦canonical_name=TRT1】, atv, show tv,【entity-kanal d¦canonical_name=Kanal D】, 【entity-Star TV¦canonical_name=Star TV】, now, 【entity-kanal 7¦canonical_name=Kanal 7】, 【entity-TV8¦canonical_name=TV8】'
-        hedef_grup: '🟨◆ ULUSALᶠᴴᴰ⭕'
-        hedef_logo: ''
-        ek_kod: '⭕'
-            - hedef_adi: 'hedef_2'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_3'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_4'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_5'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-
-    - kaynak_url: 'https://raw.githubusercontent.com/mzabidin80/OTT_Navigator_Indonesia_Korea_China_Movies.m3u/refs/heads/main/OTT_Navigator_V2_Indonesia_Korea_China_Movies_Knowledge.m3u'
-    kaynak_gruplar:
-            - '🇰🇷 Korea | Drama'
-            - '🇰🇷 Korea | Education'
-            - '🇰🇷 Korea | Knowledge'
-            - '🇰🇷 Korea | Movies'
-            - '🇰🇷 Korea | Music'
-    epg_koru: true
-    sadece_listedekiler: true
-    hedefler:
-            - hedef_adi: 'hedef_1'
-        aranacak: ''
-        hedef_grup: '🟨◆ YABANCI 🇰🇷⭕'
-        hedef_logo: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg'
-        ek_kod: '⭕'
-            - hedef_adi: 'hedef_2'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_3'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_4'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_5'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-
-    - kaynak_url: 'https://raw.githubusercontent.com/PRoDi79/Deneme/refs/heads/main/ibb_cams.m3u'
-    kaynak_grup: ''
-    epg_koru: true
-    sadece_listedekiler: true
-    hedefler:
-            - hedef_adi: 'hedef_1'
-        aranacak: ''
-        hedef_grup: '🟥🔹 CANLI KAMERA 📹'
-        hedef_logo: ''
-        ek_kod: '⭕'
-            - hedef_adi: 'hedef_2'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_3'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_4'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
-            - hedef_adi: 'hedef_5'
-        aranacak: ''
-        hedef_grup: ''
-        hedef_logo: ''
-        ek_kod: ''
+            - hedef_adi: "hedef_1"
+        aranacak: ""
+        hedef_grup: "🟥🔹 CANLI KAMERA 📹"
+        hedef_logo: ""
+        ek_kod: "⭕"
+            - hedef_adi: "hedef_2"
+        aranacak: ""
+        hedef_grup: ""
+        hedef_logo: ""
+        ek_kod: ""
+            - hedef_adi: "hedef_3"
+        aranacak: ""
+        hedef_grup: ""
+        hedef_logo: ""
+        ek_kod: ""
+            - hedef_adi: "hedef_4"
+        aranacak: ""
+        hedef_grup: ""
+        hedef_logo: ""
+        ek_kod: ""
+            - hedef_adi: "hedef_5"
+        aranacak: ""
+        hedef_grup: ""
+        hedef_logo: ""
+        ek_kod: ""
