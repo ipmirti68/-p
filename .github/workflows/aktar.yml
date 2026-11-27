@@ -8,9 +8,17 @@ on:
 permissions:
   contents: write
 
+# DUZELTILDI: Ayni workflow ust uste binmesin, film uzun suruyor
+# Yeni calisma eskisi bitmeden baslamasin, liste yarim kalmasin
+concurrency:
+  group: mirti68-tek-aktar
+  cancel-in-progress: false
+
 jobs:
   aktar:
     runs-on: ubuntu-latest
+    # DUZELTILDI: Film IMDb'den tek tek cektigi icin 2 saat yetmeyebilir
+    timeout-minutes: 110
     steps:
       - name: Repo al
         uses: actions/checkout@v4
@@ -25,32 +33,56 @@ jobs:
       - name: Gerekli paketler
         run: pip install requests pyyaml
 
-      - name: Film calistir
-        run: python aktarfilim.py
+      - name: Film calistir - FILM TEK YER
+        run: |
+          echo "=== FILM BASLADI ==="
+          python aktarfilim.py
+          echo "=== FILM BITTI, hedefte FILM sayisi ==="
+          grep -c "FİLM" mirtitv68.m3u || echo "0"
 
       - name: Dizi calistir
-        run: python aktardizi.py
+        run: |
+          echo "=== DIZI BASLADI ==="
+          python aktardizi.py
+          echo "=== DIZI BITTI ==="
 
       - name: Genel calistir
-        run: python aktargenel.py
+        run: |
+          echo "=== GENEL BASLADI ==="
+          python aktargenel.py
+          echo "=== GENEL BITTI ==="
 
       - name: Spor calistir
-        run: python aktarspor.py
-      
+        run: |
+          echo "=== SPOR BASLADI ==="
+          python aktarspor.py
+          echo "=== SPOR BITTI ==="
+
+      - name: Kontrol - FILM tek yerde mi?
+        run: |
+          echo "=== FILM GRUP KONTROL ==="
+          # FILM gruplarinin dosyanin neresinde oldugunu goster
+          grep -o 'group-title="[^"]*FİLM[^"]*"' mirtitv68.m3u | sort | uniq -c | head -n 50
+          echo "=== Toplam FILM kaydi ==="
+          grep -c 'group-title="[^"]*FİLM' mirtitv68.m3u || echo "0"
+          echo "=== Dosya satir sayisi ==="
+          wc -l mirtitv68.m3u
+
       - name: Kaydet ve Push
         run: |
           # 1. .bak dosyalari push'u bozar, hepsini sil
           rm -f *.bak *.m3u.bak
-          # 2. Sadece bizim 3 dosyayi al, digerlerine dokunma
           git config user.name "MIRTI68 Bot"
-          git config user.email "mirti68@users.noreply.github.com"
-          git add mirtitv68.m3u film.tmp.m3u genel.tmp.m3u || true
+          git config user.email "mirti68@users.noreply.【entity-github¦canonical_name=GitHub】.com"
+          # 2. DUZELTILDI: Sadece 3 dosya degil, hepsini al
+          # film + dizi + genel + spor tmp'leri de gitsin
+          git add mirtitv68.m3u film.tmp.m3u dizi.tmp.m3u genel.tmp.m3u spor.tmp.m3u || true
           # Degisiklik yoksa bosuna push deneme
           if git diff --cached --quiet; then
             echo "Degisiklik yok, push yok"
             exit 0
           fi
-          git commit -m "Dizi + Film guncelleme" || true
+          git commit -m "Dizi + Film + Genel + Spor guncelleme" || true
           # 3. Unstaged kalmasin diye autostash ile rebase
           git pull --rebase --autostash || git pull --rebase --autostash || true
           git push || git push
