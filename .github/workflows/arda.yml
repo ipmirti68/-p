@@ -1,3 +1,4 @@
+
 name: boss M3U Guncelleme
 
 on:
@@ -36,12 +37,23 @@ jobs:
         run: |
           python boss.py
 
-      
-
       - name: Degisiklikleri Git ile Gonder
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add boss68.m3u boss2.m3u8
-          git diff --cached --quiet && echo "Degisiklik yok" || git commit -m "Otomatik ArdaSpor M3U Guncellemesi [skip ci]"
-          git push
+
+          echo "=================================="
+          echo "BOSS M3U DOSYA KONTROLU"
+          echo "=================================="
+
+          git status --short
+
+          git add -A -- boss68.m3u boss2.m3u8
+
+          if git diff --cached --quiet; then
+            echo "Degisiklik yok."
+          else
+            git commit -m "Otomatik ArdaSpor M3U Guncellemesi [skip ci]"
+            git push origin HEAD
+          fi
+          
