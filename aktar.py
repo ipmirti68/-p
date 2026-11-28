@@ -18,13 +18,13 @@ AKTARIMLAR = [
         "grup_onek": False, "sinema_modu": True,
     },
     {
-        "kaynak_url": "http://mekantv56.win/get.php?username=akifalioglu33&password=33akifalioglu&type=m3u_plus&output=ts",
-        "kaynak_grup": "TR | AMAZON PRIME",
+        "kaynak_url": "https://raw.githubusercontent.com/kimbumuratyavuz/capcanli/refs/heads/main/dizi.m3u",
+        "kaynak_gruplar": "squid game","hotel del luna", "vincenzo", "itaewon class", "queen of tears", "the glory", "all of us are dead", "lovely runner", "weak hero", 'bloodhounds", "reply 1988", "crash landing on you", "my mister", "its okay to not be okay",
         "aranacak": "",
-        "hedef_grup": "🟪◆ DİZİ - AMAZON PRİME ⭕",
+        "hedef_grup": "",
         "hedef_logo": "",
         "ek_kod": "⭕",
-        "grup_onek": False,
+        "grup_onek": False, "sinema_modu": True,
     },
 
     {
