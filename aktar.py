@@ -19,7 +19,7 @@ AKTARIMLAR = [
     },
     {
         "kaynak_url": "https://raw.githubusercontent.com/kimbumuratyavuz/capcanli/refs/heads/main/dizi.m3u",
-        "kaynak_gruplar": "squid game","hotel del luna", "vincenzo", "itaewon class", "queen of tears", "the glory", "all of us are dead", "lovely runner", "weak hero", 'bloodhounds", "reply 1988", "crash landing on you", "my mister", "its okay to not be okay",
+        "kaynak_gruplar": "squid game","hotel del luna", "vincenzo", "itaewon class", "queen of tears", "the glory", "all of us are dead", "lovely runner", "weak hero", "bloodhounds", "reply 1988", "crash landing on you", "my mister", "its okay to not be okay",
         "aranacak": "",
         "hedef_grup": "",
         "hedef_logo": "",
