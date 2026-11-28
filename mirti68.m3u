@@ -256,6 +256,8 @@ https://raw.githubusercontent.com/ipmirti68/-p/main/bilgi.mp4
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196699&extension=ts&play_token=6k77AngOgl
 #EXTINF:-1 tvg-name="atv.tr" tvg-logo="https://i.imgur.com/t35jTCt.jpeg" group-title="🟨◆ ULUSAL⁴ᴷ",ATV
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196698&extension=ts&play_token=6k77AngOgl
+#EXTINF:-1 tvg-name="atv.tr" tvg-logo="https://i.imgur.com/t35jTCt.jpeg" group-title="🟨◆ ULUSAL⁴ᴷ",A TV
+http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196698&extension=ts&play_token=6k77AngOgl
 #EXTINF:-1 tvg-name="ShowTv.tr" tvg-logo="https://i.imgur.com/t35jTCt.jpeg" group-title="🟨◆ ULUSAL⁴ᴷ",SHOW
 http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:88:CC:0E&stream=196697&extension=ts&play_token=6k77AngOgl
 #EXTINF:-1 tvg-name="kanald.tr" tvg-logo="https://i.imgur.com/t35jTCt.jpeg" group-title="🟨◆ ULUSAL⁴ᴷ",KANAL D
