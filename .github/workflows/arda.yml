@@ -1,4 +1,4 @@
-name: ArdaSpor M3U Guncelleme
+name: boss M3U Guncelleme
 
 on:
   schedule:
@@ -34,11 +34,9 @@ jobs:
 
       - name: Arda Scriptini Calistir
         run: |
-          python arda.py
+          python boss.py
 
-      - name: Ard Scriptini Calistir
-        run: |
-          python ard.py
+      
 
       - name: Degisiklikleri Git ile Gonder
         run: |
