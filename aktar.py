@@ -47,10 +47,10 @@ AKTARIMLAR = [
     },
 
     {
-        "kaynak_url": "https://raw.githubusercontent.com/Adnan4161/TvDizi/refs/heads/main/Tv%20Dizi.m3u",
+        "kaynak_url": "",
         "kaynak_grup": "",
         "aranacak": "",
-        "hedef_grup": "🟪◆ DİZİ - GÜNCEL  ⭕",
+        "hedef_grup": "",
         "hedef_logo": "",
         "ek_kod": "⭕",
         "grup_onek": True,
