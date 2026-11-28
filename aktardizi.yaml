@@ -28,7 +28,7 @@ diziler:
 
     - kaynak_url: 'https://raw.githubusercontent.com/ramazansancar/UzunMuhalefet_Legal-IPTV/e1720991093a5952656096663500b58d1d8f9d4c/lists/video/sources/puhutv-com/diziler/gaddar.m3u'
     dizi_adi: 'GADDAR'
-    hedef_grup: '🟪◆DIZILER /  '
+    hedef_grup: '🟪◆DIZILER   '
     hedef_logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQijqeTjDgWuNaWMQjgUNjqdzbXnSTUVdc-KOMhp1rKDHQLjxw9HH5IQ5iz&s=10'
     filtre_grup_icerir: ''
     filtre_ad_icerir: ''
